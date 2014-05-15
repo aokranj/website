@@ -120,3 +120,7 @@
 #aokranj .ao-tabs h2 {
     margin: 14px 0 20px 0;
 }
+
+#aokranj .ao-koledarcek .x-panel-header-default .x-tool {
+    margin-right: 20px;
+}

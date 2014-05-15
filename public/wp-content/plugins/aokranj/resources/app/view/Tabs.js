@@ -19,11 +19,16 @@ Ext.define('AO.view.Tabs', {
         },{
             xtype: 'panel',
             layout: 'column',
+            cls: 'ao-koledarcek',
+            title: 'Test',
+            collapsible: true,
+            collapsed: true,
             border: false,
+            bodyPadding: '20 0 0 0',
             margin: '0 0 20 0',
             items: [{
                 xtype: 'datepicker',
-                width: 280
+                width: 260
             },{
                 xtype: 'chart',
                 width: 240,

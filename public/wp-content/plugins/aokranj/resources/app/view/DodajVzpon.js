@@ -8,8 +8,8 @@ Ext.define('AO.view.DodajVzpon', {
     method: 'POST',
     
     fieldDefaults: {
-        labelWidth: 140,
-        width: 400,
+        labelWidth: 120,
+        width: 360,
         margin: '10'
     },
 
@@ -44,9 +44,9 @@ Ext.define('AO.view.DodajVzpon', {
         border: false,
         items: [{
             xtype: 'container',
-            width: 460,
-            maxWidth: 460,
-            columnWidth: 460,
+            width: 400,
+            maxWidth: 400,
+            columnWidth: 400,
             items: [{
                 xtype: 'datefield',
                 fieldLabel: 'Datum',
@@ -96,9 +96,9 @@ Ext.define('AO.view.DodajVzpon', {
             }]
         },{
             xtype: 'container',
-            width: 460,
-            maxWidth: 460,
-            columnWidth: 460,
+            width: 400,
+            maxWidth: 400,
+            columnWidth: 400,
             items: [{
                 xtype: 'combo',
                 fieldLabel: 'Vrsta',
