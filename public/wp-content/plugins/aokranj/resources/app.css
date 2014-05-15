@@ -1,0 +1,82 @@
+@font-face {
+	font-family: 'aokranj';
+	src:url('fonts/aokranj.eot?-sazk8b');
+	src:url('fonts/aokranj.eot?#iefix-sazk8b') format('embedded-opentype'),
+		url('fonts/aokranj.woff?-sazk8b') format('woff'),
+		url('fonts/aokranj.ttf?-sazk8b') format('truetype'),
+		url('fonts/aokranj.svg?-sazk8b#aokranj') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#adminmenuback {
+    z-index: 1;
+}
+
+#adminmenuwrap {
+    z-index: 999999;
+}
+
+#wpbody-content {
+    padding-bottom: 0;
+}
+
+#aokranj {
+    margin: 20px 20px 40px 0;
+}
+
+#aokranj input {
+    box-shadow: none;
+    margin: 0;
+}
+
+#aokranj input[readonly] {
+    background-color: #fff;
+}
+
+.x-form-right-label {
+    position: absolute;
+    line-height: 24px;
+    left: 105%;
+}
+
+.x-form-trigger-wrap {
+    border-color: #d9d9d9
+}
+
+.x-boundlist li {
+    margin-bottom: 0;
+}
+
+.x-label-required:after
+{
+    color: #CF4C35;
+    content: '*';
+}
+
+
+
+
+.x-tabs-left {
+    border-color: #fff;
+}
+
+.x-tab-default .x-tab-glyph {
+    opacity: 1;
+    font-size: 20px;
+}
+
+.x-tab-default-left {
+    padding: 10px 16px 10px 10px;
+}
+
+.x-tab-default-left-active {
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.x-tab-bar-strip-left {
+    border-color: #fff;
+    background-color: #fff;
+    right: -5px;
+}
