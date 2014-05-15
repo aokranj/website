@@ -2,8 +2,6 @@ Ext.define('AO.view.Vzponi', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.ao-vzponi',
     
-    border: false,
-    
     store: {
         type: 'json',
         storeId: 'vzponi',

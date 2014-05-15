@@ -3,8 +3,6 @@ Ext.define('AO.view.DodajVzpon', {
     alias: 'widget.ao-dodaj-vzpon',
 
     border: false,
-    padding: '20',
-    autoScroll: true,
     
     url: '/wp-admin/admin-ajax.php?action=dodaj_vzpon',
     method: 'POST',
@@ -17,7 +15,6 @@ Ext.define('AO.view.DodajVzpon', {
 
     items: [{
         xtype: 'container',
-        margin: '-10 0 0 0',
         html: '<h2>Dodaj vzpon</h2>'
     },{
         xtype: 'combo',
@@ -41,13 +38,15 @@ Ext.define('AO.view.DodajVzpon', {
             ]
         }
     },{
-        xtype: 'container',
-        layout: 'hbox',
+        xtype: 'panel',
+        layout: 'column',
         margin: '0 0 24 0',
+        border: false,
         items: [{
             xtype: 'container',
             width: 460,
-            layout: 'anchor',
+            maxWidth: 460,
+            columnWidth: 460,
             items: [{
                 xtype: 'datefield',
                 fieldLabel: 'Datum',
@@ -98,7 +97,8 @@ Ext.define('AO.view.DodajVzpon', {
         },{
             xtype: 'container',
             width: 460,
-            layout: 'anchor',
+            maxWidth: 460,
+            columnWidth: 460,
             items: [{
                 xtype: 'combo',
                 fieldLabel: 'Vrsta',

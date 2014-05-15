@@ -3,39 +3,33 @@ Ext.define('AO.view.Tabs', {
     alias: 'widget.ao-tabs',
 
     activeTab: 0,
-    tabPosition: 'left',
     plain: true,
     border: false,
-    bodyCls: 'x-tabs-left',
+    bodyCls: 'ao-tabs',
 
     items: [{
         xtype: 'panel',
         tooltip: 'Vzponi',
         glyph: 'xe600@aokranj',
         border: false,
-        padding: '20',
-        layout: {
-            type: 'hbox',
-            align: 'stretch'
-        },
+        
         items: [{
             xtype: 'container',
-            autoScroll: true,
-            width: 300,
-            margin: '0 10 0 0',
+            html: '<h2>Vzponi</h2>'
+        },{
+            xtype: 'panel',
+            layout: 'column',
+            border: false,
+            margin: '0 0 20 0',
             items: [{
-                xtype: 'container',
-                margin: '-10 0 8 0',
-                html: '<h2>Vzponi</h2>'
-            },{
                 xtype: 'datepicker',
                 width: 280
             },{
                 xtype: 'chart',
-                width: 260,
-                height: 260,
+                width: 240,
+                height: 240,
                 animate: true,
-                margin: '20 0 0 10',
+                margin: '0 0 0 20',
                 store: {
                     type: 'json',
                     fields: ['name', 'data'],
@@ -66,8 +60,7 @@ Ext.define('AO.view.Tabs', {
                 }]
             }]
         },{
-            xtype: 'ao-vzponi',
-            flex: 1
+            xtype: 'ao-vzponi'
         }]
     },{
         xtype: 'ao-dodaj-vzpon',
@@ -78,10 +71,9 @@ Ext.define('AO.view.Tabs', {
         tooltip: 'Nastavitve',
         glyph: 'xe605@aokranj',
         border: false,
-        padding: '20',
+        height: 400,
         items: [{
             xtype: 'container',
-            margin: '-10 0 8 0',
             html: '<h2>Nastavitve</h2>'
         }]
     }]
