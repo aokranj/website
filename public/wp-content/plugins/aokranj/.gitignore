@@ -1,0 +1,6 @@
+# extjs
+ext
+build/*/PBO/.sass-cache
+build/temp
+packages/*/build/.sass-cache
+.sencha_backup

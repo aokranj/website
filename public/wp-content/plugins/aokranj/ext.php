@@ -1,1 +1,0 @@
-<div id="aokranj" data-nonce="<?php echo wp_create_nonce('aokranj-app'); ?>"></div>

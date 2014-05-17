@@ -1,0 +1,27 @@
+@import '../Fixes';
+@import '../Icons';
+
+/*******************************************************************************
+ * AO Kranj styles
+ ******************************************************************************/
+#aokranj {
+    
+    padding: 20px 20px 40px 0;
+    
+    input {
+        box-shadow: none;
+        margin: 0;
+    }
+    
+    input[readonly] {
+        background-color: #fff;
+    }
+    
+    .ao-main {
+        border: none;
+    }
+    
+    .x-toolbar-footer {
+        background-color: transparent;
+    }
+}

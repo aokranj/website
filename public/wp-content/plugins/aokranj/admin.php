@@ -112,8 +112,7 @@ class AOKranj_Admin extends AOKranj
 
     public function admin_menu()
     {
-        add_menu_page('AO Kranj jQuery', 'AO Kranj jQuery', 'activate_plugins', self::ID . '/jquery.php');
-        add_menu_page('AO Kranj ExtJS', 'AO Kranj', 'read', self::ID . '/ext.php');
+        add_menu_page('AO Kranj', 'AO Kranj', 'read', self::ID . '/app.php');
     }
 
     public function admin_init()
@@ -126,38 +125,80 @@ class AOKranj_Admin extends AOKranj
         
         switch ($hook_suffix)
         {
-            case 'aokranj/jquery.php':
-                wp_enqueue_style('jquery-styles', AOKRANJ_PLUGIN_URL . 'resources/jquery/jquery-ui-1.10.4.custom.min.css', array(), AOKRANJ_VERSION);
-
-                wp_enqueue_script('jquery-ui-core');
-                wp_enqueue_script('jquery-ui-tabs');
-                wp_enqueue_script('jquery-ui-datepicker');
-
-                wp_enqueue_style('aokranj-jquery', AOKRANJ_PLUGIN_URL . 'resources/jquery/app.css', array(), AOKRANJ_VERSION);
-
-                wp_enqueue_script('aokranj-jquery', AOKRANJ_PLUGIN_URL . 'resources/jquery/app.js', array(), AOKRANJ_VERSION);
-                break;
-            case 'aokranj/ext.php':
+            case 'aokranj/app.php':
                 // ext
-                wp_enqueue_style('ext-styles', AOKRANJ_PLUGIN_URL . 'resources/ext/ext-theme-neptune-all-debug.css', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('ext', AOKRANJ_PLUGIN_URL . 'resources/ext/ext-all-debug.js', array(), AOKRANJ_VERSION);
-                
-                // model
-                wp_enqueue_script('aokranj-model-vzpon', AOKRANJ_PLUGIN_URL . 'resources/app/model/Vzpon.js', array(), AOKRANJ_VERSION);
-                
-                // controller
-                wp_enqueue_script('aokranj-controller-dodaj-vzpon', AOKRANJ_PLUGIN_URL . 'resources/app/controller/DodajVzpon.js', array(), AOKRANJ_VERSION);
-
-                // view
-                wp_enqueue_script('aokranj-view-tabs', AOKRANJ_PLUGIN_URL . 'resources/app/view/Tabs.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-view-vzponi', AOKRANJ_PLUGIN_URL . 'resources/app/view/Vzponi.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-view-dodaj-vzpon', AOKRANJ_PLUGIN_URL . 'resources/app/view/DodajVzpon.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_style('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'bootstrap.css', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-ext', AOKRANJ_PLUGIN_URL . 'ext/ext-dev.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'bootstrap.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . 'app.js', array(), AOKRANJ_VERSION);
 
                 // app
-                wp_enqueue_style('aokranj-ext', AOKRANJ_PLUGIN_URL . 'resources/app.css', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-ext', AOKRANJ_PLUGIN_URL . 'resources/app.js', array(), AOKRANJ_VERSION);
+                //wp_enqueue_style('aokranj-app', AOKRANJ_PLUGIN_URL . 'resources/app.css', array(), AOKRANJ_VERSION);
+                //wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . 'resources/app.js', array(), AOKRANJ_VERSION);
                 break;
         }
+    }
+    
+    private function getRequestSort()
+    {
+        $properties = array(
+            'destinacija',
+            'smer',
+            'partner',
+            'ocena',
+            'datum',
+            'tip',
+            'cas',
+            'visina_smer',
+            'visina_izstop',
+            'pon_vrsta',
+            'pon_nacin',
+            'stil',
+            'mesto',
+            'opomba',
+        );
+        $directions = array('ASC', 'DESC');
+        
+        $property = 'datum';
+        $direction = 'DESC';
+        
+        $s = filter_input(INPUT_GET, 'sort');
+        $s = json_decode($s, true);
+        if (is_array($s))
+        {
+            $s = $s[0];
+            if (isset($s['property']) && in_array($s['property'], $properties))
+            {
+                $property = $s['property'];
+            }
+            if (isset($s['direction']) && in_array($s['direction'], $directions))
+            {
+                $direction = strtoupper($s['direction']);
+            }
+        }
+        
+        return array(
+            'property' => $property,
+            'direction' => $direction,
+        );
+    }
+    
+    private function getRequestPage()
+    {
+        $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT);
+        return (!empty($page)) ? $page : 1;
+    }
+    
+    private function getRequestStart()
+    {
+        $start = filter_input(INPUT_GET, 'start', FILTER_SANITIZE_NUMBER_INT);
+        return (!empty($start)) ? $start : 1;
+    }
+    
+    private function getRequestLimit()
+    {
+        $limit = filter_input(INPUT_GET, 'limit', FILTER_SANITIZE_NUMBER_INT);
+        return (!empty($limit)) ? $limit : 1;
     }
     
     /**
@@ -168,9 +209,40 @@ class AOKranj_Admin extends AOKranj
     {
         global $wpdb;
         
-        $vzponi = $wpdb->get_results("SELECT * FROM " . $this->table_vzponi . " WHERE user_id = " . get_current_user_id());
+        $page = $this->getRequestPage();
+        $start = $this->getRequestStart();
+        $limit = $this->getRequestLimit();
+        $sort = $this->getRequestSort();
+        
+        $vzponi = $wpdb->get_results(sprintf('
+            SELECT *
+            FROM %s
+            WHERE user_id = %d
+            ORDER BY %s %s
+            LIMIT %d, %d',
+            $this->table_vzponi,
+            get_current_user_id(),
+            $sort['property'],
+            $sort['direction'],
+            $start,
+            $limit
+        ));
+        
+        $total = $wpdb->get_var(sprintf('
+            SELECT COUNT(id)
+            FROM %s
+            WHERE user_id = %d',
+            $this->table_vzponi,
+            get_current_user_id()
+        ));
+        
+        $response = array(
+            'success' => true,
+            'data'    => $vzponi,
+            'total'   => $total,
+        );
 
-        echo json_encode($vzponi);
+        echo json_encode($response);
         
         die;
     }

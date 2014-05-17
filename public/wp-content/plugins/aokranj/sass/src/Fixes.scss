@@ -1,0 +1,104 @@
+/*******************************************************************************
+ * Wordpress overrides
+ ******************************************************************************/
+#adminmenuback {
+    z-index: 1;
+}
+
+#adminmenuwrap {
+    z-index: 999999;
+}
+
+#wpbody-content {
+    padding-bottom: 0;
+}
+
+/*******************************************************************************
+ * ExtJS overrides
+ ******************************************************************************/
+
+/* core */
+.x-mask {
+    display: none !important;
+}
+
+.x-panel-body-default {
+    background: none;
+}
+
+/* tabs */
+.x-tabs-top {
+    border: none;
+}
+
+.x-tab-bar-body-top {
+    overflow: visible;
+}
+
+.x-tab-bar-strip-default {
+    border: none;
+}
+
+.x-tab-bar-strip-top {
+    border: none;
+    background: none;
+}
+
+/* normal tab */
+.x-tab-default-top {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-right: 4px;
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.x-tab-default-top .x-tab-glyph {
+    opacity: 1;
+    color: #157fcc;
+    font-size: 14px;
+}
+
+.x-tab-default-top .x-tab-inner {
+    color: #157fcc;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+}
+
+/* active tab */
+.x-tab-default-top-active {
+    border-color: #fff;
+    background-color: #4b9cd7;
+}
+
+.x-tab-default-top-active .x-tab-inner {
+    color: #fff;
+}
+
+.x-tab-default-top-active .x-tab-glyph {
+    color: #fff;
+}
+
+
+/* form */
+.x-form-right-label {
+    position: absolute;
+    line-height: 24px;
+    left: 105%;
+}
+
+.x-form-trigger-wrap {
+    border-color: #d9d9d9
+}
+
+.x-boundlist li {
+    margin-bottom: 0;
+}
+
+.x-label-required:after
+{
+    color: #CF4C35;
+    content: '*';
+}

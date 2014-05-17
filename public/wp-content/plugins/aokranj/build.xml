@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="AO" default=".help">
+    <import file="${basedir}/.sencha/app/build-impl.xml"/>
+    
+    <target name="-after-refresh">
+        <echo>Rewriting ${app.dir}/bootstrap.js to load scripts from /wp-content/plugins/aokranj</echo>
+        <replaceregexp
+                file="${app.dir}/bootstrap.js"
+                match="ext/packages/ext-theme-neptune"
+                replace="/wp-content/plugins/aokranj/ext/packages/ext-theme-neptune"
+                flags="g" />
+        <replaceregexp
+                file="${app.dir}/bootstrap.js"
+                match="ext/src"
+                replace="/wp-content/plugins/aokranj/ext/src"
+                flags="g" />
+        <replaceregexp
+                file="${app.dir}/bootstrap.js"
+                match='"app"'
+                replace='"/wp-content/plugins/aokranj/app"'
+                flags="g" />
+        <replaceregexp
+                file="${app.dir}/bootstrap.js"
+                match='"overrides"'
+                replace='"/wp-content/plugins/aokranj/overrides"'
+                flags="g" />
+        <replaceregexp
+                file="${app.dir}/bootstrap.js"
+                match='"ux"'
+                replace='"/wp-content/plugins/aokranj/ux"'
+                flags="g" />
+        <replaceregexp
+                file="${app.dir}/bootstrap.js"
+                match="bootstrap.json"
+                replace="/wp-content/plugins/aokranj/bootstrap.json"
+                flags="g" />
+    </target>
+
+</project>
