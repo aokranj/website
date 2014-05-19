@@ -1,0 +1,5 @@
+# extjs
+ext
+build
+packages/*/build/.sass-cache
+.sencha_backup

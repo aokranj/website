@@ -112,7 +112,10 @@ class AOKranj_Admin extends AOKranj
 
     public function admin_menu()
     {
-        add_menu_page('AO Kranj', 'AO Kranj', 'read', self::ID . '/app.php');
+        $svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><g></g><path d="M28.438 0.438c-1.247-0.44-2.476-0.19-3.5 0.375-0.971 0.536-1.775 1.342-2.313 2.25h-0.063c-0.024 0.033-0.038 0.092-0.063 0.125-1.135 1.509-3.033 2.978-3.688 5.438v0.188c-0.144 1.653 0.755 3.048 1.875 3.938l0.25 0.25h0.313c1.479 0.112 2.641-0.593 3.563-1.313s1.722-1.464 2.438-1.875v-0.063c1.884-1.267 4.115-2.982 4.688-5.688v-0.125c0.070-1.186-0.699-2.113-1.438-2.563s-1.464-0.65-1.875-0.875l-0.063-0.063h-0.125zM27.75 2.313c0.019 0.010 0.044-0.010 0.063 0 0.626 0.317 1.298 0.576 1.688 0.813 0.386 0.235 0.437 0.31 0.438 0.625-0.411 1.754-1.963 3.145-3.688 4.313-0.025 0.017-0.038 0.046-0.063 0.063-1.027 0.608-1.877 1.416-2.625 2-0.639 0.499-1.182 0.693-1.813 0.75-0.514-0.519-0.94-1.134-0.938-1.75 0.477-1.656 2.038-3.039 3.375-4.875l0.063-0.063c0.354-0.639 0.978-1.268 1.625-1.625 0.626-0.346 1.26-0.447 1.875-0.25z" fill="#000000" /><path d="M13.172 21.246c0.105-0.162 0.505-0.571 1.041-1.204l0.008-0.050c1.129-1.389 3.059-2.774 4.973-4.857l0.126-0.126c0.855-1.066 1.692-1.925 2.518-2.46l-1.24-2.66c-1.68 1.087-2.89 2.463-3.884 3.69l-0.048-0.037c-1.286 1.399-3.322 2.823-5.17 5.095-0.308 0.363-0.879 0.892-1.451 1.781l3.127 0.828z" fill="#000000" /><path d="M0.96 28.029c-0.429-1.251-0.168-2.478 0.407-3.496 0.545-0.966 1.358-1.762 2.271-2.292l0.001-0.063c0.033-0.024 0.093-0.037 0.126-0.061 1.52-1.121 3.006-3.006 5.471-3.638l0.188 0.002c1.654-0.129 3.041 0.783 3.92 1.911l0.248 0.252-0.003 0.313c0.099 1.48-0.617 2.636-1.345 3.55s-1.48 1.708-1.897 2.42l-0.063-0.001c-1.284 1.872-3.020 4.087-5.73 4.635l-0.125-0.001c-1.187 0.059-2.107-0.718-2.549-1.461s-0.637-1.47-0.858-1.883l-0.062-0.063 0.001-0.125zM2.841 27.358c0.010 0.019-0.010 0.043-0.001 0.063 0.311 0.629 0.564 1.303 0.797 1.695 0.231 0.388 0.306 0.44 0.621 0.443 1.757-0.395 3.163-1.935 4.346-3.648 0.017-0.025 0.046-0.037 0.063-0.062 0.618-1.021 1.433-1.864 2.024-2.607 0.505-0.634 0.704-1.175 0.767-1.806-0.515-0.518-1.126-0.95-1.741-0.953-1.66 0.462-3.057 2.010-4.906 3.33l-0.063 0.062c-0.642 0.348-1.277 0.967-1.64 1.61-0.351 0.623-0.458 1.256-0.267 1.873z" fill="#000000" /><path d="M12.455 21.093c0.099-0.165 0.487-0.586 1.003-1.236l0.006-0.050c1.086-1.423 2.971-2.868 4.819-5.009l0.122-0.129c0.822-1.093 1.631-1.977 2.44-2.537l-1.323-2.62c-1.645 1.139-2.812 2.552-3.767 3.809l-0.049-0.036c-1.241 1.439-3.232 2.925-5.009 5.254-0.296 0.372-0.85 0.919-1.395 1.825l3.151 0.73z" fill="#000000" /></svg>';
+        $icon = 'data:image/svg+xml;base64,' . base64_encode($svg);
+        
+        add_menu_page('AO Kranj', 'AO Kranj', 'read', self::ID . '/app.php', null, $icon, 3);
     }
 
     public function admin_init()
@@ -127,16 +130,14 @@ class AOKranj_Admin extends AOKranj
         {
             case 'aokranj/app.php':
                 // ext
-                wp_enqueue_style('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'bootstrap.css', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-ext', AOKRANJ_PLUGIN_URL . 'ext/ext-dev.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'bootstrap.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . 'app.js', array(), AOKRANJ_VERSION);
-
-                // app
-                //wp_enqueue_style('aokranj-app', AOKRANJ_PLUGIN_URL . 'resources/app.css', array(), AOKRANJ_VERSION);
-                //wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . 'resources/app.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_style('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'app/bootstrap.css', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-ext', AOKRANJ_PLUGIN_URL . 'app/ext/ext-dev.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'app/bootstrap.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . 'app/app.js', array(), AOKRANJ_VERSION);
                 break;
         }
+        
+        wp_enqueue_style('aokranj-css', AOKRANJ_PLUGIN_URL . 'aokranj.css', array(), AOKRANJ_VERSION);
     }
     
     private function getRequestSort()
