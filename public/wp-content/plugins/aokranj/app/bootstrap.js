@@ -13,11 +13,19 @@ Ext.Loader.addClassPathMappings({
 Ext.ClassManager.addNameAlternateMappings({
   "AO.Application": [],
   "AO.controller.Main": [],
-  "AO.controller.Vzpon": [],
+  "AO.controller.admin.PrenosPodatkov": [],
+  "AO.controller.admin.Statistika": [],
+  "AO.controller.uporabnik.Nastavitve": [],
+  "AO.controller.uporabnik.Statistika": [],
+  "AO.controller.vzpon.Dodaj": [],
+  "AO.controller.vzpon.Vzponi": [],
   "AO.model.Vzpon": [],
   "AO.store.Vzponi": [],
   "AO.view.Main": [],
+  "AO.view.admin.PrenosPodatkov": [],
+  "AO.view.admin.Statistika": [],
   "AO.view.uporabnik.Nastavitve": [],
+  "AO.view.uporabnik.Statistika": [],
   "AO.view.vzpon.Dodaj": [],
   "AO.view.vzpon.Orodja": [],
   "AO.view.vzpon.Tabela": [],
@@ -871,7 +879,12 @@ Ext.ClassManager.addNameAlternateMappings({
 Ext.ClassManager.addNameAliasMappings({
   "AO.Application": [],
   "AO.controller.Main": [],
-  "AO.controller.Vzpon": [],
+  "AO.controller.admin.PrenosPodatkov": [],
+  "AO.controller.admin.Statistika": [],
+  "AO.controller.uporabnik.Nastavitve": [],
+  "AO.controller.uporabnik.Statistika": [],
+  "AO.controller.vzpon.Dodaj": [],
+  "AO.controller.vzpon.Vzponi": [],
   "AO.model.Vzpon": [],
   "AO.store.Vzponi": [
     "store.ao-vzponi"
@@ -879,8 +892,17 @@ Ext.ClassManager.addNameAliasMappings({
   "AO.view.Main": [
     "widget.ao-main"
   ],
+  "AO.view.admin.PrenosPodatkov": [
+    "widget.ao-admin-prenospodatkov"
+  ],
+  "AO.view.admin.Statistika": [
+    "widget.ao-admin-statistika"
+  ],
   "AO.view.uporabnik.Nastavitve": [
     "widget.ao-uporabnik-nastavitve"
+  ],
+  "AO.view.uporabnik.Statistika": [
+    "widget.ao-uporabnik-statistika"
   ],
   "AO.view.vzpon.Dodaj": [
     "widget.ao-vzpon-dodaj"

@@ -16,18 +16,14 @@ Ext.define('AO.Application', {
         'Ext.chart.series.Pie'
     ],
 
-    views: [
-        'Main',
-        'vzpon.Vzponi',
-        'vzpon.Orodja',
-        'vzpon.Tabela',
-        'vzpon.Dodaj',
-        'uporabnik.Nastavitve'
-    ],
-
     controllers: [
         'Main',
-        'Vzpon'
+        'vzpon.Vzponi',
+        'vzpon.Dodaj',
+        'uporabnik.Nastavitve',
+        'uporabnik.Statistika',
+        'admin.PrenosPodatkov',
+        'admin.Statistika'
     ],
 
     stores: [
@@ -35,8 +31,6 @@ Ext.define('AO.Application', {
     ],
     
     init: function() {
-        AO.nonce = Ext.get('aokranj').getAttribute('data-nonce');
-        
         Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
     },
     

@@ -1,5 +1,9 @@
-Ext.define('AO.controller.Vzpon', {
+Ext.define('AO.controller.vzpon.Dodaj', {
     extend: 'Ext.app.Controller',
+    
+    views: [
+        'vzpon.Dodaj'
+    ],
     
     refs: [
         {ref: 'form', selector: 'ao-dodaj-vzpon'}

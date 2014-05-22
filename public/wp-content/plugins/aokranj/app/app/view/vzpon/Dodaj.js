@@ -5,6 +5,7 @@ Ext.define('AO.view.vzpon.Dodaj', {
     title: 'Dodaj vzpon',
     glyph: 'xe60f@aokranj',
     border: false,
+    bodyPadding: '0 6 20 6',
     
     url: '/wp-admin/admin-ajax.php?action=dodaj_vzpon',
     method: 'POST',
@@ -12,7 +13,7 @@ Ext.define('AO.view.vzpon.Dodaj', {
     fieldDefaults: {
         labelWidth: 120,
         width: 360,
-        margin: '10'
+        margin: '12 6'
     },
 
     items: [{
@@ -24,7 +25,7 @@ Ext.define('AO.view.vzpon.Dodaj', {
         queryMode: 'local',
         lastQuery: '',
         emptyText: '-- Izberite tip vzpona --',
-        margin: '10 10 30 10',
+        margin: '6 6 20 6',
         editable: false,
         store: {
             type: 'json',
@@ -39,8 +40,8 @@ Ext.define('AO.view.vzpon.Dodaj', {
     },{
         xtype: 'panel',
         layout: 'column',
-        margin: '0 0 24 0',
         border: false,
+        margin: '0 0 10 0',
         items: [{
             xtype: 'container',
             width: 400,

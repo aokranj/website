@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /**
  * AOKranj administration
  *
@@ -28,6 +30,7 @@ class AOKranj_Admin extends AOKranj
             
         add_action('wp_ajax_vzponi', array(&$this, 'vzponi'));
         add_action('wp_ajax_dodaj_vzpon', array(&$this, 'dodaj_vzpon'));
+        add_action('wp_ajax_prenos_podatkov', array(&$this, 'prenos_podatkov'));
     }
     
     /**
@@ -120,6 +123,30 @@ class AOKranj_Admin extends AOKranj
 
     public function admin_init()
     {
+        /*
+        add_action('show_user_profile', array(&$this, 'user_profile_extra_fields'));
+        add_action('edit_user_profile', array(&$this, 'user_profile_extra_fields'));
+         * 
+         */
+    }
+    
+    public function user_profile_extra_fields()
+    {
+        echo '
+        <h3>Extra profile information</h3>
+
+        <table class="form-table">
+
+            <tr>
+                <th><label for="twitter">Twitter</label></th>
+
+                <td>
+                    <input type="text" name="twitter" id="twitter" value="' . esc_attr(get_the_author_meta('twitter', get_current_user_id())) . '" class="regular-text" /><br />
+                    <span class="description">Please enter your Twitter username.</span>
+                </td>
+            </tr>
+
+        </table>';
     }
 
     public function admin_enqueue_scripts()
@@ -243,9 +270,7 @@ class AOKranj_Admin extends AOKranj
             'total'   => $total,
         );
 
-        echo json_encode($response);
-        
-        die;
+        die(json_encode($response));
     }
     
     public function dodaj_vzpon()
@@ -281,18 +306,262 @@ class AOKranj_Admin extends AOKranj
         // read from db
         $vzpon = $wpdb->get_row("SELECT * FROM " . $this->table_vzponi . " WHERE id = " . $wpdb->insert_id);
         
+        $response = array(
+            'success' => true,
+            'data'    => $vzpon,
+            'msg'     => 'Vzpon je bil uspešno dodan.'
+        );
+
+        die(json_encode($response));
+    }
+    
+    /**
+     * Prenos podatkov
+     */
+    
+    private $currentUser;
+    private $users = array();
+    private $usersById = array();
+    private $usersByUserName = array();
+    
+    public function prenos_podatkov()
+    {
+        define('WP_IMPORTING', true);
+        
+        $nonce = filter_input(INPUT_POST, 'nonce');
+        wp_verify_nonce($nonce, 'aokranj-app');
+        
+        ini_set('max_execution_time', 600);
+        set_time_limit(600);
+        
+        $this->prenesiUporabnike();
+        
+        $this->prenesiUtrinke();
+        
+        // extract user data
+        $users = array();
+        foreach ($this->users as $user)
+        {
+            $data = $user->data;
+            unset($data->user_pass);
+            $users[] = $data;
+        }
+        
         // build response
         $response = array(
             'success' => true,
-            'msg'     => 'Vzpon je bil uspešno dodan.',
-            'data'    => $vzpon
+            'data'    => array(
+                'users' => $users,
+            ),
+            'msg' => 'Uspešno prenešenih uporabnikov: ' . count($users),
         );
-
-        // encode it
-        echo json_encode($response);
-
-        // must die in admin-ajax.php call
-        die;
+        
+        die(json_encode($response));
     }
+    
+    private function prenesiUporabnike()
+    {
+        global $wpdb;
+        $aodb = $this->aodb();
+        
+        $users = array();
+        $ao_users = $aodb->get_results('SELECT * FROM member');
+        $total = count($ao_users);
+        
+        foreach ($ao_users as $i => $ao_user)
+        {
+            // check if user already exists
+            $wp_user = get_user_by('login', $ao_user->userName);
+            if ($wp_user)
+            {
+                $this->users[] = $wp_user;
+                $this->usersById[$ao_user->memberId] = $wp_user;
+                $this->usersByUserName[$ao_user->userName] = $wp_user;
+                continue;
+            }
+            
+            // skip if no username or email
+            if (empty($ao_user->userName) && empty($ao_user->email))
+            {
+                print_r(['no data',$ao_user]);
+                continue;
+            }
+            
+            // insert wordpress user
+            $wp_user_data = array(
+                'user_login'    => $ao_user->userName,
+                'user_pass'     => wp_generate_password(12, false),
+                'user_nicename' => $ao_user->name . ' ' . $ao_user->surname,
+                'first_name'    => $ao_user->name,
+                'last_name'     => $ao_user->surname,
+            );
+            if (!empty($ao_user->email) && strlen(trim($ao_user->email)))
+            {
+                $wp_user_data['user_email'] = $ao_user->email;
+            }
+            
+            $wp_user_id = wp_insert_user($wp_user_data);
 
+            // error inserting user
+            if (is_wp_error($wp_user_id))
+            {
+                print_r(['unable to insert user', $ao_user, $wp_user_id]);
+                continue;
+            }
+            
+            // set user status
+            $wpdb->query(sprintf(
+                'UPDATE %s SET user_status = %d WHERE ID = %d',
+                esc_sql($wpdb->users),
+                self::USER_STATUS_WAITING,
+                $wp_user_id
+            ));
+            
+            // load wordpress user
+            $wp_user = get_user_by('id', $wp_user_id);
+
+            // unable to load user
+            if (is_wp_error($wp_user))
+            {
+                print_r(['unable to load user', $ao_user, $wp_user]);
+                continue;
+            }
+            
+            // add to collection mapped by old user id
+            $this->users[] = $wp_user;
+            $this->usersById[$ao_user->memberId] = $wp_user;
+            $this->usersByUserName[$ao_user->userName] = $wp_user;
+        }
+    }
+    
+    private function prenesiUtrinke()
+    {
+        /**
+         * DELETE FROM `wp_posts` WHERE ID > 17;
+         * DELETE FROM `wp_postmeta` WHERE post_id > 17;
+         */
+        
+        add_filter('upload_dir', array(&$this, 'utrinekUploadDir'));
+        
+        global $wpdb;
+        $aodb = $this->aodb();
+        
+        $posts = array();
+        
+        //$utrinki = $aodb->get_results('SELECT * FROM utrinek LIMIT 0, 10');
+        $utrinki = $aodb->get_results('SELECT * FROM utrinek');
+        
+        $path_root = '/home/bojan/www/aokranj';
+        $path_utrinki = $path_root . '/pic/utrinek';
+        
+        $tmp_dir = sys_get_temp_dir();
+        
+        foreach ($utrinki as $utrinek)
+        {
+            if (isset($this->usersByUserName[$utrinek->author]))
+            {
+                // get wordpress user reference
+                $user = $this->usersByUserName[$utrinek->author];
+                
+                $this->currentUser = $user;
+                
+                // check if post exists
+                $exists = $wpdb->get_var(sprintf(
+                    'SELECT COUNT(ID) FROM %s WHERE post_author = %d AND post_title = \'%s\' AND post_date = \'%s\'',
+                    $wpdb->posts,
+                    $user->ID,
+                    esc_sql($utrinek->destination),
+                    esc_sql(date('Y-m-d H:i:s', strtotime($utrinek->valid_from)))
+                ));
+                if ($exists)
+                {
+                    continue;
+                }
+                
+                // create post
+                $data = array(
+                    'post_type' => 'post',
+                    'post_status' => 'publish',
+                    'post_author' => $user->ID,
+                    'post_content' => $utrinek->content, 
+                    'post_title' => $utrinek->destination,
+                    'post_date' => $utrinek->valid_from,
+                    'post_date_gmt' => $utrinek->valid_from,
+                );
+                $post_id = wp_insert_post($data);
+                
+                // read old images
+                $path_utrinek = $path_utrinki . '/' . $utrinek->author;
+                
+                $attachments = array();
+
+                // insert attachments
+                for ($i = 1; $i < 6; $i++)
+                {
+                    $file_name = 'utrinek_' . $utrinek->utrinekId . '_' . $i . '.jpg';
+                    $source = $path_utrinek . '/' . $file_name;
+                    
+                    if (!file_exists($source))
+                    {
+                        continue;
+                    }
+                    
+                    $tmp_name = $tmp_dir . '/' . $file_name;
+                    
+                    // create a copy because media_handle_sideload() moves the file
+                    if (!copy($source, $tmp_name))
+                    {
+                        print_r(['unable to create temp image', $source, $tmp_name]);
+                        continue;
+                    }
+                    
+                    $file = array(
+                        'tmp_name' => $tmp_name,
+                        'name' => basename($source),
+                        'type' => 'image/jpeg',
+                        'size' => filesize($source)
+                    );
+                    
+                    $post_data = array(
+                        'post_author' => $user->ID
+                    );
+                    
+                    $file_id = media_handle_sideload($file, $post_id, null, $post_data);
+                    
+                    if (is_wp_error($file_id))
+                    {
+                        print_r(['unable to add image', $source, $tmp_name]);
+                        continue;
+                    }
+                    
+                    $attachments[] = $file_id;
+                }
+                
+                // insert gallery
+                if (count($attachments) > 0)
+                {
+                    $gallery = '[gallery link="file" ids="' . implode(',', $attachments) . '"]';
+                    $content = $utrinek->content . PHP_EOL . PHP_EOL . $gallery;
+                    
+                    $data = array(
+                        'ID' => $post_id,
+                        'post_content' => $content
+                    );
+                    
+                    $post_id = wp_update_post($data);
+                }
+            }
+        }
+        
+        return $posts;
+    }
+    
+    public function utrinekUploadDir($param)
+    {
+        $param['subdir'] = '/pic/utrinek/' . $this->currentUser->user_login;
+        $param['path'] = $param['basedir'] . $param['subdir'];
+        $param['url'] = $param['baseurl'] . $param['subdir'];
+        
+        return $param;
+    }
 }

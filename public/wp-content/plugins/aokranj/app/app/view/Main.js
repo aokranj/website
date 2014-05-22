@@ -10,14 +10,44 @@ Ext.define('AO.view.Main', {
     stateful: true,
     stateId: 'AO.view.Main',
 
-    items: [{
-        xtype: 'ao-vzponi'
-    },{
-        xtype: 'ao-vzpon-dodaj'
-    },{
-        xtype: 'ao-uporabnik-nastavitve'
-    }],
-
+    initComponent: function() {
+        this.callParent();
+        
+        this.add([{
+            xtype: 'ao-vzponi'
+        },{
+            xtype: 'ao-vzpon-dodaj'
+        },{
+            xtype: 'ao-uporabnik-nastavitve'
+        },{
+            xtype: 'ao-uporabnik-statistika'
+        }]);
+        
+        if (AO.User.user_level > 7) {
+            this.add({
+                xtype: 'ao-admin-prenospodatkov'
+            },{
+                xtype: 'ao-admin-statistika'
+            });
+        }
+        
+        this.getTabBar().insert(0, {
+            xtype: 'tbtext',
+            cls: 'ao-tab-text',
+            text: 'Živjo ' + AO.User.display_name,
+            margin: '0 4 0 0'
+        });
+        
+        if (AO.User.user_level > 7) {
+            this.getTabBar().insert(5, {
+                xtype: 'tbtext',
+                cls: 'ao-tab-text',
+                text: 'AO Kranj Administracija',
+                margin: '0 4'
+            });
+        }
+    },
+    
     applyState: function(state) {
         if (state) {
             this.setActiveTab(state.activeTab);

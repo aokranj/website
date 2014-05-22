@@ -44,9 +44,13 @@ class AOKranj
     const ID = 'aokranj';
     const NAME = 'AO Kranj';
     const VERSION = '1.0';
+    
+    const USER_STATUS_NORMAL  = 0;
+    const USER_STATUS_WAITING = 2;
 
     protected $aodb = null;
     protected $prefix = 'ao_';
+    
     protected $table_vzponi = 'ao_vzponi';
 
     public function __construct()
@@ -123,7 +127,6 @@ class AOKranj
         
         $ao_field = strstr($username, '@') ? 'email' : 'userName';
         $wp_field = strstr($username, '@') ? 'user_email' : 'user_login';
-        $wp_users = $wpdb->prefix . 'users';
 
         $ao_user = $aodb->get_row(sprintf(
             'SELECT * FROM member WHERE %s = \'%s\' AND userPass = \'%s\'',
@@ -133,10 +136,11 @@ class AOKranj
         ));
 
         $wp_user = $wpdb->get_row(sprintf(
-            'SELECT * FROM %s WHERE %s = \'%s\' AND user_status = 2',
-            esc_sql($wp_users),
+            'SELECT * FROM %s WHERE %s = \'%s\' AND user_status = %d',
+            esc_sql($wpdb->users),
             esc_sql($wp_field),
-            esc_sql($username)
+            esc_sql($username),
+            self::USER_STATUS_WAITING
         ));
 
         if (!$ao_user || !$wp_user)
@@ -145,9 +149,10 @@ class AOKranj
         }
         
         $success = $wpdb->query(sprintf(
-            'UPDATE %s SET user_pass = \'%s\', user_status = 0 WHERE ID = %d',
-            esc_sql($wp_users),
+            'UPDATE %s SET user_pass = \'%s\', user_status = %d WHERE ID = %d',
+            esc_sql($wpdb->users),
             esc_sql(wp_hash_password($password)),
+            self::USER_STATUS_NORMAL,
             $wp_user->ID
         ));
         

@@ -1,6 +1,10 @@
 Ext.define('AO.controller.Main', {
     extend: 'Ext.app.Controller',
     
+    views: [
+        'Main'
+    ],
+    
     refs: [
         {ref: 'main', selector: 'ao-main'}
     ],
