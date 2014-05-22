@@ -350,9 +350,7 @@ class AOKranj_Admin extends AOKranj
         // build response
         $response = array(
             'success' => true,
-            'data'    => array(
-                'users' => $users,
-            ),
+            'data'    => array(),
             'msg' => 'Uspešno prenešenih uporabnikov: ' . count($users),
         );
         
@@ -498,10 +496,23 @@ class AOKranj_Admin extends AOKranj
                 // insert attachments
                 for ($i = 1; $i < 6; $i++)
                 {
-                    $file_name = 'utrinek_' . $utrinek->utrinekId . '_' . $i . '.jpg';
-                    $source = $path_utrinek . '/' . $file_name;
+                    $file_name1 = 'utrinek_' . $utrinek->utrinekId . '_' . $i . '.jpg';
+                    $file_name2 = 'utrinek_' . $utrinek->utrinekId . '_0' . $i . '.jpg';
                     
-                    if (!file_exists($source))
+                    $source1 = $path_utrinek . '/' . $file_name1;
+                    $source2 = $path_utrinek . '/' . $file_name2;
+                    
+                    if (file_exists($source1))
+                    {
+                        $file_name = $file_name1;
+                        $source = $source1;
+                    }
+                    else if (file_exists($source2))
+                    {
+                        $file_name = $file_name2;
+                        $source = $source2;
+                    }
+                    else 
                     {
                         continue;
                     }
