@@ -23,7 +23,7 @@ Ext.define('AO.controller.admin.PrenosPodatkov', {
         var submit = form.down('button[action=submit]');
         
         var timeout = Ext.clone(Ext.Ajax.timeout);
-        Ext.Ajax.timeout = 600000;
+        Ext.Ajax.timeout = 3600000;
         
         submit.disable();
         

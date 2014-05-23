@@ -11,26 +11,14 @@
  */
 
 /**
- * Dump anything
+ * Load configuration
  */
-function dump($data, $simple = true)
-{
-    echo '<pre style="font-family:\'Lucida Grande\',\'Lucida Sans Unicode\',Trebuchet;font-size:11px;border:1px solid #606060;color:#606060;background:#fafafa;margin:10px;padding:8px;">';
-    $simple ? print_r($data) : var_dump($data);
-    echo '</pre>';
-}
+require_once 'config.php';
 
 /**
  * Global plugin instance
  */
 $GLOBALS['AOKranj'] = new AOKranj();
-
-/**
- * Plugin constants
- */
-define('AOKRANJ_VERSION', '1.0');
-define('AOKRANJ_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('AOKRANJ_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 /**
  * AOKranj

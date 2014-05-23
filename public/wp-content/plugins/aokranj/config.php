@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * AO Kranj Wordpress plugin settings
+ */
+
+define('AOKRANJ_PLUGIN_VERSION', '1.0');
+define('AOKRANJ_PLUGIN_URL', rtrim(plugin_dir_url(__FILE__), '/'));
+define('AOKRANJ_PLUGIN_DIR', rtrim(plugin_dir_path(__FILE__), '/'));
+
+/**
+ * AO Kranj old website settings
+ */
+define('AOKRANJ_OLD_DIR', '/home/bojan/www/aokranj');
+
+define('AO_DB_NAME', 'aokranj');
+define('AO_DB_USER', 'root');
+define('AO_DB_PASSWORD', 'sql123');
+define('AO_DB_HOST', 'localhost');
+define('AO_DB_CHARSET', 'utf8');
+define('AO_DB_COLLATE', '');
+
+/**
+ * Temporary
+ */
+function dump($data, $simple = true)
+{
+    echo '<pre style="font-family:\'Lucida Grande\',\'Lucida Sans Unicode\',Trebuchet;font-size:11px;border:1px solid #606060;color:#606060;background:#fafafa;margin:10px;padding:8px;">';
+    $simple ? print_r($data) : var_dump($data);
+    echo '</pre>';
+}

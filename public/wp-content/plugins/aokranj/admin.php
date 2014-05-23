@@ -118,7 +118,7 @@ class AOKranj_Admin extends AOKranj
         $svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><g></g><path d="M28.438 0.438c-1.247-0.44-2.476-0.19-3.5 0.375-0.971 0.536-1.775 1.342-2.313 2.25h-0.063c-0.024 0.033-0.038 0.092-0.063 0.125-1.135 1.509-3.033 2.978-3.688 5.438v0.188c-0.144 1.653 0.755 3.048 1.875 3.938l0.25 0.25h0.313c1.479 0.112 2.641-0.593 3.563-1.313s1.722-1.464 2.438-1.875v-0.063c1.884-1.267 4.115-2.982 4.688-5.688v-0.125c0.070-1.186-0.699-2.113-1.438-2.563s-1.464-0.65-1.875-0.875l-0.063-0.063h-0.125zM27.75 2.313c0.019 0.010 0.044-0.010 0.063 0 0.626 0.317 1.298 0.576 1.688 0.813 0.386 0.235 0.437 0.31 0.438 0.625-0.411 1.754-1.963 3.145-3.688 4.313-0.025 0.017-0.038 0.046-0.063 0.063-1.027 0.608-1.877 1.416-2.625 2-0.639 0.499-1.182 0.693-1.813 0.75-0.514-0.519-0.94-1.134-0.938-1.75 0.477-1.656 2.038-3.039 3.375-4.875l0.063-0.063c0.354-0.639 0.978-1.268 1.625-1.625 0.626-0.346 1.26-0.447 1.875-0.25z" fill="#000000" /><path d="M13.172 21.246c0.105-0.162 0.505-0.571 1.041-1.204l0.008-0.050c1.129-1.389 3.059-2.774 4.973-4.857l0.126-0.126c0.855-1.066 1.692-1.925 2.518-2.46l-1.24-2.66c-1.68 1.087-2.89 2.463-3.884 3.69l-0.048-0.037c-1.286 1.399-3.322 2.823-5.17 5.095-0.308 0.363-0.879 0.892-1.451 1.781l3.127 0.828z" fill="#000000" /><path d="M0.96 28.029c-0.429-1.251-0.168-2.478 0.407-3.496 0.545-0.966 1.358-1.762 2.271-2.292l0.001-0.063c0.033-0.024 0.093-0.037 0.126-0.061 1.52-1.121 3.006-3.006 5.471-3.638l0.188 0.002c1.654-0.129 3.041 0.783 3.92 1.911l0.248 0.252-0.003 0.313c0.099 1.48-0.617 2.636-1.345 3.55s-1.48 1.708-1.897 2.42l-0.063-0.001c-1.284 1.872-3.020 4.087-5.73 4.635l-0.125-0.001c-1.187 0.059-2.107-0.718-2.549-1.461s-0.637-1.47-0.858-1.883l-0.062-0.063 0.001-0.125zM2.841 27.358c0.010 0.019-0.010 0.043-0.001 0.063 0.311 0.629 0.564 1.303 0.797 1.695 0.231 0.388 0.306 0.44 0.621 0.443 1.757-0.395 3.163-1.935 4.346-3.648 0.017-0.025 0.046-0.037 0.063-0.062 0.618-1.021 1.433-1.864 2.024-2.607 0.505-0.634 0.704-1.175 0.767-1.806-0.515-0.518-1.126-0.95-1.741-0.953-1.66 0.462-3.057 2.010-4.906 3.33l-0.063 0.062c-0.642 0.348-1.277 0.967-1.64 1.61-0.351 0.623-0.458 1.256-0.267 1.873z" fill="#000000" /><path d="M12.455 21.093c0.099-0.165 0.487-0.586 1.003-1.236l0.006-0.050c1.086-1.423 2.971-2.868 4.819-5.009l0.122-0.129c0.822-1.093 1.631-1.977 2.44-2.537l-1.323-2.62c-1.645 1.139-2.812 2.552-3.767 3.809l-0.049-0.036c-1.241 1.439-3.232 2.925-5.009 5.254-0.296 0.372-0.85 0.919-1.395 1.825l3.151 0.73z" fill="#000000" /></svg>';
         $icon = 'data:image/svg+xml;base64,' . base64_encode($svg);
         
-        add_menu_page('AO Kranj', 'AO Kranj', 'read', self::ID . '/app.php', null, $icon, 3);
+        add_menu_page('Moj AO', 'Moj AO', 'read', self::ID . '/app.php', null, $icon, 3);
     }
 
     public function admin_init()
@@ -157,14 +157,60 @@ class AOKranj_Admin extends AOKranj
         {
             case 'aokranj/app.php':
                 // ext
-                wp_enqueue_style('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'app/bootstrap.css', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-ext', AOKRANJ_PLUGIN_URL . 'app/ext/ext-dev.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . 'app/bootstrap.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . 'app/app.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_style('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.css', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-ext', AOKRANJ_PLUGIN_URL . '/app/ext/ext-dev.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . '/app/app.js', array(), AOKRANJ_VERSION);
                 break;
         }
         
-        wp_enqueue_style('aokranj-css', AOKRANJ_PLUGIN_URL . 'aokranj.css', array(), AOKRANJ_VERSION);
+        wp_enqueue_style('aokranj-css', AOKRANJ_PLUGIN_URL . '/aokranj.css', array(), AOKRANJ_VERSION);
+    }
+    
+    
+    
+    /**
+     * API functions
+     */
+    
+    public function vzponi()
+    {
+        global $wpdb;
+        
+        $page = $this->getRequestPage();
+        $start = $this->getRequestStart();
+        $limit = $this->getRequestLimit();
+        $sort = $this->getRequestSort();
+        
+        $vzponi = $wpdb->get_results(sprintf('
+            SELECT *
+            FROM %s
+            WHERE user_id = %d
+            ORDER BY %s %s
+            LIMIT %d, %d',
+            $this->table_vzponi,
+            get_current_user_id(),
+            $sort['property'],
+            $sort['direction'],
+            $start,
+            $limit
+        ));
+        
+        $total = $wpdb->get_var(sprintf('
+            SELECT COUNT(id)
+            FROM %s
+            WHERE user_id = %d',
+            $this->table_vzponi,
+            get_current_user_id()
+        ));
+        
+        $response = array(
+            'success' => true,
+            'data'    => $vzponi,
+            'total'   => $total,
+        );
+
+        die(json_encode($response));
     }
     
     private function getRequestSort()
@@ -229,50 +275,6 @@ class AOKranj_Admin extends AOKranj
         return (!empty($limit)) ? $limit : 1;
     }
     
-    /**
-     * API functions
-     */
-    
-    public function vzponi()
-    {
-        global $wpdb;
-        
-        $page = $this->getRequestPage();
-        $start = $this->getRequestStart();
-        $limit = $this->getRequestLimit();
-        $sort = $this->getRequestSort();
-        
-        $vzponi = $wpdb->get_results(sprintf('
-            SELECT *
-            FROM %s
-            WHERE user_id = %d
-            ORDER BY %s %s
-            LIMIT %d, %d',
-            $this->table_vzponi,
-            get_current_user_id(),
-            $sort['property'],
-            $sort['direction'],
-            $start,
-            $limit
-        ));
-        
-        $total = $wpdb->get_var(sprintf('
-            SELECT COUNT(id)
-            FROM %s
-            WHERE user_id = %d',
-            $this->table_vzponi,
-            get_current_user_id()
-        ));
-        
-        $response = array(
-            'success' => true,
-            'data'    => $vzponi,
-            'total'   => $total,
-        );
-
-        die(json_encode($response));
-    }
-    
     public function dodaj_vzpon()
     {
         $nonce = filter_input(INPUT_POST, 'nonce');
@@ -317,41 +319,52 @@ class AOKranj_Admin extends AOKranj
     
     /**
      * Prenos podatkov
+     * 
+     * DELETE FROM `wp_posts` WHERE ID > 17;
+     * DELETE FROM `wp_postmeta` WHERE post_id > 17;
      */
     
     private $currentUser;
+    private $currentSlug;
+    
     private $users = array();
     private $usersById = array();
     private $usersByUserName = array();
+    private $posts = array();
+    private $reports = array();
+    private $vzponi = array();
     
     public function prenos_podatkov()
     {
+        // used by wordpress functions to skip some checks
         define('WP_IMPORTING', true);
         
+        // verify app nonce
         $nonce = filter_input(INPUT_POST, 'nonce');
         wp_verify_nonce($nonce, 'aokranj-app');
         
-        ini_set('max_execution_time', 600);
-        set_time_limit(600);
+        // set max execution time to 1h
+        ini_set('max_execution_time', 3600);
+        set_time_limit(3600);
         
         $this->prenesiUporabnike();
         
-        $this->prenesiUtrinke();
+        //$this->prenesiVzpone();
         
-        // extract user data
-        $users = array();
-        foreach ($this->users as $user)
-        {
-            $data = $user->data;
-            unset($data->user_pass);
-            $users[] = $data;
-        }
+        //$this->prenesiUtrinke();
+        
+        $this->prenesiReportaze();
         
         // build response
         $response = array(
             'success' => true,
-            'data'    => array(),
-            'msg' => 'Uspešno prenešenih uporabnikov: ' . count($users),
+            'data'    => array(
+                'users' => count($this->users),
+                'posts' => count($this->posts),
+                'reports' => count($this->reports),
+                'vzponi' => count($this->vzponi),
+            ),
+            'msg' => 'Prenos je uspel :)',
         );
         
         die(json_encode($response));
@@ -372,9 +385,7 @@ class AOKranj_Admin extends AOKranj
             $wp_user = get_user_by('login', $ao_user->userName);
             if ($wp_user)
             {
-                $this->users[] = $wp_user;
-                $this->usersById[$ao_user->memberId] = $wp_user;
-                $this->usersByUserName[$ao_user->userName] = $wp_user;
+                $this->addUserToCollection($wp_user, $ao_user);
                 continue;
             }
             
@@ -425,154 +436,391 @@ class AOKranj_Admin extends AOKranj
                 continue;
             }
             
-            // add to collection mapped by old user id
-            $this->users[] = $wp_user;
-            $this->usersById[$ao_user->memberId] = $wp_user;
-            $this->usersByUserName[$ao_user->userName] = $wp_user;
+            // add user to collection
+            $this->addUserToCollection($wp_user, $ao_user);
+            
+            $this->prenesiVzpone($wp_user, $ao_user);
         }
+    }
+    
+    private function prenesiVzpone()
+    {
+        global $wpdb;
+        $aodb = $this->aodb();
+        
+        // fields and values for the query
+        $fields = array();
+        $values = array();
+        
+        // get all ascents
+        $vzponi = $aodb->get_results('SELECT * FROM vzpon WHERE deleted IS NULL');
+        foreach ($vzponi as $i => $vzpon)
+        {
+            // get wordpress user for vzpon
+            if (!isset($this->usersById[$vzpon->memberId]))
+            {
+                continue;
+            }
+            $user = $this->usersById[$vzpon->memberId];
+            
+            // fix ascent
+            unset($vzpon->vzponId, $vzpon->memberId);
+            $vzpon->user_id = $user->ID;
+            
+            // add ascent reference
+            $this->vzponi[] = $vzpon;
+            
+            // process fields
+            $item = array();
+            foreach ($vzpon as $k => $v)
+            {
+                if ($i === 0)
+                {
+                    $fields[] = $k;
+                }
+                
+                switch ($k)
+                {
+                    case 'deleted':
+                        $item[] = (int)$v;
+                        break;
+                    default:
+                        $item[] = "'" . esc_sql($v) . "'";
+                        break;
+                }
+            }
+            $values[] = '(' . implode(',', $item) . ')';
+        }
+        
+        // build query
+        $query = sprintf(
+            'INSERT INTO %s (%s) VALUES %s',
+            $this->table_vzponi,
+            implode(',', $fields),
+            implode(',', $values)
+        );
+        
+        // insert ascents
+        $wpdb->query($query);
     }
     
     private function prenesiUtrinke()
     {
-        /**
-         * DELETE FROM `wp_posts` WHERE ID > 17;
-         * DELETE FROM `wp_postmeta` WHERE post_id > 17;
-         */
-        
-        add_filter('upload_dir', array(&$this, 'utrinekUploadDir'));
-        
         global $wpdb;
         $aodb = $this->aodb();
         
-        $posts = array();
+        // add upload folder filter
+        add_filter('upload_dir', array(&$this, 'utrinekUploadDir'));
         
-        //$utrinki = $aodb->get_results('SELECT * FROM utrinek LIMIT 0, 10');
-        $utrinki = $aodb->get_results('SELECT * FROM utrinek');
-        
-        $path_root = '/home/bojan/www/aokranj';
-        $path_utrinki = $path_root . '/pic/utrinek';
-        
+        // set root paths
+        $utrinki_dir = AOKRANJ_OLD_DIR . '/pic/utrinek';
         $tmp_dir = sys_get_temp_dir();
         
+        // select old posts
+        $utrinki = $aodb->get_results('SELECT * FROM utrinek WHERE deleted IS NULL');
         foreach ($utrinki as $utrinek)
         {
-            if (isset($this->usersByUserName[$utrinek->author]))
+            // find wordpress user
+            if (!isset($this->usersByUserName[$utrinek->author]))
             {
-                // get wordpress user reference
-                $user = $this->usersByUserName[$utrinek->author];
-                
-                $this->currentUser = $user;
-                
-                // check if post exists
-                $exists = $wpdb->get_var(sprintf(
-                    'SELECT COUNT(ID) FROM %s WHERE post_author = %d AND post_title = \'%s\' AND post_date = \'%s\'',
-                    $wpdb->posts,
-                    $user->ID,
-                    esc_sql($utrinek->destination),
-                    esc_sql(date('Y-m-d H:i:s', strtotime($utrinek->valid_from)))
-                ));
-                if ($exists)
+                continue;
+            }
+            $user = $this->usersByUserName[$utrinek->author];
+
+            // set current user for utrinekUploadDir()
+            $this->currentUser = $user;
+
+            // check if post already exists
+            $exists = $wpdb->get_var(sprintf(
+                'SELECT COUNT(ID) FROM %s WHERE post_author = %d AND post_title = \'%s\' AND post_date = \'%s\'',
+                $wpdb->posts,
+                $user->ID,
+                esc_sql($utrinek->destination),
+                esc_sql(date('Y-m-d H:i:s', strtotime($utrinek->valid_from)))
+            ));
+            if ($exists)
+            {
+                continue;
+            }
+
+            // create post
+            $data = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'post_author' => $user->ID,
+                'post_title' => $utrinek->destination,
+                'post_content' => $utrinek->content, 
+                'post_date' => $utrinek->valid_from,
+                'post_date_gmt' => $utrinek->valid_from,
+            );
+            $post_id = wp_insert_post($data);
+            $post = get_post($post_id);
+            $this->posts[] = get_post($post_id);
+            
+            //set current slug for reportUploadDir()
+            $this->currentSlug = $post->post_name;
+            
+            // main utrinek dir
+            $utrinek_dir = $utrinki_dir . '/' . $utrinek->author;
+            
+            // load texts
+            $text_file = $utrinek_dir . '/utrinek_' . $utrinek->utrinekId . '.txt';
+            $texts = $this->getPostTexts($text_file);
+
+            // read old images and insert attachments
+            $attachments = array();
+            for ($i = 1; $i < 6; $i++)
+            {
+                // filename can be utrinek_ID_1.jpg or utrinek_ID_01.jpg
+                $file_name1 = 'utrinek_' . $utrinek->utrinekId . '_' . $i . '.jpg';
+                $file_name2 = 'utrinek_' . $utrinek->utrinekId . '_0' . $i . '.jpg';
+                $source1 = $utrinek_dir . '/' . $file_name1;
+                $source2 = $utrinek_dir . '/' . $file_name2;
+                if (file_exists($source1))
+                {
+                    $file_name = $file_name1;
+                    $source = $source1;
+                }
+                else if (file_exists($source2))
+                {
+                    $file_name = $file_name2;
+                    $source = $source2;
+                }
+                else 
+                {
+                    continue;
+                }
+
+                // copy file to tmp folder because media_handle_sideload() moves the file
+                $tmp_name = $tmp_dir . '/' . $file_name;
+                if (!copy($source, $tmp_name))
+                {
+                    print_r(['unable to create temp image', $source, $tmp_name]);
+                    continue;
+                }
+
+                // upload file to wordpress
+                $file = array(
+                    'tmp_name' => $tmp_name,
+                    'name' => basename($source),
+                    'type' => 'image/jpeg',
+                    'size' => filesize($source)
+                );
+                $post_data = array(
+                    'post_title' => isset($texts[$i]) ? $texts[$i] : $utrinek->destination,
+                    'post_author' => $user->ID
+                );
+                $file_id = media_handle_sideload($file, $post_id, null, $post_data);
+                if (is_wp_error($file_id))
+                {
+                    print_r(['unable to add image', $source, $tmp_name]);
+                    continue;
+                }
+
+                // add attachment id to collection
+                $attachments[] = $file_id;
+            }
+
+            // insert gallery if we have some attachments
+            if (count($attachments) > 0)
+            {
+                $gallery = '[gallery link="file" ids="' . implode(',', $attachments) . '"]';
+                $content = $utrinek->content . PHP_EOL . PHP_EOL . $gallery;
+
+                $data = array(
+                    'ID' => $post_id,
+                    'post_content' => $content
+                );
+
+                $post_id = wp_update_post($data);
+            }
+        }
+        
+        // remove utrinek upload dir filter
+        remove_filter('upload_dir', array(&$this, 'utrinekUploadDir'));
+    }
+    
+    private function prenesiReportaze()
+    {
+        global $wpdb;
+        $aodb = $this->aodb();
+        
+        // add resport upload dir filter
+        add_filter('upload_dir', array(&$this, 'reportUploadDir'));
+        
+        // set paths
+        $reports_dir = AOKRANJ_OLD_DIR . '/pic/report/gallery';
+        $tmp_dir = sys_get_temp_dir();
+        
+        // get report category
+        $category = get_category_by_slug('reportaze');
+        
+        // select all reports
+        $reports = $aodb->get_results('SELECT * FROM report WHERE deleted IS NULL');
+        foreach ($reports as $report)
+        {
+            // set current user for reportUploadDir()
+            $user = get_user_by('id', 1);
+            $this->currentUser = $user;
+            
+            // check if post already exists
+            $exists = $wpdb->get_var(sprintf(
+                'SELECT COUNT(ID) FROM %s WHERE post_author = %d AND post_title = \'%s\' AND post_date = \'%s\'',
+                $wpdb->posts,
+                $user->ID,
+                esc_sql($report->title),
+                esc_sql(date('Y-m-d H:i:s', strtotime($report->last_change)))
+            ));
+            if ($exists)
+            {
+                continue;
+            }
+            
+            // create post
+            $data = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'post_author' => $user->ID,
+                'post_title' => $report->title,
+                'post_excerpt' => $report->abstract,
+                'post_content' => $report->content,
+                'post_date' => $report->last_change,
+                'post_date_gmt' => $report->last_change,
+            );
+            $post_id = wp_insert_post($data);
+            $post = get_post($post_id);
+            $this->reports[] = $post;
+            
+            //set current slug for reportUploadDir()
+            $this->currentSlug = $post->post_name;
+            
+            // set post category
+            wp_set_post_categories($post_id, array($category->cat_ID));
+            
+            // load texts
+            $text_file = $reports_dir . '/report_' . $report->reportId . '.txt';
+            $texts = $this->getPostTexts($text_file);
+            
+            // read old images and insert attachments
+            $attachments = array();
+            for ($i = 1; $i < 100; $i++)
+            {
+                // filename can be utrinek_ID_1.jpg or utrinek_ID_01.jpg
+                $file_name1 = 'report_' . $report->reportId . '_' . $i . '.jpg';
+                $file_name2 = 'report_' . $report->reportId . '_0' . $i . '.jpg';
+                $source1 = $reports_dir . '/' . $file_name1;
+                $source2 = $reports_dir . '/' . $file_name2;
+                if (file_exists($source1))
+                {
+                    $file_name = $file_name1;
+                    $source = $source1;
+                }
+                else if (file_exists($source2))
+                {
+                    $file_name = $file_name2;
+                    $source = $source2;
+                }
+                else 
                 {
                     continue;
                 }
                 
-                // create post
-                $data = array(
-                    'post_type' => 'post',
-                    'post_status' => 'publish',
-                    'post_author' => $user->ID,
-                    'post_content' => $utrinek->content, 
-                    'post_title' => $utrinek->destination,
-                    'post_date' => $utrinek->valid_from,
-                    'post_date_gmt' => $utrinek->valid_from,
-                );
-                $post_id = wp_insert_post($data);
-                
-                // read old images
-                $path_utrinek = $path_utrinki . '/' . $utrinek->author;
-                
-                $attachments = array();
+                // copy file to tmp folder because media_handle_sideload() moves the file
+                $tmp_name = $tmp_dir . '/' . $file_name;
+                if (!copy($source, $tmp_name))
+                {
+                    print_r(['unable to create temp image', $source, $tmp_name]);
+                    continue;
+                }
 
-                // insert attachments
-                for ($i = 1; $i < 6; $i++)
+                // upload file to wordpress
+                $file = array(
+                    'tmp_name' => $tmp_name,
+                    'name' => basename($source),
+                    'type' => 'image/jpeg',
+                    'size' => filesize($source)
+                );
+                $post_data = array(
+                    'post_title' => isset($texts[$i]) ? $texts[$i] : $report->title,
+                    'post_author' => $user->ID
+                );
+                $file_id = media_handle_sideload($file, $post_id, null, $post_data);
+                if (is_wp_error($file_id))
                 {
-                    $file_name1 = 'utrinek_' . $utrinek->utrinekId . '_' . $i . '.jpg';
-                    $file_name2 = 'utrinek_' . $utrinek->utrinekId . '_0' . $i . '.jpg';
-                    
-                    $source1 = $path_utrinek . '/' . $file_name1;
-                    $source2 = $path_utrinek . '/' . $file_name2;
-                    
-                    if (file_exists($source1))
-                    {
-                        $file_name = $file_name1;
-                        $source = $source1;
-                    }
-                    else if (file_exists($source2))
-                    {
-                        $file_name = $file_name2;
-                        $source = $source2;
-                    }
-                    else 
-                    {
-                        continue;
-                    }
-                    
-                    $tmp_name = $tmp_dir . '/' . $file_name;
-                    
-                    // create a copy because media_handle_sideload() moves the file
-                    if (!copy($source, $tmp_name))
-                    {
-                        print_r(['unable to create temp image', $source, $tmp_name]);
-                        continue;
-                    }
-                    
-                    $file = array(
-                        'tmp_name' => $tmp_name,
-                        'name' => basename($source),
-                        'type' => 'image/jpeg',
-                        'size' => filesize($source)
-                    );
-                    
-                    $post_data = array(
-                        'post_author' => $user->ID
-                    );
-                    
-                    $file_id = media_handle_sideload($file, $post_id, null, $post_data);
-                    
-                    if (is_wp_error($file_id))
-                    {
-                        print_r(['unable to add image', $source, $tmp_name]);
-                        continue;
-                    }
-                    
-                    $attachments[] = $file_id;
+                    print_r(['unable to add image', $source, $tmp_name]);
+                    continue;
                 }
-                
-                // insert gallery
-                if (count($attachments) > 0)
-                {
-                    $gallery = '[gallery link="file" ids="' . implode(',', $attachments) . '"]';
-                    $content = $utrinek->content . PHP_EOL . PHP_EOL . $gallery;
-                    
-                    $data = array(
-                        'ID' => $post_id,
-                        'post_content' => $content
-                    );
-                    
-                    $post_id = wp_update_post($data);
-                }
+
+                // add attachment id to collection
+                $attachments[] = $file_id;
+            }
+
+            // insert gallery if we have some attachments
+            if (count($attachments) > 0)
+            {
+                $gallery = '[gallery link="file" ids="' . implode(',', $attachments) . '"]';
+                $content = $report->content . PHP_EOL . PHP_EOL . $gallery;
+
+                $data = array(
+                    'ID' => $post_id,
+                    'post_content' => $content
+                );
+
+                $post_id = wp_update_post($data);
             }
         }
         
-        return $posts;
+        remove_filter('upload_dir', array(&$this, 'reportUploadDir'));
     }
     
     public function utrinekUploadDir($param)
     {
-        $param['subdir'] = '/pic/utrinek/' . $this->currentUser->user_login;
+        $param['subdir'] = '/arhiv/utrinki/' . strtolower($this->currentUser->user_login) . '/' . $this->currentSlug;
         $param['path'] = $param['basedir'] . $param['subdir'];
         $param['url'] = $param['baseurl'] . $param['subdir'];
         
         return $param;
+    }
+    
+    public function reportUploadDir($param)
+    {
+        $param['subdir'] = '/arhiv/reportaze/' . $this->currentSlug;
+        $param['path'] = $param['basedir'] . $param['subdir'];
+        $param['url'] = $param['baseurl'] . $param['subdir'];
+        
+        return $param;
+    }
+    
+    private function addUserToCollection($wp_user, $ao_user)
+    {
+        $this->users[] = $wp_user;
+        $this->usersById[$ao_user->memberId] = $wp_user;
+        $this->usersByUserName[$ao_user->userName] = $wp_user;
+    }
+    
+    private function getPostTexts($text_file)
+    {
+        $texts = array();
+        
+        if (is_file($text_file))
+        {
+            $lines = file($text_file);
+
+            if ($lines)
+            {
+                foreach ($lines as $line)
+                {
+                    list($num, $text) = explode(':', $line);
+                    $num = (int)$num;
+                    $text = trim($text);
+                    if (strlen($text) > 0)
+                    {
+                        $texts[$num] = $text;
+                    }
+                }
+            }
+        }
+        
+        return $texts;
     }
 }
