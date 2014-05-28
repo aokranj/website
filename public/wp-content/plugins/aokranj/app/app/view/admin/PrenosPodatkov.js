@@ -29,6 +29,8 @@ Ext.define('AO.view.admin.PrenosPodatkov', {
         xtype: 'textfield',
         fieldLabel: 'DocumentRoot',
         name: 'DocumentRoot',
+        hidden: true,
+        disabled: true,
         width: 400
     },{
         xtype: 'progressbar',

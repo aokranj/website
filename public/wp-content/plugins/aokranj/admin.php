@@ -157,14 +157,14 @@ class AOKranj_Admin extends AOKranj
         {
             case 'aokranj/app.php':
                 // ext
-                wp_enqueue_style('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.css', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-ext', AOKRANJ_PLUGIN_URL . '/app/ext/ext-dev.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.js', array(), AOKRANJ_VERSION);
-                wp_enqueue_script('aokranj-app', AOKRANJ_PLUGIN_URL . '/app/app.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_style('aokranj-admin-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.css', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-admin-ext', AOKRANJ_PLUGIN_URL . '/app/ext/ext-dev.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-admin-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.js', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-admin-app', AOKRANJ_PLUGIN_URL . '/app/app.js', array(), AOKRANJ_VERSION);
                 break;
         }
         
-        wp_enqueue_style('aokranj-css', AOKRANJ_PLUGIN_URL . '/aokranj.css', array(), AOKRANJ_VERSION);
+        wp_enqueue_style('aokranj-admin', AOKRANJ_PLUGIN_URL . '/admin.css', array(), AOKRANJ_VERSION);
     }
     
     
@@ -353,7 +353,7 @@ class AOKranj_Admin extends AOKranj
         
         //$this->prenesiUtrinke();
         
-        $this->prenesiReportaze();
+        //$this->prenesiReportaze();
         
         // build response
         $response = array(
@@ -400,9 +400,10 @@ class AOKranj_Admin extends AOKranj
             $wp_user_data = array(
                 'user_login'    => $ao_user->userName,
                 'user_pass'     => wp_generate_password(12, false),
-                'user_nicename' => $ao_user->name . ' ' . $ao_user->surname,
+                'user_nicename' => strtolower($ao_user->userName),
                 'first_name'    => $ao_user->name,
                 'last_name'     => $ao_user->surname,
+                'role'          => 'contributor',
             );
             if (!empty($ao_user->email) && strlen(trim($ao_user->email)))
             {
@@ -438,8 +439,6 @@ class AOKranj_Admin extends AOKranj
             
             // add user to collection
             $this->addUserToCollection($wp_user, $ao_user);
-            
-            $this->prenesiVzpone($wp_user, $ao_user);
         }
     }
     
@@ -516,6 +515,14 @@ class AOKranj_Admin extends AOKranj
         $utrinki_dir = AOKRANJ_OLD_DIR . '/pic/utrinek';
         $tmp_dir = sys_get_temp_dir();
         
+        // fetch comments
+        $all_comments = $aodb->get_results('SELECT * FROM utrinek_comment');
+        $comments = array();
+        foreach ($all_comments as $comment)
+        {
+            $comments[$comment->utrinekId][] = $comment;
+        }
+        
         // select old posts
         $utrinki = $aodb->get_results('SELECT * FROM utrinek WHERE deleted IS NULL');
         foreach ($utrinki as $utrinek)
@@ -556,6 +563,35 @@ class AOKranj_Admin extends AOKranj
             $post_id = wp_insert_post($data);
             $post = get_post($post_id);
             $this->posts[] = get_post($post_id);
+            
+            // add comment
+            if (isset($comments[$utrinek->utrinekId]))
+            {
+                foreach ($comments[$utrinek->utrinekId] as $comment)
+                {
+                    if (isset($this->usersByUserName[$comment->editor]))
+                    {
+                        $commentUser = $this->usersByUserName[$comment->editor];
+
+                        $data = array(
+                            'comment_post_ID' => $post_id,
+                            'comment_author' => $commentUser->user_nicename,
+                            'comment_author_email' => $commentUser->user_email,
+                            'comment_author_url' => $commentUser->user_url,
+                            'comment_content' => $comment->comment,
+                            'comment_type' => 'comment',
+                            'comment_parent' => 0,
+                            'user_id' => $commentUser->ID,
+                            'comment_author_IP' => '',
+                            'comment_agent' => '',
+                            'comment_date' => $comment->timestamp,
+                            'comment_approved' => 1,
+                        );
+
+                        wp_insert_comment($data);
+                    }
+                }
+            }
             
             //set current slug for reportUploadDir()
             $this->currentSlug = $post->post_name;
@@ -607,7 +643,7 @@ class AOKranj_Admin extends AOKranj
                     'size' => filesize($source)
                 );
                 $post_data = array(
-                    'post_title' => isset($texts[$i]) ? $texts[$i] : $utrinek->destination,
+                    'post_title' => isset($texts[$i]) ? $texts[$i] : '',
                     'post_author' => $user->ID
                 );
                 $file_id = media_handle_sideload($file, $post_id, null, $post_data);
@@ -655,14 +691,13 @@ class AOKranj_Admin extends AOKranj
         // get report category
         $category = get_category_by_slug('reportaze');
         
+        // set current user for reportUploadDir()
+        $user = get_user_by('login', 'aokranj');
+        
         // select all reports
         $reports = $aodb->get_results('SELECT * FROM report WHERE deleted IS NULL');
         foreach ($reports as $report)
-        {
-            // set current user for reportUploadDir()
-            $user = get_user_by('id', 1);
-            $this->currentUser = $user;
-            
+        {            
             // check if post already exists
             $exists = $wpdb->get_var(sprintf(
                 'SELECT COUNT(ID) FROM %s WHERE post_author = %d AND post_title = \'%s\' AND post_date = \'%s\'',
@@ -741,7 +776,7 @@ class AOKranj_Admin extends AOKranj
                     'size' => filesize($source)
                 );
                 $post_data = array(
-                    'post_title' => isset($texts[$i]) ? $texts[$i] : $report->title,
+                    'post_title' => isset($texts[$i]) ? $texts[$i] : '',
                     'post_author' => $user->ID
                 );
                 $file_id = media_handle_sideload($file, $post_id, null, $post_data);

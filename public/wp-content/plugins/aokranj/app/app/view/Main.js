@@ -18,23 +18,26 @@ Ext.define('AO.view.Main', {
         },{
             xtype: 'ao-vzpon-dodaj'
         },{
-            xtype: 'ao-uporabnik-nastavitve'
+            xtype: 'ao-uporabnik-nastavitve',
+            hidden: true
         },{
-            xtype: 'ao-uporabnik-statistika'
+            xtype: 'ao-uporabnik-statistika',
+            hidden: true
         }]);
         
         if (AO.User.user_level > 7) {
             this.add({
                 xtype: 'ao-admin-prenospodatkov'
             },{
-                xtype: 'ao-admin-statistika'
+                xtype: 'ao-admin-statistika',
+                hidden: true
             });
         }
         
         this.getTabBar().insert(0, {
             xtype: 'tbtext',
             cls: 'ao-tab-text',
-            text: 'Živjo ' + AO.User.display_name,
+            text: 'Živjo ' + AO.User.display_name + ' >',
             margin: '0 4 0 0'
         });
         
@@ -42,7 +45,7 @@ Ext.define('AO.view.Main', {
             this.getTabBar().insert(5, {
                 xtype: 'tbtext',
                 cls: 'ao-tab-text',
-                text: 'AO Kranj Administracija',
+                text: 'AO Kranj Administracija >',
                 margin: '0 4'
             });
         }

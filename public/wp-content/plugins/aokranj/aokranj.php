@@ -67,6 +67,8 @@ class AOKranj
             register_activation_hook(__FILE__, array(&$admin, 'activate'));
             register_deactivation_hook(__FILE__, array(&$admin, 'deactivate'));
         }
+        
+        add_action('wp_enqueue_scripts', array(&$this, 'wp_enqueue_scripts'));
     }
     
     protected function aodb()
@@ -76,6 +78,15 @@ class AOKranj
             $this->aodb = new wpdb(AO_DB_USER, AO_DB_PASSWORD, AO_DB_NAME, AO_DB_HOST);
         }
         return $this->aodb;
+    }
+    
+    public function wp_enqueue_scripts()
+    {
+        wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/colorbox.css', array(), AOKRANJ_VERSION);
+        wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_VERSION);
+        
+        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.css', array(), AOKRANJ_VERSION);
+        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.js', array('jquery'), AOKRANJ_VERSION);
     }
     
     public function wp_authenticate()
