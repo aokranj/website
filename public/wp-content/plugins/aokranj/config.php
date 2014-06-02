@@ -3,6 +3,7 @@
 /**
  * AO Kranj Wordpress plugin settings
  */
+define('AOKRANJ_DEBUG', false);
 
 define('AOKRANJ_PLUGIN_VERSION', '1.0');
 define('AOKRANJ_PLUGIN_URL', rtrim(plugin_dir_url(__FILE__), '/'));

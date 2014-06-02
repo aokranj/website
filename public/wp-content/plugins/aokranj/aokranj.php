@@ -44,31 +44,23 @@ class AOKranj
     public function __construct()
     {
         add_action('wp_authenticate', array(&$this, 'wp_authenticate'));
+        //add_shortcode('gallery', array(&$this, 'gallery_shortcode'));
         
         if (is_admin())
         {
             require_once dirname(__FILE__) . '/admin.php';
             $admin = new AOKranj_Admin();
-
-            if (is_multisite())
-            {
-                $admin_menu = 'network_admin_menu';
-                $admin_notices = 'network_admin_notices';
-            }
-            else
-            {
-                $admin_menu = 'admin_menu';
-                $admin_notices = 'admin_notices';
-            }
-
-            add_action($admin_menu, array(&$admin, 'admin_menu'));
-            add_action('admin_init', array(&$admin, 'admin_init'));
-
-            register_activation_hook(__FILE__, array(&$admin, 'activate'));
-            register_deactivation_hook(__FILE__, array(&$admin, 'deactivate'));
         }
-        
-        add_action('wp_enqueue_scripts', array(&$this, 'wp_enqueue_scripts'));
+        else
+        {
+            add_action('wp_enqueue_scripts', array(&$this, 'wp_enqueue_scripts'));
+        }
+    }
+
+    public function gallery_shortcode($attrs)
+    {
+        $attrs['link'] = 'file';
+        return gallery_shortcode($attrs);
     }
     
     protected function aodb()

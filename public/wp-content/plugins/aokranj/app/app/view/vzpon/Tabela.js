@@ -15,6 +15,11 @@ Ext.define('AO.view.vzpon.Tabela', {
             store: this.store,
             displayInfo: true,
             emptyMsg: 'Ni vzponov',
+            firstText: 'Prva stran',
+            lastText: 'Zadnja stran',
+            nextText: 'Naprej',
+            prevText: 'Nazaj',
+            refreshText: 'Osveži',
             beforePageText: 'Stran',
             afterPageText: 'od',
             displayMsg: 'Vzponi {0} - {1} od {2}'

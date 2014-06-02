@@ -15,23 +15,40 @@ class AOKranj_Admin extends AOKranj
     {
         if (is_multisite())
         {
+            $admin_menu = 'network_admin_menu';
+            $admin_notices = 'network_admin_notices';
+            
             $options_page = 'settings.php';
             $options_form_action = '../options.php';
             $options_capability = 'manage_network_options';
         }
         else
         {
+            $admin_menu = 'admin_menu';
+            $admin_notices = 'admin_notices';
+            
             $options_page = 'options-general.php';
             $options_form_action = 'options.php';
             $options_capability = 'manage_options';
         }
         
+        add_action($admin_menu, array(&$this, 'admin_menu'));
+        add_action('admin_init', array(&$this, 'admin_init'));
+
+        register_activation_hook(__FILE__, array(&$this, 'activate'));
+        register_deactivation_hook(__FILE__, array(&$this, 'deactivate'));
+        
         add_action('admin_enqueue_scripts', array(&$this, 'admin_enqueue_scripts'));
             
+        add_action('wp_dashboard_setup', array(&$this, 'wp_dashboard_setup'));
+        
+        add_action('pre_get_posts', array(&$this, 'pre_get_posts'));
+        
         add_action('wp_ajax_vzponi', array(&$this, 'vzponi'));
         add_action('wp_ajax_dodaj_vzpon', array(&$this, 'dodaj_vzpon'));
         add_action('wp_ajax_prenos_podatkov', array(&$this, 'prenos_podatkov'));
     }
+    
     
     /**
      * Wordpress hooks
@@ -119,6 +136,11 @@ class AOKranj_Admin extends AOKranj
         $icon = 'data:image/svg+xml;base64,' . base64_encode($svg);
         
         add_menu_page('Moj AO', 'Moj AO', 'read', self::ID . '/app.php', null, $icon, 3);
+        
+        if (!current_user_can('manage_options'))
+        {
+            remove_menu_page('tools.php');
+        }
     }
 
     public function admin_init()
@@ -148,25 +170,143 @@ class AOKranj_Admin extends AOKranj
 
         </table>';
     }
-
+    
     public function admin_enqueue_scripts()
     {
         global $hook_suffix;
         
-        switch ($hook_suffix)
+        if ($hook_suffix === 'aokranj/app.php')
         {
-            case 'aokranj/app.php':
-                // ext
+            if (AOKRANJ_DEBUG)
+            {
                 wp_enqueue_style('aokranj-admin-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.css', array(), AOKRANJ_VERSION);
                 wp_enqueue_script('aokranj-admin-ext', AOKRANJ_PLUGIN_URL . '/app/ext/ext-dev.js', array(), AOKRANJ_VERSION);
                 wp_enqueue_script('aokranj-admin-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.js', array(), AOKRANJ_VERSION);
                 wp_enqueue_script('aokranj-admin-app', AOKRANJ_PLUGIN_URL . '/app/app.js', array(), AOKRANJ_VERSION);
-                break;
+            }
+            else 
+            {
+                wp_enqueue_style('aokranj-admin-app', AOKRANJ_PLUGIN_URL . '/app/build/production/AO/resources/AO-all.css', array(), AOKRANJ_VERSION);
+                wp_enqueue_script('aokranj-admin-app', AOKRANJ_PLUGIN_URL . '/app/build/production/AO/app.js', array(), AOKRANJ_VERSION);
+            }
         }
         
-        wp_enqueue_style('aokranj-admin', AOKRANJ_PLUGIN_URL . '/admin.css', array(), AOKRANJ_VERSION);
+        wp_enqueue_style('aokranj-admin-style', AOKRANJ_PLUGIN_URL . '/admin.css', array(), AOKRANJ_VERSION);
     }
     
+    public function wp_dashboard_setup()
+    {
+        global $wp_meta_boxes;
+        unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+    }
+    
+    public function pre_get_posts($query)
+    {
+		global $current_user;
+
+		// do not limit user with Administrator role
+		if (current_user_can('administrator'))
+        {
+			return;
+		}
+
+		if (current_user_can('edit_posts') && !current_user_can('edit_others_posts'))
+        {
+			$query->set('author', $current_user->ID);
+            
+            add_filter('views_edit-post', array(&$this, 'fix_post_counts'));
+			add_filter('views_upload', array(&$this, 'fix_media_counts'));
+		}
+	}
+    
+    public function fix_post_counts($views)
+    {
+		global $current_user, $wp_query;
+
+		unset($views['mine']);
+		$types = array(
+			array('status' => NULL),
+			array('status' => 'publish'),
+			array('status' => 'draft'),
+			array('status' => 'pending'),
+			array('status' => 'trash')
+		);
+		foreach ($types as $type) {
+			$query = array(
+				'author' => $current_user->ID,
+				'post_type' => 'post',
+				'post_status' => $type['status']
+			);
+			$result = new WP_Query($query);
+			if ($type['status'] == NULL):
+				$class = (empty($wp_query->query_vars['post_status']) || $wp_query->query_vars['post_status'] == NULL) ? ' class="current"' : '';
+				$views['all'] = sprintf('<a href="%s"' . $class . '>' . __('All', 'vopmo') . ' <span class="count">(%d)</span></a>', admin_url('edit.php?post_type=post'), $result->found_posts);
+			elseif ($type['status'] == 'publish'):
+				$class = (!empty($wp_query->query_vars['post_status']) && $wp_query->query_vars['post_status'] == 'publish') ? ' class="current"' : '';
+				$views['publish'] = sprintf('<a href="%s"' . $class . '>' . __('Published', 'vopmo') . ' <span class="count">(%d)</span></a>', admin_url('edit.php?post_status=publish&post_type=post'), $result->found_posts);
+			elseif ($type['status'] == 'draft'):
+				$class = (!empty($wp_query->query_vars['post_status']) && $wp_query->query_vars['post_status'] == 'draft') ? ' class="current"' : '';
+				$views['draft'] = sprintf('<a href="%s"' . $class . '>' . __('Drafts', 'vopmo') . ' <span class="count">(%d)</span></a>', admin_url('edit.php?post_status=draft&post_type=post'), $result->found_posts);
+			elseif ($type['status'] == 'pending'):
+				$class = (!empty($wp_query->query_vars['post_status']) && $wp_query->query_vars['post_status'] == 'pending') ? ' class="current"' : '';
+				$views['pending'] = sprintf('<a href="%s"' . $class . '>' . __('Pending', 'vopmo') . ' <span class="count">(%d)</span></a>', admin_url('edit.php?post_status=pending&post_type=post'), $result->found_posts);
+			elseif ($type['status'] == 'trash'):
+				$class = (!empty($wp_query->query_vars['post_status']) && $wp_query->query_vars['post_status'] == 'trash') ? ' class="current"' : '';
+				$views['trash'] = sprintf('<a href="%s"' . $class . '>' . __('Trash', 'vopmo') . ' <span class="count">(%d)</span></a>', admin_url('edit.php?post_status=trash&post_type=post'), $result->found_posts);
+			endif;
+		}
+		return $views;
+	}
+    
+    public function fix_media_counts($views)
+    {
+		global $wpdb, $current_user, $post_mime_types, $avail_post_mime_types;
+		$views = array();
+		$_num_posts = array();
+		$count = $wpdb->get_results("
+        SELECT post_mime_type, COUNT( * ) AS num_posts 
+        FROM $wpdb->posts 
+        WHERE post_type = 'attachment' 
+        AND post_author = $current_user->ID 
+        AND post_status != 'trash' 
+        GROUP BY post_mime_type
+    ", ARRAY_A);
+		foreach ($count as $row)
+			$_num_posts[$row['post_mime_type']] = $row['num_posts'];
+		if (!empty($_num_posts)) {
+			$_total_posts = array_sum($_num_posts);
+		} else {
+			$_total_posts = 0;
+		}
+		$detached = isset($_REQUEST['detached']) || isset($_REQUEST['find_detached']);
+		if (!isset($total_orphans))
+			$total_orphans = $wpdb->get_var("
+            SELECT COUNT( * ) 
+            FROM $wpdb->posts 
+            WHERE post_type = 'attachment'
+            AND post_author = $current_user->ID 
+            AND post_status != 'trash' 
+            AND post_parent < 1
+        ");
+		$matches = wp_match_mime_types(array_keys($post_mime_types), array_keys($_num_posts));
+		foreach ($matches as $type => $reals)
+			foreach ($reals as $real)
+				$num_posts[$type] = ( isset($num_posts[$type]) ) ? $num_posts[$type] + $_num_posts[$real] : $_num_posts[$real];
+		$class = ( empty($_GET['post_mime_type']) && !$detached && !isset($_GET['status']) ) ? ' class="current"' : '';
+		$views['all'] = "<a href='upload.php'$class>" . sprintf(__('All <span class="count">(%s)</span>'), number_format_i18n($_total_posts)) . '</a>';
+		foreach ($post_mime_types as $mime_type => $label) {
+			$class = '';
+			if (!wp_match_mime_types($mime_type, $avail_post_mime_types))
+				continue;
+			if (!empty($_GET['post_mime_type']) && wp_match_mime_types($mime_type, $_GET['post_mime_type']))
+				$class = ' class="current"';
+			if (!empty($num_posts[$mime_type]))
+				$views[$mime_type] = "<a href='upload.php?post_mime_type=$mime_type'$class>" . sprintf(translate_nooped_plural($label[2], $num_posts[$mime_type]), $num_posts[$mime_type]) . '</a>';
+		}
+		$views['detached'] = '<a href="upload.php?detached=1"' . ( $detached ? ' class="current"' : '' ) . '>' . sprintf(__('Unattached <span class="count">(%s)</span>'), $total_orphans) . '</a>';
+		return $views;
+	}
     
     
     /**

@@ -7,3 +7,8 @@
     line-height: 33px;
     padding: 0 10px;
 }
+
+.x-body
+{
+    font-family: 'Open Sans', sans-serif !important;
+}
