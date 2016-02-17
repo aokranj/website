@@ -33,15 +33,6 @@ class AOKranjPrenosPodatkov
         ini_set('max_execution_time', 3600);
         set_time_limit(3600);
 
-        // set current user for reportUploadDir()
-        $user = get_user_by('login', 'aokranj');
-
-        return array(
-            'success' => true,
-            'data'    => $user,
-            'msg' => 'Prenos je uspel :)',
-        );
-
         /*
         return array(
             'success' => true,
@@ -204,7 +195,7 @@ class AOKranjPrenosPodatkov
         }
 
         // select old posts
-        $utrinki = $this->aodb->get_results('SELECT * FROM utrinek WHERE deleted IS NULL');
+        $utrinki = $this->aodb->get_results('SELECT * FROM utrinek WHERE deleted IS NULL AND valid_from != \'0000-00-00\'');
         foreach ($utrinki as $utrinek) {
             // find wordpress user
             if (!isset($this->usersByUserName[$utrinek->author])) {
@@ -272,7 +263,7 @@ class AOKranjPrenosPodatkov
                 print_r(['NO_POST' => $utrinek]);
             }
 
-            //set current slug for reportUploadDir()
+            //set current slug for utrinekUploadDir()
             $this->currentSlug = $post->post_name;
 
             // main utrinek dir
