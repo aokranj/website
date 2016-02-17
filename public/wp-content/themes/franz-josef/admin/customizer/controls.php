@@ -9,7 +9,7 @@ function franz_add_customizer_controls( $wp_customize ) {
 	class Franz_Multiple_Select_Control extends WP_Customize_Control {
 		public $type = 'select';
 		public $multiple = false;
-		
+
 		public function render_content() {
 			if ( ! array_key_exists( 'class', $this->input_attrs ) ) $this->input_attrs['class'] = '';
 			if ( $this->multiple ) {
@@ -38,13 +38,13 @@ function franz_add_customizer_controls( $wp_customize ) {
 			<?php
 		}
 	}
-	
+
 	/**
 	 * Custom text field control
 	 */
 	class Franz_Enhanced_Text_Control extends WP_Customize_Control {
 		public $unit = '';
-	 
+
 		public function render_content() {
 			?>
 			<label class="franz-text">
@@ -60,19 +60,19 @@ function franz_add_customizer_controls( $wp_customize ) {
 			<?php
 		}
 	}
-	
-	
+
+
 	/**
 	 * Code textarea control
 	 */
 	class Franz_Code_Control extends WP_Customize_Control {
 		public $mode = 'htmlmixed';
-	 
+
 		public function render_content() {
 			if ( ! array_key_exists( 'class', $this->input_attrs ) ) $this->input_attrs['class'] = '';
 			$this->input_attrs['class'] .= ' widefat code';
 			$this->input_attrs['class'] .= trim( $this->input_attrs['class'] );
-			
+
 			$matches = array();
 			preg_match( '/franz_settings\[(.*)\]/i', $this->id, $matches );
 			$setting_name = ( isset( $matches[1] ) ) ? $matches[1] : $this->id;
@@ -84,10 +84,10 @@ function franz_add_customizer_controls( $wp_customize ) {
 				if ( ! empty( $this->description ) ) : ?>
 					<span class="description customize-control-description"><?php echo $this->description; ?></span>
 				<?php endif; ?>
-                
+
                 <textarea id="<?php echo $setting_name; ?>" <?php $this->link(); ?> <?php $this->input_attrs(); ?>><?php echo htmlentities( stripslashes( $this->value() ) ); ?></textarea>
 			</label>
-            
+
             <script type="text/javascript">
 				var <?php echo $setting_name; ?>CM = CodeMirror.fromTextArea(document.getElementById("<?php echo $setting_name; ?>"), {
 					mode			: '<?php echo $this->mode; ?>',

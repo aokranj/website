@@ -1,25 +1,30 @@
 <?php
 
 /**
- * AO Kranj Wordpress plugin settings
+ * AO Kranj wordpress plugin settings
  */
 define('AOKRANJ_DEBUG', false);
-
 define('AOKRANJ_PLUGIN_VERSION', '1.0');
 define('AOKRANJ_PLUGIN_URL', rtrim(plugin_dir_url(__FILE__), '/'));
 define('AOKRANJ_PLUGIN_DIR', rtrim(plugin_dir_path(__FILE__), '/'));
 
 /**
+ * AO Kranj tables
+ */
+define('AOKRANJ_TABLE_VZPONI', 'ao_vzponi');
+
+/**
  * AO Kranj old website settings
  */
 define('AOKRANJ_OLD_DIR', '/home/bojan/www/aokranj');
+define('AOKRANJ_OLD_DB_NAME', 'aokranj');
+define('AOKRANJ_OLD_DB_USER', 'root');
+define('AOKRANJ_OLD_DB_PASSWORD', 'sql123');
+define('AOKRANJ_OLD_DB_HOST', 'localhost');
+define('AOKRANJ_OLD_DB_CHARSET', 'utf8');
+define('AOKRANJ_OLD_DB_COLLATE', '');
 
-define('AO_DB_NAME', 'aokranj');
-define('AO_DB_USER', 'root');
-define('AO_DB_PASSWORD', 'sql123');
-define('AO_DB_HOST', 'localhost');
-define('AO_DB_CHARSET', 'utf8');
-define('AO_DB_COLLATE', '');
+
 
 /**
  * Temporary
