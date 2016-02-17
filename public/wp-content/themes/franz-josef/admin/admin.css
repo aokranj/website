@@ -1,0 +1,493 @@
+
+
+/* =Clearfix
+-------------------------------------------------------------- */
+
+.clearfix:before,
+.clearfix:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.clearfix:after {
+    clear: both
+}
+.clearfix {
+    zoom: 1
+}
+
+
+/* =General
+-------------------------------------------------------------- */
+
+.wrap h2 {
+	font-weight: 600;
+}
+.appearance_page_franz_options #icon-themes {
+	background: url(images/admin-icon.png) center center no-repeat;
+	width: 48px;
+	height: 23px;
+	float: left;
+	display: block;
+	margin: 12px 10px 0 0;
+}
+.appearance_page_franz_options input {
+	padding: 6px 5px 5px;
+}
+.wrap .fa-spin {
+	font-size: 20px;
+}
+.js .postbox .hndle {
+	cursor: pointer;
+}
+.js .no-toggle .hndle {
+	cursor: auto;
+}
+.appearance_page_franz_options .form-table th {
+	width: 260px;
+	font-weight: 400;
+}
+.appearance_page_franz_options .form-table th,
+.appearance_page_franz_options .form-table td {
+	padding: 10px 10px 10px 0;
+}
+.form-table th.small-row { 
+	width: 120px; 
+}
+.wrap h3 {
+	margin: 30px 0 10px 0;
+}
+.wrap h4 {
+	margin: 20px 0 0 0;
+}
+table.franz-code-example th {
+	font-weight: normal;
+	line-height: 18px;
+	text-align: left;
+}
+.code {
+	font: normal 12px "Courier New", Courier, monospace;
+}
+.left-wrap {
+	float: left;
+	width: 70%;
+}
+.left-wrap label {
+	line-height: normal;
+}
+.side-wrap {
+	float: left;
+	margin-left: 10px;
+	width: 25%;
+}
+.postbox small {
+	display: block;
+	line-height: 18px;
+	margin-top: 5px;
+}
+.code {
+	font: normal 12px "Courier New", Courier, monospace;
+}
+.CodeMirror {
+	font-size: 12px;
+	line-height: auto;
+	border: 1px solid #eee;
+}
+.select-multiple {
+	height: 200px !important;
+	overflow: scroll;
+}
+.options-tab {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px !important;
+	padding-left: 5px !important;
+}
+.options-tab a,
+.options-tab a:visited {
+	display: block;
+	float: left;
+}
+.nav-tab-addons,
+.nav-tab-addons:hover,
+.nav-tab-addons:focus {
+	background: #3dc2a0;
+	color: #fff;
+	border-color: #36AE90;
+	border-bottom-color: #3dc2a0;
+}
+.nav-tab-about,
+.nav-tab-about:hover,
+.nav-tab-about:focus {
+	background: #1AC9E2;
+	color: #fff;
+	border-color: #16AABF;
+	border-bottom-color: #16AABF;
+}
+#wpcontent option {
+	padding: 4px;
+}
+.column-options label img {
+	padding-right: 30px;
+	vertical-align: middle;
+}
+.cc-logo{
+	display: block;
+	height: 32px;
+	width: 96px;
+	background: url(../images/sprite_master.png) -417px -240px no-repeat;
+	margin-top: 5px;
+}
+.add-ons .title{
+	font-weight: bold;
+}
+.add-ons .activated{
+	color: #2A7FFF;
+}
+.add-ons .not-active{
+	color: #999;	
+}
+.generated-css-wrap {
+	max-width: 70%;
+}
+#generated-css {
+	background: #fff;
+	height: 300px;
+	overflow-y: scroll;
+	padding: 5px;
+	border-color: #ddd;
+}
+.panel-wrap .submit {
+	text-align: right;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	overflow-y: hidden !important;
+}
+.franz-ajax-response {
+	width: 400px;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	margin-left: -200px;
+	-moz-box-shadow: 0 0 100px #999;
+	-webkit-box-shadow: 0 0 100px #999;
+	box-shadow: 0 0 100px #999;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 100;
+	display: none;
+	padding: 0;
+}
+.franz-ajax-response > div {
+	border-radius: 5px;
+	margin: 0 !important;
+}
+a.button {
+	padding: 4px 10px 5px;
+}
+.panel-wrap .submit {
+	overflow: auto;
+}
+.ajaxload {
+	vertical-align: middle;
+	margin: 0 10px;
+}
+.franz-news-list {
+	margin-top: 10px;
+}
+.franz-news a {
+	text-decoration: none;
+}
+.franz-news .news-item-date {
+	font-size: 10px;
+	color: #888;
+}
+
+.column-width .form-table th {
+	width: 120px;
+}
+.width-wrap {
+	margin-right: 50px;
+	float: left;
+}
+.slider-legend {
+	font-size: 10px;
+	color: #888;
+}
+.chosen-container-single .chosen-single,
+.chosen-container-single .chosen-drop {
+	border-radius: 0 !important;
+}
+.hide {
+	display: none; 
+}
+
+
+/* =Social media profiles
+-------------------------------------------------------------- */
+
+.social-profile-table {
+    background: #f5f5f5;
+    border: solid 1px #fff;
+    cursor: move;
+	padding: 15px 0;
+}
+.social-profile-dragging {
+    background: #fefefe;
+    height: 80px;
+    width: 100%;
+    border: solid 1px #ccc;
+    margin-top: .5em;
+	padding-left: 10px;
+}
+.social-profile-table th.small-row,
+.social-profile-dragging th {
+	padding-left: 10px;
+	vertical-align: middle;
+	width: 200px;
+}
+.social-profile-table th.social-profile-title {
+	vertical-align: top;
+	width: 100px;
+}
+.social-profile-table th .fa {
+	font-size: 24px;
+	margin: 5px 0 10px;
+}
+.social-profile-table th,
+.social-profile-table td,
+.social-profile-dragging th,
+.social-profile-dragging td {
+	padding: 5px 10px;
+}
+.form-table .delete a, .form-table .delete a:visited{
+	color: #BC0B0B;
+	text-decoration: none;
+	font-size: 13px;
+}
+.form-table .delete a:hover{
+	text-decoration: underline;
+}
+tr.new-social-media, tr.social-media-custom{
+	background: #eee;
+}
+tr.new-social-media-name, tr.social-media-custom-name{
+	border-top: 1px solid #fff;
+}
+
+
+/* =Brand icons
+-------------------------------------------------------------- */
+
+#brand_icons ul {
+	margin-top: 0;
+}
+#brand_icons li {
+	clear: both;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #eee;
+	background: #f5f5f5;
+	cursor: move;
+}
+#brand_icons .left {
+	width: 200px;
+	float: left;
+}
+#brand_icons img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+#brand_icons label {
+	margin: 0 10px;
+}
+#brand_icons .image-placeholder {
+	display: block;
+	width: 200px;
+	height: 30px;
+	border: 1px dashed #ddd;
+	background: #fff;
+}
+
+
+
+/* =Collapsible options boxes
+-------------------------------------------------------------- */
+
+.postbox .hndle {
+	cursor: pointer;
+	font-size: 13px;
+	margin: 0;
+	padding: 6px 10px 7px 10px;
+}
+.postbox .nodocs .hndle,
+.side-wrap .postbox .hndle {
+	padding-left: 10px;
+}
+.panel-wrap.inside {
+	padding: 0 10px 10px;
+}
+.panel-wrap .panel-wrap.inside {
+	background: #fff;
+	overflow: visible;
+	margin: 0;
+	padding: 10px;
+}
+.postbox .postbox .handlediv {
+	height: 27px;
+}
+.handlediv {
+	cursor: pointer;
+}
+.colour-option-group {
+	margin-top: 10px;
+}
+.toggle-all, 
+.toggle-all:visited,
+.toggle-options-wrapper a, 
+.toggle-options-wrapper a:visited {
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 12px;
+	margin-left: 10px;
+}
+.toggle-options-wrapper {
+	float: left;
+	width: auto;
+	margin-left: 5px;
+	padding-left: 5px;
+	border-left: 1px solid #ddd;
+	margin-top: 4px;
+}
+.toggle-options-wrapper a {
+	float: none;
+	display: inline;
+}
+.toggle-options-wrapper .toggle-all-options {
+	display: none;
+}
+.inner-toggle-link {
+	float: right;
+}
+.inner-toggle-link a {
+	text-decoration: none;
+}
+.head-wrap {
+	position: relative;
+}
+.head-wrap .franz-docs-link {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	line-height: 28px;
+	width: 30px;
+	text-align: center;
+}
+.head-wrap .franz-docs-link img {
+	vertical-align: middle;
+}
+
+
+/* =Add-ons
+-------------------------------------------------------------- */
+
+.addon {
+	background: #fff;
+	border: 1px solid #dedede;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 20px;
+	width: 31%;
+}
+.addon-details {
+	padding: 20px;
+	min-height: 103px;
+}
+.addon-cta {
+	clear: both;
+	background: #FAFAFA;
+	padding: 10px 20px;
+	border-top: 1px solid #eee;
+}
+.active .addon-cta {
+	min-height: 29px;
+	background: #3DC2A0;
+	color: #fff;
+}
+.addon-icon {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-right: 15px;
+}
+i.addon-icon {
+	border: 1px solid #eee;
+	text-align: center;
+}
+i.addon-icon:before {
+	line-height: 100px;
+	vertical-align: middle;
+	font-size: 32px;
+	color: #bbb;
+}
+span.addon-icon {
+	background: url(images/sprite-addons.png) left top no-repeat transparent;
+}
+span.addon-icon-infinite-scroll {
+	background-position: -100px 0;
+}
+span.addon-icon-hooks-widgets {
+	background-position: -200px 0;
+}
+span.addon-icon-stacks {
+	background-position: -300px 0;
+}
+span.addon-icon-colours {
+	background-position: -400px 0;
+}
+.addon-details h4 {
+	margin-top: 0;
+}
+.addon-cta .price {
+	font-weight: 600;
+	font-size: 16px;
+	display: inline-block;
+	line-height: 29px;
+}
+.addon-cta .fa {
+	font-size: 21px;
+	margin-right: 5px;
+}
+.developer {
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 10px 20px;
+	width: 500px;
+}
+
+/* =Thank You modal
+-------------------------------------------------------------- */
+
+.thank-you {
+	padding: 10px 20px;
+	background: #fff;
+}
+.thank-you h2 {
+	font-weight: 600;
+}
+.thank-you ul {
+	list-style: disc;
+	margin-left: 20px;
+}
+.thank-you ul ul {
+	margin-top: 10px;
+}
+#TB_window {
+	width: 615px !important;
+	height: 501px !important;
+}

@@ -1,0 +1,191 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400,400italic,700,700italic|Montserrat:700&subset=latin,latin-ext);
+body {
+	font: normal 14px/22px 'Open Sans', sans-serif;
+	color: #181e1f;
+	margin: 9px 10px;
+}
+a {
+	color: #39abc3;
+	text-decoration: none;
+}
+ol, ul {
+	overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Montserrat, 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+.btn {
+	font: bold 12px Montserrat, 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+}
+.btn-default {
+	color: #1ca4be;
+	border-color: #1ca4be;
+	background: none;
+	-webkit-transition: background ease-in 0.1s, color ease-in 0.1s;
+	-o-transition: background ease-in 0.1s, color ease-in 0.1s;
+	transition: background ease-in 0.1s, color ease-in 0.1s;
+}
+.btn-default:hover {
+	background: #1ca4be;
+	border-color: #1ca4be;
+	color: #fff;
+}
+.btn-lg {
+	padding: 15px 30px;
+}
+img,
+.wp-caption,
+iframe,
+embed,
+object {
+	max-width: 100%;
+}
+img,
+.wp-caption {
+	height: auto;
+}
+.wp-caption-text {
+	margin-top: 5px;
+	border-top: 1px solid #e9e9e9;
+	background: #f5f5f5;
+	padding: 5px 5px 5px 35px;
+	font-size: 0.7em;
+	font-weight: 400;
+	color: #666;
+}
+.gallery-columns-1 .wp-caption-text {
+	font-size: 0.8em;
+	padding: 10px 10px 10px 40px;
+}
+.wp-caption-text:before {
+	display:inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 16px;
+	text-rendering:auto;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	content: "\f030";
+	margin: 0 5px 0 -25px;
+	color: #ddd;
+	vertical-align: middle;
+}
+.gallery {
+	text-align: center;
+}
+.gallery-item {
+	float: none !important;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 !important;
+	padding: 0;
+	box-sizing: border-box;
+}
+.gallery-columns-1 .gallery-item {
+	margin: 15px 0 !important;
+}
+.gallery-columns-2 .gallery-item {
+	width: 49% !important;
+}
+.gallery-columns-2 .gallery-item:nth-child(3n+1) {
+	margin-left: 0 !important;
+}
+.gallery-columns-2 .gallery-item:nth-child(3n+2) {
+	margin-right: 0 !important;
+}
+.gallery-columns-3 .gallery-item {
+	width: 32% !important;
+}
+.gallery-columns-3 .gallery-item:nth-child(4n+1) {
+	margin-left: 0 !important;
+}
+.gallery-columns-3 .gallery-item:nth-child(4n+3) {
+	margin-right: 0 !important;
+}
+.gallery-columns-4 .gallery-item {
+	width: 23% !important;
+}
+.gallery-columns-4 .gallery-item:nth-child(5n+1) {
+	margin-left: 0 !important;
+}
+.gallery-columns-4 .gallery-item:nth-child(5n+4) {
+	margin-right: 0 !important;
+}
+.gallery-columns-5 .gallery-item {
+	width: 18% !important;
+}
+.gallery-columns-5 .gallery-item:nth-child(6n+1) {
+	margin-left: 0 !important;
+}
+.gallery-columns-5 .gallery-item:nth-child(6n+5) {
+	margin-right: 0 !important;
+}
+.gallery-columns-6 .gallery-item {
+	width: 15% !important;
+}
+.gallery-columns-6 .gallery-item:nth-child(7n+1) {
+	margin-left: 0 !important;
+}
+.gallery-columns-6 .gallery-item:nth-child(7n+6) {
+	margin-right: 0 !important;
+}
+.gallery-item img {
+	border: none !important;
+	-moz-box-shadow: 0 0 3px #ccc;
+	-webkit-box-shadow: 0 0 3px #ccc;
+	-ms-box-shadow: 0 0 3px #ccc;
+	-o-box-shadow: 0 0 3px #ccc;
+	box-shadow: 0 0 3px #ccc;
+	border-radius: 3px;
+}
+.gallery-caption {
+	text-align: left;
+	margin: 0;
+	background: #333;
+	background: rgba(0,0,0,0.8);
+	color: #f5f5f5;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border: none;
+	opacity: 0;
+	transition: ease 0.4s;
+}
+.gallery-caption:before {
+	color: #666;
+}
+.gallery-item:hover .gallery-caption {
+	opacity: 1;
+}
+.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+.alignleft {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+.aligncenter {
+	margin: 1em auto;
+}
+blockquote {
+	border: none;
+	font-style: italic;
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: 300;
+	padding: 0;
+	margin: 30px 0;
+}
+blockquote cite {
+	font: normal 14px/24px 'Open Sans', sans-serif;
+	display: block;
+}
+blockquote cite:before {
+	content: "\2014";
+	margin-right: 5px;
+}

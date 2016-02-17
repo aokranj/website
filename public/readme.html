@@ -1,107 +1,98 @@
 <!DOCTYPE html>
 <html>
-<html xmlns="http://www.w3.org/1999/xhtml"> 
-<head> 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-	<title>WordPress &#8250; Preberi me</title> 
-	<link rel="stylesheet" href="wp-admin/css/install.css?ver=20100228" type="text/css" /> 
-</head> 
-<body> 
-<h1 id="logo"> 
-	<a href="http://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a> 
-	<br /> Različica 3.8
-</h1> 
-<p style="text-align: center">Osebna Semantična Platforma za Objavljanje</p> 
- 
-<h1>Za začetek</h1> 
-<p>Dobrodošli. WordPress je zame zelo poseben projekt. Wordpress je zame zelo poseben projekt. V ta projekt smo že vložili na tisoče ur in želimo si ga še izboljšati. Hvala, ker ste izbrali WordPress.</p> 
-<p style="text-align: right">&#8212; Matt Mullenweg</p> 
- 
-<h1>Slavna petminutna namestitev</h1> 
-<ol> 
-	<li>Razširite paket v prazno mapo in vse skupaj naložite na strežnik.</li> 
-	<li>Odprite <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> v vašem brskalniku. Postopek vas bo popeljal čez pripravo <code>wp-config.php</code> datoteke z vašimi podatki.
-		<ol> 
-			<li>Če postopek iz katerega koli razloga ne bo uspešen, ne skrbite. Ne deluje pri vseh spletnih gostiteljih. Datoteko <code>wp-config-sample.php</code> odprite v urejevalniku besedil, kot je Notepad++ ali podobnem urejevalniku, in vnesite svoje podatke.</li> 
-			<li> Datoteko shranite kot <code>wp-config.php</code> in jo naložite na strežnik.</li> 
-			<li>V brskalniku odprite datoteko <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span></li> 
-		</ol> 
-	</li> 
-	<li>Ko je nastavitvena datoteka pripravljena, bo program pripravil vse potrebne tabele za vaš blog. V primeru napake ponovno preverite datoteko <code>wp-config.php</code> in poskusite znova. 
-	Če se napaka ponovi, obiščite <a href="http://wordpress.org/support/" title="WordPress support">podporne forume (v angleščini)</a> in čim bolj podrobno opišite težavo.
-	<li><strong>Če niste določili gesla, bo to nastavljeno samodejno.</strong> Če niste izbrali uporabniškega imena, bo to samodejno nastavljeno na »admin«.</li> 
-	<li>Nato vas bo preusmerilo na <a href="wp-login.php">stran za prijavo</a>. Prijavite se z uporabniškim imenom in geslom, ki ste ju izbrali med namestitvenim postopkom.
-Če želite samodejno nastavljeno geslo spremeniti, kliknite na zavihek »Profil«.
-</li> 
-</ol> 
- 
-<h1>Posodabljanje</h1> 
-<h2>Samodejna posodobitev</h2> 
-<p>Če posodabljate različico 2.7 ali novejšo, vam je na voljo samodejna posodobitev:</p> 
-<ol> 
-	<li>V brskalniku odprite datoteko <span class="file"><a href="wp-admin/update-core.php">wp-admin/update-core.php</a></span> in sledite navodilom.</li> 
-	<li>Ste pričakovali več? To je vse!</li> 
-</ol> 
- 
-<h2>Ročna posodobitev</h2> 
-<ol> 
-	<li>1. Preden karkoli storite, se prepričajte, da ste ustvarili varnostne kopije vseh spremenjenih datotek, kot na primer datoteke wp-config.php in celotne mape wp-content/</li> 
-	<li>Izbrišite stare WordPress datoteke, pri čemer shranite tiste, katere ste spremenili.</li> 
-	<li>Naložite nove datoteke.</li> 
-	<li>Preusmerite vaš brskalnik na datoteko <span class="file"><a href="wp-admin/upgrade.php">/wp-admin/upgrade.php</a>.</span></li> 
-</ol> 
- 
-<h1>Migracija z drugih sistemov</h1> 
-<p>WordPress lahko <a href="http://codex.wordpress.org/Importing_Content"> uvozi podatke iz številnih drugih sistemov</a>. 
-Preden uporabite orodja za uvoz, morate najprej namestiti WordPress v skladu z zgornjimi navodili.</p> 
- 
-<h1>Sistemske zahteve</h1> 
-<ul> 
-	<li><a href="http://php.net/">PHP</a> različica <strong>5.2.4</strong> ali novejša.</li> 
-	<li><a href="http://www.mysql.com/">MySQL</a> različica <strong>5.0</strong> ali novejša.</li> 
-</ul> 
- 
-<h2>Priporočila</h2> 
-<ul> 
-	<li>Apache modul <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html">mod_rewrite</a>.</li> 
-	<li>Povezava <a href="http://wordpress.org/">http://wordpress.org</a> oziroma <a href="http://sl.wordpress.org/">http://sl.wordpress.org</a> na vašem spletišču.</li> 
-</ul> 
- 
-<h1>Spletni viri</h1> 
-<p>Če imate še kakšno vprašanje, na katero niste prejeli odgovora, imate na voljo množico uporabnih spletnih virov (v angleščini):</p> 
-<dl> 
-	<dt><a href="http://codex.wordpress.org/">WordPress Codex</a></dt> 
-		<dd>Codex je WordPressova enciklopedija. Je najbolj izpopolnjen vir informacij za WordPress.</dd> 
-	<dt><a href="http://wordpress.org/news/">WordPress Blog</a></dt> 
-		<dd>Tukaj boste našli najnovejše posodobitve in novice v povezavi z WordPressom.</dd> 
-	<dt><a href="http://planet.wordpress.org/">WordPress Planet</a></dt> 
-		<dd>WordPress Planet je zbiralnik novic, kjer lahko najdete najrazličnejše objave z WordPressovih blogov širom spleta.</dd> 
-	<dt><a href="http://wordpress.org/support/">WordPress podporni forumi</a></dt> 
-		<dd>Če so vam ostala kakšna vprašanja, lahko odgovore najdete na živahnih forumih, kjer so vam številni člani vedno pripravljeni priskočiti na pomoč. Za optimalen odgovor vam priporočamo, da težavo čim podrobneje opišete.</dd> 
-	<dt><a href="http://codex.wordpress.org/IRC">WordPress <abbr title="Internet Relay Chat">IRC</abbr> Kanal</a></dt> 
-		<dd>Obstaja spletni kanal za klepetanje, kjer se lahko uporabniki WordPressa med seboj pogovarjajo in si izmenjujejo razne nasvete. (<a href="irc://irc.freenode.net/wordpress">irc.freenode.net #wordpress</a>)</dd> 
-	<dt><a href="http://sl.wordpress.org">WordPress Slovenija</a></dt> 
-		<dd>Občasno lahko najdete kakšno objavo tudi na spletišču <a href="http://sl.wordpress.org/">sl.wordpress.org</a>, kjer so vam med drugim na voljo najnovejše WordPressove datoteke v slovenščini.</dd> 
-</dl> 
-  
-<h1>Končne opombe</h1> 
-<ul> 
-	<li>Če imate kakšen predlog, idejo ali komentar ali če ste (ojoj!) našli hrošča, se nam pridružite na <a href="http://wordpress.org/support/">podpornih forumih</a>.</li> 
-	<li>
-		WordPress ima močan programski vmesnik (<abbr title="application programming interface">API</abbr>) za vtičnike, ki omogoča enostavno razširjanje kode. 
-		Če ste razvijalec in bi radi izvedeli več, si oglejte navodila za <a href="http://codex.wordpress.org/Plugin_API" title="WordPress plugin API">vtičnike v Codexu</a>.
-		Kode jedra se naj ne bi spreminjalo.
-	</li> 
-</ul> 
- 
-<h1>Delite z drugimi</h1> 
-<p>WordPress nima večmilijonskih tržnih kampanj in nima slavnih sponzorjev, ima pa nekaj boljšega  &#8212;vas. Če ste zadovoljni z Wordpressom, ga priporočite prijatelju, pomagajte namestiti nekomu z manj izkušnjami ali pa pišite avtorju medijskega prispevka, ki nas je spregledal.</p> 
- 
-<p>WordPress je uradno nadaljevanje <a href="http://cafelog.com/">b2/caf&#233;log</a>, od Michela V. Delo so nato nadaljevali <a href="http://wordpress.org/about/">WordPressovi razvijalci</a>. Če bi radi podprli WordPress, prosim, razmislite o <a href="http://wordpress.org/donate/" title="Donate to WordPress">donaciji</a>.</p> 
- 
-<h1>Licenca</h1> 
-<p>
-WordPress je prosto programje, ki se razširja pod pogoji splošne javne licence (<abbr title="GNU General Public License">GPL</abbr>) GNU različice 2 ali katere koli novejše različice. Za več informacij si oglejte <a href="license.txt">license.txt</a>.
-</p>
-</body> 
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>WordPress &#8250; ReadMe</title>
+	<link rel="stylesheet" href="wp-admin/css/install.css?ver=20100228" type="text/css" />
+</head>
+<body>
+<h1 id="logo">
+	<a href="https://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a>
+	<br /> Version 4.4.2
+</h1>
+<p style="text-align: center">Semantic Personal Publishing Platform</p>
+
+<h2>First Things First</h2>
+<p>Welcome. WordPress is a very special project to me. Every developer and contributor adds something unique to the mix, and together we create something beautiful that I&#8217;m proud to be a part of. Thousands of hours have gone into WordPress, and we&#8217;re dedicated to making it better every day. Thank you for making it part of your world.</p>
+<p style="text-align: right">&#8212; Matt Mullenweg</p>
+
+<h2>Installation: Famous 5-minute install</h2>
+<ol>
+	<li>Unzip the package in an empty directory and upload everything.</li>
+	<li>Open <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> in your browser. It will take you through the process to set up a <code>wp-config.php</code> file with your database connection details.
+		<ol>
+			<li>If for some reason this doesn&#8217;t work, don&#8217;t worry. It doesn&#8217;t work on all web hosts. Open up <code>wp-config-sample.php</code> with a text editor like WordPad or similar and fill in your database connection details.</li>
+			<li>Save the file as <code>wp-config.php</code> and upload it.</li>
+			<li>Open <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> in your browser.</li>
+		</ol>
+	</li>
+	<li>Once the configuration file is set up, the installer will set up the tables needed for your blog. If there is an error, double check your <code>wp-config.php</code> file, and try again. If it fails again, please go to the <a href="https://wordpress.org/support/" title="WordPress support">support forums</a> with as much data as you can gather.</li>
+	<li><strong>If you did not enter a password, note the password given to you.</strong> If you did not provide a username, it will be <code>admin</code>.</li>
+	<li>The installer should then send you to the <a href="wp-login.php">login page</a>. Sign in with the username and password you chose during the installation. If a password was generated for you, you can then click on &#8220;Profile&#8221; to change the password.</li>
+</ol>
+
+<h2>Updating</h2>
+<h3>Using the Automatic Updater</h3>
+<p>If you are updating from version 2.7 or higher, you can use the automatic updater:</p>
+<ol>
+	<li>Open <span class="file"><a href="wp-admin/update-core.php">wp-admin/update-core.php</a></span> in your browser and follow the instructions.</li>
+	<li>You wanted more, perhaps? That&#8217;s it!</li>
+</ol>
+
+<h3>Updating Manually</h3>
+<ol>
+	<li>Before you update anything, make sure you have backup copies of any files you may have modified such as <code>index.php</code>.</li>
+	<li>Delete your old WordPress files, saving ones you&#8217;ve modified.</li>
+	<li>Upload the new files.</li>
+	<li>Point your browser to <span class="file"><a href="wp-admin/upgrade.php">/wp-admin/upgrade.php</a>.</span></li>
+</ol>
+
+<h2>Migrating from other systems</h2>
+<p>WordPress can <a href="https://codex.wordpress.org/Importing_Content">import from a number of systems</a>. First you need to get WordPress installed and working as described above, before using <a href="wp-admin/import.php" title="Import to WordPress">our import tools</a>.</p>
+
+<h2>System Requirements</h2>
+<ul>
+	<li><a href="http://php.net/">PHP</a> version <strong>5.2.4</strong> or higher.</li>
+	<li><a href="http://www.mysql.com/">MySQL</a> version <strong>5.0</strong> or higher.</li>
+</ul>
+
+<h3>Recommendations</h3>
+<ul>
+	<li><a href="http://php.net/">PHP</a> version <strong>5.6</strong> or higher.</li>
+	<li><a href="http://www.mysql.com/">MySQL</a> version <strong>5.6</strong> or higher.</li>
+	<li>The <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html">mod_rewrite</a> Apache module.</li>
+	<li>A link to <a href="https://wordpress.org/">wordpress.org</a> on your site.</li>
+</ul>
+
+<h2>Online Resources</h2>
+<p>If you have any questions that aren&#8217;t addressed in this document, please take advantage of WordPress&#8217; numerous online resources:</p>
+<dl>
+	<dt><a href="https://codex.wordpress.org/">The WordPress Codex</a></dt>
+		<dd>The Codex is the encyclopedia of all things WordPress. It is the most comprehensive source of information for WordPress available.</dd>
+	<dt><a href="https://wordpress.org/news/">The WordPress Blog</a></dt>
+		<dd>This is where you&#8217;ll find the latest updates and news related to WordPress. Recent WordPress news appears in your administrative dashboard by default.</dd>
+	<dt><a href="https://planet.wordpress.org/">WordPress Planet</a></dt>
+		<dd>The WordPress Planet is a news aggregator that brings together posts from WordPress blogs around the web.</dd>
+	<dt><a href="https://wordpress.org/support/">WordPress Support Forums</a></dt>
+		<dd>If you&#8217;ve looked everywhere and still can&#8217;t find an answer, the support forums are very active and have a large community ready to help. To help them help you be sure to use a descriptive thread title and describe your question in as much detail as possible.</dd>
+	<dt><a href="https://codex.wordpress.org/IRC">WordPress <abbr title="Internet Relay Chat">IRC</abbr> Channel</a></dt>
+		<dd>There is an online chat channel that is used for discussion among people who use WordPress and occasionally support topics. The above wiki page should point you in the right direction. (<a href="irc://irc.freenode.net/wordpress">irc.freenode.net #wordpress</a>)</dd>
+</dl>
+
+<h2>Final Notes</h2>
+<ul>
+	<li>If you have any suggestions, ideas, or comments, or if you (gasp!) found a bug, join us in the <a href="https://wordpress.org/support/">Support Forums</a>.</li>
+	<li>WordPress has a robust plugin <abbr title="application programming interface">API</abbr> that makes extending the code easy. If you are a developer interested in utilizing this, see the <a href="https://codex.wordpress.org/Plugin_API" title="WordPress plugin API">plugin documentation in the Codex</a>. You shouldn&#8217;t modify any of the core code.</li>
+</ul>
+
+<h2>Share the Love</h2>
+<p>WordPress has no multi-million dollar marketing campaign or celebrity sponsors, but we do have something even better&#8212;you. If you enjoy WordPress please consider telling a friend, setting it up for someone less knowledgable than yourself, or writing the author of a media article that overlooks us.</p>
+
+<p>WordPress is the official continuation of <a href="http://cafelog.com/">b2/caf&#233;log</a>, which came from Michel V. The work has been continued by the <a href="https://wordpress.org/about/">WordPress developers</a>. If you would like to support WordPress, please consider <a href="https://wordpress.org/donate/" title="Donate to WordPress">donating</a>.</p>
+
+<h2>License</h2>
+<p>WordPress is free software, and is released under the terms of the <abbr title="GNU General Public License">GPL</abbr> version 2 or (at your option) any later version. See <a href="license.txt">license.txt</a>.</p>
+
+</body>
 </html>

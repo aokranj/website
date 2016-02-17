@@ -1,0 +1,80 @@
+/* CSS Document */
+
+.breadcrumbs-wrapper,
+.sidebar,
+.yarpp-related,
+#respond,
+.comment-reply,
+.comment-reply-link,
+.comment-form-jump,
+.footer-lg,
+.footer-menu-wrapper,
+.bottom-bar .social-links {
+	display: none;
+}
+body {
+	padding-top: 0 !important;
+}
+.main {
+	padding-bottom: 0;
+}
+.container .main.col-md-9 {
+	width: 100%;
+}
+.footer {
+	margin-top: 40px;
+}
+.container > .row {
+	margin-top: 20px;
+}
+.bottom-bar .copyright {
+	text-align: left;
+}
+.entry-author {
+	margin-top: 40px;
+}
+.comment,
+p,
+table,
+blockquote,
+.entry-author,
+.copyright {
+	page-break-inside: avoid;
+}
+a[href]:after {
+	content: "";
+}
+.entry-content a[href]:after,
+.comment a[href]:after {
+    content: " (" attr(href) ")";
+	color: #00A9DA !important;
+}
+.entry-author {
+	text-align: left;
+	padding: 20px 0;
+	border-bottom: 1px solid #ddd;
+}
+.author-avatar {
+	float: left;
+	width: 25%;
+	margin-bottom: 0;
+}
+.author-bio {
+	float: left;
+	width: 75%;
+}
+.author-social .fa {
+	border: 1px solid #000;
+}
+.comment {
+	position: relative;
+}
+.comment-avatar {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 10;
+}
+.comment-meta-wrap {
+	width: 90%;
+}

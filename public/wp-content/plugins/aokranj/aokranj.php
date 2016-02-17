@@ -32,20 +32,20 @@ class AOKranj
     const ID = 'aokranj';
     const NAME = 'AO Kranj';
     const VERSION = '1.0';
-    
+
     const USER_STATUS_NORMAL  = 0;
     const USER_STATUS_WAITING = 2;
 
     protected $aodb = null;
     protected $prefix = 'ao_';
-    
+
     protected $table_vzponi = 'ao_vzponi';
 
     public function __construct()
     {
         add_action('wp_authenticate', array(&$this, 'wp_authenticate'));
         //add_shortcode('gallery', array(&$this, 'gallery_shortcode'));
-        
+
         if (is_admin())
         {
             require_once dirname(__FILE__) . '/admin.php';
@@ -62,7 +62,7 @@ class AOKranj
         $attrs['link'] = 'file';
         return gallery_shortcode($attrs);
     }
-    
+
     protected function aodb()
     {
         if (is_null($this->aodb))
@@ -71,51 +71,51 @@ class AOKranj
         }
         return $this->aodb;
     }
-    
+
     public function wp_enqueue_scripts()
     {
-        wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/colorbox.css', array(), AOKRANJ_VERSION);
-        wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_VERSION);
-        
-        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.css', array(), AOKRANJ_VERSION);
-        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.js', array('jquery'), AOKRANJ_VERSION);
+        wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/colorbox.css', array(), AOKRANJ_PLUGIN_VERSION );
+        wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
+
+        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
+        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
     }
-    
+
     public function wp_authenticate()
-    {        
+    {
         // user login
         $username = filter_input(INPUT_POST, 'log');
         $password = filter_input(INPUT_POST, 'pwd');
-        
+
         // fetch wordpress user
         $wp_user = apply_filters('authenticate', null, $username, $password);
-        
+
         if ($wp_user == null)
         {
             $wp_user = new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid username or incorrect password.'));
         }
-        
+
         if (is_wp_error($wp_user) && !in_array($wp_user->get_error_code(), array('empty_username', 'empty_password')))
         {
             if ($username && $password)
             {
                 $wp_user = $this->transfer_user_password($username, $password);
             }
-            
+
             if (is_wp_error($wp_user))
             {
                 do_action('wp_login_failed', $username);
             }
         }
-        
+
         return $wp_user;
     }
-    
+
     private function transfer_user_password($username, $password)
     {
         global $wpdb;
         $aodb = $this->aodb();
-        
+
         $ao_field = strstr($username, '@') ? 'email' : 'userName';
         $wp_field = strstr($username, '@') ? 'user_email' : 'user_login';
 
@@ -138,7 +138,7 @@ class AOKranj
         {
             return false;
         }
-        
+
         $success = $wpdb->query(sprintf(
             'UPDATE %s SET user_pass = \'%s\', user_status = %d WHERE ID = %d',
             esc_sql($wpdb->users),
@@ -146,13 +146,13 @@ class AOKranj
             self::USER_STATUS_NORMAL,
             $wp_user->ID
         ));
-        
+
         if ($success)
         {
             wp_cache_delete($wp_user->ID, 'users');
-            
+
             $wp_user = apply_filters('authenticate', null, $wp_user->user_login, $password);
-            
+
             if ($wp_user === null)
             {
                 $wp_user = new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid username or incorrect password.'));
@@ -162,8 +162,52 @@ class AOKranj
         {
             $wp_user = new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid username or incorrect password.'));
         }
-        
+
         return $wp_user;
     }
-    
+
+    public static function responsive_iframe( $atts )
+    {
+        $a = shortcode_atts( array(
+            'id' => ''
+            ,'width' => ''
+            ,'height' => ''
+            ,'allowfullscreen' => 'true'
+            ,'frameborder' => '0'
+            ,'scrolling' => 'no'
+            ,'marginheight' => '0'
+            ,'marginwidth' => '0'
+            ,'src' => ''
+            ,'name'=>''
+        ), $atts );
+
+        if( empty($a['src']) )
+            return "";
+
+        $str = '<div class="responsive-iframe">';
+        $str .= '<iframe';
+        if( !empty($a['id']) )
+            $str .= ' id="'.htmlspecialchars($a['id'],ENT_QUOTES,'',false).'"';
+        if( !empty($a['name']) )
+            $str .= ' name="'.htmlspecialchars($a['name'],ENT_QUOTES,'',false).'"';
+        if( !empty($a['width']) )
+            $str .= ' width="'.htmlspecialchars($a['width'],ENT_QUOTES,'',false).'"';
+        if( !empty($a['height']) )
+            $str .= ' height="'.htmlspecialchars($a['height'],ENT_QUOTES,'',false).'"';
+        $str .= ' allowfullscreen="'.htmlspecialchars($a['allowfullscreen'],ENT_QUOTES,'',false).'"';
+        $str .= ' frameborder="'.htmlspecialchars($a['frameborder'],ENT_QUOTES,'',false).'"';
+        $str .= ' scrolling="'.htmlspecialchars($a['scrolling'],ENT_QUOTES,'',false).'"';
+        $str .= ' marginheight="'.htmlspecialchars($a['marginheight'],ENT_QUOTES,'',false).'"';
+        $str .= ' marginwidth="'.htmlspecialchars($a['marginwidth'],ENT_QUOTES,'',false).'"';
+        if( !empty($a['src']) )
+            $str .= ' src="'.htmlspecialchars ($a['src'],ENT_QUOTES,'',false).'"';
+
+        $str .= ' ></iframe>';
+        $str .= '</div>';
+
+        return $str;
+    }
+
 }
+
+add_shortcode( 'iframe', array( 'AOKranj', 'responsive_iframe' ) );

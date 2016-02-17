@@ -1,0 +1,1179 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Franz Josef theme for WordPress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-13 02:55+0800\n"
+"PO-Revision-Date: 2015-03-13 02:55+0800\n"
+"Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
+"Language-Team: \n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__;_x:2c,1;_c;"
+"_n_noop:1,2;_nc:1,2;_ngettext:1,2;_ngettext_noop:1,2;_ex:2c,1;esc_html__;"
+"esc_html_e;esc_attr_x:2c,1;esc_html_x:2c,1\n"
+"X-Poedit-Basepath: ../.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:14
+msgid "Oops.. there's nothing here"
+msgstr "אופס... שום דבר פה"
+
+#: 404.php:16
+msgid "We couldn't find any content at this URL."
+msgstr "לא מצאנו שום תוכן בכתובת הזו."
+
+#: admin/ajax-handler.php:9
+msgid ""
+"Sorry, but you don't have the necessary permission to modify theme options."
+msgstr ""
+"מצטערים אבל אין לכם את ההרשאות הדרושות לביצוע שינויים באפשרויות ערכת נושא זו."
+
+#: admin/ajax-handler.php:20
+msgid "Options saved."
+msgstr "האפשרויות נשמרו."
+
+#: admin/options-addons.php:3
+msgid "Premium Add-ons"
+msgstr "תוספי פרימיום"
+
+#: admin/options-addons.php:11
+msgid ""
+"Add message blocks and pullquote shortcodes you can use in your content."
+msgstr "הוסף בלוקי הודעות בקודי קיצור pullquote שניתן להשתמש בהן בתוכן שלך."
+
+#: admin/options-addons.php:16
+msgid "Download"
+msgstr "הורד"
+
+#: admin/options-addons.php:18 admin/options-addons.php:39
+#: admin/options-addons.php:61 admin/options-addons.php:80
+#: admin/options-addons.php:99 admin/options-addons.php:122
+#: admin/options-addons.php:140
+msgid "Installed"
+msgstr "מותקן"
+
+#: admin/options-addons.php:29
+msgid ""
+"Retain visitors better by seamlessly loading content without refreshing the "
+"page."
+msgstr ""
+"שומרים על המבקרים טוב יותר על-ידי טעינת תוכן בצורה שקופה מבלי לרענן את הדף."
+
+#: admin/options-addons.php:37 admin/options-addons.php:59
+#: admin/options-addons.php:78 admin/options-addons.php:97
+msgid "Learn more"
+msgstr "למדו עוד"
+
+#: admin/options-addons.php:51
+msgid "Place any content anywhere with easy-to-use action hooks widget areas."
+msgstr ""
+"מקם כל תוכן בכל מקום עם פעולה קלה לשימוש באמצעות ווי מיקום Action hooks."
+
+#: admin/options-addons.php:73
+msgid "Create custom page templates with drag-and-drop Stacks."
+msgstr "צור תבניות דפים מותאמים אישית עם מאגרי גרור-ושחרר."
+
+#: admin/options-addons.php:77 admin/options-addons.php:96
+msgid "Coming soon!"
+msgstr "בקרוב!"
+
+#: admin/options-addons.php:92
+msgid "Customise Franz Josef's colour scheme to suit your style and audience."
+msgstr ""
+
+#: admin/options-addons.php:107
+msgid "Natively Supported Plugins"
+msgstr "תוספים הנתמכים באופן מקורי"
+
+#: admin/options-addons.php:115
+msgid "Automatically display related posts on your posts and pages."
+msgstr ""
+
+#: admin/options-addons.php:120 admin/options-addons.php:138
+msgid "Install"
+msgstr "התקן"
+
+#: admin/options-addons.php:133
+msgid ""
+"Add navigational breadcrumbs for your site for better navigation and "
+"improved SEO."
+msgstr ""
+
+#: admin/options-addons.php:151
+msgid "Free"
+msgstr "חינם"
+
+#: admin/options-addons.php:154
+msgid "Activate"
+msgstr "הפעל"
+
+#: admin/options-defaults.php:17
+msgid "General"
+msgstr "כללי"
+
+#: admin/options-defaults.php:18
+msgid "Display"
+msgstr "תצוגה"
+
+#: admin/options-defaults.php:19
+msgid "Add-ons"
+msgstr "תוספים"
+
+#: admin/options-defaults.php:53
+#, php-format
+msgid "Subscribe to %s's RSS feed"
+msgstr "הרשמה כמנוי להזנת RSS של %s"
+
+#: admin/options-display.php:14
+msgid "Posts Display"
+msgstr "תצוגת פוסטים"
+
+#: admin/options-display.php:20
+msgid "Hide post categories"
+msgstr "הסתר קטגוריות פוסטים"
+
+#: admin/options-display.php:26
+msgid "Hide post tags"
+msgstr "הסתר תגיות פוסטים"
+
+#: admin/options-display.php:32
+msgid "Hide post author"
+msgstr "הסתר מחבר הפוסט"
+
+#: admin/options-display.php:37
+msgid "Hide author's profile image"
+msgstr "להסתיר את תמונת הפרופיל של המחבר"
+
+#: admin/options-display.php:41
+#, fuzzy
+msgid "Hide featured image"
+msgstr "להסתיר את תמונת הפרופיל של המחבר"
+
+#: admin/options-display.php:45
+msgid "Hide author's bio"
+msgstr "הסתרה ביוגרפיה של המחבר"
+
+#: admin/options-display.php:50 admin/options-display.php:81
+#: admin/options-display.php:103 admin/options-display.php:139
+#: admin/options-display.php:171 admin/options-general.php:126
+#: admin/options-general.php:173 admin/options-general.php:202
+#: admin/options-general.php:350 admin/options-general.php:393
+#: admin/options-general.php:422 admin/options-general.php:460
+#: admin/options-general.php:486
+msgid "Save All Options"
+msgstr "שמור את כל האפשרויות"
+
+#: admin/options-display.php:60
+msgid "Excerpts Display"
+msgstr "תצוגת תקצירי פוסטים"
+
+#: admin/options-display.php:66
+msgid "Show full content in archive pages"
+msgstr "הצג את כל התוכן בעמודי ארכיון"
+
+#: admin/options-display.php:73
+msgid "Retain these HTML tags in excerpts"
+msgstr "שמור את תגיות ה-HTML בתקצירי מאמרים"
+
+#: admin/options-display.php:76
+msgid ""
+"Enter the HTML tags you'd like to retain in excerpts. For example, enter "
+"<code>&lt;p&gt;&lt;ul&gt;&lt;li&gt;</code> to retain <code>&lt;p&gt;</code>, "
+"<code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code> HTML tags."
+msgstr ""
+
+#: admin/options-display.php:91
+msgid "Footer Widget Display"
+msgstr "תצוגת ווידג'טים בתחתית"
+
+#: admin/options-display.php:97
+msgid "Number of columns to display"
+msgstr "מספר עמודות לתצוגה"
+
+#: admin/options-display.php:113
+msgid "Miscellaneous Display"
+msgstr "אפשרויות תצוגה שונות"
+
+#: admin/options-display.php:116
+msgid "Favicon options"
+msgstr "אפשרויות Favicon"
+
+#: admin/options-display.php:120
+msgid "Favicon URL"
+msgstr "קישור לאייקון האתר Favicon"
+
+#: admin/options-display.php:124
+msgid "Select Favicon"
+msgstr "בחירת Favicon"
+
+#: admin/options-display.php:124
+msgid "Set as favicon"
+msgstr "קבע Favicon"
+
+#: admin/options-display.php:124
+msgid "Select favicon"
+msgstr "בחר Favicon"
+
+#: admin/options-display.php:129
+msgid "WordPress Editor options"
+msgstr "אפשרויות עורך וורדפרס"
+
+#: admin/options-display.php:133
+msgid "Disable custom editor styles"
+msgstr "כבה אפשרויות סגנון מותאמות אישית של העורך"
+
+#: admin/options-display.php:149
+msgid "Custom CSS"
+msgstr "קוד עיצוב מותאם אישית"
+
+#: admin/options-display.php:154
+msgid "Custom CSS styles"
+msgstr "סגנון קוד עיצוב מותאם אישית"
+
+#: admin/options-display.php:156
+msgid ""
+"You can enter your own CSS codes below to modify any other aspects of the "
+"theme's appearance that is not included in the options."
+msgstr ""
+"אתם יכולים להכניס כאן את קוד ה-CSS שלכם על מנת לשנות כל פרמטר אחר בתבנית "
+"שאינו מופיע באפשרויות התבנית."
+
+#: admin/options-general.php:13
+msgid "Slider"
+msgstr "מצגת"
+
+#: admin/options-general.php:19
+msgid "Disable slider"
+msgstr "כבה מצגת"
+
+#: admin/options-general.php:27
+msgid "What do you want to show in the slider"
+msgstr "מה תרצו להציג במצגת?"
+
+#: admin/options-general.php:31
+msgid "Show latest posts"
+msgstr "הצג פוסטים אחרונים"
+
+#: admin/options-general.php:34
+msgid "Show random posts"
+msgstr "הצג פוסטים אקראיים"
+
+#: admin/options-general.php:37
+msgid "Show specific posts/pages"
+msgstr "הצג פוסטים/עמודים ספציפיים"
+
+#: admin/options-general.php:40
+msgid "Show posts from categories"
+msgstr "הצג פוסטים מקטגוריות"
+
+#: admin/options-general.php:45
+msgid "Posts and/or pages to display"
+msgstr "פוסטים ו/או עמודים להצגה"
+
+#: admin/options-general.php:50
+msgid ""
+"Enter ID of posts and/or pages to be displayed, separated by comma. Example: "
+"<code>1,13,45,33</code>"
+msgstr ""
+"הכניסו את מספר הזיהוי (ID) של הפוסטים ו/או העמודים שתרצו להציג, מופרדים ע\"י "
+"פסיק. לדוגמא <code>1,13,45,33</code>"
+
+#: admin/options-general.php:51
+msgid ""
+"Applicable only if <strong>Show specific posts/pages</strong> is selected "
+"above."
+msgstr ""
+"אפשרי רק אם<strong> \"הצג פוסטים/עמודים ספציפיים\" </strong>נבחר למעלה."
+
+#: admin/options-general.php:57
+msgid "Categories to display"
+msgstr "קטגוריות להצגה"
+
+#: admin/options-general.php:60 admin/options-general.php:146
+msgid "Click to select categories or type to search"
+msgstr "לחצו לבחירת קטגוריה או הקלידו לחיפוש"
+
+#: admin/options-general.php:69
+msgid ""
+"All posts within the categories selected here will be displayed on the "
+"slider. Usage example: create a new category \"Featured\" and assign all "
+"posts to be displayed on the slider to that category, and then select that "
+"category here."
+msgstr ""
+"כל הפוסטים אשר תחת הקטגוריות שנבחרו כאן יוצגו בסליידר. למשל: צרו קטגוריה "
+"חדשה \"נבחרים\" והוסיפו אותה לכל הפוסטים שתרצו שיופיעו בסליידר ואז בחרו את "
+"הקטגוריה הזו פה."
+
+#: admin/options-general.php:74
+msgid "Exclude the categories from posts listing"
+msgstr "אל תכליל את הקטגוריות האלה ברשימת הפוסטים"
+
+#: admin/options-general.php:78
+msgid "Disabled"
+msgstr "מופסק"
+
+#: admin/options-general.php:79
+msgid "Home Page"
+msgstr "עמוד הבית"
+
+#: admin/options-general.php:80
+msgid "Everywhere"
+msgstr "בכל מקום"
+
+#: admin/options-general.php:86
+msgid "Show posts from categories in random order"
+msgstr "הצג פוסטים מקטגוריות בצורה אקראית"
+
+#: admin/options-general.php:94
+msgid "Number of posts to display"
+msgstr "מספר פוסטים לתצוגה"
+
+#: admin/options-general.php:102
+msgid "Slider height"
+msgstr "גובה המצגת"
+
+#: admin/options-general.php:110
+msgid "Slider interval"
+msgstr "השהיית המצגת"
+
+#: admin/options-general.php:113 admin/options-general.php:121
+msgid "seconds"
+msgstr "שניות"
+
+#: admin/options-general.php:118
+msgid "Slider transition duration"
+msgstr "משך זמן החלפת תצוגה במצגת"
+
+#: admin/options-general.php:136
+msgid "Front Page"
+msgstr "עמוד ראשי"
+
+#: admin/options-general.php:143
+msgid "Front page posts categories"
+msgstr "קטגוריות פוסטים עמוד ראשי"
+
+#: admin/options-general.php:154
+msgid ""
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page."
+msgstr "רק פוסטים השייכים לקטגוריות הנבחרות כאן יוצגו בעמוד הראשי."
+
+#: admin/options-general.php:163
+msgid "Don't show blog posts"
+msgstr "אל תציג פוסטים של הבלוג"
+
+#: admin/options-general.php:167
+msgid "Disable listing of blog posts on static front page"
+msgstr "כבה אפשרות לתצוגת רשימת פוסטים של הבלוג בעמוד ראשי סטטי"
+
+#: admin/options-general.php:183 comments.php:16
+msgid "Comments"
+msgstr "תגובות"
+
+#: admin/options-general.php:189
+msgid "Commenting"
+msgstr "אפשרות תגובות"
+
+#: admin/options-general.php:193
+msgid "Use WordPress settings"
+msgstr "השתמש בהגדרות וורדפרס"
+
+#: admin/options-general.php:194
+msgid "Disabled for pages"
+msgstr "בטל לדפים"
+
+#: admin/options-general.php:195
+msgid "Disabled completely"
+msgstr "בטל לחלוטין"
+
+#: admin/options-general.php:197
+msgid ""
+"Note: this setting overrides the global WordPress Discussion Setting called "
+"\"Allow people to post comments on new articles\" and also the \"Allow "
+"comments\" option for individual posts/pages."
+msgstr ""
+
+#: admin/options-general.php:212
+msgid "Social Profiles"
+msgstr "פרופילים חברתיים"
+
+#: admin/options-general.php:216
+msgid "Social Media"
+msgstr "מדיה חברתית"
+
+#: admin/options-general.php:219
+msgid "Open social media links in new window"
+msgstr "פתח קישורים של מדיה חברתית בחלון חדש"
+
+#: admin/options-general.php:223 admin/options-general.php:368
+msgid "Drag and drop to reorder."
+msgstr "גרור ושחרר לסידור מחדש."
+
+#: admin/options-general.php:245 admin/options-general.php:258
+msgid "Custom"
+msgstr "מותאם אישית"
+
+#: admin/options-general.php:268 admin/options-general.php:310
+#: admin/options-general.php:377 admin/settings-init.php:129
+#: inc/comments.php:249
+msgid "Delete"
+msgstr "למחוק"
+
+#: admin/options-general.php:270 admin/options-general.php:308
+#: admin/options-general.php:325
+msgid "Title attribute"
+msgstr "מאפיין הכותרת"
+
+#: admin/options-general.php:274 admin/options-general.php:309
+#: admin/options-general.php:329
+msgid "URL"
+msgstr "URL"
+
+#: admin/options-general.php:277
+msgid "Leave this field empty to use the default RSS URL."
+msgstr "השאירו שדה זה ריק  על מנת להשתמש בקישור RSS ברירת מחדל"
+
+#: admin/options-general.php:282 admin/options-general.php:306
+#: admin/options-general.php:335
+msgid "FontAwesome icon"
+msgstr ""
+
+#: admin/options-general.php:286 admin/options-general.php:307
+#: admin/options-general.php:339
+msgid "Icon URL"
+msgstr "קישור לאייקון"
+
+#: admin/options-general.php:301
+msgid "Add Social Media Profile"
+msgstr "הוסף פרופיל מדיה חברתית"
+
+#: admin/options-general.php:314
+msgid "Type"
+msgstr "סוג"
+
+#: admin/options-general.php:316
+msgid "Choose type"
+msgstr "בחר סוג"
+
+#: admin/options-general.php:331
+msgid "Leave the URL empty to use the default RSS URL."
+msgstr "השאירו קישור זה ריק  על מנת להשתמש בקישור RSS ברירת מחדל"
+
+#: admin/options-general.php:335
+msgid ""
+"FontAwesome icons are great for retina displays. Click to see a list of "
+"FontAwesome icons."
+msgstr ""
+
+#: admin/options-general.php:336
+msgid "Example: soundcloud"
+msgstr "דוגמה: soundcloud"
+
+#: admin/options-general.php:340
+msgid "(optional if using FontAwesome icon above)"
+msgstr ""
+
+#: admin/options-general.php:343
+msgid "Add this social media profile"
+msgstr "הוסף פרופיל מדיה חברתית זה"
+
+#: admin/options-general.php:360
+msgid "Mentions Bar"
+msgstr "סרגל איזכורים"
+
+#: admin/options-general.php:363
+msgid ""
+"Showcase the awards, reviews, or mentions you've received from other "
+"organisations or those you are affiliated to."
+msgstr ""
+
+#: admin/options-general.php:366
+msgid "Brand Icons"
+msgstr "סמלי מותג"
+
+#: admin/options-general.php:374 admin/options-general.php:384
+#: admin/settings-init.php:131
+msgid "Link"
+msgstr "קישור"
+
+#: admin/options-general.php:375 admin/options-general.php:385
+#: admin/settings-init.php:130
+msgid "(optional)"
+msgstr "(אפשרי)"
+
+#: admin/options-general.php:376 admin/options-general.php:386
+msgid "Select Image"
+msgstr "בחרו תמונה"
+
+#: admin/options-general.php:376 admin/options-general.php:386
+msgid "Select image"
+msgstr "בחרו תמונה"
+
+#: admin/options-general.php:403
+msgid "Custom <head> Tags"
+msgstr "תגיות <head> מוגדרות אישית"
+
+#: admin/options-general.php:408
+msgid "Code to insert into the <head> element"
+msgstr "הקוד שיש להכניס ברכיב ה- <head>"
+
+#: admin/options-general.php:432 inc/setup.php:63
+msgid "Footer"
+msgstr "תחתי (footer)"
+
+#: admin/options-general.php:437
+msgid "Copyright text (html allowed)"
+msgstr "טקסט זכויות יוצרים ( מותר להשתמש ב- HTML)"
+
+#: admin/options-general.php:438
+msgid ""
+"If this field is empty, the following default copyright text will be "
+"displayed:"
+msgstr "אם השדה הזה יישאר ריק יוצג טקסט זכויות יוצרים הבא:"
+
+#. translators: %1$s = date, %2$s = site name.
+#: admin/options-general.php:440
+#, php-format
+msgid "&copy; %1$s %2$s. All rights reserved."
+msgstr ""
+
+#: admin/options-general.php:445
+msgid "Do not show copyright info"
+msgstr "אל תציג מידע על זכויות יוצרים"
+
+#: admin/options-general.php:470
+msgid "Print"
+msgstr "הדפס"
+
+#: admin/options-general.php:475
+msgid "Enable print CSS"
+msgstr "אפשר הדפסת CSS"
+
+#: admin/options-general.php:481
+msgid "Show print button"
+msgstr "הצג כפתור הדפסה"
+
+#: admin/options-import.php:30
+msgid "ERROR: You have not selected any colour presets to be exported."
+msgstr "שגיאה: לא בחרת שום ערכת צבע קבועה מראש לייצוא."
+
+#: admin/options-import.php:65 admin/options-import.php:213
+#: admin/options-presets.php:25 admin/uninstall.php:32
+msgid "ERROR: You are not authorised to perform that operation"
+msgstr "שגיאה: אינכם מורשים לבצע פעולה זו"
+
+#: admin/options-import.php:86
+msgid ""
+"Before you can upload your import file, you will need to fix the following "
+"error:"
+msgstr "לפני שתוכלו להעלות את הקובץ עליכם לתקן את השגיאה הזו:"
+
+#: admin/options-import.php:92
+msgid "Import Franz Josef Options"
+msgstr "ייבא אפשרויות פרנץ ג'וזף"
+
+#: admin/options-import.php:95
+msgid "Choose a file from your computer:"
+msgstr "בחרו קובץ מהמחשב שלכם:"
+
+#: admin/options-import.php:95
+#, php-format
+msgid "Maximum size: %s"
+msgstr "גודל מקסימלי: %s"
+
+#: admin/options-import.php:102
+msgid "Upload file and import"
+msgstr "העלה קובץ וייבא"
+
+#: admin/options-import.php:127
+msgid "Import Graphene Theme Options"
+msgstr "ייבא אפשרויות תבנית Graphene"
+
+#: admin/options-import.php:127
+msgid "Import Graphene Theme Colour Presets"
+msgstr "ייבא אפשרויות ערוכות מראש של צבעי תבנית Graphene"
+
+#: admin/options-import.php:175
+msgid "Options import completed."
+msgstr "ייבוא האפשרויות הסתיים"
+
+#: admin/options-import.php:176 admin/options-import.php:186
+msgid "&laquo; Return to Graphene Options"
+msgstr ""
+
+#: admin/options-import.php:178 admin/options-import.php:188
+#: admin/options-import.php:194 admin/options-import.php:199
+msgid "Sorry, there has been an error."
+msgstr "מצטרים, קרתה תקלה."
+
+#: admin/options-import.php:179
+msgid "The uploaded file does not contain valid Graphene options."
+msgstr "הקובץ שהועלה אינו מכיל אפשרויות חוקיות לתבנית Graphene"
+
+#: admin/options-import.php:185
+msgid "Colour presets import completed."
+msgstr "ייבוא הגדרות צבעים הסתיים"
+
+#: admin/options-import.php:189
+msgid "The uploaded file does not contain valid Graphene colour presets."
+msgstr "הקובץ שהועלה אינו מכיל הגדרות צבעים חוקיות לתבנית Graphene"
+
+#: admin/options-import.php:195
+msgid "The uploaded file could not be read."
+msgstr "הקובץ שהועלה אינו ניתן לקריאה."
+
+#: admin/options-import.php:200
+msgid "The uploaded file is not supported."
+msgstr "הקובץ שהועלה אינו נתמך."
+
+#: admin/options-import.php:208
+msgid ""
+"File is empty. Please upload something more substantial. This error could "
+"also be caused by uploads being disabled in your php.ini or by post_max_size "
+"being defined as smaller than upload_max_filesize in php.ini."
+msgstr ""
+"הקובץ ריק. נא העלו משהו יותר משמעותי. השגיאה הזו יכולה להתקבל גם בגלל "
+"שהעלאות אינן מאופשרות לכם בקובץ php.ini או שהגודל המותר להעלאה לפוסט קטן "
+"מגודל ההעלאה המותר בקובץ php.ini."
+
+#: admin/options-presets.php:18
+msgid "Settings have been reset."
+msgstr "ההגדרות אופסו."
+
+#: admin/settings-init.php:39
+msgid "Franz Josef Options"
+msgstr "אפשרויות Franz Josef"
+
+#: admin/settings-init.php:126
+msgid "Oops, nothing found."
+msgstr "אופס, לא נמצא כלום."
+
+#: admin/settings-init.php:128
+msgid "Please select the exported Franz Josef options file to import."
+msgstr "נא בחרו את קובץ הייצוא של הגדרות Franz Josef כדי לייבא."
+
+#: admin/settings-init.php:155
+msgid "Toggle all options boxes"
+msgstr "החלף בחירה בכל תיבות הבחירה"
+
+#: admin/settings-validator.php:27
+msgid "ERROR: Invalid category to show in slider."
+msgstr "שגיאה: קטגוריה לא תקינה להצגה בסליידר."
+
+#: admin/settings-validator.php:30
+msgid ""
+"ERROR: You must specify the posts/pages to be displayed when you have \"Show "
+"specific posts/pages\" selected for the slider."
+msgstr ""
+"שגיאה: אתם חייבים לציין את הפוסטים/עמודים שתרצו להציג אם בחרתם ב\"הצג פוסטים/"
+"עמודים ספציפיים\" עבור הסליידר."
+
+#: admin/settings-validator.php:33
+msgid ""
+"ERROR: You must have selected at least one category when you have \"Show "
+"posts from categories\" selected for the slider."
+msgstr ""
+"שגיאה: כנראה שבחרתם לפחות קטגוריה אחת כשבחרתם את \"הצג פוסטים מקטגוריות\" "
+"עבור הסליידר."
+
+#: admin/settings-validator.php:43
+msgid "ERROR: Invalid category selected for the slider categories."
+msgstr "שגיאה: נבחרה קטגוריה לא נכונה עבור קטגוריות הסליידר."
+
+#: admin/settings-validator.php:47
+msgid ""
+"ERROR: Invalid option for the slider categories exclusion from posts listing "
+"is specified."
+msgstr ""
+
+#: admin/settings-validator.php:53
+msgid ""
+"ERROR: The number of posts to displayed in the slider must be a an integer "
+"value."
+msgstr "שגיאה: מספר הפוסטים להצגה בסליידר חייב להיות מספר שלם."
+
+#: admin/settings-validator.php:56
+msgid "ERROR: The value for slider height must be an integer."
+msgstr "שגיאה: הערך עבור גובה הסליידר חייב להיות מספר שלם."
+
+#: admin/settings-validator.php:58
+msgid "ERROR: The value for slider interval must be a number."
+msgstr ""
+
+#: admin/settings-validator.php:60
+msgid "ERROR: The value for slider transition duration must be a number."
+msgstr "שגיאה: הערך עבור מהירות מעבר הסליידר חייב להיות מספר שלם."
+
+#: admin/settings-validator.php:70
+msgid "ERROR: Invalid category selected for the front page posts categories."
+msgstr "שגיאה: נבחרה קטגוריה לא נכונה עבור קטגוריות פוסטים בעמוד הראשי."
+
+#: admin/settings-validator.php:81
+msgid "ERROR: Invalid option for the comments option."
+msgstr "שגיאה: אפשרות לא תקינה עבור אפשרויות התגובות."
+
+#: admin/settings-validator.php:101
+#, php-format
+msgid "ERROR: Bad URL entered for the %s URL."
+msgstr ""
+
+#: admin/settings-validator.php:182
+msgid ""
+"ERROR: The number of columns to be displayed in the footer widget must be a "
+"an integer value."
+msgstr ""
+
+#: admin/settings-validator.php:187
+msgid "ERROR: Bad URL entered for the favicon URL."
+msgstr "שגיאה: קישור URL לא תקין הוכנס עבור אייקון אתר (favicon)"
+
+#: admin/settings.php:51 admin/uninstall.php:23
+msgid "Uninstall Franz Josef"
+msgstr "הסר את Franz Josef"
+
+#: admin/settings.php:52
+msgid ""
+"Please confirm that you would like to uninstall the Franz Josef theme. All "
+"of the theme's options in the database will be deleted."
+msgstr ""
+"נא אשרו שאתם מעונינים להסיר את ערכת הנושא Franz Josef. כל הגדרות ערכת הנושא "
+"יימחקו מבסיס הנתונים."
+
+#: admin/settings.php:53
+msgid "This action is not reversible."
+msgstr "הפעולה הזו היא ללא אפשרות חזרה אחורה."
+
+#: admin/settings.php:57 admin/settings.php:208
+msgid "Uninstall Theme"
+msgstr "הסר את ערכת הנושא"
+
+#: admin/settings.php:71
+msgid "Franz Josef Theme Options"
+msgstr "אפשרויות ערכת נושא Franz Josef"
+
+#: admin/settings.php:73
+msgid ""
+"These are the global settings for the theme. You may override some of the "
+"settings in individual posts and pages."
+msgstr ""
+"אלו הן ההגדרות הגלובליות של ערכת הנושא. תוכלו לעקוף חלק מההגדרות בפוסטים "
+"ועמודים ספציפיים."
+
+#: admin/settings.php:97
+msgid "Save Options"
+msgstr "שמור אפשרויות"
+
+#: admin/settings.php:112
+msgid "Need help?"
+msgstr "צריכים עזרה?"
+
+#: admin/settings.php:115
+msgid "Franz Josef Support Forum"
+msgstr "פורום תמיכה Franz Josef"
+
+#: admin/settings.php:123
+msgid "Franz Josef news"
+msgstr "חדשות Franz Josef"
+
+#: admin/settings.php:133
+msgid "No news items."
+msgstr "אין ידיעות חדשותיות."
+
+#: admin/settings.php:157 admin/settings.php:166
+msgid "Reset settings"
+msgstr "אפס הגדרות"
+
+#: admin/settings.php:160
+msgid ""
+"Reset all of the theme's settings to their default values. Only settings "
+"accessible via Franz Josef Options are affected. Custom Header, Custom "
+"Menus, and other WordPress settings won't be affected."
+msgstr ""
+
+#: admin/settings.php:161
+msgid "<strong>WARNING:</strong> This action is not reversible."
+msgstr "<strong>אזהרה:</strong> הפעולה הזו בלתי הפיכה."
+
+#: admin/settings.php:176
+msgid "Import/export theme options"
+msgstr "אפשרויות ייבוא/ייצוא הגדרות תבנית"
+
+#: admin/settings.php:179
+msgid "Import"
+msgstr "ייבא"
+
+#: admin/settings.php:182
+msgid "Import theme options"
+msgstr "ייבא הגדרות תבנית"
+
+#: admin/settings.php:184
+msgid "Export"
+msgstr "ייצא"
+
+#: admin/settings.php:188
+msgid "Export theme options"
+msgstr "ייצא הגדרות תבנית"
+
+#: admin/settings.php:198
+msgid "Uninstall theme"
+msgstr "הסר את ערכת הנושא"
+
+#: admin/settings.php:201
+msgid ""
+"<strong>Be careful!</strong> Uninstalling the theme will remove all of the "
+"theme's options from the database. Do this only if you decide not to use the "
+"theme anymore."
+msgstr ""
+"<strong>היו זהירים!</strong> הסרת ערכת הנושא תמחק את כל אפשרויות ערכת הנושא "
+"מבסיס הנתונים. עשו זאת רק אם תם בטוחים שלא תרצו להשתמש בערכת נושא זו שוב."
+
+#: admin/settings.php:202
+msgid ""
+"If you just want to try another theme, there is no need to uninstall this "
+"theme. Simply activate the other theme in the Appearance &gt; Themes admin "
+"page."
+msgstr ""
+
+#: admin/settings.php:203
+msgid ""
+"Note that uninstalling this theme <strong>does not remove</strong> the "
+"theme's files. To delete the files after you have uninstalled this theme, go "
+"to Appearance &gt; Themes and delete the theme from there."
+msgstr ""
+
+#: admin/settings.php:235
+msgid ""
+"<strong>Thank you for installing the Franz Josef theme!</strong> This theme "
+"has been designed to work together with the following plugins. It's "
+"optional, but we recommend that you install them to extend the capability of "
+"the theme:"
+msgstr ""
+
+#: admin/settings.php:238
+#, php-format
+msgid "%s for displaying related posts."
+msgstr "%s להצגת פוסטים קשורים."
+
+#: admin/settings.php:241
+#, fuzzy, php-format
+msgid "%s for navigational breadcrumbs."
+msgstr "עמוד %1$s מתוך %2$s"
+
+#: admin/settings.php:244
+#, php-format
+msgid "%s for adding various shortcodes you can use in your content."
+msgstr ""
+
+#: admin/settings.php:247
+msgid "OK, got it!"
+msgstr "אוקי, הבנתי!"
+
+#: admin/uninstall.php:24
+#, php-format
+msgid "Theme uninstalled. Redirecting to %s"
+msgstr "ערכת הנושא הוסרה. מפנה ל %s"
+
+#: admin/update.php:94
+msgid ""
+"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
+"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+msgstr ""
+
+#: admin/update.php:97
+msgid "An unknown error occurred"
+msgstr "תקלה לא ידועה קרתה"
+
+#: admin/user.php:8
+msgid "Franz Josef-specific User Profile Information"
+msgstr ""
+
+#: admin/user.php:9
+msgid "Additional user profile fields used in the Franz Josef theme."
+msgstr ""
+
+#: admin/user.php:13
+msgid "Author image URL"
+msgstr "קישור לתמונת כותב הפוסט"
+
+#. translators: %1$s will be replaced by link to gravatar.com
+#: admin/user.php:19
+#, php-format
+msgid ""
+"Use this option to override your %1$s. Recommended size is 150px square."
+msgstr ""
+
+#: admin/user.php:25
+msgid "Profile header image URL"
+msgstr "קישור לתמונת הכותרת של הפרופיל"
+
+#. translators: %1$s will be replaced by link to the user's profile page
+#: admin/user.php:31
+#, php-format
+msgid "Header image for your %1$s. Recommended size is 1920x350 pixels."
+msgstr ""
+
+#: admin/user.php:37
+msgid "Current location"
+msgstr "מיקום נוכחי"
+
+#: admin/user.php:42
+msgid ""
+"Will be displayed on your front-facing author profile page. Recommended to "
+"use \"City, Country\" format, e.g. \"Lisbon, Portugal\"."
+msgstr ""
+
+#: admin/user.php:47
+msgid "Social media URLs"
+msgstr "קישור למדיה חברתית"
+
+#: archive.php:11
+#, php-format
+msgid "Daily Archive: %s"
+msgstr "ארכיון יומי: %s"
+
+#: archive.php:13
+#, php-format
+msgid "Monthly Archive: %s"
+msgstr "ארכיון חודשי: %s"
+
+#. translators: F will be replaced with month, and Y will be replaced with year, so "F Y" in English would be replaced with something like "June 2008".
+#: archive.php:15
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:16
+#, php-format
+msgid "Yearly Archive: %s"
+msgstr "ארכיון שנתי: %s"
+
+#: author.php:27
+msgid "About"
+msgstr "אודות"
+
+#: author.php:34
+msgid "Popular"
+msgstr "פופולרי"
+
+#: author.php:76
+#, php-format
+msgid "Commented on %s."
+msgstr "הגיבו ב %s."
+
+#: author.php:83
+msgid "Recent Posts"
+msgstr "פוסטים אחרונים"
+
+#: comments.php:17
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr "פוסט זה מוגן באמצעות סיסמא. יש להכניס סיסמא על מנת לצפות בתגובות"
+
+#: comments.php:32
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s תגובה"
+msgstr[1] "%s תגובות"
+
+#: comments.php:34
+#, php-format
+msgid "%s ping"
+msgid_plural "%s pings"
+msgstr[0] "%s פינג"
+msgstr[1] "%s פינגים"
+
+#: comments.php:43
+msgid "Skip to comment form"
+msgstr "דלגו לטופס התגובה"
+
+#: comments.php:75
+msgid "Comments have been closed."
+msgstr "התגובות סגורות."
+
+#: comments.php:85
+msgid "Submit Comment"
+msgstr "שלחו תגובה"
+
+#: comments.php:86
+msgid "Your email address will not be published."
+msgstr "כתובת האימייל שלכם לא תפורסם."
+
+#: footer.php:27
+msgid "Franz Josef theme"
+msgstr "ערכת נושא Franz Josef"
+
+#: header.php:32
+msgid "Toggle navigation"
+msgstr "החלף מצב ניווט"
+
+#: inc/comments.php:23
+msgid "Reply"
+msgstr "השב"
+
+#: inc/comments.php:31
+msgid "Your comment is awaiting moderation."
+msgstr "התגובה שלכם ממתינה לבקרה."
+
+#: inc/comments.php:50
+#, php-format
+msgid "%1$s on %2$s at %3$s"
+msgstr "%1$s ב %2$s  ב %3$s"
+
+#: inc/comments.php:56
+msgid "Author"
+msgstr "המחבר"
+
+#: inc/comments.php:94
+msgid "Name"
+msgstr "שם"
+
+#: inc/comments.php:98
+msgid "Email"
+msgstr "אימייל"
+
+#: inc/comments.php:102
+msgid "Website (optional)"
+msgstr "אתר (לא חובה)"
+
+#: inc/comments.php:128
+msgid "Your message"
+msgstr "ההודעה שלכם"
+
+#: inc/comments.php:153
+msgid "Post Comment"
+msgstr "פרסמו תגובה"
+
+#: inc/comments.php:249
+msgid "Delete this comment"
+msgstr "מחק תגובה זו."
+
+#: inc/comments.php:251
+msgid "Mark this comment as spam"
+msgstr "סמן תגובה זו כספאם"
+
+#: inc/comments.php:251
+msgid "Spam"
+msgstr "ספאם"
+
+#: inc/loop.php:65
+msgid "Print this page"
+msgstr "הדפיסו עמוד זה"
+
+#: inc/loop.php:87
+#, php-format
+msgid "By %1$s under %2$s"
+msgstr "פורסם על ידי %1$s  תחת %2$s"
+
+#: inc/loop.php:88
+#, php-format
+msgid "Filed under %2$s"
+msgstr "מתויק תחת %2$s"
+
+#: inc/loop.php:89
+#, php-format
+msgid "By %s"
+msgstr "מאת %s"
+
+#: inc/loop.php:97 inc/stacks.php:320
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "תגובה %d "
+msgstr[1] "%d תגובות"
+
+#: inc/loop.php:97 inc/loop.php:145 inc/stacks.php:320
+msgid "Leave a reply"
+msgstr "השאירו תגובה"
+
+#: inc/loop.php:241 inc/loop.php:294
+msgid "&laquo; Prev"
+msgstr "הקודם &laquo;"
+
+#: inc/loop.php:242 inc/loop.php:295
+msgid "Next &raquo;"
+msgstr "הבא &raquo;"
+
+#: inc/loop.php:309
+msgid "Pages:"
+msgstr "עמודים:"
+
+#: inc/loop.php:399
+msgid "About the author"
+msgstr "אודות מחבר המאמר"
+
+#: inc/setup.php:40
+msgid "Header Menu"
+msgstr "תפריט כותרת "
+
+#: inc/setup.php:53
+msgid "Sidebar"
+msgstr "סרגל צד"
+
+#: inc/slider.php:38
+#, fuzzy
+msgid "View post"
+msgstr "הסתר תגיות פוסטים"
+
+#: inc/stacks.php:181
+msgid "Testimonials"
+msgstr "המלצות"
+
+#: inc/stacks.php:182
+msgid "They love you!"
+msgstr "הם אוהבים אותך!"
+
+#: inc/stacks.php:241
+msgid "Latest Articles"
+msgstr "מאמרים אחרונים"
+
+#: inc/stacks.php:242
+msgid "Fully dynamic way of displaying your favourite blog content."
+msgstr "הדרך הדינמית ביותר להצגת התוכן הנבחר של הבלוג שלכם."
+
+#: loop-author.php:14
+msgid "Read more..."
+msgstr "קראו עוד..."
+
+#: loop.php:22
+msgid "Read More"
+msgstr "קראו עוד"
+
+#: search.php:8
+msgid "Search Results"
+msgstr "תוצאות חיפוש"
+
+#: search.php:12
+#, php-format
+msgid "%d result found matching the keyword <strong>\"%s\"</strong>."
+msgid_plural "%d results found matching the keyword <strong>\"%s\"</strong>."
+msgstr[0] ""
+msgstr[1] ""
+
+#: search.php:27
+#, php-format
+msgid ""
+"No result found matching the keyword <strong>\"%s\"</strong>. Try a "
+"different keyword?"
+msgstr ""
+"לא נמצאו תוצאות מתאימות למילת החיפוש <strong>\"%s\"</strong>. לנסות מילת "
+"חיפוש אחרת?"
+
+#: searchform.php:4
+msgid "Search keyword"
+msgstr "חפש מילות מפתח"
+
+#: searchform.php:5
+msgid "Search"
+msgstr "חיפוש"
+
+#: yarpp-template-single.php:11
+msgid "Related posts"
+msgstr "פוסטים קשורים"
+
+#~ msgid "Footer Menu"
+#~ msgstr "תפריט תחתון"

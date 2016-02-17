@@ -1,0 +1,70 @@
+/**
+ * Responsive stylesheet for right-to-left (RTL) language support
+*/
+
+/* Extra small devices (phones, less than 768px) */
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+	.carousel-inner > .item > img, 
+	.carousel-inner > .item > a > img {
+		margin-right: -25%;
+		margin-left: 0;
+	}
+	.testimonial .item {
+		padding-left: 10px;
+		padding-right: 100px;
+	}
+	.testimonial .item img {
+		right: 10px;
+		left: auto;
+	}
+	.comments-list .children {
+		padding-left: 0;
+		padding-right: 15px;
+	}
+	.author-banner img {
+		margin-left: 0;
+		margin-right: -50%;
+	}
+	.infinite-load a i {
+		margin-right: 0;
+		margin-left: 5px;
+	}
+	.non-singular .title-wrap {
+		padding-left: 0;
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+	.author-banner img {
+		margin-left: 0;
+		margin-right: -50%;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	
+}

@@ -1,0 +1,180 @@
+FRANZ JOSEF CHANGELOG
+by Graphene Themes Solutions
+http://www.graphene-theme.com/franz-josef/changelog/
+
+Version 1.7
+	* Added: Theme options migrated to WP Customizer
+	* Added: Option to display front page blog posts in a single column
+	* Added: Option to disable "In this section" child page navigation in sidebar
+	* Added: Option to disable sidebar in static posts page
+	* Added: Submenu now opens up to the side instead of indented under the parent menu
+	* Added: Navigation menu can now extend to 10 levels deep
+	* Added: Masonry effect for front page posts list
+	* Added: French translation by Platypus Geek
+	* Added: Polish translation by Lukasz Keller
+	* Added: Russian translation by Pavel Melnikov
+	* Updated: Slider image height changed from 685px to 500px
+	* Updated: Bootstrap 3.3.6
+	* Updated: Font Awesome 4.5.0
+	* Fixed: the "Leave a reply" link is no longer displayed when comments are disabled for the post
+	* Fixed: Retain HTML tags in excerpts option not being applied
+	* Fixed: PHP notices for posts with featured image in "full" size
+	* Fixed: Custom CSS bug where certain symbols are converted into HTML entities
+	* Fixed: Inconsistent menu item hover colour changes
+	* Fixed: "Notice: Undefined index: comments_setting" when Additional Options plugin is not installed
+
+Version 1.6.1
+	* Added: rel="nofollow" attribute to footer credit link
+
+Version 1.6
+	* Added: Custom page builder (Stacks addon) integration
+	* Added: Smart post image selection. If there's no featured image, automatically pick the most suitable image from the images uploaded to the post
+	* Added: Caption for featured image in singular posts
+	* Added: Previous and Next post links in single post pages
+	* Added: Canadian French (fr_CA) translation
+	* Added: Header Menu now drops down when hovered on desktops
+	* Added: Thank you note after 1 month of using the theme
+	* Fixed: Padding issues with navigation menu on scroll down
+	* Fixed: Menu descriptions for dropdown menu items are hidden when user scrolls down the page
+	* Fixed: PHP notices when using default menu
+
+Version 1.5.1
+	* Fixed: Layout issue in author page
+	* Fixed: Infinite Scroll bug on author page
+	* Fixed: Unxpected T_FUNCTION syntax error in earlier versions of PHP
+	* Fixed: Missing text strings from translations
+
+Version 1.5
+	* Added: Option to disable Mentions Bar or show it on the front page, singular pages, or everywhere
+	* Added: Option to show sidebar in front page
+	* Added: Layout Shortcodes addon
+	* Added: Top Bar with customisable layout
+	* Added: Top Bar Menu, Social Profile Links, and Text widgets
+	* Added: Custom Menu location for Top Bar
+	* Added: Menu icons feature
+	* Added: Menu description feature
+	* Updated: Smoother navigation bar styling transition when pinned
+	* Updated: FontAwesome 4.4
+	
+Version 1.4.2
+	* Updated: Theme's URL to the theme's page on graphene-theme.com
+
+Version 1.4.1
+	* Updated: franz-medium image size to 600x300 pixels from 550x300 pixels
+	* Updated: Posts listing on front page now uses image size that is more appropriate for the column setting
+	* Updated: Used wp_enqueue_style to properly enqueue Google Fonts
+	* Fixed: Montserrat font not loaded
+	* Fixed: Layout issue with Quote and Status post formats
+
+Version 1.4
+	* Added: Spanish translation by Eduardo Larequi
+	* Added: Option to use Masonry tiled layout on posts listing pages
+	* Added: Option to specify number of columns on front page posts
+	* Added: Option to disable full-width first blog post on front page
+	* Added: Automatically make large tables responsive
+	* Added: Option to disable automatic responsive tables
+	* Added: Masonry layout on posts stack
+	* Added: Page template - single column
+	* Added: Page template is now applied on blog posts page
+	* Added: WP Retina 2x as natively supported plugin
+	* Added: Description text for taxonomy archive
+	* Added: Posts with embedded videos now show the video in posts listing
+	* Added: Hide slider categories option will also hide slider categories from categories listing (eg. Archives widget)
+	* Added: franz_slider_outer action hook
+	* Updated: Singular posts will only display featured image if its width is at least as wide as the content area width
+	* Updated: Hi-DPI Mentions Bar images
+	* Updated: "View Post" button no longer shown in slider if set to show full content
+	* Updated: Better WordPress gallery styling
+	* Updated: Switched to using webfonts hosted by Google rather than locally
+	* Updated: Various styling improvements
+	* Updated: Links to theme addons
+	* Fixed: Bootstrap Carousel not pausing on hover
+	* Fixed: Author comment label not visible
+	* Fixed: No featured comment is displayed for author if all the comments are longer than 100 characters
+	* Fixed: Post titles in non-singular context are wrapped in H1 element
+	* Fixed: Fetch as Google render issue
+
+Version 1.3
+	* Added: Proper print stylesheet
+	* Added: Filter for section menu args
+	* Added: franz_slide_content and franz_slide_content_outer action hook
+	* Added: Escaped favicon_url, head styles, and copyright text
+	* Added: Non-minified version of included scripts
+	* Added: Fade transition for main slider
+	* Fixed: "In this section" text missing from translation
+	* Fixed: Slider height setting not applied
+	* Fixed: Slider not pausing on hover
+	* Fixed: Minor styling tweaks
+	* Fixed: Missing text domain in search.php
+	* Fixed: Removed error suppression in search.php
+	* Fixed: Missing text strings from i18n
+	* Updated: Text domain from "franz" to "franz-josef"
+	* Updated: Constant prefix from "FJ" to "FRANZ"
+	* Updated: "medium" image size to "franz-medium"
+	* Updated: IE-specific scripts loaded via wp_enqueue_script()
+	* Updated: Prefixed disect_it() and cleaner_caption() functions
+	* Updated: Removed orphaned franz_highlight_p() function
+	* Updated: Applied $wpdb->prepare() for franz_get_comment_count()
+	* Updated: Removed images used only during development
+	* Updated: Chosen 1.4.2
+	* Updated: Bootstrap 3.3.4
+	* Removed: Plugin territory - comments options
+	* Removed: Plugin territory - user alternate avatar option
+
+Version 1.2.1
+	* Added: Additional Microformats structured data markup to avoid dependence on visible content
+	* Fixed: Posts listing block width for small viewports
+	* Fixed: Registered post formats support for "quote" and "status"
+
+Version 1.2
+	* Added: Footer Menu location
+	* Added: Note in the theme's About page and readme.txt about menu locations dropdown levels limit
+	* Added: esc_url() and esc_attr() in numerous locations to properly escape strings
+	
+	* Fixed: Removed social icons markup if there is no social icons specified in the settings
+	* Fixed: Non-breaking text
+	* Fixed: Styling issues for WordPress core widgets
+	* Fixed: "Leave a Reply" links to non-existent #comments ID attribute
+	* Fixed: Empty bio text area in author's page when author has no bio text
+
+Version 1.1
+	* Added: Option to show excerpt or full content in slider
+	* Added: Option to remove automatic search widget in sidebar
+	* Added: Styling for pullquotes in Graphene Shortcodes plugin
+	* Added: Hebrew translation
+	* Added: Main menu and site title / logo will automatically switch to full container width and centered if they are too wide. Site title will also be hidden when user scrolls down.
+	* Added: Default menu to list all pages if no custom menu assigned
+	* Added: ID attribute for slider items
+	* Added: More stringent validation for Custom CSS option as per WPTRT requirement
+	* Added: "About Franz Josef" tab in options page containing useful information for the theme's users.
+	* Added: Option to disable featured image on single post page
+	
+	* Fixed: A few styling issues
+	* Fixed: Marked a few more strings for translations
+	* Fixed: References to Graphene theme
+	* Fixed: Copyright text option not saving
+	* Fixed: Depth-3 submenu alignment in RTL sites
+	* Fixed: Front page posts pagination not working
+	* Fixed: PHP notice in author bio email
+	* Fixed: Long overflowing text in sidebar widget
+	* Fixed: JS error related to CodeMirror script
+	* Fixed: Missing strings from translation file
+	* Fixed: Replaced all instances of get_the_permalink() with get_permalink()
+	* Fixed: Options tabs names not translated
+	* Fixed: Minor RTL style update
+	* Fixed: CodeMirror text alignment for RTL languages
+	* Fixed: Replaced deprecated function $wpdb->escape() with esc_sql()
+	* Fixed: Front page posts listing not using WordPress posts per page settings
+	* Fixed: Language files not loaded
+	
+	* Updated: FontAwesome 4.3.0
+	* Updated: Slider image is now a background image that covers the entire slider
+	* Updated: CodeMirror 5.0
+	* Updated: Featured image is now set to soft proportional crop instead of hard crop
+	* Updated: POT language file
+	
+	* Removed: Subscribe to future comments checkbox as this will be implemented in the future
+	* Removed: Footer menu location as there isn't one and this feature can be achieved using footer widgets
+
+Version 1.0
+	* Initial release

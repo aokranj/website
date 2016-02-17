@@ -253,7 +253,7 @@ Ext.define('AO.view.vzpon.Dodaj', {
                 queryMode: 'local',
                 lastQuery: '',
                 allowBlank: true,
-                editable: false,
+                editable: true,
                 store: {
                     type: 'json',
                     fields: ['opomba', 'ime'],

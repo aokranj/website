@@ -1,0 +1,1699 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Franz Josef theme for WordPress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-20 01:17+0100\n"
+"PO-Revision-Date: 2015-12-28 06:46+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__;_x:2c,1;_c;"
+"_n_noop:1,2;_nc:1,2;_ngettext:1,2;_ngettext_noop:1,2;_ex:2c,1;esc_html__;"
+"esc_html_e;esc_attr_x:2c,1;esc_html_x:2c,1\n"
+"X-Poedit-Basepath: ../.\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:14
+msgid "Oops.. there's nothing here"
+msgstr "Oops .. il n'y a rien ici"
+
+#: 404.php:16
+msgid "We couldn't find any content at this URL."
+msgstr "Nous ne pouvons pas trouver  de contenu à cette URL."
+
+#: 404.php:18
+#, php-format
+msgid "Searching for the keyword %s ..."
+msgstr "Recherche du mot-clé %s ..."
+
+#: admin/ajax-handler.php:9
+msgid ""
+"Sorry, but you don't have the necessary permission to modify theme options."
+msgstr ""
+"Désolé, mais vous ne disposez pas de l'autorisation nécessaire pour modifier "
+"les options de thème."
+
+#: admin/ajax-handler.php:20
+msgid "Options saved."
+msgstr "Options sauvegardées."
+
+#: admin/options-about.php:3
+msgid ""
+"<strong>Thank you for using the Franz Josef theme!</strong> Below are some "
+"useful information that you might want to know. Enjoy!"
+msgstr ""
+"<strong>Merci d'utiliser le thème de Franz Josef!</strong> Voici quelques "
+"informations utiles que vous pourriez vouloir savoir."
+
+#: admin/options-about.php:5
+msgid "Recommended Plugins"
+msgstr "Plugins recommandée"
+
+#: admin/options-about.php:6
+msgid ""
+"This theme has been designed to work together with the following plugins. "
+"It's optional, but we recommend that you install them to extend the "
+"capability of the theme:"
+msgstr ""
+"Ce thème a été conçu pour travailler de concert avec les plugins suivants. "
+"C'est facultatif, mais nous vous recommandons de les installer pour étendre "
+"la capacité du thème:"
+
+#: admin/options-about.php:9 admin/settings.php:230
+#, php-format
+msgid "%s for displaying related posts."
+msgstr "%s pour afficher les messages associés."
+
+#: admin/options-about.php:12 admin/settings.php:233
+#, php-format
+msgid "%s for navigational breadcrumbs."
+msgstr "%s pour la navigation file d'ariane"
+
+#: admin/options-about.php:15 admin/settings.php:236
+#, php-format
+msgid "%s for adding various shortcodes you can use in your content."
+msgstr ""
+"%s pour ajouter divers shortcodes que vous pouvez utiliser dans vos contenus."
+
+#: admin/options-about.php:18 admin/settings.php:239
+#, php-format
+msgid ""
+"%s to ensure all images in your content maintains its sharpness on retina "
+"devices."
+msgstr ""
+"%s pour vous assurez que toutes les images de vos contenus conserve leur "
+"proportion sur les écrans rétina."
+
+#: admin/options-about.php:22
+msgid "Size and Dimensions"
+msgstr "Taille et Dimensions"
+
+#: admin/options-about.php:24
+msgid ""
+"Width of the main content area is 848px with sidebar, 1140px without sidebar."
+msgstr ""
+"La largeur de la zone de contenu principal est de 848px avec sidebar, 1140px "
+"sans sidebar."
+
+#: admin/options-about.php:25
+msgid "Width of the sidebar is 262px."
+msgstr "La largeur de la sidebar est de 262px."
+
+#: admin/options-about.php:26
+msgid "Featured Images are 850px wide and 450px high."
+msgstr "Les images à la une font 850px de large et 450px de haut"
+
+#: admin/options-about.php:29
+msgid "Other Notes"
+msgstr "Autres notes"
+
+#: admin/options-about.php:31
+msgid ""
+"The \"Header Menu\" menu location supports up to 2 levels deep dropdown."
+msgstr "La position du menu d'entête supporte 2 niveaux de profondeur"
+
+#: admin/options-about.php:32
+msgid "The \"Footer Menu\" menu location does not support dropdown."
+msgstr "Le menu de pied de page ne supporte pas le dropdown"
+
+#: admin/options-about.php:35
+msgid "Help and Support"
+msgstr "Aide et support"
+
+#: admin/options-about.php:36
+#, php-format
+msgid ""
+"You can ask questions, request for help, provide suggestions, and report "
+"bugs at the %s."
+msgstr ""
+"Vous pouvez poser des questions, demander de l'aide, proposer des "
+"suggestion, et rapporter des bugs à %s"
+
+#: admin/options-about.php:36
+msgid "Franz Josef Support Forum"
+msgstr "Forum support Franz Josef"
+
+#: admin/options-about.php:38
+msgid "Rate Us!"
+msgstr "Notez nous!"
+
+#: admin/options-about.php:39
+#, php-format
+msgid ""
+"If you've enjoyed using this theme, please rate us on %s and spread the "
+"word! We'd really appreciate it!"
+msgstr ""
+"Si vous aimez utiliser ce thème, notez nous sur %s et partagez avec le "
+"monde, s'il vous plait! Nous apprécierons vraiment!"
+
+#: admin/options-about.php:43
+#, php-format
+msgid "Meticulously developed by %s."
+msgstr "Développé méticuleusement par %s."
+
+#: admin/options-about.php:44
+msgid ""
+"When we're not making awesome themes, we do custom web development for "
+"clients from more than 15 countries."
+msgstr ""
+"Quand nous ne faisons pas des thèmes géniaux, nous faisons du développement "
+"web pour des clients dans plus de 15 pays."
+
+#: admin/options-about.php:45
+msgid "Let us work the magic for you too."
+msgstr "Laissez nous faire opérer la magie pour vous."
+
+#: admin/options-addons.php:3
+msgid "Premium Add-ons"
+msgstr "Add-ons prémium."
+
+#: admin/options-addons.php:11
+msgid ""
+"Add message blocks and pullquote shortcodes you can use in your content."
+msgstr ""
+"Ajouter des blocks de messages et des extraits de texte que sous pouvez "
+"utiliser dans vos contenu"
+
+#: admin/options-addons.php:16 admin/options-addons.php:34
+#: admin/options-addons.php:53 admin/options-addons.php:72
+#: admin/options-addons.php:91 admin/options-addons.php:110
+#: admin/options-addons.php:129
+msgid "Learn more"
+msgstr "En apprendre plus"
+
+#: admin/options-addons.php:18 admin/options-addons.php:36
+#: admin/options-addons.php:55 admin/options-addons.php:74
+#: admin/options-addons.php:93 admin/options-addons.php:112
+#: admin/options-addons.php:131 admin/options-addons.php:154
+#: admin/options-addons.php:172 admin/options-addons.php:190
+msgid "Installed"
+msgstr "installé"
+
+#: admin/options-addons.php:29
+msgid ""
+"Retain visitors better by seamlessly loading content without refreshing the "
+"page."
+msgstr ""
+"Garder vos visiteurs en chargeant le contenu de façon transparente sans "
+"recharger la page."
+
+#: admin/options-addons.php:48
+msgid "Place any content anywhere with easy-to-use action hooks widget areas."
+msgstr ""
+"Placer n'importe quel contenu n'importe ou avec la zone de widget de hook "
+"facile à utiliser"
+
+#: admin/options-addons.php:66
+msgid "Layout Shortcodes"
+msgstr "Shortcodes de mise en page"
+
+#: admin/options-addons.php:67
+msgid ""
+"Easily apply Bootstrap layout elements using intuitive shortcodes in WP "
+"Editor."
+msgstr ""
+"Appliquer facilement les élément de layout de Bootstrap en utilisant des "
+"shortcodes intuitif dans l'éditeur WP"
+
+#: admin/options-addons.php:86
+msgid ""
+"Quickly and easily create complex and unique custom page layouts with drag-"
+"and-drop Stacks."
+msgstr ""
+"Créez facilement et rapidement de layout de pages complexe et personnalisé "
+"avec le glisser-déposer"
+
+#: admin/options-addons.php:104
+msgid "Custom Colours"
+msgstr "Couleurs personnalisées"
+
+#: admin/options-addons.php:105
+msgid "Customise Franz Josef's colour scheme to suit your style and audience."
+msgstr ""
+"Personnalisez le jeu de couleurs de Franz Josef en fonction de votre style "
+"et de votre public. "
+
+#: admin/options-addons.php:109
+msgid "Coming soon!"
+msgstr "Bientôt!"
+
+#: admin/options-addons.php:123
+msgid "Additional Options"
+msgstr "Options supplémentaires"
+
+#: admin/options-addons.php:124
+msgid "Adds additional plugin-territory options for the Franz Josef theme."
+msgstr "Ajouter des options de plugin-territory pour le thème Franz Josef."
+
+#: admin/options-addons.php:139
+msgid "Natively Supported Plugins"
+msgstr "Plugins supporté nativement"
+
+#: admin/options-addons.php:147
+msgid "Automatically display related posts on your posts and pages."
+msgstr ""
+"Afficher automatiquement les articles proche sur vos articles et pages."
+
+#: admin/options-addons.php:152 admin/options-addons.php:170
+#: admin/options-addons.php:188
+msgid "Install"
+msgstr "Install"
+
+#: admin/options-addons.php:165
+msgid ""
+"Add navigational breadcrumbs for your site for better navigation and "
+"improved SEO."
+msgstr ""
+"Ajouter un fil d'arianne navigable pour votre site pour une amélioration de "
+"la navigation et du SEO."
+
+#: admin/options-addons.php:183
+msgid ""
+"Ensure the images in your content look sharp and crisp on retina and high-"
+"DPI displays."
+msgstr ""
+"Vérifiez que les images de votre contenu soit nettes et lumineuses sur des "
+"affichages retina et haut DPI."
+
+#: admin/options-addons.php:201
+msgid "Free"
+msgstr "Gratuit"
+
+#: admin/options-addons.php:204
+msgid "Activate"
+msgstr "Activé"
+
+#: admin/options-defaults.php:17
+msgid "General"
+msgstr "Général"
+
+#: admin/options-defaults.php:18
+msgid "Display"
+msgstr "Affichage"
+
+#: admin/options-defaults.php:19
+msgid "Add-ons"
+msgstr "Add-ons"
+
+#: admin/options-defaults.php:20
+msgid "About Franz Josef"
+msgstr "A propos de Franz Josef"
+
+#: admin/options-defaults.php:58
+#, php-format
+msgid "Subscribe to %s's RSS feed"
+msgstr "Souscrivez au flus RSS %s"
+
+#: admin/options-display.php:12 admin/options-display.php:68
+#: admin/options-display.php:99 admin/options-display.php:121
+#: admin/options-display.php:169 admin/options-general.php:11
+#: admin/options-general.php:44 admin/options-general.php:179
+#: admin/options-general.php:254 admin/options-general.php:402
+#: admin/options-general.php:462 admin/options-general.php:491
+#: admin/options-general.php:529 admin/settings.php:148 admin/settings.php:167
+#: admin/settings.php:189
+msgid "Click to toggle"
+msgstr "Cliquer pour basculer l'affichage"
+
+#: admin/options-display.php:14
+msgid "Posts Display"
+msgstr "Affichage des articles"
+
+#: admin/options-display.php:20
+msgid "Use tiled layout in posts listing pages"
+msgstr ""
+"Utiliser la présentation en mosaïque dans les postes de listing de pages"
+
+#: admin/options-display.php:26
+msgid "Hide post categories"
+msgstr "Cacher les catégories des articles"
+
+#: admin/options-display.php:32
+msgid "Hide post tags"
+msgstr "Cacher les mots clé des articles"
+
+#: admin/options-display.php:38
+msgid "Hide post author"
+msgstr "cacher l'auteur de l'article"
+
+#: admin/options-display.php:43
+msgid "Hide author's profile image"
+msgstr "Cacher l'image de profile de l'auteur"
+
+#: admin/options-display.php:47
+msgid "Hide featured image"
+msgstr "Cacher l'image à la une"
+
+#: admin/options-display.php:51
+msgid "Hide author's bio"
+msgstr "Cacher la bio de l'auteur"
+
+#: admin/options-display.php:55
+msgid "Disable responsive tables"
+msgstr "Désactiver les tableaux responsive"
+
+#: admin/options-display.php:56
+msgid ""
+"You can also disable responsive tables individually by adding <code>non-"
+"responsive</code> class to the tables."
+msgstr ""
+"Vous pouvez également désactiver les tableaux responsive individuellement en "
+"ajoutant <code>non-responsive</code> aux tableaux"
+
+#: admin/options-display.php:60 admin/options-display.php:91
+#: admin/options-display.php:113 admin/options-display.php:161
+#: admin/options-display.php:193 admin/options-general.php:37
+#: admin/options-general.php:171 admin/options-general.php:246
+#: admin/options-general.php:394 admin/options-general.php:454
+#: admin/options-general.php:483 admin/options-general.php:521
+#: admin/options-general.php:547
+msgid "Save All Options"
+msgstr "Sauvegarder toutes les options"
+
+#: admin/options-display.php:70
+msgid "Excerpts Display"
+msgstr "Affichage des extraits"
+
+#: admin/options-display.php:76
+msgid "Show full content in archive pages"
+msgstr "Montrer le contenu complet dans les pages d'archive"
+
+#: admin/options-display.php:83
+msgid "Retain these HTML tags in excerpts"
+msgstr "Conserver les balisse HTML dans les extraits"
+
+#: admin/options-display.php:86
+msgid ""
+"Enter the HTML tags you'd like to retain in excerpts. For example, enter "
+"<code>&lt;p&gt;&lt;ul&gt;&lt;li&gt;</code> to retain <code>&lt;p&gt;</code>, "
+"<code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code> HTML tags."
+msgstr ""
+"Entrez les balises HTML que vous souhaitez conserver dans des extraits . Par "
+"exemple, entrez les balises HTML< code> & lt ; p & gt; & lt; ul & gt; & lt; "
+"li & gt; < / code> pour conserver < code> & lt ; p & gt; < / code> , < code> "
+"& lt ; ul & gt; < / code> , et < code> & lt ; li & gt; < / code>."
+
+#: admin/options-display.php:101
+msgid "Footer Widget Display"
+msgstr "Affichage des widget du footer"
+
+#: admin/options-display.php:107
+msgid "Number of columns to display"
+msgstr "Nombre de colonne à afficher"
+
+#: admin/options-display.php:123
+msgid "Miscellaneous Display"
+msgstr "Affichage divers"
+
+#: admin/options-display.php:126
+msgid "Sidebar options"
+msgstr "Options de la sidebar"
+
+#: admin/options-display.php:130
+msgid "Disable search form"
+msgstr "Désactiver le formulaire de recherche"
+
+#: admin/options-display.php:138
+msgid "Favicon options"
+msgstr "Options de favicon"
+
+#: admin/options-display.php:142
+msgid "Favicon URL"
+msgstr "URL de Favicon"
+
+#: admin/options-display.php:146
+msgid "Select Favicon"
+msgstr "Sélectionner Favicon"
+
+#: admin/options-display.php:146
+msgid "Set as favicon"
+msgstr "Choisir comme favicon"
+
+#: admin/options-display.php:146
+msgid "Select favicon"
+msgstr "Sélectionner favicon"
+
+#: admin/options-display.php:151
+msgid "WordPress Editor options"
+msgstr "Options d'édition de wordpress"
+
+#: admin/options-display.php:155
+msgid "Disable custom editor styles"
+msgstr "Désactiver l'éditeur de style personnalisé"
+
+#: admin/options-display.php:171
+msgid "Custom CSS"
+msgstr "CSS personnalisée"
+
+#: admin/options-display.php:176
+msgid "Custom CSS styles"
+msgstr "Styles CSS personnalisé"
+
+#: admin/options-display.php:178
+msgid ""
+"You can enter your own CSS codes below to modify any other aspects of the "
+"theme's appearance that is not included in the options."
+msgstr ""
+"Vous pouvez entrer votre propre CSS pour modifier n'importe quel aspect du "
+"thème qui n'est pas inclus dans les options."
+
+#: admin/options-general.php:13 inc/setup.php:79
+msgid "Top Bar"
+msgstr "Top Bar"
+
+#: admin/options-general.php:18
+#, php-format
+msgid ""
+"Positioning of elements in the Top Bar can be customised using the \"Top Bar"
+"\" widget area and \"Franz Josef Top Bar\" widgets in %s."
+msgstr ""
+"Le positionnement des élément de la Top Bar peuvent être personaliser en "
+"utilisant la zone de widget \"Top Bar\" et les widgets \"Franz Josef Top Bar"
+"\"  dans %s."
+
+#: admin/options-general.php:19
+msgid "Appearance > Widgets"
+msgstr "Apparence > Widgets"
+
+#: admin/options-general.php:23
+#, php-format
+msgid "Custom menu can be assigned to the \"Top Menu\" location in %s."
+msgstr ""
+"Les menus personnalisés ûvent être assigné à la position \"Top Menu\" dans "
+"%s."
+
+#: admin/options-general.php:24
+msgid "Appearance > Menus"
+msgstr "Apparence > Menu"
+
+#: admin/options-general.php:31
+msgid "Disable Top Bar"
+msgstr "Désactiver la Top Bar"
+
+#: admin/options-general.php:46
+msgid "Slider"
+msgstr "Slider"
+
+#: admin/options-general.php:52
+msgid "Disable slider"
+msgstr "Désactiver le slider"
+
+#: admin/options-general.php:60
+msgid "What do you want to show in the slider"
+msgstr "Que voulez vous afficher dans le slider"
+
+#: admin/options-general.php:64
+msgid "Show latest posts"
+msgstr "Afficher les derniers contenus"
+
+#: admin/options-general.php:67
+msgid "Show random posts"
+msgstr "Afficher des articles aléatiore"
+
+#: admin/options-general.php:70
+msgid "Show specific posts/pages"
+msgstr "Afficher des articles/pages spécifique"
+
+#: admin/options-general.php:73
+msgid "Show posts from categories"
+msgstr "Afficher des articles depuis des catégories"
+
+#: admin/options-general.php:78
+msgid "Posts and/or pages to display"
+msgstr "Articles et/ou pages à afficher"
+
+#: admin/options-general.php:83
+msgid ""
+"Enter ID of posts and/or pages to be displayed, separated by comma. Example: "
+"<code>1,13,45,33</code>"
+msgstr ""
+"Entrer les ID des articles et/ou pages à afficher, séparé par des virgule. "
+"Exemple: <code>1,13,45,33</code>"
+
+#: admin/options-general.php:84
+msgid ""
+"Applicable only if <strong>Show specific posts/pages</strong> is selected "
+"above."
+msgstr ""
+"Applicable uniquement si <strong>Afficher des articles/pages spécifique</"
+"strong> a été sélectionné précédement"
+
+#: admin/options-general.php:90
+msgid "Categories to display"
+msgstr "Catégories à afficher"
+
+#: admin/options-general.php:93 admin/options-general.php:199
+msgid "Click to select categories or type to search"
+msgstr "Cliquez pour sélectionner des categories ou tapez pour chercher"
+
+#: admin/options-general.php:102
+msgid ""
+"All posts within the categories selected here will be displayed on the "
+"slider. Usage example: create a new category \"Featured\" and assign all "
+"posts to be displayed on the slider to that category, and then select that "
+"category here."
+msgstr ""
+"Tous les articles des catégories sélectionnées ici seront afficher dans le "
+"slider. Exemple d'utilisation : créer une nouvelle catégorie \"Sélectionnée"
+"\" et assigné lui tout les article à afficher dans le slider, puis "
+"sélectionné cette catégorie ici."
+
+#: admin/options-general.php:107
+msgid "Exclude the categories from posts listing"
+msgstr "Exclure les catégories des postes de listing"
+
+#: admin/options-general.php:111
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: admin/options-general.php:112
+msgid "Home Page"
+msgstr "Page d'accueil"
+
+#: admin/options-general.php:113 admin/options-general.php:418
+msgid "Everywhere"
+msgstr "N'importe ou"
+
+#: admin/options-general.php:119
+msgid "Show posts from categories in random order"
+msgstr "Afficher les articles des catégories en ordre aléatiore"
+
+#: admin/options-general.php:127
+msgid "Slider content"
+msgstr "Contenu du slider"
+
+#: admin/options-general.php:131
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: admin/options-general.php:134
+msgid "Full content"
+msgstr "Contenu complet"
+
+#: admin/options-general.php:139
+msgid "Number of posts to display"
+msgstr "Nombre d'article à afficher"
+
+#: admin/options-general.php:147
+msgid "Slider height"
+msgstr "Hauteur du slider"
+
+#: admin/options-general.php:155
+msgid "Slider interval"
+msgstr "Interval du slider"
+
+#: admin/options-general.php:158 admin/options-general.php:166
+msgid "seconds"
+msgstr "second"
+
+#: admin/options-general.php:163
+msgid "Slider transition duration"
+msgstr "Duré de la transition du slider"
+
+#: admin/options-general.php:181 admin/options-general.php:416
+msgid "Front Page"
+msgstr "Page d'accueil"
+
+#: admin/options-general.php:188
+msgid "Show sidebar on front page"
+msgstr "Afficher la sidebar sur la page d'accueil"
+
+#: admin/options-general.php:196
+msgid "Front page posts categories"
+msgstr "Articles de la page d'accueil"
+
+#: admin/options-general.php:207
+msgid ""
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page."
+msgstr ""
+"Seulement les postes correspondant au catégories sélectionnées ici seront "
+"afficher sur la page d'accueil."
+
+#: admin/options-general.php:212
+msgid "Blog posts columns"
+msgstr "Colonnes de poste de blog"
+
+#: admin/options-general.php:225
+msgid "Disable full-width first blog post"
+msgstr "Désactiver le premier article en largeur total"
+
+#: admin/options-general.php:237
+msgid "Don't show blog posts"
+msgstr "Ne pas afficher les poste de blog"
+
+#: admin/options-general.php:240
+msgid "Disable listing of blog posts on static front page"
+msgstr "Désactivé le listing des postes de blog sur la page d'accueil static"
+
+#: admin/options-general.php:256
+msgid "Social Profiles"
+msgstr "Profiles réseaux sociaux"
+
+#: admin/options-general.php:260
+msgid "Social Media"
+msgstr "Média social"
+
+#: admin/options-general.php:263
+msgid "Open social media links in new window"
+msgstr "Ouvrir les lien vers les réseaux sociaux dans une nouvelle fenêtre."
+
+#: admin/options-general.php:267 admin/options-general.php:429
+msgid "Drag and drop to reorder."
+msgstr "Glisser/déposer pour ré-ordonner"
+
+#: admin/options-general.php:289 admin/options-general.php:302
+msgid "Custom"
+msgstr "Personalisé"
+
+#: admin/options-general.php:312 admin/options-general.php:354
+#: admin/options-general.php:438 admin/settings-init.php:135
+#: inc/comments.php:237
+msgid "Delete"
+msgstr "Effacer"
+
+#: admin/options-general.php:314 admin/options-general.php:352
+#: admin/options-general.php:369
+msgid "Title attribute"
+msgstr "Attribue du titre"
+
+#: admin/options-general.php:318 admin/options-general.php:353
+#: admin/options-general.php:373
+msgid "URL"
+msgstr "URL"
+
+#: admin/options-general.php:321
+msgid "Leave this field empty to use the default RSS URL."
+msgstr "Laisser ce champ vide pour utiliser l'URL RSS par défaut."
+
+#: admin/options-general.php:326 admin/options-general.php:350
+#: admin/options-general.php:379
+msgid "FontAwesome icon"
+msgstr "Icon FontAwesome"
+
+#: admin/options-general.php:330 admin/options-general.php:351
+#: admin/options-general.php:383
+msgid "Icon URL"
+msgstr "Icône URL"
+
+#: admin/options-general.php:345
+msgid "Add Social Media Profile"
+msgstr "Ajouter le profile de média social"
+
+#: admin/options-general.php:358
+msgid "Type"
+msgstr "Type"
+
+#: admin/options-general.php:360
+msgid "Choose type"
+msgstr "Choisir le type"
+
+#: admin/options-general.php:375
+msgid "Leave the URL empty to use the default RSS URL."
+msgstr "Laisser l'URL vide pour utilisé l'URL RSS par défaut"
+
+#: admin/options-general.php:379
+msgid ""
+"FontAwesome icons are great for retina displays. Click to see a list of "
+"FontAwesome icons."
+msgstr ""
+"Les icones FontAwesome sont très bonne pour les affichages rétina. Cliquez "
+"pour voir une liste des icones FontAwesome."
+
+#: admin/options-general.php:380
+msgid "Example: soundcloud"
+msgstr "Exemple : soundcloud"
+
+#: admin/options-general.php:384
+msgid "(optional if using FontAwesome icon above)"
+msgstr "(facultatif si vous utilisez la police d'icône FontAwesome  ci-dessus)"
+
+#: admin/options-general.php:387
+msgid "Add this social media profile"
+msgstr "Ajouter ce profile de média social"
+
+#: admin/options-general.php:404
+msgid "Mentions Bar"
+msgstr "Barre de mentions"
+
+#: admin/options-general.php:407
+msgid ""
+"Showcase the awards, reviews, or mentions you've received from other "
+"organisations or those you are affiliated to."
+msgstr ""
+"Présentez les prix, avis , ou mention que vous avez reçu d'autres "
+"organisations ou ceux avec qui vous êtes affilié."
+
+#: admin/options-general.php:411
+msgid "Show mentions bar"
+msgstr "Afficher la barre de mention"
+
+#: admin/options-general.php:415
+msgid "Nowhere (disabled)"
+msgstr "Nulle part (désactivé)"
+
+#: admin/options-general.php:417
+msgid "Front Page + Pages"
+msgstr "Page d'accueil + Pages"
+
+#: admin/options-general.php:425
+msgid "Brand Icons"
+msgstr "Icones de la Marque"
+
+#: admin/options-general.php:426
+msgid ""
+"To ensure sharp images on retina devices, use images with double the size "
+"that you'd like them to appear."
+msgstr ""
+"Pour assurer des images nettes sur les écran rétina, utilsez des images avec "
+"le double de la taille que vous voulez voir apparaître."
+
+#: admin/options-general.php:435 admin/options-general.php:445
+#: admin/settings-init.php:137
+msgid "Link"
+msgstr "Lien"
+
+#: admin/options-general.php:436 admin/options-general.php:446
+#: admin/settings-init.php:136
+msgid "(optional)"
+msgstr "(optionnel)"
+
+#: admin/options-general.php:437 admin/options-general.php:447
+msgid "Select Image"
+msgstr "Sélectionner une Image"
+
+#: admin/options-general.php:437 admin/options-general.php:447
+msgid "Select image"
+msgstr "Sélectionner une image"
+
+#: admin/options-general.php:464
+msgid "Custom <head> Tags"
+msgstr "Balise <head> personalisée"
+
+#: admin/options-general.php:469
+msgid "Code to insert into the <head> element"
+msgstr "Code à insérer dans la balise <head>"
+
+#: admin/options-general.php:493 inc/setup.php:69
+msgid "Footer"
+msgstr "Pied de page"
+
+#: admin/options-general.php:498
+msgid "Copyright text (html allowed)"
+msgstr "Text de copyright (html disponible)"
+
+#: admin/options-general.php:499
+msgid ""
+"If this field is empty, the following default copyright text will be "
+"displayed:"
+msgstr "Si ce champ est vide, le texte de copyright suivant sera affiché :"
+
+#. translators: %1$s = date, %2$s = site name.
+#: admin/options-general.php:501 footer.php:54
+#, php-format
+msgid "&copy; %1$s %2$s. All rights reserved."
+msgstr "&copy; %1$s %2$s. Tous droits réservés."
+
+#: admin/options-general.php:506
+msgid "Do not show copyright info"
+msgstr "Ne pas afficher les infos de copiright"
+
+#: admin/options-general.php:531
+msgid "Print"
+msgstr "Impression"
+
+#: admin/options-general.php:536
+msgid "Enable print CSS"
+msgstr "Activez la CSS d'impression"
+
+#: admin/options-general.php:542
+msgid "Show print button"
+msgstr "Afficher le bouton d'impression"
+
+#: admin/options-import.php:30
+msgid "ERROR: You have not selected any colour presets to be exported."
+msgstr ""
+"ERROR: vous n'avez sélectionné aucun préréglages de couleurs destinés à être "
+"exportés."
+
+#: admin/options-import.php:65 admin/options-import.php:213
+#: admin/options-presets.php:25 admin/uninstall.php:32
+msgid "ERROR: You are not authorised to perform that operation"
+msgstr "ERROR : vous n'êtes pas autorisé à faire cette opération."
+
+#: admin/options-import.php:86
+msgid ""
+"Before you can upload your import file, you will need to fix the following "
+"error:"
+msgstr ""
+"Avant de pouvoir uploader votre fichier d'import, vous devez fixer l'erreur "
+"suivante:"
+
+#: admin/options-import.php:92
+msgid "Import Franz Josef Options"
+msgstr "Importer les options Franz Josef"
+
+#: admin/options-import.php:95
+msgid "Choose a file from your computer:"
+msgstr "Choisissez un fichier sur votre ordinateur : "
+
+#: admin/options-import.php:95
+#, php-format
+msgid "Maximum size: %s"
+msgstr "taille maximale : %s"
+
+#: admin/options-import.php:102
+msgid "Upload file and import"
+msgstr "Envoyer un fichier  et importer"
+
+#: admin/options-import.php:127
+msgid "Import Theme Options"
+msgstr "Importer les options de Thème"
+
+#: admin/options-import.php:127
+msgid "Import Theme Colour Presets"
+msgstr "Importer les préréglage de couleur du thème"
+
+#: admin/options-import.php:175
+msgid "Options import completed."
+msgstr "Options complètement importées."
+
+#: admin/options-import.php:176 admin/options-import.php:186
+msgid "&laquo; Return to Franz Josef Options"
+msgstr "&laquo; Retour aux options Franz Josef"
+
+#: admin/options-import.php:178 admin/options-import.php:188
+#: admin/options-import.php:194 admin/options-import.php:199
+msgid "Sorry, there has been an error."
+msgstr "Désolé, il y a eu une erreur."
+
+#: admin/options-import.php:179
+msgid "The uploaded file does not contain valid Franz Josef options."
+msgstr "Le fichier uploader ne contient pas d'options Franz Josef valide."
+
+#: admin/options-import.php:185
+msgid "Colour presets import completed."
+msgstr "Import de préréglage de couleur terminé."
+
+#: admin/options-import.php:189
+msgid "The uploaded file does not contain valid Franz Josef colour presets."
+msgstr ""
+"Le fichier uploader ne contient pas de selections de couleur Franz Josef "
+"valide."
+
+#: admin/options-import.php:195
+msgid "The uploaded file could not be read."
+msgstr "Le fichier uploader ne peut pas être lu."
+
+#: admin/options-import.php:200
+msgid "The uploaded file is not supported."
+msgstr "Le fichier uploader n'est pas supporté."
+
+#: admin/options-import.php:208
+msgid ""
+"File is empty. Please upload something more substantial. This error could "
+"also be caused by uploads being disabled in your php.ini or by post_max_size "
+"being defined as smaller than upload_max_filesize in php.ini."
+msgstr ""
+"Fichier vide. Merci d'uploader quelque chose de plus consistant. Cette "
+"erreur peut également provenir de la désactivation de l'upload dans votre "
+"php.ini ou par le paramètre post_max_size qui serait défini plus petit que "
+"upload_max_filesize dans le php.ini."
+
+#: admin/options-presets.php:18
+msgid "Settings have been reset."
+msgstr "Les paramètres ont été réinitialisés."
+
+#: admin/settings-init.php:44
+msgid "Franz Josef Options"
+msgstr "Franz Josef Options"
+
+#: admin/settings-init.php:132
+msgid "Oops, nothing found."
+msgstr "Opps, rien n'a été trouvé."
+
+#: admin/settings-init.php:134
+msgid "Please select the exported Franz Josef options file to import."
+msgstr ""
+"S'il vous plaît sélectionner le fichier d'export d'options Franz Josef à "
+"importer"
+
+#: admin/settings-init.php:166
+msgid "Toggle all options boxes"
+msgstr "Basculer l'affichage de toutes les boites d'option"
+
+#: admin/settings-validator.php:32
+msgid "ERROR: Invalid category to show in slider."
+msgstr "ERROR : Catégorie non valide pour afficher dans le slider"
+
+#: admin/settings-validator.php:35
+msgid ""
+"ERROR: You must specify the posts/pages to be displayed when you have \"Show "
+"specific posts/pages\" selected for the slider."
+msgstr ""
+"ERROR: Vous devez sépcifié le postes/pages à afficher quand vous avez "
+"sélectionné \"Afficher postes/pages spécifiques\" pour le slider."
+
+#: admin/settings-validator.php:38
+msgid ""
+"ERROR: You must have selected at least one category when you have \"Show "
+"posts from categories\" selected for the slider."
+msgstr ""
+"ERROR: Vous devez sélectionner au moins une catégorie quand vous avez "
+"sélectionné \"Afficher des postes de catégories\" pour le slider"
+
+#: admin/settings-validator.php:48
+msgid "ERROR: Invalid category selected for the slider categories."
+msgstr "ERROR: Catégorie sélectionné invalide pour le slider de catégories."
+
+#: admin/settings-validator.php:52
+msgid ""
+"ERROR: Invalid option for the slider categories exclusion from posts listing "
+"is specified."
+msgstr ""
+"ERROR: Option invalide pour l'exclusion de catégorie du slider pour la liste "
+"de postes spécifié."
+
+#: admin/settings-validator.php:59
+msgid "ERROR: Invalid option for slider content."
+msgstr "ERROR: option invalide pour le contenu du slider"
+
+#: admin/settings-validator.php:64
+msgid ""
+"ERROR: The number of posts to displayed in the slider must be a an integer "
+"value."
+msgstr ""
+"ERROR: Le nombre de postes à afficher dans le slider doit être une valeur "
+"entière."
+
+#: admin/settings-validator.php:67
+msgid "ERROR: The value for slider height must be an integer."
+msgstr "ERROR: La valeur pour la hauteur de slider doit être un entier."
+
+#: admin/settings-validator.php:69
+msgid "ERROR: The value for slider interval must be a number."
+msgstr "ERROR: La valeur pour l'interval du slider doit être un nombre."
+
+#: admin/settings-validator.php:71
+msgid "ERROR: The value for slider transition duration must be a number."
+msgstr ""
+"ERROR: La valeur pour la durée de transition du slider doit être un nombre."
+
+#: admin/settings-validator.php:82
+msgid "ERROR: Invalid category selected for the front page posts categories."
+msgstr ""
+"ERROR: catégorie invalide pour la sélection de postes sur al page d'accueil "
+"des catégories."
+
+#: admin/settings-validator.php:89
+msgid "ERROR: Invalid value for front page blog columns."
+msgstr "ERROR: valeur invalide pour les colonnes de blog de la page d'accueil"
+
+#: admin/settings-validator.php:112
+#, php-format
+msgid "ERROR: Bad URL entered for the %s URL."
+msgstr "ERROR : Mauvaise URL saise pour l'URL %s"
+
+#: admin/settings-validator.php:147
+msgid "ERROR: Invalid value for Mentions Bar display setting."
+msgstr "ERROR: Valeur invalide pour le réglage de la Barre de Mentions."
+
+#: admin/settings-validator.php:199
+msgid ""
+"ERROR: The number of columns to be displayed in the footer widget must be a "
+"an integer value."
+msgstr ""
+"ERROR : Le nombre de colonnes à afficher dans le widget de pied de page doit "
+"être un entier."
+
+#: admin/settings-validator.php:205
+msgid "ERROR: Bad URL entered for the favicon URL."
+msgstr "ERROR : mauvaise URL saisie pour la favicon "
+
+#: admin/settings.php:51 admin/uninstall.php:23
+msgid "Uninstall Franz Josef"
+msgstr "Désinstaller Franz Josef"
+
+#: admin/settings.php:52
+msgid ""
+"Please confirm that you would like to uninstall the Franz Josef theme. All "
+"of the theme's options in the database will be deleted."
+msgstr ""
+"Merci de confirmer que vous souhaitez désinstaller le thème Franz Josef. "
+"Toutes les options du thème seront supprimé de la base de données."
+
+#: admin/settings.php:53
+msgid "This action is not reversible."
+msgstr "Cette action n'est pas réversible"
+
+#: admin/settings.php:57 admin/settings.php:200
+msgid "Uninstall Theme"
+msgstr "Désinstaller le thème"
+
+#: admin/settings.php:71
+msgid "Franz Josef Theme Options"
+msgstr "options du thème Franz Josef"
+
+#: admin/settings.php:73
+msgid ""
+"These are the global settings for the theme. You may override some of the "
+"settings in individual posts and pages."
+msgstr ""
+"Ce sont les réglages généraux pour le thème. Vous pouvez écraser certains de "
+"ses réglages pour chaque pages et postes."
+
+#: admin/settings.php:97
+msgid "Save Options"
+msgstr "Sauvegarder els options"
+
+#: admin/settings.php:115
+msgid "Franz Josef news"
+msgstr "Nouvelles de Franz Josef"
+
+#: admin/settings.php:125
+msgid "No news items."
+msgstr "Pas de nouvel item."
+
+#: admin/settings.php:149 admin/settings.php:158
+msgid "Reset settings"
+msgstr "Réinitialiser les options"
+
+#: admin/settings.php:152
+msgid ""
+"Reset all of the theme's settings to their default values. Only settings "
+"accessible via Franz Josef Options are affected. Custom Header, Custom "
+"Menus, and other WordPress settings won't be affected."
+msgstr ""
+"Réinitialiser toute les réglages du thème à leurs valeurs par dévaut. "
+"Uniquement les réglage acc\"ssible via les options de Franz Josef sont "
+"affecté. En-tête personnalisé, Menus personnalisé, et les autres réglages "
+"WordPress ne seront pas affecté."
+
+#: admin/settings.php:153
+msgid "<strong>WARNING:</strong> This action is not reversible."
+msgstr "<strong>WARNING:</strong> Cette action n'est pas réversible."
+
+#: admin/settings.php:168
+msgid "Import/export theme options"
+msgstr "Importer/exporter les options du thème"
+
+#: admin/settings.php:171
+msgid "Import"
+msgstr "Importer"
+
+#: admin/settings.php:174
+msgid "Import theme options"
+msgstr "Importer les options du thème"
+
+#: admin/settings.php:176
+msgid "Export"
+msgstr "Exporter"
+
+#: admin/settings.php:180
+msgid "Export theme options"
+msgstr "Exporter les options du thème"
+
+#: admin/settings.php:190
+msgid "Uninstall theme"
+msgstr "Désinstaller le thème"
+
+#: admin/settings.php:193
+msgid ""
+"<strong>Be careful!</strong> Uninstalling the theme will remove all of the "
+"theme's options from the database. Do this only if you decide not to use the "
+"theme anymore."
+msgstr ""
+"<strong>Faites attention!</strong> Désinstaller le thème supprimera toutes "
+"les options du thème de la base de donnée. Ne faite ça que si vous décider "
+"de ne plus utiliser le thème."
+
+#: admin/settings.php:194
+msgid ""
+"If you just want to try another theme, there is no need to uninstall this "
+"theme. Simply activate the other theme in the Appearance &gt; Themes admin "
+"page."
+msgstr ""
+"Si vous voulez juste essayer une autre thème, il n'y a pas besoin de "
+"désinstaller ce thème. Activez simplement un autre thème depuis la page "
+"d'administration Apparence &gt; Thèmes"
+
+#: admin/settings.php:195
+msgid ""
+"Note that uninstalling this theme <strong>does not remove</strong> the "
+"theme's files. To delete the files after you have uninstalled this theme, go "
+"to Appearance &gt; Themes and delete the theme from there."
+msgstr ""
+"Notez que désinstaller ce thème <strong>ne supprime pas</strong> les "
+"fichiers du thème. Pour supprimer les fichiers après avoir désinstaller le "
+"thème, aller dans Apparence &gt; thèmes et supprimer le thème depuis là."
+
+#: admin/settings.php:227
+msgid ""
+"<strong>Thank you for installing the Franz Josef theme!</strong> This theme "
+"has been designed to work together with the following plugins. It's "
+"optional, but we recommend that you install them to extend the capability of "
+"the theme:"
+msgstr ""
+"<strong>Merci d'avoir installé le thème Franz Josef !</strong> Ce thème a "
+"été pensé  pour fonctionner avec les plugins suivant. C'est optionnel, mais "
+"nous vous recommandons de les installer pour accroitre les possibilité du "
+"thème."
+
+#: admin/settings.php:242
+msgid "OK, got it!"
+msgstr "OK, compris !"
+
+#: admin/settings.php:243
+msgid ""
+"PS: The information above is also available under the \"About Franz Josef\" "
+"tab in WP Admin > Appearance > Franz Josef Options."
+msgstr ""
+"PS :  Les informations sont aussi disponible sous l'onglet \"A porpos de "
+"Franz Josef\" dans WP Admin &gt; Apparence &gt; Options Franz Josef"
+
+#: admin/thank-you.php:18
+msgid "Woohoo! Thanks for using Franz Josef!"
+msgstr "Woohoo! Merci d'utiliser Franz Josef!"
+
+#: admin/thank-you.php:19
+msgid "We're glad that you've chosen Franz Josef!"
+msgstr "Nous sommes heureux que vous ayez choisi Franz Josef!"
+
+#: admin/thank-you.php:20
+msgid ""
+"It has been a month since you started using Franz Josef.</strong> To keep "
+"making your experience better, may we suggest a few things you might be "
+"interested in:"
+msgstr ""
+"Cela fait 1 mois que vous utilisez Franz Josef.</strong> Pour continuer "
+"d'améliorer votre expérience, laissez nous vous suggérer quelques choses "
+"d'intéressant :"
+
+#: admin/thank-you.php:22
+msgid ""
+"Check out the <a href=\"http://www.graphene-theme.com/franz-josef/addons/"
+"\">Franz Josef addons</a> to build amazing websites quickly and easily."
+msgstr ""
+"Consultez les  <a href=\"http://www.graphene-theme.com/franz-josef/addons/"
+"\">addons Franz Josef</a> pour construire d'extraordinaires sites Web "
+"rapidement et facilement."
+
+#: admin/thank-you.php:23
+msgid ""
+"Check out and <a href=\"http://www.graphene-theme.com/developers-blog/"
+"\">subscribe to our Developer Blog</a>."
+msgstr ""
+"Consultez et <a href=\"http://www.graphene-theme.com/developers-blog/"
+"\">inscrivez vous à notre blog des développeurs</a>."
+
+#: admin/thank-you.php:24
+msgid "Visit the Franz Josef forum to:"
+msgstr "Visitez le forum Franz Josef pour : "
+
+#: admin/thank-you.php:26
+msgid ""
+"<a href=\"http://forum.graphene-theme.com/franz-josef-feature-requests/"
+"\">Suggest a feature</a> to be added to the theme."
+msgstr ""
+"<a href=\"http://forum.graphene-theme.com/franz-josef-feature-requests/"
+"\">Proposer une fonctionnalité</a> qui pourrait être ajouté au thème."
+
+#: admin/thank-you.php:27
+msgid ""
+"<a href=\"http://forum.graphene-theme.com/franz-josef-showcase/\">Showcase "
+"your website</a> with us."
+msgstr ""
+"Nous <a href=\"http://forum.graphene-theme.com/franz-josef-showcase/"
+"\">présenter votre site</a>."
+
+#: admin/thank-you.php:28
+msgid ""
+"<a href=\"http://forum.graphene-theme.com/franz-josef-support/\">Get "
+"support</a> for any bugs you might find."
+msgstr ""
+"<a href=\"http://forum.graphene-theme.com/franz-josef-support/\">Avoir du "
+"support</a> pour n'importe quel bug que vous pourriez rencontrer."
+
+#: admin/thank-you.php:29
+msgid ""
+"<a href=\"http://forum.graphene-theme.com/franz-josef-support/\">Help a "
+"fellow</a> Franz Josef user out."
+msgstr ""
+"<a href=\"http://forum.graphene-theme.com/franz-josef-support/\">Aider les "
+"utilisateurs</a> de Franz Josef."
+
+#: admin/thank-you.php:32
+msgid ""
+"<a href=\"https://wordpress.org/themes/franz-josef/\">Give Franz Josef a "
+"rating</a> on WordPress.org"
+msgstr ""
+"<a href=\"https://wordpress.org/themes/franz-josef/\">Donner une note à "
+"Franz Josef</a> sur WordPress.org"
+
+#: admin/thank-you.php:34
+msgid "Thanks again for choosing Franz Josef!"
+msgstr "Encore merci d'avoir choisi Franz Josef !"
+
+#: admin/thank-you.php:35
+msgid "Got it!"
+msgstr "Compris!"
+
+#: admin/uninstall.php:24
+#, php-format
+msgid "Theme uninstalled. Redirecting to %s"
+msgstr "Thème désinstallé. Redirection vers %s"
+
+#: admin/user.php:8
+msgid "Franz Josef-specific User Profile Information"
+msgstr "Information de profile d'utilisateur spécifique à Franz Josef"
+
+#: admin/user.php:9
+msgid "Additional user profile fields used in the Franz Josef theme."
+msgstr ""
+"Champs supplémentaires de profil utilisateur utilisés dans le thème Franz "
+"Josef."
+
+#: admin/user.php:15
+msgid "Profile header image URL"
+msgstr "URL de l'image de profile du header"
+
+#. translators: %1$s will be replaced by link to the user's profile page
+#: admin/user.php:21
+#, php-format
+msgid "Header image for your %1$s. Recommended size is 1920x350 pixels."
+msgstr ""
+"Image du header pour votre %1$s. La taille recommandé est 1920x350 pixels."
+
+#: admin/user.php:27
+msgid "Hide email"
+msgstr "Cacher l'email"
+
+#: admin/user.php:31
+msgid "Remove email address from your author bio."
+msgstr "Retirer votre adresse email de votre bio d'auteur"
+
+#: admin/user.php:36
+msgid "Current location"
+msgstr "Position courante "
+
+#: admin/user.php:41
+msgid ""
+"Will be displayed on your front-facing author profile page. Recommended to "
+"use \"City, Country\" format, e.g. \"Lisbon, Portugal\"."
+msgstr ""
+"Sera afficher sur votre page de profile d'auteur. Nous recommandons "
+"d'utiliser le format \"Ville, Pays\", exemple : \"Lisbon, Portugal\"."
+
+#: admin/user.php:46
+msgid "Social media URLs"
+msgstr "URLs média sociaux"
+
+#: archive.php:13
+#, php-format
+msgid "Daily Archive: %s"
+msgstr "Archive journalière : %s"
+
+#: archive.php:15
+#, php-format
+msgid "Monthly Archive: %s"
+msgstr "Archive mensuelle : %s"
+
+#. translators: F will be replaced with month, and Y will be replaced with year, so "F Y" in English would be replaced with something like "June 2008".
+#: archive.php:17
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:18
+#, php-format
+msgid "Yearly Archive: %s"
+msgstr "Archive annuelle : %s"
+
+#: author.php:29
+msgid "About"
+msgstr "A propos"
+
+#: author.php:38
+msgid "Popular"
+msgstr "Populaire"
+
+#: author.php:85
+#, php-format
+msgid "Commented on %s."
+msgstr "Commenté sur %s."
+
+#: author.php:92
+msgid "Recent Posts"
+msgstr "Messages récents"
+
+#: comments.php:16
+msgid "Comments"
+msgstr "Commentaires"
+
+#: comments.php:17
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Ce poste est protéger par un mot de passe. Entrer le mot de passe pour voir "
+"les commentaire."
+
+#: comments.php:32
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s commentaire"
+msgstr[1] "%s commentaires"
+
+#: comments.php:34
+#, php-format
+msgid "%s ping"
+msgid_plural "%s pings"
+msgstr[0] "%s ping"
+msgstr[1] "%s pings"
+
+#: comments.php:43
+msgid "Skip to comment form"
+msgstr "Aller au formulaire de commentaire"
+
+#: comments.php:75
+msgid "Comments have been closed."
+msgstr "Les commentaires ont été fermé."
+
+#: comments.php:85
+msgid "Submit Comment"
+msgstr "Envoyer le commentaire"
+
+#: comments.php:86
+msgid "Your email address will not be published."
+msgstr "Votre adresse email ne sera pas publié."
+
+#: footer.php:58
+#, php-format
+msgid "Delicately crafted using %s and WordPress."
+msgstr "Délicatement conçu en utilisant %s et WordPress."
+
+#: footer.php:58
+msgid "Franz Josef theme"
+msgstr "Thème Franz Josef"
+
+#: header.php:42
+msgid "Toggle navigation"
+msgstr "Basculer la navigation"
+
+#: inc/comments.php:23
+msgid "Reply"
+msgstr "Répondre"
+
+#: inc/comments.php:31
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération"
+
+#: inc/comments.php:50
+#, php-format
+msgid "%1$s on %2$s at %3$s"
+msgstr "%1$s sur %2$s à %3$s"
+
+#: inc/comments.php:56
+msgid "Author"
+msgstr "Auteur"
+
+#: inc/comments.php:94
+msgid "Name"
+msgstr "Nom"
+
+#: inc/comments.php:98
+msgid "Email"
+msgstr "Email"
+
+#: inc/comments.php:102
+msgid "Website (optional)"
+msgstr "Site (optionnel)"
+
+#: inc/comments.php:128
+msgid "Your message"
+msgstr "Votre message"
+
+#: inc/comments.php:155
+msgid "Post Comment"
+msgstr "Poster ce commentaire"
+
+#: inc/comments.php:237
+msgid "Delete this comment"
+msgstr "Supprimer ce commentaire"
+
+#: inc/comments.php:239
+msgid "Mark this comment as spam"
+msgstr "Marquer ce commentaire comme spam"
+
+#: inc/comments.php:239
+msgid "Spam"
+msgstr "Spam"
+
+#: inc/loop.php:92
+msgid "Print this page"
+msgstr "Imprimer cette page"
+
+#: inc/loop.php:114
+#, php-format
+msgid "By %1$s under %2$s"
+msgstr "Par %1$s sous %2$s"
+
+#: inc/loop.php:115
+#, php-format
+msgid "Filed under %2$s"
+msgstr "Déposé sous %2$s"
+
+#: inc/loop.php:116
+#, php-format
+msgid "By %s"
+msgstr "Par %s"
+
+#: inc/loop.php:125 inc/stacks.php:297
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d commentaire"
+msgstr[1] "%d commentaires"
+
+#: inc/loop.php:125 inc/loop.php:176 inc/stacks.php:297
+msgid "Leave a reply"
+msgstr "Laisser une réponse"
+
+#: inc/loop.php:272
+msgid "In this section"
+msgstr "Dans cette sélection"
+
+#: inc/loop.php:352
+msgid "&laquo; Prev"
+msgstr "&laquo; Précedent"
+
+#: inc/loop.php:353
+msgid "Next &raquo;"
+msgstr "Suivant &raquo;"
+
+#: inc/loop.php:367
+msgid "Pages:"
+msgstr "Pages:"
+
+#: inc/loop.php:463
+msgid "Previous"
+msgstr "Précédent"
+
+#: inc/loop.php:472
+msgid "Next"
+msgstr "Suivant"
+
+#: inc/menus.php:116
+msgid "FontAwesome Icon Name"
+msgstr "Nom de l'icone FontAwesome"
+
+#: inc/menus.php:159
+#, php-format
+msgid "Choose from 580+ %s"
+msgstr "Choisir depuis 580+ %s"
+
+#: inc/menus.php:159
+msgid "available icons"
+msgstr "Icons disponibles"
+
+#: inc/menus.php:201
+msgid "Home"
+msgstr "Accueil"
+
+#: inc/menus.php:277
+#, php-format
+msgid "#%d (no title)"
+msgstr "#%d (pas de titre)"
+
+#: inc/setup.php:42
+msgid "Top Menu"
+msgstr "Menu haut"
+
+#: inc/setup.php:43
+msgid "Header Menu"
+msgstr "Menu d'entête"
+
+#: inc/setup.php:44
+msgid "Footer Menu"
+msgstr "Menu de pied"
+
+#: inc/setup.php:59
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: inc/setup.php:80
+msgid ""
+"Use this widget area to customise the content and element positioning in the "
+"top bar. Leave empty to use the theme's default."
+msgstr ""
+"Utiliser cette zone de widget pour personnaliser le contenu et la position "
+"des élément de la Top bar. Laisser vite pour utiliser les valeurs par défaut "
+"du thème."
+
+#: inc/slider.php:72
+msgid "View post"
+msgstr "Voir l'article"
+
+#: inc/stacks.php:125
+msgid "Testimonials"
+msgstr "Témoignages"
+
+#: inc/stacks.php:126
+msgid "They love you!"
+msgstr "Ils vous aiment!"
+
+#: inc/stacks.php:187
+msgid "Latest Articles"
+msgstr "Derniers articles"
+
+#: inc/widgets.php:10
+msgid "Franz Josef Top Bar: Top Menu"
+msgstr "Franz Josef Top Bar: Top Menu"
+
+#: inc/widgets.php:11
+msgid "Display custom menu assigned to the Top Menu location."
+msgstr "Affiche les menus personnalisé assigné à al position Top Menu."
+
+#: inc/widgets.php:58 inc/widgets.php:128 inc/widgets.php:219
+msgid "Width:"
+msgstr "Largeur:"
+
+#: inc/widgets.php:60 inc/widgets.php:130 inc/widgets.php:221
+msgid "Full width"
+msgstr "Pleine largeur"
+
+#: inc/widgets.php:61 inc/widgets.php:131 inc/widgets.php:222
+msgid "3/4 width"
+msgstr "3/4 de largeur"
+
+#: inc/widgets.php:62 inc/widgets.php:132 inc/widgets.php:223
+msgid "2/3 width"
+msgstr "2/3 de largeur"
+
+#: inc/widgets.php:63 inc/widgets.php:133 inc/widgets.php:224
+msgid "Half width"
+msgstr "Demi largeur"
+
+#: inc/widgets.php:64 inc/widgets.php:134 inc/widgets.php:225
+msgid "1/3 width"
+msgstr "1/3 de largeur"
+
+#: inc/widgets.php:65 inc/widgets.php:135 inc/widgets.php:226
+msgid "1/4 width"
+msgstr "1/4 de largeur"
+
+#: inc/widgets.php:69 inc/widgets.php:139 inc/widgets.php:230
+msgid "Text alignment:"
+msgstr "Alignement du text:"
+
+#: inc/widgets.php:71 inc/widgets.php:141 inc/widgets.php:232
+msgid "Left"
+msgstr "Gauche"
+
+#: inc/widgets.php:72 inc/widgets.php:142 inc/widgets.php:233
+msgid "Center"
+msgstr "Centrer"
+
+#: inc/widgets.php:73 inc/widgets.php:143 inc/widgets.php:234
+msgid "Right"
+msgstr "Droite"
+
+#: inc/widgets.php:98
+msgid "Franz Josef Top Bar: Social Links"
+msgstr "Franz Josef Top Bar : liens sociaux"
+
+#: inc/widgets.php:99
+msgid "Display social profile links."
+msgstr "Afficher les liens de profile de réseaux sociaux"
+
+#: inc/widgets.php:166
+msgid "Insert custom text or HTML."
+msgstr "Insérer du texte ou HTML personnalisé."
+
+#: inc/widgets.php:168
+msgid "Franz Josef Top Bar: Text"
+msgstr "Franz Josef Top Bar: Text"
+
+#: inc/widgets.php:216
+msgid "Automatically add paragraphs"
+msgstr "Ajouter automatiquement les paragraphes"
+
+#: loop-author.php:14
+msgid "Read more..."
+msgstr "lire plus..."
+
+#: loop.php:46
+msgid "Read More"
+msgstr "lire plus"
+
+#: search.php:8
+msgid "Search Results"
+msgstr "Résultat de recherche"
+
+#: search.php:12
+#, php-format
+msgid "%d result found matching the keyword <strong>\"%s\"</strong>."
+msgid_plural "%d results found matching the keyword <strong>\"%s\"</strong>."
+msgstr[0] ""
+"%d résultat trouvé correspondant au mot clé <strong>\"%s\"</strong>."
+msgstr[1] ""
+"%d résultats trouvé correspondant au mot clé <strong>\"%s\"</strong>."
+
+#: search.php:27
+#, php-format
+msgid ""
+"No result found matching the keyword <strong>\"%s\"</strong>. Try a "
+"different keyword?"
+msgstr ""
+"Pas de  résultat trouvé correspondant au mot clé <strong>\"%s\"</strong>. "
+"Essayez avec un mot clé différent."
+
+#: searchform.php:4
+msgid "Search keyword"
+msgstr "mot clé de recherche"
+
+#: searchform.php:5
+msgid "Search"
+msgstr "recherche"
+
+#: template-single-column.php:5
+msgid "Single column"
+msgstr "1 colonne"
+
+#: yarpp-template-single.php:12
+msgid "Related posts"
+msgstr "Articles correspondants"
+
+#: yarpp-template-single.php:33
+#, php-format
+msgid ""
+"<strong>NOTICE:</strong> Please install and activate %s in order to use the "
+"Related Posts feature."
+msgstr ""
+"<strong>NOTICE:</strong> S'il vous plais installer et activer %s afin "
+"d'utiliser la fonction article similaire."

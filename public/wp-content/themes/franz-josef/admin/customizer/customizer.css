@@ -1,0 +1,23 @@
+.wp-full-overlay-sidebar { 
+	width: 500px;
+} 
+.wp-full-overlay.expanded { 
+	margin-left: 500px;
+}
+.CodeMirror {
+	height: 200px;
+}
+.CodeMirror-code {
+	font-size: 11px;
+	line-height: 16px;
+}
+#customize-control-franz_settings-custom_css .CodeMirror {
+	height: 400px;
+}
+.customize-control .franz-text input {
+	width: auto !important;
+}
+.customize-control select[multiple] {
+	width: 100%;
+	min-height: 150px;
+}
