@@ -6,7 +6,7 @@
  * Description: AO Kranj Wordpress plugin.
  * Version: 1.0
  * Author: Bojan Hribernik
- * Author URI: http://aokranj.com/
+ * Author URI: http://climbuddy.com/
  * @package aokranj
  */
 
