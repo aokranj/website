@@ -67,8 +67,12 @@ class AOKranj
         wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/colorbox.css', array(), AOKRANJ_PLUGIN_VERSION );
         wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
 
-        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
-        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
+        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
+        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
+
+        if (AOKRANJ_DEBUG) {
+            wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
+        }
     }
 
     public function wp_authenticate() {

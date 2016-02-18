@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Facebook Like Plugin\n"
+"POT-Creation-Date: 2013-03-29 00:00+0530\n"
+"PO-Revision-Date: 2013-03-29 00:00+0530\n"
+"Last-Translator: Milap <cemilap.88@gmail.com>\n"
+"Language-Team:  <cemilap.88@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: fb_class.php:82
+msgid "Title:"
+msgstr ""
+
+#: fb_class.php:87
+msgid "Facebook Application Id:"
+msgstr ""
+
+#: fb_class.php:92
+msgid "Facebook Page Url:"
+msgstr ""
+
+#: fb_class.php:95
+msgid "Works with only"
+msgstr ""
+
+#: fb_class.php:97
+msgid "Valid Facebook Pages"
+msgstr ""
+
+#: fb_class.php:104
+msgid "Show faces"
+msgstr ""
+
+#: fb_class.php:109
+msgid "Show Data Stream"
+msgstr ""
+
+#: fb_class.php:114
+msgid "Show Header"
+msgstr ""
+
+#: fb_class.php:118
+msgid "Set Width:"
+msgstr ""
+
+#: fb_class.php:123
+msgid "Set Height:"
+msgstr ""
+
+#: fb_class.php:128
+msgid "Color Scheme:"
+msgstr ""
+
+#: fb_class.php:130
+msgid "Light"
+msgstr ""
+
+#: fb_class.php:131
+msgid "Dark"
+msgstr ""
+
+#: fb_class.php:136
+msgid "Border Color:"
+msgstr ""

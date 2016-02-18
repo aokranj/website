@@ -11,3 +11,136 @@
  Tags:         aokranj alpinisticni odsek kranj alpinizem
  Text Domain:  aokranj
 */
+a {
+  color: #25aae1; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif; }
+
+.btn {
+  font-family: 'Open Sans', sans-serif; }
+
+.posts-list .item-title {
+  padding: 30px 15px 0 15px;
+  font-weight: 100;
+  font-family: 'Open Sans', sans-serif; }
+  .posts-list .item-title a {
+    color: #f7941e;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 300; }
+
+.posts-list .author {
+  padding: 3px 15px 30px 15px;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: 'Open Sans', sans-serif;
+  color: #a7a9ac; }
+  .posts-list .author a {
+    color: #a7a9ac; }
+    .posts-list .author a:hover {
+      color: #25aae1; }
+
+.posts-list .item-meta {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0; }
+
+.bottom-bar .copyright {
+  margin-top: 0; }
+
+.widget_search .form-group {
+  margin-bottom: 24px; }
+
+.widget_fbw_id {
+  background: #a7a9ac; }
+
+.widget_categories {
+  background: #25aae1;
+  color: #fff; }
+  .widget_categories h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget_categories ul {
+    padding: 0 20px; }
+    .widget_categories ul li {
+      border-bottom: 1px solid #52bbe7; }
+      .widget_categories ul li:last-child {
+        border-bottom: none; }
+      .widget_categories ul li a {
+        color: #fff; }
+
+.widget_recent_entries {
+  background: #8cc63f;
+  color: #fff; }
+  .widget_recent_entries h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget_recent_entries ul {
+    padding: 0 20px; }
+    .widget_recent_entries ul li {
+      border-bottom: 1px solid #a4d266; }
+      .widget_recent_entries ul li:last-child {
+        border-bottom: none; }
+      .widget_recent_entries ul li a {
+        color: #fff; }
+
+.widget_recent_comments {
+  background: #f7941e;
+  color: #fff; }
+  .widget_recent_comments h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget_recent_comments ul {
+    padding: 0 20px; }
+    .widget_recent_comments ul li {
+      border-bottom: 1px solid #f9ab4f; }
+      .widget_recent_comments ul li:last-child {
+        border-bottom: none; }
+      .widget_recent_comments ul li a {
+        color: #fff; }
+
+.widget_archive {
+  background: #25aae1;
+  color: #fff; }
+  .widget_archive h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget_archive ul {
+    padding: 0 20px; }
+    .widget_archive ul li {
+      border-bottom: 1px solid #52bbe7; }
+      .widget_archive ul li:last-child {
+        border-bottom: none; }
+      .widget_archive ul li a {
+        color: #fff; }
+
+.widget_meta {
+  background: #b4b4b4;
+  color: #fff; }
+  .widget_meta h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget_meta ul {
+    padding: 0 20px; }
+    .widget_meta ul li {
+      border-bottom: 1px solid #cecece; }
+      .widget_meta ul li:last-child {
+        border-bottom: none; }
+      .widget_meta ul li a {
+        color: #fff; }

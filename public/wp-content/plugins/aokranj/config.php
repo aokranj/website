@@ -3,7 +3,7 @@
 /**
  * AO Kranj wordpress plugin settings
  */
-define('AOKRANJ_DEBUG', false);
+define('AOKRANJ_DEBUG', true);
 define('AOKRANJ_PLUGIN_VERSION', '1.0');
 define('AOKRANJ_PLUGIN_URL', rtrim(plugin_dir_url(__FILE__), '/'));
 define('AOKRANJ_PLUGIN_DIR', rtrim(plugin_dir_path(__FILE__), '/'));
@@ -23,8 +23,6 @@ define('AOKRANJ_OLD_DB_PASSWORD', 'sql123');
 define('AOKRANJ_OLD_DB_HOST', 'localhost');
 define('AOKRANJ_OLD_DB_CHARSET', 'utf8');
 define('AOKRANJ_OLD_DB_COLLATE', '');
-
-
 
 /**
  * Temporary

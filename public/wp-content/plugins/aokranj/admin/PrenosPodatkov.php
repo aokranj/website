@@ -245,7 +245,7 @@ class AOKranjPrenosPodatkov
                             'comment_author_email' => $commentUser->user_email,
                             'comment_author_url' => $commentUser->user_url,
                             'comment_content' => $comment->comment,
-                            'comment_type' => 'comment',
+                            'comment_type' => '',
                             'comment_parent' => 0,
                             'user_id' => $commentUser->ID,
                             'comment_author_IP' => '',

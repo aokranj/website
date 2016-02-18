@@ -1,0 +1,136 @@
+/*
+ Theme Name:   AO Kranj
+ Theme URI:    http://aokranj.com
+ Description:  AO Kranj tema
+ Author:       Bojan Hribernik
+ Author URI:   http://climbuddy.com
+ Template:     franz-josef
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         aokranj alpinisticni odsek kranj alpinizem
+ Text Domain:  aokranj
+*/
+
+// variables
+
+$orange: #f7941e;
+$green: #8cc63f;
+$blue: #25aae1;
+$purple: #e025df;
+$lightgray: #a7a9ac;
+$darkgray: #b4b4b4;
+
+// core styles
+
+a {
+  color: $blue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn {
+	font-family: 'Open Sans', sans-serif;
+}
+
+// post
+
+.posts-list {
+  .item {
+
+  }
+  .item-title {
+    padding: 30px 15px 0 15px;
+    font-weight: 100;
+    font-family: 'Open Sans', sans-serif;
+    a {
+      color: $orange;
+      font-size: 24px;
+      line-height: 26px;
+      font-weight: 300;
+    }
+  }
+  .author {
+    padding: 3px 15px 30px 15px;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: 'Open Sans', sans-serif;
+    color: $lightgray;
+    a {
+      color: $lightgray;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  .item-meta {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+
+// footer
+
+.bottom-bar {
+  .copyright {
+    margin-top: 0;
+  }
+}
+
+@mixin sidebar-widget($color) {
+  background: $color;
+  color: #fff;
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff;
+  }
+  ul {
+    padding: 0 20px;
+    li {
+      border-bottom: 1px solid lighten($color, 10%);
+      &:last-child {
+        border-bottom: none;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.widget_search {
+  .form-group {
+    margin-bottom: 24px;
+  }
+}
+
+.widget_fbw_id {
+  background: $lightgray;
+}
+
+.widget_categories {
+  @include sidebar-widget($blue);
+}
+
+.widget_recent_entries {
+  @include sidebar-widget($green);
+}
+
+.widget_recent_comments {
+  @include sidebar-widget($orange);
+}
+
+.widget_archive {
+  @include sidebar-widget($blue);
+}
+
+.widget_meta {
+  @include sidebar-widget($darkgray);
+}

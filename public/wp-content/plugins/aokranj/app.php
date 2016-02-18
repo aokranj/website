@@ -8,7 +8,7 @@ unset($data->user_pass);
 ?>
 <script type="text/javascript">
 var AO = {
-    nonce: '<?php echo wp_create_nonce('aokranj-app'); ?>',
-    User: <?php echo json_encode($data); ?>
+    nonce: '<?= wp_create_nonce('aokranj-app') ?>',
+    User: <?= json_encode($data) ?>
 };
 </script>

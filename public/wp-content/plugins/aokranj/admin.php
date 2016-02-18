@@ -183,7 +183,11 @@ class AOKranjAdmin extends AOKranj
             }
         }
 
-        wp_enqueue_style('aokranj-admin-style', AOKRANJ_PLUGIN_URL . '/admin.css', array(), AOKRANJ_PLUGIN_VERSION);
+        wp_enqueue_style('aokranj-admin', AOKRANJ_PLUGIN_URL . '/css/admin.css', array(), AOKRANJ_PLUGIN_VERSION);
+
+        if (AOKRANJ_DEBUG) {
+            wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
+        }
     }
 
     public function wp_dashboard_setup() {
