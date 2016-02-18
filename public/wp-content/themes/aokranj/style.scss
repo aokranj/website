@@ -72,6 +72,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// gallery
+
+#gallery-1 {
+
+  &.gallery-columns-3 {
+    .gallery-item {
+      width: auto !important;
+      max-width: 150px;
+    }
+  }
+}
 
 // footer
 

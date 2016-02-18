@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   padding-top: 0; }
 
+#gallery-1.gallery-columns-3 .gallery-item {
+  width: auto !important;
+  max-width: 150px; }
+
 .bottom-bar .copyright {
   margin-top: 0; }
 
