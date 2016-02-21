@@ -80,7 +80,7 @@ class AOKranj
         wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
         wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
 
-        if (AOKRANJ_DEBUG) {
+        if (AOKRANJ_DEBUG === true) {
             wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
         }
     }

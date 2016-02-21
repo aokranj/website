@@ -172,7 +172,7 @@ class AOKranjAdmin extends AOKranj
         global $hook_suffix;
 
         if ($hook_suffix === 'aokranj/app.php') {
-            if (AOKRANJ_DEBUG) {
+            if (AOKRANJ_DEBUG === true) {
                 wp_enqueue_style('aokranj-admin-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.css', array(), AOKRANJ_PLUGIN_VERSION);
                 wp_enqueue_script('aokranj-admin-ext', AOKRANJ_PLUGIN_URL . '/app/ext/ext-dev.js', array(), AOKRANJ_PLUGIN_VERSION);
                 wp_enqueue_script('aokranj-admin-bootstrap', AOKRANJ_PLUGIN_URL . '/app/bootstrap.js', array(), AOKRANJ_PLUGIN_VERSION);
@@ -185,7 +185,7 @@ class AOKranjAdmin extends AOKranj
 
         wp_enqueue_style('aokranj-admin', AOKRANJ_PLUGIN_URL . '/css/admin.css', array(), AOKRANJ_PLUGIN_VERSION);
 
-        if (AOKRANJ_DEBUG) {
+        if (AOKRANJ_DEBUG === true) {
             wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
         }
     }
