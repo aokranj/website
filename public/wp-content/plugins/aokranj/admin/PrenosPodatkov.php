@@ -33,23 +33,36 @@ class AOKranjPrenosPodatkov
         ini_set('max_execution_time', 3600);
         set_time_limit(3600);
 
-        /*
+        $utrinki_dir = AOKRANJ_OLD_DIR . '/pic/utrinek';
+        $utrinek_dir = $utrinki_dir . '/HriBB';
+        $utrinek_id = 3596;
+
+        $attachments = array();
+        for ($i = 1; $i < 6; $i++) {
+            // filename can be utrinek_ID_1.jpg or utrinek_ID_01.jpg
+            $file_name1 = 'utrinek_' . $utrinek_id . '_' . $i . '.jpg';
+            $file_name2 = 'utrinek_' . $utrinek_id . '_0' . $i . '.jpg';
+            $source1 = $utrinek_dir . '/' . $file_name1;
+            $source2 = $utrinek_dir . '/' . $file_name2;
+            if (file_exists($source1)) {
+                $attachments[] = $file_name1;
+            } else if (file_exists($source2)) {
+                $attachments[] = $file_name2;
+            } else {
+                $attachments[] = 'DOES NOT EXIST: '. $source1;
+            }
+        }
+
         return array(
             'success' => true,
-            'data'    => array(
-                'users' => 0,
-                'posts' => 0,
-                'reports' => 0,
-                'vzponi' => 0,
-            ),
-            'msg' => 'Prenos je uspel :)',
+            'data'    => $attachments,
+            'msg' => 'Test je uspel :)',
         );
-        */
 
         $this->prenesiUporabnike();
-        $this->prenesiVzpone();
+        //$this->prenesiVzpone();
         $this->prenesiUtrinke();
-        $this->prenesiReportaze();
+        //$this->prenesiReportaze();
 
         // build response
         return array(
