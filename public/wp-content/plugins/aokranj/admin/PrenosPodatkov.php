@@ -50,6 +50,7 @@ class AOKranjPrenosPodatkov
                 $attachments[] = $file_name2;
             } else {
                 $attachments[] = 'DOES NOT EXIST: '. $source1;
+                $attachments[] = 'DOES NOT EXIST: '. $source2;
             }
         }
 
