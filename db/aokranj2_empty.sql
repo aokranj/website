@@ -21,11 +21,11 @@ SET time_zone = "+00:00";
 --
 
 
-DROP DATABASE IF EXISTS `aokranj2`;
+DROP DATABASE IF EXISTS `aokranj_nov`;
 
-CREATE DATABASE `aokranj2`;
+CREATE DATABASE `aokranj_nov`;
 
-USE `aokranj2`;
+USE `aokranj_nov`;
 
 -- --------------------------------------------------------
 
