@@ -55,7 +55,7 @@
 						$args = array(
 							'theme_location'=> 'header-menu',
 							'container'     => false,
-							'menu_class'    => 'nav navbar-nav navbar-right flip',
+							'menu_class'    => 'nav navbar-nav flip',
 							'echo'          => true,
 							'fallback_cb'   => 'franz_page_menu',
 							'items_wrap'    => '<ul id="%1$s" class="%2$s">%3$s</ul>',

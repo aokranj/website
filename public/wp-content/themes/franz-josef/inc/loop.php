@@ -98,10 +98,12 @@ function franz_entry_meta(){
 	}
 	
 	/* Post date */
-	$meta['date'] = array(
-		'class'	=> 'date',
-		'meta'	=> '<a href="' . esc_url( get_permalink( $post_id ) ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
-	);
+	if ( ! $franz_settings['hide_post_date'] ) {
+		$meta['date'] = array(
+			'class'	=> 'date',
+			'meta'	=> '<a href="' . esc_url( get_permalink( $post_id ) ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
+		);
+	}
 	
 	/* Post author and categories */
 	if ( ! $franz_settings['hide_post_cat'] ) {

@@ -82,6 +82,7 @@ $franz_defaults = array(
 			
 	/* Posts Display options */
 	'tiled_posts'				=> false,
+	'hide_post_date' 			=> false,
 	'hide_post_cat' 			=> false,
 	'hide_post_tags' 			=> false,
 	'hide_post_author' 			=> false,

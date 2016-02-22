@@ -278,7 +278,7 @@ function franz_stack_posts( $args = array() ){
 						}
 				?>
                     <div class="item-wrap <?php echo $col; ?>" id="item-<?php echo $post_id; ?>">
-                        <div <?php post_class( 'item' ); ?>>
+                        <div <?php post_class( 'item clearfix' ); ?>>
                         	<?php if ( franz_has_post_image() ) : ?>
                             	<a href="<?php the_permalink(); ?>"><?php franz_the_post_image( $image_size ); ?></a>
                             <?php endif; ?>
@@ -314,13 +314,16 @@ endif;
  * Item meta for Posts stack
  */
 function franz_stack_posts_meta( $post_id = '' ){
+	global $franz_settings;
 	if ( ! $post_id ) $post_id = get_the_ID();
 	$meta = array();
 	
-	$meta['date'] = array(
-		'class'	=> 'date',
-		'meta'	=> '<a href="' . esc_url( get_permalink() ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
-	);
+	if ( ! $franz_settings['hide_post_date'] ) {
+		$meta['date'] = array(
+			'class'	=> 'date',
+			'meta'	=> '<a href="' . esc_url( get_permalink() ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
+		);
+	}
 	
 	if ( franz_should_show_comments( $post_id ) ) {
 		$comment_count = get_comment_count( $post_id );

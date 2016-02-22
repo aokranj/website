@@ -17,6 +17,12 @@ function franz_customizer_display_options( $wp_customize ){
 		'label' 	=> __( 'Use tiled layout in posts listing pages', 'franz-josef' ),
 	) );
 	
+	$wp_customize->add_control( 'franz_settings[hide_post_date]', array(
+		'type' 		=> 'checkbox',
+		'section' 	=> 'fj-display-posts',
+		'label' 	=> __( 'Hide post date', 'franz-josef' ),
+	) );
+	
 	$wp_customize->add_control( 'franz_settings[hide_post_cat]', array(
 		'type' 		=> 'checkbox',
 		'section' 	=> 'fj-display-posts',

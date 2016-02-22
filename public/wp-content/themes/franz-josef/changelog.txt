@@ -2,6 +2,10 @@ FRANZ JOSEF CHANGELOG
 by Graphene Themes Solutions
 http://www.graphene-theme.com/franz-josef/changelog/
 
+Version 1.7.1
+	* Added: Option to hide post date
+	* Fixed: Disabled hover menu
+
 Version 1.7
 	* Added: Theme options migrated to WP Customizer
 	* Added: Option to display front page blog posts in a single column

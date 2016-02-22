@@ -6,7 +6,7 @@
             	<?php do_action( 'franz_archive_top' ); ?>
             	<?php
 					$term = get_queried_object();
-
+				
 					$title = '';
 					if ( is_category() ) $title = single_cat_title( '', false );
 					elseif ( is_tax() ) $title = single_term_title( '', false );
@@ -21,9 +21,9 @@
             		<h1><?php echo $title; ?></h1>
                     <?php if ( $term->description ) echo wpautop( $term->description ); ?>
                 </div>
-
+                
                 <div class="entries-wrapper row">
-                <?php
+                <?php 
 					if ( have_posts() ) {
 						while ( have_posts() ) {
 							the_post();
@@ -35,9 +35,9 @@
                 <?php franz_posts_nav(); ?>
                 <?php do_action( 'franz_archive_bottom' ); ?>
             </div>
-
+            
             <?php get_sidebar(); ?>
-
+            
         </div>
     </div>
 

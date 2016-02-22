@@ -7,9 +7,9 @@
             	<?php if ( get_option( 'show_on_front' ) == 'page' ) : ?>
 	            	<h1 class="section-title-lg"><?php echo get_the_title( get_option( 'page_for_posts' ) ); ?></h1>
                 <?php endif; ?>
-
+                
                 <div class="entries-wrapper row">
-                <?php
+                <?php 
 					if ( have_posts() ) {
 						while ( have_posts() ) {
 							the_post();
@@ -21,9 +21,9 @@
                 <?php franz_posts_nav(); ?>
                 <?php do_action( 'franz_home_bottom' ); ?>
             </div>
-
+            
             <?php get_sidebar(); ?>
-
+            
         </div>
     </div>
 

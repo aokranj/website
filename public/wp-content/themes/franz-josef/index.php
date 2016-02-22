@@ -5,7 +5,7 @@
         	<div class="main col-md-9">
                 <?php do_action( 'franz_index_top' ); ?>
                 <div class="entries-wrapper">
-                <?php
+                <?php 
 					if ( have_posts() ) {
 						while ( have_posts() ) {
 							the_post();
@@ -17,9 +17,9 @@
                 <?php franz_posts_nav(); ?>
                 <?php do_action( 'franz_index_bottom' ); ?>
             </div>
-
+            
             <?php get_sidebar(); ?>
-
+            
         </div>
     </div>
 
