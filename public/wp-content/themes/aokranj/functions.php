@@ -121,7 +121,7 @@ function franz_stack_posts( $args = array() ){
                             	<a href="<?php the_permalink(); ?>"><?php franz_the_post_image( $image_size ); ?></a>
                             <?php endif; ?>
                             <h3 class="item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <div class="author"><?php the_date(); ?>, <?php the_author_posts_link(); ?></div>
+                            <div class="author"><?php the_time( get_option( 'date_format' ) ) ?>, <?php the_author_posts_link(); ?></div>
                             <div class="excerpt"><?php the_excerpt(); ?></div>
                             <?php franz_stack_posts_meta_aokranj( $post_id ); ?>
                         </div>
