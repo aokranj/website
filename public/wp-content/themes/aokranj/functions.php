@@ -1,5 +1,7 @@
 <?php
 
+define( 'AOKRANJ_ROOTURI', get_stylesheet_directory_uri() );
+
 add_action( 'wp_enqueue_scripts', 'aokranj_enqueue_styles' );
 function aokranj_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
