@@ -383,6 +383,7 @@ class AOKranjAdmin extends AOKranj
     }
 
     public function prenos_podatkov() {
+	return false;
         // verify app nonce
         $nonce = filter_input(INPUT_POST, 'nonce');
         wp_verify_nonce($nonce, 'aokranj-app');
