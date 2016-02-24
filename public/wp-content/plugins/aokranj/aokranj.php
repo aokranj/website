@@ -18,7 +18,7 @@ require_once 'config.php';
 /**
  * Global plugin instance
  */
-$GLOBALS['AOKranj'] = new AOKranj();
+//$GLOBALS['AOKranj'] = new AOKranj();
 
 /**
  * AOKranj

@@ -1,16 +1,8 @@
 <?php
 
-define( 'AOKRANJ_ROOTURI', get_stylesheet_directory_uri() );
-define( 'AOKRANJ_ROOTDIR', get_stylesheet_directory() );
-
-require( AOKRANJ_ROOTDIR . '/inc/language.php' );
-require( AOKRANJ_ROOTDIR . '/inc/scripts.php' );
-require( AOKRANJ_ROOTDIR . '/inc/slider.php' );
-require( AOKRANJ_ROOTDIR . '/inc/stacks.php' );
-
-
-/*
-
+/**
+ * Stack: Posts
+ */
 function franz_stack_posts( $args = array() ){
 
 	global $franz_settings, $franz_no_default_thumb;
@@ -37,6 +29,7 @@ function franz_stack_posts( $args = array() ){
 	);
 	$args = wp_parse_args( $args, $defaults );
 
+	/* Prepare the query args */
 	$query_args = array(
 		'post_type'				=> $args['post_type'],
 		'posts_per_page'		=> $args['posts_per_page'],
@@ -72,6 +65,7 @@ function franz_stack_posts( $args = array() ){
 		$query_args['category__in'] =  franz_object_id( $franz_settings['frontpage_posts_cats'], 'category' );
 	}
 
+	/* Disable lead posts for the next pages if Infinite Scroll is turned on */
 	if ( $query_args['paged'] > 0 && isset( $franz_settings['inf_scroll_disable'] ) && ! $franz_settings['inf_scroll_disable'] ) {
 		$args['lead_posts'] = 0;
 	}
@@ -106,19 +100,13 @@ function franz_stack_posts( $args = array() ){
 						}
 				?>
                     <div class="item-wrap <?php echo $col; ?>" id="item-<?php echo $post_id; ?>">
-                        <div <?php post_class( 'item' ); ?>>
+                        <div <?php post_class( 'item clearfix' ); ?>>
                         	<?php if ( franz_has_post_image() ) : ?>
                             	<a href="<?php the_permalink(); ?>"><?php franz_the_post_image( $image_size ); ?></a>
                             <?php endif; ?>
                             <h3 class="item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <div class="author">
-                                <?php if ( ! $franz_settings['hide_post_date'] ): ?>
-                                    <?php the_time( get_option( 'date_format' ) ) ?>,
-                                <?php endif; ?>
-                                <?php the_author_posts_link(); ?>
-                            </div>
                             <div class="excerpt"><?php the_excerpt(); ?></div>
-                            <?php franz_stack_posts_meta_aokranj( $post_id ); ?>
+                            <?php franz_stack_posts_meta( $post_id ); ?>
                         </div>
                     </div>
                 <?php endwhile; wp_reset_postdata(); ?>
@@ -142,14 +130,21 @@ function franz_stack_posts( $args = array() ){
     <?php
 }
 
-function franz_stack_posts_meta_aokranj( $post_id = '' ){
+
+/**
+ * Item meta for Posts stack
+ */
+function franz_stack_posts_meta( $post_id = '' ){
+	global $franz_settings;
 	if ( ! $post_id ) $post_id = get_the_ID();
 	$meta = array();
 
-	//$meta['date'] = array(
-	//	'class'	=> 'date',
-	//	'meta'	=> '<a href="' . esc_url( get_permalink() ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
-	//);
+	if ( ! $franz_settings['hide_post_date'] ) {
+		$meta['date'] = array(
+			'class'	=> 'date',
+			'meta'	=> '<a href="' . esc_url( get_permalink() ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
+		);
+	}
 
 	if ( franz_should_show_comments( $post_id ) ) {
 		$comment_count = get_comment_count( $post_id );
@@ -172,4 +167,3 @@ function franz_stack_posts_meta_aokranj( $post_id = '' ){
         </div>
     <?php
 }
-*/
