@@ -88,7 +88,7 @@ function franz_stack_mentions_bar( $args = array() ){
 	);
 	$args = wp_parse_args( $args, $defaults );
 	extract( $args, EXTR_SKIP );
-	
+
 	if ( ! $items ) return;
 	?>
 	<div class="mentions-bar highlights">
@@ -97,9 +97,9 @@ function franz_stack_mentions_bar( $args = array() ){
             <?php if ( $title ) : ?><h2 class="highlight-title"><?php echo $title; ?></h2><?php endif; ?>
             <?php if ( $description ) echo '<div class="description">' . wpautop( $description ) . '</div>'; ?>
             <ul class="mentions-bar-logo">
-            	<?php 
-				foreach ( $items as $item ) : 
-					$icon = wp_get_attachment_image_src( $item['image_id'], 'full' ); 
+            	<?php
+				foreach ( $items as $item ) :
+					$icon = wp_get_attachment_image_src( $item['image_id'], 'full' );
 					$icon_meta = wp_get_attachment_metadata( $item['image_id'] );
 					$alt = ( isset( $icon_meta['image_meta']['title'] ) ) ? $icon_meta['image_meta']['title'] : '';
 				?>
@@ -182,11 +182,11 @@ if ( ! function_exists( 'franz_stack_posts' ) ) :
  * Stack: Posts
  */
 function franz_stack_posts( $args = array() ){
-	
+
 	global $franz_settings, $franz_no_default_thumb;
 	$franz_no_default_thumb = true;
 	if ( 'page' == get_option( 'show_on_front' ) && $franz_settings['disable_front_page_blog'] && ! franz_has_custom_layout() ) return;
-	
+
 	$defaults = array(
 		'title'					=> __( 'Latest Articles', 'franz-josef' ),
 		'description'			=> '',
@@ -206,7 +206,7 @@ function franz_stack_posts( $args = array() ){
 		'container_id'			=> 'posts-stack'
 	);
 	$args = wp_parse_args( $args, $defaults );
-	
+
 	/* Prepare the query args */
 	$query_args = array(
 		'post_type'				=> $args['post_type'],
@@ -216,9 +216,9 @@ function franz_stack_posts( $args = array() ){
 		'ignore_sticky_posts'	=> $args['ignore_sticky_posts'],
 		'paged' 				=> get_query_var( 'paged' ),
 	);
-	
+
 	if ( $args['offset'] ) $query_args['offset'] = $args['offset'];
-	
+
 	if ( $args['taxonomy'] && $args['terms'] ) {
 		$query_args['tax_query'] = array(
 			array(
@@ -228,28 +228,28 @@ function franz_stack_posts( $args = array() ){
 			)
 		);
 	}
-	
+
 	if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) {
 		$query_args['ignore_sticky_posts'] = true;
 		$query_args['paged'] = get_query_var( 'page' );
 	}
-	
+
 	if ( $args['lead_posts'] === false && is_front_page() && ! $franz_settings['disable_full_width_post'] ) $args['lead_posts'] = 1;
-	
+
 	if ( $franz_settings['slider_type'] == 'categories' && $franz_settings['slider_exclude_categories'] != 'disabled' ) {
 		$query_args['category__not_in'] =  franz_object_id( $franz_settings['slider_specific_categories'], 'category' );
 	}
 	if ( $franz_settings['frontpage_posts_cats'] ) {
 		$query_args['category__in'] =  franz_object_id( $franz_settings['frontpage_posts_cats'], 'category' );
 	}
-	
+
 	/* Disable lead posts for the next pages if Infinite Scroll is turned on */
 	if ( $query_args['paged'] > 0 && isset( $franz_settings['inf_scroll_disable'] ) && ! $franz_settings['inf_scroll_disable'] ) {
 		$args['lead_posts'] = 0;
 	}
-	
+
 	$posts = new WP_Query( apply_filters( 'franz_stack_posts_query_args', $query_args, $args ) );
-	
+
 	$classes = 'posts-list highlights';
 	if ( $args['full_width'] ) $classes .= ' full-width';
 	?>
@@ -258,11 +258,11 @@ function franz_stack_posts( $args = array() ){
             <?php if ( $args['title'] ) : ?><h2 class="highlight-title"><?php echo $args['title']; ?></h2><?php endif; ?>
             <?php echo wpautop( $args['description'] ); ?>
             <div class="row items-container" data-disable-masonry="<?php echo ( $args['disable_masonry'] ) ? 1 : 0; ?>">
-            	<?php 
-					while ( $posts->have_posts() ) : 
+            	<?php
+					while ( $posts->have_posts() ) :
 						$posts->the_post();
 						$post_id = get_the_ID();
-						
+
 						if ( $args['lead_posts'] && $posts->current_post < $args['lead_posts'] ) {
 							$col = 'col-md-12';
 							$image_size = 'full';
@@ -287,10 +287,10 @@ function franz_stack_posts( $args = array() ){
                             <?php franz_stack_posts_meta( $post_id ); ?>
                         </div>
                     </div>
-                <?php endwhile; wp_reset_postdata(); ?>                
+                <?php endwhile; wp_reset_postdata(); ?>
             </div>
-            
-            <?php 
+
+            <?php
 				if ( ! $args['disable_nav'] ) {
 					$nav_args = array(
 						'current'			=> max( 1, $posts->query['paged'] ),
@@ -298,11 +298,11 @@ function franz_stack_posts( $args = array() ){
 						'add_fragment'		=> '#' . $args['container_id'],
 					);
 					if ( is_front_page() ) $nav_args['base'] = add_query_arg( 'paged', '%#%' );
-					
+
 					franz_posts_nav( apply_filters( 'franz_posts_stack_nav_args', $nav_args, $posts, $args ) );
 				}
 			?>
-            
+
         </div>
     </div>
     <?php
@@ -310,6 +310,7 @@ function franz_stack_posts( $args = array() ){
 endif;
 
 
+if ( ! function_exists( 'franz_stack_posts_meta' ) ) :
 /**
  * Item meta for Posts stack
  */
@@ -317,14 +318,14 @@ function franz_stack_posts_meta( $post_id = '' ){
 	global $franz_settings;
 	if ( ! $post_id ) $post_id = get_the_ID();
 	$meta = array();
-	
+
 	if ( ! $franz_settings['hide_post_date'] ) {
 		$meta['date'] = array(
 			'class'	=> 'date',
 			'meta'	=> '<a href="' . esc_url( get_permalink() ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
 		);
 	}
-	
+
 	if ( franz_should_show_comments( $post_id ) ) {
 		$comment_count = get_comment_count( $post_id );
 		$approved_comment_count = $comment_count['approved'];
@@ -335,7 +336,7 @@ function franz_stack_posts_meta( $post_id = '' ){
 			'meta'	=> '<a href="' . $comments_link . '"><i class="fa fa-comment"></i> ' . $comment_text . '</a>',
 		);
 	}
-	
+
 	$meta = apply_filters( 'franz_stack_posts_meta', $meta );
 	if ( ! $meta ) return;
 	?>
@@ -346,3 +347,4 @@ function franz_stack_posts_meta( $post_id = '' ){
         </div>
     <?php
 }
+endif;
