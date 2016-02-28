@@ -1,2 +1,34 @@
 #adminmenu .toplevel_page_aokranj\/app .wp-menu-image.svg {
   background-size: 18px auto; }
+
+#vzpon .submit {
+  clear: both;
+  padding-top: 20px; }
+
+#vzpon .form-datepicker .datepicker {
+  background: #fff; }
+
+#vzpon .form-datepicker td:after {
+  content: "\f508";
+  font: 400 20px/1 dashicons;
+  color: #aaa;
+  position: relative;
+  top: -2px;
+  margin-left: -28px;
+  vertical-align: middle; }
+  @media (max-width: 782px) {
+    #vzpon .form-datepicker td:after {
+      float: right;
+      margin: -30px 5px 0 0; } }
+
+@media (min-width: 768px) {
+  #vzpon .form-table.tip {
+    width: 50%; }
+    #vzpon .form-table.tip th {
+      width: 175px; }
+  #vzpon .form-table.left, #vzpon .form-table.right {
+    width: 50%;
+    float: left;
+    clear: none; }
+    #vzpon .form-table.left th, #vzpon .form-table.right th {
+      width: 175px; } }

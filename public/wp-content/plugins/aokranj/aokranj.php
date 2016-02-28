@@ -18,7 +18,7 @@ require_once 'config.php';
 /**
  * Global plugin instance
  */
-//$GLOBALS['AOKranj'] = new AOKranj();
+$GLOBALS['AOKranj'] = new AOKranj();
 
 /**
  * AOKranj
@@ -74,15 +74,15 @@ class AOKranj
     }
 
     public function wp_enqueue_scripts() {
-        wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/colorbox.css', array(), AOKRANJ_PLUGIN_VERSION );
-        wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
-
-        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
-        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
-
         if (AOKRANJ_DEBUG === true) {
             wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
         }
+
+        wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/js/colorbox/colorbox.css', array(), AOKRANJ_PLUGIN_VERSION );
+        wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/js/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
+
+        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
+        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
     }
 
     public function wp_authenticate() {

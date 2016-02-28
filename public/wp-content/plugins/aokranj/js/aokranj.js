@@ -1,10 +1,7 @@
 
 jQuery(document).ready(function(){
-    
-    
+
     jQuery('.gallery').each(function(i, item){
-        console.log('gallery' + i);
-        
         jQuery('a', this).colorbox({
             rel: 'gallery' + i,
             maxWidth: '98%',
@@ -21,11 +18,5 @@ jQuery(document).ready(function(){
             imgError: 'Slike ni mogoče naložiti.'
         });
     });
-    
-    /*
-    $('.gallery').colorbox({
-        rel:'group2',
-        transition:'fade'
-    });
-    */
+
 });
