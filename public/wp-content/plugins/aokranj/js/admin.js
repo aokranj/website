@@ -1,15 +1,17 @@
-
 jQuery(document).ready(function(){
 
-    jQuery('.datepicker').pikaday({
-        format: 'YYYY-MM-DD',
-        firstDay: 1
-    });
+    if (jQuery.fn.pikaday) {
+        jQuery('.datepicker').pikaday({
+            format: 'YYYY-MM-DD',
+            firstDay: 1
+        });
+    }
 
-    jQuery('#vzpon #tip').on('change', function(){
-        var tip = jQuery(this).val();
-        switch (tip) {
-            case 'ALP':
+    if (jQuery('#vzpon #tip').length) {
+        jQuery('#vzpon #tip').on('change', function(){
+            var tip = jQuery(this).val();
+            switch (tip) {
+                case 'ALP':
                 enable('#vzpon #partner');
                 enable('#vzpon #cas');
                 enable('#vzpon #visina_izstop');
@@ -19,7 +21,7 @@ jQuery(document).ready(function(){
                 enable('#vzpon #stil');
                 enable('#vzpon #mesto');
                 break;
-            case 'ŠP':
+                case 'ŠP':
                 disable('#vzpon #partner');
                 disable('#vzpon #cas');
                 disable('#vzpon #visina_izstop');
@@ -29,7 +31,7 @@ jQuery(document).ready(function(){
                 disable('#vzpon #stil');
                 disable('#vzpon #mesto');
                 break;
-            case 'SMUK':
+                case 'SMUK':
                 enable('#vzpon #partner');
                 disable('#vzpon #cas');
                 disable('#vzpon #visina_izstop');
@@ -39,7 +41,7 @@ jQuery(document).ready(function(){
                 disable('#vzpon #stil');
                 disable('#vzpon #mesto');
                 break;
-            case 'PR':
+                case 'PR':
                 enable('#vzpon #partner');
                 disable('#vzpon #cas');
                 disable('#vzpon #visina_izstop');
@@ -49,15 +51,14 @@ jQuery(document).ready(function(){
                 disable('#vzpon #stil');
                 disable('#vzpon #mesto');
                 break;
+            }
+        });
+        function enable(selector) {
+            jQuery(selector).prop('disabled', false).closest('tr').show();
         }
-    });
-
-    function enable(selector) {
-        jQuery(selector).prop('disabled', false).closest('tr').show();
-    }
-
-    function disable(selector) {
-        jQuery(selector).prop('disabled', true).closest('tr').hide();
+        function disable(selector) {
+            jQuery(selector).prop('disabled', true).closest('tr').hide();
+        }
     }
 
 });

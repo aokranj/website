@@ -5,6 +5,8 @@
  * @package AO Kranj Plugin
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 wp_enqueue_script('wp-ajax-response');
 
 wp_enqueue_script('moment');
@@ -15,16 +17,17 @@ $vzpon = isset($_SESSION['vzpon']) && is_array($_SESSION['vzpon']) ? $_SESSION['
 $errors = isset($_SESSION['errors']) && is_array($_SESSION['errors']) ? $_SESSION['errors'] : array();
 unset($_SESSION['vzpon'], $_SESSION['errors']);
 
+$title = __('Dodaj vzpon');
+
 if (isset($_GET['id'])) {
     global $wpdb;
-    $dbvzpon = $wpdb->get_row('SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . (int)$_GET['id'], ARRAY_A);
-    if (!$dbvzpon) {
-        wp_redirect(admin_url('/admin.php?page=aokranj/vzpon.php'));
+    $id = (int)$_GET['id'];
+    $user_id = (int)get_current_user_id();
+    $dbvzpon = $wpdb->get_row('SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . $id . ' AND user_id = ' . $user_id, ARRAY_A);
+    if ($dbvzpon) {
+        $vzpon = array_merge($dbvzpon, $vzpon);
+        $title = __('Uredi vzpon');
     }
-    $vzpon = array_merge($dbvzpon, $vzpon);
-    $title = __('Uredi vzpon');
-} else {
-    __('Dodaj vzpon');
 }
 
 ?>
@@ -309,7 +312,7 @@ if (isset($_GET['id'])) {
             <?php wp_nonce_field('dodaj_vzpon') ?>
             <input type="hidden" name="action" value="dodaj_vzpon" />
             <input type="hidden" name="data" value="vzpon" />
-            <input class="button button-primary" type="submit" value="<?= __('Save Changes') ?>" />
+            <input class="button button-primary" type="submit" value="<?= $title ?>" />
         </p>
 
     </form>

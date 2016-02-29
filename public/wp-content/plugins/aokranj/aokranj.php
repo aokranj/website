@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: AO Kranj
  *
@@ -9,6 +8,8 @@
  * Author URI: http://climbuddy.com/
  * @package aokranj
  */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Load configuration
@@ -81,8 +82,8 @@ class AOKranj
         wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/js/colorbox/colorbox.css', array(), AOKRANJ_PLUGIN_VERSION );
         wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/js/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
 
-        wp_enqueue_style('aokranj', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
-        wp_enqueue_script('aokranj', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
+        wp_enqueue_style('aokranj-plugin', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
+        wp_enqueue_script('aokranj-plugin', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
     }
 
     public function wp_authenticate() {

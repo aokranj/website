@@ -1,9 +1,6 @@
 <?php
 
-/**
- * DELETE FROM `wp_posts` WHERE ID > 17;
- * DELETE FROM `wp_postmeta` WHERE post_id > 17;
- */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class AOKranjPrenosPodatkov
 {
@@ -26,6 +23,14 @@ class AOKranjPrenosPodatkov
     }
 
     public function start() {
+        // check permissions
+        if (!current_user_can('activate_plugins')) {
+            return array(
+                'success' => false,
+                'msg' => 'Nimaš pravic za to akcijo!',
+            );
+        }
+
         // used by wordpress functions to skip some checks
         define('WP_IMPORTING', true);
 
@@ -33,13 +38,11 @@ class AOKranjPrenosPodatkov
         ini_set('max_execution_time', 3600);
         set_time_limit(3600);
 
-        /*
+        // just a precaution
         return array(
-            'success' => true,
-            'data'    => $test,
-            'msg' => 'Test je uspel :)',
+            'success' => false,
+            'msg' => 'Pazi kaj delaš ;)',
         );
-        */
 
         $this->prenesiUporabnike();
         $this->prenesiVzpone();
