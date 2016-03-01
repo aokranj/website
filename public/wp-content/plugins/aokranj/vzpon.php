@@ -15,7 +15,8 @@ $action = filter_input(INPUT_GET, 'action');
 if ($action === 'delete') {
     require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
     AOKranj_Vzpon::softDelete($id);
-    wp_redirect(admin_url('/admin.php?page=aokranj-vzponi'));
+    $url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : admin_url('/admin.php?page=aokranj-vzponi');
+    wp_redirect($url);
     die;
 }
 

@@ -74,12 +74,18 @@
     .column-akcije {
       width: 60px;
       a {
-        display: none;
+        @media (min-width: 783px) {
+          display: none;
+        }
         color: #a00;
         &:hover {
           color: #F00;
         }
       }
+    }
+
+    .column-ocena {
+      width: 120px;
     }
 
     .column-destinacija {

@@ -90,7 +90,7 @@ class AOKranj_Vzponi_List_Table extends WP_List_Table
             'ocena'       => __('Ocena'),
             'partner'     => __('Soplezalec'),
             'datum'       => __('Datum'),
-            'akcije'      => '',
+            'akcije'      => __('Akcije'),
         );
         return $columns;
     }

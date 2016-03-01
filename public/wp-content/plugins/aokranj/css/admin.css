@@ -39,10 +39,15 @@
 #vzponi .wp-list-table .column-akcije {
   width: 60px; }
   #vzponi .wp-list-table .column-akcije a {
-    display: none;
     color: #a00; }
+    @media (min-width: 783px) {
+      #vzponi .wp-list-table .column-akcije a {
+        display: none; } }
     #vzponi .wp-list-table .column-akcije a:hover {
       color: #F00; }
+
+#vzponi .wp-list-table .column-ocena {
+  width: 120px; }
 
 @media (min-width: 783px) {
   #vzponi .wp-list-table .column-destinacija:not(th) span {
