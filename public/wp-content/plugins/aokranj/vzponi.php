@@ -8,7 +8,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // stupid wordpress ...
-if (isset($_POST['page'])) {
+$action = filter_input(INPUT_POST, 'action');
+if ($action === 'filter') {
     $url = admin_url('admin.php?page=aokranj-vzponi');
     $s = filter_input(INPUT_POST, 's');
     $paged = filter_input(INPUT_POST, 'paged');
@@ -22,8 +23,8 @@ if (isset($_POST['page'])) {
     die;
 }
 
+// vzponi table instance
 require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzponi-list-table.php';
-
 $table = new AOKranj_Vzponi_List_Table();
 $table->prepare_items();
 
@@ -44,6 +45,7 @@ if (!empty($order)) $url .= '&order=' . $order;
     <form id="vzponi-filter" action="<?= $url . '&noheader=true' ?>" method="post">
         <?php /* <input type="hidden" name="action" value="isci_vzpone" /> */ ?>
         <input type="hidden" name="page" value="aokranj-vzponi" />
+        <input type="hidden" name="action" value="filter" />
         <?php $table->search_box(__('Išči vzpone'), 'vzpon'); ?>
         <?php $table->display(); ?>
     </form>

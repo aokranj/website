@@ -33,6 +33,9 @@
     #vzpon .form-table.left th, #vzpon .form-table.right th {
       width: 175px; } }
 
+#vzponi .wp-list-table .column-akcije {
+  width: 60px; }
+
 @media (min-width: 783px) {
-  #vzponi .wp-list-table .destinacija a span {
+  #vzponi .wp-list-table .column-destinacija:not(th) span {
     display: none; } }

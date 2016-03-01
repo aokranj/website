@@ -320,6 +320,102 @@ class AOKranj_Admin extends AOKranj
 
     // submit
 
+    public function dodaj_vzpon() {
+        // check nonce
+        check_admin_referer('dodaj_vzpon');
+
+        // set url
+        $url = admin_url('/admin.php?page=aokranj-vzpon');
+
+        // load vzpon class
+        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
+
+        // create new vzpon instance from post data
+        $data = AOKranj_Vzpon::getPostData();
+        $Vzpon = new AOKranj_Vzpon($data);
+
+        // validate
+        $errors = $Vzpon->validate();
+        if (count($errors) > 0) {
+            $_SESSION['vzpon'] = $vzpon;
+            $_SESSION['errors'] = $errors;
+            wp_redirect($url);
+            die;
+        }
+
+        // insert into db
+        try {
+            $id = $Vzpon->create();
+        } catch (Exception $e) {
+            $_SESSION['error'] = __('Prišlo je do napake pri dodajanju vzpona! Prosimo obvestite administratorja.') . '<br />' . $e->getError();
+            wp_redirect($url);
+            die;
+        }
+
+        // set session message
+        $_SESSION['message'] = __('Vzpon je bil uspešno shranjen.');
+        unset($_SESSION['vzpon'], $_SESSION['errors']);
+
+        // redirect to vzpon
+        wp_redirect($url . '&id=' . $id);
+        die;
+    }
+
+    public function uredi_vzpon() {
+        // check nonce
+        check_admin_referer('uredi_vzpon');
+
+        global $wpdb;
+
+        // get id and user_id
+        $id = (int)filter_input(INPUT_POST, 'id');
+        $user_id = (int)get_current_user_id();
+
+        // url
+        $url = admin_url('/admin.php?page=aokranj-vzpon&id=' . $id);
+
+        // create vzpon instance
+        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
+        $Vzpon = new AOKranj_Vzpon();
+
+        // load vzpon
+        if (!$Vzpon->load($id)) {
+            $_SESSION['error'] = __('Vzpon #' . $id . ' ne obstaja!');
+            wp_redirect($url);
+            die;
+        }
+
+        // overwrite vzpon data from post data
+        $data = AOKranj_Vzpon::getPostData();
+        $Vzpon->setData($data);
+
+        // validate vzpon
+        $errors = $Vzpon->validate();
+        if (count($errors) > 0) {
+            $_SESSION['vzpon'] = $vzpon;
+            $_SESSION['errors'] = $errors;
+            wp_redirect($url);
+            die;
+        }
+
+        // update vzpon or send error
+        try {
+            $Vzpon->update();
+        } catch (Exception $e) {
+            $_SESSION['error'] = __('Prišlo je do napake pri urejanju vzpona! Prosimo obvestite administratorja.') . '<br />' . $e->getMessage();
+            wp_redirect($url);
+            die;
+        }
+
+        // set session message
+        $_SESSION['message'] = __('Vzpon je bil uspešno shranjen.');
+        unset($_SESSION['vzpon'], $_SESSION['errors']);
+
+        // redirect back to vzpon
+        wp_redirect($url);
+        die;
+    }
+
     public function prenos_podatkov() {
         // check nonce
         check_admin_referer('prenos_podatkov');
@@ -338,214 +434,6 @@ class AOKranj_Admin extends AOKranj
 
         // redirect back
         wp_redirect(admin_url('/admin.php?page=aokranj-prenos'));
-    }
-
-    public function dodaj_vzpon() {
-        // check nonce
-        check_admin_referer('dodaj_vzpon');
-
-        // set url
-        $url = admin_url('/admin.php?page=aokranj-vzpon');
-
-        // get values from $_POST
-        $vzpon = array(
-            'user_id' => get_current_user_id(),
-            'tip' => filter_input(INPUT_POST, 'tip'),
-            'destinacija' => filter_input(INPUT_POST, 'destinacija'),
-            'smer' => filter_input(INPUT_POST, 'smer'),
-            'datum' => filter_input(INPUT_POST, 'datum'),
-            'ocena' => filter_input(INPUT_POST, 'ocena'),
-            'cas' => filter_input(INPUT_POST, 'cas'),
-            'vrsta' => filter_input(INPUT_POST, 'vrsta'),
-            'visina_smer' => filter_input(INPUT_POST, 'visina_smer'),
-            'visina_izstop' => filter_input(INPUT_POST, 'visina_izstop'),
-            'pon_vrsta' => filter_input(INPUT_POST, 'pon_vrsta'),
-            'pon_nacin' => filter_input(INPUT_POST, 'pon_nacin'),
-            'stil' => filter_input(INPUT_POST, 'stil'),
-            'mesto' => filter_input(INPUT_POST, 'mesto'),
-            'partner' => filter_input(INPUT_POST, 'partner'),
-            'opomba' => filter_input(INPUT_POST, 'opomba'),
-            'slap' => filter_input(INPUT_POST, 'slap'),
-        );
-
-        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
-
-        // validate
-        $errors = $this->validate_vzpon($vzpon);
-        if (count($errors) > 0) {
-            $_SESSION['vzpon'] = $vzpon;
-            $_SESSION['errors'] = $errors;
-            wp_redirect($url);
-            die;
-        }
-
-        // insert into db
-        global $wpdb;
-        $success = $wpdb->insert(AOKRANJ_TABLE_VZPONI, $vzpon);
-        if (false === $success) {
-            $_SESSION['error'] = __('Prišlo je do napake pri dodajanju vzpona! Prosimo obvestite sistemskega administratorja.') . '<br />' . $wpdb->last_error;
-            wp_redirect($url);
-            die;
-        }
-
-        // set message
-        $_SESSION['message'] = __('Vzpon je bil uspešno shranjen.');
-
-        // unset others
-        unset($_SESSION['vzpon'], $_SESSION['errors']);
-
-        // redirect to vzpon
-        wp_redirect($url . '&id=' . $wpdb->insert_id);
-        die;
-    }
-
-    public function uredi_vzpon() {
-        // check nonce
-        check_admin_referer('uredi_vzpon');
-
-        global $wpdb;
-
-        // get id and user_id
-        $id = (int)filter_input(INPUT_POST, 'id');
-        $user_id = (int)get_current_user_id();
-
-        // set url
-        $url = admin_url('/admin.php?page=aokranj-vzpon&id=' . $id);
-
-        // find vzpon
-        $dbvzpon = $wpdb->get_row('SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . $id . ' AND user_id = ' . $user_id, ARRAY_A);
-        if (!$dbvzpon) {
-            $_SESSION['error'] = __('Vzpon #' . $id . ' ne obstaja!');
-            wp_redirect($url);
-            die;
-        }
-
-        // get values from $_POST
-        $vzpon = array(
-            'tip' => filter_input(INPUT_POST, 'tip'),
-            'destinacija' => filter_input(INPUT_POST, 'destinacija'),
-            'smer' => filter_input(INPUT_POST, 'smer'),
-            'datum' => filter_input(INPUT_POST, 'datum'),
-            'ocena' => filter_input(INPUT_POST, 'ocena'),
-            'cas' => filter_input(INPUT_POST, 'cas'),
-            'vrsta' => filter_input(INPUT_POST, 'vrsta'),
-            'visina_smer' => filter_input(INPUT_POST, 'visina_smer'),
-            'visina_izstop' => filter_input(INPUT_POST, 'visina_izstop'),
-            'pon_vrsta' => filter_input(INPUT_POST, 'pon_vrsta'),
-            'pon_nacin' => filter_input(INPUT_POST, 'pon_nacin'),
-            'stil' => filter_input(INPUT_POST, 'stil'),
-            'mesto' => filter_input(INPUT_POST, 'mesto'),
-            'partner' => filter_input(INPUT_POST, 'partner'),
-            'opomba' => filter_input(INPUT_POST, 'opomba'),
-            'slap' => filter_input(INPUT_POST, 'slap'),
-        );
-
-        // validate vzpon
-        $errors = $this->validate_vzpon($vzpon);
-        if (count($errors) > 0) {
-            $_SESSION['vzpon'] = $vzpon;
-            $_SESSION['errors'] = $errors;
-            wp_redirect($url);
-            die;
-        }
-
-        // update parameters
-        // https://codex.wordpress.org/Class_Reference/wpdb#UPDATE_rows
-        $where = array(
-            'id' => $id,
-            'user_id' => $user_id
-        );
-        $format = array(
-            '%s', // tip
-            '%s', // destinacija
-            '%s', // smer
-            '%s', // datum
-            '%s', // ocena
-            '%s', // cas
-            '%s', // vrsta
-            '%s', // visina_smer
-            '%s', // visina_izstop
-            '%s', // pon_vrsta
-            '%s', // pon_nacin
-            '%s', // stil
-            '%s', // mesto
-            '%s', // partner
-        );
-        $where_format = array(
-            '%d',
-            '%d',
-        );
-
-        // update vzpon or send error
-        $success = $wpdb->update(AOKRANJ_TABLE_VZPONI, $vzpon, $where, $format, $where_format);
-        if (false === $success) {
-            $_SESSION['error'] = __('Prišlo je do napake pri urejanju vzpona! Prosimo obvestite sistemskega administratorja.') . '<br />' . $wpdb->last_error;
-            wp_redirect($url);
-            die;
-        }
-
-        // set message
-        $_SESSION['message'] = __('Vzpon je bil uspešno shranjen.');
-
-        // unset others
-        unset($_SESSION['vzpon'], $_SESSION['errors']);
-
-        // redirect back to vzpon
-        wp_redirect($url);
-        die;
-    }
-
-    private function validate_vzpon($vzpon) {
-        $errors = [];
-
-        $tipi = array('ALP', 'ŠP', 'SMUK', 'PR');
-        $vrste = array('K', 'L', 'LK');
-        $ponovitve = array('Prv', '1P', '2P', 'ZP');
-        $nacini = array('PP', 'NP', 'RP');
-        $stili = array('A', 'K', 'OS');
-        $mesta = array('V', 'D', 'Ž', 'I');
-
-        // check required fields
-        if (empty($vzpon['tip']))
-            $errors['tip'] = __('Tip vzpona je obvezen!');
-        if (empty($vzpon['datum']))
-            $errors['datum'] = __('Datum je obvezen!');
-        if (empty($vzpon['destinacija']))
-            $errors['destinacija'] = __('Destinacija je obvezna!');
-        if (empty($vzpon['smer']))
-            $errors['smer'] = __('Smer je obvezna!');
-
-        // check maxlengths
-        if (strlen($vzpon['destinacija']) > 50)
-            $errors['destinacija'] = __('Maksimalna dolžina je 50 znakov.');
-        if (strlen($vzpon['smer']) > 50)
-            $errors['smer'] = __('Maksimalna dolžina je 50 znakov.');
-        if (!empty($vzpon['ocena']) && strlen($vzpon['ocena']) > 30)
-            $errors['ocena'] = __('Maksimalna dolžina je 30 znakov.');
-        if (!empty($vzpon['cas']) && strlen($vzpon['cas']) > 30)
-            $errors['cas'] = __('Maksimalna dolžina je 30 znakov.');
-        if (!empty($vzpon['visina_smer']) && strlen($vzpon['visina_smer']) > 15)
-            $errors['visina_smer'] = __('Maksimalna dolžina je 15 znakov.');
-        if (!empty($vzpon['visina_izstop']) && strlen($vzpon['visina_izstop']) > 15)
-            $errors['visina_izstop'] = __('Maksimalna dolžina je 15 znakov.');
-        if (!empty($vzpon['opomba']) && strlen($vzpon['opomba']) > 500)
-            $errors['opomba'] = __('Maksimalna dolžina je 500 znakov.');
-
-        // check enums
-        if (!in_array($vzpon['tip'], $tipi))
-            $errors['tip'] = __('Napačen tip vzpona!');
-        if (!empty($vzpon['vrsta']) && !in_array($vzpon['vrsta'], $vrste))
-            $errors['vrsta'] = __('Napačna vrsta vzpona!');
-        if (!empty($vzpon['pon_vrsta']) && !in_array($vzpon['pon_vrsta'], $ponovitve))
-            $errors['pon_vrsta'] = __('Napačna ponovitev vzpona!');
-        if (!empty($vzpon['pon_nacin']) && !in_array($vzpon['pon_nacin'], $nacini))
-            $errors['pon_nacin'] = __('Napačen način vzpona!');
-        if (!empty($vzpon['stil']) && !in_array($vzpon['stil'], $stili))
-            $errors['stil'] = __('Napačen stil vzpona!');
-        if (!empty($vzpon['mesto']) && !in_array($vzpon['mesto'], $mesta))
-            $errors['mesto'] = __('Napačno mesto vzpona!');
-
-        return $errors;
     }
 
 }

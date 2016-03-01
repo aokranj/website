@@ -7,6 +7,18 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+// get id from $_GET
+$id = (int)filter_input(INPUT_GET, 'id');
+
+// stupid wordpress ...
+$action = filter_input(INPUT_GET, 'action');
+if ($action === 'delete') {
+    require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
+    AOKranj_Vzpon::softDelete($id);
+    wp_redirect(admin_url('/admin.php?page=aokranj-vzponi'));
+    die;
+}
+
 // load scripts and styles
 wp_enqueue_script('wp-ajax-response');
 wp_enqueue_script('moment');
@@ -24,23 +36,17 @@ unset($_SESSION['vzpon'], $_SESSION['errors'], $_SESSION['error'], $_SESSION['me
 $title = __('Dodaj vzpon');
 $action = 'dodaj_vzpon';
 $disable = array();
-$dbvzpon = null;
 
 // edit?
-if (isset($_GET['id'])) {
-    global $wpdb;
-    $id = (int)filter_input(INPUT_GET, 'id');
-    $user_id = (int)get_current_user_id();
-    $query = 'SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . $id . ' AND user_id = ' . $user_id;
-    $dbvzpon = $wpdb->get_row($query, ARRAY_A);
-    if ($dbvzpon) {
-        $title = __('Uredi vzpon');
-        $action = 'uredi_vzpon';
-        $vzpon = array_merge($dbvzpon, $vzpon);
-    } else {
-        die('does not exist!');
+if ($id) {
+    require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
+    $Vzpon = new AOKranj_Vzpon();
+    if (!$Vzpon->load($id)) {
         die('<script type="text/javascript">window.location = \'' . admin_url('/admin.php?page=aokranj-vzpon') . '\';</script>');
     }
+    $title = __('Uredi vzpon');
+    $action = 'uredi_vzpon';
+    $vzpon = array_merge($Vzpon->getData(), $vzpon);
 }
 
 if (isset($vzpon['tip'])) {
@@ -351,7 +357,7 @@ if (isset($vzpon['tip'])) {
         </p>
 
         <!-- id? -->
-        <?php if (isset($dbvzpon)): ?>
+        <?php if (isset($Vzpon)): ?>
             <input type="hidden" name="id" value="<?= $vzpon['id'] ?>" />
         <?php endif; ?>
 

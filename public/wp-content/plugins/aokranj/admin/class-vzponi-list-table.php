@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Tabela vzponov
+ */
 class AOKranj_Vzponi_List_Table extends WP_List_Table
 {
     /**
@@ -39,6 +42,7 @@ class AOKranj_Vzponi_List_Table extends WP_List_Table
             SELECT *
             FROM %s
             WHERE user_id = %d %s
+            AND (deleted = 0 OR deleted IS NULL)
             ORDER BY %s %s
             LIMIT %d, %d',
             AOKRANJ_TABLE_VZPONI,
@@ -75,6 +79,23 @@ class AOKranj_Vzponi_List_Table extends WP_List_Table
     }
 
     /**
+     * Override the parent columns method. Defines the columns to use in your listing table
+     *
+     * @return Array
+     */
+    public function get_columns() {
+        $columns = array(
+            'destinacija' => __('Destinacija'),
+            'smer'        => __('Smer'),
+            'ocena'       => __('Ocena'),
+            'partner'     => __('Soplezalec'),
+            'datum'       => __('Datum'),
+            'akcije'      => '',
+        );
+        return $columns;
+    }
+
+    /**
      * Default column renderer
      *
      * @param array $item
@@ -105,32 +126,13 @@ class AOKranj_Vzponi_List_Table extends WP_List_Table
     }
 
     /**
-     * Make smer clickable
-     *
+     * Akcije column
      * @param  array $item
      * @return string
      */
-    /*
-    public function column_smer($item) {
-        $url = admin_url('admin.php?page=aokranj-vzpon&id=' . $item['id']);
-        return '<a href="' . $url . '">' . $item['smer'] . '</a>';
-    }
-    */
-
-    /**
-     * Override the parent columns method. Defines the columns to use in your listing table
-     *
-     * @return Array
-     */
-    public function get_columns() {
-        $columns = array(
-            'destinacija' => __('Destinacija'),
-            'smer'        => __('Smer'),
-            'ocena'       => __('Ocena'),
-            'partner'     => __('Soplezalec'),
-            'datum'       => __('Datum'),
-        );
-        return $columns;
+    public function column_akcije($item) {
+        $url = admin_url('admin.php?page=aokranj-vzpon&id=' . $item['id'] . '&action=delete&noheader=true');
+        return '<a href="' . $url . '">' . __('odstrani') . '</a>';
     }
 
     /**

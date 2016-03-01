@@ -60,10 +60,14 @@
 }
 
 #vzponi {
-  @media (min-width: 783px) {
-    .wp-list-table {
-      .destinacija {
-        a {
+  .wp-list-table {
+    .column-akcije {
+      width: 60px;
+    }
+    .column-destinacija {
+
+      @media (min-width: 783px) {
+        &:not(th) {
           span {
             display: none;
           }
