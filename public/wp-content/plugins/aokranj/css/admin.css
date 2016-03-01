@@ -21,7 +21,7 @@
       float: right;
       margin: -30px 5px 0 0; } }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   #vzpon .form-table.tip {
     width: 50%; }
     #vzpon .form-table.tip th {
@@ -32,3 +32,7 @@
     clear: none; }
     #vzpon .form-table.left th, #vzpon .form-table.right th {
       width: 175px; } }
+
+@media (min-width: 783px) {
+  #vzponi .wp-list-table .destinacija a span {
+    display: none; } }

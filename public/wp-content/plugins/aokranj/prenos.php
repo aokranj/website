@@ -7,7 +7,6 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-
 $response = isset($_SESSION['prenos']) && is_array($_SESSION['prenos']) ? $_SESSION['prenos'] : false;
 unset($_SESSION['prenos']);
 ?>

@@ -46,8 +46,8 @@ class AOKranj
         add_shortcode('gallery', array(&$this, 'gallery_shortcode'));
 
         if (is_admin()) {
-            require_once dirname(__FILE__) . '/admin.php';
-            $admin = new AOKranjAdmin();
+            require_once AOKRANJ_PLUGIN_DIR . '/admin.php';
+            $admin = new AOKranj_Admin();
         } else {
             add_action('wp_enqueue_scripts', array(&$this, 'wp_enqueue_scripts'));
         }

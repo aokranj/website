@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class AOKranjPrenosPodatkov
+class AOKranj_Prenos_Podatkov
 {
     private $wpdb;
     private $aodb;

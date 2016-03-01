@@ -5,18 +5,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 session_start();
 
 /**
- * Load configuration
- */
-require_once 'config.php';
-
-/**
  * AOKranj administration
  *
  * @package aokranj
  * @link http://aokranj.com/
  * @author Bojan Hribernik <bojan.hribernik@gmail.com>
  */
-class AOKranjAdmin extends AOKranj
+class AOKranj_Admin extends AOKranj
 {
 
     public function __construct() {
@@ -57,6 +52,7 @@ class AOKranjAdmin extends AOKranj
 
         // submit actions
         add_action('admin_post_dodaj_vzpon', array(&$this, 'dodaj_vzpon'));
+        add_action('admin_post_uredi_vzpon', array(&$this, 'uredi_vzpon'));
         add_action('admin_post_prenos_podatkov', array(&$this, 'prenos_podatkov'));
 
         // ajax actions
@@ -85,6 +81,7 @@ class AOKranjAdmin extends AOKranj
         // WP's insert/prepare/etc don't handle NULL's (at least in 3.3).
         // It also requires the keys to be named and there to be no space
         // the column name and the key length.
+        /*
         $sql = "CREATE TABLE IF NOT EXISTS " . AOKRANJ_TABLE_VZPONI . " (
                 id int(10) unsigned NOT NULL AUTO_INCREMENT,
                 user_id bigint(20) unsigned NOT NULL,
@@ -112,6 +109,7 @@ class AOKranjAdmin extends AOKranj
         if ($wpdb->last_error) {
             die($wpdb->last_error);
         }
+        */
     }
 
     public function deactivate() {
@@ -141,21 +139,34 @@ class AOKranjAdmin extends AOKranj
         /*
         add_action('show_user_profile', array(&$this, 'user_profile_extra_fields'));
         add_action('edit_user_profile', array(&$this, 'user_profile_extra_fields'));
-         *
-         */
+        */
     }
 
     public function admin_menu() {
-        $svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><g></g><path d="M28.438 0.438c-1.247-0.44-2.476-0.19-3.5 0.375-0.971 0.536-1.775 1.342-2.313 2.25h-0.063c-0.024 0.033-0.038 0.092-0.063 0.125-1.135 1.509-3.033 2.978-3.688 5.438v0.188c-0.144 1.653 0.755 3.048 1.875 3.938l0.25 0.25h0.313c1.479 0.112 2.641-0.593 3.563-1.313s1.722-1.464 2.438-1.875v-0.063c1.884-1.267 4.115-2.982 4.688-5.688v-0.125c0.070-1.186-0.699-2.113-1.438-2.563s-1.464-0.65-1.875-0.875l-0.063-0.063h-0.125zM27.75 2.313c0.019 0.010 0.044-0.010 0.063 0 0.626 0.317 1.298 0.576 1.688 0.813 0.386 0.235 0.437 0.31 0.438 0.625-0.411 1.754-1.963 3.145-3.688 4.313-0.025 0.017-0.038 0.046-0.063 0.063-1.027 0.608-1.877 1.416-2.625 2-0.639 0.499-1.182 0.693-1.813 0.75-0.514-0.519-0.94-1.134-0.938-1.75 0.477-1.656 2.038-3.039 3.375-4.875l0.063-0.063c0.354-0.639 0.978-1.268 1.625-1.625 0.626-0.346 1.26-0.447 1.875-0.25z" fill="#ffffff" /><path d="M13.172 21.246c0.105-0.162 0.505-0.571 1.041-1.204l0.008-0.050c1.129-1.389 3.059-2.774 4.973-4.857l0.126-0.126c0.855-1.066 1.692-1.925 2.518-2.46l-1.24-2.66c-1.68 1.087-2.89 2.463-3.884 3.69l-0.048-0.037c-1.286 1.399-3.322 2.823-5.17 5.095-0.308 0.363-0.879 0.892-1.451 1.781l3.127 0.828z" fill="#ffffff" /><path d="M0.96 28.029c-0.429-1.251-0.168-2.478 0.407-3.496 0.545-0.966 1.358-1.762 2.271-2.292l0.001-0.063c0.033-0.024 0.093-0.037 0.126-0.061 1.52-1.121 3.006-3.006 5.471-3.638l0.188 0.002c1.654-0.129 3.041 0.783 3.92 1.911l0.248 0.252-0.003 0.313c0.099 1.48-0.617 2.636-1.345 3.55s-1.48 1.708-1.897 2.42l-0.063-0.001c-1.284 1.872-3.020 4.087-5.73 4.635l-0.125-0.001c-1.187 0.059-2.107-0.718-2.549-1.461s-0.637-1.47-0.858-1.883l-0.062-0.063 0.001-0.125zM2.841 27.358c0.010 0.019-0.010 0.043-0.001 0.063 0.311 0.629 0.564 1.303 0.797 1.695 0.231 0.388 0.306 0.44 0.621 0.443 1.757-0.395 3.163-1.935 4.346-3.648 0.017-0.025 0.046-0.037 0.063-0.062 0.618-1.021 1.433-1.864 2.024-2.607 0.505-0.634 0.704-1.175 0.767-1.806-0.515-0.518-1.126-0.95-1.741-0.953-1.66 0.462-3.057 2.010-4.906 3.33l-0.063 0.062c-0.642 0.348-1.277 0.967-1.64 1.61-0.351 0.623-0.458 1.256-0.267 1.873z" fill="#ffffff" /><path d="M12.455 21.093c0.099-0.165 0.487-0.586 1.003-1.236l0.006-0.050c1.086-1.423 2.971-2.868 4.819-5.009l0.122-0.129c0.822-1.093 1.631-1.977 2.44-2.537l-1.323-2.62c-1.645 1.139-2.812 2.552-3.767 3.809l-0.049-0.036c-1.241 1.439-3.232 2.925-5.009 5.254-0.296 0.372-0.85 0.919-1.395 1.825l3.151 0.73z" fill="#ffffff" /></svg>';
-        $icon = 'data:image/svg+xml;base64,' . base64_encode($svg);
-
-        add_menu_page('Vzponi', 'Vzponi', 'read', 'aokranj/vzponi.php', null, $icon, 5);
-        add_submenu_page('aokranj/vzponi.php', 'Dodaj vzpon', 'Dodaj vzpon', 'read', 'aokranj/vzpon.php');
-        add_submenu_page('aokranj/vzponi.php', 'Prenos podatkov', 'Prenos podatkov', 'activate_plugins', 'aokranj/prenos.php');
-
         if (!current_user_can('manage_options')) {
             remove_menu_page('tools.php');
         }
+
+        $svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><g></g><path d="M28.438 0.438c-1.247-0.44-2.476-0.19-3.5 0.375-0.971 0.536-1.775 1.342-2.313 2.25h-0.063c-0.024 0.033-0.038 0.092-0.063 0.125-1.135 1.509-3.033 2.978-3.688 5.438v0.188c-0.144 1.653 0.755 3.048 1.875 3.938l0.25 0.25h0.313c1.479 0.112 2.641-0.593 3.563-1.313s1.722-1.464 2.438-1.875v-0.063c1.884-1.267 4.115-2.982 4.688-5.688v-0.125c0.070-1.186-0.699-2.113-1.438-2.563s-1.464-0.65-1.875-0.875l-0.063-0.063h-0.125zM27.75 2.313c0.019 0.010 0.044-0.010 0.063 0 0.626 0.317 1.298 0.576 1.688 0.813 0.386 0.235 0.437 0.31 0.438 0.625-0.411 1.754-1.963 3.145-3.688 4.313-0.025 0.017-0.038 0.046-0.063 0.063-1.027 0.608-1.877 1.416-2.625 2-0.639 0.499-1.182 0.693-1.813 0.75-0.514-0.519-0.94-1.134-0.938-1.75 0.477-1.656 2.038-3.039 3.375-4.875l0.063-0.063c0.354-0.639 0.978-1.268 1.625-1.625 0.626-0.346 1.26-0.447 1.875-0.25z" fill="#ffffff" /><path d="M13.172 21.246c0.105-0.162 0.505-0.571 1.041-1.204l0.008-0.050c1.129-1.389 3.059-2.774 4.973-4.857l0.126-0.126c0.855-1.066 1.692-1.925 2.518-2.46l-1.24-2.66c-1.68 1.087-2.89 2.463-3.884 3.69l-0.048-0.037c-1.286 1.399-3.322 2.823-5.17 5.095-0.308 0.363-0.879 0.892-1.451 1.781l3.127 0.828z" fill="#ffffff" /><path d="M0.96 28.029c-0.429-1.251-0.168-2.478 0.407-3.496 0.545-0.966 1.358-1.762 2.271-2.292l0.001-0.063c0.033-0.024 0.093-0.037 0.126-0.061 1.52-1.121 3.006-3.006 5.471-3.638l0.188 0.002c1.654-0.129 3.041 0.783 3.92 1.911l0.248 0.252-0.003 0.313c0.099 1.48-0.617 2.636-1.345 3.55s-1.48 1.708-1.897 2.42l-0.063-0.001c-1.284 1.872-3.020 4.087-5.73 4.635l-0.125-0.001c-1.187 0.059-2.107-0.718-2.549-1.461s-0.637-1.47-0.858-1.883l-0.062-0.063 0.001-0.125zM2.841 27.358c0.010 0.019-0.010 0.043-0.001 0.063 0.311 0.629 0.564 1.303 0.797 1.695 0.231 0.388 0.306 0.44 0.621 0.443 1.757-0.395 3.163-1.935 4.346-3.648 0.017-0.025 0.046-0.037 0.063-0.062 0.618-1.021 1.433-1.864 2.024-2.607 0.505-0.634 0.704-1.175 0.767-1.806-0.515-0.518-1.126-0.95-1.741-0.953-1.66 0.462-3.057 2.010-4.906 3.33l-0.063 0.062c-0.642 0.348-1.277 0.967-1.64 1.61-0.351 0.623-0.458 1.256-0.267 1.873z" fill="#ffffff" /><path d="M12.455 21.093c0.099-0.165 0.487-0.586 1.003-1.236l0.006-0.050c1.086-1.423 2.971-2.868 4.819-5.009l0.122-0.129c0.822-1.093 1.631-1.977 2.44-2.537l-1.323-2.62c-1.645 1.139-2.812 2.552-3.767 3.809l-0.049-0.036c-1.241 1.439-3.232 2.925-5.009 5.254-0.296 0.372-0.85 0.919-1.395 1.825l3.151 0.73z" fill="#ffffff" /></svg>';
+        $icon = 'data:image/svg+xml;base64,' . base64_encode($svg);
+
+        add_menu_page('Vzponi', 'Vzponi', 'read', 'aokranj-vzponi', array(&$this, 'page_vzponi'), $icon, 5);
+        add_submenu_page('aokranj-vzponi', 'Dodaj vzpon', 'Dodaj vzpon', 'read', 'aokranj-vzpon', array(&$this, 'page_vzpon'));
+        add_submenu_page('aokranj-vzponi', 'Prenos podatkov', 'Prenos podatkov', 'activate_plugins', 'aokranj-prenos', array(&$this, 'page_prenos'));
+    }
+
+    // pages
+
+    public function page_vzponi() {
+        require_once AOKRANJ_PLUGIN_DIR . '/vzponi.php';
+    }
+
+    public function page_vzpon() {
+        require_once AOKRANJ_PLUGIN_DIR . '/vzpon.php';
+    }
+
+    public function page_prenos() {
+        require_once AOKRANJ_PLUGIN_DIR . '/prenos.php';
     }
 
     // core
@@ -318,20 +329,23 @@ class AOKranjAdmin extends AOKranj
         $aodb = $this->aodb();
 
         // do it!!!
-        require_once dirname(__FILE__) . '/admin/PrenosPodatkov.php';
-        $prenos = new AOKranjPrenosPodatkov($wpdb, $aodb);
+        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-prenos-podatkov.php';
+        $prenos = new AOKranj_Prenos_Podatkov($wpdb, $aodb);
         $response = $prenos->start();
 
         // set session
         $_SESSION['prenos'] = $response;
 
         // redirect back
-        wp_redirect(admin_url('/admin.php?page=aokranj/prenos.php'));
+        wp_redirect(admin_url('/admin.php?page=aokranj-prenos'));
     }
 
     public function dodaj_vzpon() {
         // check nonce
         check_admin_referer('dodaj_vzpon');
+
+        // set url
+        $url = admin_url('/admin.php?page=aokranj-vzpon');
 
         // get values from $_POST
         $vzpon = array(
@@ -350,29 +364,135 @@ class AOKranjAdmin extends AOKranj
             'stil' => filter_input(INPUT_POST, 'stil'),
             'mesto' => filter_input(INPUT_POST, 'mesto'),
             'partner' => filter_input(INPUT_POST, 'partner'),
-            //'opomba' => filter_input(INPUT_POST, 'opomba'),
+            'opomba' => filter_input(INPUT_POST, 'opomba'),
+            'slap' => filter_input(INPUT_POST, 'slap'),
         );
+
+        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
 
         // validate
         $errors = $this->validate_vzpon($vzpon);
         if (count($errors) > 0) {
             $_SESSION['vzpon'] = $vzpon;
             $_SESSION['errors'] = $errors;
-            wp_redirect(admin_url('/admin.php?page=aokranj/vzpon.php'));
+            wp_redirect($url);
+            die;
         }
-
-        // clear session
-        unset($_SESSION['vzpon'], $_SESSION['errors']);
 
         // insert into db
         global $wpdb;
-        $wpdb->insert(AOKRANJ_TABLE_VZPONI, array_filter($vzpon));
+        $success = $wpdb->insert(AOKRANJ_TABLE_VZPONI, $vzpon);
+        if (false === $success) {
+            $_SESSION['error'] = __('Prišlo je do napake pri dodajanju vzpona! Prosimo obvestite sistemskega administratorja.') . '<br />' . $wpdb->last_error;
+            wp_redirect($url);
+            die;
+        }
 
-        // read from db
-        //$nov = $wpdb->get_row('SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . $wpdb->insert_id);
+        // set message
+        $_SESSION['message'] = __('Vzpon je bil uspešno shranjen.');
+
+        // unset others
+        unset($_SESSION['vzpon'], $_SESSION['errors']);
 
         // redirect to vzpon
-        wp_redirect(admin_url('/admin.php?page=aokranj/vzpon.php&id=' . $wpdb->insert_id));
+        wp_redirect($url . '&id=' . $wpdb->insert_id);
+        die;
+    }
+
+    public function uredi_vzpon() {
+        // check nonce
+        check_admin_referer('uredi_vzpon');
+
+        global $wpdb;
+
+        // get id and user_id
+        $id = (int)filter_input(INPUT_POST, 'id');
+        $user_id = (int)get_current_user_id();
+
+        // set url
+        $url = admin_url('/admin.php?page=aokranj-vzpon&id=' . $id);
+
+        // find vzpon
+        $dbvzpon = $wpdb->get_row('SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . $id . ' AND user_id = ' . $user_id, ARRAY_A);
+        if (!$dbvzpon) {
+            $_SESSION['error'] = __('Vzpon #' . $id . ' ne obstaja!');
+            wp_redirect($url);
+            die;
+        }
+
+        // get values from $_POST
+        $vzpon = array(
+            'tip' => filter_input(INPUT_POST, 'tip'),
+            'destinacija' => filter_input(INPUT_POST, 'destinacija'),
+            'smer' => filter_input(INPUT_POST, 'smer'),
+            'datum' => filter_input(INPUT_POST, 'datum'),
+            'ocena' => filter_input(INPUT_POST, 'ocena'),
+            'cas' => filter_input(INPUT_POST, 'cas'),
+            'vrsta' => filter_input(INPUT_POST, 'vrsta'),
+            'visina_smer' => filter_input(INPUT_POST, 'visina_smer'),
+            'visina_izstop' => filter_input(INPUT_POST, 'visina_izstop'),
+            'pon_vrsta' => filter_input(INPUT_POST, 'pon_vrsta'),
+            'pon_nacin' => filter_input(INPUT_POST, 'pon_nacin'),
+            'stil' => filter_input(INPUT_POST, 'stil'),
+            'mesto' => filter_input(INPUT_POST, 'mesto'),
+            'partner' => filter_input(INPUT_POST, 'partner'),
+            'opomba' => filter_input(INPUT_POST, 'opomba'),
+            'slap' => filter_input(INPUT_POST, 'slap'),
+        );
+
+        // validate vzpon
+        $errors = $this->validate_vzpon($vzpon);
+        if (count($errors) > 0) {
+            $_SESSION['vzpon'] = $vzpon;
+            $_SESSION['errors'] = $errors;
+            wp_redirect($url);
+            die;
+        }
+
+        // update parameters
+        // https://codex.wordpress.org/Class_Reference/wpdb#UPDATE_rows
+        $where = array(
+            'id' => $id,
+            'user_id' => $user_id
+        );
+        $format = array(
+            '%s', // tip
+            '%s', // destinacija
+            '%s', // smer
+            '%s', // datum
+            '%s', // ocena
+            '%s', // cas
+            '%s', // vrsta
+            '%s', // visina_smer
+            '%s', // visina_izstop
+            '%s', // pon_vrsta
+            '%s', // pon_nacin
+            '%s', // stil
+            '%s', // mesto
+            '%s', // partner
+        );
+        $where_format = array(
+            '%d',
+            '%d',
+        );
+
+        // update vzpon or send error
+        $success = $wpdb->update(AOKRANJ_TABLE_VZPONI, $vzpon, $where, $format, $where_format);
+        if (false === $success) {
+            $_SESSION['error'] = __('Prišlo je do napake pri urejanju vzpona! Prosimo obvestite sistemskega administratorja.') . '<br />' . $wpdb->last_error;
+            wp_redirect($url);
+            die;
+        }
+
+        // set message
+        $_SESSION['message'] = __('Vzpon je bil uspešno shranjen.');
+
+        // unset others
+        unset($_SESSION['vzpon'], $_SESSION['errors']);
+
+        // redirect back to vzpon
+        wp_redirect($url);
+        die;
     }
 
     private function validate_vzpon($vzpon) {
@@ -385,16 +505,35 @@ class AOKranjAdmin extends AOKranj
         $stili = array('A', 'K', 'OS');
         $mesta = array('V', 'D', 'Ž', 'I');
 
+        // check required fields
         if (empty($vzpon['tip']))
             $errors['tip'] = __('Tip vzpona je obvezen!');
-        if (!in_array($vzpon['tip'], $tipi))
-            $errors['tip'] = __('Napačen tip vzpona!');
         if (empty($vzpon['datum']))
             $errors['datum'] = __('Datum je obvezen!');
         if (empty($vzpon['destinacija']))
             $errors['destinacija'] = __('Destinacija je obvezna!');
         if (empty($vzpon['smer']))
             $errors['smer'] = __('Smer je obvezna!');
+
+        // check maxlengths
+        if (strlen($vzpon['destinacija']) > 50)
+            $errors['destinacija'] = __('Maksimalna dolžina je 50 znakov.');
+        if (strlen($vzpon['smer']) > 50)
+            $errors['smer'] = __('Maksimalna dolžina je 50 znakov.');
+        if (!empty($vzpon['ocena']) && strlen($vzpon['ocena']) > 30)
+            $errors['ocena'] = __('Maksimalna dolžina je 30 znakov.');
+        if (!empty($vzpon['cas']) && strlen($vzpon['cas']) > 30)
+            $errors['cas'] = __('Maksimalna dolžina je 30 znakov.');
+        if (!empty($vzpon['visina_smer']) && strlen($vzpon['visina_smer']) > 15)
+            $errors['visina_smer'] = __('Maksimalna dolžina je 15 znakov.');
+        if (!empty($vzpon['visina_izstop']) && strlen($vzpon['visina_izstop']) > 15)
+            $errors['visina_izstop'] = __('Maksimalna dolžina je 15 znakov.');
+        if (!empty($vzpon['opomba']) && strlen($vzpon['opomba']) > 500)
+            $errors['opomba'] = __('Maksimalna dolžina je 500 znakov.');
+
+        // check enums
+        if (!in_array($vzpon['tip'], $tipi))
+            $errors['tip'] = __('Napačen tip vzpona!');
         if (!empty($vzpon['vrsta']) && !in_array($vzpon['vrsta'], $vrste))
             $errors['vrsta'] = __('Napačna vrsta vzpona!');
         if (!empty($vzpon['pon_vrsta']) && !in_array($vzpon['pon_vrsta'], $ponovitve))

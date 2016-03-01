@@ -7,26 +7,51 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+// load scripts and styles
 wp_enqueue_script('wp-ajax-response');
-
 wp_enqueue_script('moment');
 wp_enqueue_style('pikaday');
 wp_enqueue_script('pikaday');
 
+// load vzpon and error from session
 $vzpon = isset($_SESSION['vzpon']) && is_array($_SESSION['vzpon']) ? $_SESSION['vzpon'] : array();
 $errors = isset($_SESSION['errors']) && is_array($_SESSION['errors']) ? $_SESSION['errors'] : array();
-unset($_SESSION['vzpon'], $_SESSION['errors']);
+$error = isset($_SESSION['error']) ? $_SESSION['error'] : null;
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : null;
+unset($_SESSION['vzpon'], $_SESSION['errors'], $_SESSION['error'], $_SESSION['message']);
 
+// defaults
 $title = __('Dodaj vzpon');
+$action = 'dodaj_vzpon';
+$disable = array();
+$dbvzpon = null;
 
+// edit?
 if (isset($_GET['id'])) {
     global $wpdb;
-    $id = (int)$_GET['id'];
+    $id = (int)filter_input(INPUT_GET, 'id');
     $user_id = (int)get_current_user_id();
-    $dbvzpon = $wpdb->get_row('SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . $id . ' AND user_id = ' . $user_id, ARRAY_A);
+    $query = 'SELECT * FROM ' . AOKRANJ_TABLE_VZPONI . ' WHERE id = ' . $id . ' AND user_id = ' . $user_id;
+    $dbvzpon = $wpdb->get_row($query, ARRAY_A);
     if ($dbvzpon) {
-        $vzpon = array_merge($dbvzpon, $vzpon);
         $title = __('Uredi vzpon');
+        $action = 'uredi_vzpon';
+        $vzpon = array_merge($dbvzpon, $vzpon);
+    } else {
+        die('does not exist!');
+        die('<script type="text/javascript">window.location = \'' . admin_url('/admin.php?page=aokranj-vzpon') . '\';</script>');
+    }
+}
+
+if (isset($vzpon['tip'])) {
+    switch ($vzpon['tip']) {
+        case 'ŠP':
+            $disable = array('partner','cas','visina_izstop','vrsta','stil','mesto');
+            break;
+        case 'SMUK':
+        case 'PR':
+            $disable = array('cas','visina_izstop','vrsta','pon_vrsta','pon_nacin','stil','mesto');
+            break;
     }
 }
 
@@ -36,7 +61,19 @@ if (isset($_GET['id'])) {
 
     <h1><?= $title; ?></h1>
 
-    <form id="vzpon" class="validate" novalidate="novalidate" action="<?= admin_url('admin-post.php') ?>" method="post">
+    <?php if ($message): ?>
+        <div class="updated settings-error notice is-dismissible">
+            <p><strong><?= $message ?></strong></p>
+        </div>
+    <?php endif; ?>
+
+    <?php if ($error): ?>
+        <div class="settings-error notice is-dismissible">
+            <p><strong><?= $error ?></strong></p>
+        </div>
+    <?php endif; ?>
+
+    <form id="vzpon" class="validate" novalidate="novalidate" action="<?= admin_url('/admin-post.php') ?>" method="post">
 
         <!-- tip -->
         <table class="form-table tip">
@@ -71,6 +108,7 @@ if (isset($_GET['id'])) {
             </tr>
         </table>
 
+        <!-- left -->
         <table class="form-table left">
 
             <!-- datum -->
@@ -88,7 +126,7 @@ if (isset($_GET['id'])) {
             <tr class="form-field form-required<?= isset($errors['destinacija']) ? ' form-invalid' : '' ?>">
                 <th scope="row"><label for="destinacija"><?= __('Destinacija') ?></label></th>
                 <td>
-                    <input type="text" name="destinacija" id="destinacija" value="<?= isset($vzpon['destinacija']) ? $vzpon['destinacija'] : '' ?>" />
+                    <input type="text" name="destinacija" id="destinacija" value="<?= isset($vzpon['destinacija']) ? $vzpon['destinacija'] : '' ?>" maxlength="50" />
                     <?php if (isset($errors['destinacija'])): ?>
                         <p class="error"><?= $errors['destinacija'] ?></p>
                     <?php endif; ?>
@@ -99,7 +137,7 @@ if (isset($_GET['id'])) {
             <tr class="form-field form-required<?= isset($errors['smer']) ? ' form-invalid' : '' ?>">
                 <th scope="row"><label for="sner"><?= __('Smer') ?></label></th>
                 <td>
-                    <input type="text" name="smer" id="smer" value="<?= isset($vzpon['smer']) ? $vzpon['smer'] : '' ?>" />
+                    <input type="text" name="smer" id="smer" value="<?= isset($vzpon['smer']) ? $vzpon['smer'] : '' ?>" maxlength="50" />
                     <?php if (isset($errors['smer'])): ?>
                         <p class="error"><?= $errors['smer'] ?></p>
                     <?php endif; ?>
@@ -110,7 +148,7 @@ if (isset($_GET['id'])) {
             <tr class="form-field">
                 <th scope="row"><label for="ocena"><?= __('Ocena') ?></label></th>
                 <td>
-                    <input type="text" name="ocena" id="ocena" value="<?= isset($vzpon['ocena']) ? $vzpon['ocena'] : '' ?>" />
+                    <input type="text" name="ocena" id="ocena" value="<?= isset($vzpon['ocena']) ? $vzpon['ocena'] : '' ?>" maxlength="30" />
                     <?php if (isset($errors['ocena'])): ?>
                         <p class="error"><?= $errors['ocena'] ?></p>
                     <?php endif; ?>
@@ -118,10 +156,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- partner -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('partner', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="partner"><?= __('Soplezalec') ?></label></th>
                 <td>
-                    <input type="text" name="partner" id="partner" value="<?= isset($vzpon['partner']) ? $vzpon['partner'] : '' ?>" />
+                    <input type="text" name="partner" id="partner" value="<?= isset($vzpon['partner']) ? $vzpon['partner'] : '' ?>" maxlength="50"<?= in_array('partner', $disable) ? ' disabled' : '' ?> />
                     <?php if (isset($errors['partner'])): ?>
                         <p class="error"><?= $errors['partner'] ?></p>
                     <?php endif; ?>
@@ -129,10 +167,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- cas -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('cas', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="cas"><?= __('Čas') ?></label></th>
                 <td>
-                    <input type="text" name="cas" id="cas" value="<?= isset($vzpon['cas']) ? $vzpon['cas'] : '' ?>" />
+                    <input type="text" name="cas" id="cas" value="<?= isset($vzpon['cas']) ? $vzpon['cas'] : '' ?>" maxlength="30"<?= in_array('cas', $disable) ? ' disabled' : '' ?> />
                     <?php if (isset($errors['cas'])): ?>
                         <p class="error"><?= $errors['cas'] ?></p>
                     <?php endif; ?>
@@ -140,10 +178,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- visina_smer -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('visina_smer', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="visina_smer"><?= __('Višina smeri') ?></label></th>
                 <td>
-                    <input type="text" name="visina_smer" id="visina_smer" value="<?= isset($vzpon['visina_smer']) ? $vzpon['visina_smer'] : '' ?>" />
+                    <input type="text" name="visina_smer" id="visina_smer" value="<?= isset($vzpon['visina_smer']) ? $vzpon['visina_smer'] : '' ?>" maxlength="15"<?= in_array('visina_smer', $disable) ? ' disabled' : '' ?> />
                     <?php if (isset($errors['visina_smer'])): ?>
                         <p class="error"><?= $errors['visina_smer'] ?></p>
                     <?php endif; ?>
@@ -151,10 +189,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- visina_izstop -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('visina_izstop', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="visina_izstop"><?= __('Nadmorska višina izstopa') ?></label></th>
                 <td>
-                    <input type="text" name="visina_izstop" id="visina_izstop" value="<?= isset($vzpon['visina_izstop']) ? $vzpon['visina_izstop'] : '' ?>" />
+                    <input type="text" name="visina_izstop" id="visina_izstop" value="<?= isset($vzpon['visina_izstop']) ? $vzpon['visina_izstop'] : '' ?>" maxlength="15"<?= in_array('visina_izstop', $disable) ? ' disabled' : '' ?> />
                     <?php if (isset($errors['visina_izstop'])): ?>
                         <p class="error"><?= $errors['visina_izstop'] ?></p>
                     <?php endif; ?>
@@ -163,13 +201,14 @@ if (isset($_GET['id'])) {
 
         </table>
 
+        <!-- right -->
         <table class="form-table right">
 
             <!-- vrsta -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('vrsta', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="vrsta"><?= __('Vrsta vzpona') ?></label></th>
                 <td>
-                    <select name="vrsta" id="vrsta">
+                    <select name="vrsta" id="vrsta"<?= in_array('vrsta', $disable) ? ' disabled' : '' ?>>
                     	<option value=""<?= isset($vzpon['vrsta']) && $vzpon['vrsta'] === '' ? ' selected' : '' ?>>
                             <?= __('-- Izberite vrsto vzpona --') ?>
                         </option>
@@ -190,10 +229,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- pon_vrsta -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('pon_vrsta', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="pon_vrsta"><?= __('Vrsta ponovitve') ?></label></th>
                 <td>
-                    <select name="pon_vrsta" id="pon_vrsta">
+                    <select name="pon_vrsta" id="pon_vrsta"<?= in_array('pon_vrsta', $disable) ? ' disabled' : '' ?>>
                     	<option value=""<?= isset($vzpon['pon_vrsta']) && $vzpon['pon_vrsta'] === '' ? ' selected' : '' ?>>
                             <?= __('-- Ni ponovitev --') ?>
                         </option>
@@ -217,10 +256,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- pon_nacin -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('pon_nacin', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="pon_nacin"><?= __('Način ponovitve') ?></label></th>
                 <td>
-                    <select name="pon_nacin" id="pon_nacin">
+                    <select name="pon_nacin" id="pon_nacin"<?= in_array('pon_nacin', $disable) ? ' disabled' : '' ?>>
                     	<option value=""<?= isset($vzpon['pon_nacin']) && $vzpon['pon_nacin'] === '' ? ' selected' : '' ?>>
                             <?= __('-- Ni ponovitev --') ?>
                         </option>
@@ -241,10 +280,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- stil -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('stil', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="stil"><?= __('Stil') ?></label></th>
                 <td>
-                    <select name="stil" id="stil">
+                    <select name="stil" id="stil"<?= in_array('stil', $disable) ? ' disabled' : '' ?>>
                     	<option value=""<?= isset($vzpon['stil']) && $vzpon['stil'] === '' ? ' selected' : '' ?>>
                             <?= __('-- Izberite stil vzpona --') ?>
                         </option>
@@ -265,10 +304,10 @@ if (isset($_GET['id'])) {
             </tr>
 
             <!-- mesto -->
-            <tr class="form-field">
+            <tr class="form-field<?= in_array('mesto', $disable) ? ' hidden' : '' ?>">
                 <th scope="row"><label for="mesto"><?= __('Mesto') ?></label></th>
                 <td>
-                    <select name="mesto" id="mesto">
+                    <select name="mesto" id="mesto"<?= in_array('mesto', $disable) ? ' disabled' : '' ?>>
                     	<option value=""<?= isset($vzpon['mesto']) && $vzpon['mesto'] === '' ? ' selected' : '' ?>>
                             <?= __('-- Izberite vaše mesto pri vzponu --') ?>
                         </option>
@@ -295,12 +334,10 @@ if (isset($_GET['id'])) {
             <tr class="form-field">
                 <th scope="row"><label for="opomba"><?= __('Opombe') ?></label></th>
                 <td>
-                    <textarea name="opomba" id="opomba" class="all-options">
-                        <?= isset($vzpon['opomba']) ? $vzpon['opomba'] : '' ?>
-                    </textarea>
+                    <textarea name="opomba" id="opomba" class="all-options"><?= isset($vzpon['opomba']) ? $vzpon['opomba'] : '' ?></textarea>
                     <br />
                     <label for="slap">
-                        <input name="slap" type="checkbox" id="slap" value="1" />
+                        <input name="slap" type="checkbox" id="slap" value="1"<?= isset($vzpon['slap']) && $vzpon['slap'] ? ' checked' : '' ?> />
                         Zaledeneli slap
                     </label>
                 </td>
@@ -308,12 +345,24 @@ if (isset($_GET['id'])) {
 
         </table>
 
+        <!-- button -->
         <p class="submit">
-            <?php wp_nonce_field('dodaj_vzpon') ?>
-            <input type="hidden" name="action" value="dodaj_vzpon" />
-            <input type="hidden" name="data" value="vzpon" />
             <input class="button button-primary" type="submit" value="<?= $title ?>" />
         </p>
+
+        <!-- id? -->
+        <?php if (isset($dbvzpon)): ?>
+            <input type="hidden" name="id" value="<?= $vzpon['id'] ?>" />
+        <?php endif; ?>
+
+        <!-- action -->
+        <input type="hidden" name="action" value="<?= $action ?>" />
+
+        <!-- data -->
+        <input type="hidden" name="data" value="vzpon" />
+
+        <!-- nonce -->
+        <?php wp_nonce_field($action) ?>
 
     </form>
 

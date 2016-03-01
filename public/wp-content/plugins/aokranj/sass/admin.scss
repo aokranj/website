@@ -14,11 +14,9 @@
   }
 
   .form-datepicker {
-
     .datepicker {
       background: #fff;
     }
-
     td {
       &:after {
         content: "\f508";
@@ -28,7 +26,6 @@
         top: -2px;
         margin-left: -28px;
         vertical-align: middle;
-
         @media (max-width: 782px) {
           float: right;
           margin: -30px 5px 0 0;
@@ -37,9 +34,7 @@
     }
   }
 
-
-
-  @media (min-width: 768px) {
+  @media (min-width: 960px) {
 
     .form-table {
 
@@ -60,6 +55,20 @@
         }
       }
 
+    }
+  }
+}
+
+#vzponi {
+  @media (min-width: 783px) {
+    .wp-list-table {
+      .destinacija {
+        a {
+          span {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
