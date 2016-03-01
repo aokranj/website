@@ -60,12 +60,29 @@
 }
 
 #vzponi {
+
   .wp-list-table {
+
+    tr:hover {
+      .column-akcije {
+        a {
+          display: block;
+        }
+      }
+    }
+
     .column-akcije {
       width: 60px;
+      a {
+        display: none;
+        color: #a00;
+        &:hover {
+          color: #F00;
+        }
+      }
     }
-    .column-destinacija {
 
+    .column-destinacija {
       @media (min-width: 783px) {
         &:not(th) {
           span {
