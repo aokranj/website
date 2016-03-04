@@ -6,12 +6,44 @@
 class AOKranj_Vzpon
 {
 
-    public static $tipi = array('ALP', 'ŠP', 'SMUK', 'PR');
-    public static $vrste = array('K', 'L', 'LK');
-    public static $ponovitve = array('Prv', '1P', '2P', 'ZP');
-    public static $nacini = array('PP', 'NP', 'RP');
-    public static $stili = array('A', 'K', 'OS');
-    public static $mesta = array('V', 'D', 'Ž', 'I');
+    public static $tipi = array(
+        'ALP'  => 'Alpinistična smer',
+        'ŠP'   => 'Športno plezalna smer',
+        'SMUK' => 'Smuk',
+        'PR'   => 'Pristop',
+    );
+
+    public static $vrste = array(
+        'K'  => 'Kopna',
+        'L'  => 'Ledna (snežna)',
+        'LK' => 'Ledna kombinirana',
+    );
+
+    public static $ponovitve = array(
+        'PRV' => 'Prvenstvena',
+        '1P'  => 'Prva ponovitev',
+        '2P'  => 'Druga ponovitev',
+        'ZP'  => 'Zimska ponovitev',
+    );
+
+    public static $nacini = array(
+        'PP' => 'Prosta ponovitev',
+        'NP' => 'Na pogled',
+        'RP' => 'Z rdečo piko',
+    );
+
+    public static $stili = array(
+        'A'  => 'Alpski',
+        'K'  => 'Kombinirani',
+        'OS' => 'Odpravarski',
+    );
+
+    public static $mesta = array(
+        'V' => 'Vodstvo',
+        'D' => 'Drugi',
+        'Ž' => 'Žimarjenje',
+        'I' => 'Izmenjaje',
+    );
 
     /**
      * Vzpon fields
@@ -79,7 +111,7 @@ class AOKranj_Vzpon
     public function setData(array $data) {
         foreach ($data as $k => $v) {
             if (in_array($k, self::$fields)) {
-                $this->data[$k] = $v;
+                $this->data[$k] = strip_tags($v);
             }
         }
     }
@@ -154,17 +186,17 @@ class AOKranj_Vzpon
             $errors['opomba'] = __('Maksimalna dolžina je 500 znakov.');
 
         // check enums
-        if (!in_array($this->data['tip'], self::$tipi))
+        if (!isset($this->data['tip'], self::$tipi))
             $errors['tip'] = __('Napačen tip vzpona!');
-        if (!empty($this->data['vrsta']) && !in_array($this->data['vrsta'], self::$vrste))
+        if (!empty($this->data['vrsta']) && !isset($this->data['vrsta'], self::$vrste))
             $errors['vrsta'] = __('Napačna vrsta vzpona!');
-        if (!empty($this->data['pon_vrsta']) && !in_array($this->data['pon_vrsta'], self::$ponovitve))
+        if (!empty($this->data['pon_vrsta']) && !isset($this->data['pon_vrsta'], self::$ponovitve))
             $errors['pon_vrsta'] = __('Napačna ponovitev vzpona!');
-        if (!empty($this->data['pon_nacin']) && !in_array($this->data['pon_nacin'], self::$nacini))
+        if (!empty($this->data['pon_nacin']) && !isset($this->data['pon_nacin'], self::$nacini))
             $errors['pon_nacin'] = __('Napačen način vzpona!');
-        if (!empty($this->data['stil']) && !in_array($this->data['stil'], self::$stili))
+        if (!empty($this->data['stil']) && !isset($this->data['stil'], self::$stili))
             $errors['stil'] = __('Napačen stil vzpona!');
-        if (!empty($this->data['mesto']) && !in_array($this->data['mesto'], self::$mesta))
+        if (!empty($this->data['mesto']) && !isset($this->data['mesto'], self::$mesta))
             $errors['mesto'] = __('Napačno mesto vzpona!');
 
         return $errors;

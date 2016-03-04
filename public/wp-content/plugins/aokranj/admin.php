@@ -425,6 +425,8 @@ class AOKranj_Admin extends AOKranj
         $aodb = $this->aodb();
 
         // do it!!!
+        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
+        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-utrinek.php';
         require_once AOKRANJ_PLUGIN_DIR . '/admin/class-prenos-podatkov.php';
         $prenos = new AOKranj_Prenos_Podatkov($wpdb, $aodb);
         $response = $prenos->start();

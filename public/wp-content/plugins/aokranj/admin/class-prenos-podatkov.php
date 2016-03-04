@@ -198,7 +198,12 @@ class AOKranj_Prenos_Podatkov
         }
 
         // select old posts
-        $utrinki = $this->aodb->get_results('SELECT * FROM utrinek WHERE deleted IS NULL AND valid_from != \'0000-00-00\'');
+        $query = 'SELECT * FROM utrinek WHERE deleted IS NULL AND valid_from != \'0000-00-00\' LIMIT 0,20';
+        $utrinki = $this->aodb->get_results($query);
+
+        // get report category
+        $utrinkiCategory = get_category_by_slug('utrinki');
+
         foreach ($utrinki as $utrinek) {
             // find wordpress user
             if (!isset($this->usersByUserName[$utrinek->author])) {
@@ -221,6 +226,17 @@ class AOKranj_Prenos_Podatkov
                 continue;
             }
 
+            // get category
+            if (isset(AOKranj_Utrinek::$tipi[$utrinek->type])) {
+                $categoryName = AOKranj_Utrinek::$tipi[$utrinek->type];
+                $categorySlug = sanitize_title($categoryName);
+                $category = get_category_by_slug($categorySlug);
+                if (!$category) {
+                    wp_create_category($categoryName, $utrinkiCategory->cat_ID);
+                    $category = get_category_by_slug($categorySlug);
+                }
+            }
+
             // create post
             $data = array(
                 'post_type' => 'post',
@@ -234,6 +250,13 @@ class AOKranj_Prenos_Podatkov
             $post_id = wp_insert_post($data);
             $post = get_post($post_id);
             $this->posts[] = get_post($post_id);
+
+            // set post categories
+            $postCategories = array($utrinkiCategory->cat_ID);
+            if (isset($category)) {
+                $postCategories[] = $category->cat_ID;
+            }
+            wp_set_post_categories($post_id, $postCategories);
 
             // add comments
             if (isset($comments[$utrinek->utrinekId])) {
