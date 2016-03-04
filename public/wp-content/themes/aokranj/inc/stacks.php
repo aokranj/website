@@ -15,7 +15,7 @@ function fix_franz_stack_posts_query_args($query_args) {
 
 	return $query_args;
 }
-add_filter('franz_stack_posts_query_args', 'fix_franz_stack_posts_query_args');
+//add_filter('franz_stack_posts_query_args', 'fix_franz_stack_posts_query_args');
 
 /**
  * Override franz stack posts
