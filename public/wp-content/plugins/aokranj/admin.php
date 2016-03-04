@@ -41,24 +41,19 @@ class AOKranj_Admin extends AOKranj
         // menu
         add_action($admin_menu, array(&$this, 'admin_menu'));
 
-        // add scripts and styles
+        // scripts
         add_action('admin_enqueue_scripts', array(&$this, 'admin_enqueue_scripts'));
 
-        // dashboard setup
+        // dashboard
         add_action('wp_dashboard_setup', array(&$this, 'wp_dashboard_setup'));
 
-        // filter posts hook
+        // filter posts
         add_action('pre_get_posts', array(&$this, 'pre_get_posts'));
 
         // submit actions
         add_action('admin_post_dodaj_vzpon', array(&$this, 'dodaj_vzpon'));
         add_action('admin_post_uredi_vzpon', array(&$this, 'uredi_vzpon'));
         add_action('admin_post_prenos_podatkov', array(&$this, 'prenos_podatkov'));
-
-        // ajax actions
-        //add_action('wp_ajax_vzponi', array(&$this, 'ajax_vzponi'));
-        //add_action('wp_ajax_dodaj_vzpon', array(&$this, 'ajax_dodaj_vzpon'));
-        //add_action('wp_ajax_prenos_podatkov', array(&$this, 'ajax_prenos_podatkov'));
     }
 
     // init
@@ -136,10 +131,8 @@ class AOKranj_Admin extends AOKranj
     }
 
     public function admin_init() {
-        /*
-        add_action('show_user_profile', array(&$this, 'user_profile_extra_fields'));
-        add_action('edit_user_profile', array(&$this, 'user_profile_extra_fields'));
-        */
+        //add_action('show_user_profile', array(&$this, 'user_profile_extra_fields'));
+        //add_action('edit_user_profile', array(&$this, 'user_profile_extra_fields'));
     }
 
     public function admin_menu() {
@@ -153,20 +146,6 @@ class AOKranj_Admin extends AOKranj
         add_menu_page('Vzponi', 'Vzponi', 'read', 'aokranj-vzponi', array(&$this, 'page_vzponi'), $icon, 5);
         add_submenu_page('aokranj-vzponi', 'Dodaj vzpon', 'Dodaj vzpon', 'read', 'aokranj-vzpon', array(&$this, 'page_vzpon'));
         add_submenu_page('aokranj-vzponi', 'Prenos podatkov', 'Prenos podatkov', 'activate_plugins', 'aokranj-prenos', array(&$this, 'page_prenos'));
-    }
-
-    // pages
-
-    public function page_vzponi() {
-        require_once AOKRANJ_PLUGIN_DIR . '/vzponi.php';
-    }
-
-    public function page_vzpon() {
-        require_once AOKRANJ_PLUGIN_DIR . '/vzpon.php';
-    }
-
-    public function page_prenos() {
-        require_once AOKRANJ_PLUGIN_DIR . '/prenos.php';
     }
 
     // core
@@ -189,7 +168,7 @@ class AOKranj_Admin extends AOKranj
     }
 
     public function wp_dashboard_setup() {
-        global $wp_meta_boxes;
+        //global $wp_meta_boxes;
         //unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
         //unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
     }
@@ -215,19 +194,18 @@ class AOKranj_Admin extends AOKranj
     // overrides
 
     public function pre_get_posts($query) {
-    		global $current_user;
+		global $current_user;
 
-    		// do not limit user with Administrator role
-    		if (current_user_can('administrator')) {
-    			return;
-    		}
+		// do not limit user with Administrator role
+		if (current_user_can('administrator')) {
+			return;
+		}
 
-    		if (current_user_can('edit_posts') && !current_user_can('edit_others_posts')) {
-    			$query->set('author', $current_user->ID);
-
-                add_filter('views_edit-post', array(&$this, 'fix_post_counts'));
-    			add_filter('views_upload', array(&$this, 'fix_media_counts'));
-    		}
+		if (current_user_can('edit_posts') && !current_user_can('edit_others_posts')) {
+            $query->set('author', $current_user->ID);
+            add_filter('views_edit-post', array(&$this, 'fix_post_counts'));
+			add_filter('views_upload', array(&$this, 'fix_media_counts'));
+		}
     }
 
     public function fix_post_counts($views) {
@@ -316,6 +294,20 @@ class AOKranj_Admin extends AOKranj
     		}
     		$views['detached'] = '<a href="upload.php?detached=1"' . ( $detached ? ' class="current"' : '' ) . '>' . sprintf(__('Unattached <span class="count">(%s)</span>'), $total_orphans) . '</a>';
     		return $views;
+    }
+
+    // pages
+
+    public function page_vzponi() {
+        require_once AOKRANJ_PLUGIN_DIR . '/vzponi.php';
+    }
+
+    public function page_vzpon() {
+        require_once AOKRANJ_PLUGIN_DIR . '/vzpon.php';
+    }
+
+    public function page_prenos() {
+        require_once AOKRANJ_PLUGIN_DIR . '/prenos.php';
     }
 
     // submit

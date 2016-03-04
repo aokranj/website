@@ -94,7 +94,7 @@ class AOKranj_Prenos_Podatkov
                 'user_nicename' => strtolower($ao_user->userName),
                 'first_name'    => $ao_user->name,
                 'last_name'     => $ao_user->surname,
-                'role'          => 'contributor',
+                'role'          => 'author',
             );
             if (!empty($ao_user->email) && strlen(trim($ao_user->email))) {
                 $wp_user_data['user_email'] = $ao_user->email;

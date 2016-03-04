@@ -20,9 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 .btn {
   font-family: 'Open Sans', sans-serif; }
 
-h1 {
-  color: red; }
-
 @media (max-width: 768px) {
   .admin-bar .navbar-fixed-top {
     top: 46px; } }
