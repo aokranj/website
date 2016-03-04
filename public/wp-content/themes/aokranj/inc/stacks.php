@@ -1,10 +1,28 @@
 <?php
 
+
 /**
- * Stack: Posts
+ * Remove posts that are already shown in slider
+ * @param  array $query_args
+ * @return array
+ */
+function fix_franz_stack_posts_query_args($query_args) {
+	global $franz_settings, $franz_sliderposts_ids;
+
+	if (!$franz_settings['slider_disable']) {
+		$query_args['post__not_in'] = (array)$franz_sliderposts_ids;
+	}
+
+	return $query_args;
+}
+add_filter('franz_stack_posts_query_args', 'fix_franz_stack_posts_query_args');
+
+/**
+ * Override franz stack posts
+ *
+ * Override template
  */
 function franz_stack_posts( $args = array() ){
-
 	global $franz_settings, $franz_no_default_thumb;
 	$franz_no_default_thumb = true;
 	if ( 'page' == get_option( 'show_on_front' ) && $franz_settings['disable_front_page_blog'] && ! franz_has_custom_layout() ) return;
@@ -106,6 +124,7 @@ function franz_stack_posts( $args = array() ){
                             <?php endif; ?>
                             <h3 class="item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<div class="author">
+								<?php /* OVERRIDE */ ?>
                                 <?php the_time( get_option( 'date_format' ) ) ?>,
                                 <?php the_author_posts_link(); ?>
                             </div>
@@ -136,7 +155,7 @@ function franz_stack_posts( $args = array() ){
 
 
 /**
- * Item meta for Posts stack
+ * Override franz stack posts meta
  */
 function franz_stack_posts_meta( $post_id = '' ){
 	global $franz_settings;

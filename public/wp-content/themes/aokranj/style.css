@@ -56,6 +56,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 100;
   font-family: 'Open Sans', sans-serif;
   color: #a7a9ac; }
+  @media (max-width: 992px) {
+    .posts-list .author {
+      padding-bottom: 20px; } }
   .posts-list .author a {
     color: #a7a9ac; }
     .posts-list .author a:hover {
