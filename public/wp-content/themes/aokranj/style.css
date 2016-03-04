@@ -11,6 +11,26 @@
  Tags:         aokranj alpinisticni odsek kranj alpinizem
  Text Domain:  aokranj
 */
+@media screen and (min-width: 768px) and (max-width: 1006px) {
+  body {
+    padding-top: 76px; } }
+
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  body.navbar-pinned .wide-nav .navbar-header {
+    height: 40px; } }
+
+@media screen and (min-width: 768px) and (max-width: 782px) {
+  body.admin-bar .navbar {
+    top: 46px; } }
+
+@media (max-width: 768px) {
+  body.admin-bar .navbar-fixed-top {
+    top: 46px; } }
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed; } }
+
 a {
   color: #25aae1; }
 
@@ -20,25 +40,14 @@ h1, h2, h3, h4, h5, h6 {
 .btn {
   font-family: 'Open Sans', sans-serif; }
 
-@media (max-width: 768px) {
-  .admin-bar .navbar-fixed-top {
-    top: 46px; } }
+@media (min-width: 680px) and (max-width: 768px) {
+  .carousel .excerpt {
+    font-size: 2.4vw;
+    line-height: 4vw; } }
 
-@media screen and (max-width: 600px) {
-  #wpadminbar {
-    position: fixed; } }
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  body {
-    padding-top: 76px; } }
-
-@media screen and (min-width: 768px) and (max-width: 782px) {
-  .admin-bar .navbar {
-    top: 46px; } }
-
-@media screen and (min-width: 768px) and (max-width: 960px) {
-  .admin-bar.navbar-pinned .wide-nav .navbar-header {
-    height: 40px; } }
+@media (min-width: 768px) {
+  .carousel .carousel-control.left span, .carousel .carousel-control.right span {
+    margin-top: -15px; } }
 
 .posts-list .item-title {
   padding: 30px 15px 0 15px;

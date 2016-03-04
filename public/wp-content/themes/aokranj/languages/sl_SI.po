@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Franz Josef theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-16 21:37+0800\n"
-"PO-Revision-Date: 2016-02-18 03:37+0100\n"
+"PO-Revision-Date: 2016-03-04 23:33+0100\n"
 "Last-Translator: Bojan Hribernik <bojan.hribernik@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1348,7 +1348,7 @@ msgstr "Komentiraj"
 
 #: inc/loop.php:272
 msgid "In this section"
-msgstr ""
+msgstr "V tej sekciji"
 
 #: inc/loop.php:352
 msgid "&laquo; Prev"
@@ -1416,7 +1416,7 @@ msgstr ""
 
 #: inc/slider.php:72
 msgid "View post"
-msgstr ""
+msgstr "Preberi več"
 
 #: inc/stacks.php:125
 msgid "Testimonials"
