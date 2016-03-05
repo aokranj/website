@@ -19,7 +19,7 @@ define('AOKRANJ_TABLE_VZPONI', 'ao_vzponi');
  * AO Kranj old website settings
  */
 define('AOKRANJ_OLD_DIR', '/home/ao/www/www.aokranj.com/public');
-define('AOKRANJ_OLD_DB_NAME', 'aokranj_com');
+define('AOKRANJ_OLD_DB_NAME', 'aokranj_old');
 define('AOKRANJ_OLD_DB_USER', 'bojan');
 define('AOKRANJ_OLD_DB_PASSWORD', 'KladuPaKl1n');
 define('AOKRANJ_OLD_DB_HOST', 'localhost');
