@@ -1,9 +1,33 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^index\.php$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /index.php [L]
-</IfModule>
+###
+### URL REWRITES
+###
+
+RewriteEngine   On
+
+
+
+### We only support production and development on root of virtual host
+#
+RewriteBase   /
+
+
+
+### Redirects for old content
+#
+# Let's keep 302 for now
+#
+RewriteCond   %{QUERY_STRING}     ^id=([0-9]+)
+RewriteRule   ^/?utrinek.php$     /redirect-utrinek.php?id=%1   [R=302,L]
+
+RewriteCond   %{QUERY_STRING}     ^id=([0-9]+)
+RewriteRule   ^/?reportaze.php$   /redirect-reportaza.php?id=%1   [R=302,L]
+
+
+
+### Final redirect to WP handler
+#
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
 
