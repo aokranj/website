@@ -44,12 +44,10 @@ class AOKranj_Prenos_Podatkov
         set_time_limit(3600);
 
         // just a precaution
-        /*
         return array(
             'success' => false,
             'msg' => 'Pazi kaj delaš ;)',
         );
-        */
 
         $this->prenesiUporabnike();
         $this->prenesiVzpone();
