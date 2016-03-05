@@ -44,10 +44,12 @@ class AOKranj_Prenos_Podatkov
         set_time_limit(3600);
 
         // just a precaution
+        /*
         return array(
             'success' => false,
             'msg' => 'Pazi kaj delaš ;)',
         );
+        */
 
         $this->prenesiUporabnike();
         $this->prenesiVzpone();
@@ -250,6 +252,12 @@ class AOKranj_Prenos_Podatkov
             $post_id = wp_insert_post($data);
             $post = get_post($post_id);
             $this->posts[] = get_post($post_id);
+            $permalink = get_permalink($post_id);
+
+            // write old id to new id/slug
+            $file = AOKRANJ_PLUGIN_DIR . '/post_old_to_new.txt';
+            $line = implode(':', array($utrinek->utrinekId, $post_id, $permalink)) . "\n";
+            file_put_contents($file, $line, FILE_APPEND | LOCK_EX);
 
             // set post categories
             $postCategories = array($utrinkiCategory->cat_ID);
@@ -406,6 +414,12 @@ class AOKranj_Prenos_Podatkov
             $post_id = wp_insert_post($data);
             $post = get_post($post_id);
             $this->reports[] = $post;
+            $permalink = get_permalink($post_id);
+
+            // write old id to new id/slug
+            $file = AOKRANJ_PLUGIN_DIR . '/report_old_to_new.txt';
+            $line = implode(':', array($report->reportId, $post_id, $permalink)) . "\n";
+            file_put_contents($file, $line, FILE_APPEND | LOCK_EX);
 
             //set current slug for reportUploadDir()
             $this->currentSlug = $post->post_name;
