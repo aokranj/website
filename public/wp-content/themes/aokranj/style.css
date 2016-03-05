@@ -33,6 +33,8 @@
 
 a {
   color: #25aae1; }
+  a:hover {
+    color: #1a8bb9; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif; }
@@ -40,14 +42,42 @@ h1, h2, h3, h4, h5, h6 {
 .btn {
   font-family: 'Open Sans', sans-serif; }
 
-@media (min-width: 680px) and (max-width: 768px) {
-  .carousel .excerpt {
-    font-size: 2.4vw;
-    line-height: 4vw; } }
+.carousel {
+  box-shadow: 0 0 3px #ccc; }
+  @media (min-width: 680px) and (max-width: 768px) {
+    .carousel .excerpt {
+      font-size: 2.4vw;
+      line-height: 4vw; } }
+  @media (min-width: 768px) {
+    .carousel .carousel-control.left span, .carousel .carousel-control.right span {
+      margin-top: -15px; } }
 
-@media (min-width: 768px) {
-  .carousel .carousel-control.left span, .carousel .carousel-control.right span {
-    margin-top: -15px; } }
+.posts-list.news {
+  border-top: none;
+  padding: 0 0 80px 0; }
+  .posts-list.news .highlight-title {
+    margin-top: 0;
+    margin-bottom: 20px; }
+  .posts-list.news .item-wrap .item {
+    padding: 5px 15px; }
+    .posts-list.news .item-wrap .item .news-item .news-title {
+      margin: 10px 0;
+      line-height: 20px;
+      font-weight: 300; }
+      .posts-list.news .item-wrap .item .news-item .news-title .date {
+        font-size: 16px; }
+      .posts-list.news .item-wrap .item .news-item .news-title .title {
+        color: #f7941e;
+        font-size: 18px; }
+        .posts-list.news .item-wrap .item .news-item .news-title .title:hover {
+          color: #da7a08; }
+      @media (min-width: 768px) {
+        .posts-list.news .item-wrap .item .news-item .news-title {
+          line-height: 24px; }
+          .posts-list.news .item-wrap .item .news-item .news-title .date {
+            font-size: 18px; }
+          .posts-list.news .item-wrap .item .news-item .news-title .title {
+            font-size: 22px; } }
 
 .posts-list .item-title {
   padding: 30px 15px 0 15px;
@@ -58,6 +88,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
     line-height: 26px;
     font-weight: 300; }
+    .posts-list .item-title a:hover {
+      color: #da7a08; }
 
 .posts-list .author {
   padding: 3px 15px 30px 15px;
