@@ -198,7 +198,7 @@ class AOKranj_Prenos_Podatkov
         }
 
         // select old posts
-        $query = 'SELECT * FROM utrinek WHERE deleted IS NULL AND valid_from != \'0000-00-00\' LIMIT 0,20';
+        $query = 'SELECT * FROM utrinek WHERE deleted IS NULL AND valid_from != \'0000-00-00\'';
         $utrinki = $this->aodb->get_results($query);
 
         // get report category
