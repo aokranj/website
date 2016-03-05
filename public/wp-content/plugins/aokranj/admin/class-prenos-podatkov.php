@@ -22,6 +22,8 @@ class AOKranj_Prenos_Podatkov
     private $reports = array();
     private $vzponi = array();
 
+    private $errors = array();
+
     public function __construct($wpdb, $aodb) {
         $this->wpdb = $wpdb;
         $this->aodb = $aodb;
@@ -65,6 +67,7 @@ class AOKranj_Prenos_Podatkov
                 'reports' => count($this->reports),
                 'vzponi' => count($this->vzponi),
             ),
+            'errors' => $this->errors,
             'msg' => 'Prenos je uspel :)',
         );
     }
@@ -85,7 +88,7 @@ class AOKranj_Prenos_Podatkov
 
             // skip if no username or email
             if (empty($ao_user->userName) && empty($ao_user->email)) {
-                print_r(['no data',$ao_user]);
+                $this->errors['prenesiUporabnike'][] = ['no data', $ao_user];
                 continue;
             }
 
@@ -106,7 +109,7 @@ class AOKranj_Prenos_Podatkov
 
             // error inserting user
             if (is_wp_error($wp_user_id)) {
-                print_r(['unable to insert user', $ao_user, $wp_user_id]);
+                $this->errors['prenesiUporabnike'][] = ['unable to insert user', $ao_user, $wp_user_id];
                 continue;
             }
 
@@ -123,7 +126,7 @@ class AOKranj_Prenos_Podatkov
 
             // unable to load user
             if (is_wp_error($wp_user)) {
-                print_r(['unable to load user', $ao_user, $wp_user]);
+                $this->errors['prenesiUporabnike'][] = ['unable to load user', $ao_user, $wp_user];
                 continue;
             }
 
@@ -294,7 +297,7 @@ class AOKranj_Prenos_Podatkov
             }
 
             if (empty($post)) {
-                print_r(['NO_POST' => $utrinek]);
+                $this->errors['prenesiUtrinke'][] = ['NO_POST' => $utrinek];
             }
 
             //set current slug for utrinekUploadDir()
@@ -328,7 +331,7 @@ class AOKranj_Prenos_Podatkov
                 // copy file to tmp folder because media_handle_sideload() moves the file
                 $tmp_name = $tmp_dir . '/' . $file_name;
                 if (!copy($source, $tmp_name)) {
-                    print_r(['unable to create temp image', $source, $tmp_name]);
+                    $this->errors['prenesiUtrinke'][] = ['unable to create temp image', $source, $tmp_name];
                     continue;
                 }
 
@@ -345,7 +348,7 @@ class AOKranj_Prenos_Podatkov
                 );
                 $file_id = media_handle_sideload($file, $post_id, null, $post_data);
                 if (is_wp_error($file_id)) {
-                    print_r(['unable to add image', $source, $tmp_name]);
+                    $this->errors['prenesiUtrinke'][] = ['unable to add image', $source, $tmp_name];
                     continue;
                 }
 
@@ -452,7 +455,7 @@ class AOKranj_Prenos_Podatkov
                 // copy file to tmp folder because media_handle_sideload() moves the file
                 $tmp_name = $tmp_dir . '/' . $file_name;
                 if (!copy($source, $tmp_name)) {
-                    print_r(['unable to create temp image', $source, $tmp_name]);
+                    $this->errors['prenesiReportaze'][] = ['unable to create temp image', $source, $tmp_name];
                     continue;
                 }
 
@@ -469,7 +472,7 @@ class AOKranj_Prenos_Podatkov
                 );
                 $file_id = media_handle_sideload($file, $post_id, null, $post_data);
                 if (is_wp_error($file_id)) {
-                    print_r(['unable to add image', $source, $tmp_name]);
+                    $this->errors['prenesiReportaze'][] = ['unable to add image', $source, $tmp_name];
                     continue;
                 }
 
