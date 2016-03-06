@@ -81,10 +81,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts-list.news {
   border-top: none;
-  padding: 0 0 80px 0; }
+  padding: 0 0 40px 0; }
   .posts-list.news .highlight-title {
     margin-top: 0;
-    margin-bottom: 20px; }
+    margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .posts-list.news {
+      padding-bottom: 60px; }
+      .posts-list.news .highlight-title {
+        margin-bottom: 20px; } }
   .posts-list.news .item-wrap .item {
     color: #fff; }
     .posts-list.news .item-wrap .item .title {
@@ -107,6 +112,13 @@ h1, h2, h3, h4, h5, h6 {
           .posts-list.news .item-wrap .item .title .link {
             line-height: 24px;
             font-size: 22px; } }
+
+.posts-list .highlight-title {
+  margin-bottom: 0; }
+
+@media (min-width: 768px) {
+  .posts-list .highlight-title {
+    margin-bottom: 20px; } }
 
 .posts-list .item-title {
   padding: 30px 15px 0 15px;

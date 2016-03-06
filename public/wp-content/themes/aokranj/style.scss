@@ -134,11 +134,19 @@ h1, h2, h3, h4, h5, h6 {
 
   &.news {
     border-top: none;
-    padding: 0 0 80px 0;
+    padding: 0 0 40px 0;
 
     .highlight-title {
       margin-top: 0;
-      margin-bottom: 20px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      padding-bottom: 60px;
+
+      .highlight-title {
+        margin-bottom: 20px;
+      }
     }
 
     .item-wrap {
@@ -177,6 +185,16 @@ h1, h2, h3, h4, h5, h6 {
           }
         }
       }
+    }
+  }
+
+  .highlight-title {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    .highlight-title {
+      margin-bottom: 20px;
     }
   }
 
