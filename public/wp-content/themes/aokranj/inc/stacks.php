@@ -162,12 +162,14 @@ function franz_stack_posts_meta( $post_id = '' ){
 	if ( ! $post_id ) $post_id = get_the_ID();
 	$meta = array();
 
+	/*
 	if ( ! $franz_settings['hide_post_date'] ) {
 		$meta['date'] = array(
 			'class'	=> 'date',
 			'meta'	=> '<a href="' . esc_url( get_permalink() ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
 		);
 	}
+	*/
 
 	if ( franz_should_show_comments( $post_id ) ) {
 		$comment_count = get_comment_count( $post_id );
