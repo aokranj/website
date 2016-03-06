@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
   .posts-list.news .item-wrap .item {
     color: #fff; }
     .posts-list.news .item-wrap .item .news-item {
-      border-bottom: 1px solid #fff; }
+      border-bottom: 1px solid #bbdd8e; }
       .posts-list.news .item-wrap .item .news-item:last-child {
         border-bottom: none; }
       .posts-list.news .item-wrap .item .news-item .news-title {
