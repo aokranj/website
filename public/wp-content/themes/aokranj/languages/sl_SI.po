@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Franz Josef theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-16 21:37+0800\n"
-"PO-Revision-Date: 2016-03-06 00:05+0100\n"
+"PO-Revision-Date: 2016-03-06 18:09+0100\n"
 "Last-Translator: Bojan Hribernik <bojan.hribernik@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1269,7 +1269,7 @@ msgstr ""
 
 #: inc/comments.php:23
 msgid "Reply"
-msgstr ""
+msgstr "Odgovori"
 
 #: inc/comments.php:31
 msgid "Your comment is awaiting moderation."
