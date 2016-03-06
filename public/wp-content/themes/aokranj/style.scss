@@ -17,6 +17,7 @@
 $orange: #f7941e;
 $green: #8cc63f;
 $blue: #25aae1;
+$red: #d73333;
 $purple: #e025df;
 $lightgray: #a7a9ac;
 $darkgray: #b4b4b4;
@@ -147,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
 
         .title {
           margin: 0;
-          border-bottom: 1px solid lighten($green, 20%);
+          border-bottom: 1px solid #fff;
 
           &:last-child {
             border-bottom: none;
@@ -155,11 +156,11 @@ h1, h2, h3, h4, h5, h6 {
 
           .link {
             display: block;
-            padding: 12px;
+            padding: 16px;
             line-height: 20px;
             font-size: 18px;
             font-weight: 400;
-            background: $green;
+            background: $darkgray;
             color: #fff;
 
             &:hover {
