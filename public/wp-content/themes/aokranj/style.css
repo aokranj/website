@@ -89,23 +89,24 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff; }
     .posts-list.news .item-wrap .item .title {
       margin: 0;
-      border-bottom: 1px solid #fff; }
+      padding: 12px;
+      border-bottom: 1px solid #fff;
+      background: #d73333; }
       .posts-list.news .item-wrap .item .title:last-child {
         border-bottom: none; }
       .posts-list.news .item-wrap .item .title .link {
-        display: block;
-        padding: 16px;
         line-height: 20px;
         font-size: 18px;
         font-weight: 400;
-        background: #b4b4b4;
         color: #fff; }
         .posts-list.news .item-wrap .item .title .link:hover {
           text-decoration: underline; }
       @media (min-width: 768px) {
-        .posts-list.news .item-wrap .item .title .link {
-          line-height: 24px;
-          font-size: 22px; } }
+        .posts-list.news .item-wrap .item .title {
+          padding: 16px; }
+          .posts-list.news .item-wrap .item .title .link {
+            line-height: 24px;
+            font-size: 22px; } }
 
 .posts-list .item-title {
   padding: 30px 15px 0 15px;

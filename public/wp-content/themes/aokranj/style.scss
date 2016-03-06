@@ -148,19 +148,18 @@ h1, h2, h3, h4, h5, h6 {
 
         .title {
           margin: 0;
+          padding: 12px;
           border-bottom: 1px solid #fff;
+          background: $red;
 
           &:last-child {
             border-bottom: none;
           }
 
           .link {
-            display: block;
-            padding: 16px;
             line-height: 20px;
             font-size: 18px;
             font-weight: 400;
-            background: $darkgray;
             color: #fff;
 
             &:hover {
@@ -169,6 +168,7 @@ h1, h2, h3, h4, h5, h6 {
           }
 
           @media (min-width: 768px) {
+            padding: 16px;
 
             .link {
               line-height: 24px;
