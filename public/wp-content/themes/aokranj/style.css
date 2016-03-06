@@ -11,6 +11,24 @@
  Tags:         aokranj alpinisticni odsek kranj alpinizem
  Text Domain:  aokranj
 */
+.background-orange {
+  background-color: #f7941e; }
+
+.background-green {
+  background-color: #8cc63f; }
+
+.background-blue {
+  background-color: #25aae1; }
+
+.background-purple {
+  background-color: #e025df; }
+
+.background-lightgray {
+  background-color: #a7a9ac; }
+
+.background-darkgray {
+  background-color: #b4b4b4; }
+
 @media screen and (min-width: 768px) and (max-width: 1006px) {
   body {
     padding-top: 76px; } }
