@@ -53,7 +53,7 @@ class AOKranj_Admin extends AOKranj
         // submit actions
         add_action('admin_post_dodaj_vzpon', array(&$this, 'dodaj_vzpon'));
         add_action('admin_post_uredi_vzpon', array(&$this, 'uredi_vzpon'));
-        add_action('admin_post_prenos_podatkov', array(&$this, 'prenos_podatkov'));
+        //add_action('admin_post_prenos_podatkov', array(&$this, 'prenos_podatkov'));
     }
 
     // init
@@ -145,7 +145,7 @@ class AOKranj_Admin extends AOKranj
 
         add_menu_page('Vzponi', 'Vzponi', 'read', 'aokranj-vzponi', array(&$this, 'page_vzponi'), $icon, 5);
         add_submenu_page('aokranj-vzponi', 'Dodaj vzpon', 'Dodaj vzpon', 'read', 'aokranj-vzpon', array(&$this, 'page_vzpon'));
-        add_submenu_page('aokranj-vzponi', 'Prenos podatkov', 'Prenos podatkov', 'activate_plugins', 'aokranj-prenos', array(&$this, 'page_prenos'));
+        //add_submenu_page('aokranj-vzponi', 'Prenos podatkov', 'Prenos podatkov', 'activate_plugins', 'aokranj-prenos', array(&$this, 'page_prenos'));
     }
 
     // core

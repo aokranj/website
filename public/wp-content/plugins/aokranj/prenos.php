@@ -12,7 +12,9 @@ unset($_SESSION['prenos']);
 ?>
 
 <div class="wrap">
-    <h1><?= __('Prenos podatkov') ?></h1><br />
+    <h1><?= __('Prenos podatkov je uspel :)') ?></h1>
+    <?php /*
+    <br />
     <?php if ($response): ?>
         <pre><?= print_r($response, true) ?></pre>
     <?php else: ?>
@@ -23,4 +25,5 @@ unset($_SESSION['prenos']);
             <input class="button button-primary" type="submit" value="<?= __('Prenesi podatke') ?>" />
         </form>
     <?php endif; ?>
+    */ ?>
 </div>
