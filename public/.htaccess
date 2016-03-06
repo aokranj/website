@@ -24,10 +24,16 @@ RewriteRule   ^/?reportaze.php$   /redirect-reportaza.php?id=%1   [R=302,L]
 
 
 
+### Inform /forum users of its demise
+#
+RewriteCond   %{REQUEST_URI}   !^/forum-deceased-notice.php
+RewriteRule   ^/?forum           /forum-deceased-notice.php   [L]
+
+
+
 ### Final redirect to WP handler
 #
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
-
