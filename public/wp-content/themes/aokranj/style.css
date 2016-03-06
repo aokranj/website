@@ -119,6 +119,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   padding-top: 0; }
 
+.entry-meta .date a {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif; }
+
 #gallery-1.gallery-columns-3 .gallery-item {
   width: auto !important;
   max-width: 150px; }
