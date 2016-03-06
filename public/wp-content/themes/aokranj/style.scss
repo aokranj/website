@@ -143,12 +143,17 @@ h1, h2, h3, h4, h5, h6 {
     .item-wrap {
 
       .item {
-        padding: 5px 15px;
+        color: #fff;
 
         .news-item {
+          border-bottom: 1px solid #fff;
+
+          &:last-child {
+            border-bottom: none;
+          }
 
           .news-title {
-            margin: 10px 0;
+            margin: 0;
             line-height: 20px;
             font-weight: 300;
 
@@ -157,11 +162,17 @@ h1, h2, h3, h4, h5, h6 {
             }
 
             .title {
-              color: $orange;
+              //color: $orange;
+              display: block;
+              color: #fff;
               font-size: 18px;
+              padding: 10px;
+              background: $green;
 
               &:hover {
-                color: darken($orange, 10%);
+                //text-decoration: underline;
+                background: lighten($green, 5%);
+                //color: darken($orange, 10%);
               }
             }
 

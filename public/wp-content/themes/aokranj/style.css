@@ -86,25 +86,32 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 20px; }
   .posts-list.news .item-wrap .item {
-    padding: 5px 15px; }
-    .posts-list.news .item-wrap .item .news-item .news-title {
-      margin: 10px 0;
-      line-height: 20px;
-      font-weight: 300; }
-      .posts-list.news .item-wrap .item .news-item .news-title .date {
-        font-size: 16px; }
-      .posts-list.news .item-wrap .item .news-item .news-title .title {
-        color: #f7941e;
-        font-size: 18px; }
-        .posts-list.news .item-wrap .item .news-item .news-title .title:hover {
-          color: #da7a08; }
-      @media (min-width: 768px) {
-        .posts-list.news .item-wrap .item .news-item .news-title {
-          line-height: 24px; }
-          .posts-list.news .item-wrap .item .news-item .news-title .date {
-            font-size: 18px; }
-          .posts-list.news .item-wrap .item .news-item .news-title .title {
-            font-size: 22px; } }
+    color: #fff; }
+    .posts-list.news .item-wrap .item .news-item {
+      border-bottom: 1px solid #fff; }
+      .posts-list.news .item-wrap .item .news-item:last-child {
+        border-bottom: none; }
+      .posts-list.news .item-wrap .item .news-item .news-title {
+        margin: 0;
+        line-height: 20px;
+        font-weight: 300; }
+        .posts-list.news .item-wrap .item .news-item .news-title .date {
+          font-size: 16px; }
+        .posts-list.news .item-wrap .item .news-item .news-title .title {
+          display: block;
+          color: #fff;
+          font-size: 18px;
+          padding: 10px;
+          background: #8cc63f; }
+          .posts-list.news .item-wrap .item .news-item .news-title .title:hover {
+            background: #98cc53; }
+        @media (min-width: 768px) {
+          .posts-list.news .item-wrap .item .news-item .news-title {
+            line-height: 24px; }
+            .posts-list.news .item-wrap .item .news-item .news-title .date {
+              font-size: 18px; }
+            .posts-list.news .item-wrap .item .news-item .news-title .title {
+              font-size: 22px; } }
 
 .posts-list .item-title {
   padding: 30px 15px 0 15px;
