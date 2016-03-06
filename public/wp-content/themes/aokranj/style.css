@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
         color: #fff; }
 
 .widget_recent_comments {
-  background: #f7941e;
+  background: #8cc63f;
   color: #fff; }
   .widget_recent_comments a {
     color: #fff; }
@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
   .widget_recent_comments ul {
     padding: 0 20px; }
     .widget_recent_comments ul li {
-      border-bottom: 1px solid #f9ab4f; }
+      border-bottom: 1px solid #a4d266; }
       .widget_recent_comments ul li:last-child {
         border-bottom: none; }
       .widget_recent_comments ul li a {

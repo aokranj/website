@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .widget_recent_comments {
-  @include sidebar-widget($orange);
+  @include sidebar-widget($green);
 }
 
 .widget_archive {
