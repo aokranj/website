@@ -60,5 +60,5 @@ $redirectReportazaData = array(
     73 => array('newId' => '20426', 'newUri' => '/2015/10/08/tabor-v-plezalnem-centru-mitterdorf-3-in-4-10-2015/'),
     74 => array('newId' => '20458', 'newUri' => '/2015/10/26/zbor-alpinistov-2015/'),
     75 => array('newId' => '20479', 'newUri' => '/2015/12/22/reportaza-vikenda-v-mitterdorfu/'),
-    76 => array('newId' => '20511', 'newUri' => '/2016/01/06/porocilo-kanada-13-12-15-1-1-16/'),
+    76 => array('newId' => '20511', 'newUri' => '/2016/01/06/porocilo-kanada/'),
 );
