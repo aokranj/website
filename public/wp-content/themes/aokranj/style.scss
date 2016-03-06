@@ -89,7 +89,20 @@ h1, h2, h3, h4, h5, h6 {
 .carousel {
   box-shadow: 0 0 3px #ccc;
 
+  .carousel-caption {
+    @media (min-width: 500px) and (max-width: 688px) {
+      padding-top: 0;
+    }
+  }
+
   .excerpt {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    //font-weight: 400;
+    margin-bottom: 20px;
+    p {
+      margin: 0;
+    }
     @media (min-width: 680px) and (max-width: 768px) {
       font-size: 2.4vw;
       line-height: 4vw;
