@@ -248,6 +248,12 @@ h1, h2, h3, h4, h5, h6 {
 @mixin sidebar-widget($color) {
   background: $color;
   color: #fff;
+  a {
+    color: #fff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   h3 {
     font-size: 20px;
     font-weight: 700;
@@ -270,6 +276,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // widgets
+
+.widget-blue {
+  @include sidebar-widget($blue);
+}
+
+.widget-orange {
+  @include sidebar-widget($orange);
+}
+
+.widget-green {
+  @include sidebar-widget($green);
+}
+
+.widget-purple {
+  @include sidebar-widget($purple);
+}
+
+.widget-lightgray {
+  @include sidebar-widget($lightgray);
+}
+
+.widget-darkgray {
+  @include sidebar-widget($darkgray);
+}
 
 .widget_search {
   .form-group {

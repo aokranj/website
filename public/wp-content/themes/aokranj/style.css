@@ -131,6 +131,138 @@ h1, h2, h3, h4, h5, h6 {
 .bottom-bar .copyright {
   margin-top: 0; }
 
+.widget-blue {
+  background: #25aae1;
+  color: #fff; }
+  .widget-blue a {
+    color: #fff; }
+    .widget-blue a:hover {
+      text-decoration: underline; }
+  .widget-blue h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget-blue ul {
+    padding: 0 20px; }
+    .widget-blue ul li {
+      border-bottom: 1px solid #52bbe7; }
+      .widget-blue ul li:last-child {
+        border-bottom: none; }
+      .widget-blue ul li a {
+        color: #fff; }
+
+.widget-orange {
+  background: #f7941e;
+  color: #fff; }
+  .widget-orange a {
+    color: #fff; }
+    .widget-orange a:hover {
+      text-decoration: underline; }
+  .widget-orange h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget-orange ul {
+    padding: 0 20px; }
+    .widget-orange ul li {
+      border-bottom: 1px solid #f9ab4f; }
+      .widget-orange ul li:last-child {
+        border-bottom: none; }
+      .widget-orange ul li a {
+        color: #fff; }
+
+.widget-green {
+  background: #8cc63f;
+  color: #fff; }
+  .widget-green a {
+    color: #fff; }
+    .widget-green a:hover {
+      text-decoration: underline; }
+  .widget-green h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget-green ul {
+    padding: 0 20px; }
+    .widget-green ul li {
+      border-bottom: 1px solid #a4d266; }
+      .widget-green ul li:last-child {
+        border-bottom: none; }
+      .widget-green ul li a {
+        color: #fff; }
+
+.widget-purple {
+  background: #e025df;
+  color: #fff; }
+  .widget-purple a {
+    color: #fff; }
+    .widget-purple a:hover {
+      text-decoration: underline; }
+  .widget-purple h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget-purple ul {
+    padding: 0 20px; }
+    .widget-purple ul li {
+      border-bottom: 1px solid #e652e6; }
+      .widget-purple ul li:last-child {
+        border-bottom: none; }
+      .widget-purple ul li a {
+        color: #fff; }
+
+.widget-lightgray {
+  background: #a7a9ac;
+  color: #fff; }
+  .widget-lightgray a {
+    color: #fff; }
+    .widget-lightgray a:hover {
+      text-decoration: underline; }
+  .widget-lightgray h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget-lightgray ul {
+    padding: 0 20px; }
+    .widget-lightgray ul li {
+      border-bottom: 1px solid #c1c3c5; }
+      .widget-lightgray ul li:last-child {
+        border-bottom: none; }
+      .widget-lightgray ul li a {
+        color: #fff; }
+
+.widget-darkgray {
+  background: #b4b4b4;
+  color: #fff; }
+  .widget-darkgray a {
+    color: #fff; }
+    .widget-darkgray a:hover {
+      text-decoration: underline; }
+  .widget-darkgray h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: none;
+    padding: 16px 20px;
+    border-bottom: 1px solid #fff; }
+  .widget-darkgray ul {
+    padding: 0 20px; }
+    .widget-darkgray ul li {
+      border-bottom: 1px solid #cecece; }
+      .widget-darkgray ul li:last-child {
+        border-bottom: none; }
+      .widget-darkgray ul li a {
+        color: #fff; }
+
 .widget_search .form-group {
   margin-bottom: 24px; }
 
@@ -140,6 +272,10 @@ h1, h2, h3, h4, h5, h6 {
 .widget_categories {
   background: #25aae1;
   color: #fff; }
+  .widget_categories a {
+    color: #fff; }
+    .widget_categories a:hover {
+      text-decoration: underline; }
   .widget_categories h3 {
     font-size: 20px;
     font-weight: 700;
@@ -158,6 +294,10 @@ h1, h2, h3, h4, h5, h6 {
 .widget_recent_entries {
   background: #8cc63f;
   color: #fff; }
+  .widget_recent_entries a {
+    color: #fff; }
+    .widget_recent_entries a:hover {
+      text-decoration: underline; }
   .widget_recent_entries h3 {
     font-size: 20px;
     font-weight: 700;
@@ -176,6 +316,10 @@ h1, h2, h3, h4, h5, h6 {
 .widget_recent_comments {
   background: #f7941e;
   color: #fff; }
+  .widget_recent_comments a {
+    color: #fff; }
+    .widget_recent_comments a:hover {
+      text-decoration: underline; }
   .widget_recent_comments h3 {
     font-size: 20px;
     font-weight: 700;
@@ -194,6 +338,10 @@ h1, h2, h3, h4, h5, h6 {
 .widget_archive {
   background: #25aae1;
   color: #fff; }
+  .widget_archive a {
+    color: #fff; }
+    .widget_archive a:hover {
+      text-decoration: underline; }
   .widget_archive h3 {
     font-size: 20px;
     font-weight: 700;
@@ -212,6 +360,10 @@ h1, h2, h3, h4, h5, h6 {
 .widget_meta {
   background: #b4b4b4;
   color: #fff; }
+  .widget_meta a {
+    color: #fff; }
+    .widget_meta a:hover {
+      text-decoration: underline; }
   .widget_meta h3 {
     font-size: 20px;
     font-weight: 700;
