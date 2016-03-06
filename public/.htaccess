@@ -31,6 +31,12 @@ RewriteRule   ^/?forum           /forum-deceased-notice.php   [L]
 
 
 
+### Redirect /myao.php to WP login
+#
+RewriteRule   ^/?myao.php       /wp-login.php   [R=302,L]
+
+
+
 ### Final redirect to WP handler
 #
 RewriteRule ^index\.php$ - [L]
