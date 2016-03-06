@@ -212,7 +212,7 @@ class AOKranj
     		'itemtag'    => $html5 ? 'figure'     : 'dl',
     		'icontag'    => $html5 ? 'div'        : 'dt',
     		'captiontag' => $html5 ? 'figcaption' : 'dd',
-    		'columns'    => 4,
+    		'columns'    => 5,
     		'size'       => 'large',
     		'include'    => '',
     		'exclude'    => '',
