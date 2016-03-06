@@ -145,47 +145,33 @@ h1, h2, h3, h4, h5, h6 {
       .item {
         color: #fff;
 
-        .news-item {
+        .title {
+          margin: 0;
           border-bottom: 1px solid lighten($green, 20%);
 
           &:last-child {
             border-bottom: none;
           }
 
-          .news-title {
-            margin: 0;
+          .link {
+            display: block;
+            padding: 12px;
             line-height: 20px;
-            font-weight: 300;
+            font-size: 18px;
+            font-weight: 400;
+            background: $green;
+            color: #fff;
 
-            .date {
-              font-size: 16px;
+            &:hover {
+              text-decoration: underline;
             }
+          }
 
-            .title {
-              //color: $orange;
-              display: block;
-              color: #fff;
-              font-size: 18px;
-              padding: 10px;
-              background: $green;
+          @media (min-width: 768px) {
 
-              &:hover {
-                //text-decoration: underline;
-                background: lighten($green, 5%);
-                //color: darken($orange, 10%);
-              }
-            }
-
-            @media (min-width: 768px) {
+            .link {
               line-height: 24px;
-
-              .date {
-                font-size: 18px;
-              }
-
-              .title {
-                font-size: 22px;
-              }
+              font-size: 22px;
             }
           }
         }
