@@ -15,7 +15,7 @@ function aokranj_front_page_top_news() {
                     <?php while (have_posts()): the_post();?>
                         <div class="news-item" id="item-<?php the_ID(); ?>">
                             <h3 class="news-title">
-                                <span class="date"><?php the_time('j.n.Y'); ?></span> -
+                                <span class="date"><?php the_time('d.m.Y'); ?></span> -
                                 <a class="title" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                                     <?php the_title(); ?>
                                 </a>
