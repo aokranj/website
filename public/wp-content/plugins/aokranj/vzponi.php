@@ -7,15 +7,30 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+
+// only possible pages are aokranj-vzponi and aokranj-vsi-vzponi
+$pages = array('aokranj-vzponi', 'aokranj-vsi-vzponi');
+$page = filter_input(INPUT_GET, 'page');
+if (!in_array($page, $pages)) {
+    die('Fuck off!');
+}
+
+// ze url of zis page
+$url = admin_url('admin.php?page=' . $page);
+
+// handle post filtering wordpress style
 // stupid wordpress ...
 $action = filter_input(INPUT_POST, 'action');
 if ($action === 'filter') {
-    $url = admin_url('admin.php?page=aokranj-vzponi');
     $s = filter_input(INPUT_POST, 's');
+    $year = filter_input(INPUT_POST, 'year');
+    $tip = filter_input(INPUT_POST, 'tip');
     $paged = filter_input(INPUT_POST, 'paged');
     $orderby = filter_input(INPUT_GET, 'orderby');
     $order = filter_input(INPUT_GET, 'order');
     if (!empty($s)) $url .= '&s=' . $s;
+    if (!empty($year)) $url .= '&year=' . $year;
+    if (!empty($tip)) $url .= '&tip=' . $tip;
     if (!empty($paged)) $url .= '&paged=' . $paged;
     if (!empty($orderby)) $url .= '&orderby=' . $orderby;
     if (!empty($order)) $url .= '&order=' . $order;
@@ -23,28 +38,32 @@ if ($action === 'filter') {
     die;
 }
 
-// vzponi table instance
-require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzponi-list-table.php';
-$table = new AOKranj_Vzponi_List_Table();
-$table->prepare_items();
-
 // stupid wordpress ...
-$url = admin_url('admin.php?page=aokranj-vzponi');
 $orderby = filter_input(INPUT_GET, 'orderby');
 $order = filter_input(INPUT_GET, 'order');
 if (!empty($orderby)) $url .= '&orderby=' . $orderby;
 if (!empty($order)) $url .= '&order=' . $order;
+// this will disable wordpress header and allow php header redirect with wp_redirect above
+$url .= '&noheader=true';
+
+// vzponi table instance
+require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
+require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzponi-list-table.php';
+$table = new AOKranj_Vzponi_List_Table();
+$table->prepare_items();
 
 ?>
 <div id="vzponi" class="wrap">
     <h1>
-        <?= __('Seznam vzponov') ?>
-        <a href="<?= admin_url('/admin.php?page=aokranj-vzpon') ?>" class="page-title-action"><?= __('Dodaj vzpon') ?></a>
+        <?php if ($page === 'aokranj-vsi-vzponi'): ?>
+            <?= __('Vzponi vseh članov društva') ?>
+        <?php else: ?>
+            <?= __('Seznam vzponov') ?>
+            <a href="<?= admin_url('/admin.php?page=aokranj-vzpon') ?>" class="page-title-action"><?= __('Dodaj vzpon') ?></a>
+        <?php endif; ?>
     </h1>
-
-    <form id="vzponi-filter" action="<?= $url . '&noheader=true' ?>" method="post">
-        <?php /* <input type="hidden" name="action" value="isci_vzpone" /> */ ?>
-        <input type="hidden" name="page" value="aokranj-vzponi" />
+    <form id="vzponi-filter" action="<?= $url ?>" method="post">
+        <input type="hidden" name="page" value="<?= $page ?>" />
         <input type="hidden" name="action" value="filter" />
         <?php $table->search_box(__('Išči vzpone'), 'vzpon'); ?>
         <?php $table->display(); ?>

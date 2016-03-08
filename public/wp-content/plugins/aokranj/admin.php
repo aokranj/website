@@ -145,6 +145,8 @@ class AOKranj_Admin extends AOKranj
 
         add_menu_page('Vzponi', 'Vzponi', 'read', 'aokranj-vzponi', array(&$this, 'page_vzponi'), $icon, 5);
         add_submenu_page('aokranj-vzponi', 'Dodaj vzpon', 'Dodaj vzpon', 'read', 'aokranj-vzpon', array(&$this, 'page_vzpon'));
+        add_submenu_page('aokranj-vzponi', 'Vsi vzponi', 'Vsi vzponi', 'edit_pages', 'aokranj-vsi-vzponi', array(&$this, 'page_vsi_vzponi'));
+        add_submenu_page('aokranj-vzponi', 'Statistika', 'Statistika', 'edit_pages', 'aokranj-statistika', array(&$this, 'page_statistika'));
         //add_submenu_page('aokranj-vzponi', 'Prenos podatkov', 'Prenos podatkov', 'activate_plugins', 'aokranj-prenos', array(&$this, 'page_prenos'));
     }
 
@@ -302,6 +304,14 @@ class AOKranj_Admin extends AOKranj
         require_once AOKRANJ_PLUGIN_DIR . '/vzponi.php';
     }
 
+    public function page_vsi_vzponi() {
+        require_once AOKRANJ_PLUGIN_DIR . '/vzponi.php';
+    }
+
+    public function page_statistika() {
+        require_once AOKRANJ_PLUGIN_DIR . '/statistika.php';
+    }
+
     public function page_vzpon() {
         require_once AOKRANJ_PLUGIN_DIR . '/vzpon.php';
     }
@@ -408,6 +418,7 @@ class AOKranj_Admin extends AOKranj
         die;
     }
 
+    /*
     public function prenos_podatkov() {
         // check nonce
         check_admin_referer('prenos_podatkov');
@@ -429,5 +440,6 @@ class AOKranj_Admin extends AOKranj
         // redirect back
         wp_redirect(admin_url('/admin.php?page=aokranj-prenos'));
     }
+    */
 
 }

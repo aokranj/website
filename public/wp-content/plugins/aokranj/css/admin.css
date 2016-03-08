@@ -50,5 +50,21 @@
   width: 120px; }
 
 @media (min-width: 783px) {
-  #vzponi .wp-list-table .column-destinacija:not(th) span {
+  #vzponi .wp-list-table .column-primary:not(th) span {
     display: none; } }
+
+#statistika .years {
+  display: flex;
+  flex-wrap: wrap; }
+  #statistika .years .year {
+    flex: 1;
+    padding: 0 60px 30px 0; }
+    #statistika .years .year ul li {
+      width: 260px;
+      max-width: 100%; }
+      #statistika .years .year ul li:last-child {
+        border-top: 1px solid #888;
+        font-weight: bold; }
+      #statistika .years .year ul li .tip {
+        display: inline-block;
+        width: 160px; }
