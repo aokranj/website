@@ -53,18 +53,28 @@
   #vzponi .wp-list-table .column-primary:not(th) span {
     display: none; } }
 
-#statistika .years {
-  display: flex;
-  flex-wrap: wrap; }
-  #statistika .years .year {
-    flex: 1;
-    padding: 0 60px 30px 0; }
-    #statistika .years .year ul li {
+#statistika .years .year {
+  display: inline-block;
+  padding: 0 60px 30px 0;
+  width: 100%;
+  max-width: 350px; }
+  @media (min-width: 768px) {
+    #statistika .years .year {
       width: 260px;
-      max-width: 100%; }
-      #statistika .years .year ul li:last-child {
-        border-top: 1px solid #888;
-        font-weight: bold; }
-      #statistika .years .year ul li .tip {
-        display: inline-block;
-        width: 160px; }
+      max-width: 100%; } }
+  #statistika .years .year ul li {
+    display: flex;
+    color: #666; }
+    #statistika .years .year ul li:last-child {
+      border-top: 1px solid #888;
+      font-weight: bold;
+      padding-top: 4px;
+      color: #000; }
+    #statistika .years .year ul li .tip {
+      display: inline-block;
+      flex: 2; }
+    #statistika .years .year ul li .count {
+      display: inline-block;
+      flex: 1;
+      text-align: right;
+      color: #000; }

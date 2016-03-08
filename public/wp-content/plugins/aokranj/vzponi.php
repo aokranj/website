@@ -56,7 +56,7 @@ $table->prepare_items();
 <div id="vzponi" class="wrap">
     <h1>
         <?php if ($page === 'aokranj-vsi-vzponi'): ?>
-            <?= __('Vzponi vseh članov društva') ?>
+            <?= __('AO Kranj vzponi vseh članov') ?>
         <?php else: ?>
             <?= __('Seznam vzponov') ?>
             <a href="<?= admin_url('/admin.php?page=aokranj-vzpon') ?>" class="page-title-action"><?= __('Dodaj vzpon') ?></a>

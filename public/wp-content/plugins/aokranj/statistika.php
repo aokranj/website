@@ -54,7 +54,7 @@ foreach ($data as $item) {
 ?>
 <div id="statistika" class="wrap">
     <h1>
-        <?= __('Statistika') ?>
+        <?= __('AO Kranj statistika vzponov') ?>
     </h1>
     <div class="years">
         <?php foreach ($stats as $year => $data): ?>
