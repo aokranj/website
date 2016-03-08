@@ -119,13 +119,11 @@
 
         li {
           display: flex;
-          color: #666;
 
           &:last-child {
             border-top: 1px solid #888;
             font-weight: bold;
             padding-top: 4px;
-            color: #000;
           }
 
           .tip {
@@ -137,7 +135,6 @@
             display: inline-block;
             flex: 1;
             text-align: right;
-            color: #000;
           }
         }
       }

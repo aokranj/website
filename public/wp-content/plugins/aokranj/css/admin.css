@@ -63,18 +63,15 @@
       width: 260px;
       max-width: 100%; } }
   #statistika .years .year ul li {
-    display: flex;
-    color: #666; }
+    display: flex; }
     #statistika .years .year ul li:last-child {
       border-top: 1px solid #888;
       font-weight: bold;
-      padding-top: 4px;
-      color: #000; }
+      padding-top: 4px; }
     #statistika .years .year ul li .tip {
       display: inline-block;
       flex: 2; }
     #statistika .years .year ul li .count {
       display: inline-block;
       flex: 1;
-      text-align: right;
-      color: #000; }
+      text-align: right; }
