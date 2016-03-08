@@ -34,9 +34,11 @@ $query = '
 $data = $wpdb->get_results($query, ARRAY_A);
 
 // parse stats data
-$stats = [];
+$stats = array();
+$sum = array();
 foreach ($data as $item) {
     $y = $item['year'];
+    $t = $item['tip'];
     if (!isset($stats[$y])) {
         $stats[$y] = array(
             'tipi' => array(),
@@ -48,6 +50,10 @@ foreach ($data as $item) {
         'count' => $item['count'],
     );
     $stats[$y]['sum'] += $item['count'];
+    if (!isset($sum[$t])) {
+        $sum[$t] = 0;
+    }
+    $sum[$t] += $item['count'];
 }
 
 // show stats data
@@ -57,6 +63,21 @@ foreach ($data as $item) {
         <?= __('AO Kranj statistika vzponov') ?>
     </h1>
     <div class="years">
+        <div class="year sum">
+            <h2>Skupaj</h2>
+            <ul>
+                <?php foreach ($sum as $tip => $count): ?>
+                    <li>
+                        <span class="tip"><?= __(AOKranj_Vzpon::$tipi[$tip]) ?>:</span>
+                        <span class="count"><?= $count ?> vzponov</span>
+                    </li>
+                <?php endforeach; ?>
+                <li>
+                    <span class="tip"><?= __('Vseh skupaj') ?>:</span>
+                    <span class="count"><?= array_sum($sum) ?> vzponov</span>
+                </li>
+            </ul>
+        </div>
         <?php foreach ($stats as $year => $data): ?>
             <div class="year">
                 <h2><?= $year ?></h2>
