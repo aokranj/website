@@ -2,6 +2,12 @@
 jQuery(document).ready(function(){
 
     jQuery('.gallery').each(function(i, item){
+        /*
+        jQuery(this).masonry({
+          itemSelector: '.gallery-item',
+          columnWidth: 200
+        });
+        */
         jQuery('a', this).colorbox({
             rel: 'gallery' + i,
             maxWidth: '98%',

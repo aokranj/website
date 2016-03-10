@@ -9,4 +9,5 @@ jQuery(document).ready(function(){
             jQuery('.header').removeClass('wide-nav');
         }
     });
+    
 });

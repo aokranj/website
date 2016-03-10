@@ -82,6 +82,8 @@ class AOKranj
         wp_enqueue_style('colorbox', AOKRANJ_PLUGIN_URL . '/js/colorbox/colorbox.css', array(), AOKRANJ_PLUGIN_VERSION );
         wp_enqueue_script('colorbox', AOKRANJ_PLUGIN_URL . '/js/colorbox/jquery.colorbox-min.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
 
+        //wp_enqueue_script('masonry', AOKRANJ_PLUGIN_URL . '/js/masonry.min.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
+
         wp_enqueue_style('aokranj-plugin', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
         wp_enqueue_script('aokranj-plugin', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
     }
@@ -206,6 +208,7 @@ class AOKranj
 
     	$html5 = current_theme_supports( 'html5', 'gallery' );
     	$atts = shortcode_atts( array(
+            'limit'      => false,
     		'order'      => 'ASC',
     		'orderby'    => 'menu_order ID',
     		'id'         => $post ? $post->ID : 0,
@@ -312,8 +315,15 @@ class AOKranj
     	 */
     	$output = apply_filters( 'gallery_style', $gallery_style . $gallery_div );
 
+        $num = 0;
     	$i = 0;
     	foreach ( $attachments as $id => $attachment ) {
+
+            // limit
+            if ($atts['limit'] && $num >= (int)$atts['limit']) {
+                continue;
+            }
+            $num++;
 
     		$attr = ( trim( $attachment->post_excerpt ) ) ? array( 'aria-describedby' => "$selector-$id" ) : '';
     		if ( ! empty( $atts['link'] ) && 'file' === $atts['link'] ) {

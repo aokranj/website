@@ -2,10 +2,42 @@
 
 
 /**
+ * Frontpage post excerpt length
+ *
+ * @return integer
+ */
+function franz_frontpage_post_excerpt_length() {
+	return 80;
+}
+
+/**
+ * Show post gallery on frontpage
+ *
+ * @return void
+ */
+function franz_stack_frontpage_posts_gallery() {
+	$post = get_post();
+	$gallery = null;
+	if ( preg_match_all( '/' . get_shortcode_regex() . '/s', $post->post_content, $matches, PREG_SET_ORDER ) ) {
+		foreach ( $matches as $shortcode ) {
+			if ( 'gallery' === $shortcode[2] ) {
+				$attr = shortcode_parse_atts( $shortcode[3] );
+				$attr['limit'] = 5;
+				$attr['size'] = 'thumbnail';
+				$gallery = $GLOBALS['AOKranj']->gallery_shortcode($attr);
+				break;
+			}
+		}
+	}
+	echo $gallery;
+}
+
+/**
  * Remove posts that are already shown in slider
  * @param  array $query_args
  * @return array
  */
+/*
 function fix_franz_stack_posts_query_args($query_args) {
 	global $franz_settings, $franz_sliderposts_ids;
 
@@ -15,6 +47,7 @@ function fix_franz_stack_posts_query_args($query_args) {
 
 	return $query_args;
 }
+*/
 //add_filter('franz_stack_posts_query_args', 'fix_franz_stack_posts_query_args');
 
 /**
@@ -88,6 +121,8 @@ function franz_stack_posts( $args = array() ){
 		$args['lead_posts'] = 0;
 	}
 
+	add_filter('excerpt_length', 'franz_frontpage_post_excerpt_length');
+
 	$posts = new WP_Query( apply_filters( 'franz_stack_posts_query_args', $query_args, $args ) );
 
 	$classes = 'posts-list highlights';
@@ -120,15 +155,15 @@ function franz_stack_posts( $args = array() ){
                     <div class="item-wrap <?php echo $col; ?>" id="item-<?php echo $post_id; ?>">
                         <div <?php post_class( 'item clearfix' ); ?>>
                         	<?php if ( franz_has_post_image() ) : ?>
-                            	<a href="<?php the_permalink(); ?>"><?php franz_the_post_image( $image_size ); ?></a>
+                            	<a class="featured-image" href="<?php the_permalink(); ?>"><?php franz_the_post_image( $image_size ); ?></a>
                             <?php endif; ?>
                             <h3 class="item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<div class="author">
-								<?php /* OVERRIDE */ ?>
-                                <?php the_time( get_option( 'date_format' ) ) ?>,
+                                <?php the_time( get_option( 'date_format' ) ) /* OVERRIDE */ ?>,
                                 <?php the_author_posts_link(); ?>
                             </div>
                             <div class="excerpt"><?php the_excerpt(); ?></div>
+                            <?php franz_stack_frontpage_posts_gallery(); ?>
                             <?php franz_stack_posts_meta( $post_id ); ?>
                         </div>
                     </div>
@@ -151,6 +186,8 @@ function franz_stack_posts( $args = array() ){
         </div>
     </div>
     <?php
+
+	remove_filter('excerpt_length', 'franz_frontpage_post_excerpt_length');
 }
 
 

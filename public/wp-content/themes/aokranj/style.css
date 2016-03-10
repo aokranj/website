@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  Theme Name:   AO Kranj
  Theme URI:    http://aokranj.com
@@ -11,6 +12,90 @@
  Tags:         aokranj alpinisticni odsek kranj alpinizem
  Text Domain:  aokranj
 */
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueThin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'GeogrotesqueUltraLight';
+  src: url("fonts/GeogrotesqueUltraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueSemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueUltraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueLightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueRegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueMediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueSemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueBoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic; }
+
 .background-orange {
   background-color: #f7941e; }
 
@@ -29,21 +114,74 @@
 .background-darkgray {
   background-color: #b4b4b4; }
 
-@media screen and (min-width: 768px) and (max-width: 1006px) {
-  body {
-    padding-top: 76px; } }
+.btn {
+  font-family: 'Geogrotesque';
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 16px; }
+  .btn.btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7; }
+  .btn.btn-success {
+    background-color: #5cb85c;
+    border-color: #5cb85c; }
+  .btn.btn-info {
+    background-color: #5bc0de;
+    border-color: #5bc0de; }
+  .btn.btn-warning {
+    background-color: #f7941e;
+    border-color: #f7941e; }
+  .btn.btn-danger {
+    background-color: #d9534f;
+    border-color: #d9534f; }
+  .btn.btn-outline.btn-primary {
+    background-color: transparent;
+    color: #337ab7; }
+  .btn.btn-outline.btn-success {
+    background-color: transparent;
+    color: #5cb85c; }
+  .btn.btn-outline.btn-info {
+    background-color: transparent;
+    color: #5bc0de; }
+  .btn.btn-outline.btn-warning {
+    background-color: transparent;
+    color: #f7941e; }
+  .btn.btn-outline.btn-danger {
+    background-color: transparent;
+    color: #d9534f; }
+  .btn.btn-outline:hover.btn-primary {
+    background-color: #337ab7;
+    color: #fff; }
+  .btn.btn-outline:hover.btn-success {
+    background-color: #5cb85c;
+    color: #fff; }
+  .btn.btn-outline:hover.btn-info {
+    background-color: #5bc0de;
+    color: #fff; }
+  .btn.btn-outline:hover.btn-warning {
+    background-color: #f7941e;
+    color: #fff; }
+  .btn.btn-outline:hover.btn-danger {
+    background-color: #d9534f;
+    color: #fff; }
+  .btn.btn-sharp {
+    border-radius: 0; }
 
-@media screen and (min-width: 768px) and (max-width: 960px) {
-  body.navbar-pinned .wide-nav .navbar-header {
-    height: 40px; } }
-
-@media screen and (min-width: 768px) and (max-width: 782px) {
-  body.admin-bar .navbar {
-    top: 46px; } }
-
-@media (max-width: 768px) {
-  body.admin-bar .navbar-fixed-top {
-    top: 46px; } }
+body {
+  font-family: 'Geogrotesque';
+  font-size: 15px; }
+  @media screen and (min-width: 768px) and (max-width: 1006px) {
+    body {
+      padding-top: 76px; } }
+  @media screen and (min-width: 768px) and (max-width: 960px) {
+    body.navbar-pinned .wide-nav .navbar-header {
+      height: 40px; } }
+  @media screen and (min-width: 768px) and (max-width: 782px) {
+    body.admin-bar .navbar {
+      top: 46px; } }
+  @media (max-width: 768px) {
+    body.admin-bar .navbar-fixed-top {
+      top: 46px; } }
 
 @media screen and (max-width: 600px) {
   #wpadminbar {
@@ -55,113 +193,187 @@ a {
     color: #1a8bb9; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif; }
-
-.btn {
-  font-family: 'Open Sans', sans-serif; }
+  font-weight: 500;
+  font-family: 'Geogrotesque'; }
 
 .carousel {
   box-shadow: 0 0 3px #ccc; }
-  @media (min-width: 500px) and (max-width: 688px) {
-    .carousel .carousel-caption {
-      padding-top: 0; } }
-  .carousel .excerpt {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    margin-bottom: 20px; }
-    .carousel .excerpt p {
-      margin: 0; }
-    @media (min-width: 680px) and (max-width: 768px) {
-      .carousel .excerpt {
+  .carousel .carousel-caption {
+    position: absolute;
+    top: 20%;
+    padding: 0; }
+    @media (width: 640px) and (orientation: landscape) {
+      .carousel .carousel-caption {
+        top: 10%; } }
+    @media (min-width: 768px) {
+      .carousel .carousel-caption {
+        top: 20%; } }
+    .carousel .carousel-caption .slide-title {
+      margin-bottom: 0;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      font-weight: 700;
+      font-family: 'Geogrotesque'; }
+    .carousel .carousel-caption .excerpt {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0 10px 15px 10px;
+      margin-bottom: 10px;
+      font-size: 2vw;
+      line-height: 4vw;
+      font-weight: 400;
+      font-family: 'Geogrotesque';
+      /*
+      @media (min-width: 680px) and (max-width: 768px) {
         font-size: 2.4vw;
-        line-height: 4vw; } }
+        line-height: 4vw;
+      }
+      */ }
+      .carousel .carousel-caption .excerpt p {
+        margin: 0; }
+      @media (min-width: 768px) {
+        .carousel .carousel-caption .excerpt {
+          margin-bottom: 20px; } }
+    .carousel .carousel-caption .call-to-action {
+      margin-top: 10px; }
+      @media (min-width: 768px) {
+        .carousel .carousel-caption .call-to-action {
+          margin-bottom: 20px; } }
   @media (min-width: 768px) {
     .carousel .carousel-control.left span, .carousel .carousel-control.right span {
       margin-top: -15px; } }
+  .carousel .carousel-indicators {
+    display: none; }
 
-.posts-list.news {
-  border-top: none;
-  padding: 0 0 40px 0; }
-  .posts-list.news .highlight-title {
-    margin-top: 0;
-    margin-bottom: 0; }
-  @media (min-width: 768px) {
-    .posts-list.news {
-      padding-bottom: 60px; }
-      .posts-list.news .highlight-title {
-        margin-bottom: 20px; } }
-  .posts-list.news .item-wrap .item {
-    color: #fff; }
-    .posts-list.news .item-wrap .item .title {
+.news-list {
+  border: 1px solid #d1d2d4;
+  padding: 30px; }
+  .news-list h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Geogrotesque';
+    color: #f7941e; }
+  .news-list ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0; }
+    .news-list ul li span {
+      font-size: 15px; }
+    .news-list ul li h3 {
+      display: inline-block;
       margin: 0;
-      padding: 12px;
-      border-bottom: 1px solid #fff;
-      background: #d73333; }
-      .posts-list.news .item-wrap .item .title:last-child {
-        border-bottom: none; }
-      .posts-list.news .item-wrap .item .title .link {
-        line-height: 20px;
+      padding: 0; }
+      .news-list ul li h3 a {
+        display: inline-block;
+        color: #000;
+        line-height: 30px;
         font-size: 18px;
-        font-weight: 400;
-        color: #fff; }
-        .posts-list.news .item-wrap .item .title .link:hover {
+        font-weight: 500;
+        font-family: 'Geogrotesque'; }
+        .news-list ul li h3 a:hover {
           text-decoration: underline; }
-      @media (min-width: 768px) {
-        .posts-list.news .item-wrap .item .title {
-          padding: 16px; }
-          .posts-list.news .item-wrap .item .title .link {
-            line-height: 24px;
-            font-size: 22px; } }
 
 .posts-list .highlight-title {
-  margin-bottom: 0; }
+  display: none; }
 
-@media (min-width: 768px) {
-  .posts-list .highlight-title {
-    margin-bottom: 20px; } }
-
-.posts-list .item-title {
-  padding: 30px 15px 0 15px;
-  font-weight: 100;
-  font-family: 'Open Sans', sans-serif; }
-  .posts-list .item-title a {
-    color: #f7941e;
-    font-size: 24px;
-    line-height: 26px;
-    font-weight: 300; }
-    .posts-list .item-title a:hover {
-      color: #da7a08; }
-
-.posts-list .author {
-  padding: 3px 15px 30px 15px;
-  font-size: 15px;
-  font-weight: 100;
-  font-family: 'Open Sans', sans-serif;
-  color: #a7a9ac; }
-  @media (max-width: 992px) {
-    .posts-list .author {
-      padding-bottom: 20px; } }
-  .posts-list .author a {
+.posts-list .item {
+  box-shadow: none;
+  border: 1px solid #d1d2d4 !important;
+  font-family: 'Geogrotesque'; }
+  @media (min-width: 768px) {
+    .posts-list .item .featured-image {
+      display: none; } }
+  .posts-list .item .item-title {
+    padding: 30px 30px 0 30px;
+    font-family: 'Geogrotesque'; }
+    .posts-list .item .item-title a {
+      color: #f7941e;
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: 300; }
+      .posts-list .item .item-title a:hover {
+        color: #da7a08; }
+  .posts-list .item .author {
+    padding: 5px 30px 30px 30px;
+    font-size: 15px;
+    font-family: 'Geogrotesque';
     color: #a7a9ac; }
-    .posts-list .author a:hover {
-      color: #25aae1; }
-
-.posts-list .item-meta {
-  border-top: none;
-  margin-top: 0;
-  padding-top: 0; }
+    .posts-list .item .author a {
+      color: #a7a9ac; }
+      .posts-list .item .author a:hover {
+        color: #25aae1; }
+  .posts-list .item .excerpt {
+    font-family: 'Geogrotesque';
+    font-size: 15px;
+    padding: 0 30px;
+    margin: 0; }
+  .posts-list .item .gallery {
+    display: none;
+    padding: 0 30px;
+    text-align: left; }
+    @media (min-width: 768px) {
+      .posts-list .item .gallery {
+        display: block; } }
+  .posts-list .item .item-meta {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    font-family: 'Geogrotesque';
+    font-size: 15px; }
 
 .entry-meta .date a {
   font-size: 12px;
   font-weight: 400;
-  font-family: 'Open Sans', sans-serif; }
-
-#gallery-1.gallery-columns-3 .gallery-item {
-  width: auto !important;
-  max-width: 150px; }
+  font-family: 'Geogrotesque'; }
 
 .bottom-bar .copyright {
   margin-top: 0; }
+
+.widget-reportaza {
+  border: 1px solid #d1d2d4; }
+  .widget-reportaza ul li {
+    padding: 0;
+    border: none; }
+    .widget-reportaza ul li .pis-thumbnail .pis-thumbnail-link {
+      display: block; }
+      .widget-reportaza ul li .pis-thumbnail .pis-thumbnail-link .pis-thumbnail-img {
+        width: 100%; }
+    .widget-reportaza ul li .pis-title {
+      margin: 20px; }
+      .widget-reportaza ul li .pis-title a {
+        font-family: 'Geogrotesque';
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 700;
+        color: #f7941e; }
+      .widget-reportaza ul li .pis-title:before {
+        content: 'Reportaža';
+        display: block;
+        margin-bottom: 5px;
+        font-size: 22px;
+        font-style: italic;
+        font-family: 'Geogrotesque'; }
+    .widget-reportaza ul li .pis-excerpt {
+      margin: 25px 20px;
+      font-size: 15px;
+      font-family: 'Geogrotesque'; }
+    .widget-reportaza ul li .pis-more {
+      display: block;
+      margin-top: 30px; }
+      .widget-reportaza ul li .pis-more a {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 15px 20px;
+        border: 1px solid #f7941e;
+        color: #f7941e;
+        font-family: 'Geogrotesque';
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 16px; }
+        .widget-reportaza ul li .pis-more a:hover {
+          background: #f7941e;
+          color: #fff; }
 
 .widget-blue {
   background: #25aae1;
@@ -171,11 +383,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget-blue a:hover {
       text-decoration: underline; }
   .widget-blue h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget-blue ul {
     padding: 0 20px; }
     .widget-blue ul li {
@@ -193,11 +407,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget-orange a:hover {
       text-decoration: underline; }
   .widget-orange h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget-orange ul {
     padding: 0 20px; }
     .widget-orange ul li {
@@ -215,11 +431,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget-green a:hover {
       text-decoration: underline; }
   .widget-green h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget-green ul {
     padding: 0 20px; }
     .widget-green ul li {
@@ -237,11 +455,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget-purple a:hover {
       text-decoration: underline; }
   .widget-purple h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget-purple ul {
     padding: 0 20px; }
     .widget-purple ul li {
@@ -259,11 +479,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget-lightgray a:hover {
       text-decoration: underline; }
   .widget-lightgray h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget-lightgray ul {
     padding: 0 20px; }
     .widget-lightgray ul li {
@@ -281,11 +503,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget-darkgray a:hover {
       text-decoration: underline; }
   .widget-darkgray h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget-darkgray ul {
     padding: 0 20px; }
     .widget-darkgray ul li {
@@ -296,7 +520,7 @@ h1, h2, h3, h4, h5, h6 {
         color: #fff; }
 
 .widget_search .form-group {
-  margin-bottom: 24px; }
+  margin-bottom: 0; }
 
 .widget_fbw_id {
   text-align: center; }
@@ -309,11 +533,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget_categories a:hover {
       text-decoration: underline; }
   .widget_categories h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget_categories ul {
     padding: 0 20px; }
     .widget_categories ul li {
@@ -331,11 +557,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget_recent_entries a:hover {
       text-decoration: underline; }
   .widget_recent_entries h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget_recent_entries ul {
     padding: 0 20px; }
     .widget_recent_entries ul li {
@@ -353,11 +581,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget_recent_comments a:hover {
       text-decoration: underline; }
   .widget_recent_comments h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget_recent_comments ul {
     padding: 0 20px; }
     .widget_recent_comments ul li {
@@ -375,11 +605,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget_archive a:hover {
       text-decoration: underline; }
   .widget_archive h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget_archive ul {
     padding: 0 20px; }
     .widget_archive ul li {
@@ -397,11 +629,13 @@ h1, h2, h3, h4, h5, h6 {
     .widget_meta a:hover {
       text-decoration: underline; }
   .widget_meta h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: none;
     padding: 16px 20px;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    font-family: 'Geogrotesque'; }
   .widget_meta ul {
     padding: 0 20px; }
     .widget_meta ul li {

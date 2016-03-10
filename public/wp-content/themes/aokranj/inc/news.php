@@ -6,22 +6,26 @@
 function aokranj_front_page_top_news() {
     $news = query_posts(array('category_name' => 'novice','posts_per_page' => -1));
     if (!have_posts()) return;
+    $news_category_link = get_category_link( get_cat_ID( 'Novice' ) );
     ?>
-    <div class="posts-list news highlights">
-        <h2 class="highlight-title"><?php echo __('Novice'); ?></h2>
-        <div class="row items-container">
-            <div class="item-wrap col-md-12">
-                <div class="item">
-                    <?php while (have_posts()): the_post();?>
-                        <h3 class="title">
-                            <a class="link" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-                        </h3>
-                    <?php endwhile; ?>
-                </div>
-            </div>
-        </div>
+    <div class="news-list">
+        <h2><?php echo __('Novice'); ?></h2>
+        <ul>
+            <?php while (have_posts()): the_post();?>
+                <li>
+                    <span><?php the_time( 'd.m.Y' ) ?> - </span>
+                    <h3>
+                        <a class="link"
+                           href="<?php the_permalink() ?>"
+                           rel="bookmark"
+                           title="<?php the_title_attribute(); ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </h3>
+                </li>
+            <?php endwhile; ?>
+        </ul>
+        <a href="<?php echo esc_url( $news_category_link ); ?>" class="btn btn-lg btn-warning btn-outline btn-sharp">Več novic</a>
     </div>
     <?php
     wp_reset_query();
