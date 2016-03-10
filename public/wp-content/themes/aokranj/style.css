@@ -136,22 +136,7 @@ body {
     min-width: 182px;
     background-image: url("images/aokranj-logo.png");
     background-repeat: no-repeat;
-    background-position: center center;
-    /*
-        height: 100%;
-        h1 {
-          margin: 0;
-        }
-      }
-      @media (min-width: 992px) {
-        height: 100%;
-        h1 {
-          margin: 10px 0 0 0;
-          line-height: 65px;
-          display: block;
-        }
-      }
-      */ }
+    background-position: center center; }
     .navbar .navbar-header.logo h1 a {
       opacity: 0; }
     @media (max-width: 767px) {
@@ -199,6 +184,8 @@ body {
     font-weight: 400;
     font-style: italic;
     text-transform: none; }
+    .navbar .navbar-nav > li > a i {
+      margin-top: -3px; }
 
 .btn {
   font-family: 'Geogrotesque';

@@ -229,22 +229,6 @@ body {
           }
         }
       }
-
-      /*
-        height: 100%;
-        h1 {
-          margin: 0;
-        }
-      }
-      @media (min-width: 992px) {
-        height: 100%;
-        h1 {
-          margin: 10px 0 0 0;
-          line-height: 65px;
-          display: block;
-        }
-      }
-      */
     }
   }
 
@@ -255,6 +239,10 @@ body {
     font-weight: 400;
     font-style: italic;
     text-transform: none;
+
+    i {
+      margin-top: -3px;
+    }
   }
 }
 
