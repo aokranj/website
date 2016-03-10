@@ -241,7 +241,13 @@ body {
     text-transform: none;
 
     i {
-      margin-top: -3px;
+      margin-top: 0px;
+    }
+
+    @media (min-width: 992px) {
+      i {
+        margin-top: -3px;
+      }
     }
   }
 }

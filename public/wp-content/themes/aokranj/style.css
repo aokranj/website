@@ -185,7 +185,10 @@ body {
     font-style: italic;
     text-transform: none; }
     .navbar .navbar-nav > li > a i {
-      margin-top: -3px; }
+      margin-top: 0px; }
+    @media (min-width: 992px) {
+      .navbar .navbar-nav > li > a i {
+        margin-top: -3px; } }
 
 .btn {
   font-family: 'Geogrotesque';
