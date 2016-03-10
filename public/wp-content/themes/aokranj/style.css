@@ -138,7 +138,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center; }
     .navbar .navbar-header.logo h1 a {
-      opacity: 0; }
+      opacity: 0; text-indent: -9999px; }
     @media (max-width: 767px) {
       .navbar .navbar-header.logo {
         position: relative;
@@ -265,15 +265,15 @@ h1, h2, h3, h4, h5, h6 {
 .carousel {
   box-shadow: 0 0 3px #ccc; }
   .carousel .carousel-caption {
-    position: absolute;
+    /*position: absolute;
     top: 20%;
-    padding: 0; }
+    padding: 0;*/ }
     @media (width: 640px) and (orientation: landscape) {
       .carousel .carousel-caption {
-        top: 10%; } }
+        /*top: 10%;*/ } }
     @media (min-width: 768px) {
       .carousel .carousel-caption {
-        top: 20%; } }
+        /*top: 20%;*/ } }
     .carousel .carousel-caption .slide-title {
       margin-bottom: 0;
       padding: 10px;
@@ -284,8 +284,8 @@ h1, h2, h3, h4, h5, h6 {
       background: rgba(0, 0, 0, 0.6);
       padding: 0 10px 15px 10px;
       margin-bottom: 10px;
-      font-size: 2vw;
-      line-height: 4vw;
+      /*font-size: 2vw;
+      line-height: 4vw;*/
       font-weight: 400;
       font-family: 'Geogrotesque';
       /*
