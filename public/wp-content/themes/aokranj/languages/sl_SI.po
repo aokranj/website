@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Franz Josef theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-16 21:37+0800\n"
-"PO-Revision-Date: 2016-03-06 18:09+0100\n"
+"PO-Revision-Date: 2016-03-10 06:44+0100\n"
 "Last-Translator: Bojan Hribernik <bojan.hribernik@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,9 @@ msgid "We couldn't find any content at this URL."
 msgstr ""
 
 #: 404.php:18
-#, php-format
+#, fuzzy, php-format
 msgid "Searching for the keyword %s ..."
-msgstr ""
+msgstr "Iskanje podnapisov ..."
 
 #: admin/ajax-handler.php:9
 msgid ""
@@ -38,8 +38,9 @@ msgid ""
 msgstr ""
 
 #: admin/ajax-handler.php:20
+#, fuzzy
 msgid "Options saved."
-msgstr ""
+msgstr "Zaslonski posnetek je bil shranjen"
 
 #: admin/options-about.php:3
 msgid ""
@@ -48,8 +49,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-about.php:5
+#, fuzzy
 msgid "Recommended Plugins"
-msgstr ""
+msgstr "Nastavitve vstavkov"
 
 #: admin/options-about.php:6
 msgid ""
@@ -59,14 +61,14 @@ msgid ""
 msgstr ""
 
 #: admin/options-about.php:9 admin/settings.php:230
-#, php-format
+#, fuzzy, php-format
 msgid "%s for displaying related posts."
-msgstr ""
+msgstr "Vir za vse prispevke, shranjene v %s"
 
 #: admin/options-about.php:12 admin/settings.php:233
-#, php-format
+#, fuzzy, php-format
 msgid "%s for navigational breadcrumbs."
-msgstr ""
+msgstr "(0 za neomejeno)"
 
 #: admin/options-about.php:15 admin/settings.php:236
 #, php-format
@@ -81,8 +83,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-about.php:22
+#, fuzzy
 msgid "Size and Dimensions"
-msgstr ""
+msgstr "%s in %s. Skupna velikost: %s"
 
 #: admin/options-about.php:24
 msgid ""
@@ -98,8 +101,9 @@ msgid "Featured Images are 850px wide and 450px high."
 msgstr ""
 
 #: admin/options-about.php:29
+#, fuzzy
 msgid "Other Notes"
-msgstr ""
+msgstr "&Najdi note"
 
 #: admin/options-about.php:31
 msgid ""
@@ -111,8 +115,9 @@ msgid "The \"Footer Menu\" menu location does not support dropdown."
 msgstr ""
 
 #: admin/options-about.php:35
+#, fuzzy
 msgid "Help and Support"
-msgstr ""
+msgstr "Vstavek Anjute za podporo Jave in C++"
 
 #: admin/options-about.php:36
 #, php-format
@@ -126,8 +131,9 @@ msgid "Franz Josef Support Forum"
 msgstr ""
 
 #: admin/options-about.php:38
+#, fuzzy
 msgid "Rate Us!"
-msgstr ""
+msgstr "ameriški dolar"
 
 #: admin/options-about.php:39
 #, php-format
@@ -137,9 +143,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-about.php:43
-#, php-format
+#, fuzzy, php-format
 msgid "Meticulously developed by %s."
-msgstr ""
+msgstr "Prekinil uporabnik"
 
 #: admin/options-about.php:44
 msgid ""
@@ -152,8 +158,9 @@ msgid "Let us work the magic for you too."
 msgstr ""
 
 #: admin/options-addons.php:3
+#, fuzzy
 msgid "Premium Add-ons"
-msgstr ""
+msgstr "&Dodaj v vrsto"
 
 #: admin/options-addons.php:11
 msgid ""
@@ -164,16 +171,18 @@ msgstr ""
 #: admin/options-addons.php:53 admin/options-addons.php:72
 #: admin/options-addons.php:91 admin/options-addons.php:110
 #: admin/options-addons.php:129
+#, fuzzy
 msgid "Learn more"
-msgstr ""
+msgstr "Več podrobnosti"
 
 #: admin/options-addons.php:18 admin/options-addons.php:36
 #: admin/options-addons.php:55 admin/options-addons.php:74
 #: admin/options-addons.php:93 admin/options-addons.php:112
 #: admin/options-addons.php:131 admin/options-addons.php:154
 #: admin/options-addons.php:172 admin/options-addons.php:190
+#, fuzzy
 msgid "Installed"
-msgstr ""
+msgstr "Nameščeno"
 
 #: admin/options-addons.php:29
 msgid ""
@@ -186,8 +195,9 @@ msgid "Place any content anywhere with easy-to-use action hooks widget areas."
 msgstr ""
 
 #: admin/options-addons.php:66
+#, fuzzy
 msgid "Layout Shortcodes"
-msgstr ""
+msgstr "Počisti &predpomnilnik postavitve"
 
 #: admin/options-addons.php:67
 msgid ""
@@ -202,8 +212,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-addons.php:104
+#, fuzzy
 msgid "Custom Colours"
-msgstr ""
+msgstr "Strežnik po meri"
 
 #: admin/options-addons.php:105
 msgid "Customise Franz Josef's colour scheme to suit your style and audience."
@@ -214,16 +225,18 @@ msgid "Coming soon!"
 msgstr ""
 
 #: admin/options-addons.php:123
+#, fuzzy
 msgid "Additional Options"
-msgstr ""
+msgstr "Dodatne možnosti pretakanja"
 
 #: admin/options-addons.php:124
 msgid "Adds additional plugin-territory options for the Franz Josef theme."
 msgstr ""
 
 #: admin/options-addons.php:139
+#, fuzzy
 msgid "Natively Supported Plugins"
-msgstr ""
+msgstr "Ponastavitev vstavkov compiza"
 
 #: admin/options-addons.php:147
 msgid "Automatically display related posts on your posts and pages."
@@ -231,8 +244,9 @@ msgstr ""
 
 #: admin/options-addons.php:152 admin/options-addons.php:170
 #: admin/options-addons.php:188
+#, fuzzy
 msgid "Install"
-msgstr ""
+msgstr "Namesti"
 
 #: admin/options-addons.php:165
 msgid ""
@@ -247,33 +261,39 @@ msgid ""
 msgstr ""
 
 #: admin/options-addons.php:201
+#, fuzzy
 msgid "Free"
-msgstr ""
+msgstr "P_rosto"
 
 #: admin/options-addons.php:204
+#, fuzzy
 msgid "Activate"
-msgstr ""
+msgstr "Pokaži"
 
 #: admin/options-defaults.php:17
+#, fuzzy
 msgid "General"
-msgstr ""
+msgstr "Splošno"
 
 #: admin/options-defaults.php:18
+#, fuzzy
 msgid "Display"
-msgstr ""
+msgstr "Prikaz"
 
 #: admin/options-defaults.php:19
+#, fuzzy
 msgid "Add-ons"
-msgstr ""
+msgstr "&Dodaj zaznamek ..."
 
 #: admin/options-defaults.php:20
+#, fuzzy
 msgid "About Franz Josef"
-msgstr ""
+msgstr "Prikaži pogovorno okno o programu"
 
 #: admin/options-defaults.php:58
-#, php-format
+#, fuzzy, php-format
 msgid "Subscribe to %s's RSS feed"
-msgstr ""
+msgstr "Pridobivanje vira je spodletelo"
 
 #: admin/options-display.php:12 admin/options-display.php:68
 #: admin/options-display.php:99 admin/options-display.php:121
@@ -283,44 +303,52 @@ msgstr ""
 #: admin/options-general.php:462 admin/options-general.php:491
 #: admin/options-general.php:529 admin/settings.php:148 admin/settings.php:167
 #: admin/settings.php:189
+#, fuzzy
 msgid "Click to toggle"
-msgstr ""
+msgstr "Kliknite za dostop do namizja"
 
 #: admin/options-display.php:14
+#, fuzzy
 msgid "Posts Display"
-msgstr ""
+msgstr "Dejavni zaslon"
 
 #: admin/options-display.php:20
 msgid "Use tiled layout in posts listing pages"
 msgstr ""
 
 #: admin/options-display.php:26
+#, fuzzy
 msgid "Hide post categories"
-msgstr ""
+msgstr "Ni najdenih kategorij."
 
 #: admin/options-display.php:32
+#, fuzzy
 msgid "Hide post tags"
-msgstr ""
+msgstr "Uredi metazaznamke"
 
 #: admin/options-display.php:38
+#, fuzzy
 msgid "Hide post author"
-msgstr ""
+msgstr "Elektronski naslov avtorja:"
 
 #: admin/options-display.php:43
 msgid "Hide author's profile image"
 msgstr ""
 
 #: admin/options-display.php:47
+#, fuzzy
 msgid "Hide featured image"
-msgstr ""
+msgstr "Odstrani prikazano sliko"
 
 #: admin/options-display.php:51
+#, fuzzy
 msgid "Hide author's bio"
-msgstr ""
+msgstr "Elektronski naslov avtorja:"
 
 #: admin/options-display.php:55
+#, fuzzy
 msgid "Disable responsive tables"
-msgstr ""
+msgstr "(5-9999, 0 za onemogočeno)"
 
 #: admin/options-display.php:56
 msgid ""
@@ -335,12 +363,14 @@ msgstr ""
 #: admin/options-general.php:394 admin/options-general.php:454
 #: admin/options-general.php:483 admin/options-general.php:521
 #: admin/options-general.php:547
+#, fuzzy
 msgid "Save All Options"
-msgstr ""
+msgstr "Shrani vse datoteke"
 
 #: admin/options-display.php:70
+#, fuzzy
 msgid "Excerpts Display"
-msgstr ""
+msgstr "Dejavni zaslon"
 
 #: admin/options-display.php:76
 msgid "Show full content in archive pages"
@@ -358,60 +388,74 @@ msgid ""
 msgstr ""
 
 #: admin/options-display.php:101
+#, fuzzy
 msgid "Footer Widget Display"
-msgstr ""
+msgstr "Prikaži pogovorno okno o programu"
 
 #: admin/options-display.php:107
+#, fuzzy
 msgid "Number of columns to display"
-msgstr ""
+msgstr "Število sličic (0 do 100)"
 
 #: admin/options-display.php:123
+#, fuzzy
 msgid "Miscellaneous Display"
-msgstr ""
+msgstr "Dejavni zaslon"
 
 #: admin/options-display.php:126
+#, fuzzy
 msgid "Sidebar options"
-msgstr ""
+msgstr "Napredne možnosti:"
 
 #: admin/options-display.php:130
+#, fuzzy
 msgid "Disable search form"
-msgstr ""
+msgstr "Obrazec za iskanje po vsebini vaše spletne strani."
 
 #: admin/options-display.php:138
+#, fuzzy
 msgid "Favicon options"
-msgstr ""
+msgstr "Napredne možnosti:"
 
 #: admin/options-display.php:142
+#, fuzzy
 msgid "Favicon URL"
-msgstr ""
+msgstr "URL za FTP"
 
 #: admin/options-display.php:146
+#, fuzzy
 msgid "Select Favicon"
-msgstr ""
+msgstr "&Izberite vnos:"
 
 #: admin/options-display.php:146
+#, fuzzy
 msgid "Set as favicon"
-msgstr ""
+msgstr "&Nastavi kot sliko ozadja"
 
 #: admin/options-display.php:146
+#, fuzzy
 msgid "Select favicon"
-msgstr ""
+msgstr "&Izberite vnos:"
 
 #: admin/options-display.php:151
+#, fuzzy
 msgid "WordPress Editor options"
-msgstr ""
+msgstr "Dodatne možnosti pretakanja"
 
 #: admin/options-display.php:155
+#, fuzzy
 msgid "Disable custom editor styles"
-msgstr ""
+msgstr "Urejanje slogov poudarjanja skladnje"
 
 #: admin/options-display.php:171
+#, fuzzy
 msgid "Custom CSS"
-msgstr ""
+msgstr "Razredi CSS"
 
 #: admin/options-display.php:176
+#, fuzzy
 msgid "Custom CSS styles"
-msgstr ""
+msgstr "CSS razred povezave"
 
 #: admin/options-display.php:178
 msgid ""
@@ -420,8 +464,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-general.php:13 inc/setup.php:79
+#, fuzzy
 msgid "Top Bar"
-msgstr ""
+msgstr "Vrstica &hitre povezave"
 
 #: admin/options-general.php:18
 #, php-format
@@ -431,8 +476,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-general.php:19
+#, fuzzy
 msgid "Appearance > Widgets"
-msgstr ""
+msgstr "Wx Gradniki"
 
 #: admin/options-general.php:23
 #, php-format
@@ -440,40 +486,48 @@ msgid "Custom menu can be assigned to the \"Top Menu\" location in %s."
 msgstr ""
 
 #: admin/options-general.php:24
+#, fuzzy
 msgid "Appearance > Menus"
-msgstr ""
+msgstr "DVD meni"
 
 #: admin/options-general.php:31
+#, fuzzy
 msgid "Disable Top Bar"
-msgstr ""
+msgstr "Počisti vrstico hitre povezave"
 
 #: admin/options-general.php:46
+#, fuzzy
 msgid "Slider"
-msgstr ""
+msgstr "Privzeti drsnik"
 
 #: admin/options-general.php:52
+#, fuzzy
 msgid "Disable slider"
-msgstr ""
+msgstr "Privzeti drsnik"
 
 #: admin/options-general.php:60
 msgid "What do you want to show in the slider"
 msgstr ""
 
 #: admin/options-general.php:64
+#, fuzzy
 msgid "Show latest posts"
-msgstr ""
+msgstr "Vaši najnovejši prispevki"
 
 #: admin/options-general.php:67
+#, fuzzy
 msgid "Show random posts"
-msgstr ""
+msgstr "Število prispevkov za prikaz:"
 
 #: admin/options-general.php:70
+#, fuzzy
 msgid "Show specific posts/pages"
-msgstr ""
+msgstr "Število prispevkov za prikaz:"
 
 #: admin/options-general.php:73
+#, fuzzy
 msgid "Show posts from categories"
-msgstr ""
+msgstr "Število prispevkov za prikaz:"
 
 #: admin/options-general.php:78
 msgid "Posts and/or pages to display"
@@ -492,8 +546,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-general.php:90
+#, fuzzy
 msgid "Categories to display"
-msgstr ""
+msgstr "Predmeti za prikaz:"
 
 #: admin/options-general.php:93 admin/options-general.php:199
 msgid "Click to select categories or type to search"
@@ -512,12 +567,14 @@ msgid "Exclude the categories from posts listing"
 msgstr ""
 
 #: admin/options-general.php:111
+#, fuzzy
 msgid "Disabled"
-msgstr ""
+msgstr "Onemogočeno"
 
 #: admin/options-general.php:112
+#, fuzzy
 msgid "Home Page"
-msgstr ""
+msgstr "_Spletna stran programa"
 
 #: admin/options-general.php:113 admin/options-general.php:418
 msgid "Everywhere"
@@ -528,48 +585,58 @@ msgid "Show posts from categories in random order"
 msgstr ""
 
 #: admin/options-general.php:127
+#, fuzzy
 msgid "Slider content"
-msgstr ""
+msgstr "Bitna hitrost vsebine"
 
 #: admin/options-general.php:131
+#, fuzzy
 msgid "Excerpt"
-msgstr ""
+msgstr "Izvleček"
 
 #: admin/options-general.php:134
+#, fuzzy
 msgid "Full content"
-msgstr ""
+msgstr "Bitna hitrost vsebine"
 
 #: admin/options-general.php:139
+#, fuzzy
 msgid "Number of posts to display"
-msgstr ""
+msgstr "Število prispevkov za prikaz:"
 
 #: admin/options-general.php:147
+#, fuzzy
 msgid "Slider height"
-msgstr ""
+msgstr "Želena višina"
 
 #: admin/options-general.php:155
+#, fuzzy
 msgid "Slider interval"
-msgstr ""
+msgstr "Zaščitni zamik"
 
 #: admin/options-general.php:158 admin/options-general.php:166
+#, fuzzy
 msgid "seconds"
-msgstr ""
+msgstr "sekund"
 
 #: admin/options-general.php:163
+#, fuzzy
 msgid "Slider transition duration"
-msgstr ""
+msgstr "Trajanje v sekundah"
 
 #: admin/options-general.php:181 admin/options-general.php:416
+#, fuzzy
 msgid "Front Page"
-msgstr ""
+msgstr "Naslovna stran"
 
 #: admin/options-general.php:188
 msgid "Show sidebar on front page"
 msgstr ""
 
 #: admin/options-general.php:196
+#, fuzzy
 msgid "Front page posts categories"
-msgstr ""
+msgstr "Vaša tema podpira statično naslovno stran."
 
 #: admin/options-general.php:207
 msgid ""
@@ -578,56 +645,65 @@ msgid ""
 msgstr ""
 
 #: admin/options-general.php:212
+#, fuzzy
 msgid "Blog posts columns"
-msgstr ""
+msgstr "Število stolpcev sestavljanke"
 
 #: admin/options-general.php:225
 msgid "Disable full-width first blog post"
 msgstr ""
 
 #: admin/options-general.php:237
+#, fuzzy
 msgid "Don't show blog posts"
-msgstr ""
+msgstr "Število prispevkov za prikaz:"
 
 #: admin/options-general.php:240
 msgid "Disable listing of blog posts on static front page"
 msgstr ""
 
 #: admin/options-general.php:256
+#, fuzzy
 msgid "Social Profiles"
-msgstr ""
+msgstr "Organiziraj profile ..."
 
 #: admin/options-general.php:260
+#, fuzzy
 msgid "Social Media"
-msgstr ""
+msgstr "&Odpri predstavno vsebino"
 
 #: admin/options-general.php:263
 msgid "Open social media links in new window"
 msgstr ""
 
 #: admin/options-general.php:267 admin/options-general.php:429
+#, fuzzy
 msgid "Drag and drop to reorder."
-msgstr ""
+msgstr "Povleci in spusti za prerazporeditev skladb."
 
 #: admin/options-general.php:289 admin/options-general.php:302
+#, fuzzy
 msgid "Custom"
-msgstr ""
+msgstr "Po meri"
 
 #: admin/options-general.php:312 admin/options-general.php:354
 #: admin/options-general.php:438 admin/settings-init.php:135
 #: inc/comments.php:237
+#, fuzzy
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: admin/options-general.php:314 admin/options-general.php:352
 #: admin/options-general.php:369
+#, fuzzy
 msgid "Title attribute"
-msgstr ""
+msgstr "Atribut naslova"
 
 #: admin/options-general.php:318 admin/options-general.php:353
 #: admin/options-general.php:373
+#, fuzzy
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: admin/options-general.php:321
 msgid "Leave this field empty to use the default RSS URL."
@@ -635,29 +711,35 @@ msgstr ""
 
 #: admin/options-general.php:326 admin/options-general.php:350
 #: admin/options-general.php:379
+#, fuzzy
 msgid "FontAwesome icon"
-msgstr ""
+msgstr "Sličica ikone"
 
 #: admin/options-general.php:330 admin/options-general.php:351
 #: admin/options-general.php:383
+#, fuzzy
 msgid "Icon URL"
-msgstr ""
+msgstr "URL za FTP"
 
 #: admin/options-general.php:345
+#, fuzzy
 msgid "Add Social Media Profile"
-msgstr ""
+msgstr "Dodaj profil za napravo"
 
 #: admin/options-general.php:358
+#, fuzzy
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: admin/options-general.php:360
+#, fuzzy
 msgid "Choose type"
-msgstr ""
+msgstr "Izberite vrsto zaslona"
 
 #: admin/options-general.php:375
+#, fuzzy
 msgid "Leave the URL empty to use the default RSS URL."
-msgstr ""
+msgstr "Polje vrat lahko pustite prazno, uporabljena bodo privzeta vrata."
 
 #: admin/options-general.php:379
 msgid ""
@@ -666,8 +748,9 @@ msgid ""
 msgstr ""
 
 #: admin/options-general.php:380
+#, fuzzy
 msgid "Example: soundcloud"
-msgstr ""
+msgstr "OpenCV primer"
 
 #: admin/options-general.php:384
 msgid "(optional if using FontAwesome icon above)"
@@ -678,8 +761,9 @@ msgid "Add this social media profile"
 msgstr ""
 
 #: admin/options-general.php:404
+#, fuzzy
 msgid "Mentions Bar"
-msgstr ""
+msgstr "Vrstica &hitre povezave"
 
 #: admin/options-general.php:407
 msgid ""
@@ -688,20 +772,24 @@ msgid ""
 msgstr ""
 
 #: admin/options-general.php:411
+#, fuzzy
 msgid "Show mentions bar"
-msgstr ""
+msgstr "Počisti vrstico hitre povezave"
 
 #: admin/options-general.php:415
+#, fuzzy
 msgid "Nowhere (disabled)"
-msgstr ""
+msgstr " (privzeto onemogočeno)"
 
 #: admin/options-general.php:417
+#, fuzzy
 msgid "Front Page + Pages"
-msgstr ""
+msgstr "Statična naslovna stran"
 
 #: admin/options-general.php:425
+#, fuzzy
 msgid "Brand Icons"
-msgstr ""
+msgstr "Ikone namizja"
 
 #: admin/options-general.php:426
 msgid ""
@@ -711,37 +799,44 @@ msgstr ""
 
 #: admin/options-general.php:435 admin/options-general.php:445
 #: admin/settings-init.php:137
+#, fuzzy
 msgid "Link"
-msgstr ""
+msgstr "Povezava"
 
 #: admin/options-general.php:436 admin/options-general.php:446
 #: admin/settings-init.php:136
+#, fuzzy
 msgid "(optional)"
-msgstr ""
+msgstr "izbirno"
 
 #: admin/options-general.php:437 admin/options-general.php:447
+#, fuzzy
 msgid "Select Image"
-msgstr ""
+msgstr "Izberi sliko"
 
 #: admin/options-general.php:437 admin/options-general.php:447
+#, fuzzy
 msgid "Select image"
-msgstr ""
+msgstr "Izberi sliko"
 
 #: admin/options-general.php:464
+#, fuzzy
 msgid "Custom <head> Tags"
-msgstr ""
+msgstr "Uredi metazaznamke"
 
 #: admin/options-general.php:469
 msgid "Code to insert into the <head> element"
 msgstr ""
 
 #: admin/options-general.php:493 inc/setup.php:69
+#, fuzzy
 msgid "Footer"
-msgstr ""
+msgstr "Noga"
 
 #: admin/options-general.php:498
+#, fuzzy
 msgid "Copyright text (html allowed)"
-msgstr ""
+msgstr "Poljubno besedilo ali HTML."
 
 #: admin/options-general.php:499
 msgid ""
@@ -756,20 +851,24 @@ msgid "&copy; %1$s %2$s. All rights reserved."
 msgstr "&copy; %1$s %2$s. Vse pravice pridržane."
 
 #: admin/options-general.php:506
+#, fuzzy
 msgid "Do not show copyright info"
-msgstr ""
+msgstr "Ne pokaži datotek varnostnih kopij"
 
 #: admin/options-general.php:531
+#, fuzzy
 msgid "Print"
-msgstr ""
+msgstr "Natisni"
 
 #: admin/options-general.php:536
+#, fuzzy
 msgid "Enable print CSS"
-msgstr ""
+msgstr "CSS razred povezave"
 
 #: admin/options-general.php:542
+#, fuzzy
 msgid "Show print button"
-msgstr ""
+msgstr "Pokaži gumb menija"
 
 #: admin/options-import.php:30
 msgid "ERROR: You have not selected any colour presets to be exported."
@@ -795,25 +894,29 @@ msgid "Choose a file from your computer:"
 msgstr ""
 
 #: admin/options-import.php:95
-#, php-format
+#, fuzzy, php-format
 msgid "Maximum size: %s"
-msgstr ""
+msgstr "Največja velikost skupine slik"
 
 #: admin/options-import.php:102
+#, fuzzy
 msgid "Upload file and import"
-msgstr ""
+msgstr "Uvoz in izvoz FLAC"
 
 #: admin/options-import.php:127
+#, fuzzy
 msgid "Import Theme Options"
-msgstr ""
+msgstr "Uvozi iz trenutne teme ..."
 
 #: admin/options-import.php:127
+#, fuzzy
 msgid "Import Theme Colour Presets"
-msgstr ""
+msgstr "Uvozi iz trenutne teme ..."
 
 #: admin/options-import.php:175
+#, fuzzy
 msgid "Options import completed."
-msgstr ""
+msgstr "Posodobitev je uspela."
 
 #: admin/options-import.php:176 admin/options-import.php:186
 msgid "&laquo; Return to Franz Josef Options"
@@ -821,8 +924,9 @@ msgstr ""
 
 #: admin/options-import.php:178 admin/options-import.php:188
 #: admin/options-import.php:194 admin/options-import.php:199
+#, fuzzy
 msgid "Sorry, there has been an error."
-msgstr ""
+msgstr "Napaka pri obrezovanju slike."
 
 #: admin/options-import.php:179
 msgid "The uploaded file does not contain valid Franz Josef options."
@@ -837,12 +941,14 @@ msgid "The uploaded file does not contain valid Franz Josef colour presets."
 msgstr ""
 
 #: admin/options-import.php:195
+#, fuzzy
 msgid "The uploaded file could not be read."
-msgstr ""
+msgstr "Seznama virov ni mogoče brati."
 
 #: admin/options-import.php:200
+#, fuzzy
 msgid "The uploaded file is not supported."
-msgstr ""
+msgstr "Vrsta datoteke s kazalom '%s' ni podprta"
 
 #: admin/options-import.php:208
 msgid ""
@@ -852,24 +958,29 @@ msgid ""
 msgstr ""
 
 #: admin/options-presets.php:18
+#, fuzzy
 msgid "Settings have been reset."
-msgstr ""
+msgstr "Vaše geslo je bilo ponastavljeno."
 
 #: admin/settings-init.php:44
+#, fuzzy
 msgid "Franz Josef Options"
-msgstr ""
+msgstr "Dodatne možnosti pretakanja"
 
 #: admin/settings-init.php:132
+#, fuzzy
 msgid "Oops, nothing found."
-msgstr ""
+msgstr "Datoteke ni mogoče najti"
 
 #: admin/settings-init.php:134
 msgid "Please select the exported Franz Josef options file to import."
 msgstr ""
 
 #: admin/settings-init.php:166
+#, fuzzy
 msgid "Toggle all options boxes"
 msgstr ""
+"Izberite \"Napredne možnosti\" za pregled in spreminjanje vseh nastavitev."
 
 #: admin/settings-validator.php:32
 msgid "ERROR: Invalid category to show in slider."
@@ -947,8 +1058,9 @@ msgid "ERROR: Bad URL entered for the favicon URL."
 msgstr ""
 
 #: admin/settings.php:51 admin/uninstall.php:23
+#, fuzzy
 msgid "Uninstall Franz Josef"
-msgstr ""
+msgstr "Odstrani storitve Oken."
 
 #: admin/settings.php:52
 msgid ""
@@ -957,12 +1069,14 @@ msgid ""
 msgstr ""
 
 #: admin/settings.php:53
+#, fuzzy
 msgid "This action is not reversible."
-msgstr ""
+msgstr "Lastnosti ni mogoče spreminjati"
 
 #: admin/settings.php:57 admin/settings.php:200
+#, fuzzy
 msgid "Uninstall Theme"
-msgstr ""
+msgstr "Izberite temo"
 
 #: admin/settings.php:71
 msgid "Franz Josef Theme Options"
@@ -975,20 +1089,23 @@ msgid ""
 msgstr ""
 
 #: admin/settings.php:97
+#, fuzzy
 msgid "Save Options"
-msgstr ""
+msgstr "Napredne možnosti:"
 
 #: admin/settings.php:115
 msgid "Franz Josef news"
 msgstr ""
 
 #: admin/settings.php:125
+#, fuzzy
 msgid "No news items."
-msgstr ""
+msgstr "Ni najdenih predmetov"
 
 #: admin/settings.php:149 admin/settings.php:158
+#, fuzzy
 msgid "Reset settings"
-msgstr ""
+msgstr "Nastavitve razhroščevanja"
 
 #: admin/settings.php:152
 msgid ""
@@ -1002,28 +1119,34 @@ msgid "<strong>WARNING:</strong> This action is not reversible."
 msgstr ""
 
 #: admin/settings.php:168
+#, fuzzy
 msgid "Import/export theme options"
-msgstr ""
+msgstr "Uvozi iz trenutne teme ..."
 
 #: admin/settings.php:171
+#, fuzzy
 msgid "Import"
-msgstr ""
+msgstr "Uvozi"
 
 #: admin/settings.php:174
+#, fuzzy
 msgid "Import theme options"
-msgstr ""
+msgstr "Uvozi iz trenutne teme ..."
 
 #: admin/settings.php:176
+#, fuzzy
 msgid "Export"
-msgstr ""
+msgstr "Izvozi"
 
 #: admin/settings.php:180
+#, fuzzy
 msgid "Export theme options"
-msgstr ""
+msgstr "Dodatne možnosti pretakanja"
 
 #: admin/settings.php:190
+#, fuzzy
 msgid "Uninstall theme"
-msgstr ""
+msgstr "Izberite temo"
 
 #: admin/settings.php:193
 msgid ""
@@ -1055,8 +1178,9 @@ msgid ""
 msgstr ""
 
 #: admin/settings.php:242
+#, fuzzy
 msgid "OK, got it!"
-msgstr ""
+msgstr "&Razdvoji in izreži"
 
 #: admin/settings.php:243
 msgid ""
@@ -1130,13 +1254,14 @@ msgid "Thanks again for choosing Franz Josef!"
 msgstr ""
 
 #: admin/thank-you.php:35
+#, fuzzy
 msgid "Got it!"
-msgstr ""
+msgstr "Izbriši: %s"
 
 #: admin/uninstall.php:24
-#, php-format
+#, fuzzy, php-format
 msgid "Theme uninstalled. Redirecting to %s"
-msgstr ""
+msgstr "Izberite temo za namestitev"
 
 #: admin/user.php:8
 msgid "Franz Josef-specific User Profile Information"
@@ -1147,8 +1272,9 @@ msgid "Additional user profile fields used in the Franz Josef theme."
 msgstr ""
 
 #: admin/user.php:15
+#, fuzzy
 msgid "Profile header image URL"
-msgstr ""
+msgstr "Dodaj sliko glave"
 
 #. translators: %1$s will be replaced by link to the user's profile page
 #: admin/user.php:21
@@ -1157,16 +1283,18 @@ msgid "Header image for your %1$s. Recommended size is 1920x350 pixels."
 msgstr ""
 
 #: admin/user.php:27
+#, fuzzy
 msgid "Hide email"
-msgstr ""
+msgstr "Elektronski naslov seje"
 
 #: admin/user.php:31
 msgid "Remove email address from your author bio."
 msgstr ""
 
 #: admin/user.php:36
+#, fuzzy
 msgid "Current location"
-msgstr ""
+msgstr "Mesto prikaza:"
 
 #: admin/user.php:41
 msgid ""
@@ -1175,8 +1303,9 @@ msgid ""
 msgstr ""
 
 #: admin/user.php:46
+#, fuzzy
 msgid "Social media URLs"
-msgstr ""
+msgstr "Seznam Podcast naslovov URL"
 
 #: archive.php:13
 #, php-format
@@ -1190,8 +1319,9 @@ msgstr "Mesečni arhiv: %s"
 
 #. translators: F will be replaced with month, and Y will be replaced with year, so "F Y" in English would be replaced with something like "June 2008".
 #: archive.php:17
+#, fuzzy
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: archive.php:18
 #, php-format
@@ -1199,8 +1329,9 @@ msgid "Yearly Archive: %s"
 msgstr "Letni arhiv: %s"
 
 #: author.php:29
+#, fuzzy
 msgid "About"
-msgstr ""
+msgstr "O programu"
 
 #: author.php:38
 msgid "Popular"
@@ -1217,7 +1348,7 @@ msgstr "Zadnje objave"
 
 #: comments.php:16
 msgid "Comments"
-msgstr ""
+msgstr "Komentarji"
 
 #: comments.php:17
 msgid ""
@@ -1243,16 +1374,19 @@ msgid "Skip to comment form"
 msgstr "Nadaljuj na komentiranje"
 
 #: comments.php:75
+#, fuzzy
 msgid "Comments have been closed."
-msgstr ""
+msgstr "Komentarji so izklopljeni."
 
 #: comments.php:85
+#, fuzzy
 msgid "Submit Comment"
-msgstr ""
+msgstr "Dodaj komentar"
 
 #: comments.php:86
+#, fuzzy
 msgid "Your email address will not be published."
-msgstr ""
+msgstr "Vaš e-naslov ne bo objavljen."
 
 #: footer.php:58
 #, php-format
@@ -1260,41 +1394,48 @@ msgid "Delicately crafted using %s and WordPress."
 msgstr ""
 
 #: footer.php:58
+#, fuzzy
 msgid "Franz Josef theme"
-msgstr ""
+msgstr "Tema okenskih okraskov"
 
 #: header.php:42
+#, fuzzy
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Oznaka za navigacijo"
 
 #: inc/comments.php:23
 msgid "Reply"
 msgstr "Odgovori"
 
 #: inc/comments.php:31
+#, fuzzy
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Vaš komentar čaka na moderiranje."
 
 #: inc/comments.php:50
-#, php-format
+#, fuzzy, php-format
 msgid "%1$s on %2$s at %3$s"
-msgstr ""
+msgstr "at-pravila"
 
 #: inc/comments.php:56
+#, fuzzy
 msgid "Author"
-msgstr ""
+msgstr "Avtor"
 
 #: inc/comments.php:94
+#, fuzzy
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #: inc/comments.php:98
+#, fuzzy
 msgid "Email"
-msgstr ""
+msgstr "e-Pošta"
 
 #: inc/comments.php:102
+#, fuzzy
 msgid "Website (optional)"
-msgstr ""
+msgstr "Zajem spletne strani"
 
 #: inc/comments.php:128
 msgid "Your message"
@@ -1305,20 +1446,23 @@ msgid "Post Comment"
 msgstr "Pošlji komentar"
 
 #: inc/comments.php:237
+#, fuzzy
 msgid "Delete this comment"
-msgstr ""
+msgstr "Izbriši ta profil"
 
 #: inc/comments.php:239
 msgid "Mark this comment as spam"
 msgstr ""
 
 #: inc/comments.php:239
+#, fuzzy
 msgid "Spam"
-msgstr ""
+msgstr "Neželena vsebina"
 
 #: inc/loop.php:92
+#, fuzzy
 msgid "Print this page"
-msgstr ""
+msgstr "Naloženo na to stran"
 
 #: inc/loop.php:114
 #, php-format
@@ -1326,21 +1470,21 @@ msgid "By %1$s under %2$s"
 msgstr "Objavil %1$s pod %2$s"
 
 #: inc/loop.php:115
-#, php-format
+#, fuzzy, php-format
 msgid "Filed under %2$s"
-msgstr ""
+msgstr "Objavil %1$s pod %2$s"
 
 #: inc/loop.php:116
-#, php-format
+#, fuzzy, php-format
 msgid "By %s"
-msgstr ""
+msgstr "Avtor %s"
 
 #: inc/loop.php:125 inc/stacks.php:297
 #, php-format
 msgid "%d comment"
 msgid_plural "%d comments"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d komentar"
+msgstr[1] "%d komentarjev"
 
 #: inc/loop.php:125 inc/loop.php:176 inc/stacks.php:297
 msgid "Leave a reply"
@@ -1351,16 +1495,18 @@ msgid "In this section"
 msgstr "V tej sekciji"
 
 #: inc/loop.php:352
+#, fuzzy
 msgid "&laquo; Prev"
-msgstr ""
+msgstr "&lt; Nazaj"
 
 #: inc/loop.php:353
 msgid "Next &raquo;"
 msgstr "Naprej &raquo;"
 
 #: inc/loop.php:367
+#, fuzzy
 msgid "Pages:"
-msgstr ""
+msgstr "Strani:"
 
 #: inc/loop.php:463
 msgid "Previous"
@@ -1371,42 +1517,49 @@ msgid "Next"
 msgstr "Naprej"
 
 #: inc/menus.php:116
+#, fuzzy
 msgid "FontAwesome Icon Name"
-msgstr ""
+msgstr "Vnesite ime filtra"
 
 #: inc/menus.php:159
-#, php-format
+#, fuzzy, php-format
 msgid "Choose from 580+ %s"
-msgstr ""
+msgstr "Izberi med najbolj pogosto uporabljenimi oznakami"
 
 #: inc/menus.php:159
+#, fuzzy
 msgid "available icons"
-msgstr ""
+msgstr "Ikone namizja"
 
 #: inc/menus.php:201
+#, fuzzy
 msgid "Home"
-msgstr ""
+msgstr "Začetek"
 
 #: inc/menus.php:277
-#, php-format
+#, fuzzy, php-format
 msgid "#%d (no title)"
-msgstr ""
+msgstr "#%d (brez naslova)"
 
 #: inc/setup.php:42
+#, fuzzy
 msgid "Top Menu"
-msgstr ""
+msgstr "Vrhnji meni"
 
 #: inc/setup.php:43
+#, fuzzy
 msgid "Header Menu"
-msgstr ""
+msgstr "--- DVD meni"
 
 #: inc/setup.php:44
+#, fuzzy
 msgid "Footer Menu"
-msgstr ""
+msgstr "--- DVD meni"
 
 #: inc/setup.php:59
+#, fuzzy
 msgid "Sidebar"
-msgstr ""
+msgstr "Stranska vrstica"
 
 #: inc/setup.php:80
 msgid ""
@@ -1423,8 +1576,9 @@ msgid "Testimonials"
 msgstr ""
 
 #: inc/stacks.php:126
+#, fuzzy
 msgid "They love you!"
-msgstr ""
+msgstr "$18 US (Obožujemo te!)"
 
 #: inc/stacks.php:187
 msgid "Latest Articles"
@@ -1439,56 +1593,68 @@ msgid "Display custom menu assigned to the Top Menu location."
 msgstr ""
 
 #: inc/widgets.php:58 inc/widgets.php:128 inc/widgets.php:219
+#, fuzzy
 msgid "Width:"
-msgstr ""
+msgstr "Širina"
 
 #: inc/widgets.php:60 inc/widgets.php:130 inc/widgets.php:221
+#, fuzzy
 msgid "Full width"
-msgstr ""
+msgstr "Širina _tabulatorja:"
 
 #: inc/widgets.php:61 inc/widgets.php:131 inc/widgets.php:222
+#, fuzzy
 msgid "3/4 width"
-msgstr ""
+msgstr "Širina"
 
 #: inc/widgets.php:62 inc/widgets.php:132 inc/widgets.php:223
+#, fuzzy
 msgid "2/3 width"
-msgstr ""
+msgstr "Širina"
 
 #: inc/widgets.php:63 inc/widgets.php:133 inc/widgets.php:224
+#, fuzzy
 msgid "Half width"
-msgstr ""
+msgstr "Širina _tabulatorja:"
 
 #: inc/widgets.php:64 inc/widgets.php:134 inc/widgets.php:225
+#, fuzzy
 msgid "1/3 width"
-msgstr ""
+msgstr "Širina"
 
 #: inc/widgets.php:65 inc/widgets.php:135 inc/widgets.php:226
+#, fuzzy
 msgid "1/4 width"
-msgstr ""
+msgstr "Širina"
 
 #: inc/widgets.php:69 inc/widgets.php:139 inc/widgets.php:230
+#, fuzzy
 msgid "Text alignment:"
-msgstr ""
+msgstr "Poravnava podatkov"
 
 #: inc/widgets.php:71 inc/widgets.php:141 inc/widgets.php:232
+#, fuzzy
 msgid "Left"
-msgstr ""
+msgstr "Levo"
 
 #: inc/widgets.php:72 inc/widgets.php:142 inc/widgets.php:233
+#, fuzzy
 msgid "Center"
-msgstr ""
+msgstr "Sredinsko"
 
 #: inc/widgets.php:73 inc/widgets.php:143 inc/widgets.php:234
+#, fuzzy
 msgid "Right"
-msgstr ""
+msgstr "Desno"
 
 #: inc/widgets.php:98
 msgid "Franz Josef Top Bar: Social Links"
 msgstr ""
 
 #: inc/widgets.php:99
+#, fuzzy
 msgid "Display social profile links."
-msgstr ""
+msgstr "Ali želite uvoziti barvni profil zaslona?"
 
 #: inc/widgets.php:166
 msgid "Insert custom text or HTML."
@@ -1499,8 +1665,9 @@ msgid "Franz Josef Top Bar: Text"
 msgstr ""
 
 #: inc/widgets.php:216
+#, fuzzy
 msgid "Automatically add paragraphs"
-msgstr ""
+msgstr "Samodejno dodaj odstavke"
 
 #: loop-author.php:14
 msgid "Read more..."
@@ -1531,20 +1698,23 @@ msgstr ""
 "Poskusite nekaj drugega?"
 
 #: searchform.php:4
+#, fuzzy
 msgid "Search keyword"
-msgstr ""
+msgstr "Nadzorna beseda"
 
 #: searchform.php:5
 msgid "Search"
 msgstr "Iskanje"
 
 #: template-single-column.php:5
+#, fuzzy
 msgid "Single column"
-msgstr ""
+msgstr "Lastnosti stolpca"
 
 #: yarpp-template-single.php:12
+#, fuzzy
 msgid "Related posts"
-msgstr ""
+msgstr "Novejši prispevki"
 
 #: yarpp-template-single.php:33
 #, php-format

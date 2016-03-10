@@ -128,12 +128,18 @@ $brand-danger: #d9534f !default;
   letter-spacing: 1px;
   font-weight: 500;
   font-size: 16px;
+  border-radius: 0;
+
+  &.btn-default       { background-color: transparent; border-color: $brand-warning; color: $brand-warning; }
+  &.btn-default:hover { background-color: $brand-warning; color: #fff; }
+
   // override
   &.btn-primary { background-color: $brand-primary; border-color: $brand-primary; }
   &.btn-success { background-color: $brand-success; border-color: $brand-success; }
   &.btn-info    { background-color: $brand-info;    border-color: $brand-info;    }
   &.btn-warning { background-color: $brand-warning; border-color: $brand-warning; }
   &.btn-danger  { background-color: $brand-danger;  border-color: $brand-danger;  }
+
   // bootstrap outline button
   &.btn-outline {
     &.btn-primary { background-color: transparent; color: $brand-primary; }
@@ -141,7 +147,6 @@ $brand-danger: #d9534f !default;
     &.btn-info    { background-color: transparent; color: $brand-info;    }
     &.btn-warning { background-color: transparent; color: $brand-warning; }
     &.btn-danger  { background-color: transparent; color: $brand-danger;  }
-
     &:hover {
       &.btn-primary { background-color: $brand-primary; color: #fff; }
       &.btn-success { background-color: $brand-success; color: #fff; }
@@ -149,10 +154,6 @@ $brand-danger: #d9534f !default;
       &.btn-warning { background-color: $brand-warning; color: #fff; }
       &.btn-danger  { background-color: $brand-danger;  color: #fff; }
     }
-  }
-  // sharp
-  &.btn-sharp {
-    border-radius: 0;
   }
 }
 
@@ -209,6 +210,14 @@ a {
 
   &:hover {
     color: darken($blue, 10%);
+  }
+}
+
+a {
+  color: $orange;
+
+  &:hover {
+    color: darken($orange, 10%);
   }
 }
 
@@ -408,9 +417,12 @@ h1, h2, h3, h4, h5, h6 {
 
 // post entry
 .entry-meta {
+  li {
+    font-size: 14px;
+  }
   .date {
     a {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 400;
       font-family: 'Geogrotesque';
     }
@@ -516,6 +528,7 @@ h1, h2, h3, h4, h5, h6 {
           letter-spacing: 1px;
           font-weight: 500;
           font-size: 16px;
+          transition: background ease-in 0.1s, color ease-in 0.1s;
           &:hover {
             background: $brand-warning;
             color: #fff;

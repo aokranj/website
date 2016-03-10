@@ -118,7 +118,15 @@
   font-family: 'Geogrotesque';
   letter-spacing: 1px;
   font-weight: 500;
-  font-size: 16px; }
+  font-size: 16px;
+  border-radius: 0; }
+  .btn.btn-default {
+    background-color: transparent;
+    border-color: #f7941e;
+    color: #f7941e; }
+  .btn.btn-default:hover {
+    background-color: #f7941e;
+    color: #fff; }
   .btn.btn-primary {
     background-color: #337ab7;
     border-color: #337ab7; }
@@ -164,8 +172,6 @@
   .btn.btn-outline:hover.btn-danger {
     background-color: #d9534f;
     color: #fff; }
-  .btn.btn-sharp {
-    border-radius: 0; }
 
 body {
   font-family: 'Geogrotesque';
@@ -191,6 +197,11 @@ a {
   color: #25aae1; }
   a:hover {
     color: #1a8bb9; }
+
+a {
+  color: #f7941e; }
+  a:hover {
+    color: #da7a08; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
@@ -322,8 +333,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Geogrotesque';
     font-size: 15px; }
 
+.entry-meta li {
+  font-size: 14px; }
+
 .entry-meta .date a {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   font-family: 'Geogrotesque'; }
 
@@ -370,7 +384,8 @@ h1, h2, h3, h4, h5, h6 {
         font-family: 'Geogrotesque';
         letter-spacing: 1px;
         font-weight: 500;
-        font-size: 16px; }
+        font-size: 16px;
+        transition: background ease-in 0.1s, color ease-in 0.1s; }
         .widget-reportaza ul li .pis-more a:hover {
           background: #f7941e;
           color: #fff; }
