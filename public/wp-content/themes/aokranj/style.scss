@@ -122,6 +122,17 @@ $brand-danger: #d9534f !default;
 .background-lightgray { background-color: $lightgray; }
 .background-darkgray { background-color: $darkgray; }
 
+.navbar {
+  .navbar-nav > li > a {
+    font-family: 'Geogrotesque';
+    color: #a7a9ac;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+  }
+}
+
 // button
 .btn {
   font-family: 'Geogrotesque';
@@ -205,14 +216,6 @@ body {
 }
 
 // link
-a {
-  color: $blue;
-
-  &:hover {
-    color: darken($blue, 10%);
-  }
-}
-
 a {
   color: $orange;
 

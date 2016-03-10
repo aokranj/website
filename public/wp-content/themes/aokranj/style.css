@@ -114,6 +114,14 @@
 .background-darkgray {
   background-color: #b4b4b4; }
 
+.navbar .navbar-nav > li > a {
+  font-family: 'Geogrotesque';
+  color: #a7a9ac;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: none; }
+
 .btn {
   font-family: 'Geogrotesque';
   letter-spacing: 1px;
@@ -192,11 +200,6 @@ body {
 @media screen and (max-width: 600px) {
   #wpadminbar {
     position: fixed; } }
-
-a {
-  color: #25aae1; }
-  a:hover {
-    color: #1a8bb9; }
 
 a {
   color: #f7941e; }
