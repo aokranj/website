@@ -122,7 +122,132 @@ $brand-danger: #d9534f !default;
 .background-lightgray { background-color: $lightgray; }
 .background-darkgray { background-color: $darkgray; }
 
+// body
+body {
+  font-family: 'Geogrotesque';
+  font-size: 15px;
+
+  // fix body padding on wide-nav
+  @media screen and (min-width: 768px) and (max-width: 1006px) {
+    padding-top: 84px;
+  }
+
+  // fix pinned header height
+  &.navbar-pinned {
+    .wide-nav {
+      .navbar-header {
+        @media screen and (min-width: 768px) and (max-width: 960px) {
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  // body with admin bar
+  &.admin-bar {
+
+    // fix navbar top
+    .navbar {
+      @media screen and (min-width: 768px) and (max-width: 782px) {
+        top: 46px;
+      }
+    }
+
+    // fix navbar fixed top
+    .navbar-fixed-top  {
+      @media (max-width: 768px) {
+        top: 46px;
+      }
+    }
+  }
+}
+
+
+// menu
 .navbar {
+  background: #1d1d1e;
+
+  .navbar-header {
+    &.logo {
+      min-width: 182px;
+      background-image: url('images/aokranj-logo.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      h1 {
+        a {
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 767px) {
+        position: relative;
+        top: 2px;
+        background-position: 5px center;
+
+        h1 {
+          display: block;
+          min-height: 48px;
+          margin-top: 0;
+
+          a {
+            display: block;
+            height: 48px;
+            width: 182px;
+          }
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        position: relative;
+        top: 4px;
+
+        h1 {
+          display: block;
+          margin-top: 0;
+          height: 48px;
+
+          a {
+            display: inline-block;
+            width: 182px;
+            height: 48px;
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        height: 100%;
+        h1 {
+          display: block;
+          width: 100%;
+          height: 85px;
+          margin: 0;
+          padding: 0;
+          a {
+            display: block;
+            width: 100%;
+            height: 85px;
+          }
+        }
+      }
+
+      /*
+        height: 100%;
+        h1 {
+          margin: 0;
+        }
+      }
+      @media (min-width: 992px) {
+        height: 100%;
+        h1 {
+          margin: 10px 0 0 0;
+          line-height: 65px;
+          display: block;
+        }
+      }
+      */
+    }
+  }
+
   .navbar-nav > li > a {
     font-family: 'Geogrotesque';
     color: #a7a9ac;
@@ -164,46 +289,6 @@ $brand-danger: #d9534f !default;
       &.btn-info    { background-color: $brand-info;    color: #fff; }
       &.btn-warning { background-color: $brand-warning; color: #fff; }
       &.btn-danger  { background-color: $brand-danger;  color: #fff; }
-    }
-  }
-}
-
-// body
-body {
-  font-family: 'Geogrotesque';
-  font-size: 15px;
-
-  // fix body padding on wide-nav
-  @media screen and (min-width: 768px) and (max-width: 1006px) {
-    padding-top: 76px;
-  }
-
-  // fix pinned header height
-  &.navbar-pinned {
-    .wide-nav {
-      .navbar-header {
-        @media screen and (min-width: 768px) and (max-width: 960px) {
-          height: 40px;
-        }
-      }
-    }
-  }
-
-  // body with admin bar
-  &.admin-bar {
-
-    // fix navbar top
-    .navbar {
-      @media screen and (min-width: 768px) and (max-width: 782px) {
-        top: 46px;
-      }
-    }
-
-    // fix navbar fixed top
-    .navbar-fixed-top  {
-      @media (max-width: 768px) {
-        top: 46px;
-      }
     }
   }
 }

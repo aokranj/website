@@ -114,13 +114,91 @@
 .background-darkgray {
   background-color: #b4b4b4; }
 
-.navbar .navbar-nav > li > a {
+body {
   font-family: 'Geogrotesque';
-  color: #a7a9ac;
-  font-size: 18px;
-  font-weight: 400;
-  font-style: italic;
-  text-transform: none; }
+  font-size: 15px; }
+  @media screen and (min-width: 768px) and (max-width: 1006px) {
+    body {
+      padding-top: 84px; } }
+  @media screen and (min-width: 768px) and (max-width: 960px) {
+    body.navbar-pinned .wide-nav .navbar-header {
+      height: 40px; } }
+  @media screen and (min-width: 768px) and (max-width: 782px) {
+    body.admin-bar .navbar {
+      top: 46px; } }
+  @media (max-width: 768px) {
+    body.admin-bar .navbar-fixed-top {
+      top: 46px; } }
+
+.navbar {
+  background: #1d1d1e; }
+  .navbar .navbar-header.logo {
+    min-width: 182px;
+    background-image: url("images/aokranj-logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*
+        height: 100%;
+        h1 {
+          margin: 0;
+        }
+      }
+      @media (min-width: 992px) {
+        height: 100%;
+        h1 {
+          margin: 10px 0 0 0;
+          line-height: 65px;
+          display: block;
+        }
+      }
+      */ }
+    .navbar .navbar-header.logo h1 a {
+      opacity: 0; }
+    @media (max-width: 767px) {
+      .navbar .navbar-header.logo {
+        position: relative;
+        top: 2px;
+        background-position: 5px center; }
+        .navbar .navbar-header.logo h1 {
+          display: block;
+          min-height: 48px;
+          margin-top: 0; }
+          .navbar .navbar-header.logo h1 a {
+            display: block;
+            height: 48px;
+            width: 182px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .navbar .navbar-header.logo {
+        position: relative;
+        top: 4px; }
+        .navbar .navbar-header.logo h1 {
+          display: block;
+          margin-top: 0;
+          height: 48px; }
+          .navbar .navbar-header.logo h1 a {
+            display: inline-block;
+            width: 182px;
+            height: 48px; } }
+    @media (min-width: 992px) {
+      .navbar .navbar-header.logo {
+        height: 100%; }
+        .navbar .navbar-header.logo h1 {
+          display: block;
+          width: 100%;
+          height: 85px;
+          margin: 0;
+          padding: 0; }
+          .navbar .navbar-header.logo h1 a {
+            display: block;
+            width: 100%;
+            height: 85px; } }
+  .navbar .navbar-nav > li > a {
+    font-family: 'Geogrotesque';
+    color: #a7a9ac;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none; }
 
 .btn {
   font-family: 'Geogrotesque';
@@ -180,22 +258,6 @@
   .btn.btn-outline:hover.btn-danger {
     background-color: #d9534f;
     color: #fff; }
-
-body {
-  font-family: 'Geogrotesque';
-  font-size: 15px; }
-  @media screen and (min-width: 768px) and (max-width: 1006px) {
-    body {
-      padding-top: 76px; } }
-  @media screen and (min-width: 768px) and (max-width: 960px) {
-    body.navbar-pinned .wide-nav .navbar-header {
-      height: 40px; } }
-  @media screen and (min-width: 768px) and (max-width: 782px) {
-    body.admin-bar .navbar {
-      top: 46px; } }
-  @media (max-width: 768px) {
-    body.admin-bar .navbar-fixed-top {
-      top: 46px; } }
 
 @media screen and (max-width: 600px) {
   #wpadminbar {
