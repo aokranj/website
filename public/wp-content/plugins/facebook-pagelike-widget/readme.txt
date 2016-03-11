@@ -12,7 +12,7 @@ This widget adds a Simple Facebook page Like Widget into your WordPress website 
 
 == Description ==
 
-This is one of the most popular plugin for facebook page feeds widget with over 2,42,000 downloads and 60,000+ active installs.
+This is one of the most popular plugin for facebook page feeds widget with over 2,47,000 downloads and 60,000+ active installs.
 
 An inside look:
 
@@ -71,6 +71,9 @@ I have tested my widget with following themes. Please let me know your theme nam
 * News Pro (http://my.studiopress.com/themes/news/)
 
 == Changelog ==
+
+= Version 4.0 =
+* Changes in code to make plugin compitable for Translation.
 
 = Version 3.1 =
 * Removed offset warning for language dropdown.

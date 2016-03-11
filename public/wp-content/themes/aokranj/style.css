@@ -137,8 +137,9 @@ body {
     background-image: url("images/aokranj-logo.png");
     background-repeat: no-repeat;
     background-position: center center; }
-    .navbar .navbar-header.logo h1 a {
-      opacity: 0; text-indent: -9999px; }
+    .navbar .navbar-header.logo h1.site-title a {
+      opacity: 0;
+      text-indent: -9999px; }
     @media (max-width: 767px) {
       .navbar .navbar-header.logo {
         position: relative;
@@ -218,6 +219,21 @@ body {
   .btn.btn-danger {
     background-color: #d9534f;
     border-color: #d9534f; }
+  .btn:hover.btn-primary {
+    background-color: #286090;
+    border-color: #286090; }
+  .btn:hover.btn-success {
+    background-color: #449d44;
+    border-color: #449d44; }
+  .btn:hover.btn-info {
+    background-color: #31b0d5;
+    border-color: #31b0d5; }
+  .btn:hover.btn-warning {
+    background-color: #da7a08;
+    border-color: #da7a08; }
+  .btn:hover.btn-danger {
+    background-color: #c9302c;
+    border-color: #c9302c; }
   .btn.btn-outline.btn-primary {
     background-color: transparent;
     color: #337ab7; }
@@ -264,45 +280,100 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel {
   box-shadow: 0 0 3px #ccc; }
+  .carousel .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; }
   .carousel .carousel-caption {
-    /*position: absolute;
-    top: 20%;
-    padding: 0;*/ }
-    @media (width: 640px) and (orientation: landscape) {
-      /*.carousel .carousel-caption {
-        top: 10%; }*/ }
-    @media (min-width: 768px) {
-      /*.carousel .carousel-caption {
-        top: 20%; }*/ }
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0 auto;
+    padding: 15px;
+    width: 80%;
+    max-width: 960px;
+    background: rgba(0, 0, 0, 0.6); }
+    .carousel .carousel-caption p {
+      margin: 0; }
     .carousel .carousel-caption .slide-title {
-      /*margin-bottom: 0;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.6);
-      font-weight: 700;
-      font-family: 'Geogrotesque';*/ }
-    .carousel .carousel-caption .excerpt {
-      /*background: rgba(0, 0, 0, 0.6);
-      padding: 0 10px 15px 10px;
-      margin-bottom: 10px;
-      font-size: 2vw;
+      margin: 0;
+      padding: 0 0 15px 0;
+      font-size: 4vw !important;
       line-height: 4vw;
+      font-size: 18px !important;
+      line-height: 22px;
+      font-weight: 700;
+      font-family: 'Geogrotesque'; }
+    .carousel .carousel-caption .excerpt {
+      margin: 0;
+      padding: 0 0 15px 0;
+      font-size: 3.4vw;
+      line-height: 3.6vw;
+      font-size: 13px;
+      line-height: 16px;
       font-weight: 400;
-      font-family: 'Geogrotesque';
-      @media (min-width: 680px) and (max-width: 768px) {
-        font-size: 2.4vw;
-        line-height: 4vw;
-      }
-      */ }
-      .carousel .carousel-caption .excerpt p {
-        margin: 0; }
-      @media (min-width: 768px) {
-        .carousel .carousel-caption .excerpt {
-          margin-bottom: 20px; } }
+      font-family: 'Geogrotesque'; }
     .carousel .carousel-caption .call-to-action {
-      margin-top: 10px; }
-      @media (min-width: 768px) {
-        .carousel .carousel-caption .call-to-action {
-          margin-bottom: 20px; } }
+      margin: 0; }
+      .carousel .carousel-caption .call-to-action p {
+        margin: 0 !important; }
+    @media (min-width: 480px) {
+      .carousel .carousel-caption .slide-title {
+        font-size: 3.6vw !important;
+        line-height: 3.6vw;
+        font-size: 22px !important;
+        line-height: 26px; }
+      .carousel .carousel-caption .excerpt {
+        font-size: 14px;
+        line-height: 16px; } }
+    @media (min-width: 568px) {
+      .carousel .carousel-caption .slide-title {
+        font-size: 3.4vw !important;
+        line-height: 3.4vw;
+        font-size: 22px !important;
+        line-height: 26px; }
+      .carousel .carousel-caption .excerpt {
+        font-size: 3vw;
+        line-height: 3.2vw;
+        font-size: 16px;
+        line-height: 18px; } }
+    @media (min-width: 768px) {
+      .carousel .carousel-caption {
+        padding: 20px; }
+        .carousel .carousel-caption .slide-title {
+          padding-bottom: 20px;
+          font-size: 3.4vw !important;
+          line-height: 3.4vw;
+          font-size: 24px !important;
+          line-height: 28px; }
+        .carousel .carousel-caption .excerpt {
+          padding-bottom: 22px;
+          font-size: 2.6vw;
+          line-height: 2.8vw;
+          font-size: 18px;
+          line-height: 20px; } }
+    @media (min-width: 992px) {
+      .carousel .carousel-caption {
+        padding: 30px; }
+        .carousel .carousel-caption .slide-title {
+          padding-bottom: 30px;
+          font-size: 3vw !important;
+          line-height: 3vw;
+          font-size: 26px !important;
+          line-height: 30px; }
+        .carousel .carousel-caption .excerpt {
+          padding-bottom: 32px;
+          font-size: 2.4vw;
+          line-height: 2.6vw;
+          font-size: 20px;
+          line-height: 22px; } }
+    @media (min-width: 1200px) {
+      .carousel .carousel-caption {
+        width: 84%; } }
   @media (min-width: 768px) {
     .carousel .carousel-control.left span, .carousel .carousel-control.right span {
       margin-top: -15px; } }

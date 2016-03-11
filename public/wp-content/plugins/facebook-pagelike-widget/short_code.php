@@ -31,7 +31,7 @@ function fb_plugin_shortcode() {
         }
     }
     else {
-        return "Please configure Widget first..!!";
+        return __( 'Please configure Widget first..!!', 'facebook-pagelike-widget' );
     }
 }
 add_shortcode('fb_widget','fb_plugin_shortcode');

@@ -1,9 +1,17 @@
 var gulp = require('gulp'); 
 var sass = require('gulp-sass');
+var plumber = require('gulp-plumber');
 var livereload = require('gulp-livereload');
+
+function errorHandler(error) {
+    console.log('==> ERROR:', error);
+}
 
 gulp.task('plugin', function () {
     gulp.src('public/wp-content/plugins/aokranj/sass/*.scss')
+        .pipe(plumber({
+            errorHandler: errorHandler
+        }))
         .pipe(sass())
         .pipe(gulp.dest('public/wp-content/plugins/aokranj/css'))
         .pipe(livereload());
@@ -11,6 +19,9 @@ gulp.task('plugin', function () {
 
 gulp.task('theme', function () {
     gulp.src('public/wp-content/themes/aokranj/style.scss')
+        .pipe(plumber({
+            errorHandler: errorHandler
+        }))
         .pipe(sass())
         .pipe(gulp.dest('public/wp-content/themes/aokranj'))
         .pipe(livereload());

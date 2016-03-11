@@ -7,7 +7,7 @@ class facebook_widget extends WP_Widget {
     /** constructor */
     function __construct() {
         parent::__construct(
-            'fbw_id', __( 'Facebook Page Like Widget', 'text_domain' )
+            'fbw_id', __( 'Facebook Page Like Widget', 'facebook-pagelike-widget' )
         );
     }
 
@@ -88,15 +88,15 @@ function form($instance) {
         $select_lng	                =	esc_attr($instance['select_lng']);
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'facebook-pagelike-widget' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('app_id'); ?>"><?php _e('Facebook Application Id:'); ?></label>
+            <label for="<?php echo $this->get_field_id('app_id'); ?>"><?php _e('Facebook Application Id:','facebook-pagelike-widget'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('app_id'); ?>" name="<?php echo $this->get_field_name('app_id'); ?>" type="text" value="<?php echo $app_id?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('fb_url'); ?>"><?php _e('Facebook Page Url:'); ?></label>
+            <label for="<?php echo $this->get_field_id('fb_url'); ?>"><?php _e('Facebook Page Url:','facebook-pagelike-widget'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('fb_url'); ?>" name="<?php echo $this->get_field_name('fb_url'); ?>" type="text" value="<?php echo $fb_url; ?>" />
             <small>
                 <?php _e('Works with only');?>
@@ -107,30 +107,30 @@ function form($instance) {
         </p>
         <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_show_posts'], "on") ?> id="<?php echo $this->get_field_id('data_show_posts'); ?>" name="<?php echo $this->get_field_name('data_show_posts'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_show_posts'); ?>"><?php _e('Show posts from the Page timeline'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_show_posts'); ?>"><?php _e('Show posts from the Page timeline','facebook-pagelike-widget'); ?></label>
         </p>
         <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_hide_cover'], "on") ?> id="<?php echo $this->get_field_id('data_hide_cover'); ?>" name="<?php echo $this->get_field_name('data_hide_cover'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_hide_cover'); ?>"><?php _e('Hide Cover'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_hide_cover'); ?>"><?php _e('Hide Cover','facebook-pagelike-widget'); ?></label>
         </p>
          <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_show_facepile'], "on") ?> id="<?php echo $this->get_field_id('data_show_facepile'); ?>" name="<?php echo $this->get_field_name('data_show_facepile'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_show_facepile'); ?>"><?php _e('Show profile photos when friends like this'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_show_facepile'); ?>"><?php _e('Show profile photos when friends like this','facebook-pagelike-widget'); ?></label>
         </p>
         <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_small_header'], "on") ?> id="<?php echo $this->get_field_id('data_small_header'); ?>" name="<?php echo $this->get_field_name('data_small_header'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_small_header'); ?>"><?php _e('Show Small Header'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_small_header'); ?>"><?php _e('Show Small Header','facebook-pagelike-widget'); ?></label>
         </p>
         <p>
             <input onclick="shoWidth();" class="checkbox" type="checkbox" <?php checked($instance['data_adapt_container_width'], "on") ?> id="<?php echo $this->get_field_id('data_adapt_container_width'); ?>" name="<?php echo $this->get_field_name('data_adapt_container_width'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_adapt_container_width'); ?>"><?php _e('Adapt To Plugin Container Width'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_adapt_container_width'); ?>"><?php _e('Adapt To Plugin Container Width','facebook-pagelike-widget'); ?></label>
         </p>
         <p class="width_option <?php echo $instance['data_adapt_container_width'] == 'on' ? 'hideme' : ''; ?>">
-           <label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('Set Width:'); ?></label>
+           <label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('Set Width:','facebook-pagelike-widget'); ?></label>
            <input size="5" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" />
         </p>
         <p>
-           <label for="<?php echo $this->get_field_id('height'); ?>"><?php _e('Set Height:'); ?></label>
+           <label for="<?php echo $this->get_field_id('height'); ?>"><?php _e('Set Height:','facebook-pagelike-widget'); ?></label>
            <input size="5" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />
         </p>
         <?php
@@ -140,7 +140,7 @@ function form($instance) {
             $xmlcont    =   new SimpleXMLElement($langs);
             ?>
             <p>
-               <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:'); ?></label>
+               <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:','facebook-pagelike-widget'); ?></label>
                <select name="<?php echo $this->get_field_name('select_lng'); ?>" id="<?php echo $this->get_field_id('select_lng'); ?>">
                 <?php        
                 if(!empty($xmlcont)) {
@@ -181,7 +181,7 @@ function form($instance) {
             $xmlcont    =   $xmlcont['locale'];
             ?>   
         <p>
-           <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:'); ?></label>
+           <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:','facebook-pagelike-widget'); ?></label>
            <select name="<?php echo $this->get_field_name('select_lng'); ?>" id="<?php echo $this->get_field_id('select_lng'); ?>">
             <?php
             if(!empty($xmlcont)) {
@@ -200,7 +200,7 @@ function form($instance) {
         } else {
         ?>
         <p>
-           <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language : '); ?></label>
+           <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:','facebook-pagelike-widget'); ?></label>
            <b>English</b> <br />(Your PHP configuration does not allow to read <a href="http://www.facebook.com/translations/FacebookLocales.xml" target="_blank">this</a> file.
            To unable language option, enable curl extension OR allow_url_fopen in your server configuration.)
         </p>
@@ -208,7 +208,7 @@ function form($instance) {
         }
         ?>
         <p>
-           <label for="<?php echo $this->get_field_id('custom_css'); ?>"><?php _e('Custom Css:'); ?></label>
+           <label for="<?php echo $this->get_field_id('custom_css'); ?>"><?php _e('Custom Css:','facebook-pagelike-widget'); ?></label>
            <textarea rows="4" cols="30" name="<?php echo $this->get_field_name('custom_css'); ?>"><?php echo trim($custom_css);?></textarea>
         </p>
         <script type="text/javascript">
