@@ -137,7 +137,7 @@ body {
     background-image: url("images/aokranj-logo.png");
     background-repeat: no-repeat;
     background-position: center center; }
-    .navbar .navbar-header.logo h1.site-title a {
+    .navbar .navbar-header.logo .site-title a {
       opacity: 0;
       text-indent: -9999px; }
     @media (max-width: 767px) {
