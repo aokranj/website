@@ -1,0 +1,128 @@
+/*
+ Theme Name:   AO Kranj
+ Theme URI:    http://aokranj.com
+ Description:  AO Kranj tema
+ Author:       Bojan Hribernik
+ Author URI:   http://climbuddy.com
+ Template:     franz-josef
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         aokranj alpinisticni odsek kranj alpinizem
+ Text Domain:  aokranj
+*/
+.background-orange {
+  background-color: #f7941e; }
+
+.background-green {
+  background-color: #8cc63f; }
+
+.background-blue {
+  background-color: #25aae1; }
+
+.background-purple {
+  background-color: #e025df; }
+
+.background-lightgray {
+  background-color: #a7a9ac; }
+
+.background-darkgray {
+  background-color: #b4b4b4; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueThin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'GeogrotesqueUltraLight';
+  src: url("fonts/GeogrotesqueUltraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueSemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueUltraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueLightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueRegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueMediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueSemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Geogrotesque';
+  src: url("fonts/GeogrotesqueBoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic; }
+
+body {
+  font-family: 'Geogrotesque';
+  font-size: 15px;
+  width: 848px; }
+
+a {
+  color: #f7941e; }
+  a:hover {
+    color: #da7a08; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-family: 'Geogrotesque'; }

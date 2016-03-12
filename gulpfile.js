@@ -27,10 +27,22 @@ gulp.task('theme', function () {
         .pipe(livereload());
 });
 
+gulp.task('editor', function () {
+    gulp.src('public/wp-content/themes/aokranj/editor.scss')
+        .pipe(plumber({
+            errorHandler: errorHandler
+        }))
+        .pipe(sass())
+        .pipe(gulp.dest('public/wp-content/themes/aokranj'))
+        .pipe(livereload());
+});
+
 gulp.task('watch', function() {
     livereload.listen();
     gulp.watch('public/wp-content/plugins/aokranj/sass/*.scss', ['plugin']);
     gulp.watch('public/wp-content/themes/aokranj/style.scss', ['theme']);
+    gulp.watch('public/wp-content/themes/aokranj/scss/*.scss', ['theme']);
+    gulp.watch('public/wp-content/themes/aokranj/editor.scss', ['editor']);
 });
 
 gulp.task('default', ['watch']);

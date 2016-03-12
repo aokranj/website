@@ -11,14 +11,26 @@
  Tags:         aokranj alpinisticni odsek kranj alpinizem
  Text Domain:  aokranj
 */
+
 @import 'scss/variables';
 @import 'scss/fonts';
-@import 'scss/core';
-@import 'scss/menu';
-@import 'scss/sidebar';
-@import 'scss/carousel';
-@import 'scss/buttons';
-@import 'scss/news';
-@import 'scss/posts';
-@import 'scss/post';
-@import 'scss/footer';
+
+body {
+  font-family: 'Geogrotesque';
+  font-size: 15px;
+  width: 848px;
+}
+
+a {
+  color: $orange;
+
+  &:hover {
+    color: darken($orange, 10%);
+  }
+}
+
+// headers
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-family: 'Geogrotesque';
+}

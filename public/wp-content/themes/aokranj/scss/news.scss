@@ -1,0 +1,43 @@
+// news list on frontpage
+.news-list {
+  //box-shadow: 0 0 3px #ccc;
+  border: 1px solid #d1d2d4;
+  padding: 30px;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Geogrotesque';
+    color: $orange;
+  }
+
+  ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+
+    li {
+      span {
+        font-size: 15px;
+      }
+      h3 {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        a {
+          display: inline-block;
+          color: #000;
+          line-height: 30px;
+          font-size: 18px;
+          font-weight: 500;
+          font-family: 'Geogrotesque';
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

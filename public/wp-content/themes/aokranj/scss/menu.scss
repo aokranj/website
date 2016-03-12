@@ -1,0 +1,105 @@
+
+// menu
+.navbar {
+  background: #1d1d1e;
+
+  .navbar-header {
+    &.logo {
+      min-width: 182px;
+      background-image: url('images/aokranj-logo.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      .site-title {
+        a {
+          opacity: 0;
+          text-indent: -9999px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        position: relative;
+        top: 2px;
+        background-position: 5px center;
+
+        .site-title {
+          display: block;
+          min-height: 48px;
+          margin-top: 0;
+
+          a {
+            display: block;
+            height: 48px;
+            width: 182px;
+          }
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        position: relative;
+        top: 4px;
+
+        .site-title {
+          display: block;
+          margin-top: 0;
+          height: 48px;
+
+          a {
+            display: inline-block;
+            width: 182px;
+            height: 48px;
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        height: 100%;
+        .site-title {
+          display: block;
+          width: 100%;
+          height: 90%;
+          margin: 0;
+          padding: 0;
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-nav > li > a {
+    font-family: 'Geogrotesque';
+    color: #a7a9ac;
+    font-size: 18px;
+    font-weight: 400;
+    //font-style: italic;
+    text-transform: none;
+
+    i {
+      margin-top: 0px;
+    }
+
+    @media (min-width: 992px) {
+      i {
+        margin-top: -3px;
+      }
+    }
+  }
+
+  // hide category description
+  .desc {
+    display: none;
+  }
+}
+
+// stupid wordpress
+@media (min-width: 992px) {
+  .navbar-pinned .site-title {
+    margin-top: 5px !important;
+    height: 40px !important;
+    overflow: hidden;
+  }
+}

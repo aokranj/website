@@ -1,0 +1,23 @@
+// variables
+$orange: #f7941e;
+$green: #8cc63f;
+$blue: #25aae1;
+$red: #d73333;
+$purple: #e025df;
+$lightgray: #a7a9ac;
+$darkgray: #b4b4b4;
+
+// bootstrap variables
+$brand-primary: darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f7941e !default;
+$brand-danger: #d9534f !default;
+
+// backgrounds
+.background-orange { background-color: $orange; }
+.background-green { background-color: $green; }
+.background-blue { background-color: $blue; }
+.background-purple { background-color: $purple; }
+.background-lightgray { background-color: $lightgray; }
+.background-darkgray { background-color: $darkgray; }

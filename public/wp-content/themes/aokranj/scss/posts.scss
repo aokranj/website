@@ -1,0 +1,73 @@
+
+// post list on frontpage
+.posts-list {
+
+  .highlight-title {
+    display: none;
+  }
+
+  .item {
+    box-shadow: none;
+    border: 1px solid #d1d2d4 !important;
+    font-family: 'Geogrotesque';
+
+    .featured-image {
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    .item-title {
+      padding: 30px 30px 0 30px;
+      font-family: 'Geogrotesque';
+      a {
+        color: $orange;
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 300;
+        &:hover {
+          color: darken($orange, 10%);
+        }
+      }
+    }
+
+    .author {
+      padding: 5px 30px 30px 30px;
+      font-size: 15px;
+      font-family: 'Geogrotesque';
+      color: $lightgray;
+      a {
+        color: $lightgray;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    .excerpt {
+      font-family: 'Geogrotesque';
+      font-size: 15px;
+      padding: 0 30px;
+      margin: 0;
+    }
+
+    .gallery {
+      display: none;
+      padding: 0 30px;
+      text-align: left;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .item-meta {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+      font-family: 'Geogrotesque';
+      font-size: 15px;
+    }
+  }
+
+}

@@ -1,0 +1,156 @@
+
+// slider on frontpage
+.carousel {
+  box-shadow: 0 0 3px #ccc;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .carousel-caption {
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0 auto;
+    padding: 15px;
+    width: 80%;
+    max-width: 960px;
+    background: rgba(0, 0, 0, 0.6);
+
+    p {
+      margin: 0;
+    }
+
+    .slide-title {
+      margin: 0;
+      padding: 0 0 15px 0;
+
+      font-size: 4vw !important;
+      line-height: 4vw;
+
+      font-size: 18px !important;
+      line-height: 22px;
+
+      font-weight: 700;
+      font-family: 'Geogrotesque';
+    }
+
+    .excerpt {
+      margin: 0;
+      padding: 0 0 15px 0;
+
+      font-size: 3.4vw;
+      line-height: 3.6vw;
+
+      font-size: 13px;
+      line-height: 16px;
+
+      font-weight: 400;
+      font-family: 'Geogrotesque';
+    }
+
+    .call-to-action {
+      margin: 0;
+      p {
+        margin: 0 !important;
+      }
+    }
+
+    @media (min-width: 480px) {
+      .slide-title {
+        font-size: 3.6vw !important;
+        line-height: 3.6vw;
+
+        font-size: 22px !important;
+        line-height: 26px;
+      }
+      .excerpt {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    @media (min-width: 568px) {
+      .slide-title {
+        font-size: 3.4vw !important;
+        line-height: 3.4vw;
+
+        font-size: 22px !important;
+        line-height: 26px;
+      }
+      .excerpt {
+        font-size: 3vw;
+        line-height: 3.2vw;
+
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      padding: 20px;
+      .slide-title {
+        padding-bottom: 20px;
+        font-size: 3.4vw !important;
+        line-height: 3.4vw;
+
+        font-size: 24px !important;
+        line-height: 28px;
+
+      }
+      .excerpt {
+        padding-bottom: 22px;
+        font-size: 2.6vw;
+        line-height: 2.8vw;
+
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      padding: 30px;
+      .slide-title {
+        padding-bottom: 30px;
+        font-size: 3vw !important;
+        line-height: 3vw;
+
+        font-size: 26px !important;
+        line-height: 30px;
+      }
+      .excerpt {
+        padding-bottom: 32px;
+        font-size: 2.4vw;
+        line-height: 2.6vw;
+
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      width: 84%;
+    }
+  }
+
+  .carousel-control {
+    &.left,
+    &.right {
+      span {
+        @media (min-width: 768px) {
+          margin-top: -15px;
+        }
+      }
+    }
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+}

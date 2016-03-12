@@ -1,0 +1,41 @@
+// button
+.btn {
+  font-family: 'Geogrotesque';
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 0;
+
+  &.btn-default       { background-color: transparent; border-color: $brand-warning; color: $brand-warning; }
+  &.btn-default:hover { background-color: $brand-warning; color: #fff; }
+
+  // override
+  &.btn-primary { background-color: $brand-primary; border-color: $brand-primary; }
+  &.btn-success { background-color: $brand-success; border-color: $brand-success; }
+  &.btn-info    { background-color: $brand-info;    border-color: $brand-info;    }
+  &.btn-warning { background-color: $brand-warning; border-color: $brand-warning; }
+  &.btn-danger  { background-color: $brand-danger;  border-color: $brand-danger;  }
+  &:hover {
+    &.btn-primary { background-color: darken($brand-primary, 10%); border-color: darken($brand-primary, 10%); }
+    &.btn-success { background-color: darken($brand-success, 10%); border-color: darken($brand-success, 10%); }
+    &.btn-info    { background-color: darken($brand-info, 10%);    border-color: darken($brand-info, 10%);    }
+    &.btn-warning { background-color: darken($brand-warning, 10%); border-color: darken($brand-warning, 10%); }
+    &.btn-danger  { background-color: darken($brand-danger, 10%);  border-color: darken($brand-danger, 10%);  }
+  }
+
+  // bootstrap outline button
+  &.btn-outline {
+    &.btn-primary { background-color: transparent; color: $brand-primary; }
+    &.btn-success { background-color: transparent; color: $brand-success; }
+    &.btn-info    { background-color: transparent; color: $brand-info;    }
+    &.btn-warning { background-color: transparent; color: $brand-warning; }
+    &.btn-danger  { background-color: transparent; color: $brand-danger;  }
+    &:hover {
+      &.btn-primary { background-color: $brand-primary; color: #fff; }
+      &.btn-success { background-color: $brand-success; color: #fff; }
+      &.btn-info    { background-color: $brand-info;    color: #fff; }
+      &.btn-warning { background-color: $brand-warning; color: #fff; }
+      &.btn-danger  { background-color: $brand-danger;  color: #fff; }
+    }
+  }
+}
