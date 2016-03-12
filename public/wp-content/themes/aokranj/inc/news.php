@@ -19,7 +19,7 @@ function aokranj_front_page_top_news() {
         <ul>
             <?php while (have_posts()): the_post();?>
                 <li>
-                    <span><?php the_time( 'd.m.Y' ) ?> - </span>
+                    <span><?php the_time( 'd.m.Y' ) ?></span>
                     <h3>
                         <a class="link"
                            href="<?php the_permalink() ?>"

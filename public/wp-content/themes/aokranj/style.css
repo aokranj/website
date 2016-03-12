@@ -807,7 +807,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .news-list {
   border: 1px solid #d1d2d4;
-  padding: 30px; }
+  padding: 20px; }
+  @media (min-width: 768px) {
+    .news-list {
+      padding: 30px; } }
   .news-list h2 {
     margin: 0;
     padding: 0;
@@ -819,8 +822,13 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
     margin: 20px 0;
     padding: 0; }
+    @media (min-width: 768px) {
+      .news-list ul {
+        margin: 30px 0; } }
     .news-list ul li span {
-      font-size: 15px; }
+      display: inline-block;
+      font-size: 14px;
+      line-height: 30px; }
     .news-list ul li h3 {
       display: inline-block;
       margin: 0;
@@ -834,6 +842,21 @@ h1, h2, h3, h4, h5, h6 {
         font-family: 'Geogrotesque'; }
         .news-list ul li h3 a:hover {
           text-decoration: underline; }
+    @media (max-width: 479px) {
+      .news-list ul li {
+        margin-bottom: 10px; }
+        .news-list ul li span {
+          display: block;
+          font-size: 12px;
+          line-height: 12px; }
+        .news-list ul li h3 {
+          display: block; }
+          .news-list ul li h3 a {
+            line-height: 26px; } }
+    @media (min-width: 480px) {
+      .news-list ul li span:after {
+        content: '-';
+        padding-left: 3px; } }
 
 .posts-list .highlight-title {
   display: none; }
@@ -842,11 +865,10 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
   border: 1px solid #d1d2d4 !important;
   font-family: 'Geogrotesque'; }
-  @media (min-width: 768px) {
-    .posts-list .item .featured-image {
-      display: none; } }
+  .posts-list .item .featured-image {
+    display: none; }
   .posts-list .item .item-title {
-    padding: 30px 30px 0 30px;
+    padding: 20px 20px 0 20px;
     font-family: 'Geogrotesque'; }
     .posts-list .item .item-title a {
       color: #f7941e;
@@ -856,7 +878,7 @@ h1, h2, h3, h4, h5, h6 {
       .posts-list .item .item-title a:hover {
         color: #da7a08; }
   .posts-list .item .author {
-    padding: 5px 30px 30px 30px;
+    padding: 5px 20px 20px 20px;
     font-size: 15px;
     font-family: 'Geogrotesque';
     color: #a7a9ac; }
@@ -867,21 +889,40 @@ h1, h2, h3, h4, h5, h6 {
   .posts-list .item .excerpt {
     font-family: 'Geogrotesque';
     font-size: 15px;
-    padding: 0 30px;
+    padding: 0 20px;
     margin: 0; }
   .posts-list .item .gallery {
     display: none;
-    padding: 0 30px;
-    text-align: left; }
-    @media (min-width: 768px) {
-      .posts-list .item .gallery {
-        display: block; } }
+    padding: 0 13px;
+    text-align: left;
+    display: block; }
+    .posts-list .item .gallery .gallery-caption {
+      border-radius: 0 0 3px 3px; }
+    @media (max-width: 768px) {
+      .posts-list .item .gallery .gallery-item {
+        width: calc(33.3333% - 14px) !important;
+        margin-left: 7px !important;
+        margin-right: 7px !important; } }
+    @media (max-width: 480px) {
+      .posts-list .item .gallery .gallery-item {
+        width: calc(50% - 14px) !important;
+        margin-left: 7px !important;
+        margin-right: 7px !important; } }
   .posts-list .item .item-meta {
     border-top: none;
-    margin-top: 0;
+    margin-top: 15px;
     padding-top: 0;
     font-family: 'Geogrotesque';
     font-size: 15px; }
+  @media (min-width: 768px) {
+    .posts-list .item .item-title {
+      padding: 30px 30px 0 30px; }
+    .posts-list .item .author {
+      padding: 5px 30px 30px 30px; }
+    .posts-list .item .excerpt {
+      padding: 0 30px; }
+    .posts-list .item .gallery {
+      padding: 0 30px; } }
 
 .entry-meta li {
   font-size: 14px; }

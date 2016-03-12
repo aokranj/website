@@ -2,7 +2,10 @@
 .news-list {
   //box-shadow: 0 0 3px #ccc;
   border: 1px solid #d1d2d4;
-  padding: 30px;
+  padding: 20px;
+  @media (min-width: 768px) {
+    padding: 30px;
+  }
 
   h2 {
     margin: 0;
@@ -17,10 +20,15 @@
     list-style: none;
     margin: 20px 0;
     padding: 0;
+    @media (min-width: 768px) {
+      margin: 30px 0;
+    }
 
     li {
       span {
-        font-size: 15px;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 30px;
       }
       h3 {
         display: inline-block;
@@ -35,6 +43,30 @@
           font-family: 'Geogrotesque';
           &:hover {
             text-decoration: underline;
+          }
+        }
+      }
+
+      @media (max-width: 479px) {
+        margin-bottom: 10px;
+        span {
+          display: block;
+          font-size: 12px;
+          line-height: 12px;
+        }
+        h3 {
+          display: block;
+          a {
+            line-height: 26px;
+          }
+        }
+      }
+
+      @media (min-width: 480px) {
+        span {
+          &:after {
+            content: '-';
+            padding-left: 3px;
           }
         }
       }
