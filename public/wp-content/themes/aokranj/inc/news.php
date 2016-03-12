@@ -5,7 +5,7 @@
  */
 function aokranj_front_page_top_news() {
     $novice = get_category_by_slug('novice');
-    $arhiv = get_category_by_slug('arhiv');
+    $arhiv = get_category_by_slug('arhiv-novic');
     $news = query_posts(array(
         'category_name' => 'novice',
         'category__not_in' => array($arhiv->cat_ID),
