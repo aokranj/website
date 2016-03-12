@@ -22,6 +22,9 @@ RewriteRule   ^/?utrinek.php$     /redirect-utrinek.php?id=%1   [R=302,L]
 RewriteCond   %{QUERY_STRING}     ^id=([0-9]+)
 RewriteRule   ^/?reportaze.php$   /redirect-reportaza.php?id=%1   [R=302,L]
 
+RewriteCond   %{QUERY_STRING}     ^id=([0-9]+)
+RewriteRule   ^/?page.php$        /redirect-page.php?id=%1   [R=302,L]
+
 RewriteCond   %{QUERY_STRING}     ^$
 RewriteRule   ^/?reportaze.php$   /category/reportaze   [R=302,L]
 
