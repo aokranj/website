@@ -34,6 +34,38 @@
 
 // widgets
 
+.widget-page-navigation {
+  border: 1px solid #d1d2d4;
+
+  .section-title-sm {
+    display: none;
+  }
+
+  .page-navigation {
+    margin: 0;
+
+    .list-group-item {
+      font-family: 'Geogrotesque';
+      border-radius: 0;
+      border: none;
+      text-transform: uppercase;
+
+      &.parent {
+        font-weight: 400;
+      }
+
+      &.active {
+        background: transparent;
+        color: $orange;
+
+        &:hover {
+          background: #f5f5f5;
+        }
+      }
+    }
+  }
+}
+
 .widget-reportaza {
   border: 1px solid #d1d2d4;
 

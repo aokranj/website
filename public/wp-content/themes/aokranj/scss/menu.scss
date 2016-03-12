@@ -6,14 +6,14 @@
   .navbar-header {
     &.logo {
       min-width: 182px;
-      background-image: url('images/aokranj-logo.png');
-      background-repeat: no-repeat;
-      background-position: center center;
 
       .site-title {
         a {
-          opacity: 0;
           text-indent: -9999px;
+
+          background-image: url('images/aokranj-logo.png');
+          background-repeat: no-repeat;
+          background-position: center center;
         }
       }
 
@@ -57,7 +57,7 @@
         .site-title {
           display: block;
           width: 100%;
-          height: 90%;
+          height: 100%;
           margin: 0;
           padding: 0;
           a {
@@ -95,11 +95,21 @@
   }
 }
 
+
 // stupid wordpress
 @media (min-width: 992px) {
+  .site-title {
+    height: 85px !important;
+  }
   .navbar-pinned .site-title {
-    margin-top: 5px !important;
-    height: 40px !important;
-    overflow: hidden;
+    height: 50px !important;
+  }
+}
+@media (min-width: 992px) {
+  .site-title {
+    height: 85px !important;
+  }
+  .navbar-pinned .site-title {
+    height: 50px !important;
   }
 }

@@ -164,13 +164,12 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
   background: #1d1d1e; }
   .navbar .navbar-header.logo {
-    min-width: 182px;
-    background-image: url("images/aokranj-logo.png");
-    background-repeat: no-repeat;
-    background-position: center center; }
+    min-width: 182px; }
     .navbar .navbar-header.logo .site-title a {
-      opacity: 0;
-      text-indent: -9999px; }
+      text-indent: -9999px;
+      background-image: url("images/aokranj-logo.png");
+      background-repeat: no-repeat;
+      background-position: center center; }
     @media (max-width: 767px) {
       .navbar .navbar-header.logo {
         position: relative;
@@ -202,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
         .navbar .navbar-header.logo .site-title {
           display: block;
           width: 100%;
-          height: 90%;
+          height: 100%;
           margin: 0;
           padding: 0; }
           .navbar .navbar-header.logo .site-title a {
@@ -224,10 +223,35 @@ h1, h2, h3, h4, h5, h6 {
     display: none; }
 
 @media (min-width: 992px) {
+  .site-title {
+    height: 85px !important; }
   .navbar-pinned .site-title {
-    margin-top: 5px !important;
-    height: 40px !important;
-    overflow: hidden; } }
+    height: 50px !important; } }
+
+@media (min-width: 992px) {
+  .site-title {
+    height: 85px !important; }
+  .navbar-pinned .site-title {
+    height: 50px !important; } }
+
+.widget-page-navigation {
+  border: 1px solid #d1d2d4; }
+  .widget-page-navigation .section-title-sm {
+    display: none; }
+  .widget-page-navigation .page-navigation {
+    margin: 0; }
+    .widget-page-navigation .page-navigation .list-group-item {
+      font-family: 'Geogrotesque';
+      border-radius: 0;
+      border: none;
+      text-transform: uppercase; }
+      .widget-page-navigation .page-navigation .list-group-item.parent {
+        font-weight: 400; }
+      .widget-page-navigation .page-navigation .list-group-item.active {
+        background: transparent;
+        color: #f7941e; }
+        .widget-page-navigation .page-navigation .list-group-item.active:hover {
+          background: #f5f5f5; }
 
 .widget-reportaza {
   border: 1px solid #d1d2d4; }
@@ -602,9 +626,15 @@ h1, h2, h3, h4, h5, h6 {
 .carousel {
   box-shadow: 0 0 3px #ccc; }
   .carousel .container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%; }
   .carousel .carousel-caption {
     display: block;
