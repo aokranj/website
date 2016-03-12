@@ -183,13 +183,14 @@ body {
     color: #a7a9ac;
     font-size: 18px;
     font-weight: 400;
-    font-style: italic;
     text-transform: none; }
     .navbar .navbar-nav > li > a i {
       margin-top: 0px; }
     @media (min-width: 992px) {
       .navbar .navbar-nav > li > a i {
         margin-top: -3px; } }
+  .navbar .desc {
+    display: none; }
 
 .btn {
   font-family: 'Geogrotesque';

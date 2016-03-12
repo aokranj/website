@@ -4,9 +4,15 @@
  * Show news on frontpage top
  */
 function aokranj_front_page_top_news() {
-    $news = query_posts(array('category_name' => 'novice','posts_per_page' => -1));
+    $novice = get_category_by_slug('novice');
+    $arhiv = get_category_by_slug('arhiv');
+    $news = query_posts(array(
+        'category_name' => 'novice',
+        'category__not_in' => array($arhiv->cat_ID),
+        'posts_per_page' => -1
+    ));
     if (!have_posts()) return;
-    $news_category_link = get_category_link( get_cat_ID( 'Novice' ) );
+    $news_category_link = get_category_link($novice->cat_ID);
     ?>
     <div class="news-list">
         <h2><?php echo __('Novice'); ?></h2>

@@ -238,7 +238,7 @@ body {
     color: #a7a9ac;
     font-size: 18px;
     font-weight: 400;
-    font-style: italic;
+    //font-style: italic;
     text-transform: none;
 
     i {
@@ -250,6 +250,11 @@ body {
         margin-top: -3px;
       }
     }
+  }
+
+  // hide category description
+  .desc {
+    display: none;
   }
 }
 
