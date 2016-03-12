@@ -8,7 +8,7 @@
 
 	<div class="author-banner">
     	<?php
-			$header = AOKRANJ_ROOTURI . '/images/author-banner' . rand(1,5) . '.jpg';
+			$header = AOKRANJ_THEME_ROOTURI . '/images/author-banner' . rand(1,5) . '.jpg';
 			if ( isset( $usermeta['franz_author_header_imgurl'][0] ) && $usermeta['franz_author_header_imgurl'][0] ) $header = $usermeta['franz_author_header_imgurl'][0];
 			$size = getimagesize( $header ); if ( ! $size ) { $size[0] = ''; $size[1] = ''; }
 		?>

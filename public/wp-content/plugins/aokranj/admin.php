@@ -155,7 +155,7 @@ class AOKranj_Admin extends AOKranj
     public function admin_enqueue_scripts() {
         global $hook_suffix;
 
-        if (AOKRANJ_DEBUG === true) {
+        if (AOKRANJ_PLUGIN_DEBUG === true) {
             wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
         }
 

@@ -25,8 +25,8 @@ function aokranj_enqueue_styles() {
     }
 
     // add aokranj styles after all the others
-    wp_enqueue_style( 'aokranj', AOKRANJ_ROOTURI . '/style.css', array( 'franzjosef-parent', 'franzjosef-responsive-parent', 'franzjosef-google-fonts-parent' ) );
-    wp_enqueue_script('aokranj', AOKRANJ_ROOTURI . '/aokranj.js', array('jquery', 'franzjosef', 'bootstrap'), AOKRANJ_PLUGIN_VERSION  );
+    wp_enqueue_style( 'aokranj', AOKRANJ_THEME_ROOTURI . '/style.css', array( 'franzjosef-parent', 'franzjosef-responsive-parent', 'franzjosef-google-fonts-parent' ), AOKRANJ_THEME_VERSION );
+    wp_enqueue_script('aokranj', AOKRANJ_THEME_ROOTURI . '/aokranj.js', array('jquery', 'franzjosef', 'bootstrap'), AOKRANJ_THEME_VERSION  );
 }
 
 add_action( 'wp_enqueue_scripts', 'aokranj_enqueue_styles', 20 );

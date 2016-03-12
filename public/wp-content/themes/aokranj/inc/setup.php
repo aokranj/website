@@ -1,7 +1,7 @@
 <?php
 
 function aokranj_theme_setup() {
-    load_child_theme_textdomain( 'franz-josef', AOKRANJ_ROOTDIR . '/languages' );
+    load_child_theme_textdomain( 'franz-josef', AOKRANJ_THEME_ROOTDIR . '/languages' );
     add_editor_style( array( 'editor.css' ) );
 }
 
