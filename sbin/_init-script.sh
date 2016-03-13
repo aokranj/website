@@ -14,6 +14,7 @@ set -u
 MYDIR_REL=`dirname "$0"`
 MYDIR_ABS=`realpath "$MYDIR_REL"`
 ROOTDIR=`dirname "$MYDIR_ABS"`
+CONFIGDIR="$ROOTDIR/config"
 PUBDIR="$ROOTDIR/public"
 WPDIR="$PUBDIR"
 WORDPRESSDIR="$PUBDIR"

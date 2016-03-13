@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+
+### Common script initialization
+#
+MYDIR_REL=`dirname $0`
+. "$MYDIR_REL/_init-script.sh"
+
+
+
+### Get DB credentials
+#
+DB_USER=`cat $CONFIGDIR/wp-config.php | grep DB_USER | cut -d"'" -f4`
+DB_PASS=`cat $CONFIGDIR/wp-config.php | grep DB_PASSWORD | cut -d"'" -f4`
+DB_NAME=`cat $CONFIGDIR/wp-config.php | grep DB_NAME | cut -d"'" -f4`
+
+
+
+### Dump database
+#
+mysqldump \
+  --user=$DB_USER \
+  --password=$DB_PASS \
+  --no-data \
+  --skip-dump-date \
+  --skip-opt \
+  $DB_NAME
