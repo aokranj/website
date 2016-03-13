@@ -12,6 +12,13 @@ RewriteBase   /
 
 
 
+### Redirect aokranj.com to www.aokranj.com
+#
+RewriteCond   %{HTTP_HOST}      ^aokranj.com$
+RewriteRule   ^/?(.*)           http://www.aokranj.com/$1   [R=302,L]
+
+
+
 ### Redirects for old content
 #
 # Let's keep 302 for now
