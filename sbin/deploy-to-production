@@ -9,6 +9,16 @@ MYDIR_REL=`dirname $0`
 
 
 
+### Check for uncommited changes
+#
+NR_CHANGES=`git status | grep -E '(Your branch is ahead|modified:)' -c`
+if [ "$NR_CHANGES" -gt "0" ]; then
+    echo "ERROR: Uncommited and/or unpushed changes found in local git repository, aborting."
+    exit 1
+fi
+
+
+
 ### Run ansible
 #
 ansible-playbook -i hosts playbooks/deploy-to-production.yml
