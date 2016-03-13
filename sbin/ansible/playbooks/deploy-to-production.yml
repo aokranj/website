@@ -1,0 +1,13 @@
+###
+### TASKS to execute
+###
+#
+-   name:        "AO Kranj :: deploy :: production"
+    hosts:       production
+
+#    handlers:
+#        - include:   ./handlers/main.yml
+
+    tasks:
+        - include:   ./tasks/deploy-git-content.yml
+        - include:   ./tasks/run-script-sbin-deploy-here.yml
