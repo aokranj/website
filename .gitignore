@@ -1,5 +1,6 @@
 .idea
 node_modules
+/config/wp-config.php
 /public/wp-content/uploads/*
 /var/log/*
 /var/tmp/*

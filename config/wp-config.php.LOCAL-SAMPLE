@@ -1,0 +1,35 @@
+<?php
+
+
+
+/*
+ * Force URI
+ */
+define('WP_HOME',    'http://krneki.dev.aokranj.com');
+define('WP_SITEURL', 'http://krneki.dev.aokranj.com');
+
+
+
+/*
+ * Database access
+ */
+define('DB_NAME',     'aokranj_dev_krneki');
+define('DB_USER',     '');
+define('DB_PASSWORD', '');
+
+
+
+/*
+ * Authentication Unique Keys and Salts.
+ *
+ * May be generated here:
+ * https://api.wordpress.org/secret-key/1.1/salt/
+ */
+define('AUTH_KEY',         '');
+define('SECURE_AUTH_KEY',  '');
+define('LOGGED_IN_KEY',    '');
+define('NONCE_KEY',        '');
+define('AUTH_SALT',        '');
+define('SECURE_AUTH_SALT', '');
+define('LOGGED_IN_SALT',   '');
+define('NONCE_SALT',       '');
