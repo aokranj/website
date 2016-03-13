@@ -1,8 +1,8 @@
 ---
--   name:   "AO Kranj :: deploy :: code from git"
+-   name:   "AO Kranj :: deploy :: pull code from git server"
 
     git:        repo=git@git.teon.si:aokranj/website
-                dest=/home/ao/www/www.aokranj.com
+                dest={{ vhostrootdir }}
                 recursive=no
 
 # Use this when applying to new host, and do not commit it being set to true

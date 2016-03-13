@@ -3,7 +3,7 @@
 
     command:    ./sbin/deploy-here
     args:
-        chdir:          /home/ao/www/www.aokranj.com
+        chdir:          "{{ vhostrootdir }}"
 #    register:           dns_bind_checkconf_cmd
 #    changed_when:       "dns_bind_checkconf_cmd.rc != 0"
 #    environment:

@@ -2,7 +2,7 @@
 ### TASKS to execute
 ###
 #
--   name:        "AO Kranj :: deploy :: production"
+-   name:        "AO Kranj :: Deploying to production"
     hosts:       production
 
 #    handlers:
