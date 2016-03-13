@@ -26,6 +26,7 @@ echo "$LOGPREFIX: Starting deployment..." >> $DEPLOYLOG
 
 ### Set directory permissions
 #
+chmod 777 $PUBDIR/wp-content/uploads/
 chmod 777 $LOGDIR
 chmod 777 $TMPDIR
 
