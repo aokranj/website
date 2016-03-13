@@ -1,19 +1,9 @@
--- MySQL dump 10.13  Distrib 5.6.29, for Linux (x86_64)
---
--- Host: localhost    Database: aokranj_dev_afro
--- ------------------------------------------------------
--- Server version	5.6.29-log
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Dumping data for table `wp_options`
---
--- ORDER BY:  `option_id`
 
 INSERT INTO `wp_options` VALUES (1,'siteurl','http://www.aokranj.com','yes');
 INSERT INTO `wp_options` VALUES (2,'blogname','AO Kranj','yes');
@@ -215,4 +205,3 @@ INSERT INTO `wp_options` VALUES (569,'_site_transient_theme_roots','a:4:{s:7:\"a
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed

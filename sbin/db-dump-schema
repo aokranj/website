@@ -25,4 +25,5 @@ mysqldump \
   --no-data \
   --skip-dump-date \
   --skip-opt \
+  --skip-comments \
   $DB_NAME

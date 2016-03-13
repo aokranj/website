@@ -1,19 +1,9 @@
--- MySQL dump 10.13  Distrib 5.6.29, for Linux (x86_64)
---
--- Host: localhost    Database: aokranj_dev_afro
--- ------------------------------------------------------
--- Server version	5.6.29-log
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `ao_vzponi`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ao_vzponi` (
@@ -39,11 +29,6 @@ CREATE TABLE `ao_vzponi` (
   PRIMARY KEY (`id`)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_commentmeta`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_commentmeta` (
@@ -56,11 +41,6 @@ CREATE TABLE `wp_commentmeta` (
   KEY `meta_key` (`meta_key`(191))
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_comments`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_comments` (
@@ -87,11 +67,6 @@ CREATE TABLE `wp_comments` (
   KEY `comment_author_email` (`comment_author_email`(10))
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_links`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_links` (
@@ -112,11 +87,6 @@ CREATE TABLE `wp_links` (
   KEY `link_visible` (`link_visible`)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_options`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_options` (
@@ -128,11 +98,6 @@ CREATE TABLE `wp_options` (
   UNIQUE KEY `option_name` (`option_name`)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_postmeta`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_postmeta` (
@@ -145,11 +110,6 @@ CREATE TABLE `wp_postmeta` (
   KEY `meta_key` (`meta_key`(191))
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_posts`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_posts` (
@@ -183,11 +143,6 @@ CREATE TABLE `wp_posts` (
   KEY `post_name` (`post_name`(191))
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_term_relationships`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_term_relationships` (
@@ -198,11 +153,6 @@ CREATE TABLE `wp_term_relationships` (
   KEY `term_taxonomy_id` (`term_taxonomy_id`)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_term_taxonomy`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_term_taxonomy` (
@@ -217,11 +167,6 @@ CREATE TABLE `wp_term_taxonomy` (
   KEY `taxonomy` (`taxonomy`)
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_termmeta`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_termmeta` (
@@ -234,11 +179,6 @@ CREATE TABLE `wp_termmeta` (
   KEY `meta_key` (`meta_key`(191))
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_terms`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_terms` (
@@ -251,11 +191,6 @@ CREATE TABLE `wp_terms` (
   KEY `name` (`name`(191))
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_usermeta`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_usermeta` (
@@ -268,11 +203,6 @@ CREATE TABLE `wp_usermeta` (
   KEY `meta_key` (`meta_key`(191))
 );
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wp_users`
---
-
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wp_users` (
@@ -298,4 +228,3 @@ CREATE TABLE `wp_users` (
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed

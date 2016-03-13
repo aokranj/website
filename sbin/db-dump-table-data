@@ -30,6 +30,7 @@ mysqldump \
   --password=$DB_PASS \
   --skip-dump-date \
   --skip-opt \
+  --skip-comments \
   --no-create-db \
   --no-create-info \
   --order-by-primary \
