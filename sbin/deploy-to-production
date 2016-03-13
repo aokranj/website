@@ -9,12 +9,67 @@ MYDIR_REL=`dirname $0`
 
 
 
+### Parse arguments
+#
+ARG_FORCE="0"
+while getopts ":f" opt; do
+    case $opt in
+        f)
+            ARG_FORCE="1";
+            ;;
+        *)
+            echo "ERROR: Invalid option: -$OPTARG"
+            exit 1
+            ;;
+    esac
+done
+
+
+
 ### Check for uncommited changes
 #
-NR_CHANGES=`git status | grep -E '(Your branch is ahead|modified:)' -c`
-if [ "$NR_CHANGES" -gt "0" ]; then
-    echo "ERROR: Uncommited and/or unpushed changes found in local git repository, aborting."
-    exit 1
+#
+NR_AHEAD=$(git status | grep -E '^Your branch is ahead of ' -c || true)
+IS_UNPUSHED="0"
+if [ "$NR_AHEAD" -ge "1" ]; then
+    IS_UNPUSHED="1"
+fi
+
+NR_UNCOMMITED=$(git status | grep -E '^Changes to be committed:' -c || true)
+IS_UNCOMMITED="0"
+if [ "$NR_UNCOMMITED" -ge "1" ]; then
+    IS_UNCOMMITED="1"
+fi
+
+NR_UNSTAGED=$(git status | grep -E '^Changes not staged for commit:' -c || true)
+IS_UNSTAGED="0"
+if [ "$NR_UNSTAGED" -ge "1" ]; then
+    IS_UNSTAGED="1"
+fi
+
+NR_UNTRACKED=$(git status | grep -E '^Untracked files:' -c || true)
+IS_UNTRACKED="0"
+if [ "$NR_UNTRACKED" -ge "1" ]; then
+    IS_UNTRACKED="1"
+fi
+
+NR_SHOWSTOPPING=`expr $IS_UNPUSHED + $IS_UNCOMMITED + $IS_UNSTAGED`
+
+
+
+if [ "$NR_SHOWSTOPPING" -gt "0" ]; then
+    if [ "$ARG_FORCE" != "1" ]; then
+        echo "ERROR: Either unpushed ($IS_UNPUSHED), uncommited ($IS_UNCOMMITED) or unstaged ($IS_UNSTAGED) changes found in local repository, aborting."
+        echo "INFO: Use '-f' flag to deploy anyway (only deploys whatever is already pushed)."
+        exit 1
+    fi
+fi
+
+
+
+if [ "$IS_UNPUSHED" -gt "0" ]; then
+    echo "WARNING: Unpushed commits in local repository!"
+    echo "WARNING: Older version will be deployed!"
 fi
 
 
