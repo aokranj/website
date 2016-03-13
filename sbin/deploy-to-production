@@ -5,11 +5,10 @@
 ### Common script initialization
 #
 MYDIR_REL=`dirname $0`
-. "$MYDIR_REL/_script-init.sh"
+. "$MYDIR_REL/_init-ansible.sh"
 
 
 
 ### Run ansible
 #
-cd $ANSIBLEDIR
 ansible-playbook -i hosts playbooks/deploy-to-production.yml
