@@ -21,10 +21,9 @@ RewriteRule   ^/?(.*)           http://www.aokranj.com/$1   [R=302,L]
 
 ### Redirect all traffic to HTTPS, but only for www.aokranj.com
 #
-<If "%{HTTP_HOST} == 'www.aokranj.com'">
-    RewriteCond     %{HTTPS}        off
-    RewriteRule     ^/?(.*)         https://%{HTTP_HOST}%{REQUEST_URI}   [R=302,L]
-</If>
+RewriteCond   %{HTTP_HOST}      ^www.aokranj.com$
+RewriteCond     %{HTTPS}        off
+RewriteRule     ^/?(.*)         https://%{HTTP_HOST}%{REQUEST_URI}   [R=302,L]
 
 
 
