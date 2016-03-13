@@ -20,7 +20,7 @@ GIT_COMMIT_ID=`git rev-parse HEAD`
 #
 CURDATETIME=`date '+%F %T'`
 LOGPREFIX="$CURDATETIME $GIT_COMMIT_ID"
-echo "$LOGPREFIX: Starting deployment..."
+echo "$LOGPREFIX: Starting deployment..." >> $DEPLOYLOG
 
 
 
@@ -33,4 +33,4 @@ chmod 777 $TMPDIR
 
 ### Run whatever tasks need to be run to deploy
 #
-echo "$LOGPREFIX: Deployment complete."
+echo "$LOGPREFIX: Deployment complete." >> $DEPLOYLOG
