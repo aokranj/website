@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+
+### Common script initialization
+#
+MYDIR_REL=`dirname $0`
+. "$MYDIR_REL/_init-script.sh"
+
+
+
+### Get DB credentials
+#
+DB_USER=`cat $CONFIGDIR/wp-config.php | grep DB_USER | cut -d"'" -f4`
+DB_PASS=`cat $CONFIGDIR/wp-config.php | grep DB_PASSWORD | cut -d"'" -f4`
+DB_NAME=`cat $CONFIGDIR/wp-config.php | grep DB_NAME | cut -d"'" -f4`
+
+
+
+### Arguments
+#
+DATA_FILE="$1"
+TABLE_NAME="$2"
+
+
+
+### First truncate table
+#
+echo "TRUNCATE TABLE $TABLE_NAME" | mysql \
+  --user=$DB_USER \
+  --password=$DB_PASS \
+  --database=$DB_NAME
+
+
+
+### Import data
+#
+cat $DATA_FILE | mysql \
+  --user=$DB_USER \
+  --password=$DB_PASS \
+  --database=$DB_NAME
