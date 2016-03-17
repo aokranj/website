@@ -1,0 +1,200 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Facebook Publish"
+msgstr ""
+
+#. Short description.
+msgid "Automatically posts new articles/posts/pages/custom post types to Facebook."
+msgstr ""
+
+#. Screenshot description.
+msgid "Settings page 1. Here you to insert and save the facebook API and secret key."
+msgstr ""
+
+#. Screenshot description.
+msgid "General settings page. You can control auto publishing for different posts type,change message to be posted, facebook pages and other settings"
+msgstr ""
+
+#. Screenshot description.
+msgid "The post particular settings."
+msgstr ""
+
+#. Screenshot description.
+msgid "Schedule option"
+msgstr ""
+
+#. Screenshot description.
+msgid "The result"
+msgstr ""
+
+#. Found in description list item.
+msgid "Option to customize the message to be posted on Facebook when a new post is added."
+msgstr ""
+
+#. Found in description list item.
+msgid "Automatically detects image from post thumbnail and post. "
+msgstr ""
+
+#. Found in description list item.
+msgid "Option to disable thumbnail posting."
+msgstr ""
+
+#. Found in description list item.
+msgid "Option to enable posting only for a particular category"
+msgstr ""
+
+#. Found in description list item.
+msgid "Schedule posts"
+msgstr ""
+
+#. Found in description list item.
+msgid "Post to facebook pages"
+msgstr ""
+
+#. Found in description list item.
+msgid "Global setting"
+msgstr ""
+
+#. Found in description list item.
+msgid "Change settings for a particular post"
+msgstr ""
+
+#. Found in description list item.
+msgid "Choose custom image"
+msgstr ""
+
+#. Found in description list item.
+msgid "Scheduling information"
+msgstr ""
+
+#. Found in description list item.
+msgid "Compatible with other auto posting plugins"
+msgstr ""
+
+#. Found in description list item.
+msgid "Facebook API v2.3 support"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"This plugin requires PHP version 5.4 or higher. If you face any difficulty installing or setting up this plugin then please make sure that the PHP version installed on your server is 5.4 or higher.\n"
+"You may use this plugin if you want your articles products pages or any other post type to be published to Facebook every time you add a new post."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Tutorial</strong> - <a href=\"http://codeholic.in/setting-up-facebook-publish-wordpress-plugin/\" title=\"Setting up Facebook Publish WordPress plugin \">Setting up Facebook Publish WordPress plugin </a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload <code>zip</code> to the <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Generate Facebook App Id and Secret key - <a href=\"http://codeholic.in/how-to-generate-a-facebook-app-id-and-secret-key/\" title=\"Tutorial\">Tutorial</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Go to Dashboard&gt;Facebook Publish and save the App Id and Secret key."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Authorize Your facebook account by clicking on <strong>Authorize</strong> button. "
+msgstr ""
+
+#. Found in installation list item.
+msgid "Congrats! You're good to go :)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Replaced HybridAuth with cAuth"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Support for Facebook API v2.3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed save draft posting issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed custom post scheduling issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed hybridauth debug issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed quote char(') escape problem"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed post to pages bug for automatic posting"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed authentication and fatal errors"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved UX "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Choose custom image."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better scheduling information."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Compatible with other auto posting plugins. "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed exerpt issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed revision issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed HTML tags isuse"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Magic Quotes "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Post to Facebook Pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Schedule Your posts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Global and Post particular settings"
+msgstr ""
+
+#. Found in faq header.
+msgid "Post published on Facebook is visible to the page moderates/owners only, no other member can see the post, what is wrong?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Ans: http://codeholic.in/facebook-publish-post-to-page-issue-resolved/"
+msgstr ""
