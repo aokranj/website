@@ -116,9 +116,8 @@ function xyz_link_publish($post_ID) {
     $lnaf=get_option('xyz_smap_lnaf');
 	
 	$postpp= get_post($post_ID);global $wpdb;
-	$entries0 = $wpdb->get_results( 'SELECT user_nicename FROM '.$wpdb->prefix.'users WHERE ID='.$postpp->post_author);
-	foreach( $entries0 as $entry ) {			
-		$user_nicename=$entry->user_nicename;}
+        $_ao_userdata = get_userdata($postpp->post_author);
+        $user_nicename = $_ao_userdata->display_name;
 	
 	if ($postpp->post_status == 'publish')
 	{
