@@ -1,0 +1,108 @@
+input[type=radio].css-checkbox {
+
+	display:none;
+
+}
+
+
+
+input[type=radio].css-checkbox + label.css-label {
+
+	padding-left:26px;
+
+	height:21px; 
+
+	display:inline-block;
+
+	line-height:21px;
+
+	background-repeat:no-repeat;
+
+	background-position: 0 0;
+
+	font-size:21px;
+
+	vertical-align:middle;
+
+	cursor:pointer;
+
+
+
+}
+
+
+
+input[type=radio].css-checkbox:checked + label.css-label {
+
+	background-position: 0 -21px;
+
+}
+
+label.css-label {
+
+	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_a52b6e3ff28b3ab8d992f794ec8fb0e9.png);
+
+	-webkit-touch-callout: none;
+
+	-webkit-user-select: none;
+
+	-khtml-user-select: none;
+
+	-moz-user-select: none;
+
+	-ms-user-select: none;
+
+	user-select: none;
+
+}
+
+
+
+/* --------------- Custom style ------------------- */
+
+
+
+.fp_logo {
+
+  margin-right: 5px;
+
+  width: 36px;
+
+}
+
+
+
+.pull-left {
+
+  float: left;
+
+}
+
+
+
+#fp_magic_wrap {
+
+  margin-left: 50px;
+
+  padding: 0 16px 16px;
+
+}
+
+
+
+#magic_quote_heading {
+
+  margin-left: 3px;
+
+}
+
+.dashicons.dashicons-star-filled.yellow {
+  color: yellow;
+}
+
+.fpcode {
+  background: none repeat scroll 0 0 #ddd;
+  border: 1px solid #c8c2c2;
+  display: block;
+  padding: 10px;
+}

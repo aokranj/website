@@ -1,0 +1,13 @@
+diff --git a/public/wp-content/plugins/facebook-publish/lib/new-post-update-status.php b/public/wp-content/plugins/facebook-publish/lib/new-post-update-status.php
+index e4177fd..0f793f1 100755
+--- a/public/wp-content/plugins/facebook-publish/lib/new-post-update-status.php
++++ b/public/wp-content/plugins/facebook-publish/lib/new-post-update-status.php
+@@ -334,7 +334,7 @@ function render_magic_quote($post_id , $msg) {
+ 	if(strpos($msg, $POST_AUTHOR) !== false) {
+ 		$author_id 	= $post->post_author;
+ 		$author 	= get_userdata($author_id);
+-		$author 	= $author->user_nicename;
++		$author 	= $author->display_name;
+ 		$author 	= ucwords($author);	
+ 		$msg 		= str_replace($POST_AUTHOR , $author , $msg);
+ 	}
