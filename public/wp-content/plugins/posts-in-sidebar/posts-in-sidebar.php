@@ -3,7 +3,7 @@
  * Plugin Name: Posts in Sidebar
  * Plugin URI: http://dev.aldolat.it/projects/posts-in-sidebar/
  * Description: Publish a list of posts in your sidebar
- * Version: 3.4
+ * Version: 3.8
  * Author: Aldo Latino
  * Author URI: http://www.aldolat.it/
  * Text Domain: posts-in-sidebar
@@ -56,7 +56,7 @@ function pis_setup() {
 	/**
 	 * Define the version of the plugin.
 	 */
-	define( 'PIS_VERSION', '3.4' );
+	define( 'PIS_VERSION', '3.8' );
 
 	/**
 	 * Make plugin available for i18n.
@@ -213,7 +213,22 @@ function pis_get_posts_in_sidebar( $args ) {
 		 * where we'll get posts from.
 		 */
 		'get_from_same_cat'   => false,
+		'number_same_cat'     => '',
 		'title_same_cat'      => '',
+		/* This is the author of the single post
+		 * where we'll get posts from.
+		 */
+		'get_from_same_author'=> false,
+		'number_same_author'  => '',
+		'title_same_author'   => '',
+		/* This is the custom field
+		 * to be used when on single post
+		 */
+		'get_from_custom_fld' => false,
+		's_custom_field_key'  => '',
+		's_custom_field_tax'  => '',
+		'number_custom_field' => '',
+		'title_custom_field'  => '',
 
 		// Taxonomies
 		'relation'            => '',
@@ -281,6 +296,7 @@ function pis_get_posts_in_sidebar( $args ) {
 		'image_link'          => '',
 		'custom_image_url'    => '',
 		'custom_img_no_thumb' => true,
+		'image_link_to_post'  => true,
 
 		// The text of the post
 		'excerpt'             => 'excerpt', // can be "full_content", "rich_content", "content", "more_excerpt", "excerpt", "none"
@@ -541,10 +557,13 @@ function pis_get_posts_in_sidebar( $args ) {
 		$the_category = get_the_category( $single_post_id );
 		// Set parameters. The parameters for excluding posts (like "post__not_in") will be left active.
 		$params['post_type'] = 'post';
+		if ( isset( $number_same_cat ) && ! empty( $number_same_cat ) ) {
+			$params['posts_per_page'] = $number_same_cat;
+		}
 		$params['post__in'] = '';
 		$params['author_name'] = '';
 		$params['author__in'] = '';
-		$params['category_name'] = get_cat_name( $the_category[0]->cat_ID );
+		$params['category_name'] =  $the_category[0]->slug;
 		$params['tag'] = '';
 		$params['tax_query'] = '';
 		$params['date_query'] = '';
@@ -552,6 +571,68 @@ function pis_get_posts_in_sidebar( $args ) {
 		$params['post_format'] = '';
 		$params['meta_key'] = '';
 		$params['meta_value'] = '';
+	}
+
+	/**
+	 * Check if the user wants to display posts from the same author of the single post.
+	 * This will work in single (regular) posts only, not in custom post types.
+	 * @since 3.5
+	 */
+	if ( isset( $get_from_same_author ) && $get_from_same_author && is_singular( 'post' ) ) {
+		$the_author_id = get_post_field( 'post_author', $single_post_id );
+		// Set parameters. The parameters for excluding posts (like "post__not_in") will be left active.
+		$params['post_type'] = 'post';
+		if ( isset( $number_same_author ) && ! empty( $number_same_author ) ) {
+			$params['posts_per_page'] = $number_same_author;
+		}
+		$params['post__in'] = '';
+		$params['author_name'] = '';
+		$params['author__in'] = explode( ',', $the_author_id );
+		$params['category_name'] = '';
+		$params['tag'] = '';
+		$params['tax_query'] = '';
+		$params['date_query'] = '';
+		$params['post_parent__in'] = '';
+		$params['post_format'] = '';
+		$params['meta_key'] = '';
+		$params['meta_value'] = '';
+	}
+
+	/**
+	 * Check if, when on single post, the user wants to display posts from a certain category
+	 * chosen by the user using custom field.
+	 * This will work in single (regular) posts only, not in custom post types.
+	 *
+	 * This piece of code will see if the current (main) post has a custom field defined in the widget panel.
+	 * If true, the code will change the query parameters for category/tag using the custom field value as taxonomy term.
+	 *
+	 * @since 3.7
+	 */
+	if ( isset( $get_from_custom_fld ) && $get_from_custom_fld && is_singular( 'post' ) ) {
+		if ( isset( $s_custom_field_key ) && isset( $s_custom_field_tax ) ) {
+			$taxonomy_name = get_post_meta( $single_post_id, $s_custom_field_key, true );
+			if ( term_exists( $taxonomy_name, $s_custom_field_tax ) && has_term( $taxonomy_name, $s_custom_field_tax, $single_post_id ) ) {
+				if ( 'category' == $s_custom_field_tax ) {
+					$params['category_name'] = $taxonomy_name;
+				} else if ( 'post_tag' == $s_custom_field_tax ) {
+					$params['tag'] = $taxonomy_name;
+				}
+				// Set parameters. The parameters for excluding posts (like "post__not_in") will be left active.
+				$params['post_type'] = 'post';
+				if ( isset( $number_custom_field ) && ! empty( $number_custom_field ) ) {
+					$params['posts_per_page'] = $number_custom_field;
+				}
+				$params['post__in'] = '';
+				$params['author_name'] = '';
+				$params['author__in'] = '';
+				$params['tax_query'] = '';
+				$params['date_query'] = '';
+				$params['post_parent__in'] = '';
+				$params['post_format'] = '';
+				$params['meta_key'] = '';
+				$params['meta_value'] = '';
+			}
+		}
 	}
 
 	// If the user has chosen a cached version of the widget output...
@@ -649,6 +730,7 @@ function pis_get_posts_in_sidebar( $args ) {
 									'custom_img_no_thumb' => $custom_img_no_thumb,
 									'post_type'           => $post_type,
 									'image_link'          => $image_link,
+									'image_link_to_post'  => $image_link_to_post,
 								) );
 							}
 
@@ -735,6 +817,7 @@ function pis_get_posts_in_sidebar( $args ) {
 												'custom_img_no_thumb' => $custom_img_no_thumb,
 												'post_type'           => $post_type,
 												'image_link'          => $image_link,
+												'image_link_to_post'  => $image_link_to_post,
 											) );
 										} // Close if ( $display_image && has_post_thumbnail )
 

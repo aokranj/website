@@ -3,8 +3,8 @@
 **Donate link:** http://dev.aldolat.it/projects/posts-in-sidebar/  
 **Tags:** post, sidebar, widget  
 **Requires at least:** 4.1  
-**Tested up to:** 4.4  
-**Stable tag:** 3.4  
+**Tested up to:** 4.5  
+**Stable tag:** 3.8  
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
@@ -103,6 +103,28 @@ Please, see [FAQ page](https://github.com/aldolat/posts-in-sidebar/wiki/FAQ) on 
 
 
 ## Changelog ##
+
+### 3.8 ###
+
+* FIX: The "Rich Content" option for excerpt correctly executes shortcodes now.
+* If the length of a WordPress-generated excerpt is smaller than or equal to the maximum length defined by the user for the excerpt, the "Read more..." text is automatically hidden.
+* Reduced widget width to 600px in the admin area.
+
+### 3.7 ###
+
+* NEW: Added support to get posts, when on single post, from user-defined category/tag using custom field (props by Mike S).
+* NEW: Added support for changing number of posts when on single post.
+* FIX: fixed displaying comments string when using languages different from English.
+
+### 3.6 ###
+
+* NEW: now the user can remove the link of the featured image.
+
+### 3.5 ###
+
+* NEW: Added support to get posts by the author of the current post (props by Derek).
+* FIX: fixed getting posts by category slug.
+* Updated the shortcodes options.
 
 ### 3.4 ###
 

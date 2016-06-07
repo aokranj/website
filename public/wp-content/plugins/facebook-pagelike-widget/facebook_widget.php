@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Facebook Widget
- * @version 4.0
+ * @version 4.1
  */
 /*
 Plugin Name: Facebook Widget
 Plugin URI: http://patelmilap.wordpress.com/
 Description: This widget adds a Simple Facebook Page Like Widget into your wordpress website sidebar within few minutes.
 Author: Milap Patel
-Version: 4.0
+Version: 4.1
 Author URI: http://patelmilap.wordpress.com/
 Text Domain: facebook-pagelike-widget
 */
@@ -23,6 +23,11 @@ function fbwidget_deactivate() {
         delete_user_meta($user_id,'fb_ignore_notice');
 }
 register_deactivation_hook( __FILE__, 'fbwidget_deactivate' );
+
+function LoadFbtextDomain() {
+    load_plugin_textdomain( 'facebook-pagelike-widget',false, basename( dirname( __FILE__ ) ) );
+}
+add_action( 'init', 'LoadFbtextDomain' );
 
 $widget_facebook_widget = get_option('widget_fbw_id');
 

@@ -78,12 +78,12 @@ function pis_paragraph( $margin, $unit, $class, $class_filter ) {
 
 
 /**
-* Return the given text with paragraph breaks (HTML <br />).
-*
-* @since 1.12
-* @param string $text The text to be checked.
-* @return string $text The checked text with paragraph breaks.
-*/
+ * Return the given text with paragraph breaks (HTML <br />).
+ *
+ * @since 1.12
+ * @param string $text The text to be checked.
+ * @return string $text The checked text with paragraph breaks.
+ */
 function pis_break_text( $text ) {
 	// Convert cross-platform newlines into HTML '<br />'
 	$text = str_replace( array( "\r\n", "\n", "\r" ), "<br />", $text );
@@ -119,11 +119,17 @@ function pis_meta() {
  * @return string $output The HTML arrow.
  * @uses pis_class()
  */
-function pis_arrow() {
+function pis_arrow( $pre_space = true ) {
 	$the_arrow = '&rarr;';
 	if ( is_rtl() ) $the_arrow = '&larr;';
 
-	$output = '&nbsp;<span ' . pis_class( 'pis-arrow', apply_filters( 'pis_arrow_class', '' ), false ) . '>' . $the_arrow . '</span>';
+	if ( $pre_space ) {
+		$space = '&nbsp;';
+	} else {
+		$space = '';
+	}
+
+	$output = $space . '<span ' . pis_class( 'pis-arrow', apply_filters( 'pis_arrow_class', '' ), false ) . '>' . $the_arrow . '</span>';
 
 	return $output;
 }
@@ -135,28 +141,43 @@ function pis_arrow() {
  * @since 1.15
  * @uses pis_arrow()
  * @param string $the_more The text to be displayed for "Continue reading". Default empty.
+ * @param boolean $no_the_more If the text for "Continue reading" must be hidden. Default false.
  * @param boolean $exc_arrow If the arrow must be displayed or not. Default false.
  * @param boolean $echo If echo the output or return.
  * @return string The HTML arrow linked to the post.
  */
-function pis_more_arrow( $the_more = '', $exc_arrow = false, $echo = true ) {
+function pis_more_arrow( $the_more = '', $no_the_more = false, $exc_arrow = false, $echo = true ) {
 	if ( $the_more || $exc_arrow ) {
-		if ( $exc_arrow ) {
+
+		if ( $the_more && $exc_arrow ) {
 			$the_arrow = pis_arrow();
+		} else if ( ( ! $the_more || $no_the_more ) && $exc_arrow ) {
+			$the_arrow = pis_arrow( false );
 		} else {
 			$the_arrow = '';
 		}
+
 		$output = '<span ' . pis_class( 'pis-more', apply_filters( 'pis_more_class', '' ), false ) . '>';
 			$output .= '<a href="' . get_permalink() . '" title="' . esc_attr__( 'Read the full post', 'posts-in-sidebar' ) . '" rel="bookmark">';
-				$output .= $the_more . '&nbsp;' . $the_arrow;
+			if ( $no_the_more ) {
+				$output .= pis_arrow( false );
+			} else {
+				$output .= $the_more . $the_arrow;
+			}
 			$output .= '</a>';
 		$output .= '</span>';
+
 	}
 
-	if ( ! isset( $output ) )
+	if ( ! isset( $output ) ) {
 		return '';
+	}
 
-	if ( $echo ) echo $output; else return $output;
+	if ( $echo ) {
+		echo $output;
+	} else {
+		return $output;
+	}
 }
 
 
@@ -351,6 +372,7 @@ function pis_the_thumbnail( $args ) {
 		'custom_img_no_thumb' => true,
 		'post_type'           => 'post',
 		'image_link'          => '',
+		'image_link_to_post'  => true,
 	);
 	$args = wp_parse_args( $args, $defaults );
 	extract( $args, EXTR_SKIP );
@@ -396,6 +418,8 @@ function pis_the_thumbnail( $args ) {
 
 	$output = $open_wrap;
 
+		if ( $image_link_to_post ) {
+
 		// Figure out if a custom link for the featured image has been set.
 		if ( $image_link ) {
 			$the_image_link = $image_link;
@@ -403,6 +427,7 @@ function pis_the_thumbnail( $args ) {
 			$the_image_link = get_permalink();
 		}
 		$output .= '<a ' . pis_class( 'pis-thumbnail-link', apply_filters( 'pis_thumbnail_link_class', '' ), false ) . 'href="' . esc_url( strip_tags( $the_image_link ) ) . '" title="' . esc_attr( $post_link ) . '" rel="bookmark">';
+		}
 
 			/**
 			 * If the post type is an attachment (an image, or any other attachment),
@@ -439,7 +464,11 @@ function pis_the_thumbnail( $args ) {
 			}
 
 			$output .= str_replace( '<img', '<img' . $image_style, $image_html );
-		$output .= '</a>';
+
+		if ( $image_link_to_post ) {
+			$output .= '</a>';
+		}
+
 	$output .= $close_wrap;
 
 	return $output;
@@ -489,6 +518,7 @@ function pis_the_text( $args ) {
 			$content = $pis_query->post->post_content;
 			// Honor any paragraph break
 			$content = pis_break_text( $content );
+			$content = do_shortcode( $content );
 			$output .= apply_filters( 'pis_rich_content', $content );
 		break;
 
@@ -510,7 +540,7 @@ function pis_the_text( $args ) {
 			} else {
 				$excerpt_text = wp_trim_words( $excerpt_text, $exc_length, '&hellip;' );
 			}
-			$output .= apply_filters( 'pis_more_excerpt_text', $excerpt_text ) . ' ' . pis_more_arrow( $the_more, $exc_arrow, false );
+			$output .= apply_filters( 'pis_more_excerpt_text', $excerpt_text ) . ' ' . pis_more_arrow( $the_more, false, $exc_arrow, false );
 		break;
 
 		case 'excerpt':
@@ -528,18 +558,20 @@ function pis_the_text( $args ) {
 			if ( $pis_query->post->post_excerpt ) {
 				// Honor any paragraph break
 				$user_excerpt = pis_break_text( $pis_query->post->post_excerpt );
-				$output .= apply_filters( 'pis_user_excerpt', $user_excerpt ) . ' ' . pis_more_arrow( $the_more, $exc_arrow, false );
+				$output .= apply_filters( 'pis_user_excerpt', $user_excerpt ) . ' ' . pis_more_arrow( $the_more, false, $exc_arrow, false );
 			} else {
 			// ... else generate an excerpt
 				$excerpt_text = strip_shortcodes( $pis_query->post->post_content );
+				$no_the_more = false;
+				if ( count( explode( ' ', wp_strip_all_tags( $excerpt_text ) ) ) <= $exc_length ) $no_the_more = true;
 				$excerpt_text = wp_trim_words( $excerpt_text, $exc_length, '&hellip;' );
-				$output .= apply_filters( 'pis_excerpt_text', $excerpt_text ) . ' ' . pis_more_arrow( $the_more, $exc_arrow, false );
+				$output .= apply_filters( 'pis_excerpt_text', $excerpt_text ) . ' ' . pis_more_arrow( $the_more, $no_the_more, $exc_arrow, false );
 			}
 		break;
 
 		case 'only_read_more':
 			$excerpt_text = '';
-			$output .= apply_filters( 'pis_only_read_more', $excerpt_text ) . ' ' . pis_more_arrow( $the_more, $exc_arrow, false );
+			$output .= apply_filters( 'pis_only_read_more', $excerpt_text ) . ' ' . pis_more_arrow( $the_more, false, $exc_arrow, false );
 		break;
 
 	endswitch;
@@ -864,8 +896,10 @@ function pis_get_comments_number( $pis_post_id, $link ) {
 		$output = __( 'Comments are closed.', 'posts-in-sidebar' );
 	} else {
 		// Construct the comments string.
-		if ( 0 < $num_comments ) {
-			$comments = sprintf( _n( '%s Comment', '%s Comments', $num_comments, 'posts-in-sidebar' ), $num_comments );
+		if ( 1 == $num_comments ) {
+			$comments = __( '1 Comment', 'posts-in-sidebar' );
+		} else if ( 1 < $num_comments ) {
+			$comments = sprintf( __( '%d Comments', 'posts-in-sidebar' ), $num_comments );
 		} else {
 			$comments = __( 'Leave a comment', 'posts-in-sidebar' );
 		}

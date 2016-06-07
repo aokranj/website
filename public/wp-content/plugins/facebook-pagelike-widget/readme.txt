@@ -3,7 +3,7 @@ Contributors: Milap
 Tags: facebook, facebook like box, facebook simple like, facebook fan pages, facebook like button, facebook button share, facebook social bookmarking, facebook feeds, facebook feed widget, social share, wordpress social share, socialmedia, social media widget, social media sharing, social media icon 
 Donate link: https://www.paypal.com/cgi-bin/webscr?business=cemilap.88@gmail.com&cmd=_xclick¤cy_code=USD&amount=5&item_name=Offer%20me%20coffee
 Requires at least: 3.0.1
-Tested up to: 4.4
+Tested up to: 4.5
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ This widget adds a Simple Facebook page Like Widget into your WordPress website 
 
 == Description ==
 
-This is one of the most popular plugin for facebook page feeds widget with over 2,47,000 downloads and 60,000+ active installs.
+This is one of the most popular plugin for facebook page feeds widget with over 2,90,000 downloads and 70,000+ active installs.
 
 An inside look:
 
@@ -37,6 +37,13 @@ For more details,
 http://codex.wordpress.org/Managing_Plugins
 
 == Frequently Asked Questions ==
+
+
+= How to use shortcode ? =
+* You can use below shortcode in Post or Page.
+`[fb_widget fb_url="http://www.facebook.com/Instagram"]`
+You can use more parameters like below.
+`[fb_widget fb_url="http://www.facebook.com/Instagram" width="500" height="450" data_small_header="false" select_lng="ru_RU" data_adapt_container_width="false" data_hide_cover="false" data_show_facepile="false" data_show_posts="true"]`
 
 = Widget doesn't working in Mozilla Firefox  = 
 * If widget works great in all browsers except Mozilla Firefox, You must press the settings off "Use protection against tracking in private window", its security settings for Mozilla, nothing to do with my plugin.
@@ -71,6 +78,9 @@ I have tested my widget with following themes. Please let me know your theme nam
 * News Pro (http://my.studiopress.com/themes/news/)
 
 == Changelog ==
+
+= Version 4.1 =
+* Now you can add individual widget into Page or Post using shortcode.
 
 = Version 4.0 =
 * Changes in code to make plugin compitable for Translation.

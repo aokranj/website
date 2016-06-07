@@ -185,7 +185,7 @@ function pis_shortcode( $atts ) {
 		'custom_field_margin' => NULL,
 		'archive_margin'      => NULL,
 		'noposts_margin'      => NULL,
-		'custom_styles'       => '',
+		// 'custom_styles'       => '', /* For widget only */
 
 		// Extras
 		'list_element'        => 'ul',
@@ -204,4 +204,6 @@ function pis_shortcode( $atts ) {
 
 	return do_shortcode( pis_get_posts_in_sidebar( $atts ) );
 }
-add_shortcode('pissc', 'pis_shortcode');
+if ( ! shortcode_exists( 'pissc' ) ) {
+	add_shortcode('pissc', 'pis_shortcode');
+}
