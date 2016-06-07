@@ -222,6 +222,8 @@ class AOKranj
     		'link'       => 'file'
     	), $attr, 'gallery' );
 
+        $atts['size'] = 'large';
+
     	$id = intval( $atts['id'] );
 
     	if ( ! empty( $atts['include'] ) ) {
