@@ -53,7 +53,7 @@ class AOKranj
         }
 
         add_filter('wp_get_attachment_image_attributes', array(&$this, 'post_thumbnail_title_filter'));
-        add_filter('wp_get_attachment_link', array(&$this, 'attachment_link_filter')), 10, 4);
+        add_filter('wp_get_attachment_link', array(&$this, 'attachment_link_filter'), 10, 4);
     }
 
     public function attachment_link_filter( $content, $post_id, $size, $permalink ) {
