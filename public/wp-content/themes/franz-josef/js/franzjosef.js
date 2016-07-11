@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
 	}
 	
 	/* Go to parent link of a dropdown menu if clicked when dropdown menu is open */
-	$('.dropdown-toggle[href]').click(function(){
+	$('.dropdown-toggle[href], .dropdown-submenu > a[href]').click(function(){
 		if ($(this).parent().hasClass('open') || $(this).parent().hasClass('dropdown-submenu') ) window.location = $(this).attr('href');
 	});	
 	

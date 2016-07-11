@@ -77,7 +77,14 @@ function franz_customizer_display_options( $wp_customize ){
 		'type' 		=> 'checkbox',
 		'section' 	=> 'fj-display-posts',
 		'label' 	=> __( 'Disable child pages navigation', 'franz-josef' ),
-		'description'	=> sprintf( __( 'Disables the "In this section" child pages navigation in the sidebar.', 'franz-josef' ), '<code>non-responsive</code>' ),
+		'description'	=> __( 'Disables the "In this section" child pages navigation in the sidebar.', 'franz-josef' ),
+	) );
+
+	$wp_customize->add_control( 'franz_settings[disable_archive_video]', array(
+		'type' 		=> 'checkbox',
+		'section' 	=> 'fj-display-posts',
+		'label' 	=> __( 'Disable video in posts listing', 'franz-josef' ),
+		'description'	=> __( 'Disables the feature where embedded video is used instead of post image in posts listing pages.', 'franz-josef' ),
 	) );
 	
 	

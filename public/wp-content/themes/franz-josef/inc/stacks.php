@@ -80,14 +80,20 @@ if ( ! function_exists( 'franz_stack_mentions_bar' ) ) :
  * Stack: Mentions Bar
  */
 function franz_stack_mentions_bar( $args = array() ){
+	global $franz_settings;
+
 	$defaults = array(
 		'title'			=> '',
 		'description'	=> '',
 		'full_width'	=> false,
-		'items'			=> array()
+		'items'			=> array(),
+		'new_tab'		=> ( isset( $franz_settings['mentions_bar_new_window'] ) ) ? $franz_settings['mentions_bar_new_window'] : false,
 	);
 	$args = wp_parse_args( $args, $defaults );
 	extract( $args, EXTR_SKIP );
+
+	if ( ! $title && isset( $franz_settings['mentions_bar_title'] ) ) $title = $franz_settings['mentions_bar_title'];
+	if ( ! $description && isset( $franz_settings['mentions_bar_desc'] ) ) $description = $franz_settings['mentions_bar_desc'];
 
 	if ( ! $items ) return;
 	?>
@@ -104,7 +110,7 @@ function franz_stack_mentions_bar( $args = array() ){
 					$alt = ( isset( $icon_meta['image_meta']['title'] ) ) ? $icon_meta['image_meta']['title'] : '';
 				?>
                 <li>
-                	<?php if ( $item['link'] ) : ?><a href="<?php echo $item['link']; ?>"><?php endif; ?>
+                	<?php if ( $item['link'] ) : ?><a href="<?php echo $item['link']; ?>" <?php if ( $new_tab ) echo 'target="_blank"'; ?>><?php endif; ?>
                     	<img src="<?php echo $icon[0]; ?>" width="<?php echo floor( $icon[1] / 2 ); ?>" height="<?php echo floor( $icon[2] / 2 ); ?>" alt="<?php echo $alt; ?>" />
                     <?php if ( $item['link'] ) : ?></a><?php endif; ?>
                 </li>

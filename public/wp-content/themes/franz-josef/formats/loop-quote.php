@@ -8,21 +8,10 @@
     <div <?php post_class(); ?> id="entry-<?php the_ID(); ?>">
         
         <?php 
-            $post_meta = get_post_custom();
-            $has_embed = false;
-            foreach ( $post_meta as $key => $meta ) {
-                if ( stripos( $key, '_oembed_' ) === 0 && strlen( $key ) == 40 ) {
-					if ( trim( $meta[0] ) == '{{unknown}}' ) continue;
-                    $has_embed = true;
-                    $embed_code = $meta[0];
-                    break;
-                }
-            }
-            
-            if ( $has_embed || franz_has_post_image() ) : ?>
+            if ( ( $embed_code = franz_get_archive_post_embed( get_the_ID() ) ) || franz_has_post_image() ) : ?>
             
                 <div class="featured-image">
-                    <?php if ( $has_embed ) : echo $embed_code; else : ?>
+                    <?php if ( $embed_code ) : echo $embed_code; else : ?>
                         <a href="<?php the_permalink(); ?>"><?php franz_the_post_image(); ?></a>
                     <?php endif; ?>
                  </div>

@@ -4,7 +4,7 @@
  */
 function franz_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ){
 	global $franz_no_default_thumb;
-
+	
 	if ( in_array( $size, array( 'thumbnail', 'franz-medium' ) ) ) {
 		if ( ! $html && ! $franz_no_default_thumb ) {
 			$html = '<span class="generic-thumb ' . esc_attr( $size ) . '"><i class="fa fa-camera"></i></span>';
@@ -12,11 +12,11 @@ function franz_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, 
 			$html = str_replace( 'class="', 'class="thumbnail ', $html );
 		}
 	}
-
+	
 	if ( in_array( $size, array( 'post-thumbnail', 'franz-medium' ) ) ) {
 		$html = str_replace( 'class="', 'class="img-responsive ', $html );
 	}
-
+	
 	return $html;
 }
 add_filter( 'post_thumbnail_html', 'franz_post_thumbnail_html', 10, 5 );
@@ -26,14 +26,14 @@ add_filter( 'post_thumbnail_html', 'franz_post_thumbnail_html', 10, 5 );
  * Determine the correct template part to load
  */
 function franz_get_template_part( $p1, $p2 = '' ){
-
+	
 	if ( $p1 == 'loop' && ! $p2 ) {
 		$p2 = get_post_format();
 		$filename = '/formats/loop-' . $p2 . '.php';
 		if ( $p2 != 'standard' && ( file_exists( FRANZ_ROOTDIR . $filename ) || file_exists( FJ_CHILDDIR . $filename ) ) ) $p1 = 'formats/loop';
 		else $p2 = '';
 	}
-
+	
 	get_template_part( $p1, $p2 );
 }
 
@@ -45,17 +45,17 @@ function franz_body_class( $classes ){
 	global $franz_settings;
 	if ( is_singular() || is_author() ) $classes[] = 'singular';
 	else $classes[] = 'non-singular';
-
+	
 	if ( ! is_singular() && ! is_author() && $franz_settings['tiled_posts'] ) $classes[] = 'tiled-posts';
 	if ( ! $franz_settings['disable_top_bar'] ) $classes[] = 'has-top-bar';
-
+	
 	if ( is_front_page() ) {
 		$classes[] = 'front-page';
 		if ( $franz_settings['enable_frontpage_sidebar'] ) $classes[] = 'has-sidebar';
 	}
-
+	
 	$classes[] = franz_column_mode();
-
+	
 	return $classes;
 }
 add_filter( 'body_class', 'franz_body_class' );
@@ -72,7 +72,7 @@ function franz_main_content_classes( $classes = array() ) {
 		$classes[] = 'col-md-12';
 		$classes = array_diff( $classes, array( 'col-md-9') );
 	}
-
+	
 	echo implode( ' ', $classes );
 }
 
@@ -85,10 +85,10 @@ function franz_entry_meta(){
 	$post_id = get_the_ID();
 	$author_id = $post->post_author;
 	$meta = array();
-
+	
 	/* Don't get meta for pages */
 	if ( 'page' == get_post_type( $post_id ) ) return;
-
+	
 	/* Print button */
 	if ( $franz_settings['print_button'] && is_singular() ) {
 		$meta['print'] = array(
@@ -96,7 +96,7 @@ function franz_entry_meta(){
 			'meta'	=> '<a href="javascript:print();" title="' . esc_attr__( 'Print this page', 'franz-josef' ) . '"><i class="fa fa-print"></i></a>',
 		);
 	}
-
+	
 	/* Post date */
 	if ( ! $franz_settings['hide_post_date'] ) {
 		$meta['date'] = array(
@@ -104,7 +104,7 @@ function franz_entry_meta(){
 			'meta'	=> '<a href="' . esc_url( get_permalink( $post_id ) ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
 		);
 	}
-
+	
 	/* Post author and categories */
 	if ( ! $franz_settings['hide_post_cat'] ) {
 		$cats = get_the_category(); $categories = array();
@@ -112,22 +112,18 @@ function franz_entry_meta(){
 			foreach ( $cats as $cat ) $categories[] = '<a class="term term-' . esc_attr( $cat->taxonomy ) . ' term-' . esc_attr( $cat->term_id ) . '" href="' . esc_url( get_term_link( $cat->term_id, $cat->taxonomy ) ) . '">' . $cat->name . '</a>';
 		}
 		if ( $categories ) $categories = '<span class="terms">' . implode( ', ', $categories ) . '</span>';
-	} else {
-		$categories = false;
 	}
 	if ( ! $franz_settings['hide_post_author'] ) {
 		$author = '<span class="author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ) . '" rel="author">' . get_the_author_meta( 'display_name' , $author_id ) . '</a></span>';
-	} else {
-		$author = false;
 	}
-
+	
 	if ( $categories && $author ) $byline = sprintf( __( 'By %1$s under %2$s', 'franz-josef' ), $author, $categories );
 	elseif ( $categories ) $byline = sprintf( __( 'Filed under %2$s', 'franz-josef' ), $author, $categories );
 	elseif ( $author ) $byline = sprintf( __( 'By %s', 'franz-josef' ), $author );
 	else $byline = false;
-
+	
 	if ( $byline ) $meta['byline'] = array( 'class'	=> 'byline', 'meta'	=> $byline );
-
+	
 	/* Comments link */
 	if ( franz_should_show_comments( $post_id ) ) {
 		$comment_count = get_comment_count( $post_id );
@@ -139,24 +135,24 @@ function franz_entry_meta(){
 			'meta'	=> '<a href="' . esc_url( $comments_link ) . '">' . $comment_text . '</a>',
 		);
 	}
-
+	
 	/* Post tags */
 	$tags = get_the_tags();
 	if ( $tags ) {
 		$html = '';
 		if ( count( $tags ) > 1 ) $html .= '<i class="fa fa-tags"></i>';
 		else $html .= '<i class="fa fa-tag"></i>';
-
+		
 		$tag_links = array();
 		foreach ( $tags as $tag ) $tag_links[] = '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tag->name . '</a>';
 		$html .= implode( ', ', $tag_links );
-
+		
 		if ( $html ) $meta['tags'] = array(
 			'class'	=> 'entry-tags',
 			'meta'	=> $html
 		);
 	}
-
+	
 	$meta = apply_filters( 'franz_entry_meta', $meta, $post_id );
 	if ( ! $meta ) return;
 	?>
@@ -176,12 +172,12 @@ function franz_entry_meta(){
 function franz_author_entry_meta(){
 	$meta = array();
 	$post_id = get_the_ID();
-
+	
 	$meta['date'] = array(
 		'class'	=> 'date updated',
 		'meta'	=> '<a href="' . esc_url( get_permalink( $post_id ) ) . '">' . get_the_time( get_option( 'date_format' ) ) . '</a>',
 	);
-
+	
 	$comment_count = get_comment_count( $post_id );
 	$comment_text = ( $comment_count['approved'] ) ? $comment_count['approved'] : __( 'Leave a reply', 'franz-josef' );
 	$comments_link = ( $comment_count['approved'] ) ? get_comments_link() : str_replace( '#comments', '#respond', get_comments_link() );
@@ -189,7 +185,7 @@ function franz_author_entry_meta(){
 		'class'	=> 'comments-count',
 		'meta'	=> '<a href="' . esc_url( $comments_link ) . '"><i class="fa fa-comment"></i> ' . $comment_text . '</a>',
 	);
-
+	
 	$meta = apply_filters( 'franz_author_entry_meta', $meta );
 	if ( ! $meta ) return;
 	?>
@@ -208,19 +204,19 @@ function franz_author_entry_meta(){
 function franz_structured_data_markup(){
 	global $post, $franz_settings;
 	if ( ! is_singular() ) return;
-
+	
 	$markup = array();
-
+	
 	/* Date published and updated */
 	$markup[] = '<span class="published"><span class="value-title" title="' . date( 'c', strtotime( $post->post_date_gmt ) ) . '" /></span>';
 	$markup[] = '<span class="updated"><span class="value-title" title="' . date( 'c', strtotime( $post->post_modified_gmt ) ) . '" /></span>';
-
+	
 	/* Author */
 	$markup[] = '<span class="vcard author"><span class="fn nickname"><span class="value-title" title="'. get_the_author_meta( 'display_name' ) . '" /></span></span>';
-
+	
 	$markup = apply_filters( 'franz_structured_data_markup', $markup );
 	if ( ! $markup ) return;
-
+	
 	echo implode( "\n", $markup );
 }
 add_action( 'franz_do_entry_meta', 'franz_structured_data_markup' );
@@ -264,21 +260,21 @@ if ( ! function_exists( 'franz_page_navigation' ) ) :
 function franz_page_navigation(){
 	global $franz_settings;
 	if ( $franz_settings['disable_child_pages_nav'] ) return;
-
+	
 	$current = get_the_ID();
 	$ancestors = get_ancestors( $current, 'page' );
 	if ( $ancestors ) $parent = $ancestors[0];
 	else $parent = $current;
-
+	
 	$args = array(
 		'post_type'			=> array( 'page' ),
 		'posts_per_page'	=> -1,
 		'post_parent'		=> $parent,
-		'orderby'			=> 'title',
+		'orderby'			=> 'menu_order title',
 		'order'				=> 'ASC'
 	);
 	$children = new WP_Query( apply_filters( 'franz_page_navigation_args', $args ) );
-
+	
 	if ( $children->have_posts() ) :
 	?>
         <div class="widget">
@@ -290,8 +286,8 @@ function franz_page_navigation(){
                 <?php endwhile; ?>
             </div>
         </div>
-    <?php
-	endif; wp_reset_postdata();
+    <?php 
+	endif; wp_reset_postdata(); 
 }
 endif;
 
@@ -313,7 +309,7 @@ function franz_posts_nav( $args = array() ){
 		'next_text' 		=> '&raquo;'
 	) );
 	$args = wp_parse_args( $args, $defaults );
-
+	
 	$paginate_args = array(
 		'current' 		=> $args['current'],
 		'total'			=> $args['total'],
@@ -325,16 +321,16 @@ function franz_posts_nav( $args = array() ){
 	);
 	if ( $args['base'] ) $paginate_args['base'] = $args['base'];
 	if ( $args['format'] ) $paginate_args['format'] = $args['format'];
-
-
+	
+	
 	if ( $args['type'] == 'comment' ) $links = paginate_comments_links( apply_filters( 'franz_comments_nav_args', $paginate_args ) );
 	else $links = paginate_links( apply_filters( 'franz_posts_nav_args', $paginate_args ) );
-
+	
 	if ( $links ) :
 	?>
 		<ul class="pagination">
 			<?php if ( $args['current'] == 1 ) : ?><li class="disabled"><span class="page-numbers"><?php echo $args['prev_text']; ?></span></li><?php endif; ?>
-			<?php
+			<?php 
 				foreach ( $links as $link ) {
 					if ( stripos( $link, 'current' ) !== false ) $link = '<li class="active">' . $link . '</li>';
 					else $link = '<li>' . $link . '</li>';
@@ -354,9 +350,9 @@ if ( ! function_exists( 'franz_comments_nav' ) ) :
  * Comments pagination
  */
 function franz_comments_nav( $args = array() ){
-
+	
 	if ( ! get_option( 'page_comments' ) ) return;
-
+	
 	$defaults = apply_filters( 'franz_comments_nav_defaults', array(
 		'current'			=> max( 1, get_query_var('cpage') ),
 		'total'				=> get_comment_pages_count(),
@@ -386,9 +382,9 @@ function franz_link_pages(){
 		'separator'        => '</span></li><li><span class="page-numbers">',
 		'pagelink'         => '%',
 		'echo'             => 0
-	);
+	); 
 	$pages_link = wp_link_pages( apply_filters( 'franz_link_pages_args', $args ) );
-
+	
 	$pages_link = explode( '</li>', $pages_link );
 	foreach ( $pages_link as $i => $link ) {
 		if ( stripos( $link, '<a ' ) === false ) {
@@ -416,14 +412,14 @@ function franz_gform_submit_button( $button, $form ) {
 		absint( $form['id'] ),
 		esc_attr( $form['button']['text'] )
 	);
-
+	 
 	return $button;
 }
 add_filter( 'gform_submit_button', 'franz_gform_submit_button', 10, 2 );
 
 
 /**
- * Allows post queries to sort the results by the order specified in the post__in parameter.
+ * Allows post queries to sort the results by the order specified in the post__in parameter. 
  * Just set the orderby parameter to post__in!
  *
  * Based on the Sort Query by Post In plugin by Jake Goldman (http://www.get10up.com)
@@ -432,7 +428,7 @@ function franz_sort_query_by_post_in( $sortby, $thequery ) {
 	global $wpdb;
 	if ( ! empty( $thequery->query['post__in'] ) && isset( $thequery->query['orderby'] ) && $thequery->query['orderby'] == 'post__in' )
 		$sortby = "find_in_set(" . $wpdb->prefix . "posts.ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
-
+	
 	return $sortby;
 }
 add_filter( 'posts_orderby', 'franz_sort_query_by_post_in', 9999, 2 );
@@ -477,10 +473,15 @@ function franz_prev_next_posts( $args = array() ){
 	);
 	$args = wp_parse_args( $args, $defaults );
 	extract( $args, EXTR_SKIP );
-
+	
+	/* Exclude categories used for sliders */
+	if ( $franz_settings['slider_type'] == 'categories' && $franz_settings['slider_exclude_categories'] == 'everywhere' && $franz_settings['slider_specific_categories'] ) {
+		$excluded_terms .= implode( ',', $franz_settings['slider_specific_categories'] );
+	}
+	
 	$prev_post = apply_filters( 'franz_prev_post', get_previous_post( $in_same_term, $excluded_terms, $taxonomy ) );
 	$next_post = apply_filters( 'franz_next_post', get_next_post( $in_same_term, $excluded_terms, $taxonomy ) );
-
+	
 	if ( ! $prev_post && ! $next_post ) return;
 	?>
     <div class="prev-next-posts well">
@@ -493,7 +494,7 @@ function franz_prev_next_posts( $args = array() ){
                     <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="post-link">&nbsp;</a>
                 <?php endif; ?>
             </div>
-
+    
             <div class="col-sm-6 next-post">
                 <?php if ( $next_post ) :	?>
                     <h3 class="section-title-sm"><?php _e( 'Next', 'franz-josef' ); ?> <i class="fa fa-chevron-circle-right"></i></h3>
@@ -533,17 +534,17 @@ endif;
 */
 function franz_improved_excerpt( $text ){
 	global $franz_settings, $post;
-
+	
 	$raw_excerpt = $text;
 	if ( '' == $text ) {
 		$text = get_the_content( '' );
 		$text = strip_shortcodes( $text );
 		$text = apply_filters( 'the_content', $text);
 		$text = str_replace( ']]>', ']]&gt;', $text);
-
+		
 		/* Remove unwanted JS code */
 		$text = preg_replace( '@<script[^>]*?>.*?</script>@si', '', $text);
-
+		
 		/* Strip HTML tags, but allow certain tags */
 		$text = strip_tags( $text, $franz_settings['excerpt_html_tags'] );
 
@@ -558,10 +559,10 @@ function franz_improved_excerpt( $text ){
 			$text = implode( ' ', $words);
 		}
 	}
-
+	
 	// Try to balance the HTML tags
 	$text = force_balance_tags( $text );
-
+	
 	return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt);
 }
 
@@ -571,7 +572,7 @@ function franz_improved_excerpt( $text ){
 */
 function franz_excerpts_filter(){
 	global $franz_settings;
-
+	
 	if ( $franz_settings['excerpt_html_tags'] ) {
 		remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 		add_filter( 'get_the_excerpt', 'franz_improved_excerpt' );
@@ -632,7 +633,7 @@ if ( ! function_exists( 'franz_has_custom_layout' ) ) :
  * @return boolean
  */
 function franz_has_custom_layout() {
-
+	
 	/* If this function has not been declared, it means Stacks addon has not been installed */
     return false;
 }
@@ -654,17 +655,50 @@ function franz_do_custom_layout() {
 add_action( 'franz_before_content', 'franz_do_custom_layout', 1000 );
 
 
+if ( ! function_exists( 'franz_get_archive_post_embed' ) ) :
+/**
+ * Check if the post has embedded videos and return the embed code if there is
+ */
+function franz_get_archive_post_embed( $post_id = '' ){
+
+	global $franz_settings;
+	$embed_code = false;
+
+	if ( $franz_settings['disable_archive_video'] ) return false;
+
+	/* Make sure we have a valid post ID */
+	if ( ! $post_id ) {
+		global $post;
+		$post_id = ( $post->ID ) ? $post->ID : get_the_ID();
+		if ( ! $post_id ) return false;
+	}
+
+	/* Check if there is auto-embed item in the post */
+	$post_meta = get_post_custom( $post_id );
+	foreach ( $post_meta as $key => $meta ) {
+	    if ( stripos( $key, '_oembed_' ) === 0 && strlen( $key ) == 40 ) {
+			if ( trim( $meta[0] ) == '{{unknown}}' ) continue;
+	        $embed_code = $meta[0];
+	        break;
+	    }
+	}
+
+	return apply_filters( 'franz_get_archive_post_embed', $embed_code, $post_id );
+}
+endif;
+
+
 /**
  * Check if there is usable image in the post
  */
 function franz_has_post_image( $post_id = '' ){
 	/* Get the post ID if not provided */
 	if ( ! $post_id ) $post_id = get_the_ID();
-
+	
 	if ( has_post_thumbnail( $post_id ) ) return true;
 	if ( get_attached_media( 'image', $post_id ) ) return true;
 	if ( get_post_gallery( $post_id, false ) ) return true;
-
+	
 	return false;
 }
 
@@ -673,7 +707,7 @@ function franz_has_post_image( $post_id = '' ){
  * Get the best available post image based on requested size
  */
 function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
-
+	
 	/* Get the requested dimension */
 	$size = apply_filters( 'franz_post_image_size', $size, $post_id );
 	if ( ! is_array( $size ) ) {
@@ -689,10 +723,10 @@ function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
 		$width = $size[0];
 		$height = $size[1];
 	}
-
+	
 	/* Get the post ID if not provided */
 	if ( ! $post_id ) $post_id = get_the_ID();
-
+	
 	/* Get and return the cached result if available */
 	$cached_images = get_post_meta( $post_id, '_franz_post_images', true );
 	if ( $cached_images ) {
@@ -700,10 +734,10 @@ function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
 	} else {
 		$cached_images = array();
 	}
-
+	
 	$images = array();
 	$image_ids = array();
-
+	
 	/* Check if the post has a featured image */
 	if ( has_post_thumbnail( $post_id ) ) {
 		$image_id = get_post_thumbnail_id( $post_id );
@@ -720,7 +754,7 @@ function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
 			$image_ids[] = $image_id;
 		}
 	}
-
+	
 	/* Get other images uploaded to the post */
 	$media = get_attached_media( 'image', $post_id );
 	if ( $media ) {
@@ -740,7 +774,7 @@ function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
 			}
 		}
 	}
-
+	
 	/* Get the images from galleries in the post */
 	$galleries = get_post_galleries( $post_id, false );
 	if ( $galleries ) {
@@ -760,11 +794,11 @@ function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
 						'aspect_ratio'	=> $image[1] / $image[2]
 					);
 					$image_ids[] = $image_id;
-				}
+				} 
 			}
 		}
 	}
-
+	
 	/* Score the images for best match to the requested size */
 	$weight = array(
 		'dimension'		=> 1.5,
@@ -772,30 +806,30 @@ function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
 		'featured_image'=> 1
 	);
 	$target_aspect = $width / $height;
-
+	
 	foreach ( $images as $key => $image ) {
-
+		
 		$score = 0.0;
-
+		
 		/* Aspect ratio */
 		if ( $image['aspect_ratio'] > $target_aspect ) $score += ( $target_aspect / $image['aspect_ratio'] ) * $weight['aspect_ratio'];
 		else $score += ( $image['aspect_ratio'] / $target_aspect ) * $weight['aspect_ratio'];
-
+		
 		/* Dimension: ( width ratio + height ratio ) / 2 */
 		$dim_score = min( array( ( $image['width'] / $width ), 1 ) ) + min( array( ( $image['height'] / $height ), 1 ) );
 		$score += ( $dim_score / 2 ) * $weight['dimension'];
-
+		
 		/* Featured image */
 		if ( $image['featured'] ) $score += $weight['featured_image'];
-
+		
 		$images[$key]['score'] = $score;
 	}
-
+	
 	/* Sort the images based on the score */
 	usort( $images, 'franz_sort_array_key_score' );
-
+	
 	$images = apply_filters( 'franz_get_post_image', $images, $size, $post_id );
-
+	
 	if ( $images ) {
 		$cached_images = array_merge( $cached_images, array( $width . 'x' . $height => $images[0] ) );
 		update_post_meta( $post_id, '_franz_post_images', $cached_images );
@@ -813,7 +847,7 @@ function franz_get_post_image( $size = 'thumbnail', $post_id = '' ){
  */
 function franz_clear_post_image_cache( $post_id ){
 	if ( wp_is_post_revision( $post_id ) ) return;
-
+	
 	delete_post_meta( $post_id, '_franz_post_images' );
 }
 add_action( 'save_post', 'franz_clear_post_image_cache' );
@@ -846,7 +880,7 @@ if ( ! function_exists( 'franz_featured_image' ) ) :
  */
 function franz_featured_image( $force = false ) {
 	global $franz_settings;
-
+	
 	$has_featured_image = true;
 	if ( $franz_settings['hide_featured_image'] && ! $force ) $has_featured_image = false;
 	if ( ! has_post_thumbnail() ) $has_featured_image = false;
@@ -862,13 +896,13 @@ function franz_featured_image( $force = false ) {
 ?>
 	<div class="featured-image">
 		<?php the_post_thumbnail(); ?>
-		<?php
+		<?php 
 			/* Featured image caption */
 			$featured_image = get_post( $featured_image_id );
-			if ( $featured_image->post_excerpt ) {
+			if ( $featured_image->post_excerpt ) { 
 		?>
 			<div class="caption"><i class="fa fa-camera"></i> <?php echo $featured_image->post_excerpt; ?></div>
-		<?php }
+		<?php } 
 			do_action( 'franz_featured_image' );
 		?>
 	</div>

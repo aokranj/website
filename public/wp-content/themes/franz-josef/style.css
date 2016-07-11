@@ -4,10 +4,10 @@ Theme URI: http://www.graphene-theme.com/franz-josef/
 Author: Graphene Themes Solutions
 Author URI: http://www.graphene-theme.com/about-us/
 Description: Franz Josef is a modern, responsive theme built on a solid framework that leverages the latest web technologies to deliver a beautiful experience. Perfect for businesses and individuals alike. Custom page builder available to quickly and easily create unique and complex custom layouts.
-Version: 1.7.1
+Version: 1.7.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: black, blue, white, light, dark, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: franz-josef
 */
 
@@ -983,7 +983,9 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	color: #888;
 }
 .tiled-posts .hentry .featured-image,
-.tiled-posts .hentry .featured-video {
+.tiled-posts .hentry .featured-video,
+.posts-list .hentry .featured-image,
+.posts-list .hentry .featured-video {
 	margin-bottom: 10px;
 }
 .hentry .featured-image iframe,
@@ -1699,7 +1701,8 @@ blockquote cite:before {
 .social-links li a:hover {
 	color: #000;
 }
-.footer .social-links li a:hover {
+.footer .social-links li a:hover,
+.top-bar .social-links li a:hover {
 	color: #fff;
 }
 

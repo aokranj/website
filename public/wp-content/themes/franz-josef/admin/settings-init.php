@@ -124,7 +124,6 @@ function franz_admin_scripts() {
 	wp_enqueue_script( 'custom-header' );
     wp_enqueue_script( 'thickbox' );
 	wp_enqueue_script( 'franz-codemirror', FRANZ_ROOTURI . '/js/codemirror/codemirror.min.js', array(), '', false );
-	wp_deregister_script( 'chosen' );
 	wp_enqueue_script( 'chosen', FRANZ_ROOTURI . '/js/chosen/chosen.jquery.min.js', array( 'jquery' ), '', false );
 	wp_enqueue_script( 'jquery-ui-sortable' );
 	

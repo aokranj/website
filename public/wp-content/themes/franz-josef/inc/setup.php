@@ -96,32 +96,25 @@ if ( ! function_exists( 'franz_column_mode' ) ) :
 function franz_column_mode( $post_id = NULL ){
     global $franz_settings, $franz_column_mode;
 	
-	if ( $franz_column_mode ) return $franz_column_mode;
+	if ( $franz_column_mode ) return apply_filters( 'franz_column_mode', $franz_column_mode, $post_id );
     
     // Check the front-end template
 	if ( ! is_admin() && ! $post_id ){
-		if ( is_page_template( 'template-single-column.php' ) )	return $franz_column_mode = 'one-column';
-		
-		// Check for static posts page
-		if ( is_home() && $home_page = get_option( 'page_for_posts' ) && $franz_settings['disable_blog_sidebar'] ) return 'one-column';
-		
-		return $franz_column_mode = 'two-column right-sidebar';
+		if ( is_page_template( 'template-single-column.php' ) )	$franz_column_mode = 'one-column';
+		elseif ( is_home() && $home_page = get_option( 'page_for_posts' ) && $franz_settings['disable_blog_sidebar'] ) $franz_column_mode = 'one-column'; // Check for static posts page
+		else $franz_column_mode = 'two-column right-sidebar';
 	}
 	
 		
 	/* Check the template in Edit Page screen in admin */
 	if ( is_admin() || $post_id ){
-		
-		if ( ! $post_id ){
-			$post_id = ( isset( $_GET['post'] ) ) ? $_GET['post'] : NULL;
-		}
-		
+		if ( ! $post_id ) $post_id = ( isset( $_GET['post'] ) ) ? $_GET['post'] : NULL;
 		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
 		
-		if ( $page_template != 'default' ){
-			if ( strpos( $page_template, 'template-single-column' ) === 0 ) return $franz_column_mode = 'one-column';
-		}
+		if ( $page_template != 'default' ) if ( strpos( $page_template, 'template-single-column' ) === 0 ) $franz_column_mode = 'one-column';
 	}
+	
+	return apply_filters( 'franz_column_mode', $franz_column_mode, $post_id );
 }
 endif;
 

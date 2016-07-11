@@ -8,22 +8,11 @@
     <div <?php post_class(); ?> id="entry-<?php the_ID(); ?>">
         
         <?php 
-            $post_meta = get_post_custom();
-            $has_embed = false;
-            foreach ( $post_meta as $key => $meta ) {
-                if ( stripos( $key, '_oembed_' ) === 0 && strlen( $key ) == 40 ) {
-					if ( trim( $meta[0] ) == '{{unknown}}' ) continue;
-                    $has_embed = true;
-                    $embed_code = $meta[0];
-                    break;
-                }
-            }
-            
-            if ( $has_embed || franz_has_post_image() ) : ?>
+            if ( ( $embed_code = franz_get_archive_post_embed( get_the_ID() ) ) || franz_has_post_image() ) : ?>
             
                 <div class="featured-image">
                     <?php 
-						if ( $has_embed ) : echo $embed_code; else : 
+						if ( $embed_code ) : echo $embed_code; else : 
 							global $content_width;
 							$size = ( is_home() && $franz_settings['disable_blog_sidebar'] ) ? array( $content_width, 650 ) : 'post-thumbnail';
 					?>
@@ -39,7 +28,7 @@
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             <?php if ( is_singular() ) : ?></h1><?php else : ?></h2><?php endif; ?>
             <div class="entry-meta-wrap"><?php franz_entry_meta(); ?></div>
-            <?php franz_author_avatar(); ?>
+            <?php franz_author_avatar(); do_action( 'franz_title_wrap' ); ?>
         </div>
         
          <div class="entry-content">

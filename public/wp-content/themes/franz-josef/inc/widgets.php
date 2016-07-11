@@ -184,7 +184,7 @@ class Franz_Top_Bar_Text extends WP_Widget {
 		echo $args['before_widget'];
 		?>
 			<div class="<?php echo $class; ?>">
-				<?php echo ! empty( $instance['filter'] ) ? wpautop( $instance['text'] ) : $instance['text']; ?>
+				<?php echo ! empty( $instance['filter'] ) ? wpautop( do_shortcode( $instance['text'] ) ) : do_shortcode( $instance['text'] ); ?>
             </div>
 		<?php
 		echo $args['after_widget'];

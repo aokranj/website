@@ -15,6 +15,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+    	<?php do_action( 'franz_body_start' ); ?>
     
     	<?php if ( ! $franz_settings['disable_top_bar'] ) : ?>
     	<!-- Top Bar -->
@@ -34,7 +35,7 @@
         <?php endif; ?>
         
     	<!-- Header -->
-    	<div class="navbar navbar-inverse<?php if ( $franz_settings['disable_top_bar'] ) echo ' navbar-fixed-top'; ?>">
+    	<div class="navbar yamm navbar-inverse<?php if ( $franz_settings['disable_top_bar'] ) echo ' navbar-fixed-top'; ?>">
             
             <div class="header container">
                 <div class="navbar-header logo">
@@ -50,6 +51,7 @@
                     </a></<?php echo $tag; ?>>
                 </div>
                 <div class="collapse navbar-collapse" id="header-menu-wrapper">
+	                <?php do_action( 'franz_before_header_menu' ); ?>
                 	<?php 
 						/* Header menu */
 						$args = array(
@@ -64,7 +66,7 @@
 						);
 						if ( has_nav_menu( $args['theme_location'] ) ) $args['walker'] = new FJ_Walker_Nav_Menu();
 						
-						wp_nav_menu( $args );
+						wp_nav_menu( apply_filters( 'franz_header_menu_args', $args ) );
 					?>
                     <?php do_action( 'franz_header_menu' ); ?>
                 </div>

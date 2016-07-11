@@ -40,7 +40,7 @@ function franz_nav_menu_link_attributes( $atts, $item, $args ){
 	$depth = ( is_object( $args ) ) ? $args->depth : $args['depth'];
 	$classes = ( is_object( $item ) ) ? $item->classes : $item; // If this is default menu, $item is actually $css_class of the link
 	$atts['class'] = '';
-	
+
 	/* Dropdown submenu */
 	if ( in_array( 'menu-item-has-children', $classes ) && $depth != 1 ) {
 		if ( 

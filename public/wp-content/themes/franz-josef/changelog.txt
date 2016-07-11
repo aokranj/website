@@ -2,6 +2,24 @@ FRANZ JOSEF CHANGELOG
 by Graphene Themes Solutions
 http://www.graphene-theme.com/franz-josef/changelog/
 
+Version 1.7.3
+	* Added: Option to disable showing embedded video in posts listing pages
+	* Added: franz_column_mode filter
+	* Fixed: Submenu item not clickable if it has further submenu
+	* Removed: Deprecated theme tags
+	* Removed: Favicon handling as WordPress Customizer handles favicons natively now
+	* Removed: pl_PL translation as this translation is being handled through WordPress.org now
+
+Version 1.7.2
+	* Added: Title & Description options for Mentions Bar
+	* Added: Option to open links in a new tab for Mentions Bar
+	* Added: Top Bar text widget now parses shortcodes
+	* Added: woocommerce.php file for basic wooCommerce layout compatibility
+	* Added: franz_body_start, franz_title_wrap action hook
+	* Fixed: In This Section page navigation follows the custom order of the pages
+	* Fixed: Misaligned menu on mobile display
+	* Fixed: Post navigation includes slider categories posts even when it should be excluded
+
 Version 1.7.1
 	* Added: Option to hide post date
 	* Fixed: Disabled hover menu

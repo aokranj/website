@@ -92,6 +92,7 @@ $franz_defaults = array(
 	'adjacent_posts_same_term'	=> false,
 	'disable_responsive_tables'	=> false,
 	'disable_child_pages_nav'	=> false,
+	'disable_archive_video'		=> false,
 	
 	/* Excerpt options */
 	'archive_full_content' 		=> false,

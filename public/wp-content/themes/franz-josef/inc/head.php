@@ -51,21 +51,6 @@ function franz_minify_css( $css ){
 
 
 /**
- * Check to see if there's a favicon.ico in wordpress root directory and add
- * appropriate head element for the favicon
-*/
-function franz_favicon(){
-	global $franz_settings;
-	if ( $franz_settings['favicon_url'] ) : ?>
-		<link rel="icon" href="<?php echo esc_url( $franz_settings['favicon_url'] ); ?>" type="image/x-icon" />
-	<?php elseif ( is_file( ABSPATH . 'favicon.ico' ) ) : ?>
-		<link rel="icon" href="<?php echo esc_url( home_url() ); ?>/favicon.ico" type="image/x-icon" />
-	<?php endif;
-}
-add_action( 'wp_head', 'franz_favicon' );
-
-
-/**
  * This function prints out the title for the website.
  * If present, the theme will display customised site title structure.
 */
