@@ -53,6 +53,19 @@ class AOKranj
         }
 
         add_filter('wp_get_attachment_image_attributes', array(&$this, 'post_thumbnail_title_filter'));
+        add_filter('wp_get_attachment_link', array(&$this, 'attachment_link_filter')), 10, 4);
+    }
+
+    public function attachment_link_filter( $content, $post_id, $size, $permalink ) {
+        // Only do this if we're getting the file URL
+        if (! $permalink) {
+            // This returns an array of (url, width, height)
+            $image = wp_get_attachment_image_src( $post_id, 'large' );
+            $new_content = preg_replace('/href=\'(.*?)\'/', 'href=\'' . $image[0] . '\'', $content );
+            return $new_content;
+        } else {
+            return $content;
+        }
     }
 
     public function post_thumbnail_title_filter( $attr ) {
