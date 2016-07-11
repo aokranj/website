@@ -229,7 +229,7 @@ class AOKranj
     		'icontag'    => $html5 ? 'div'        : 'dt',
     		'captiontag' => $html5 ? 'figcaption' : 'dd',
     		'columns'    => 5,
-    		'size'       => 'large',
+    		'size'       => 'thumbnail',
     		'include'    => '',
     		'exclude'    => '',
     		'link'       => 'file'
