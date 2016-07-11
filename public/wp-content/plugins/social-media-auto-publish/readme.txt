@@ -2,9 +2,9 @@
 Contributors: f1logic
 Donate link: http://xyzscripts.com/donate/
 Tags:  social media auto publish, social media publishing, post to facebook, post to twitter, post to linkedin, social network auto publish, social media, social network, add link to facebook, add link to twitter, add link to linkedin, publish to facebook, publish to twitter, publish to linkedin
-Requires at least: 2.8
-Tested up to: 4.3
-Stable tag: 1.5.2
+Requires at least: 3.0
+Tested up to: 4.5.1
+Stable tag: 1.6
 License: GPLv2 or later
 
 Publish posts automatically to social media networks like Facebook, Twitter and LinkedIn.
@@ -126,6 +126,14 @@ More questions ? [Drop a mail](http://xyzscripts.com/members/support/ "XYZScript
 
 == Changelog ==
 
+= Social Media Auto Publish 1.6 =
+* Added option to enable/disable utf-8 decoding before publishing	
+* Removed unwanted configuration related to 'future_to_publish' hook
+* Removed unwanted setting "Facebook user id"
+* Postid added in autopublish logs
+* Updated auto publish mechanism using transition_post_status hook
+* Open graph meta tags will be prefered for facebook and linkedin attachments
+
 = Social Media Auto Publish 1.5.2 =
 * Latest five auto publish logs for each social media account are maintained
 * Inline edit of posts will work according to the value set for "Default selection of auto publish while editing posts/pages" 
@@ -212,7 +220,7 @@ Please read the FAQ first if you are having problems.
 
 = Requirements =
 
-    WordPress 2.8+
+    WordPress 3.0+
     PHP 5+ 
 
 = Feedback =

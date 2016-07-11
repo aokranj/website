@@ -5,7 +5,7 @@ $redirecturl=admin_url('admin.php?page=social-media-auto-publish-settings&auth=1
 // $lnredirecturl=admin_url('admin.php?page=social-media-auto-publish-settings&auth=3');
 $my_url=urlencode($redirecturl);
 
-session_start();
+if ( xyz_smap_is_session_started() === FALSE ) session_start();
 $code="";
 if(isset($_REQUEST['code']))
 $code = $_REQUEST["code"];
@@ -49,7 +49,7 @@ if(isset($_COOKIE['xyz_smap_session_state']) && isset($_REQUEST['state']) && ($_
 		
 		
 		$offset=0;$limit=100;$data=array();
-		$fbid=get_option('xyz_smap_fb_id');
+		//$fbid=get_option('xyz_smap_fb_id');
 		do
 		{
 			$result1="";$pagearray1="";
@@ -94,9 +94,15 @@ if(isset($_COOKIE['xyz_smap_session_state']) && isset($_REQUEST['state']) && ($_
 			$newpgs.=$data[$i]->id."-".$data[$i]->access_token.",";
 		}
 					$newpgs=rtrim($newpgs,",");
-					if($profile_flg==1)
+	 				if($profile_flg==1)
+					{
+						if($newpgs!="")
 						$newpgs=$newpgs.",-1";
-					update_option('xyz_smap_pages_ids',$newpgs);
+           			 	else
+           				$newpgs=-1;
+					}
+		update_option('xyz_smap_pages_ids',$newpgs);
+		header("Location:".admin_url('admin.php?page=facebook-auto-publish-settings&auth=1'));
 	}
 	else {
 		

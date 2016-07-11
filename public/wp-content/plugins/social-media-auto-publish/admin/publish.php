@@ -1,6 +1,6 @@
 <?php 
 
-add_action('publish_post', 'xyz_link_publish');
+/*add_action('publish_post', 'xyz_link_publish');
 add_action('publish_page', 'xyz_link_publish');
 
 $xyz_smap_future_to_publish=get_option('xyz_smap_std_future_to_publish');
@@ -11,15 +11,52 @@ if($xyz_smap_future_to_publish==1)
 function xyz_link_smap_future_to_publish($post){
 	$postid =$post->ID;
 	xyz_link_publish($postid);
+}*/
+add_action(  'transition_post_status',  'xyz_link_smap_future_to_publish', 10, 3 );
+
+function xyz_link_smap_future_to_publish($new_status, $old_status, $post){
+	//
+	$postid =$post->ID;
+	$get_post_meta=get_post_meta($postid,"xyz_smap",true);                           //	prevent duplicate publishing
+	$post_permissin=get_option('xyz_smap_post_permission');
+	$post_twitter_permission=get_option('xyz_smap_twpost_permission');
+	$lnpost_permission=get_option('xyz_smap_lnpost_permission');
+	
+	if(isset($_POST['xyz_smap_post_permission']))
+		$post_permissin=$_POST['xyz_smap_post_permission'];
+	if(isset($_POST['xyz_smap_twpost_permission']))
+		$post_twitter_permission=$_POST['xyz_smap_twpost_permission'];
+	if(isset($_POST['xyz_smap_lnpost_permission']))
+		$lnpost_permission=$_POST['xyz_smap_lnpost_permission'];
+	if(!(isset($_POST['xyz_smap_post_permission']) || isset($_POST['xyz_smap_twpost_permission']) || isset($_POST['xyz_smap_lnpost_permission']))) 
+	{
+	
+		if($post_permissin == 1 || $post_twitter_permission == 1 || $lnpost_permission == 1 ) {
+			
+			if($new_status == 'publish')
+			{
+				if ($get_post_meta == 1 ) {
+					return;
+				}
+			}
+			else return;
+		}
+	}
+	if($post_permissin == 1 || $post_twitter_permission == 1 || $lnpost_permission == 1 )
+	{
+		if($new_status == 'publish')
+			xyz_link_publish($postid);
+	}
+	else return;		
+
 }
 
-
-$xyz_smap_include_customposttypes=get_option('xyz_smap_include_customposttypes');
+/*$xyz_smap_include_customposttypes=get_option('xyz_smap_include_customposttypes');
 $carr=explode(',', $xyz_smap_include_customposttypes);
 foreach ($carr  as $cstyps ) {
 	add_action('publish_'.$cstyps, 'xyz_link_publish');
 
-}
+}*/
 
 function xyz_link_publish($post_ID) {
 	
@@ -54,7 +91,7 @@ function xyz_link_publish($post_ID) {
 		add_post_meta($post_ID, "xyz_smap", "1");
 
 	global $current_user;
-	get_currentuserinfo();
+	wp_get_current_user();
 	$af=get_option('xyz_smap_af');
 	
 	
@@ -83,7 +120,7 @@ function xyz_link_publish($post_ID) {
 	$message=get_option('xyz_smap_message');
 	if(isset($_POST['xyz_smap_message']))
 		$message=$_POST['xyz_smap_message'];
-	$fbid=get_option('xyz_smap_fb_id');
+	//$fbid=get_option('xyz_smap_fb_id');
 
 
 	
@@ -116,8 +153,9 @@ function xyz_link_publish($post_ID) {
     $lnaf=get_option('xyz_smap_lnaf');
 	
 	$postpp= get_post($post_ID);global $wpdb;
-        $_ao_userdata = get_userdata($postpp->post_author);
-        $user_nicename = $_ao_userdata->display_name;
+	$entries0 = $wpdb->get_results( 'SELECT user_nicename FROM '.$wpdb->prefix.'users WHERE ID='.$postpp->post_author);
+	foreach( $entries0 as $entry ) {			
+		$user_nicename=$entry->user_nicename;}
 	
 	if ($postpp->post_status == 'publish')
 	{
@@ -133,7 +171,7 @@ function xyz_link_publish($post_ID) {
 			{$_POST=$_POST_CPY;return;}
 		}
 			
-		if($posttype=="post")
+		else if($posttype=="post")
 		{
 			$xyz_smap_include_posts=get_option('xyz_smap_include_posts');
 			if($xyz_smap_include_posts==0)
@@ -160,6 +198,24 @@ function xyz_link_publish($post_ID) {
 				{$_POST=$_POST_CPY;return;}
 			}
 		}
+		
+		else
+		{
+		
+			$xyz_smap_include_customposttypes=get_option('xyz_smap_include_customposttypes');
+			if($xyz_smap_include_customposttypes!='')
+			{
+				$carr=explode(',', $xyz_smap_include_customposttypes);
+				
+				if(!in_array($posttype, $carr))
+					$_POST=$_POST_CPY;return;
+			}
+			else
+			{
+				$_POST=$_POST_CPY;return;
+			}
+		
+		}
 
 		include_once ABSPATH.'wp-admin/includes/plugin.php';
 		$pluginName = 'bitly/bitly.php';
@@ -185,10 +241,11 @@ function xyz_link_publish($post_ID) {
 		$content = $postpp->post_content;
 		if($con_flag==1)
 			$content = apply_filters('the_content', $content);
+		$content = html_entity_decode($content, ENT_QUOTES, get_bloginfo('charset'));
 		$excerpt = $postpp->post_excerpt;
 		if($exc_flag==1)
 			$excerpt = apply_filters('the_excerpt', $excerpt);
-		
+		$excerpt = html_entity_decode($excerpt, ENT_QUOTES, get_bloginfo('charset'));
 		$content = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', "", $content);
 		$excerpt = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', "", $excerpt);
 		
@@ -219,9 +276,11 @@ function xyz_link_publish($post_ID) {
 		
 		$name = $postpp->post_title;
 		$caption = html_entity_decode(get_bloginfo('title'), ENT_QUOTES, get_bloginfo('charset'));
+		if(get_option('xyz_smap_utf_decode_enable')==1)
+			$caption=utf8_decode($caption);
 		if($tit_flag==1)
 			$name = apply_filters('the_title', $name);
-
+		$name = html_entity_decode($name, ENT_QUOTES, get_bloginfo('charset'));
 		$name=strip_tags($name);
 		$name=strip_shortcodes($name);
 		
@@ -257,7 +316,7 @@ function xyz_link_publish($post_ID) {
 				}
 
 				$fb=new SMAPFacebook(array(
-						'appId'  => $acces_token,
+						'appId'  => $appid,
 						'secret' => $appsecret,
 						'cookie' => true
 				));
@@ -346,6 +405,12 @@ function xyz_link_publish($post_ID) {
 					}
 					
 				}
+				
+				if($posting_method==1 || $posting_method==2)
+				{
+				
+					$attachment=xyz_wp_fbap_attachment_metas($attachment,$link);
+				}
 				try{
 				$result = $fb->api('/'.$page_id.'/'.$disp_type.'/', 'post', $attachment);}
 							catch(Exception $e)
@@ -356,7 +421,7 @@ function xyz_link_publish($post_ID) {
 			}
 
 			if(count($fb_publish_status)>0)
-				$fb_publish_status_insert=serialize($fb_publish_status);
+			  $fb_publish_status_insert=serialize($fb_publish_status);
 			else
 				$fb_publish_status_insert=1;
 			
@@ -392,7 +457,7 @@ function xyz_link_publish($post_ID) {
 		{
 			
 			////image up start///
-
+         
 			$img_status="";
 			if($post_twitter_image_permission==1)
 			{
@@ -605,7 +670,7 @@ function xyz_link_publish($post_ID) {
 		$ln_publish_status=array();
 
 		$ObjLinkedin = new SMAPLinkedInOAuth2($xyz_smap_application_lnarray);
-			
+		$contentln=xyz_wp_smap_linkedin_attachment_metas($contentln,$link);
 		if($xyz_smap_ln_sharingmethod==0)
 		{
 				try{
