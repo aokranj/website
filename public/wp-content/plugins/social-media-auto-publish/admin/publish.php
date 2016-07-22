@@ -15,7 +15,9 @@ function xyz_link_smap_future_to_publish($post){
 add_action(  'transition_post_status',  'xyz_link_smap_future_to_publish', 10, 3 );
 
 function xyz_link_smap_future_to_publish($new_status, $old_status, $post){
-	//
+	
+	if(!isset($GLOBALS['smap_dup_publish']))
+		$GLOBALS['smap_dup_publish']=array();
 	$postid =$post->ID;
 	$get_post_meta=get_post_meta($postid,"xyz_smap",true);                           //	prevent duplicate publishing
 	$post_permissin=get_option('xyz_smap_post_permission');
@@ -45,7 +47,13 @@ function xyz_link_smap_future_to_publish($new_status, $old_status, $post){
 	if($post_permissin == 1 || $post_twitter_permission == 1 || $lnpost_permission == 1 )
 	{
 		if($new_status == 'publish')
-			xyz_link_publish($postid);
+		{
+			if(!in_array($postid,$GLOBALS['smap_dup_publish'])) {
+				$GLOBALS['smap_dup_publish'][]=$postid;
+				xyz_link_publish($postid);
+			}
+		}
+			
 	}
 	else return;		
 
@@ -208,7 +216,9 @@ function xyz_link_publish($post_ID) {
 				$carr=explode(',', $xyz_smap_include_customposttypes);
 				
 				if(!in_array($posttype, $carr))
+				{
 					$_POST=$_POST_CPY;return;
+				}
 			}
 			else
 			{
@@ -276,8 +286,8 @@ function xyz_link_publish($post_ID) {
 		
 		$name = $postpp->post_title;
 		$caption = html_entity_decode(get_bloginfo('title'), ENT_QUOTES, get_bloginfo('charset'));
-		if(get_option('xyz_smap_utf_decode_enable')==1)
-			$caption=utf8_decode($caption);
+		//if(get_option('xyz_smap_utf_decode_enable')==1)
+		//	$caption=utf8_decode($caption);
 		if($tit_flag==1)
 			$name = apply_filters('the_title', $name);
 		$name = html_entity_decode($name, ENT_QUOTES, get_bloginfo('charset'));
