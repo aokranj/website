@@ -297,7 +297,7 @@ msgstr "Danes"
 msgid "Edit Menu"
 msgstr "Uredi meni"
 
-#: wp-includes/wp-db.php:1782 wp-includes/wp-db.php:1788
+#: wp-includes/wp-db.php:1792 wp-includes/wp-db.php:1798
 msgid "Unable to retrieve the error message from MySQL"
 msgstr "Sporočila o napaki ni bilo možno pridobiti iz MySQL"
 
@@ -594,7 +594,7 @@ msgstr "<strong>NAPAKA</strong>: Neveljavno uporabniško ime, e-naslov ali nepra
 msgid "No logo selected"
 msgstr "Logotip ni izbran"
 
-#: wp-includes/functions.php:5122
+#: wp-includes/functions.php:5123
 msgid "Close dialog"
 msgstr "Zapri okno"
 
@@ -604,7 +604,7 @@ msgstr "Izberi logotip"
 
 #. translators: 1: PHP class name, 2: PHP parent class name, 3: version number,
 #. 4: __construct() method
-#: wp-includes/functions.php:3765
+#: wp-includes/functions.php:3766
 msgid "The called constructor method for %1$s in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead."
 msgstr "Klicanje konstruktorja za %1$s v %2$s je <strong>zastarelo</strong> od izdaje %3$s! Uporabite raje %4$s."
 
@@ -735,11 +735,11 @@ msgid "https://codex.wordpress.org/Debugging_a_WordPress_Network"
 msgstr "https://codex.wordpress.org/Debugging_a_WordPress_Network"
 
 #. translators: %s: Codex URL
-#: wp-includes/functions.php:3992
+#: wp-includes/functions.php:3993
 msgid "Please see <a href=\"%s\">Debugging in WordPress</a> for more information."
 msgstr "Prosimo preberite <a href=\"%s\">Debugging in WordPress</a> za več informacij."
 
-#: wp-includes/functions.php:3993
+#: wp-includes/functions.php:3994
 msgid "https://codex.wordpress.org/Debugging_in_WordPress"
 msgstr "https://codex.wordpress.org/Debugging_in_WordPress"
 
@@ -949,65 +949,65 @@ msgid "Author:"
 msgstr "Avtor:"
 
 #. translators: %s: database host
-#: wp-includes/wp-db.php:1674
+#: wp-includes/wp-db.php:1684
 msgid "This means that we lost contact with the database server at %s. This could mean your host&#8217;s database server is down."
 msgstr "To pomeni, da smo izgubili povezavo s podatkovno zbirko na %s. To lahko pomeni, da je podatkovna zbirka na vašem stežniku nedosegljiva."
 
-#: wp-includes/wp-db.php:1680
+#: wp-includes/wp-db.php:1690
 msgid "Are you sure that the database server is not under particularly heavy load?"
 msgstr "Ali ste prepričani, da podatkovna zbirka na strežniku ni preobremenjena?"
 
-#: wp-includes/wp-db.php:1576 wp-includes/wp-db.php:1679
+#: wp-includes/wp-db.php:1586 wp-includes/wp-db.php:1689
 msgid "Are you sure that the database server is running?"
 msgstr "Ali ste prepričani, da strežnik podatkovne zbirke dela?"
 
-#: wp-includes/wp-db.php:1670
+#: wp-includes/wp-db.php:1680
 msgid "Error reconnecting to the database"
 msgstr "Napaka pri ponovnem vzpostavljanju povezave s podatkovno zbirko"
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1581 wp-includes/wp-db.php:1685
+#: wp-includes/wp-db.php:1591 wp-includes/wp-db.php:1695
 msgid "If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Če niste prepričani kaj ti izrazi pomenijo, kontaktirajte vašega gostitelja. Če potrebujete dodatno pomoč, se lahko vedno obrnete na <a href=\"%s\">WordPress forum</a>."
 
-#: wp-includes/wp-db.php:1575
+#: wp-includes/wp-db.php:1585
 msgid "Are you sure that you have typed the correct hostname?"
 msgstr "Ali ste prepričani, da ste vnesli pravilno ime strežnika?"
 
-#: wp-includes/wp-db.php:1574
+#: wp-includes/wp-db.php:1584
 msgid "Are you sure you have the correct username and password?"
 msgstr "Ali ste prepričani, da imate pravilno uporabniško ime in geslo?"
 
 #. translators: 1: wp-config.php. 2: database host
-#: wp-includes/wp-db.php:1568
+#: wp-includes/wp-db.php:1578
 msgid "This either means that the username and password information in your %1$s file is incorrect or we can&#8217;t contact the database server at %2$s. This could mean your host&#8217;s database server is down."
 msgstr "To lahko pomeni, da sta uporabniško ime in geslo v vaši %1$s datoteki nepravilna ali da ne moremo kontaktirati podatkovne zbirke na %2$s. To lahko pomeni, da je podatkovna zbirka na vašem stežniku nedosegljiva."
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1113
+#: wp-includes/wp-db.php:1123
 msgid "If you don&#8217;t know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Če ne znate ustvariti podatkovne zbirke, <strong>kontaktirajte vašega gostitelja</strong>. Če nič ne uspe, se obrnite na <a href=\"%s\">WordPress forum</a>."
 
-#: wp-includes/wp-db.php:1094
+#: wp-includes/wp-db.php:1104
 msgid "Are you sure it exists?"
 msgstr "Ali ste prepričani, da obstaja?"
 
-#: wp-includes/wp-db.php:1085
+#: wp-includes/wp-db.php:1095
 msgid "Can&#8217;t select database"
 msgstr "Podatkovne zbirke ni mogoče izbrati"
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1089
+#: wp-includes/wp-db.php:1099
 msgid "We were able to connect to the database server (which means your username and password is okay) but not able to select the %s database."
 msgstr "Vzpostavili smo povezavo s podatkovno zbirko (kar pomeni, da sta vaše uporabniško ime in geslo pravilna), vendar nismo uspeli izbrati podatkovne zbirke %s."
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1105
+#: wp-includes/wp-db.php:1115
 msgid "On some systems the name of your database is prefixed with your username, so it would be like <code>username_%1$s</code>. Could that be the problem?"
 msgstr "Na nekaterih sistemih ime podatkovne zbirke vsebuje prefiks z vašim uporabniškim imenom, kar lahko izgleda tako: <code>uporabniškoime_%1$s</code>. Ali je lahko to problem?"
 
 #. translators: 1: database user, 2: database name
-#: wp-includes/wp-db.php:1098
+#: wp-includes/wp-db.php:1108
 msgid "Does the user %1$s have permission to use the %2$s database?"
 msgstr "Ali ima uporabnik %1$s pravice do uporabe podatkovne zbirke %2$s?"
 
@@ -1555,7 +1555,7 @@ msgstr "Vaša povezave za ponastavitev gesla je neveljavna. Prosim, zahtevajte n
 msgid "Your password reset link has expired. Please request a new link below."
 msgstr "Vaša povezave za ponastavitev gesla je potekla. Prosim, zahtevajte novo povezavo spodaj."
 
-#: wp-includes/wp-db.php:1366 wp-includes/wp-db.php:1383
+#: wp-includes/wp-db.php:1376 wp-includes/wp-db.php:1393
 msgid "WordPress database error:"
 msgstr "WordPress napaka podatkovne zbirke:"
 
@@ -1636,7 +1636,7 @@ msgid "Reorder mode enabled"
 msgstr "Način za preurejanje je omogočen"
 
 #. translators: 1: PHP class name, 2: version number, 3: __construct() method
-#: wp-includes/functions.php:3769
+#: wp-includes/functions.php:3770
 msgid "The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "Klicana metoda konstruktorja za %1$s je <strong>zastarela</strong> od izdaje %2$s! Raje uporabite %3$s."
 
@@ -2042,7 +2042,7 @@ msgstr "Razredi CSS"
 msgid "Title Attribute"
 msgstr "Atribut naslova"
 
-#: wp-includes/class-wp-editor.php:1431
+#: wp-includes/class-wp-editor.php:1439
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:105
 #: wp-includes/media-template.php:1001
 msgid "Open link in a new tab"
@@ -2391,7 +2391,7 @@ msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "1 komentar<span class=\"screen-reader-text\"> na %s</span>"
 
 #: wp-includes/class-wp-customize-nav-menus.php:788
-#: wp-includes/class-wp-editor.php:1426 wp-includes/media-template.php:813
+#: wp-includes/class-wp-editor.php:1434 wp-includes/media-template.php:813
 msgid "Link Text"
 msgstr "Besedilo povezave"
 
@@ -2475,7 +2475,7 @@ msgstr "Izraz s tem imenom in ključem že obstaja v tej taxonomiji."
 
 #. translators: %s: database access abstraction class, usually wpdb or a class
 #. extending wpdb
-#: wp-includes/wp-db.php:1165
+#: wp-includes/wp-db.php:1175
 msgid "%s must set a database connection for use with escaping."
 msgstr "%s mora nastaviti povezavo s podatkovno zbirko za uporabo ubežnih znakov."
 
@@ -2828,7 +2828,7 @@ msgstr "Vaš brskalnik ne omogoča neposrednega dostopa do odložišča. Prosimo
 msgid "Read more..."
 msgstr "Preberi več..."
 
-#: wp-includes/class-wp-editor.php:1452
+#: wp-includes/class-wp-editor.php:1460
 msgid "Search or use up and down arrow keys to select an item."
 msgstr "Poišči ali uporabi tipki s puščicama gor in dol za izbiro elementa."
 
@@ -3552,7 +3552,7 @@ msgstr "Dodaj v video seznam predvajanja"
 msgid "Invalid menu ID."
 msgstr "Neveljaven ID menija."
 
-#: wp-includes/wp-db.php:1281
+#: wp-includes/wp-db.php:1291
 msgid "The query argument of %s must have a placeholder."
 msgstr "Argument poizvedbe %s mora imeti \"placeholder\"."
 
@@ -3643,8 +3643,8 @@ msgstr "Vstavi sliko"
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/ "
 
-#: wp-includes/admin-bar.php:147 wp-includes/wp-db.php:1114
-#: wp-includes/wp-db.php:1582 wp-includes/wp-db.php:1686 wp-login.php:801
+#: wp-includes/admin-bar.php:147 wp-includes/wp-db.php:1124
+#: wp-includes/wp-db.php:1592 wp-includes/wp-db.php:1696 wp-login.php:801
 msgid "https://wordpress.org/support/"
 msgstr "https://wordpress.org/support/"
 
@@ -4126,7 +4126,7 @@ msgstr "%1$s %2$s, %3$s @ %4$s:%5$s"
 msgid "The site you were looking for, %s, does not exist, but you can create it now!"
 msgstr "Stran, ki ste jo iskali, %s, ne obstaja. Lahko pa jo ustvarite sedaj!"
 
-#: wp-includes/functions.php:5135
+#: wp-includes/functions.php:5136
 msgid "The login page will open in a new window. After logging in you can close it and return to this page."
 msgstr "Stran za prijavo se bo odprla v novem oknu. Po prijavi ga lahko zaprete in se vrnete na to stran."
 
@@ -4156,7 +4156,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Išči"
 
-#: wp-includes/functions.php:5133 wp-includes/script-loader.php:461
+#: wp-includes/functions.php:5134 wp-includes/script-loader.php:461
 msgid "Session expired"
 msgstr "Seja je potekla"
 
@@ -5245,12 +5245,12 @@ msgstr "Forumi za podporo"
 msgid "&hellip;"
 msgstr "&hellip;"
 
-#: wp-includes/functions.php:3642
+#: wp-includes/functions.php:3643
 msgid "Database Error"
 msgstr "Napaka podatkovne zbirke"
 
-#: wp-includes/functions.php:3646 wp-includes/ms-load.php:471
-#: wp-includes/wp-db.php:1564
+#: wp-includes/functions.php:3647 wp-includes/ms-load.php:471
+#: wp-includes/wp-db.php:1574
 msgid "Error establishing a database connection"
 msgstr "Napaka pri vzpostavljanju povezave s podatkovno zbirko"
 
@@ -5386,7 +5386,7 @@ msgstr "Prednalaganje"
 msgid "Destination directory for file streaming does not exist or is not writable."
 msgstr "Ciljni imenik za pretakanje datotek ne obstaja ali ni zapisljiva."
 
-#: wp-includes/class-http.php:532
+#: wp-includes/class-http.php:535
 msgid "There are no HTTP transports available which can complete the requested request."
 msgstr "Na voljo ni nobenega prenosa HTTP, ki lahko dokonča to zahtevo."
 
@@ -5395,11 +5395,11 @@ msgctxt "post format"
 msgid "Format"
 msgstr "Oblika"
 
-#: wp-includes/class-wp-editor.php:1420
+#: wp-includes/class-wp-editor.php:1428
 msgid "Enter the destination URL"
 msgstr "Vnesite URL"
 
-#: wp-includes/class-wp-editor.php:1434
+#: wp-includes/class-wp-editor.php:1442
 msgid "Or link to existing content"
 msgstr "ali se povežite na obstoječo vsebino"
 
@@ -5423,11 +5423,11 @@ msgstr "Pogojne poizvedbene oznake ne delujejo, preden poizvedovanje ni izvedeno
 msgid "The user is already active."
 msgstr "Uporabnik je že aktiven."
 
-#: wp-includes/functions.php:3995
+#: wp-includes/functions.php:3996
 msgid "%1$s was called <strong>incorrectly</strong>. %2$s %3$s"
 msgstr "%1$s je bil zahtevan <strong>nepravilno</strong>. %2$s %3$s"
 
-#: wp-includes/functions.php:3990
+#: wp-includes/functions.php:3991
 msgid "(This message was added in version %s.)"
 msgstr "(To sporočilo je bilo dodano v izdaji %s.)"
 
@@ -5459,7 +5459,7 @@ msgstr "Zvok"
 msgid "Invalid post format"
 msgstr "Neveljavna oblika prispevka"
 
-#: wp-includes/class-wp-editor.php:1451
+#: wp-includes/class-wp-editor.php:1459
 msgid "No search term specified. Showing recent items."
 msgstr "Iskani izraz ni določen. Prikazani so nedavni elementi."
 
@@ -6418,11 +6418,11 @@ msgstr "Oprostite, nimate dovoljenja za objavo tega prispevka."
 msgid "Software Version"
 msgstr "Izdaja programske opreme"
 
-#: wp-includes/wp-db.php:1352
+#: wp-includes/wp-db.php:1362
 msgid "WordPress database error %1$s for query %2$s made by %3$s"
 msgstr "Napaka v WordPress podatkovni zbirki %1$s za poizvedbo %2$s, ki jo je povzročil/a %3$s"
 
-#: wp-includes/wp-db.php:1354
+#: wp-includes/wp-db.php:1364
 msgid "WordPress database error %1$s for query %2$s"
 msgstr "Napaka %1$s v WordPress podatkovni zbirki za poizvedbo %2$s"
 
@@ -6569,12 +6569,12 @@ msgstr "Prečrtano"
 msgid "Text"
 msgstr "Besedilo"
 
-#: wp-includes/class-http.php:963 wp-includes/class-wp-http-curl.php:232
+#: wp-includes/class-http.php:966 wp-includes/class-wp-http-curl.php:232
 #: wp-includes/class-wp-http-curl.php:271
 msgid "Too many redirects."
 msgstr "Preveč preusmeritev."
 
-#: wp-includes/functions.php:4529 wp-includes/functions.php:4533
+#: wp-includes/functions.php:4530 wp-includes/functions.php:4534
 msgid "UTC"
 msgstr "UTC"
 
@@ -6703,7 +6703,7 @@ msgstr "Naslednja stran"
 msgid "Previous page"
 msgstr "Prejšnja stran"
 
-#: wp-includes/functions.php:5134 wp-includes/user.php:280
+#: wp-includes/functions.php:5135 wp-includes/user.php:280
 msgid "Please log in again."
 msgstr "Ponovno se prijavite."
 
@@ -6841,7 +6841,7 @@ msgstr "Tiskaj"
 msgid "Insert/edit image"
 msgstr "Vstavi/uredi sliko"
 
-#: wp-includes/class-wp-editor.php:936 wp-includes/class-wp-editor.php:1416
+#: wp-includes/class-wp-editor.php:936 wp-includes/class-wp-editor.php:1424
 #: wp-includes/script-loader.php:419
 msgid "Insert/edit link"
 msgstr "Vstavi/uredi povezavo"
@@ -6972,7 +6972,7 @@ msgstr "Komentarji na %s"
 msgid "Comment on %1$s by %2$s"
 msgstr "Komentar na %1$s od %2$s"
 
-#: wp-includes/functions.php:4484
+#: wp-includes/functions.php:4485
 msgid "Select a city"
 msgstr "Izberite mesto"
 
@@ -7319,7 +7319,7 @@ msgstr "Odjavljate se iz %s"
 msgid "Do you really want to <a href='%s'>log out</a>?"
 msgstr "Ste prepričani, da se želite <a href='%s'>odjaviti</a>?"
 
-#: wp-includes/functions.php:4537
+#: wp-includes/functions.php:4538
 msgid "Manual Offsets"
 msgstr "Ročni odmiki"
 
@@ -7693,7 +7693,7 @@ msgstr "<strong>NAPAKA</strong>: Polje za geslo je prazno."
 msgid "<strong>ERROR</strong>: Your account has been marked as a spammer."
 msgstr "<strong>NAPAKA</strong>: Vaš račun je bil označen kot pošiljatelj neželene vsebine."
 
-#: wp-includes/wp-db.php:3197
+#: wp-includes/wp-db.php:3207
 msgid "<strong>ERROR</strong>: WordPress %1$s requires MySQL %2$s or higher"
 msgstr "<strong>NAPAKA</strong>: WordPress %1$s zahteva MySQL %2$s ali novejšo različico"
 
@@ -7851,21 +7851,21 @@ msgstr "Nepotrjen"
 msgid "Revision"
 msgstr "Revizija"
 
-#: wp-includes/functions.php:3706 wp-includes/functions.php:3830
-#: wp-includes/functions.php:3945
+#: wp-includes/functions.php:3707 wp-includes/functions.php:3831
+#: wp-includes/functions.php:3946
 msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "%1$s je od izdaje %2$s <strong>zastarel</strong>! Uporabite raje %3$s."
 
-#: wp-includes/functions.php:3708 wp-includes/functions.php:3832
-#: wp-includes/functions.php:3947
+#: wp-includes/functions.php:3709 wp-includes/functions.php:3833
+#: wp-includes/functions.php:3948
 msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "%1$s je od izdaje %2$s <strong>zastarel</strong>, na razpolago pa ni nadomestne izdaje."
 
-#: wp-includes/functions.php:3890
+#: wp-includes/functions.php:3891
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
 msgstr "%1$s je bil klican z argumentom, ki je <strong>zastarel</strong> od izdaje %2$s! %3$s"
 
-#: wp-includes/functions.php:3892
+#: wp-includes/functions.php:3893
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "%1$s je bil klican z argumentom, ki je <strong>zastarel</strong> od izdaje %2$s, na razpolago pa ni nadomestne izdaje."
 
@@ -7970,7 +7970,7 @@ msgid "(Edit)"
 msgstr "(Uredi)"
 
 #: wp-includes/admin-bar.php:736 wp-includes/class-wp-customize-widgets.php:418
-#: wp-includes/functions.php:3583
+#: wp-includes/functions.php:3584
 msgid "Widgets"
 msgstr "Gradniki"
 
@@ -8241,7 +8241,7 @@ msgstr "Poravnava"
 msgid "Author"
 msgstr "Avtor"
 
-#: wp-includes/class-wp-editor.php:871 wp-includes/class-wp-editor.php:1463
+#: wp-includes/class-wp-editor.php:871 wp-includes/class-wp-editor.php:1471
 #: wp-includes/media.php:3355 wp-includes/script-loader.php:406
 #: wp-includes/script-loader.php:456 wp-includes/script-loader.php:531
 msgid "Cancel"
@@ -8353,7 +8353,7 @@ msgstr "Komentar"
 msgid "(no title)"
 msgstr "(brez naslova)"
 
-#: wp-includes/class-wp-editor.php:872 wp-includes/class-wp-editor.php:1417
+#: wp-includes/class-wp-editor.php:872 wp-includes/class-wp-editor.php:1425
 #: wp-includes/script-loader.php:261 wp-includes/script-loader.php:342
 #: wp-includes/script-loader.php:457 wp-includes/script-loader.php:951
 msgid "Close"
@@ -8364,7 +8364,7 @@ msgid "Select"
 msgstr "Izberi"
 
 #: wp-includes/admin-bar.php:810 wp-includes/admin-bar.php:811
-#: wp-includes/class-wp-editor.php:1438 wp-includes/media.php:3353
+#: wp-includes/class-wp-editor.php:1446 wp-includes/media.php:3353
 msgid "Search"
 msgstr "Išči"
 
@@ -8470,7 +8470,7 @@ msgid "Sidebar"
 msgstr "Stranska vrstica"
 
 #: wp-includes/class-wp-customize-nav-menus.php:784
-#: wp-includes/class-wp-editor.php:1422
+#: wp-includes/class-wp-editor.php:1430
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:91
 #: wp-includes/media-template.php:371 wp-includes/media-template.php:550
 #: wp-includes/media.php:3351
@@ -8520,7 +8520,7 @@ msgstr "Uredi kategorijo povezave"
 msgid "Update Category"
 msgstr "Posodobi kategorijo"
 
-#: wp-includes/class-wp-editor.php:1466 wp-includes/script-loader.php:421
+#: wp-includes/class-wp-editor.php:1474 wp-includes/script-loader.php:421
 msgid "Add Link"
 msgstr "Dodaj povezavo"
 
@@ -8714,7 +8714,7 @@ msgstr "Prispevkov ni bilo mogoče najti."
 msgid "Pending Review"
 msgstr "Pregled v obdelavi"
 
-#: wp-includes/class-wp-editor.php:1365
+#: wp-includes/class-wp-editor.php:1373
 msgid "Y/m/d"
 msgstr "d. m. Y"
 

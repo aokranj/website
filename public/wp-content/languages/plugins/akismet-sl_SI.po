@@ -192,27 +192,27 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: class.akismet.php:1096
+#: class.akismet.php:1142
 msgid "Akismet %s requires WordPress %s or higher."
 msgstr "Akismet %s zahteva WordPress %s ali novejši."
 
-#: class.akismet.php:1096 views/notice.php:24
+#: class.akismet.php:1142 views/notice.php:24
 msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
 msgstr "Prosimo, <a href=\"%1$s\">nadgradite WordPress</a> na najnovejšo različico ali <a href=\"%2$s\">namestite Akismet 2.4</a>."
 
-#: class.akismet-admin.php:575
+#: class.akismet-admin.php:559
 msgid "Akismet cleared this comment during an automatic retry."
 msgstr "Akismet je med samodejnim preverjanjem počistil ta komentar."
 
-#: class.akismet-admin.php:572
+#: class.akismet-admin.php:556
 msgid "Akismet caught this comment as spam during an automatic retry."
 msgstr "Akismet je med samodejnim preverjanjem zaznal, da je ta komentar neželen."
 
-#: class.akismet-admin.php:592
+#: class.akismet-admin.php:576
 msgid "Comment status was changed to %s"
 msgstr "Status komentarja se je spremenil v %s"
 
-#: class.akismet-widget.php:98
+#: class.akismet-widget.php:102
 msgid "<strong class=\"count\">%1$s spam</strong> blocked by <strong>Akismet</strong>"
 msgid_plural "<strong class=\"count\">%1$s spam</strong> blocked by <strong>Akismet</strong>"
 msgstr[0] "<strong class=\"count\">%1$s neželeno vsebino</strong> je blokiral <strong>Akismet</strong>"
@@ -220,7 +220,7 @@ msgstr[1] "<strong class=\"count\">%1$s neželeni vsebini</strong> je blokiral <
 msgstr[2] "<strong class=\"count\">%1$s neželene vsebine</strong> je blokiral <strong>Akismet</strong>"
 msgstr[3] "<strong class=\"count\">%1$s neželenih vsebin</strong> je blokiral <strong>Akismet</strong>"
 
-#: class.akismet-widget.php:69
+#: class.akismet-widget.php:69 class.akismet-widget.php:90
 msgid "Spam Blocked"
 msgstr "Blokirana neželena vsebina"
 
@@ -236,27 +236,27 @@ msgstr "Prikaži število neželenih komentarjev, ki jih je prestregel Akismet"
 msgid "Akismet Widget"
 msgstr "Akismetov gradnik"
 
-#: class.akismet-admin.php:897
+#: class.akismet-admin.php:886
 msgid "Cleaning up spam takes time."
 msgstr "Za čiščenje je potreben nek čas."
 
-#: class.akismet-admin.php:606
+#: class.akismet-admin.php:590
 msgid "%s ago"
 msgstr "pred %s"
 
-#: class.akismet-admin.php:802
+#: class.akismet-admin.php:791
 msgid "Please check your <a href=\"%s\">Akismet configuration</a> and contact your web host if problems persist."
 msgstr "Prosimo, da preverite <a href=\"%s\">konfiguracijo Akismet</a> in se obrnite na spletni strežnik, če težave ne prenehajo."
 
-#: class.akismet-admin.php:496 class.akismet-admin.php:504
+#: class.akismet-admin.php:480 class.akismet-admin.php:488
 msgid "View comment history"
 msgstr "Prikaži zgodovino komentarja"
 
-#: class.akismet-admin.php:496
+#: class.akismet-admin.php:480
 msgid "History"
 msgstr "Zgodovina"
 
-#: class.akismet-admin.php:512
+#: class.akismet-admin.php:496
 msgid "%s approved"
 msgid_plural "%s approved"
 msgstr[0] "%s odobrenih"
@@ -264,23 +264,23 @@ msgstr[1] "%s odobren"
 msgstr[2] "%s odobrena"
 msgstr[3] "%s odobreni"
 
-#: class.akismet-admin.php:484
+#: class.akismet-admin.php:468
 msgid "Un-spammed by %s"
 msgstr "%s je to odznačil kot neželeno vsebino"
 
-#: class.akismet-admin.php:478
+#: class.akismet-admin.php:462
 msgid "Cleared by Akismet"
 msgstr "Počistil Akismet"
 
-#: class.akismet-admin.php:482
+#: class.akismet-admin.php:466
 msgid "Flagged as spam by %s"
 msgstr "%s je to označil kot neželeno vsebino"
 
-#: class.akismet-admin.php:472
+#: class.akismet-admin.php:456
 msgid "Awaiting spam check"
 msgstr "Čakanje na preverjanje neželene vsebine"
 
-#: class.akismet-admin.php:476
+#: class.akismet-admin.php:460
 msgid "Flagged as spam by Akismet"
 msgstr "Označeno kot neželena vsebina s strani Akismeta"
 
@@ -441,14 +441,14 @@ msgid "Re-adding..."
 msgstr "Ponovno dodajanje..."
 
 #: class.akismet-admin.php:86 class.akismet-admin.php:209
-#: class.akismet-admin.php:618 views/config.php:56 views/stats.php:2
+#: class.akismet-admin.php:602 views/config.php:56 views/stats.php:2
 msgid "Settings"
 msgstr "Nastavitve"
 
-#. #-#-#-#-#  tmp-akismet.pot (Akismet 3.1.11)  #-#-#-#-#
+#. #-#-#-#-#  tmp-akismet.pot (Akismet 3.2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: class.akismet-admin.php:93 class.akismet-admin.php:95
-#: class.akismet-admin.php:859 views/config.php:3
+#: class.akismet-admin.php:848 views/config.php:3
 msgid "Akismet"
 msgstr "Akismet"
 

@@ -3,7 +3,7 @@
  * Plugin Name: Posts in Sidebar
  * Plugin URI: http://dev.aldolat.it/projects/posts-in-sidebar/
  * Description: Publish a list of posts in your sidebar
- * Version: 3.8
+ * Version: 3.8.1
  * Author: Aldo Latino
  * Author URI: http://www.aldolat.it/
  * Text Domain: posts-in-sidebar
@@ -56,7 +56,7 @@ function pis_setup() {
 	/**
 	 * Define the version of the plugin.
 	 */
-	define( 'PIS_VERSION', '3.8' );
+	define( 'PIS_VERSION', '3.8.1' );
 
 	/**
 	 * Make plugin available for i18n.
@@ -486,6 +486,9 @@ function pis_get_posts_in_sidebar( $args ) {
 	 * About is_singular() and is_single() functions.
 	 * is_singular() => is true when any post type is displayed (regular post, custom post type, page, attachment).
 	 * is_single()   => is true when any post type is displayed, except page and attachment.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/is_singular/
+	 * @see https://developer.wordpress.org/reference/functions/is_single/
 	 */
 	if ( is_singular() ) {
 		$single_post_id = get_the_ID();
@@ -496,8 +499,27 @@ function pis_get_posts_in_sidebar( $args ) {
 	 * This will be used in case the user do not want to display the same post in the main body and in the sidebar.
 	 */
 	if ( is_singular() && $exclude_current_post ) {
+
+		/**
+		 * First case.
+		 * Add the current post ID to the $post_not_in array.
+		 */
 		if ( ! in_array( $single_post_id, $post_not_in ) ) {
 			$post_not_in[] = $single_post_id;
+		}
+
+		/**
+		 * Second case.
+		 * If the user has specified a list of posts to get, the $post_not_in array is ignored by WordPress (see link below).
+		 * So let's modify this behaviour.
+		 *
+		 * @see https://codex.wordpress.org/Class_Reference/WP_Query#Post_.26_Page_Parameters
+		 * @since 3.8.1
+		 */
+		if ( in_array( $single_post_id, $posts_id ) ) {
+			$single_post_id_arr = array();
+			$single_post_id_arr[] = $single_post_id;
+			$posts_id = array_diff( $posts_id, $single_post_id_arr );
 		}
 	}
 
@@ -560,17 +582,17 @@ function pis_get_posts_in_sidebar( $args ) {
 		if ( isset( $number_same_cat ) && ! empty( $number_same_cat ) ) {
 			$params['posts_per_page'] = $number_same_cat;
 		}
-		$params['post__in'] = '';
-		$params['author_name'] = '';
-		$params['author__in'] = '';
-		$params['category_name'] =  $the_category[0]->slug;
-		$params['tag'] = '';
-		$params['tax_query'] = '';
-		$params['date_query'] = '';
+		$params['post__in']        = '';
+		$params['author_name']     = '';
+		$params['author__in']      = '';
+		$params['category_name']   = $the_category[0]->slug;
+		$params['tag']             = '';
+		$params['tax_query']       = '';
+		$params['date_query']      = '';
 		$params['post_parent__in'] = '';
-		$params['post_format'] = '';
-		$params['meta_key'] = '';
-		$params['meta_value'] = '';
+		$params['post_format']     = '';
+		$params['meta_key']        = '';
+		$params['meta_value']      = '';
 	}
 
 	/**
@@ -585,17 +607,17 @@ function pis_get_posts_in_sidebar( $args ) {
 		if ( isset( $number_same_author ) && ! empty( $number_same_author ) ) {
 			$params['posts_per_page'] = $number_same_author;
 		}
-		$params['post__in'] = '';
-		$params['author_name'] = '';
-		$params['author__in'] = explode( ',', $the_author_id );
-		$params['category_name'] = '';
-		$params['tag'] = '';
-		$params['tax_query'] = '';
-		$params['date_query'] = '';
+		$params['post__in']        = '';
+		$params['author_name']     = '';
+		$params['author__in']      = explode( ',', $the_author_id );
+		$params['category_name']   = '';
+		$params['tag']             = '';
+		$params['tax_query']       = '';
+		$params['date_query']      = '';
 		$params['post_parent__in'] = '';
-		$params['post_format'] = '';
-		$params['meta_key'] = '';
-		$params['meta_value'] = '';
+		$params['post_format']     = '';
+		$params['meta_key']        = '';
+		$params['meta_value']      = '';
 	}
 
 	/**
@@ -622,15 +644,15 @@ function pis_get_posts_in_sidebar( $args ) {
 				if ( isset( $number_custom_field ) && ! empty( $number_custom_field ) ) {
 					$params['posts_per_page'] = $number_custom_field;
 				}
-				$params['post__in'] = '';
-				$params['author_name'] = '';
-				$params['author__in'] = '';
-				$params['tax_query'] = '';
-				$params['date_query'] = '';
+				$params['post__in']        = '';
+				$params['author_name']     = '';
+				$params['author__in']      = '';
+				$params['tax_query']       = '';
+				$params['date_query']      = '';
 				$params['post_parent__in'] = '';
-				$params['post_format'] = '';
-				$params['meta_key'] = '';
-				$params['meta_value'] = '';
+				$params['post_format']     = '';
+				$params['meta_key']        = '';
+				$params['meta_value']      = '';
 			}
 		}
 	}
@@ -750,7 +772,7 @@ function pis_get_posts_in_sidebar( $args ) {
 								}
 								if ( $link_on_title ) {
 									$post_link = $title_tooltip . ' ' . the_title_attribute( 'echo=0' );
-									$pis_output .= '<a ' . pis_class( 'pis-title-link', apply_filters( 'pis_title_link_class', '' ), false ) . ' href="' . get_permalink() . '" title="' . esc_attr( $post_link ) . '" rel="bookmark">';
+									$pis_output .= '<a ' . pis_class( 'pis-title-link', apply_filters( 'pis_title_link_class', '' ), false ) . ' href="' . get_permalink() . '" rel="bookmark">';
 								}
 								$pis_output .= get_the_title();
 								if ( $arrow ) {
