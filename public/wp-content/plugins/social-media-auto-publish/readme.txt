@@ -1,10 +1,10 @@
-﻿=== Social Media Auto Publish ===
+=== Social Media Auto Publish ===
 Contributors: f1logic
 Donate link: http://xyzscripts.com/donate/
 Tags:  social media auto publish, social media publishing, post to facebook, post to twitter, post to linkedin, social network auto publish, social media, social network, add link to facebook, add link to twitter, add link to linkedin, publish to facebook, publish to twitter, publish to linkedin
 Requires at least: 3.0
-Tested up to: 4.5.3
-Stable tag: 1.6.1
+Tested up to: 4.6.1
+Stable tag: 1.7
 License: GPLv2 or later
 
 Publish posts automatically to social media networks like Facebook, Twitter and LinkedIn.
@@ -125,6 +125,10 @@ More questions ? [Drop a mail](http://xyzscripts.com/members/support/ "XYZScript
 4. Publishing options while creating a post.
 
 == Changelog ==
+
+= Social Media Auto Publish 1.7 =
+* Facebook api updated
+* Twitter 140 character exceeding issue fixed
 
 = Social Media Auto Publish 1.6.1 =
 * Fixed custom post types autopublish issue	

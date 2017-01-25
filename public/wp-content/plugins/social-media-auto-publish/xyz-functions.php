@@ -418,5 +418,44 @@ if (!function_exists("xyz_wp_fbap_attachment_metas")) {
 	}
 }
 
+if (!function_exists("xyz_smap_split_replace"))
+{
+	function xyz_smap_split_replace($search, $replace, $subject)//case insensitive
+	{
+		if(!stristr($subject,$search))
+		{
+			$search_tmp=str_replace("}", "", $search);
+			preg_match_all("@(".preg_quote($search_tmp)."\:)(l|w)\-(\d+)}@i",$subject,$matches); // @ is same as /
+			if(is_array($matches) && isset($matches[0]))
+			{
+				foreach ($matches[0] as $k=>$v)
+				{
+					$limit=$matches[3][$k];
+					if(strcasecmp($matches[2][$k],"l")==0)//lines
+					{
+						$replace_arr = preg_split( "/(\.|;|\!)/", $replace ,0,PREG_SPLIT_DELIM_CAPTURE );
+						if(is_array($replace_arr) && count($replace_arr)>0)
+						{
+							$replace_new=implode(array_slice($replace_arr,0,(2*$limit)));
+							$subject=str_replace($matches[0][$k], $replace_new, $subject);
+						}
+					}
+					if(strcasecmp($matches[2][$k],"w")==0)//words
+					{
+						$replace_arr=explode(" ",$replace);
+						if(is_array($replace_arr) && count($replace_arr)>0)
+						{
+							$replace_new=implode(" ",array_slice($replace_arr,0,$limit));
+							$subject=str_replace($matches[0][$k], $replace_new, $subject);
+						}
+					}
+				}
+			}
+		}
+		else
+			$subject=str_replace($search, $replace, $subject);
+		return $subject;
+	}
+}
 
 ?>

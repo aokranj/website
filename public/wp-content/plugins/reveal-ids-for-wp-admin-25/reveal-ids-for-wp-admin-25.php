@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: Reveal IDs
-Version: 1.4.6.2
-Plugin URI: http://www.schloebe.de/wordpress/reveal-ids-for-wp-admin-25-plugin/
+Version: 1.5.0
+Plugin URI: https://www.schloebe.de/wordpress/reveal-ids-for-wp-admin-25-plugin/
 Description: Reveals hidden IDs in Admin interface that have been removed with WordPress 2.5 (formerly known as Entry IDs in Manage Posts/Pages View for WP 2.5). See <a href="options-general.php?page=reveal-ids-for-wp-admin-25/reveal-ids-for-wp-admin-25.php">options page</a> for information.
 Author: Oliver Schl&ouml;be
-Author URI: http://www.schloebe.de/
+Author URI: https://www.schloebe.de/
 Text Domain: reveal-ids-for-wp-admin-25
 Domain Path: /languages
 
-Copyright 2008-2016 Oliver Schlöbe (email : scripts@schloebe.de)
+Copyright 2008-2017 Oliver Schlöbe (email : scripts@schloebe.de)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("RIDWPA_VERSION", "1.4.6.2");
+define("RIDWPA_VERSION", "1.5.0");
 
 /**
  * Define the plugin path slug
@@ -139,29 +139,41 @@ class RevealIDsForWPAdmin {
 		add_action('manage_edit-link-categories_columns', array(&$this, 'column_add'));
 		add_filter('manage_link_categories_custom_column', array(&$this, 'column_return_value'), 10, 3);
 
-		foreach( get_taxonomies() as $taxonomy ) {
-			add_action("manage_edit-${taxonomy}_columns", array(&$this, 'column_add'));
-			add_filter("manage_${taxonomy}_custom_column", array(&$this, 'column_return_value'), 10, 3);
-			if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') )
-				add_filter("manage_edit-${taxonomy}_sortable_columns", array(&$this, 'column_add_clean') );
+		foreach( get_taxonomies(array('public' => true)) as $taxonomy ) {
+			if( isset($taxonomy) ) {
+				add_action("manage_edit-${taxonomy}_columns", array(&$this, 'column_add'));
+				add_filter("manage_${taxonomy}_custom_column", array(&$this, 'column_return_value'), 10, 3);
+				if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') )
+					add_filter("manage_edit-${taxonomy}_sortable_columns", array(&$this, 'column_add_clean') );
+			}
 		}
 
-		foreach( get_post_types() as $ptype ) {
-			add_action("manage_edit-${ptype}_columns", array(&$this, 'column_add'));
-			add_filter("manage_${ptype}_posts_custom_column", array(&$this, 'column_value'), 10, 3);
-			if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') )
-				add_filter("manage_edit-${ptype}_sortable_columns", array(&$this, 'column_add_clean') );
+		foreach( get_post_types(array('public' => true)) as $ptype ) {
+			if( isset($ptype) ) {
+				add_action("manage_edit-${ptype}_columns", array(&$this, 'column_add'));
+				add_filter("manage_${ptype}_posts_custom_column", array(&$this, 'column_value'), 10, 3);
+				if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') )
+					add_filter("manage_edit-${ptype}_sortable_columns", array(&$this, 'column_add_clean') );
+			}
 		}
 
 		add_action('manage_users_columns', array(&$this, 'column_add'));
 		add_filter('manage_users_custom_column', array(&$this, 'column_return_value'), 10, 3);
-		if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') )
+		if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') ) {
+			add_action('manage_users-network_columns', array(&$this, 'column_add'));
 			add_filter("manage_users_sortable_columns", array(&$this, 'column_add_clean') );
+		}
 
 		add_action('manage_edit-comments_columns', array(&$this, 'column_add'));
 		add_action('manage_comments_custom_column', array(&$this, 'column_value'), 10, 2);
 		if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') )
 			add_filter("manage_edit-comments_sortable_columns", array(&$this, 'column_add_clean') );
+
+		if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') ) {
+			add_action('manage_users-network_columns', array(&$this, 'column_add'));
+			add_action('manage_sites-network_columns', array(&$this, 'column_add'));
+			add_filter('manage_sites_custom_column', array(&$this, 'column_value'), 10, 3);
+		}
 	}
 
 

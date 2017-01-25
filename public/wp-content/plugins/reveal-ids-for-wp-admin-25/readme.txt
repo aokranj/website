@@ -1,9 +1,9 @@
 ﻿=== Reveal IDs ===
 Contributors: Alphawolf
-Donate link: http://www.schloebe.de/donate/
-Tags: reveal, id, wp-admin, hidden, category, post, page, media, links, capability, user, restore, comments, taxonomy, custom posts
+Donate link: https://www.schloebe.de/donate/
+Tags: reveal, id, wp-admin, hidden, category, post, page, media, links, capability, user, restore, comments, taxonomy, custom posts, post type, multisite, ms
 Requires at least: 3.0
-Tested up to: 4.5.999
+Tested up to: 4.7.999
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,7 +20,7 @@ What this plugin does is to reveal most removed entry IDs on admin pages, showin
 
 * Sortable columns for WP 3.1 or higher
 
-[Developer on Google+](https://plus.google.com/118074611982254715031 "Developer on Google+") | [Developer on Twitter](http://twitter.com/wpseek "Developer on Twitter")
+[Developer on Google+](https://plus.google.com/118074611982254715031 "Developer on Google+") | [Developer on Twitter](https://twitter.com/wpseek "Developer on Twitter")
 
 **Included languages:**
 
@@ -39,7 +39,7 @@ What this plugin does is to reveal most removed entry IDs on admin pages, showin
 * Swedish (sv_SE) (Thanks for contributing swedish language goes to [Tor-Bjorn Fjellner](http://fjellner.com/))
 * Ukrainian (uk) (Thanks for contributing ukrainian language goes to [Everycloud](http://www.everycloudtech.com/))
 
-**Looking for more WordPress plugins? Visit [www.schloebe.de/portfolio/](http://www.schloebe.de/portfolio/)**
+**Looking for more WordPress plugins? Visit [www.schloebe.de/portfolio/](https://www.schloebe.de/portfolio/)**
 
 == Frequently Asked Questions ==
 
@@ -53,6 +53,14 @@ None.
 1. Installation finished.
 
 == Changelog ==
+
+= 1.5.0 =
+* Full support for multisite
+* Code cleanup
+
+= 1.4.7 =
+* WordPress 4.7 compatibility
+* PHP 7 compatibility
 
 = 1.4.6.2 =
 * Added ukrainian localization (Thanks to Alisa Bagrii!)
@@ -76,7 +84,7 @@ None.
 
 = 1.3.0 =
 * Complete Code rewrite
-* Full wupport for custom post types
+* Full support for custom post types
 * Full support for custom taxonomies
 
 = 1.2.7 =

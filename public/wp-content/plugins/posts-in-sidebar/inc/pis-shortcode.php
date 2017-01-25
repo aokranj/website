@@ -1,5 +1,11 @@
 <?php
 /**
+ * This file contains the shortcode for the plugin
+ *
+ * @since 3.0
+ */
+
+/**
  * Create the shortcode.
  *
  * @example [pissc post_type="page" post_parent_in=4 exclude_current_post=1]
@@ -97,7 +103,6 @@ function pis_shortcode( $atts ) {
 		// The title of the post
 		'display_title'       => true,
 		'link_on_title'       => true,
-		'title_tooltip'       => __( 'Permalink to', 'posts-in-sidebar' ),
 		'arrow'               => false,
 
 		// The featured image of the post
@@ -108,6 +113,7 @@ function pis_shortcode( $atts ) {
 		'image_link'          => '',
 		'custom_image_url'    => '',
 		'custom_img_no_thumb' => true,
+		'image_link_to_post'  => true,
 
 		// The text of the post
 		'excerpt'             => 'excerpt', // can be "full_content", "rich_content", "content", "more_excerpt", "excerpt", "none"
@@ -165,7 +171,7 @@ function pis_shortcode( $atts ) {
 		'link_to'             => 'category',
 		'tax_name'            => '',
 		'tax_term_name'       => '',
-		'archive_text'        => __( 'Display all posts', 'posts-in-sidebar' ),
+		'archive_text'        => __( 'Display all posts under %s', 'posts-in-sidebar' ),
 
 		// When no posts found
 		'nopost_text'         => __( 'No posts yet.', 'posts-in-sidebar' ),

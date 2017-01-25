@@ -1,10 +1,10 @@
 === Posts in Sidebar ===
 Contributors: aldolat
 Donate link: http://dev.aldolat.it/projects/posts-in-sidebar/
-Tags: post, sidebar, widget
+Tags: post, sidebar, widget, query, wp_query
 Requires at least: 4.1
-Tested up to: 4.6.1
-Stable tag: 3.8.1
+Tested up to: 4.7
+Stable tag: 3.8.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -89,6 +89,13 @@ Please, see [FAQ page](https://github.com/aldolat/posts-in-sidebar/wiki/FAQ) on 
 7. Displaying the full set of items (categories, date, author, tags, and so on).
 
 == Changelog ==
+
+= 3.8.2 =
+
+* Rewritten function for displaying the Read more.
+* Completely removed the HTML title attribute on links.
+* Aligned widget and shortcode options.
+* Minor corrections.
 
 = 3.8.1 =
 

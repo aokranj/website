@@ -1,5 +1,11 @@
 <?php
 /**
+ * This file contains the functions of the plugin
+ *
+ * @since 1.23
+ */
+
+/**
  * Prevent direct access to this file.
  *
  * @since 2.0
@@ -115,9 +121,10 @@ function pis_meta() {
 /**
  * Generate an HTML arrow.
  *
- * @since 1.15
+ * @param boolean $pre_space If a space must be prepended before the arrow.
  * @return string $output The HTML arrow.
  * @uses pis_class()
+ * @since 1.15
  */
 function pis_arrow( $pre_space = true ) {
 	$the_arrow = '&rarr;';
@@ -147,30 +154,31 @@ function pis_arrow( $pre_space = true ) {
  * @return string The HTML arrow linked to the post.
  */
 function pis_more_arrow( $the_more = '', $no_the_more = false, $exc_arrow = false, $echo = true ) {
-	if ( $the_more || $exc_arrow ) {
-
-		if ( $the_more && $exc_arrow ) {
-			$the_arrow = pis_arrow();
-		} else if ( ( ! $the_more || $no_the_more ) && $exc_arrow ) {
+	$output = '';
+	// If we do not want any "Read more" nor any arrow
+	// or the user doesn't want any "Read more" nor any arrow.
+	if ( ( true == $no_the_more && false == $exc_arrow ) || ( '' == $the_more && false == $exc_arrow ) ) {
+		$output = '';
+	} else {
+		// Else if we do not want any "Read more" but the user wants an arrow
+		// or the user doesn't want the "Read more" but only the arrow.
+		if ( ( true == $no_the_more && true == $exc_arrow ) || ( ! $the_more && $exc_arrow ) ) {
+			$the_more = '';
 			$the_arrow = pis_arrow( false );
-		} else {
+		}
+		// The user wants the "Read more" and the arrow.
+		elseif ( $the_more && $exc_arrow ) {
+			$the_arrow = pis_arrow();
+		}
+		// The user wants the "Read more" but not the arrow
+		else {
 			$the_arrow = '';
 		}
-
 		$output = '<span ' . pis_class( 'pis-more', apply_filters( 'pis_more_class', '' ), false ) . '>';
 			$output .= '<a href="' . get_permalink() . '" rel="bookmark">';
-			if ( $no_the_more ) {
-				$output .= pis_arrow( false );
-			} else {
 				$output .= $the_more . $the_arrow;
-			}
 			$output .= '</a>';
 		$output .= '</span>';
-
-	}
-
-	if ( ! isset( $output ) ) {
-		return '';
 	}
 
 	if ( $echo ) {
@@ -275,9 +283,8 @@ function pis_utility_section( $args ) {
 			$output .= '<span ' . pis_class( 'pis-author', apply_filters( 'pis_author_class', '' ), false ) . '>';
 				if ( $author_text ) $output .= $author_text . ' ';
 				if ( $linkify_author ) {
-					$author_title = sprintf( __( 'View all posts by %s', 'posts-in-sidebar' ), get_the_author() );
 					$author_link  = get_author_posts_url( get_the_author_meta( 'ID' ) );
-					$output .= '<a ' . pis_class( 'pis-author-link', apply_filters( 'pis_author_link_class', '' ), false ) . ' href="' . $author_link . '" title="' . esc_attr( $author_title ) . '" rel="author">';
+					$output .= '<a ' . pis_class( 'pis-author-link', apply_filters( 'pis_author_link_class', '' ), false ) . ' href="' . $author_link . '" rel="author">';
 						$output .= get_the_author();
 					$output .= '</a>';
 				} else {
@@ -294,8 +301,7 @@ function pis_utility_section( $args ) {
 			$output .= '<span ' . pis_class( 'pis-date', apply_filters( 'pis_date_class', '' ), false ) . '>';
 				if ( $date_text ) $output .= $date_text . ' ';
 				if ( $linkify_date ) {
-					$date_title = sprintf( __( 'Permalink to %s', 'posts-in-sidebar' ), the_title_attribute( 'echo=0' ) );
-					$output .= '<a ' . pis_class( 'pis-date-link', apply_filters( 'pis_date_link_class', '' ), false ) . ' href="' . get_permalink() . '" title="' . esc_attr( $date_title ) . '" rel="bookmark">';
+					$output .= '<a ' . pis_class( 'pis-date-link', apply_filters( 'pis_date_link_class', '' ), false ) . ' href="' . get_permalink() . '" rel="bookmark">';
 						$output .= get_the_date();
 					$output .= '</a>';
 				} else {
@@ -318,8 +324,7 @@ function pis_utility_section( $args ) {
 				$output .= '<span ' . pis_class( 'pis-mod-date', apply_filters( 'pis_mod_date_class', '' ), false ) . '>';
 					if ( $mod_date_text ) $output .= $mod_date_text . ' ';
 					if ( $linkify_mod_date ) {
-						$mod_date_title = sprintf( __( 'Permalink to %s', 'posts-in-sidebar' ), the_title_attribute( 'echo=0' ) );
-						$output .= '<a ' . pis_class( 'pis-mod-date-link', apply_filters( 'pis_mod_date_link_class', '' ), false ) . ' href="' . get_permalink() . '" title="' . esc_attr( $mod_date_title ) . '" rel="bookmark">';
+						$output .= '<a ' . pis_class( 'pis-mod-date-link', apply_filters( 'pis_mod_date_link_class', '' ), false ) . ' href="' . get_permalink() . '" rel="bookmark">';
 							$output .= get_the_modified_date();
 						$output .= '</a>';
 					} else {
@@ -364,7 +369,6 @@ function pis_the_thumbnail( $args ) {
 		'side_image_margin'   => NULL,
 		'bottom_image_margin' => NULL,
 		'margin_unit'         => 'px',
-		'post_link'           => '',
 		'pis_query'           => '',
 		'image_size'          => 'thumbnail',
 		'thumb_wrap'          => false,
@@ -426,7 +430,7 @@ function pis_the_thumbnail( $args ) {
 		} else {
 			$the_image_link = get_permalink();
 		}
-		$output .= '<a ' . pis_class( 'pis-thumbnail-link', apply_filters( 'pis_thumbnail_link_class', '' ), false ) . 'href="' . esc_url( strip_tags( $the_image_link ) ) . '" title="' . esc_attr( $post_link ) . '" rel="bookmark">';
+		$output .= '<a ' . pis_class( 'pis-thumbnail-link', apply_filters( 'pis_thumbnail_link_class', '' ), false ) . 'href="' . esc_url( strip_tags( $the_image_link ) ) . '" rel="bookmark">';
 		}
 
 			/**
@@ -678,7 +682,7 @@ function pis_tax_query( $args ) {
 					'operator' => $operator_aa,
 				)
 			);
-		} else if ( $taxonomy_aa && ! $taxonomy_ab && $taxonomy_ba && ! $taxonomy_bb && ! empty( $relation ) ) {
+		} elseif ( $taxonomy_aa && ! $taxonomy_ab && $taxonomy_ba && ! $taxonomy_bb && ! empty( $relation ) ) {
 			$tax_query = array(
 				'relation' => $relation,
 				array(
@@ -694,7 +698,7 @@ function pis_tax_query( $args ) {
 					'operator' => $operator_ba,
 				)
 			);
-		} else if ( $taxonomy_aa && $taxonomy_ab && $taxonomy_ba && ! $taxonomy_bb && ! empty( $relation ) ) {
+		} elseif ( $taxonomy_aa && $taxonomy_ab && $taxonomy_ba && ! $taxonomy_bb && ! empty( $relation ) ) {
 			$tax_query = array(
 				'relation' => $relation,
 				array(
@@ -719,7 +723,7 @@ function pis_tax_query( $args ) {
 					'operator' => $operator_ba,
 				)
 			);
-		} else if ( $taxonomy_aa && ! $taxonomy_ab && $taxonomy_ba && $taxonomy_bb && ! empty( $relation ) ) {
+		} elseif ( $taxonomy_aa && ! $taxonomy_ab && $taxonomy_ba && $taxonomy_bb && ! empty( $relation ) ) {
 			$tax_query = array(
 				'relation' => $relation,
 				array(
@@ -744,7 +748,7 @@ function pis_tax_query( $args ) {
 					)
 				)
 			);
-		} else if ( $taxonomy_aa && $taxonomy_ab && $taxonomy_ba && $taxonomy_bb && ! empty( $relation ) ) {
+		} elseif ( $taxonomy_aa && $taxonomy_ab && $taxonomy_ba && $taxonomy_bb && ! empty( $relation ) ) {
 			$tax_query = array(
 				'relation' => $relation,
 				array(
@@ -836,28 +840,34 @@ function pis_debug( $parameters ) {
 	$output = '';
 
 	if ( $debug_query || $debug_params || $debug_query_number ) {
+		global $wp_version;
 		$output .= '<h3>' . sprintf( __( '%s Debug', 'posts-in-sidebar' ), 'Posts in Sidebar' ) . '</h3>';
-		$output .= '<p>'; global $wp_version;
-			$output .= sprintf( __( 'Site URL: %s', 'posts-in-sidebar' ), site_url() . '<br>' );
-			$output .= sprintf( __( 'WP version: %s', 'posts-in-sidebar' ), $wp_version . '<br>' );
-			$output .= sprintf( __( 'PiS version: %s', 'posts-in-sidebar' ), PIS_VERSION . '<br>' );
-			if ( $cached ) $output .= __( 'Cache: active', 'posts-in-sidebar' ); else $output .= __( 'Cache: not active' );
+		$output .= '<p><strong>Environment informations:</strong><br>';
+			$output .= '&bull;&ensp;' . sprintf( __( 'Site URL: %s', 'posts-in-sidebar' ), site_url() . '<br>' );
+			$output .= '&bull;&ensp;' . sprintf( __( 'WP version: %s', 'posts-in-sidebar' ), $wp_version . '<br>' );
+			$output .= '&bull;&ensp;' . sprintf( __( 'PiS version: %s', 'posts-in-sidebar' ), PIS_VERSION . '<br>' );
+			if ( $cached ) {
+				$output .= '&bull;&ensp;' . __( 'Cache: active', 'posts-in-sidebar' );
+			} else {
+				$output .= '&bull;&ensp;' . __( 'Cache: not active', 'posts-in-sidebar' );
+			}
 		$output .= '</p>';
 	}
 
 	if ( $debug_query ) {
 		$output .= '<p><strong>' . __( 'The parameters for the query:', 'posts-in-sidebar' ) . '</strong></p>';
-		$output .= '<pre>' . print_r( $params, true ) . '</pre>';
+		$output .= '<pre><code>$pis_query = ' . print_r( $params, true ) . '</code></pre>';
 	}
 
 	if ( $debug_params ) {
 		$output .= '<p><strong>' . __( 'The complete set of parameters of the widget:', 'posts-in-sidebar' ) . '</strong></p>';
-		$output .= '<pre>' . print_r( $args, true ) . '</pre>';
+		$output .= '<pre><code>$args = ' . print_r( $args, true ) . '</code></pre>';
 	}
 
 	if ( $debug_query_number ) {
-		$output .= '<p><strong>' . __( 'The total number of queries so far:', 'posts-in-sidebar' ) . '</strong></p>';
-		$output .= '<pre>' . sprintf( __( '%1$s queries in %2$s seconds', 'posts-in-sidebar' ), get_num_queries(), timer_stop() ) . '</pre>';
+		$output .= '<p><strong>' . __( 'The total number of queries so far:', 'posts-in-sidebar' ) . '</strong><br>';
+		$output .= sprintf( __( '%1$s queries in %2$s seconds', 'posts-in-sidebar' ), get_num_queries(), timer_stop() );
+		$output .= '</p>';
 	}
 
 	return $output;
@@ -865,7 +875,8 @@ function pis_debug( $parameters ) {
 
 
 /**
- * Return the version of Posts in Sidebar and if the cache is active.
+ * Return the "Generated by..." HTML comment.
+ * Includes version of Posts in Sidebar and the status of the cache.
  *
  * @param boolean $cached If the cache is active or not.
  * @since 2.0.3
@@ -877,7 +888,7 @@ function pis_generated( $cached ) {
 	} else {
 		$pis_cache_active = '';
 	}
-	/* Output the credits and cache */
+	/* Output the HTML comment */
 	return '<!-- Generated by Posts in Sidebar v' . PIS_VERSION . $pis_cache_active . ' -->';
 }
 
@@ -898,7 +909,7 @@ function pis_get_comments_number( $pis_post_id, $link ) {
 		// Construct the comments string.
 		if ( 1 == $num_comments ) {
 			$comments = __( '1 Comment', 'posts-in-sidebar' );
-		} else if ( 1 < $num_comments ) {
+		} elseif ( 1 < $num_comments ) {
 			$comments = sprintf( __( '%d Comments', 'posts-in-sidebar' ), $num_comments );
 		} else {
 			$comments = __( 'Leave a comment', 'posts-in-sidebar' );
@@ -989,13 +1000,17 @@ function pis_archive_link( $args ) {
 			$archive_text = str_replace( '%s', $term_name, $archive_text );
 		}
 		$output = '<p ' . pis_paragraph( $archive_margin, $margin_unit, 'pis-archive-link', 'pis_archive_class' ) . '>';
-			$output .= '<a ' . pis_class( 'pis-archive-link-class', apply_filters( 'pis_archive_link_class', '' ), false ) . ' href="' . esc_url( $term_link ) . '" title="' . esc_attr( $archive_text ) . '" rel="bookmark">';
+			$output .= '<a ' . pis_class( 'pis-archive-link-class', apply_filters( 'pis_archive_link_class', '' ), false ) . ' href="' . esc_url( $term_link ) . '" rel="bookmark">';
 				$output .= $archive_text;
 			$output .= '</a>';
 		$output .= '</p>';
 	}
 
-	if ( isset( $output ) ) return $output; else return '';
+	if ( isset( $output ) ) {
+		return $output;
+	} else {
+		return '';
+	}
 }
 
 
@@ -1018,3 +1033,15 @@ function pis_get_gravatar( $args ) {
 
 	return $output;
 }
+
+
+/**
+ * Returns the tooltip text for the link to the post.
+ *
+ * @param $tooltip_text The text to be displayed in the tooltip.
+ * @since 3.9
+ */
+/*function pis_tooltip( $tooltip_text ) {
+	$tooltip_text = rtrim( $tooltip_text ) . ' ';
+	return $tooltip_text;
+}*/

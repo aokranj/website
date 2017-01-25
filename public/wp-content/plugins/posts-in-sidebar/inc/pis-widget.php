@@ -1,5 +1,11 @@
 <?php
 /**
+ * This file contains the functions for the widget
+ *
+ * @since 1.0
+ */
+
+/**
  * Prevent direct access to this file.
  *
  * @since 2.0
@@ -56,7 +62,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 	 * @since 1.0
 	 */
 	public function widget( $args, $instance ) {
-		/**
+		/*
 		 * Extract $args array keys into single variables.
 		 * Some of these are:
 		 * 		$args['before_widget']
@@ -70,8 +76,9 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		/**
+		/*
 		* Change the widget title if the user wants a different title in single posts (for same category).
+		*
 		* @since 3.2
 		*/
 		if ( isset( $instance['get_from_same_cat'] ) && $instance['get_from_same_cat'] && isset( $instance['title_same_cat'] ) && ! empty( $instance['title_same_cat'] ) && is_singular( 'post' ) ) {
@@ -81,8 +88,9 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 			$title = str_replace( '%s', $the_category_name, $title );
 		}
 
-		/**
+		/*
 		* Change the widget title if the user wants a different title in single posts (for same author).
+		*
 		* @since 3.5
 		*/
 		if ( isset( $instance['get_from_same_author'] ) && $instance['get_from_same_author'] && isset( $instance['title_same_author'] ) && ! empty( $instance['title_same_author'] ) && is_singular( 'post' ) ) {
@@ -92,8 +100,9 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 			$title = str_replace( '%s', $the_author_name, $title );
 		}
 
-		/**
+		/*
 		* Change the widget title if the user wants a different title in single posts (for for same category/tag using custom fields).
+		*
 		* @since 3.7
 		*/
 		if ( isset( $instance['get_from_custom_fld'] ) &&
@@ -124,7 +133,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 
 		if ( $title && isset( $instance['title_link'] ) && ! empty( $instance['title_link'] ) ) {
 			echo $before_title . '<a class="pis-title-link" href="' . esc_url( $instance['title_link'] ) . '">' . $title . '</a>' . $after_title;
-		} else if ( $title ) {
+		} elseif ( $title ) {
 			echo $before_title . $title . $after_title;
 		}
 
@@ -190,7 +199,6 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 		if ( ! isset( $instance['cat_not_in'] ) )           $instance['cat_not_in']           = '';
 		if ( ! isset( $instance['tag_not_in'] ) )           $instance['tag_not_in']           = '';
 		if ( ! isset( $instance['post_parent_not_in'] ) )   $instance['post_parent_not_in']   = '';
-		if ( ! isset( $instance['title_tooltip'] ) )        $instance['title_tooltip']        = __( 'Permalink to', 'posts-in-sidebar' );
 		if ( ! isset( $instance['image_align'] ) )          $instance['image_align']          = 'no_change';
 		if ( ! isset( $instance['image_before_title'] ) )   $instance['image_before_title']   = false;
 		if ( ! isset( $instance['image_link'] ) )           $instance['image_link']           = '';
@@ -257,7 +265,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 		if ( ! isset( $instance['debug_params'] ) )         $instance['debug_params']         = false;
 		if ( ! isset( $instance['debug_query_number'] ) )   $instance['debug_query_number']   = false;
 
-		/**
+		/*
 		 * Execute the main function in the front-end.
 		 * Some parameters are passed only for the debugging list.
 		 */
@@ -355,7 +363,6 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 			// The title of the post
 			'display_title'       => $instance['display_title'],
 			'link_on_title'       => $instance['link_on_title'],
-			'title_tooltip'       => $instance['title_tooltip'],
 			'arrow'               => $instance['arrow'],
 
 			// The featured image of the post
@@ -454,10 +461,11 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 			'cached'              => $instance['cached'],
 			'cache_time'          => $instance['cache_time'],
 			/*
-				The following 'widget_id' variable will be used in the main function
-				to check if a cached version of the query already exists
-				for every instance of the widget.
-			*/
+			 *
+			 * The following 'widget_id' variable will be used in the main function
+			 * to check if a cached version of the query already exists
+			 * for every instance of the widget.
+			 */
 			'widget_id'           => $this->id, // $this->id is the id of the widget instance.
 
 			// Debug
@@ -505,7 +513,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 		$instance['post_type']           = $new_instance['post_type'];
 		$instance['posts_id']            = strip_tags( $new_instance['posts_id'] );
 			if ( 0 == $instance['posts_id'] ) $instance['posts_id'] = '';
-			/**
+			/*
 			 * For historical reasons (for example, see version 1.18 of this plugin),
 			 * the variables $author, $cat, and $tag could have a value of 'NULL' (as string, not the costant NULL).
 			 * This means that in the database we could have this value, so that WordPress will search, for example,
@@ -518,7 +526,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 		$instance['author']              = $new_instance['author'];
 			if ( 'NULL' == $instance['author'] ) $instance['author'] = '';
 		$instance['author_in']           = strip_tags( $new_instance['author_in'] );
-			// Make empty $author if $author_in is not empty.
+			// Make $author empty if $author_in is not empty.
 			if ( ! empty( $instance['author_in'] ) ) $instance['author'] = '';
 		$instance['cat']                 = strip_tags( $new_instance['cat'] );
 			if ( 'NULL' == $instance['cat'] ) $instance['cat'] = '';
@@ -621,7 +629,6 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 		// The title of the post
 		$instance['display_title']       = isset( $new_instance['display_title'] ) ? 1 : 0;
 		$instance['link_on_title']       = isset( $new_instance['link_on_title'] ) ? 1 : 0;
-		$instance['title_tooltip']       = strip_tags( $new_instance['title_tooltip'] );
 		$instance['arrow']               = isset( $new_instance['arrow'] ) ? 1 : 0;
 
 		// The featured image of the post
@@ -639,6 +646,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 		$instance['exc_length']          = absint( strip_tags( $new_instance['exc_length'] ) );
 			if ( '' == $instance['exc_length'] || ! is_numeric( $instance['exc_length'] ) ) $instance['exc_length'] = 20;
 		$instance['the_more']            = strip_tags( $new_instance['the_more'] );
+			if ( strpos( $instance['the_more'], '...' ) ) $instance['the_more'] = str_replace( '...', '&hellip;', $instance['the_more'] );
 		$instance['exc_arrow']           = isset( $new_instance['exc_arrow'] ) ? 1 : 0;
 
 		// Author, date and comments
@@ -854,7 +862,6 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 			// The title of the post
 			'display_title'       => true,
 			'link_on_title'       => true,
-			'title_tooltip'       => __( 'Permalink to', 'posts-in-sidebar' ),
 			'arrow'               => false,
 
 			// The featured image of the post
@@ -923,7 +930,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 			'link_to'             => 'category',
 			'tax_name'            => '',
 			'tax_term_name'       => '',
-			'archive_text'        => __( 'Display all posts', 'posts-in-sidebar' ),
+			'archive_text'        => __( 'Display all posts under %s', 'posts-in-sidebar' ),
 
 			// Text when no posts found
 			'nopost_text'         => __( 'No posts yet.', 'posts-in-sidebar' ),
@@ -997,12 +1004,12 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 		$debug_params         = (bool) $instance['debug_params'];
 		$debug_query_number   = (bool) $instance['debug_query_number'];
 
-		/**
-		* When upgrading from old version, $author, $cat, and $tag could be 'NULL' (as string).
-		* See above for more informations (the long note on function update).
-		*
-		* @since 2.0.3
-		*/
+		/*
+		 * When upgrading from old version, $author, $cat, and $tag could be 'NULL' (as string).
+		 * See above for more informations (the long note on function update).
+		 *
+		 * @since 2.0.3
+		 */
 		if ( 'NULL' == $instance['author'] ) $instance['author'] = '';
 		if ( 'NULL' == $instance['cat'] )    $instance['cat']    = '';
 		if ( 'NULL' == $instance['tag'] )    $instance['tag']    = '';
@@ -2140,9 +2147,6 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 							<?php // ================= Link to the title
 							pis_form_checkbox( __( 'Link the title to the post', 'posts-in-sidebar' ), $this->get_field_id( 'link_on_title' ), $this->get_field_name( 'link_on_title' ), checked( $link_on_title, true, false ) ); ?>
 
-							<?php // ================= Title tooltip
-							pis_form_input_text( __( 'Use this text in the tooltip', 'posts-in-sidebar' ), $this->get_field_id( 'title_tooltip' ), $this->get_field_name( 'title_tooltip' ), esc_attr( $instance['title_tooltip'] ), '', __( 'The title of the post will be added after this text. Also note that this text will be used for the image tooltip.', 'posts-in-sidebar' ) ); ?>
-
 							<?php // ================= Arrow after the title
 							pis_form_checkbox( __( 'Show an arrow after the title', 'posts-in-sidebar' ), $this->get_field_id( 'arrow' ), $this->get_field_name( 'arrow' ), checked( $arrow, true, false ) ); ?>
 
@@ -2216,7 +2220,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 							<div class="pis-column">
 
 								<?php if ( ! current_theme_supports( 'post-thumbnails' ) ) { ?>
-									<p class="pis-alert"><?php _e( 'Your theme does not support the Post Thumbnail feature. No image will be displayed.', 'posts-in-sidebar' ); ?></p>
+									<p class="pis-alert"><strong><?php _e( 'Your theme does not support the Post Thumbnail feature. No image will be displayed.', 'posts-in-sidebar' ); ?></strong></p>
 								<?php } ?>
 
 								<?php // ================= Featured image
@@ -2661,7 +2665,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 
 							<div class="pis-column">
 
-								<div class="pis-linkto-tax-name">
+								<div class="pis-linkto-tax-name pis-alert">
 									<?php // ================= Taxonomy name for archive link
 									pis_form_input_text(
 										__( 'Taxonomy name', 'posts-in-sidebar' ),
@@ -2669,7 +2673,7 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 										$this->get_field_name( 'tax_name' ),
 										esc_attr( $instance['tax_name'] ),
 										__( 'genre', 'posts-in-sidebar' ),
-										sprintf( __( 'Enter the term name of the custom taxonomy (e.g., %1$sgenre%2$s).', 'posts-in-sidebar' ), '<code>', '</code>' ),
+										sprintf( __( 'Enter the term name of the custom taxonomy (e.g., %1$sgenre%2$s).%3$sUse this field only if you selected "Custom taxonomy" in the "Link to the archive of" dropdown menu.', 'posts-in-sidebar' ), '<code>', '</code>', '<br />' ),
 										'margin: 0; padding: 0.5em;'
 									); ?>
 								</div>
@@ -2697,8 +2701,8 @@ class PIS_Posts_In_Sidebar extends WP_Widget {
 							$this->get_field_id( 'archive_text' ),
 							$this->get_field_name( 'archive_text' ),
 							esc_attr( $instance['archive_text'] ),
-							__( 'Display all posts by %s', 'posts-in-sidebar' ),
-							sprintf( __( 'Use %s to display the name of the taxonomy.', 'posts-in-sidebar' ), '<code>%s</code>' )
+							__( 'Display all posts under %s', 'posts-in-sidebar' ),
+							sprintf( __( 'Use %s to display the taxonomy term name.', 'posts-in-sidebar' ), '<code>%s</code>' )
 						); ?>
 
 					</div>
