@@ -26,143 +26,143 @@ msgctxt "start of week"
 msgid "1"
 msgstr "1"
 
-#: wp-admin/about.php:231
+#: wp-admin/about.php:234
 msgid "Customize changesets make changes in the customizer persistent, like autosave drafts. They also make exciting new features like starter content possible."
 msgstr "Množice sprememb za Prilagojevalnik naredijo spremembe trajne kot naprimer samodejno shranjevanje. Zdaj bodo na voljo tudi zanimive nove možnosti kot začetna vsebina."
 
-#: wp-admin/about.php:230
+#: wp-admin/about.php:233
 msgid "Customize Changesets"
 msgstr "Prilagodi množice sprememb"
 
 #. translators: 1: register_setting(), 2:
 #. https://make.wordpress.org/core/2016/10/26/registering-your-settings-in-wordpress-4-7/
-#: wp-admin/about.php:223
+#: wp-admin/about.php:226
 msgid "%1$s <a href=\"%2$s\">has been enhanced</a> to include type, description, and REST API visibility."
 msgstr "%1$s <a href=\"%2$s\">je bil nadgrajen</a> na tipe, opise in REST API vidnost."
 
-#: wp-admin/about.php:219
+#: wp-admin/about.php:222
 msgid "Settings Registration API"
 msgstr "API za registracijo nastavitev"
 
 #. translators: %s:
 #. https://make.wordpress.org/core/2016/09/08/wp_hook-next-generation-actions-and-filters/
-#: wp-admin/about.php:213
+#: wp-admin/about.php:216
 msgid "The code that lies beneath actions and filters has been overhauled and modernized, fixing bugs along the way."
 msgstr "Koda, ki implementira akcije in filtre je bila prepisana in modernizirana, sproti so bili popravljeni hrošči."
 
-#: wp-admin/about.php:203
+#: wp-admin/about.php:206
 msgid "List tables, now with more than bulk edit and delete."
 msgstr "Seznamne tabele zdaj omogočajo več kot le množično urejanje in brisanje."
 
-#: wp-admin/about.php:202
+#: wp-admin/about.php:205
 msgid "Custom Bulk Actions"
 msgstr "Množično urejanje"
 
 #. translators: %s:
 #. https://make.wordpress.org/core/2016/09/09/new-functions-hooks-and-behaviour-for-theme-developers-in-wordpress-4-7/
-#: wp-admin/about.php:196
+#: wp-admin/about.php:199
 msgid "WordPress 4.7 includes <a href=\"%s\">new functions, hooks, and behavior</a> for theme developers."
 msgstr "WordPress 4.7 vsebuje <a href=\"%s\">nove funkcije, ročice in obnašanje</a> za izdelovalce tem."
 
-#: wp-admin/about.php:192
+#: wp-admin/about.php:195
 msgid "More Theme API Goodies"
 msgstr "Več API dobrot za teme"
 
-#: wp-admin/about.php:189
+#: wp-admin/about.php:192
 msgid "By opening up the page template functionality to all post types, theme developers have even more flexibility with the WordPress template hierarchy."
 msgstr "Z odprtjem predlog strani na vse tipe prispevkov imajo izdelovalci tem še več fleksibilnosti z WordPress hiearhijo tem."
 
-#: wp-admin/about.php:188
+#: wp-admin/about.php:191
 msgid "Post Type Templates"
 msgstr "Predloge tipov prispevkov"
 
 #. translators: %s: smiling face with smiling eyes emoji
-#: wp-admin/about.php:181
+#: wp-admin/about.php:184
 msgid "Even More Developer Happiness %s"
 msgstr "Še več zadovoljstva razvijalcev %s"
 
 #. translators: %s: https://developer.wordpress.org/rest-api/
-#: wp-admin/about.php:169
+#: wp-admin/about.php:172
 msgid "Content endpoints provide machine-readable external access to your WordPress site with a clear, standards-driven interface, paving the way for new and innovative methods of interacting with sites through plugins, themes, apps, and beyond. Ready to get started with development? <a href=\"%s\">Check out the REST API reference.</a>"
 msgstr "Vsebinska izhodišča omogočajo strojno-berljiv zunanji dostop do vašega WordPress spletišča z jasnim in standardnim dostopom. S tem omogočamo nov in inovativen način dostopa do spletišč prek vtičev, tem, aplikacij in še več. Ste pripravljeni? <a href=\"%s\">Poglejte REST API dokumentacijo.</a>"
 
-#: wp-admin/about.php:164
+#: wp-admin/about.php:167
 msgid "WordPress 4.7 comes with REST API endpoints for posts, comments, terms, users, meta, and settings."
 msgstr "WordPress 4.7 ima nova REST API izhodišča za prispevke, komentarje, izraze, uporabnike, meta in nastavitve."
 
-#: wp-admin/about.php:163
+#: wp-admin/about.php:166
 msgid "Introducing REST API Content Endpoints"
 msgstr "Predstavljamo REST API vsebinska izhodišča"
 
-#: wp-admin/about.php:156
+#: wp-admin/about.php:159
 msgid "Just because your site is in one language doesn&#8217;t mean that everybody helping manage it prefers that language for their admin. Add more languages to your site and a user language option will show up in your user&#8217;s profiles."
 msgstr "Četudi je vaše spletišče v enem jeziku še ne pomeni, da vsi, ki ga pomagajo urejati želijo ta jezik v administraciji. Dodajte več jezikov na vaše spletišče in prikazala se bo možnost nastavitve jezika v profilu vaših uporabnikov."
 
-#: wp-admin/about.php:154
+#: wp-admin/about.php:157
 msgid "Dashboard in your language"
 msgstr "Nadzorna plošča v vašem jeziku"
 
-#: wp-admin/about.php:151
+#: wp-admin/about.php:154
 msgid "Managing your document collection is easier with WordPress 4.7. Uploading PDFs will generate thumbnail images so you can more easily distinguish between all your documents."
 msgstr "Urejanje vaših dokumentov je bolj enostavno v WordPress 4.7. Naložen PDF bo dobil predogledno sličico za bolj enostavno upravljanje."
 
-#: wp-admin/about.php:149
+#: wp-admin/about.php:152
 msgid "PDF Thumbnail Previews"
 msgstr "PDF predogledne sličice"
 
-#: wp-admin/about.php:141
+#: wp-admin/about.php:144
 msgid "Sometimes you just need a few visual tweaks to make your site perfect. WordPress 4.7 allows you to add custom CSS and instantly see how your changes affect your site. The live preview allows you to work quickly without page refreshes slowing you down."
 msgstr "Tam pa tam potrebujete le par vizualnih sprememb, da je vaše spletišče popolno. WordPress 4.7 vam omogoča dodajanje CSS in instantni predogled vaših sprememb. Živi predogled vam omogoča hitro delo brez osveževanja strani."
 
-#: wp-admin/about.php:136
+#: wp-admin/about.php:139
 msgid "Many menus for sites contain links to the pages of your site, but what happens when you don&#8217;t have any pages yet? Now you can add new pages while building menus instead of leaving the customizer and abandoning your changes. Once you&#8217;ve published your customizations, you&#8217;ll have new pages ready for you to fill with content."
 msgstr "Več menijev vsebuje povezava na strani vašega spletišča, ampak kaj se zgodi, ko še te strani ne obstjajo? Zdaj lahko dodate nove strani med urejanjem menija brez izgube sprememb. Ko objavite spremembe boste imeli nove strani, katerim lahko dodate vsebino."
 
-#: wp-admin/about.php:134
+#: wp-admin/about.php:137
 msgid "Smoother Menu Building"
 msgstr "Hitrejše urejanje menijev"
 
-#: wp-admin/about.php:128
+#: wp-admin/about.php:131
 msgid "Sometimes a big atmospheric video as a moving header image is just what you need to showcase your wares; go ahead and try it out with Twenty Seventeen. Need some video inspiration? Try searching for sites with video headers available for download and use."
 msgstr "Tam pa tam je velik atmosferski video vse kar potrebujete za predstavitev vaše vsebine; to lahko poskusite zdaj z Twenty Seventeen. Potrebujete inspiracijo? Poskusite iskati za strani z \"video headers\" za prenos in uporabo."
 
-#: wp-admin/about.php:116
+#: wp-admin/about.php:119
 msgid "Video Headers"
 msgstr "Video glave"
 
-#: wp-admin/about.php:113
+#: wp-admin/about.php:116
 msgid "Visible icons appear to show you which parts of your site can be customized while live previewing. Click on a shortcut and get straight to editing. Paired with starter content, getting started with customizing your site is faster than ever."
 msgstr "Ikonice se prikažejo, da lahko vidite, katere dele spletišča lahko urejate med živim predogledom. Klik na bližnjico je vse kar je potrebno za urejanje. Če še dobite poleg začetno vsebino je to najhitrejši način za prilagajanje spletišča."
 
-#: wp-admin/about.php:101
+#: wp-admin/about.php:104
 msgid "Edit Shortcuts"
 msgstr "Bljižnice za urejanje"
 
-#: wp-admin/about.php:82
+#: wp-admin/about.php:85
 msgid "To help give you a solid base to build from, individual themes can provide starter content that appears when you go to customize your brand new site. This can range from placing a business information widget in the best location to providing a sample menu with social icon links to a static front page complete with beautiful images. Don&#8217;t worry - nothing new will appear on the live site until you&#8217;re ready to save and publish your initial theme setup."
 msgstr "Da dobite dobro osnovo za začetek izdelovanje spletišča, vam posamezne teme lahko nudijo začetno vsebino, katera se prikaže, medtem ko urejate spletišče. To so lahko naprimer gradnik za podrobnosti vašega podjetja do gradinka v najboljši lokaciji za meni z povezavami na socialna omrežja do statične strani s čudovitimi slikami. Ne skrbite, nič od tega se na prikaže na spletišču dokler ne shranite in objavite nastavitev."
 
-#: wp-admin/about.php:81
+#: wp-admin/about.php:84
 msgid "Theme Starter Content"
 msgstr "Začetne vsebine za teme"
 
-#: wp-admin/about.php:76
+#: wp-admin/about.php:79
 msgid "WordPress 4.7 adds new features to the customizer to help take you through the initial setup of a theme, with non-destructive live previews of all your changes in one uninterrupted workflow."
 msgstr "WordPress 4.7 doda nove možnosti prilagojevalniku, ki vas vodijo skozi prvo nastavitev teme preko živih predogledov vseh vaših sprememb v nemotenem procesu."
 
-#: wp-admin/about.php:75
+#: wp-admin/about.php:78
 msgid "Your Site, Your Way"
 msgstr "Vaše spletišče, vaša zgodba"
 
-#: wp-admin/about.php:69
+#: wp-admin/about.php:72
 msgid "Twenty Seventeen focuses on business sites and features a customizable front page with multiple sections. Personalize it with widgets, navigation, social menus, a logo, custom colors, and more. Our default theme for 2017 works great in many languages, on any device, and for a wide range of users."
 msgstr "Twenty Seventeen se fokusira na poslovna spletišča in omogoča naslovno strani po meni z več razdelki. Prilagodite jo z gradniki, navigacijo, povezavami na socialna omrežja, logotipi, barvami po meri in še več. Naša privzeta tema za 2017 deluje odlično v mnogo jeziki, na vseh napravah in za široko paleto uporabnikov."
 
-#: wp-admin/about.php:63
+#: wp-admin/about.php:66
 msgid "A brand new default theme brings your site to life with immersive featured images and video headers."
 msgstr "Popolnoma nova privzeta tema poživi vaše spletišče s prikaznimi slikami in video glavami."
 
-#: wp-admin/about.php:62
+#: wp-admin/about.php:65
 msgid "Presenting Twenty Seventeen"
 msgstr "Predstavljamo Twenty Seventeen"
 
@@ -1242,7 +1242,7 @@ msgid "Welcome to %s. This is your first post. Edit or delete it, then start blo
 msgstr "Dobrodošli na %s. To je vaš prvi prispevek. Uredite ali izbrišite ga, nato začnite pisati!"
 
 #. translators: %s: WordPress version number
-#: wp-admin/about.php:266
+#: wp-admin/about.php:269
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>Izdaja %s</strong> je obravnavala eno varnostno napako."
 
@@ -1259,15 +1259,15 @@ msgstr "Vašo profilno sliko lahko spremenite na storitvi <a href=\"%s\">Gravata
 msgid "Profile Picture"
 msgstr "Profilna Slika"
 
-#: wp-admin/about.php:263
+#: wp-admin/about.php:47 wp-admin/about.php:266
 msgid "Maintenance and Security Releases"
 msgstr "Vzdrževalne in varnostne izdaje"
 
-#: wp-admin/about.php:260
+#: wp-admin/about.php:263
 msgid "Security Releases"
 msgstr "Varnostne izdaje"
 
-#: wp-admin/about.php:257
+#: wp-admin/about.php:260
 msgid "Maintenance Releases"
 msgstr "Vzdrževalne izdaje"
 
@@ -1664,7 +1664,7 @@ msgstr "Navigacija seznama postavk"
 msgid "Filter items list"
 msgstr "Filtriraj seznam elementov"
 
-#: wp-admin/includes/class-wp-press-this.php:1483
+#: wp-admin/includes/class-wp-press-this.php:1521
 msgid "Saving&hellip;"
 msgstr "Shranjujem&hellip;"
 
@@ -1972,11 +1972,11 @@ msgstr[3] "%s prispevkov tega avtorja"
 msgid "Live Preview &#8220;%s&#8221;"
 msgstr "Živi predogled &#8220;%s&#8221;"
 
-#: wp-admin/includes/class-wp-press-this.php:1486
+#: wp-admin/includes/class-wp-press-this.php:1524
 msgid "More actions"
 msgstr "Več dejanj"
 
-#: wp-admin/includes/class-wp-press-this.php:223
+#: wp-admin/includes/class-wp-press-this.php:241
 msgid "This category already exists."
 msgstr "Ta kategorija že obstaja."
 
@@ -2301,7 +2301,7 @@ msgstr "https://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments"
 msgid "The <a href=\"https://codex.wordpress.org/Glossary#Character_set\">character encoding</a> of your site (UTF-8 is recommended)"
 msgstr "Kodiranje znakov <a href=\"https://codex.wordpress.org/Glossary#Character_set\"> </a> vašega spletišča (priporočen je UTF-8)"
 
-#: wp-admin/includes/class-wp-press-this.php:1491
+#: wp-admin/includes/class-wp-press-this.php:1529
 msgid "Standard Editor"
 msgstr "Standardni urejevalnik"
 
@@ -2425,7 +2425,7 @@ msgstr "Ste tik pred tem, da odstranite naslednje vtičnike:"
 msgid "Delete Plugins"
 msgstr "Izbriši vtičnike"
 
-#: wp-admin/includes/class-wp-press-this.php:1333
+#: wp-admin/includes/class-wp-press-this.php:1363
 msgid "Hide post options"
 msgstr "Skrij možnosti zapisa"
 
@@ -2549,67 +2549,67 @@ msgctxt "revision date short format"
 msgid "j M @ H:i"
 msgstr "j M ob H:i"
 
-#: wp-admin/includes/class-wp-press-this.php:241
+#: wp-admin/includes/class-wp-press-this.php:259
 msgid "This category cannot be added. Please change the name and try again."
 msgstr "Te kategorije ni mogoče dodati. Prosimo da spremenite ime in poskusite znova."
 
-#: wp-admin/includes/class-wp-press-this.php:248
+#: wp-admin/includes/class-wp-press-this.php:266
 msgid "Error while adding the category. Please try again later."
 msgstr "Med dodajanjem kategorije je prišlo do napake. Prosimo poskusite znova kasneje."
 
-#: wp-admin/includes/class-wp-press-this.php:859
+#: wp-admin/includes/class-wp-press-this.php:883
 msgid "Toggle add category"
 msgstr "Spremeni dodajanje kategorije"
 
-#: wp-admin/includes/class-wp-press-this.php:884
+#: wp-admin/includes/class-wp-press-this.php:908
 msgid "Search categories by name"
 msgstr "Išči kategorije po imenu"
 
-#: wp-admin/includes/class-wp-press-this.php:886
+#: wp-admin/includes/class-wp-press-this.php:910
 msgid "Search categories"
 msgstr "Išči kategorije"
 
-#: wp-admin/includes/class-wp-press-this.php:1138
+#: wp-admin/includes/class-wp-press-this.php:1162
 msgctxt "Used in Press This to indicate where the content comes from."
 msgid "Source:"
 msgstr "Izvor:"
 
-#: wp-admin/includes/class-wp-press-this.php:1331
+#: wp-admin/includes/class-wp-press-this.php:1361
 msgid "Show post options"
 msgstr "Prikaži možnosti prispevka"
 
-#: wp-admin/includes/class-wp-press-this.php:1244
+#: wp-admin/includes/class-wp-press-this.php:1268
 msgid "Press This!"
 msgstr "Pritisni To!"
 
-#: wp-admin/includes/class-wp-press-this.php:1339
+#: wp-admin/includes/class-wp-press-this.php:1369
 msgid "Scan site for content"
 msgstr "Preglej stran za vsebinami"
 
-#: wp-admin/includes/class-wp-press-this.php:1340
+#: wp-admin/includes/class-wp-press-this.php:1370
 msgid "Enter a URL to scan"
 msgstr "Vnesi URL za pregled"
 
-#: wp-admin/includes/class-wp-press-this.php:1341
+#: wp-admin/includes/class-wp-press-this.php:1371
 msgid "Scan"
 msgstr "Pregled"
 
-#: wp-admin/includes/class-wp-press-this.php:1367
+#: wp-admin/includes/class-wp-press-this.php:1397
 msgid "You should upgrade <a href=\"%s\" target=\"_blank\">your bookmarklet</a> to the latest version!"
 msgstr "<a href=\"%s\" target=\"_blank\">Vaš zaznamček</a> morate nadgraditi na najnovejšo izdajo!"
 
-#: wp-admin/includes/class-wp-press-this.php:1376
-#: wp-admin/includes/class-wp-press-this.php:1377
+#: wp-admin/includes/class-wp-press-this.php:1406
+#: wp-admin/includes/class-wp-press-this.php:1407
 msgid "Post title"
 msgstr "Naslov prispevka"
 
-#: wp-admin/includes/class-wp-press-this.php:1381
+#: wp-admin/includes/class-wp-press-this.php:1411
 msgid "Suggested media"
 msgstr "Predlagane predstavnostne datoteke"
 
-#: wp-admin/includes/class-wp-press-this.php:1444
-#: wp-admin/includes/class-wp-press-this.php:1454
-#: wp-admin/includes/class-wp-press-this.php:1463
+#: wp-admin/includes/class-wp-press-this.php:1478
+#: wp-admin/includes/class-wp-press-this.php:1489
+#: wp-admin/includes/class-wp-press-this.php:1500
 msgid "Back to post options"
 msgstr "Nazaj na možnosti prispevka"
 
@@ -5444,7 +5444,7 @@ msgid "Contributing Developers"
 msgstr "Sodelujoči razvijalci"
 
 #. translators: 1: WordPress version number, 2: plural number of bugs.
-#: wp-admin/about.php:271
+#: wp-admin/about.php:274
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>Izdaja %1$s</strong> je odpravila %2$s hrošča."
@@ -5454,7 +5454,7 @@ msgstr[3] "<strong>Izdaja %1$s</strong> je odpravila %2$s hroščev."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:48 wp-admin/about.php:279
+#: wp-admin/about.php:51 wp-admin/about.php:282
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>Izdaja %1$s</strong> je obravnavala varnostne napake in odpravila %2$s hrošča."
@@ -5463,13 +5463,13 @@ msgstr[2] "<strong>Izdaja %1$s</strong> je obravnavala varnostne napake in odpra
 msgstr[3] "<strong>Izdaja %1$s</strong> je obravnavala varnostne napake in odpravila %2$s hroščev."
 
 #. translators: %s: Codex URL
-#: wp-admin/about.php:50 wp-admin/about.php:283
+#: wp-admin/about.php:49 wp-admin/about.php:53 wp-admin/about.php:286
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Za več informacij si oglejte <a href=\"%s\">opombe ob izdaji</a>."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:275
+#: wp-admin/about.php:278
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>Izdaja %1$s</strong> je obravnavala varnostno napako in odpravila %2$s hrošča."
@@ -5482,15 +5482,15 @@ msgid "Welcome to your WordPress Dashboard! This is the screen you will see when
 msgstr "Dobrodošli na svoji nadzorni plošči WordPress! Ta zaslon se bo prikazal, ko se boste prijavili na svoje spletišče in omogočal vam bo dostop do funkcij za upravljanje spletišča WordPress. Na vsakem zaslonu lahko prikličete pomoč s klikom na zavihek Pomoč v zgornjem levem kotu."
 
 #. translators: %s: WordPress version number
-#: wp-admin/about.php:268
+#: wp-admin/about.php:48 wp-admin/about.php:271
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "<strong>Izdaja %s</strong> je obravnavala varnostne napake."
 
-#: wp-admin/about.php:256
+#: wp-admin/about.php:259
 msgid "Maintenance Release"
 msgstr "Vzdrževalna izdaja"
 
-#: wp-admin/about.php:259
+#: wp-admin/about.php:262
 msgid "Security Release"
 msgstr "Varnostna izdaja"
 
@@ -5498,7 +5498,7 @@ msgstr "Varnostna izdaja"
 msgid "What&#8217;s New"
 msgstr "Kaj je novega"
 
-#: wp-admin/about.php:47 wp-admin/about.php:262
+#: wp-admin/about.php:265
 msgid "Maintenance and Security Release"
 msgstr "Vzdrževalna in varnostna izdaja"
 
@@ -5510,7 +5510,7 @@ msgstr "Na tem zaslonu lahko izberete privzeto strukturo trajnih povezav. Izbere
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Dobrodošli v WordPressu %1$s. <a href=\"%2$s\">Spoznajte WordPress</a>."
 
-#: wp-admin/about.php:242
+#: wp-admin/about.php:245
 msgid "Return to Updates"
 msgstr "Nazaj na Posodobitve"
 
@@ -5790,11 +5790,11 @@ msgstr "Za funkcijo dodajanja add_meta_box() je verjetno potrebna neposredna vkl
 msgid "Welcome to WordPress %s"
 msgstr "Dobrodošli v Wordpress %s"
 
-#: wp-admin/about.php:242
+#: wp-admin/about.php:245
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Nazaj na Nadzorno ploščo &rarr; Posodobitve"
 
-#: wp-admin/about.php:245
+#: wp-admin/about.php:248
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Pojdi na Nadzorno ploščo &rarr; Domača stran"
 
@@ -6219,7 +6219,7 @@ msgstr ""
 msgid "Featured Images"
 msgstr "Prikazane slike"
 
-#: wp-admin/includes/class-wp-press-this.php:823
+#: wp-admin/includes/class-wp-press-this.php:841
 #: wp-admin/includes/meta-boxes.php:385 wp-admin/includes/theme.php:263
 msgid "Post Formats"
 msgstr "Oblike prispevkov"
@@ -7663,7 +7663,7 @@ msgstr "Pokaži vse"
 msgid "Please enter a valid menu name."
 msgstr "Vnesite veljavno ime menija."
 
-#: wp-admin/about.php:245
+#: wp-admin/about.php:248
 msgid "Go to Dashboard"
 msgstr "Pojdi na nadzorno ploščo"
 
@@ -10185,7 +10185,7 @@ msgstr "Zavrni komentar"
 msgid "Approve this comment"
 msgstr "Odobri komentar"
 
-#: wp-admin/includes/class-wp-press-this.php:1482
+#: wp-admin/includes/class-wp-press-this.php:1520
 #: wp-admin/includes/meta-boxes.php:269 wp-admin/includes/meta-boxes.php:270
 msgid "Submit for Review"
 msgstr "Pošlji v revizijo"
