@@ -54,6 +54,9 @@ None.
 
 == Changelog ==
 
+= 1.5.1 =
+* Sortable columns for users listing on multisite/network
+
 = 1.5.0 =
 * Full support for multisite
 * Code cleanup

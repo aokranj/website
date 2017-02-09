@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Reveal IDs
-Version: 1.5.0
+Version: 1.5.1
 Plugin URI: https://www.schloebe.de/wordpress/reveal-ids-for-wp-admin-25-plugin/
 Description: Reveals hidden IDs in Admin interface that have been removed with WordPress 2.5 (formerly known as Entry IDs in Manage Posts/Pages View for WP 2.5). See <a href="options-general.php?page=reveal-ids-for-wp-admin-25/reveal-ids-for-wp-admin-25.php">options page</a> for information.
 Author: Oliver Schl&ouml;be
@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 /**
  * Define the plugin version
  */
-define("RIDWPA_VERSION", "1.5.0");
+define("RIDWPA_VERSION", "1.5.1");
 
 /**
  * Define the plugin path slug
@@ -162,6 +162,7 @@ class RevealIDsForWPAdmin {
 		if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') ) {
 			add_action('manage_users-network_columns', array(&$this, 'column_add'));
 			add_filter("manage_users_sortable_columns", array(&$this, 'column_add_clean') );
+			add_filter("manage_users-network_sortable_columns", array(&$this, 'column_add_clean') );
 		}
 
 		add_action('manage_edit-comments_columns', array(&$this, 'column_add'));
@@ -170,7 +171,6 @@ class RevealIDsForWPAdmin {
 			add_filter("manage_edit-comments_sortable_columns", array(&$this, 'column_add_clean') );
 
 		if( version_compare($GLOBALS['wp_version'], '3.0.999', '>') ) {
-			add_action('manage_users-network_columns', array(&$this, 'column_add'));
 			add_action('manage_sites-network_columns', array(&$this, 'column_add'));
 			add_filter('manage_sites_custom_column', array(&$this, 'column_value'), 10, 3);
 		}
