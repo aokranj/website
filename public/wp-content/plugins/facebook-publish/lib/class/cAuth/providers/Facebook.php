@@ -54,10 +54,6 @@ class FacebookProvider extends cAuthProviderModel {
 				
 		$start_url = cAuth_session::get_provider_val( "start_url" , $this->provider_id ); 
 
-		echo $start_url."<br>";
-
-		pre($_SESSION);
-
 		$login_helper = new FacebookRedirectLoginHelper($start_url);
 		
 		try{

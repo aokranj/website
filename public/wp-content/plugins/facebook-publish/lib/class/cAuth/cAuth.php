@@ -2,7 +2,7 @@
 
 class cAuth {
 
-	function cAuth() {
+	function __construct() {
 
 		if(!isset($_SESSION)) {
 			session_start();

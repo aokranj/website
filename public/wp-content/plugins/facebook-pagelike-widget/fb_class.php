@@ -1,20 +1,16 @@
 <?php
-
 /**
  * Facebook Widget Class
  */
 class facebook_widget extends WP_Widget {
-
     /** constructor */
     function __construct() {
         parent::__construct(
                 'fbw_id', __('Facebook Page Like Widget', 'facebook-pagelike-widget')
         );
     }
-
     /** @see WP_Widget::widget */
     function widget($args, $instance) {
-
         global $app_id, $select_lng;
         extract($args);
 
@@ -42,12 +38,12 @@ class facebook_widget extends WP_Widget {
         echo '<center><div class="loader"><img src="' . plugins_url() . '/facebook-pagelike-widget/loader.gif" /></div></center>';
         echo '<div id="fb-root"></div>
         <div class="fb-page" data-href="' . $fb_url . '" data-width="' . $width . '" data-height="' . $height . '" data-small-header="' . $data_small_header . '" data-adapt-container-width="' . $data_adapt_container_width . '" data-hide-cover="' . $data_hide_cover . '" data-show-facepile="' . $data_show_facepile . '" data-show-posts="' . $data_show_posts . '" style="' . $custom_css . '"></div>';
-        echo $after_widget;
-    }
+        echo $after_widget; ?>
+        <!-- A WordPress plugin developed by Milap Patel -->
+    <?php }
 
     /** @see WP_Widget::update */
     function update($new_instance, $old_instance) {
-
         $instance = $old_instance;
         $instance = array('data_small_header' => 'false', 'data_adapt_container_width' => 'false', 'data_hide_cover' => 'false', 'data_show_facepile' => 'false', 'data_show_posts' => 'true');
         foreach ($instance as $field => $val) {
@@ -71,7 +67,6 @@ class facebook_widget extends WP_Widget {
 
     /** @see WP_Widget::form */
     function form($instance) {
-
         /**
          * Set Default Value for widget form
          */
@@ -136,78 +131,31 @@ class facebook_widget extends WP_Widget {
             <input size="5" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />
         </p>
         <?php
-        $filename = "http://www.facebook.com/translations/FacebookLocales.xml";
+        $filename = __DIR__.'/FacebookLocales.json';
         if (ini_get('allow_url_fopen')) {
-            $langs = file_get_contents($filename);
-            $xmlcont = new SimpleXMLElement($langs);
+            if(file_exists($filename)) {
+                $langs      = file_get_contents($filename);
+                $jsoncont   = json_decode($langs);
             ?>
-            <p>
-                <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:', 'facebook-pagelike-widget'); ?></label>
-                <select name="<?php echo $this->get_field_name('select_lng'); ?>" id="<?php echo $this->get_field_id('select_lng'); ?>">
-                    <?php
-                    if (!empty($xmlcont)) {
-                        foreach ($xmlcont as $languages) {
-                            $lan_title = $languages->englishName;
-                            $representation = $languages[0]->codes->code->standard->representation[0];
-                            ?>
-                            <option value="<?php echo $representation; ?>"<?php selected($instance['select_lng'], $representation); ?>><?php _e($lan_title . " => " . $representation); ?></option>
-                            <?php
+                <p>
+                    <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:', 'facebook-pagelike-widget'); ?></label>
+                    <select name="<?php echo $this->get_field_name('select_lng'); ?>" id="<?php echo $this->get_field_id('select_lng'); ?>">
+                        <?php
+                        if (!empty($jsoncont)) {
+                            foreach ($jsoncont as $languages=>$short_name) { ?>
+                                <option value="<?php echo $short_name; ?>"<?php selected($instance['select_lng'], $short_name); ?>><?php _e($languages); ?></option>
+                                <?php
+                            }
                         }
-                    }
-                    ?>
-                </select>
-            </p>
+                        ?>
+                    </select>
+                </p>
             <?php
-        } elseif (function_exists('curl_version')) {
-            if (!function_exists('file_get_contents_curl_mine')) {
-
-                function file_get_contents_curl_mine($url) {
-                    $ch = curl_init();
-                    curl_setopt($ch, CURLOPT_HEADER, 0);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                    curl_setopt($ch, CURLOPT_URL, $url);
-                    $data = curl_exec($ch);
-                    curl_close($ch);
-                    return $data;
-                }
-
             }
-            if (!function_exists('xmlstring2array_mine')) {
-
-                function xmlstring2array_mine($string) {
-                    $xml = simplexml_load_string($string, 'SimpleXMLElement', LIBXML_NOCDATA);
-                    $array = json_decode(json_encode($xml), TRUE);
-                    return $array;
-                }
-
-            }
-            $langs = file_get_contents_curl_mine($filename);
-            $xmlcont = xmlstring2array_mine($langs);
-            $xmlcont = $xmlcont['locale'];
-            ?>   
-            <p>
-                <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:', 'facebook-pagelike-widget'); ?></label>
-                <select name="<?php echo $this->get_field_name('select_lng'); ?>" id="<?php echo $this->get_field_id('select_lng'); ?>">
-                    <?php
-                    if (!empty($xmlcont)) {
-                        foreach ($xmlcont as $languages) {
-                            $title = $languages['englishName'];
-                            $representation = $languages['codes']['code']['standard']['representation'];
-                            ?>
-                            <option value="<?php echo $representation; ?>"<?php selected($instance['select_lng'], $representation); ?>><?php _e($title . " => " . $representation); ?></option>
-                            <?php
-                        }
-                    }
-                    ?>
-                </select>
-            </p>    
-            <?php
         } else {
             ?>
-            <p>
-                <label for="<?php echo $this->get_field_id('select_lng'); ?>"><?php _e('Language:', 'facebook-pagelike-widget'); ?></label>
-                <b>English</b> <br />(Your PHP configuration does not allow to read <a href="http://www.facebook.com/translations/FacebookLocales.xml" target="_blank">this</a> file.
-                To unable language option, enable curl extension OR allow_url_fopen in your server configuration.)
+            <p>Your PHP configuration does not allow to read <a href="<?php echo plugin_dir_url(__FILE__).'FacebookLocales.json';?>" target="_blank">this</a> file.
+                To unable language option, enable <a href="http://php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen" target="_blank"><b>allow_url_fopen</b></a> in your server configuration.
             </p>
             <?php
         }
@@ -227,8 +175,6 @@ class facebook_widget extends WP_Widget {
         <style type="text/css">.hideme {display: none;}</style>
         <?php
     }
-
 }
-
 add_action('widgets_init', create_function('', 'return register_widget("facebook_widget");'));
 ?>

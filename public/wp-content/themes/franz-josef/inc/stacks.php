@@ -315,7 +315,6 @@ function franz_stack_posts( $args = array() ){
 }
 endif;
 
-
 if ( ! function_exists( 'franz_stack_posts_meta' ) ) :
 /**
  * Item meta for Posts stack

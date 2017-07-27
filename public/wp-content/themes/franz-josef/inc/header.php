@@ -15,8 +15,7 @@ function franz_header_image(){
 			$header->height = floor( $header->height / 2 );
 		}
 	?>
-        <img src="<?php echo esc_url( $header->url ); ?>" height="<?php echo esc_attr( $header->height ); ?>" width="<?php echo esc_attr( $header->width ); ?>" alt="" />
-        <!-- <img src="<?php echo esc_url( FRANZ_ROOTURI ); ?>/images/logo.png" srcset="<?php echo esc_url( FRANZ_ROOTURI ); ?>/images/logo.png 320w, <?php echo esc_url( FRANZ_ROOTURI ); ?>/images/logo-hd.png" class="img-responsive" width="250" height="30" alt="Franz Josef" /> -->
+        <img src="<?php echo esc_url( $header->url ); ?>" height="<?php echo esc_attr( $header->height ); ?>" width="<?php echo esc_attr( $header->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
     <?php else : bloginfo( 'name' ); endif;
 }
 endif;

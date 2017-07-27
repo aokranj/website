@@ -1,10 +1,10 @@
 === Posts in Sidebar ===
 Contributors: aldolat
-Donate link: http://dev.aldolat.it/projects/posts-in-sidebar/
+Donate link: https://dev.aldolat.it/projects/posts-in-sidebar/
 Tags: post, sidebar, widget, query, wp_query
 Requires at least: 4.1
-Tested up to: 4.7
-Stable tag: 3.8.2
+Tested up to: 4.8
+Stable tag: 4.3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,8 +26,10 @@ Here are some of the functions you'll have:
 * get posts by modification date;
 * get posts children of other posts;
 * get posts by search;
+* get posts by recent comments;
 * get posts by complex taxonomies queries;
-* get posts by date queries;
+* get posts by complex date queries;
+* get posts by complex custom fields queries;
 * get posts from the category of the current post;
 * exclude posts by authors, taxonomies, and so on;
 * control which elements of the posts are displayed (like post thumbnail, taxonomies, meta values, and so on);
@@ -37,7 +39,7 @@ Here are some of the functions you'll have:
 
 The powerful WordPress class `WP_Query` is at your fingertips with this plugin. To understand what this plugin can do, take a look at this [Codex page](https://codex.wordpress.org/Class_Reference/WP_Query): almost all these functions are already included in Posts in Sidebar.
 
-This plugin is [free software](https://en.wikipedia.org/wiki/Free_software) and it's developed with many efforts: [a donation](http://dev.aldolat.it/projects/posts-in-sidebar/#donate) is very appreciated.
+This plugin is [free software](https://en.wikipedia.org/wiki/Free_software) and it's developed with many efforts: [a donation](https://dev.aldolat.it/projects/posts-in-sidebar/#donate) is very appreciated.
 
 Enjoy!
 
@@ -66,6 +68,8 @@ This plugin has been translated into these languages:
 
 == Installation ==
 
+**Installing Posts in Sidebar**
+
 This section describes how to install the plugin and get it working.
 
 1. Upload  the `posts-in-sidebar` directory to the `/wp-content/plugins/` directory
@@ -73,6 +77,10 @@ This section describes how to install the plugin and get it working.
 1. Go to the widgets manager and add the newly available widget into the sidebar
 1. Adjust the options to fit your needs
 1. Save and test your results.
+
+**Uninstalling**
+
+Posts in Sidebar cleans up after itself. All plugin settings will be removed from your database when the plugin is uninstalled via the Plugins screen.
 
 == Frequently Asked Questions ==
 
@@ -89,6 +97,67 @@ Please, see [FAQ page](https://github.com/aldolat/posts-in-sidebar/wiki/FAQ) on 
 7. Displaying the full set of items (categories, date, author, tags, and so on).
 
 == Changelog ==
+
+= 4.3.0 =
+
+* Add option to get posts from the current tag, when on a single post.
+* Add option to assign post classes via `get_post_class()`.
+* Fix empty p tag when no excerpt or no image.
+* Fix post modification date/time.
+* Minor fixes.
+
+= 4.2.0 =
+
+* Added option to display the post time and modification time.
+* Aligned shortcode options to main options.
+* Comments are not linked to comments section in the post by default.
+
+= 4.1 =
+
+* Added option to get posts by recent comments.
+* Added option to display all the custom fields of the post.
+
+= 4.0 =
+
+* Added section for retrieving posts from multiple custom fields.
+* Added option for retrieving posts with/without password.
+* Added option for retrieving posts with a certain password.
+* Now panels do not collapse after saving the widget.
+
+= 3.8.8 =
+
+* Added option to get multiple post types.
+* Removed option for displaying query number (it's displayed by default now).
+
+= 3.8.7 =
+
+* Fixed link on titles and title arrows.
+* Fixed a bug where, regardless of the state of "Display the featured image of the post" checkbox, the featured image was always visible if the "Display this section before the title of the post" checkbox were active.
+
+= 3.8.6 =
+
+* Added option to get posts from a certain amount of time ago.
+* Removed empty items from the array for the query.
+* Removed some default settings in custom taxonomy query.
+
+= 3.8.5 =
+
+* Updated the description in "When on single posts, get posts from the current category".
+
+= 3.8.4 =
+
+* Added option to maintain active other parameters when on single post (props by techsmurfy).
+* Added option to sort categories of the main post before getting the posts for the sidebar. When the user wants to get posts from the current category, now the user can choose to fetch posts from the main category of the main post (i.e. the category with the lowest ID) or from the category with the lowest key ID in the array of categories (props by techsmurfy).
+* Added options to move certain parts before/after the title.
+* Removed empty lines in the HTML source.
+* Added Indonesian translation, thanks to Jordan Silaen.
+
+= 3.8.3 =
+
+* Added option to display debugging information to admins only.
+* Now the custom field value for getting posts via custom field key can be the taxonomy ID (props by morfe1).
+* Removed Italian l10n from `languages/` directory, because the Italian language pack in GlotPress is completed.
+* Hardening security on i18n.
 
 = 3.8.2 =
 
@@ -194,7 +263,7 @@ Please, see [FAQ page](https://github.com/aldolat/posts-in-sidebar/wiki/FAQ) on 
 * NEW: Changed appearance for widget sections that are collapsible now.
 * WordPress 4.1 is required (for nested taxonomy handling).
 * Added URL of the site and WordPress version in the debug section.
-* Switched to PHP5 __contruct() in creating the widget.
+* Switched to PHP5 `__contruct()` in creating the widget.
 * Improved security.
 * Fixed PHP notices when upgrading from previous versions.
 * Updated the Hebrew translation (thanks to Ahrale).

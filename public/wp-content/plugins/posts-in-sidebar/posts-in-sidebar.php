@@ -1,17 +1,17 @@
 <?php
-/**
+/*
  * Plugin Name: Posts in Sidebar
- * Plugin URI: http://dev.aldolat.it/projects/posts-in-sidebar/
+ * Plugin URI: https://dev.aldolat.it/projects/posts-in-sidebar/
  * Description: Publish a list of posts in your sidebar
- * Version: 3.8.2
+ * Version: 4.3.0
  * Author: Aldo Latino
- * Author URI: http://www.aldolat.it/
+ * Author URI: https://www.aldolat.it/
  * Text Domain: posts-in-sidebar
  * Domain Path: /languages/
  * License: GPLv3 or later
  */
 
-/* Copyright (C) 2009, 2016  Aldo Latino  (email : aldolat@gmail.com)
+/* Copyright (C) 2009, 2017  Aldo Latino  (email : aldolat@gmail.com)
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ function pis_setup() {
 	/*
 	 * Define the version of the plugin.
 	 */
-	define( 'PIS_VERSION', '3.8.2' );
+	define( 'PIS_VERSION', '4.3.0' );
 
 	/*
 	 * Make plugin available for i18n.
@@ -173,7 +173,7 @@ function pis_load_widgets() {
 function pis_add_links( $links, $file ) {
 	if ( $file == plugin_basename( __FILE__ ) ) {
 		$rate_url = 'https://wordpress.org/support/plugin/' . basename( dirname( __FILE__ ) ) . '/reviews/#new-post';
-		$links[] = '<a target="_blank" href="' . $rate_url . '" title="' . __( 'Click here to rate and review this plugin on WordPress.org', 'posts-in-sidebar' ) . '">' . __( 'Rate this plugin', 'posts-in-sidebar' ) . '</a>';
+		$links[] = '<a target="_blank" href="' . $rate_url . '" title="' . esc_html__( 'Click here to rate and review this plugin on WordPress.org', 'posts-in-sidebar' ) . '">' . esc_html__( 'Rate this plugin', 'posts-in-sidebar' ) . '</a>';
 	}
 	return $links;
 }

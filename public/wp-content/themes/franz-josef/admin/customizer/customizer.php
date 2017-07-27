@@ -134,9 +134,6 @@ function franz_get_customizer_validator_settings(){
 	$validator_settings['frontpage_posts_cats'] 	= 'franz_validate_multiple_select';
 	$validator_settings['front_page_blog_columns']	= 'absint';
 	
-	/* Custom head tags */
-	$validator_settings['head_tags']	= 'trim';
-	
 	/* Footer options */
 	$validator_settings['copyright_text'] 	= 'wp_kses_post';
 	

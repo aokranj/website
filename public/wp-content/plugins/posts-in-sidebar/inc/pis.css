@@ -31,9 +31,6 @@
 	padding: 15px;
 	margin: 0;
 }
-.pis-container-open {
-	display: block;
-}
 .pis-column-container {
 	clear: both;
 	overflow: hidden;
@@ -54,21 +51,31 @@
 .pis-widget-title {
 	clear: both;
 	padding:12px;
-	border:1px solid #DDD;
-	background-color:#FAFAFA;
+	border:1px solid #ddd;
+	background-color:#fafafa;
 	font-size:1em;
 	cursor: pointer;
 	margin: 0;
 }
 .pis-widget-title:hover {
-	border-color:#9D9D9D;
+	border-color:#9d9d9d;
 }
 .pis-title-center {
 	text-align: center;
 }
-.pis-alert {
-	background-color: #F7F2D2;
+.pis-boxed {
+	border-width: 1px;
+	border-style: solid;
 	padding: 1em;
+}
+.pis-boxed-green {
+	border-color: rgba(76, 175, 80, 0.5);
+}
+.pis-boxed-blue {
+	border-color: rgba(33, 150, 243, 0.5);
+}
+.pis-boxed-red {
+	border-color: rgba(233, 30, 99, 0.5);
 }
 .pis-section select {
 	width: 99%;
@@ -77,6 +84,32 @@
 	float: none;
 	margin: 0px auto 13px;
 }
-.pis-section h5 {
+.pis-section ::-webkit-input-placeholder {
+	color: #ccc;
+}
+.pis-section :-moz-placeholder {  /* Firefox 18- */
+	color: #ccc;
+}
+.pis-section ::-moz-placeholder { /* Firefox 19+ */
+	color: #ccc;
+}
+.pis-section :-ms-input-placeholder {
+	color: #ccc;
+}
+.pis-section h5,
+.pis-section h6 {
 	font-size: 1em;
+}
+.pis-container p:last-child {
+	margin-bottom: 0;
+}
+.pis-container h5 {
+	margin-top: 1em;
+}
+.pis-boxed h5 {
+	margin-top: 0;
+}
+.pis-container h6 {
+	margin-bottom: 1.67em;
+	margin-top: 1em;
 }

@@ -1,11 +1,13 @@
-<?php if(get_option('xyz_smap_premium_version_ads')==1){?>
+<?php 
+if( !defined('ABSPATH') ){ exit();}
+if(get_option('xyz_smap_premium_version_ads')==1){?>
 <div id="xyz-wp-smap-premium">
 
 	<div style="float: left; padding: 0 5px">
 		<h2 style="vertical-align: middle;">
 			<a target="_blank"
 				href="http://xyzscripts.com/wordpress-plugins/social-media-auto-publish/features">Fully
-				Featured XYZ WP SMAP Premium Plugin</a> - Just 29 USD
+				Featured XYZ WP SMAP Premium Plugin</a> - Just 39 USD
 		</h2>
 	</div>
 	<div style="float: left; margin-top: 3px">
@@ -118,21 +120,21 @@ Name  :
 <input style="border: 1px solid #3fafe3; margin-right:10px;padding:5px;" type="text" name="field1" value="<?php  
 if ($current_user->user_firstname != "" || $current_user->user_lastname != "") 
 {
-	echo $current_user->user_firstname . " " . $current_user->user_lastname; 
+	echo esc_html($current_user->user_firstname) . " " . esc_html($current_user->user_lastname); 
 } 
 else if (strcasecmp($current_user->display_name, 'admin')!=0 && strcasecmp($current_user->display_name , "administrator")!=0 ) 
 {
-	echo $current_user->display_name;
+	echo esc_html($current_user->display_name);
 } 
 else if (strcasecmp($current_user->user_login ,"admin")!=0 && strcasecmp($current_user->user_login , "administrator")!=0 ) 
 {
-	echo $current_user->user_login;	
+	echo esc_html($current_user->user_login);	
 }
 ?>"  >
 
 Email Address : 
 <input style="border: 1px solid #3fafe3;padding:5px;" name="email"
-type="text" value="<?php 	echo $current_user->user_email; ?>" /><span style="color:#FF0000">*</span>           
+type="text" value="<?php 	echo esc_html($current_user->user_email); ?>" /><span style="color:#FF0000">*</span>           
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input class="submit_smap" type="submit" value="Subscribe" name="Submit"  onclick="javascript: if(!verify_fields()) return false; " />
@@ -163,7 +165,10 @@ Our Plugins :
 	<a target="_blank"	href="http://wordpress.org/plugins/quick-box-popup/">Quick Box Popup</a> ★
 	<a target="_blank"	href="http://wordpress.org/plugins/social-media-auto-publish/">Social Media Auto Publish</a> ★
 	<a target="_blank"	href="http://wordpress.org/plugins/twitter-auto-publish/">Twitter Auto Publish</a> ★
-	<a target="_blank"	href="http://wordpress.org/plugins/custom-field-manager/">Custom Field Manager</a>
+	<a target="_blank"	href="http://wordpress.org/plugins/custom-field-manager/">Custom Field Manager</a> ★
+	<a target="_blank"	href="http://wordpress.org/plugins/wp-filter-posts/">WP Filter Posts</a> ★
+	<a target="_blank"	href="https://wordpress.org/plugins/wp-gallery-manager/">WP Gallery Manager</a>
+
 </div>
   
   <div style="padding-top: 10px;text-align: center;">

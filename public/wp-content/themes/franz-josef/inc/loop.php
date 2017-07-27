@@ -646,8 +646,10 @@ endif;
  * @return boolean
  */
 function franz_do_custom_layout() {
-    if ( franz_has_custom_layout() ) {
-		the_content();
+    if ( $custom_layout = franz_has_custom_layout() ) {
+    	if ( is_numeric( $custom_layout ) ) echo apply_filters( 'the_content', siteorigin_panels_render( $custom_layout ) );
+    	else the_content();
+		
 		get_footer();
 		exit();
 	}

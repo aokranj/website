@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
-"X-Generator: GlotPress/2.3.0-alpha\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: sl_SI\n"
 "Project-Id-Version: Themes - Twenty Seventeen\n"
 
@@ -15,13 +15,9 @@ msgstr ""
 msgid "Twenty Seventeen"
 msgstr "Twenty Seventeen"
 
-#: inc/template-tags.php:154
+#: inc/template-tags.php:150
 msgid "Front Page Section %1$s Placeholder"
 msgstr "Vsebnik oddelka %1$s prve strani"
-
-#: inc/customizer.php:80
-msgid "When the two column layout is assigned, the page title is in one column and content is in the other."
-msgstr "Ko je izbrana postavitev dveh stolpcev, je naslov strani v enem stolpcu, vsebina pa v drugem."
 
 #: single.php:32
 msgid "Next Post"
@@ -71,11 +67,11 @@ msgstr "Izberite strani, katere bodo izpostavljene v vsakem spustnem meniju. Dod
 msgid "Front Page Section %d Content"
 msgstr "Vsebina oddelka %d prve strani"
 
-#: inc/customizer.php:83 inc/customizer.php:130
+#: inc/customizer.php:83 inc/customizer.php:132
 msgid "Two Column"
 msgstr "Dva stolpca"
 
-#: inc/customizer.php:82 inc/customizer.php:129
+#: inc/customizer.php:82 inc/customizer.php:131
 msgid "One Column"
 msgstr "En stolpec"
 
@@ -152,17 +148,17 @@ msgstr "Nazaj"
 msgid "Next"
 msgstr "Naprej"
 
-#: searchform.php:19
+#: searchform.php:20
 msgctxt "submit button"
 msgid "Search"
 msgstr "Iskanje"
 
-#: searchform.php:18
+#: searchform.php:19
 msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr "Išči &hellip;"
 
-#: searchform.php:16
+#: searchform.php:17
 msgctxt "label"
 msgid "Search for:"
 msgstr "Išči:"
@@ -172,12 +168,12 @@ msgid "Search Results for: %s"
 msgstr "Iskalni rezultati za: %s"
 
 #. translators: %s: Name of current post
-#: functions.php:362 template-parts/page/content-front-page-panels.php:43
+#: functions.php:363 template-parts/page/content-front-page-panels.php:43
 #: template-parts/page/content-front-page.php:44
-#: template-parts/post/content-audio.php:80
-#: template-parts/post/content-gallery.php:66
-#: template-parts/post/content-image.php:56
-#: template-parts/post/content-video.php:78 template-parts/post/content.php:54
+#: template-parts/post/content-audio.php:83
+#: template-parts/post/content-gallery.php:70
+#: template-parts/post/content-image.php:59
+#: template-parts/post/content-video.php:82 template-parts/post/content.php:56
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Preberi več<span class=\"screen-reader-text\"> \"%s\"</span>"
 
@@ -190,19 +186,19 @@ msgid "Twenty Seventeen requires at least WordPress version 4.7. You are running
 msgstr "Twenty Seventeen zahteva vsaj WordPress izdajo 4.4. Uporabljate izdajo %s. Prosimo, nadgradite in poskusite znova."
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:117
+#: inc/template-tags.php:116
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Uredi<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: template-parts/page/content-page.php:25
-#: template-parts/post/content-audio.php:85
-#: template-parts/post/content-gallery.php:71
-#: template-parts/post/content-image.php:61
-#: template-parts/post/content-video.php:83 template-parts/post/content.php:59
+#: template-parts/post/content-audio.php:88
+#: template-parts/post/content-gallery.php:75
+#: template-parts/post/content-image.php:64
+#: template-parts/post/content-video.php:87 template-parts/post/content.php:61
 msgid "Pages:"
 msgstr "Strani:"
 
-#: template-parts/navigation/navigation-top.php:13
+#: template-parts/navigation/navigation-top.php:17
 msgid "Menu"
 msgstr "Meni"
 
@@ -210,21 +206,13 @@ msgstr "Meni"
 msgid "Skip to content"
 msgstr "Skoči na vsebino"
 
-#: functions.php:445
+#: functions.php:446
 msgid "Collapse child menu"
 msgstr "Skrči pod-meni"
 
-#: functions.php:444
+#: functions.php:445
 msgid "Expand child menu"
 msgstr "Razširi pod-meni"
-
-#: functions.php:317
-msgid "Add widgets here to appear in your sidebar."
-msgstr "Gradniki dodani tukaj, se pojavijo v stranski vrstici."
-
-#: functions.php:315
-msgid "Sidebar"
-msgstr "Stranska vrstica"
 
 #: functions.php:64 functions.php:194
 msgid "Social Links Menu"
@@ -234,7 +222,7 @@ msgstr "Meni socialnih  povezav"
 msgid "Proudly powered by %s"
 msgstr "Ponosno uporablja tehnologijo %s"
 
-#. #-#-#-#-#  twentyseventeen.pot (Twenty Seventeen 1.1)  #-#-#-#-#
+#. #-#-#-#-#  twentyseventeen.pot (Twenty Seventeen 1.3)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: template-parts/footer/site-info.php:13
 msgid "https://wordpress.org/"

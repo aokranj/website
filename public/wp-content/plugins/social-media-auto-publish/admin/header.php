@@ -1,11 +1,13 @@
-<?php if(get_option('xyz_smap_premium_version_ads')==1){?>
+<?php
+if( !defined('ABSPATH') ){ exit();}
+if(get_option('xyz_smap_premium_version_ads')==1){?>
 <div id="xyz-wp-smap-premium">
 
 	<div style="float: left; padding: 0 5px">
 		<h2 style="vertical-align: middle;">
 			<a target="_blank"
 				href="http://xyzscripts.com/wordpress-plugins/social-media-auto-publish/features">Fully
-				Featured XYZ WP SMAP Premium Plugin</a> - Just 29 USD
+				Featured XYZ WP SMAP Premium Plugin</a> - Just 39 USD
 		</h2>
 	</div>
 	<div style="float: left; margin-top: 3px">
@@ -49,17 +51,22 @@ if(get_option('xyz_credit_link')=="0"){
 jQuery(document).ready(function() {
 
 	jQuery('.xyz_smap_backlink').click(function() {
-
+var backlink_nonce= '<?php echo wp_create_nonce('backlink');?>';
 		var dataString = { 
 				action: 'xyz_smap_ajax_backlink', 
-				enable: 1 
+				enable: 1,
+				_wpnonce: backlink_nonce
 			};
 
 		jQuery.post(ajaxurl, dataString, function(response) {
+			if(response==1)
+		       	alert("You do not have sufficient permissions");
+		else{
 			jQuery('.xyz_smap_backlink').hide();
 			jQuery("#xyz_backlink_div").html('Thank you for enabling backlink !');
 			jQuery("#xyz_backlink_div").css('background-color', '#D8E8DA');
 			jQuery("#xyz_backlink_div").css('border', '1px solid #0F801C');
+}
 		});
 
 });

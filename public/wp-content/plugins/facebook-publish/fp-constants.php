@@ -9,4 +9,4 @@ $fp_magic_quotes =	array("POST_TITLE",
 						  "POST_EXCERPT",); 
 
 
-$fp_version = "1.4.2";	
+$fp_version = "1.4.5";	

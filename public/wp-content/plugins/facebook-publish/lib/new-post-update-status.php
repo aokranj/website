@@ -334,7 +334,7 @@ function render_magic_quote($post_id , $msg) {
 	if(strpos($msg, $POST_AUTHOR) !== false) {
 		$author_id 	= $post->post_author;
 		$author 	= get_userdata($author_id);
-		$author 	= $author->display_name;
+		$author 	= $author->user_nicename;
 		$author 	= ucwords($author);	
 		$msg 		= str_replace($POST_AUTHOR , $author , $msg);
 	}

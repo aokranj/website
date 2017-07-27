@@ -1,4 +1,5 @@
 <?php 
+if( !defined('ABSPATH') ){ exit();}
 add_action( 'add_meta_boxes', 'xyz_smap_add_custom_box' );
 $GLOBALS['edit_flag']=0;
 function xyz_smap_add_custom_box()
@@ -49,8 +50,6 @@ if(isset($_GET['action']) && $_GET['action']=="edit" && !empty($_GET['post']))  
 	{
 
 		$xyz_smap_include_customposttypes=get_option('xyz_smap_include_customposttypes');
-
-
 		$carr=explode(',', $xyz_smap_include_customposttypes);
 		if(!in_array($posttype,$carr))
 			return;
@@ -194,7 +193,7 @@ function get_categorylist(val)
 		}
 		jQuery('#cat_list').val(cat_list);
 		
-		var xyz_smap_catlist="<?php echo $xyz_smap_catlist;?>";
+		var xyz_smap_catlist="<?php echo esc_html($xyz_smap_catlist);?>";
 		if(xyz_smap_catlist!="All")
 		{
 			cat_list_array=xyz_smap_catlist.split(',');
@@ -307,7 +306,8 @@ if(get_option('xyz_smap_af')==0 && get_option('xyz_smap_fb_token')!="")
 							- Insert the excerpt of your post.<br />{POST_CONTENT} - Insert
 							the description of your post.<br />{BLOG_TITLE} - Insert the name
 							of your blog.<br />{USER_NICENAME} - Insert the nicename
-							of the author.
+							of the author.<br />{POST_ID} - Insert the ID of your post.
+							<br />{POST_PUBLISH_DATE} - Insert the publish date of your post.
 						</div>
 		</td>
 	<td>
@@ -319,6 +319,8 @@ if(get_option('xyz_smap_af')==0 && get_option('xyz_smap_fb_token')!="")
 		<option value ="4">{POST_CONTENT}   </option>
 		<option value ="5">{BLOG_TITLE}   </option>
 		<option value ="6">{USER_NICENAME}   </option>
+		<option value ="7">{POST_ID}   </option>
+		<option value ="8">{POST_PUBLISH_DATE}   </option>
 		</select> </td></tr>
 		
 		<tr id="fpmftarea"><td>&nbsp;</td><td>
@@ -383,7 +385,8 @@ if(get_option('xyz_smap_af')==0 && get_option('xyz_smap_fb_token')!="")
 							- Insert the excerpt of your post.<br />{POST_CONTENT} - Insert
 							the description of your post.<br />{BLOG_TITLE} - Insert the name
 							of your blog.<br />{USER_NICENAME} - Insert the nicename
-							of the author.
+							of the author.<br />{POST_ID} - Insert the ID of your post.
+							<br />{POST_PUBLISH_DATE} - Insert the publish date of your post.
 						</div>
 		</td>
 		
@@ -397,6 +400,8 @@ if(get_option('xyz_smap_af')==0 && get_option('xyz_smap_fb_token')!="")
 		<option value ="4">{POST_CONTENT}   </option>
 		<option value ="5">{BLOG_TITLE}   </option>
 		<option value ="6">{USER_NICENAME}   </option>
+		<option value ="7">{POST_ID}   </option>
+		<option value ="8">{POST_PUBLISH_DATE}   </option>
 		</select> </td></tr>
 		
 		<tr id="twmftarea"><td>&nbsp;</td><td>
@@ -468,7 +473,8 @@ Public</option><option value="1" <?php  if(get_option('xyz_smap_ln_shareprivate'
 							- Insert the excerpt of your post.<br />{POST_CONTENT} - Insert
 							the description of your post.<br />{BLOG_TITLE} - Insert the name
 							of your blog.<br />{USER_NICENAME} - Insert the nicename
-							of the author.
+							of the author.<br />{POST_ID} - Insert the ID of your post.
+							<br />{POST_PUBLISH_DATE} - Insert the publish date of your post.
 						</div>
 		</td>
 	<td>
@@ -480,6 +486,8 @@ Public</option><option value="1" <?php  if(get_option('xyz_smap_ln_shareprivate'
 		<option value ="4">{POST_CONTENT}   </option>
 		<option value ="5">{BLOG_TITLE}   </option>
 		<option value ="6">{USER_NICENAME}   </option>
+		<option value ="7">{POST_ID}   </option>
+		<option value ="8">{POST_PUBLISH_DATE}   </option>
 		</select> </td></tr>
 		
 		<tr id="lnmftarea"><td>&nbsp;</td><td>
@@ -503,7 +511,7 @@ Public</option><option value="1" <?php  if(get_option('xyz_smap_ln_shareprivate'
 	function load_edit_action()
 	{
 		document.getElementById("xyz_smap_post").value=1;
-		var xyz_smap_default_selection_edit="<?php echo get_option('xyz_smap_default_selection_edit');?>";
+		var xyz_smap_default_selection_edit="<?php echo esc_html(get_option('xyz_smap_default_selection_edit'));?>";
 		if(xyz_smap_default_selection_edit=="")
 			xyz_smap_default_selection_edit=0;
 		if(xyz_smap_default_selection_edit==1)

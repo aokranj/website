@@ -1,9 +1,9 @@
 === Facebook Publish ===
-Contributors: promz, shashanksahu, pinky-patel
+Contributors: promz
 Tags: facebook, facebook auto publish, post, facebook publish
 Requires at least: 3.2
-Tested up to: 4.2.2
-Stable tag: 1.4.3
+Tested up to: 4.7.3
+Stable tag: 1.4.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

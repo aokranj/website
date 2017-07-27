@@ -3,29 +3,36 @@ Contributors: Milap
 Tags: facebook, facebook like box, facebook simple like, facebook fan pages, facebook like button, facebook button share, facebook social bookmarking, facebook feeds, facebook feed widget, social share, wordpress social share, socialmedia, social media widget, social media sharing, social media icon 
 Donate link: https://www.paypal.com/cgi-bin/webscr?business=cemilap.88@gmail.com&cmd=_xclick¤cy_code=USD&amount=5&item_name=Offer%20me%20coffee
 Requires at least: 3.0.1
-Tested up to: 4.5
+Tested up to: 4.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This widget adds a Simple Facebook page Like Widget into your WordPress website Sidebar or Footer area. Also enabled short code for POST and PAGE.
+This widget adds a Simple Facebook page Like Widget into your WordPress sidebar, footer area(as widget) & Page or Post(as shortcode).
 
 == Description ==
 
-This is one of the most popular plugin for facebook page feeds widget with over 2,90,000 downloads and 70,000+ active installs.
+One of the most popular & lightweight plugin for Facebook page feeds widget with over 4,80,000 downloads and 1,00,000+ active installs.
 
 An inside look:
 
-http://www.youtube.com/watch?v=H1xjvIw9aZk
+http://www.youtube.com/watch?v=eS6ZWaO7UN0
 
-This widget will provide you the most simple and attractive way to display Facebook page likes into your wordpress sidebar. It is very easy to configure with Admin area. You just need to activate plugin and drag this widget like other widgets. Just add application id from your created facebook application, add it into widget and also URL of your Facebook page. You also have other options like show faces , show Data Stream and Header.
+This widget will provide you the most simple and attractive way to display Facebook page likes into your WordPress sidebar. It is very easy to configure with Admin area. You just need to activate plugin and drag this widget like other widgets. Just add application id from your created facebook application, add it into widget and also URL of your Facebook page. You also have other options like show faces , show Data Stream and Header.
 
 In latest version, support to short code is added to display Facebook like plugin into your post and pages.
 Open your Post or Page, Add [fb_widget] into Post or Page, Save it. You are done.
 
-If you have any question regarding plugin, mail me on cemilap.88@gmail.com or add me on [Facebook](http://www.facebook.com/milap112). or you can contact me on my [Blog](http://patelmilap.wordpress.com/contact-me/).I will try to reply you as soon as possible.
+If you have any question regarding plugin, reach me at,
 
-If my Plugin worked for you, please leave your review Here , so people can use it with confidence. God bless you..!!
+1) Gmail : cemilap.88@gmail.com
+2) Facebook : https://www.facebook.com/milap112
+3) Blog : https://patelmilap.wordpress.com/contact-me/
+4) Skype : milap_for_skype
+
+I will try my best to reply you within 1 business day.
+
+If my Plugin worked for you, please leave your review [Here](https://wordpress.org/support/view/plugin-reviews/facebook-pagelike-widget?filter=5) , so people can use it with confidence. God bless you..!!
 
 
 == Installation ==
@@ -56,10 +63,12 @@ You can use more parameters like below.
 
 == Screenshots ==
 
-1. See screenshot-1.png - Shows how your plugin will display in frontend.
-2. screenshot-2.png - Explains how you can configure plugin in admin widget area.
+1. screenshot-1.png - Explains how you can configure plugin in admin widget area.
+2. screenshot-2.png - Shows how your plugin will display in frontend sidebar(widget) area.
+3. screenshot-3.png - Shows how your plugin will display in Page or Post as Shortcode.
 
 == Other Notes ==
+
 
 I have tested my widget with following themes. Please let me know your theme name, if my widget also works with it.
 
@@ -69,6 +78,7 @@ I have tested my widget with following themes. Please let me know your theme nam
 * Twenty Twelve (http://wordpress.org/themes/twentytwelve)
 * Twenty Eleven (http://wordpress.org/themes/twentyeleven)
 * Avada (http://themeforest.net/item/avada-responsive-multipurpose-theme/2833226)
+* Photography (http://themeforest.net/item/photography-responsive-photography-theme/13304399)
 * Simply Read (https://wordpress.org/themes/simply-read/)
 * Evolve (https://wordpress.org/themes/evolve/)
 * Eco Nature - Environment & Ecology (http://themeforest.net/item/eco-nature-environment-ecology-wordpress-theme/8497776/)
@@ -78,6 +88,9 @@ I have tested my widget with following themes. Please let me know your theme nam
 * News Pro (http://my.studiopress.com/themes/news/)
 
 == Changelog ==
+
+= Version 4.2 =
+* Facebook has deprecated language URL, so now added static json file to read languages.
 
 = Version 4.1 =
 * Now you can add individual widget into Page or Post using shortcode.

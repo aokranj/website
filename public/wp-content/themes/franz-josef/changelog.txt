@@ -2,6 +2,12 @@ FRANZ JOSEF CHANGELOG
 by Graphene Themes Solutions
 http://www.graphene-theme.com/franz-josef/changelog/
 
+Version 1.7.4
+	* Added: Alt text for the header image
+	* Fixed: Custom <head> tags option not saving
+	* Fixed: Images in posts not center-aligned
+	* Fixed: Missing navigation menu icon field
+
 Version 1.7.3
 	* Added: Option to disable showing embedded video in posts listing pages
 	* Added: franz_column_mode filter
@@ -14,7 +20,6 @@ Version 1.7.2
 	* Added: Title & Description options for Mentions Bar
 	* Added: Option to open links in a new tab for Mentions Bar
 	* Added: Top Bar text widget now parses shortcodes
-	* Added: woocommerce.php file for basic wooCommerce layout compatibility
 	* Added: franz_body_start, franz_title_wrap action hook
 	* Fixed: In This Section page navigation follows the custom order of the pages
 	* Fixed: Misaligned menu on mobile display
