@@ -1,15 +1,15 @@
 <?php
 /**
  * @package Facebook Widget
- * @version 4.2
+ * @version 4.2.1
  */
 /*
 Plugin Name: Facebook Widget
-Plugin URI: http://patelmilap.wordpress.com/
+Plugin URI: https://patelmilap.wordpress.com/
 Description: This widget adds a Simple Facebook Page Like Widget into your wordpress website sidebar within few minutes.
 Author: Milap Patel
-Version: 4.2
-Author URI: http://patelmilap.wordpress.com/
+Version: 4.2.1
+Author URI: https://patelmilap.wordpress.com/
 Text Domain: facebook-pagelike-widget
 */
 function fbwidget_activate() {}

@@ -1,5 +1,5 @@
 jQuery(window).bind('load', function () {
-    jQuery('.loader').hide();
+    jQuery('.fb_loader').hide();
 });
 jQuery(document).ready(function () {
     appid = milapfbwidgetvars.app_id;

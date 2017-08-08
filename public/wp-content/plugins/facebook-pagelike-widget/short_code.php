@@ -8,7 +8,7 @@ function fb_plugin_shortcode($atts) {
     wp_enqueue_script('myownscript');
     $local_variables = array('app_id' => $atts['app_id'], 'select_lng' => $atts['select_lng']);
     wp_localize_script('myownscript', 'milapfbwidgetvars', $local_variables);
-    echo '<center><div class="loader"><img src="' . plugins_url() . '/facebook-pagelike-widget/loader.gif" /></div></center>';
+    echo '<div class="fb_loader" style="text-align: center !important;"><img src="' . plugins_url() . '/facebook-pagelike-widget/loader.gif" /></div>';
     $result .= '<div id="fb-root"></div>
         <div class="fb-page" data-href="' . $atts['fb_url'] . '" data-width="' . $atts['width'] . '" data-height="' . $atts['height'] . '" data-small-header="' . $atts['data_small_header'] . '" data-adapt-container-width="' . $atts['data_adapt_container_width'] . '" data-hide-cover="' . $atts['data_hide_cover'] . '" data-show-facepile="' . $atts['data_show_facepile'] . '" data-show-posts="' . $atts['data_show_posts'] . '" style="' . $atts['custom_css'] . '"></div>';
     return $result;

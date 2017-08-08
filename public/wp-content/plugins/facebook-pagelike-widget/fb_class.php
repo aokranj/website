@@ -31,13 +31,13 @@ class facebook_widget extends WP_Widget {
         if ($title)
             echo $before_title . $title . $after_title;
 
-        wp_register_script('milapfbwidgetscript', FB_WIDGET_PLUGIN_URL . 'fb.js', array('jquery'));
+        wp_register_script('milapfbwidgetscript', FB_WIDGET_PLUGIN_URL . 'fb.js', array('jquery'),'1.0');
         wp_enqueue_script('milapfbwidgetscript');
         $local_variables = array('app_id' => $app_id, 'select_lng' => $select_lng);
         wp_localize_script('milapfbwidgetscript', 'milapfbwidgetvars', $local_variables);
-        echo '<center><div class="loader"><img src="' . plugins_url() . '/facebook-pagelike-widget/loader.gif" /></div></center>';
+        echo '<div class="fb_loader" style="text-align: center !important;"><img src="' . plugins_url() . '/facebook-pagelike-widget/loader.gif" /></div>';
         echo '<div id="fb-root"></div>
-        <div class="fb-page" data-href="' . $fb_url . '" data-width="' . $width . '" data-height="' . $height . '" data-small-header="' . $data_small_header . '" data-adapt-container-width="' . $data_adapt_container_width . '" data-hide-cover="' . $data_hide_cover . '" data-show-facepile="' . $data_show_facepile . '" data-show-posts="' . $data_show_posts . '" style="' . $custom_css . '"></div>';
+        <div class="fb-page" data-href="' . $fb_url . '" data-width="' . $width . '" data-height="' . $height . '" data-small-header="' . $data_small_header . '" data-adapt-container-width="' . $data_adapt_container_width . '" data-hide-cover="' . $data_hide_cover . '" data-show-facepile="' . $data_show_facepile . '" data-show-posts="' . $data_show_posts . '" style="' . $custom_css . '" hide_cta="false"></div>';
         echo $after_widget; ?>
         <!-- A WordPress plugin developed by Milap Patel -->
     <?php }
@@ -70,19 +70,14 @@ class facebook_widget extends WP_Widget {
         /**
          * Set Default Value for widget form
          */
-        $defaults = array('title' => 'Like Us On Facebook', 'app_id' => '503595753002055', 'fb_url' => 'http://facebook.com/WordPress', 'width' => '250', 'height' => '350', 'data_small_header' => 'false', 'select_lng' => 'en_US', 'data_small_header' => 'false', 'data_adapt_container_width' => 'false', 'data_hide_cover' => 'false', 'data_show_facepile' => 'on', 'data_show_posts' => 'true', 'custom_css' => '');
+        $defaults = array('title' => 'Like Us On Facebook', 'app_id' => '503595753002055', 'fb_url' => 'https://www.facebook.com/WordPress', 'width' => '300', 'height' => '500', 'data_small_header' => 'false', 'select_lng' => 'en_US', 'data_adapt_container_width' => 'false', 'data_hide_cover' => 'false', 'data_show_facepile' => 'on', 'data_show_posts' => 'on', 'custom_css' => '');
         $instance = wp_parse_args((array) $instance, $defaults);
         $title = esc_attr($instance['title']);
         $app_id = isset($instance['app_id']) ? esc_attr($instance['app_id']) : "503595753002055";
         $fb_url = isset($instance['fb_url']) ? esc_attr($instance['fb_url']) : "http://www.facebook.com/wordpress";
         $width = esc_attr($instance['width']);
         $height = esc_attr($instance['height']);
-        $data_adapt_container_width = esc_attr($instance['data_adapt_container_width']);
-        $data_hide_cover = esc_attr($instance['data_hide_cover']);
-        $data_show_facepile = esc_attr($instance['data_show_facepile']);
-        $data_show_posts = esc_attr($instance['data_show_posts']);
         $custom_css = isset($instance['custom_css']) ? esc_attr($instance['custom_css']) : "";
-        $select_lng = esc_attr($instance['select_lng']);
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'facebook-pagelike-widget'); ?></label>
@@ -104,31 +99,31 @@ class facebook_widget extends WP_Widget {
         </p>
         <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_show_posts'], "on") ?> id="<?php echo $this->get_field_id('data_show_posts'); ?>" name="<?php echo $this->get_field_name('data_show_posts'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_show_posts'); ?>"><?php _e('Show posts from the Page timeline', 'facebook-pagelike-widget'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_show_posts'); ?>" title="Show posts from facebook page timeline"><?php _e('Show posts from the Page timeline', 'facebook-pagelike-widget'); ?></label>
         </p>
         <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_hide_cover'], "on") ?> id="<?php echo $this->get_field_id('data_hide_cover'); ?>" name="<?php echo $this->get_field_name('data_hide_cover'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_hide_cover'); ?>"><?php _e('Hide Cover', 'facebook-pagelike-widget'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_hide_cover'); ?>" title="Hide the cover photo in the header"><?php _e('Hide Cover Photo', 'facebook-pagelike-widget'); ?></label>
         </p>
         <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_show_facepile'], "on") ?> id="<?php echo $this->get_field_id('data_show_facepile'); ?>" name="<?php echo $this->get_field_name('data_show_facepile'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_show_facepile'); ?>"><?php _e('Show profile photos when friends like this', 'facebook-pagelike-widget'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_show_facepile'); ?>" title="Show profile photos when friends like this"><?php _e("Show Friend's Faces", 'facebook-pagelike-widget'); ?></label>
         </p>
         <p>
             <input class="checkbox" type="checkbox" <?php checked($instance['data_small_header'], "on") ?> id="<?php echo $this->get_field_id('data_small_header'); ?>" name="<?php echo $this->get_field_name('data_small_header'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_small_header'); ?>"><?php _e('Show Small Header', 'facebook-pagelike-widget'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_small_header'); ?>" title="Uses a smaller version of the page header"><?php _e('Show Small Header', 'facebook-pagelike-widget'); ?></label>
         </p>
         <p>
             <input onclick="shoWidth();" class="checkbox" type="checkbox" <?php checked($instance['data_adapt_container_width'], "on") ?> id="<?php echo $this->get_field_id('data_adapt_container_width'); ?>" name="<?php echo $this->get_field_name('data_adapt_container_width'); ?>" />
-            <label for="<?php echo $this->get_field_id('data_adapt_container_width'); ?>"><?php _e('Adapt To Plugin Container Width', 'facebook-pagelike-widget'); ?></label>
+            <label for="<?php echo $this->get_field_id('data_adapt_container_width'); ?>" title="Plugin will try to fit inside the container"><?php _e('Adapt To Plugin Container Width', 'facebook-pagelike-widget'); ?></label>
         </p>
         <p class="width_option <?php echo $instance['data_adapt_container_width'] == 'on' ? 'hideme' : ''; ?>">
             <label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('Set Width:', 'facebook-pagelike-widget'); ?></label>
-            <input size="5" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" />
+            <input size="19" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" placeholder="Min. 180 to Max. 500" />
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('height'); ?>"><?php _e('Set Height:', 'facebook-pagelike-widget'); ?></label>
-            <input size="5" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />
+            <input size="19" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" placeholder="Min. 70" />
         </p>
         <?php
         $filename = __DIR__.'/FacebookLocales.json';
@@ -162,7 +157,7 @@ class facebook_widget extends WP_Widget {
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('custom_css'); ?>"><?php _e('Custom Css:', 'facebook-pagelike-widget'); ?></label>
-            <textarea rows="4" cols="30" name="<?php echo $this->get_field_name('custom_css'); ?>"><?php echo trim($custom_css); ?></textarea>
+            <textarea rows="4" cols="30" name="<?php echo $this->get_field_name('custom_css'); ?>" placeholder="Custom CSS will apply only to outer elements, will not apply to IFRAME elements."><?php echo trim($custom_css); ?></textarea>
         </p>
         <script type="text/javascript">
             function shoWidth() {

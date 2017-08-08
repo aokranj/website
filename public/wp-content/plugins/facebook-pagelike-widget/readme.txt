@@ -89,6 +89,11 @@ I have tested my widget with following themes. Please let me know your theme nam
 
 == Changelog ==
 
+= Version 4.2.1 =
+* Updated few default values for Widget.
+* Added placeholders in widget settings.
+* Code optimization.
+
 = Version 4.2 =
 * Facebook has deprecated language URL, so now added static json file to read languages.
 
