@@ -242,13 +242,12 @@ function xyz_link_publish($post_ID) {
 		$xyz_smap_apply_filters=get_option('xyz_smap_std_apply_filters');
 		$ar2=explode(",",$xyz_smap_apply_filters);
 		$con_flag=$exc_flag=$tit_flag=0;
-		if(isset($ar2[0]))
-			if($ar2[0]==1) $con_flag=1;
-		if(isset($ar2[1]))
-			if($ar2[1]==2) $exc_flag=1;
-		if(isset($ar2[2]))
-			if($ar2[2]==3) $tit_flag=1;
-		
+		if(isset($ar2))
+		{
+			if(in_array(1, $ar2)) $con_flag=1;
+			if(in_array(2, $ar2)) $exc_flag=1;
+			if(in_array(3, $ar2)) $tit_flag=1;
+		}
 		
 		$content = $postpp->post_content;
 		if($con_flag==1)
@@ -501,6 +500,7 @@ function xyz_link_publish($post_ID) {
 				{
 				
 					$attachment=xyz_wp_fbap_attachment_metas($attachment,$link);
+					update_post_meta($post_ID, "xyz_smap_insert_og", "1");
 				}
 				try{
 				$result = $fb->post('/'.$page_id.'/'.$disp_type.'/', $attachment);}
@@ -555,7 +555,7 @@ function xyz_link_publish($post_ID) {
 				
 				$img=array();
 				if($attachmenturl!="")
-					$img = wp_remote_get($attachmenturl);
+					$img = wp_remote_get($attachmenturl,array('sslverify'=> (get_option('xyz_smap_peer_verification')=='1') ? true : false));
 					
 				if(is_array($img))
 				{
@@ -826,7 +826,8 @@ function xyz_link_publish($post_ID) {
 			$message5=str_replace('{POST_PUBLISH_DATE}', $publish_time, $message5);
 			$message5=str_replace('{POST_ID}', $post_ID, $message5);
 			$message5=str_replace("&nbsp;","",$message5);
-						
+			$message5=xyz_smap_string_limit($message5, 700);
+		
 				$contentln['comment'] =$message5;
 				$contentln['content']['title'] = $name_li;
 				$contentln['content']['submitted-url'] = $link;
