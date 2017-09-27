@@ -150,6 +150,9 @@ function franz_stack_posts( $args = array() ){
 						} elseif ( $args['columns'] == 4 ) {
 							$col = 'col-md-3 col-sm-6';
 							$image_size = 'medium';
+						} else {
+							$col = 'col-md-12';
+							$image_size = 'full';
 						}
 				?>
                     <div class="item-wrap <?php echo $col; ?>" id="item-<?php echo $post_id; ?>">

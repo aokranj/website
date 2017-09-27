@@ -1,6 +1,5 @@
 === Display Widgets ===
-Contributors: sswells
-Donate link: http://strategy11.com/donate/
+Contributors: displaywidget, sswells
 Tags: widget, widgets, admin, show, hide, page, sidebar, content, wpmu, plugin, post, posts, content, filter, widget logic, widget context
 Requires at least: 3.1
 Tested up to: 4.3

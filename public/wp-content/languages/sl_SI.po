@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.8.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-07-28 14:03:23+0000\n"
+"PO-Revision-Date: 2017-09-12 12:51:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9847,14 +9847,6 @@ msgstr "Vstavi stolpec na desno"
 msgid "Merge table cells"
 msgstr "Združi celice tabele"
 
-#: wp-includes/class-wp-editor.php:1167
-msgid "Table row properties"
-msgstr "Lastnosti vrstic tabele"
-
-#: wp-includes/class-wp-editor.php:1168
-msgid "Table cell properties"
-msgstr "Lastnosti celic tabele"
-
 #: wp-includes/class-wp-editor.php:1166
 msgid "Table properties"
 msgstr "Lastnosti tabele"
@@ -10324,6 +10316,14 @@ msgstr "Oprostite, uporabniško ime mora vsebovati tudi črke!"
 #: wp-includes/class-wp-editor.php:1097
 msgid "Language"
 msgstr "Jezik"
+
+#: wp-includes/class-wp-editor.php:1168
+msgid "Table cell properties"
+msgstr "Lastnosti celice tabele"
+
+#: wp-includes/class-wp-editor.php:1167
+msgid "Table row properties"
+msgstr "Lastnosti vrstice tabele"
 
 #: wp-includes/class-wp-theme.php:800
 msgid "Black"
