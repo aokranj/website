@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Seventeen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-11-19 12:24:47+0000\n"
+"PO-Revision-Date: 2017-11-16 19:09:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,13 +11,61 @@ msgstr ""
 "Language: sl_SI\n"
 "Project-Id-Version: Themes - Twenty Seventeen\n"
 
+#. Description of the plugin/theme
+msgid "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device."
+msgstr "Twenty Seventeen poživi vaše spletišče z izpostavljenimi slikami in diskretnimi animacijami. Fokus je na podjetnih spletnih straneh in omogoča več oddelkov na prvi strani kot tudi gradnike, menije, logotip in še več. Prikrojite asimetrično mrežo z vašimi barvami in prikažite vsebino z različnimi formati prispevkov. Naša privzeta tema za 2017 deluje super v večih jezikih, dostopna vsem na vseh napravah."
+
 #. Theme Name of the plugin/theme
 msgid "Twenty Seventeen"
 msgstr "Twenty Seventeen"
 
+#: template-parts/footer/footer-widgets.php:18
+msgid "Footer"
+msgstr "Noga"
+
+#: functions.php:317
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr "Dodajte gradnike tukaj, da se prikažejo v vaši stranski vrstici na blog in arhivskih straneh."
+
+#: functions.php:315 sidebar.php:18
+msgid "Blog Sidebar"
+msgstr "Blog stranska vrstica"
+
+#: template-parts/header/site-branding.php:34
+#: template-parts/navigation/navigation-top.php:27
+msgid "Scroll down to content"
+msgstr "Drsni dol do vsebine"
+
+#: functions.php:159
+msgctxt "Theme starter content"
+msgid "Coffee"
+msgstr "Kava"
+
+#: functions.php:155
+msgctxt "Theme starter content"
+msgid "Sandwich"
+msgstr "Sendvič"
+
+#: functions.php:151
+msgctxt "Theme starter content"
+msgid "Espresso"
+msgstr "Espresso"
+
+#: inc/custom-header.php:120
+msgid "Pause background video"
+msgstr " Premor videa ozadja"
+
+#: inc/custom-header.php:119
+msgid "Play background video"
+msgstr "Predvajaj video ozadja"
+
 #: inc/template-tags.php:150
 msgid "Front Page Section %1$s Placeholder"
-msgstr "Vsebnik oddelka %1$s prve strani"
+msgstr "Placeholder %1$s razdelka Vstopne strani"
+
+#: inc/customizer.php:80
+msgid "When the two-column layout is assigned, the page title is in one column and content is in the other."
+msgstr "Ko je izbrana postavitev dveh stolpcev, je naslov strani v enem stolpcu, vsebina pa v drugem."
 
 #: single.php:32
 msgid "Next Post"
@@ -65,7 +113,7 @@ msgstr "Izberite strani, katere bodo izpostavljene v vsakem spustnem meniju. Dod
 #. translators: %d is the front page section number
 #: inc/customizer.php:107
 msgid "Front Page Section %d Content"
-msgstr "Vsebina oddelka %d prve strani"
+msgstr "Vsebina %d razdelka Vstopne strani"
 
 #: inc/customizer.php:83 inc/customizer.php:132
 msgid "Two Column"
@@ -111,6 +159,14 @@ msgstr "Dodaj gradnike, ki se naj prikažejo v nogi."
 msgid "Footer 1"
 msgstr "Noga 1"
 
+#. Translators: If there are characters in your language that are not supported
+#. by Libre Franklin, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:269
+msgctxt "Libre Franklin font: on or off"
+msgid "on"
+msgstr "on"
+
 #: functions.php:63 functions.php:183
 #: template-parts/navigation/navigation-top.php:12
 msgid "Top Menu"
@@ -122,11 +178,11 @@ msgstr "Odgovori"
 
 #: template-parts/post/content-none.php:27
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Očitno ni bilo mogoče najti tega, kar iščete. Morda si lahko pomagate z iskalnikom."
+msgstr "Vsebine ni mogoče najti. Poskusite z iskanjem."
 
 #: search.php:50
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Oprostite, z vašemu zahtevku se nič ne ujema. Prosim, poskusite z drugimi besedami."
+msgstr "Vaša iskalna poizvedba nima zadetkov. Poskusite znova z drugimi ključnimi besedami."
 
 #: template-parts/post/content-none.php:23
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -169,7 +225,7 @@ msgstr "Iskalni rezultati za: %s"
 
 #. translators: %s: Name of current post
 #: functions.php:363 template-parts/page/content-front-page-panels.php:43
-#: template-parts/page/content-front-page.php:44
+#: template-parts/page/content-front-page.php:40
 #: template-parts/post/content-audio.php:83
 #: template-parts/post/content-gallery.php:70
 #: template-parts/post/content-image.php:59
@@ -222,7 +278,7 @@ msgstr "Meni socialnih  povezav"
 msgid "Proudly powered by %s"
 msgstr "Ponosno uporablja tehnologijo %s"
 
-#. #-#-#-#-#  twentyseventeen.pot (Twenty Seventeen 1.3)  #-#-#-#-#
+#. #-#-#-#-#  twentyseventeen.pot (Twenty Seventeen 1.4)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: template-parts/footer/site-info.php:13
 msgid "https://wordpress.org/"

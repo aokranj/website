@@ -325,7 +325,7 @@ msgstr "https://wordpress.org/themes/twentysixteen/"
 msgid "the WordPress team"
 msgstr "WordPressova ekipa"
 
-#. #-#-#-#-#  twentysixteen.pot (Twenty Sixteen 1.3)  #-#-#-#-#
+#. #-#-#-#-#  twentysixteen.pot (Twenty Sixteen 1.4)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:51
 msgid "https://wordpress.org/"
