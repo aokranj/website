@@ -2,6 +2,12 @@ FRANZ JOSEF CHANGELOG
 by Graphene Themes Solutions
 http://www.graphene-theme.com/franz-josef/changelog/
 
+Version 1.7.5
+	* Added: Meta tag for Open Graph social sharing image
+	* Added: Option to set default Open Graph social sharing image
+	* Updated: Bootstrap 3.3.7
+	* Fixed: JS error in Customizer rendering some options not available
+
 Version 1.7.4
 	* Added: Alt text for the header image
 	* Fixed: Custom <head> tags option not saving

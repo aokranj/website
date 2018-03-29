@@ -12,10 +12,15 @@ require( FRANZ_ROOTDIR . '/admin/customizer/options-display.php' );
  * Enqueue script for custom customize control.
  */
 function franz_enqueue_customizer_scripts() {
-	wp_enqueue_script( 'franz-codemirror', FRANZ_ROOTURI . '/js/codemirror/codemirror.min.js', array(), '', false );
-	wp_enqueue_script( 'franz-customizer', FRANZ_ROOTURI . '/admin/customizer/customizer.js', array( 'jquery', 'customize-controls' ), false, true );
-	wp_enqueue_style( 'franz-codemirror', FRANZ_ROOTURI . '/js/codemirror/codemirror.css', array(), '', 'all' );
-	wp_enqueue_style( 'franz-customizer', FRANZ_ROOTURI . '/admin/customizer/customizer.css' );
+
+	if ( version_compare( get_bloginfo( 'version' ), '4.9', '<' ) ) {
+		wp_enqueue_script( 	'franz-codemirror', FRANZ_ROOTURI . '/js/codemirror/codemirror.min.js', array(), '', false );
+		wp_enqueue_style( 	'franz-codemirror', FRANZ_ROOTURI . '/js/codemirror/codemirror.css', 	array(), '', 'all' );
+	}
+
+	wp_enqueue_script( 	'franz-chosen', 		FRANZ_ROOTURI . '/js/chosen/chosen.jquery.min.js',	array(), '', false );
+	wp_enqueue_script( 	'franz-customizer', 	FRANZ_ROOTURI . '/admin/customizer/customizer.js', 	array( 'jquery', 'customize-controls' ), false, true );
+	wp_enqueue_style( 	'franz-customizer', 	FRANZ_ROOTURI . '/admin/customizer/customizer.css' );
 	
 	$l10n_data = array(
 		'chosen_no_search_result'	=> __( 'Oops, nothing found.', 'franz-josef' ),
@@ -94,6 +99,7 @@ function franz_get_customizer_transport_settings(){
 	$settings = array(
 		'slider_height',
 		'copyright_text',
+		'social_sharing_default_image',
 	);
 	foreach ( $settings as $setting ) {
 		$transport_settings[$setting] = 'postMessage';

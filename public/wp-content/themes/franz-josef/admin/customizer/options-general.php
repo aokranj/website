@@ -197,6 +197,22 @@ function franz_customizer_general_options( $wp_customize ){
 		'description'	=> __( 'Disable listing of blog posts on static front page', 'franz-josef' ),
 		'active_callback'	=> 'franz_has_static_front_page',
 	) );
+
+
+	/* =Social sharing
+	--------------------------------------------------------------------------------------*/
+	$wp_customize->add_section( 'fj-general-social-sharing', array(
+		'title' 		=> __( 'Social Sharing', 'franz-josef' ),
+		'panel'			=> 'fj-general',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'franz_settings[social_sharing_default_image]', array(
+       'label'      => __( 'Default social sharing image', 'franz-josef' ),
+       'description'=> __( 'This image will be used when your website links are shared in social media, if the current post has no image or Featured Image.', 'franz-josef' ),
+       'section'    => 'fj-general-social-sharing',
+       'settings'   => 'franz_settings[social_sharing_default_image]',
+       'mime_type'	=> 'image'
+    ) ) );
 	
 	
 	/* =Head Tags

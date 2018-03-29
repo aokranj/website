@@ -123,3 +123,19 @@ function franz_custom_style( $echo = true, $minify = true, $force_all = false ){
 	else return $style;
 }
 add_action( 'wp_head', 'franz_custom_style' );
+
+
+/**
+ * Add the meta tag for social sharing image
+ */
+function franz_social_sharing_image_meta(){
+	global $franz_settings;
+
+	$image = franz_get_post_image( 'large' );
+	$image_id = ( $image ) ? $image['id'] : $franz_settings['social_sharing_default_image'];
+	if ( ! $image_id ) return;
+	
+	$image = wp_get_attachment_image_src( apply_filters( 'franz_social_sharing_image_id', $image_id ), 'large' );
+	if ( $image ) printf( '<meta property="og:image" content="%s" />', $image[0] );
+}
+add_action( 'wp_head', 'franz_social_sharing_image_meta' );

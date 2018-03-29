@@ -1,4 +1,5 @@
 .idea
+*.code-workspace
 files
 node_modules
 /config/wp-config.php

@@ -13,6 +13,7 @@ jQuery(document).ready(function ($) {
 	});
 	$('#customize-control-franz_settings-slider_type [data-customize-setting-link]').trigger('change');
 	
+
 	/* Improve <select> elements */
 	$('.chzn-select').each(function () {
 		var chosenOptions = new Object();

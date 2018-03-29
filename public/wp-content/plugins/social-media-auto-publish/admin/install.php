@@ -63,6 +63,7 @@ function smap_install_free()
 	add_option('xyz_smap_twpost_image_permission', '1');
 	add_option('xyz_smap_twaccestok_secret', '');
 	add_option('xyz_smap_twmessage', '{POST_TITLE} - {PERMALINK}');
+	add_option('xyz_smap_twtr_char_limit',280);
 	
 	add_option('xyz_smap_application_lnarray', '');
 	add_option('xyz_smap_ln_shareprivate', '0');
@@ -73,7 +74,6 @@ function smap_install_free()
 // 	add_option('xyz_smap_lnoauth_token', '');
 // 	add_option('xyz_smap_lnoauth_secret', '');
 	add_option('xyz_smap_lnpost_permission', '1');
-	add_option('xyz_smap_lnpost_image_permission', '1');
 	add_option('xyz_smap_lnaf', '1');
 	add_option('xyz_smap_lnmessage', '{POST_TITLE} - {PERMALINK}');
 	add_option('xyz_smap_std_future_to_publish', '1');
@@ -93,8 +93,11 @@ function smap_install_free()
 	add_option('xyz_smap_twap_post_logs', '');
 	add_option('xyz_smap_premium_version_ads', '1');
 	add_option('xyz_smap_default_selection_edit', '0');
-	add_option('xyz_smap_utf_decode_enable', '0');
-
+// 	add_option('xyz_smap_utf_decode_enable', '0');
+	add_option('xyz_smap_dnt_shw_notice','0');
+	if(get_option('xyz_smap_credit_dismiss') == ""){
+		add_option("xyz_smap_credit_dismiss",0);
+	}
 }
 
 register_activation_hook(XYZ_SMAP_PLUGIN_FILE,'smap_free_network_install');

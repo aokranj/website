@@ -49,6 +49,9 @@ $franz_defaults = array(
 	'front_page_blog_columns'	=> 2, // 1 | 2 | 3 | 4
 	'disable_full_width_post'	=> false,
 	'disable_front_page_blog'	=> false,
+
+	/* Social sharing */
+	'social_sharing_default_image'	=> '',
                 
 	/* Social profiles */
 	'social_media_new_window'   => false,	

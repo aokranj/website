@@ -703,7 +703,7 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 			 */
 			$output = __( 'html_lang_attribute' );
 			if ( 'html_lang_attribute' === $output || preg_match( '/[^a-zA-Z0-9-]/', $output ) ) {
-				$output = get_locale();
+				$output = is_admin() ? get_user_locale() : get_locale();
 				$output = str_replace( '_', '-', $output );
 			}
 			break;
@@ -2885,7 +2885,7 @@ function wp_resource_hints() {
 	 * The path is removed in the foreach loop below.
 	 */
 	/** This filter is documented in wp-includes/formatting.php */
-	$hints['dns-prefetch'][] = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2.3/svg/' );
+	$hints['dns-prefetch'][] = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2.4/svg/' );
 
 	foreach ( $hints as $relation_type => $urls ) {
 		$unique_urls = array();
@@ -3029,7 +3029,7 @@ function user_can_richedit() {
 			if ( $is_safari ) {
 				$wp_rich_edit = ! wp_is_mobile() || ( preg_match( '!AppleWebKit/(\d+)!', $_SERVER['HTTP_USER_AGENT'], $match ) && intval( $match[1] ) >= 534 );
 			} elseif ( $is_IE ) {
-				$wp_rich_edit = ( strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE ' ) === false );
+				$wp_rich_edit = ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Trident/7.0;' ) !== false );
 			} elseif ( $is_gecko || $is_chrome || $is_edge || ( $is_opera && !wp_is_mobile() ) ) {
 				$wp_rich_edit = true;
 			}
@@ -3155,6 +3155,8 @@ function wp_enqueue_code_editor( $args ) {
 				'Ctrl-/' => 'toggleComment',
 				'Cmd-/' => 'toggleComment',
 				'Alt-F' => 'findPersistent',
+				'Ctrl-F'     => 'findPersistent',
+				'Cmd-F'      => 'findPersistent',
 			),
 			'direction' => 'ltr', // Code is shown in LTR even in RTL languages.
 			'gutters' => array(),
@@ -3197,7 +3199,7 @@ function wp_enqueue_code_editor( $args ) {
 		'htmlhint' => array(
 			'tagname-lowercase' => true,
 			'attr-lowercase' => true,
-			'attr-value-double-quotes' => true,
+			'attr-value-double-quotes' => false,
 			'doctype-first' => false,
 			'tag-pair' => true,
 			'spec-char-escape' => true,
@@ -3568,12 +3570,14 @@ function get_language_attributes( $doctype = 'html' ) {
 	if ( function_exists( 'is_rtl' ) && is_rtl() )
 		$attributes[] = 'dir="rtl"';
 
-	if ( $lang = get_bloginfo('language') ) {
-		if ( get_option('html_type') == 'text/html' || $doctype == 'html' )
-			$attributes[] = "lang=\"$lang\"";
+	if ( $lang = get_bloginfo( 'language' ) ) {
+		if ( get_option( 'html_type' ) == 'text/html' || $doctype == 'html' ) {
+			$attributes[] = 'lang="' . esc_attr( $lang ) . '"';
+		}
 
-		if ( get_option('html_type') != 'text/html' || $doctype == 'xhtml' )
-			$attributes[] = "xml:lang=\"$lang\"";
+		if ( get_option( 'html_type' ) != 'text/html' || $doctype == 'xhtml' ) {
+			$attributes[] = 'xml:lang="' . esc_attr( $lang ) . '"';
+		}
 	}
 
 	$output = implode(' ', $attributes);

@@ -3,36 +3,43 @@ Contributors: Milap
 Tags: facebook, facebook like box, facebook simple like, facebook fan pages, facebook like button, facebook button share, facebook social bookmarking, facebook feeds, facebook feed widget, social share, wordpress social share, socialmedia, social media widget, social media sharing, social media icon 
 Donate link: https://www.paypal.com/cgi-bin/webscr?business=cemilap.88@gmail.com&cmd=_xclick¤cy_code=USD&amount=5&item_name=Offer%20me%20coffee
 Requires at least: 3.0.1
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This widget adds a Simple Facebook page Like Widget into your WordPress sidebar, footer area(as widget) & Page or Post(as shortcode).
+This plugin adds a Simple Facebook page Like Widget into your WordPress sidebar, footer area(as widget) & Page or Post(as shortcode).
 
 == Description ==
 
-One of the most popular & lightweight plugin for Facebook page feeds widget with over 4,80,000 downloads and 1,00,000+ active installs.
+One of the most popular & lightweight plugin for Facebook page feeds widget with over 6,65,000 downloads and 1,00,000+ active installs.
 
 An inside look:
 
 http://www.youtube.com/watch?v=eS6ZWaO7UN0
 
-This widget will provide you the most simple and attractive way to display Facebook page likes into your WordPress sidebar. It is very easy to configure with Admin area. You just need to activate plugin and drag this widget like other widgets. Just add application id from your created facebook application, add it into widget and also URL of your Facebook page. You also have other options like show faces , show Data Stream and Header.
+This widget will provide you the most simple and attractive way to display Facebook page likes into your WordPress sidebar. 
 
-In latest version, support to short code is added to display Facebook like plugin into your post and pages.
-Open your Post or Page, Add [fb_widget] into Post or Page, Save it. You are done.
+**Why should you choose Facebook Page Like Widget from the many other plugins?**
 
-If you have any question regarding plugin, reach me at,
+* Light weight & easy to configure
+* Add application id from your created facebook application (Or you may use default application id), add it into widget & also URL of your Facebook page. 
+* Configuration options like show/hide posts from timeline, show/hide cover, show/hide profile photos , show small header, width options, language selection, custom css.
+* Shortcode support
+* Fast & helpful support.
 
-1) Gmail : cemilap.88@gmail.com
-2) Facebook : https://www.facebook.com/milap112
-3) Blog : https://patelmilap.wordpress.com/contact-me/
-4) Skype : milap_for_skype
+It supports short code, open your Post or Page, Add **[fb_widget]** into Post or Page, Save it. You are done. Check FAQ for more shortcode options.
+
+If you have any questions / issues / suggestions regarding my plugin, reach me at,
+
+* Gmail : cemilap.88@gmail.com
+* Blog : https://patelmilap.wordpress.com/contact-me/
+* Skype : milap_for_skype
+* Facebook : https://www.facebook.com/milap112
 
 I will try my best to reply you within 1 business day.
 
-If my Plugin worked for you, please leave your review [Here](https://wordpress.org/support/view/plugin-reviews/facebook-pagelike-widget?filter=5) , so people can use it with confidence. God bless you..!!
+If you loved my plugin & support, please leave your review [Here](https://wordpress.org/support/view/plugin-reviews/facebook-pagelike-widget?filter=5) , so people can use it with confidence.
 
 
 == Installation ==
@@ -61,33 +68,24 @@ You can use more parameters like below.
 = I am not sure how to get Facebook application ID ? =
 * If you are not able to create Facebook application or you do not know how to do that, do not worry, you can use my default application id `1590918427791514` . I have created it for plugin users and it should work like a charm for you.
 
+= It is working in some system, not working in other system ? =
+* If it is working in some system & not working with other system, there are 2 possibilties :
+	1) Anti virus of your computer can stop my widget loading. Some of my widget users had same problem in past. You can check with disable your anti virus temporary. 
+	2) Your browser has some ad block extention installed that may cause stop my plugin loading.  
+
+
 == Screenshots ==
 
 1. screenshot-1.png - Explains how you can configure plugin in admin widget area.
 2. screenshot-2.png - Shows how your plugin will display in frontend sidebar(widget) area.
 3. screenshot-3.png - Shows how your plugin will display in Page or Post as Shortcode.
 
-== Other Notes ==
-
-
-I have tested my widget with following themes. Please let me know your theme name, if my widget also works with it.
-
-* Twenty Fifteen (https://wordpress.org/themes/twentyfifteen/)
-* Twenty Fourteen (http://wordpress.org/themes/twentyfourteen)
-* Twenty Thirteen (http://wordpress.org/themes/twentythirteen)
-* Twenty Twelve (http://wordpress.org/themes/twentytwelve)
-* Twenty Eleven (http://wordpress.org/themes/twentyeleven)
-* Avada (http://themeforest.net/item/avada-responsive-multipurpose-theme/2833226)
-* Photography (http://themeforest.net/item/photography-responsive-photography-theme/13304399)
-* Simply Read (https://wordpress.org/themes/simply-read/)
-* Evolve (https://wordpress.org/themes/evolve/)
-* Eco Nature - Environment & Ecology (http://themeforest.net/item/eco-nature-environment-ecology-wordpress-theme/8497776/)
-* Mantra (https://wordpress.org/themes/mantra/)
-* Weaver-ii (https://wordpress.org/themes/weaver-ii/)
-* Bazar (http://preview.yithemes.com/bazar/)
-* News Pro (http://my.studiopress.com/themes/news/)
 
 == Changelog ==
+
+= Version 4.2.2 =
+* Solved Shortcode issue with attributes.
+* Code Optimization.
 
 = Version 4.2.1 =
 * Updated few default values for Widget.
