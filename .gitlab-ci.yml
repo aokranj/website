@@ -1,0 +1,35 @@
+stages:
+  - deploy
+
+variables:
+  GIT_STRATEGY: none
+
+deploy_stg:
+  stage: deploy
+  only:
+  - master
+  environment:
+    name: stg
+    url: https://stg.aokranj.com
+  script:
+    - "rm -rf website-deploy"
+    - "git clone git@git.teon.si:aokranj/website-deploy.git"
+    - "cd website-deploy"
+    - "git checkout master"
+    - "git log --pretty=format:'%h: %s%n' -n 1"
+    - "./deploy-app.sh stg"
+
+#deploy_prod:
+#  stage: deploy
+#  only:
+#  - prod
+#  environment:
+#    name: prod
+#    url: https://blog.aokranj.com
+#  script:
+#    - "rm -rf website-deploy"
+#    - "git clone git@git.teon.si:aokranj/website-deploy.git"
+#    - "cd website-deploy"
+#    - "git checkout prod"
+#    - "git log --pretty=format:'%h: %s%n' -n 1"
+#    - "./deploy-app.sh prod"
