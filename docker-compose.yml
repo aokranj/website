@@ -1,0 +1,52 @@
+version: '3'
+services:
+    web:
+        build: ./dev-tools/docker
+        ports:
+            - 8000:80
+        volumes:
+            - .:/var/www/docker.dev.aokranj.com
+            - ./dev-tools/docker/wp-config.php:/var/www/docker.dev.aokranj.com/config/wp-config.php
+            - ./dev-tools/docker/aokranj-plugin-config.php:/var/www/docker.dev.aokranj.com/public/wp-content/plugins/aokranj/config.php
+            - ./dev-tools/docker/docker.dev.aokranj.com.conf:/etc/apache2/sites-enabled/docker.dev.aokranj.com.conf
+            - ./dev-tools/docker/web-entrypoint.sh:/web-entrypoint.sh
+
+        command:
+            - /web-entrypoint.sh
+
+        links:
+            - mysql
+
+        depends_on:
+            - mysql
+
+
+
+    mysql:
+        image: mysql:5.6
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_DATABASE: ao_web_dev_docker
+            MYSQL_USER: ao_web_dev_d
+            MYSQL_PASSWORD: ao_web_dev_docker
+            MYSQL_ROOT_PASSWORD: root
+        volumes:
+            - ./dev-tools/docker/mysql-initdb.d:/docker-entrypoint-initdb.d
+            - ./tmp/docker-mysql:/var/lib/mysql
+
+
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - 8001:80
+        environment:
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+
+        links:
+            - mysql:mysql
