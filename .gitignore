@@ -4,5 +4,6 @@ files
 node_modules
 /config/wp-config.php
 /public/wp-content/uploads/*
+/var/docker-mysql
 /var/log/*
 /var/tmp/*
