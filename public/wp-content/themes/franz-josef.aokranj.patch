@@ -1,0 +1,19 @@
+diff -ur franz-josef.DIST/inc/stacks.php franz-josef/inc/stacks.php
+--- franz-josef.DIST/inc/stacks.php	2018-04-08 15:14:52.506857096 +0200
++++ franz-josef/inc/stacks.php	2018-04-08 15:33:21.182740583 +0200
+@@ -316,6 +316,7 @@
+ endif;
+ 
+ 
++if ( ! function_exists( 'franz_stack_posts_meta' ) ) :
+ /**
+  * Item meta for Posts stack
+  */
+@@ -351,4 +352,5 @@
+             <?php endforeach; ?>
+         </div>
+     <?php
+-}
+\ No newline at end of file
++}
++endif;
