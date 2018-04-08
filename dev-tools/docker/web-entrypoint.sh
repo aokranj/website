@@ -52,10 +52,20 @@ sudo -u $APPUSER -- ./deploy-here.sh
 
 ### Start the apache
 #
+# Handle the ctrl+c (sigterm) signal from the console and shut it down "instantly"
+#
+_handleSigTerm() {
+  echo "DOCKER :: WEB :: Caught SIGTERM signal, passing it to child $childPid"
+  kill -TERM "$childPid" 2>/dev/null
+}
+trap _term SIGTERM
 
-# Stop if the system started it
-service apache2 stop || true
 
+# Start the apache in the foreground (docker mode) but push it into background to enable
+# handling of SIGTERM signal
 echo "DOCKER :: WEB :: Starting apache..."
-echo "DOCKER :: WEB :: The app will be waiting for you on http://docker.dev.aokranj.com:8000/"
-/usr/sbin/apache2ctl -D FOREGROUND
+/usr/sbin/apache2ctl -D FOREGROUND &
+childPid=$!
+
+sleep 3 && echo "DOCKER :: WEB :: The app is waiting for you at http://docker.dev.aokranj.com:8000/" &
+wait "$childPid"
