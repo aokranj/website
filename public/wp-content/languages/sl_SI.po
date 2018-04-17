@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.9.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-11-16 18:38:56+0000\n"
+"PO-Revision-Date: 2018-01-04 13:33:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,7 +40,7 @@ msgstr "."
 msgid "Update anyway, even though it might break your site?"
 msgstr "Vseeno posodobim, čeprav lahko to privede do nedelovanja spletišča?"
 
-#: wp-includes/wp-db.php:1290
+#: wp-includes/wp-db.php:1283
 msgid "The query only expected one placeholder, but an array of multiple placeholders was sent."
 msgstr "Poizvedba je pričakovala samo en vsebnik, poslan pa je bil seznam večih."
 
@@ -224,7 +224,7 @@ msgstr "Ni tem za prikaz. Poskusite z drugačnim iskanjem."
 msgid "Your theme can display menus in one location. Select which menu you would like to use."
 msgstr "Vaša tema lahko prikazuje meni v eni lokaciji. Izberite kateri meni bi radi uporabili."
 
-#: wp-includes/wp-db.php:1253
+#: wp-includes/wp-db.php:1246
 msgid "Unsupported value type (%s)."
 msgstr "Nepodprt tip vrednosti (%s)."
 
@@ -245,7 +245,7 @@ msgid "%1$s &lsaquo; %2$s &#8212; WordPress"
 msgstr "%1$s &lsaquo; %2$s &#8212; WordPress"
 
 #. translators: 1: number of placeholders, 2: number of arguments passed
-#: wp-includes/wp-db.php:1301
+#: wp-includes/wp-db.php:1294
 msgid "The query does not contain the correct number of placeholders (%1$d) for the number of arguments passed (%2$d)."
 msgstr "Poizvedba ne vsebuje pravilno število vsebnikov (%1$d) za vse podane argumente (%2$d)."
 
@@ -789,7 +789,7 @@ msgstr "Uporabnika ni mogoče dodati na to spletišče."
 
 #. translators: Site admin email change notification email subject. %s: Site
 #. title
-#: wp-includes/functions.php:5770
+#: wp-includes/functions.php:5772
 msgid "[%s] Notice of Admin Email Change"
 msgstr "[%s] Obvestilo o spremembi e-pošte skrbnika"
 
@@ -799,7 +799,7 @@ msgstr "Žeton za strganje je neveljaven. Prosim poskusite znova."
 
 #. translators: Do not translate OLD_EMAIL, NEW_EMAIL, SITENAME, SITEURL: those
 #. are placeholders.
-#: wp-includes/functions.php:5755
+#: wp-includes/functions.php:5757
 msgid ""
 "Hi,\n"
 "\n"
@@ -839,7 +839,7 @@ msgstr "Filtriraj teme (%s)"
 msgid "Search WordPress.org themes"
 msgstr "Išči WordPress.org teme"
 
-#: wp-includes/functions.php:5698
+#: wp-includes/functions.php:5700
 msgid "Only UUID V4 is supported at this time."
 msgstr "Samo UUID V4 je trenutno podprt."
 
@@ -1354,10 +1354,6 @@ msgstr "Prikaži video iz Predstavnostne knjižnice, YouTube, Vimeo ali drugega 
 msgid "Current image: %s"
 msgstr "Aktualna slika: %s"
 
-#: wp-includes/widgets/class-wp-widget-media-image.php:42
-msgid "Image Widget"
-msgstr "Gradnik Slika"
-
 #. translators: %d: widget count
 #: wp-includes/widgets/class-wp-widget-media-image.php:41
 msgid "Image Widget (%d)"
@@ -1502,6 +1498,10 @@ msgstr "Uredi galerijo"
 #: wp-includes/widgets/class-wp-widget-media-audio.php:26
 msgid "Displays an audio player."
 msgstr "Prikaže avdio predvajalnik."
+
+#: wp-includes/widgets/class-wp-widget-media-image.php:42
+msgid "Image Widget"
+msgstr "Gradnik Slike"
 
 #: wp-includes/script-loader.php:770
 msgctxt "plugin"
@@ -1942,7 +1942,7 @@ msgctxt "New site notification email subject"
 msgid "[%1$s] Activate %2$s"
 msgstr "[%1$s] Aktivacija %2$s"
 
-#: wp-includes/widgets.php:1395 wp-includes/widgets.php:1504
+#: wp-includes/widgets.php:1398 wp-includes/widgets.php:1507
 msgid "RSS Error:"
 msgstr "RSS napaka:"
 
@@ -4165,7 +4165,7 @@ msgstr "<strong>NAPAKA</strong>: Neveljavno uporabniško ime, e-naslov ali nepra
 msgid "No logo selected"
 msgstr "Logotip ni izbran"
 
-#: wp-includes/functions.php:5311
+#: wp-includes/functions.php:5313
 msgid "Close dialog"
 msgstr "Zapri okno"
 
@@ -4175,7 +4175,7 @@ msgstr "Izberi logotip"
 
 #. translators: 1: PHP class name, 2: PHP parent class name, 3: version number,
 #. 4: __construct() method
-#: wp-includes/functions.php:3899
+#: wp-includes/functions.php:3901
 msgid "The called constructor method for %1$s in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead."
 msgstr "Klicanje konstruktorja za %1$s v %2$s je <strong>zastarelo</strong> od izdaje %3$s! Uporabite raje %4$s."
 
@@ -4306,11 +4306,11 @@ msgid "https://codex.wordpress.org/Debugging_a_WordPress_Network"
 msgstr "https://codex.wordpress.org/Debugging_a_WordPress_Network"
 
 #. translators: %s: Codex URL
-#: wp-includes/functions.php:4141
+#: wp-includes/functions.php:4143
 msgid "Please see <a href=\"%s\">Debugging in WordPress</a> for more information."
 msgstr "Prosimo preberite <a href=\"%s\">Debugging in WordPress</a> za več informacij."
 
-#: wp-includes/functions.php:4142
+#: wp-includes/functions.php:4144
 msgid "https://codex.wordpress.org/Debugging_in_WordPress"
 msgstr "https://codex.wordpress.org/Debugging_in_WordPress"
 
@@ -4528,7 +4528,7 @@ msgstr "To pomeni, da smo izgubili povezavo s podatkovno zbirko na %s. To lahko 
 msgid "Are you sure that the database server is not under particularly heavy load?"
 msgstr "Ali ste prepričani, da podatkovna zbirka na strežniku ni preobremenjena?"
 
-#: wp-includes/wp-db.php:1596 wp-includes/wp-db.php:1746
+#: wp-includes/wp-db.php:1589 wp-includes/wp-db.php:1746
 msgid "Are you sure that the database server is running?"
 msgstr "Ali ste prepričani, da strežnik podatkovne zbirke dela?"
 
@@ -4537,48 +4537,48 @@ msgid "Error reconnecting to the database"
 msgstr "Napaka pri ponovnem vzpostavljanju povezave s podatkovno zbirko"
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1601 wp-includes/wp-db.php:1752
+#: wp-includes/wp-db.php:1594 wp-includes/wp-db.php:1752
 msgid "If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Če niste prepričani kaj ti izrazi pomenijo, kontaktirajte vašega gostitelja. Če potrebujete dodatno pomoč, se lahko vedno obrnete na <a href=\"%s\">WordPress forum</a>."
 
-#: wp-includes/wp-db.php:1595
+#: wp-includes/wp-db.php:1588
 msgid "Are you sure that you have typed the correct hostname?"
 msgstr "Ali ste prepričani, da ste vnesli pravilno ime strežnika?"
 
-#: wp-includes/wp-db.php:1594
+#: wp-includes/wp-db.php:1587
 msgid "Are you sure you have the correct username and password?"
 msgstr "Ali ste prepričani, da imate pravilno uporabniško ime in geslo?"
 
 #. translators: 1: wp-config.php. 2: database host
-#: wp-includes/wp-db.php:1588
+#: wp-includes/wp-db.php:1581
 msgid "This either means that the username and password information in your %1$s file is incorrect or we can&#8217;t contact the database server at %2$s. This could mean your host&#8217;s database server is down."
 msgstr "To lahko pomeni, da sta uporabniško ime in geslo v vaši %1$s datoteki nepravilna ali da ne moremo kontaktirati podatkovne zbirke na %2$s. To lahko pomeni, da je podatkovna zbirka na vašem stežniku nedosegljiva."
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1068
+#: wp-includes/wp-db.php:1061
 msgid "If you don&#8217;t know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Če ne znate ustvariti podatkovne zbirke, <strong>kontaktirajte vašega gostitelja</strong>. Če nič ne uspe, se obrnite na <a href=\"%s\">WordPress forum</a>."
 
-#: wp-includes/wp-db.php:1049
+#: wp-includes/wp-db.php:1042
 msgid "Are you sure it exists?"
 msgstr "Ali ste prepričani, da obstaja?"
 
-#: wp-includes/wp-db.php:1040
+#: wp-includes/wp-db.php:1033
 msgid "Can&#8217;t select database"
 msgstr "Podatkovne zbirke ni mogoče izbrati"
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1044
+#: wp-includes/wp-db.php:1037
 msgid "We were able to connect to the database server (which means your username and password is okay) but not able to select the %s database."
 msgstr "Vzpostavili smo povezavo s podatkovno zbirko (kar pomeni, da sta vaše uporabniško ime in geslo pravilna), vendar nismo uspeli izbrati podatkovne zbirke %s."
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1060
+#: wp-includes/wp-db.php:1053
 msgid "On some systems the name of your database is prefixed with your username, so it would be like <code>username_%1$s</code>. Could that be the problem?"
 msgstr "Na nekaterih sistemih ime podatkovne zbirke vsebuje prefiks z vašim uporabniškim imenom, kar lahko izgleda tako: <code>uporabniškoime_%1$s</code>. Ali je lahko to problem?"
 
 #. translators: 1: database user, 2: database name
-#: wp-includes/wp-db.php:1053
+#: wp-includes/wp-db.php:1046
 msgid "Does the user %1$s have permission to use the %2$s database?"
 msgstr "Ali ima uporabnik %1$s pravice do uporabe podatkovne zbirke %2$s?"
 
@@ -5102,7 +5102,7 @@ msgstr "Vaša povezave za ponastavitev gesla je neveljavna. Prosim, zahtevajte n
 msgid "Your password reset link has expired. Please request a new link below."
 msgstr "Vaša povezave za ponastavitev gesla je potekla. Prosim, zahtevajte novo povezavo spodaj."
 
-#: wp-includes/wp-db.php:1386 wp-includes/wp-db.php:1403
+#: wp-includes/wp-db.php:1379 wp-includes/wp-db.php:1396
 msgid "WordPress database error:"
 msgstr "WordPress napaka podatkovne zbirke:"
 
@@ -5175,7 +5175,7 @@ msgid "Reorder mode enabled"
 msgstr "Način za preurejanje je omogočen"
 
 #. translators: 1: PHP class name, 2: version number, 3: __construct() method
-#: wp-includes/functions.php:3903
+#: wp-includes/functions.php:3905
 msgid "The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "Klicana metoda konstruktorja za %1$s je <strong>zastarela</strong> od izdaje %2$s! Raje uporabite %3$s."
 
@@ -5951,7 +5951,7 @@ msgstr "Izraz s tem imenom in ključem že obstaja v tej taxonomiji."
 
 #. translators: %s: database access abstraction class, usually wpdb or a class
 #. extending wpdb
-#: wp-includes/wp-db.php:1117
+#: wp-includes/wp-db.php:1110
 msgid "%s must set a database connection for use with escaping."
 msgstr "%s mora nastaviti povezavo s podatkovno zbirko za uporabo ubežnih znakov."
 
@@ -7008,7 +7008,7 @@ msgstr "Dodaj v video seznam predvajanja"
 msgid "Invalid menu ID."
 msgstr "Neveljaven ID menija."
 
-#: wp-includes/wp-db.php:1237
+#: wp-includes/wp-db.php:1230
 msgid "The query argument of %s must have a placeholder."
 msgstr "Argument poizvedbe %s mora imeti \"placeholder\"."
 
@@ -7096,7 +7096,7 @@ msgstr "Vstavi sliko"
 
 #: wp-includes/admin-bar.php:164 wp-includes/update.php:153
 #: wp-includes/update.php:345 wp-includes/update.php:523
-#: wp-includes/wp-db.php:1069 wp-includes/wp-db.php:1602
+#: wp-includes/wp-db.php:1062 wp-includes/wp-db.php:1595
 #: wp-includes/wp-db.php:1753 wp-login.php:882
 msgid "https://wordpress.org/support/"
 msgstr "https://wordpress.org/support/"
@@ -7295,22 +7295,22 @@ msgstr "Finsko"
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
-#: wp-includes/general-template.php:3908
+#: wp-includes/general-template.php:3910
 msgctxt "admin color scheme"
 msgid "Sunrise"
 msgstr "Sončni vzhod"
 
-#: wp-includes/general-template.php:3914
+#: wp-includes/general-template.php:3916
 msgctxt "admin color scheme"
 msgid "Ectoplasm"
 msgstr "Ektoplazma"
 
-#: wp-includes/general-template.php:3920
+#: wp-includes/general-template.php:3922
 msgctxt "admin color scheme"
 msgid "Ocean"
 msgstr "Ocean"
 
-#: wp-includes/general-template.php:3926
+#: wp-includes/general-template.php:3928
 msgctxt "admin color scheme"
 msgid "Coffee"
 msgstr "Kava"
@@ -7367,17 +7367,17 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
 
-#: wp-includes/general-template.php:3879
+#: wp-includes/general-template.php:3881
 msgctxt "admin color scheme"
 msgid "Default"
 msgstr "Privzeta"
 
-#: wp-includes/general-template.php:3890
+#: wp-includes/general-template.php:3892
 msgctxt "admin color scheme"
 msgid "Light"
 msgstr "Svetla"
 
-#: wp-includes/general-template.php:3902
+#: wp-includes/general-template.php:3904
 msgctxt "admin color scheme"
 msgid "Midnight"
 msgstr "Polnoč"
@@ -7588,7 +7588,7 @@ msgstr "%1$s %2$s, %3$s @ %4$s:%5$s"
 msgid "The site you were looking for, %s, does not exist, but you can create it now!"
 msgstr "Stran, ki ste jo iskali, %s, ne obstaja. Lahko pa jo ustvarite sedaj!"
 
-#: wp-includes/functions.php:5328
+#: wp-includes/functions.php:5330
 msgid "The login page will open in a new window. After logging in you can close it and return to this page."
 msgstr "Stran za prijavo se bo odprla v novem oknu. Po prijavi ga lahko zaprete in se vrnete na to stran."
 
@@ -7613,7 +7613,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Išči"
 
-#: wp-includes/functions.php:5326 wp-includes/script-loader.php:568
+#: wp-includes/functions.php:5328 wp-includes/script-loader.php:568
 msgid "Session expired"
 msgstr "Seja je potekla"
 
@@ -8622,16 +8622,16 @@ msgstr "Dokumentacija"
 msgid "Support Forums"
 msgstr "Forumi za podporo"
 
-#: wp-includes/formatting.php:3361 wp-includes/general-template.php:3798
+#: wp-includes/formatting.php:3361 wp-includes/general-template.php:3800
 msgid "&hellip;"
 msgstr "&hellip;"
 
-#: wp-includes/functions.php:3772
+#: wp-includes/functions.php:3774
 msgid "Database Error"
 msgstr "Napaka podatkovne zbirke"
 
-#: wp-includes/functions.php:3776 wp-includes/ms-load.php:455
-#: wp-includes/wp-db.php:1584
+#: wp-includes/functions.php:3778 wp-includes/ms-load.php:455
+#: wp-includes/wp-db.php:1577
 msgid "Error establishing a database connection"
 msgstr "Napaka pri vzpostavljanju povezave s podatkovno zbirko"
 
@@ -8685,7 +8685,7 @@ msgstr "Ta datoteka ni slika. Poskusite drugo datoteko."
 msgid "This is larger than the maximum size. Please try another."
 msgstr "Ta datoteka je večja od največje možne velikosti. Poskusite drugo datoteko."
 
-#: wp-includes/general-template.php:3896
+#: wp-includes/general-template.php:3898
 msgctxt "admin color scheme"
 msgid "Blue"
 msgstr "Modra"
@@ -8811,12 +8811,12 @@ msgstr "Uporabnik je že aktiven."
 
 #. translators: Developer debugging message. 1: PHP function name, 2:
 #. Explanatory message, 3: Version information message
-#: wp-includes/functions.php:4145
+#: wp-includes/functions.php:4147
 msgid "%1$s was called <strong>incorrectly</strong>. %2$s %3$s"
 msgstr "%1$s je bil zahtevan <strong>nepravilno</strong>. %2$s %3$s"
 
 #. translators: %s: version number
-#: wp-includes/functions.php:4138
+#: wp-includes/functions.php:4140
 msgid "(This message was added in version %s.)"
 msgstr "(To sporočilo je bilo dodano v izdaji %s.)"
 
@@ -9744,12 +9744,12 @@ msgstr "Izdaja programske opreme"
 
 #. translators: 1: Database error message, 2: SQL query, 3: Name of the calling
 #. function
-#: wp-includes/wp-db.php:1370
+#: wp-includes/wp-db.php:1363
 msgid "WordPress database error %1$s for query %2$s made by %3$s"
 msgstr "Napaka v WordPress podatkovni zbirki %1$s za poizvedbo %2$s, ki jo je povzročil/a %3$s"
 
 #. translators: 1: Database error message, 2: SQL query
-#: wp-includes/wp-db.php:1373
+#: wp-includes/wp-db.php:1366
 msgid "WordPress database error %1$s for query %2$s"
 msgstr "Napaka %1$s v WordPress podatkovni zbirki za poizvedbo %2$s"
 
@@ -9818,11 +9818,11 @@ msgstr "Oprostite, stran ne obstaja."
 msgid "%1$s %2$d"
 msgstr "%1$s %2$d"
 
-#: wp-includes/functions.php:2735
+#: wp-includes/functions.php:2737
 msgid "&laquo; Back"
 msgstr "&laquo; Nazaj"
 
-#: wp-includes/general-template.php:3712
+#: wp-includes/general-template.php:3714
 msgid "&laquo; Previous"
 msgstr "&laquo; Nazaj"
 
@@ -9925,7 +9925,7 @@ msgstr "Sredina"
 msgid "New document"
 msgstr "Nov dokument"
 
-#: wp-includes/general-template.php:3713
+#: wp-includes/general-template.php:3715
 msgid "Next &raquo;"
 msgstr "Naprej &raquo;"
 
@@ -9979,7 +9979,7 @@ msgstr "Zgoraj levo"
 msgid "Top Right"
 msgstr "Zgoraj desno"
 
-#: wp-includes/functions.php:4713 wp-includes/functions.php:4717
+#: wp-includes/functions.php:4715 wp-includes/functions.php:4719
 msgid "UTC"
 msgstr "UTC"
 
@@ -9987,7 +9987,7 @@ msgstr "UTC"
 msgid "Underline"
 msgstr "Podčrtano"
 
-#: wp-includes/functions.php:2747 wp-load.php:92
+#: wp-includes/functions.php:2749 wp-load.php:92
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; Napaka"
 
@@ -10116,7 +10116,7 @@ msgstr "Naslednja stran"
 msgid "Previous page"
 msgstr "Prejšnja stran"
 
-#: wp-includes/functions.php:5327 wp-includes/user.php:285
+#: wp-includes/functions.php:5329 wp-includes/user.php:285
 msgid "Please log in again."
 msgstr "Ponovno se prijavite."
 
@@ -10128,7 +10128,7 @@ msgstr "AIM"
 msgid "Jabber / Google Talk"
 msgstr "Jabber / Google Talk"
 
-#: wp-includes/functions.php:2610 wp-includes/ms-functions.php:2047
+#: wp-includes/functions.php:2612 wp-includes/ms-functions.php:2047
 msgid "Please try again."
 msgstr "Poskusite znova."
 
@@ -10161,7 +10161,7 @@ msgstr "Prikaži hierarhijo"
 msgid "Number of posts to show:"
 msgstr "Število prispevkov za prikaz:"
 
-#: wp-includes/widgets.php:1426
+#: wp-includes/widgets.php:1429
 msgid "Untitled"
 msgstr "Neimenovan"
 
@@ -10386,11 +10386,11 @@ msgstr "Komentarji na %s"
 msgid "Comment on %1$s by %2$s"
 msgstr "Komentar na %1$s od %2$s"
 
-#: wp-includes/functions.php:4668
+#: wp-includes/functions.php:4670
 msgid "Select a city"
 msgstr "Izberite mesto"
 
-#: wp-includes/widgets.php:1510
+#: wp-includes/widgets.php:1513
 msgid "Enter the RSS feed URL here:"
 msgstr "Vnesite URL vira RSS tukaj:"
 
@@ -10664,23 +10664,23 @@ msgstr "Samodejno dodaj odstavke"
 msgid "Recent Posts"
 msgstr "Najnovejši prispevki"
 
-#: wp-includes/widgets.php:1513
+#: wp-includes/widgets.php:1516
 msgid "Give the feed a title (optional):"
 msgstr "Poimenujte vir (neobvezno):"
 
-#: wp-includes/widgets.php:1516
+#: wp-includes/widgets.php:1519
 msgid "How many items would you like to display?"
 msgstr "Koliko elementov želite prikazati?"
 
-#: wp-includes/widgets.php:1526
+#: wp-includes/widgets.php:1529
 msgid "Display item content?"
 msgstr "Naj se prikaže vsebina elementa?"
 
-#: wp-includes/widgets.php:1529
+#: wp-includes/widgets.php:1532
 msgid "Display item author if available?"
 msgstr "Naj se prikaže avtor elementa, če je na voljo?"
 
-#: wp-includes/widgets.php:1532
+#: wp-includes/widgets.php:1535
 msgid "Display item date?"
 msgstr "Naj se prikaže datum elementa?"
 
@@ -10734,16 +10734,16 @@ msgid "Could not write file %s"
 msgstr "V datoteko %s ni bilo mogoče pisati"
 
 #. translators: %s: site name
-#: wp-includes/functions.php:2594
+#: wp-includes/functions.php:2596
 msgid "You are attempting to log out of %s"
 msgstr "Odjavljate se iz %s"
 
 #. translators: %s: logout URL
-#: wp-includes/functions.php:2601
+#: wp-includes/functions.php:2603
 msgid "Do you really want to <a href=\"%s\">log out</a>?"
 msgstr "Ste prepričani, da se želite <a href='%s'>odjaviti</a>?"
 
-#: wp-includes/functions.php:4721
+#: wp-includes/functions.php:4723
 msgid "Manual Offsets"
 msgstr "Ročni odmiki"
 
@@ -10979,7 +10979,7 @@ msgstr "Uporabnika ni mogoče ustvariti brez prijavnega imena."
 msgid "Yahoo IM"
 msgstr "Yahoo NS"
 
-#: wp-includes/rss.php:917 wp-includes/widgets.php:1410
+#: wp-includes/rss.php:917 wp-includes/widgets.php:1413
 msgid "An error has occurred, which probably means the feed is down. Try again later."
 msgstr "Prišlo je do napake, kar najverjetneje pomeni, da ste izgubili povezavo z virom. Poskusite ponovno pozneje."
 
@@ -11229,27 +11229,27 @@ msgstr "Revizija"
 #. translators: 1: PHP file name, 2: version number, 3: alternative file name
 #. translators: 1: WordPress hook name, 2: version number, 3: alternative hook
 #. name
-#: wp-includes/functions.php:3837 wp-includes/functions.php:3965
-#: wp-includes/functions.php:4088
+#: wp-includes/functions.php:3839 wp-includes/functions.php:3967
+#: wp-includes/functions.php:4090
 msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "%1$s je od izdaje %2$s <strong>zastarel</strong>! Uporabite raje %3$s."
 
 #. translators: 1: PHP function name, 2: version number
 #. translators: 1: PHP file name, 2: version number
 #. translators: 1: WordPress hook name, 2: version number
-#: wp-includes/functions.php:3840 wp-includes/functions.php:3968
-#: wp-includes/functions.php:4091
+#: wp-includes/functions.php:3842 wp-includes/functions.php:3970
+#: wp-includes/functions.php:4093
 msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "%1$s je od izdaje %2$s <strong>zastarel</strong>, na razpolago pa ni nadomestne izdaje."
 
 #. translators: 1: PHP function name, 2: version number, 3: optional message
 #. regarding the change
-#: wp-includes/functions.php:4029
+#: wp-includes/functions.php:4031
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
 msgstr "%1$s je bil klican z argumentom, ki je <strong>zastarel</strong> od izdaje %2$s! %3$s"
 
 #. translators: 1: PHP function name, 2: version number
-#: wp-includes/functions.php:4032
+#: wp-includes/functions.php:4034
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "%1$s je bil klican z argumentom, ki je <strong>zastarel</strong> od izdaje %2$s, na razpolago pa ni nadomestne izdaje."
 
@@ -11257,7 +11257,7 @@ msgstr "%1$s je bil klican z argumentom, ki je <strong>zastarel</strong> od izda
 msgid "new WordPress Loop"
 msgstr "novi WordPress Loop"
 
-#: wp-includes/functions.php:2615
+#: wp-includes/functions.php:2617
 msgid "WordPress Failure Notice"
 msgstr "WordPress obvestilo napake"
 
@@ -11432,7 +11432,7 @@ msgid "(Edit)"
 msgstr "(Uredi)"
 
 #: wp-includes/admin-bar.php:830 wp-includes/class-wp-customize-widgets.php:412
-#: wp-includes/functions.php:3713
+#: wp-includes/functions.php:3715
 msgid "Widgets"
 msgstr "Gradniki"
 
@@ -11621,7 +11621,7 @@ msgstr "Ni komentarjev"
 msgid "1 Comment"
 msgstr "1 komentar"
 
-#: wp-includes/category-template.php:1139
+#: wp-includes/category-template.php:1131
 msgid "Tags: "
 msgstr "Oznake: "
 
@@ -11948,7 +11948,7 @@ msgstr "URL"
 msgid "Medium"
 msgstr "Srednje"
 
-#: wp-includes/deprecated.php:3130 wp-includes/functions.php:2605
+#: wp-includes/deprecated.php:3130 wp-includes/functions.php:2607
 msgid "Are you sure you want to do this?"
 msgstr "Ali ste prepričani, da želite to storiti?"
 

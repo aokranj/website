@@ -1,6 +1,7 @@
 .idea
 *.code-workspace
 files
+duplicator
 node_modules
 /config/wp-config.php
 /public/wp-content/uploads/*
