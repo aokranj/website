@@ -1,0 +1,65 @@
+
+.wrapper {
+  padding: 4rem 0;
+  .container {
+    max-width: 720px;
+  }
+}
+
+.entry-thumbnail {
+  margin: 0 0 2rem 0;
+}
+
+.entry-header {
+  margin: 0 0 1rem 0;
+  a {
+    color: $headings-color;
+  }
+}
+
+.entry-title {
+  margin: 0 0 1rem 0;
+}
+
+.entry-subtitle {
+  margin: -.5rem 0 2rem 0;
+  font-weight: $font-weight-normal;
+  text-transform: uppercase;
+  font-size: $font-size-sm;
+  letter-spacing: 1px;
+}
+
+.entry-meta {
+  margin: 0 0 1rem 0;
+  font-style: italic;
+  font-size: $font-size-sm;
+}
+
+.entry-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.entry-footer {
+  span {
+    padding-right: 10px;
+  }
+}
+
+
+.blog,
+.archive,
+.search {
+  .hentry:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+.single,
+.page {
+  .entry-header {
+    margin: 0 0 3rem 0;
+  }
+}

@@ -1,0 +1,1493 @@
+# Copyright (C) 2017 Bojan Hribernik
+# This file is distributed under the same license as the Dental Juniorr package.
+msgid ""
+msgstr ""
+"Project-Id-Version: AO Kranj 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dental\n"
+"POT-Creation-Date: 2018-04-17 18:07+0200\n"
+"PO-Revision-Date: 2018-04-17 18:07+0200\n"
+"Last-Translator: \n"
+"Language-Team: AO Kranj <info@aokranj.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:21
+msgid "Ups! Na tem mestu ni bilo mogoče najti ničesar."
+msgstr "Page not found."
+
+#: 404.php:28
+msgid "Morda lahko poskusite z iskalnikom?"
+msgstr "Maybe you can try to search?"
+
+#: author.php:26
+msgid "O avtorju:"
+msgstr "About author:"
+
+#: author.php:34
+msgid "Spletna stran"
+msgstr "Website"
+
+#: author.php:42
+msgid "Profil"
+msgstr "Profile"
+
+#: author.php:47
+msgid "Objave uporabnika"
+msgstr "Posts"
+
+#: author.php:60
+msgid "v"
+msgstr "in"
+
+#: header.php:45
+msgid "Preskoči na vsebino"
+msgstr "Skip to content"
+
+#: inc/aokranj.php:64
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: inc/aokranj.php:121
+msgid "Sidebar"
+msgstr ""
+
+#: inc/aokranj.php:130
+msgid "Footer Informacije"
+msgstr "Footer Information"
+
+#: inc/aokranj.php:139
+msgid "Footer Navigacija"
+msgstr "Footer Navigation"
+
+#: inc/aokranj.php:204
+msgid "Preberi več &gt;"
+msgstr "Read More"
+
+#: inc/helpers.php:65
+msgid "Navigacija"
+msgstr "Navigation"
+
+#: inc/helpers.php:71
+msgid "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+msgstr "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+
+#: inc/helpers.php:77
+msgid "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+msgstr "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+
+#: inc/helpers.php:98
+#, php-format
+msgid "Objavljeno %s"
+msgstr "Published %s"
+
+#: inc/helpers.php:102
+#, php-format
+msgid "objavil %s"
+msgstr "author %s"
+
+#: inc/helpers.php:128
+#, php-format
+msgid "Uredi %s"
+msgstr "Edit %s"
+
+#: search.php:22
+#, php-format
+msgid "Rezultati iskanja za: %s"
+msgstr "Search results for: %s"
+
+#~ msgid "Dovoljenja"
+#~ msgstr "Accreditations"
+
+#~ msgid "Has Featured Image"
+#~ msgstr "Has Featured Image"
+
+#~ msgid "Priporočila zdravnikov"
+#~ msgstr "Doctors' Recommendations"
+
+#~ msgid "Priporočilo zdravnika"
+#~ msgstr "Doctor Recommendation"
+
+#~ msgid "Izkušnje otrok"
+#~ msgstr "Child Testimonials"
+
+#~ msgid "Izkušnja otroka"
+#~ msgstr "Child Testimonial"
+
+#~ msgid "Izkušnje staršev"
+#~ msgstr "Parent Testimonials"
+
+#~ msgid "Izkušnja staršev"
+#~ msgstr "Parent Testimonial"
+
+#~ msgid "Pogosta vprašanja"
+#~ msgstr "FAQ"
+
+#~ msgid "Pogosto vprašanje"
+#~ msgstr "FAQ"
+
+#~ msgid "Dnevnik"
+#~ msgstr "Log"
+
+#~ msgid "Oprostite, napaka pri nonce validaciji."
+#~ msgstr "Nonce validation error."
+
+#~ msgid "Prišlo je do napake."
+#~ msgstr "Application Error."
+
+#~ msgid "Na email boste prejeli navodila za prenos brezplačnega vodnika."
+#~ msgstr "You will receive email with download instructions."
+
+#~ msgid "Mlečni zob"
+#~ msgstr "Baby tooth"
+
+#~ msgid "Enkratno plačilo"
+#~ msgstr "Full payment"
+
+#~ msgid "3 obroki"
+#~ msgstr "3 part payment"
+
+#~ msgid "6 obrokov"
+#~ msgstr "6 part payment"
+
+#~ msgid "12 obrokov"
+#~ msgstr "12 part payment"
+
+#~ msgid "24 obrokov"
+#~ msgstr "24 part payment"
+
+#~ msgid "Na email boste prejeli potrdilo o svetovanju."
+#~ msgstr "You will receive email confirmation about consultancy."
+
+#~ msgid "Na email boste prejeli navodila za prenos vzorčne pogodbe."
+#~ msgstr "You will receive email with download instructions."
+
+#~ msgid "Širimo možnosti shranjevanja"
+#~ msgstr "Expanding the banking possibilities"
+
+#~ msgid ""
+#~ "V podjetju Biobanka že od leta 2008 uspešno izvajamo storitev "
+#~ "shranjevanja matičnih celic iz popkovnične krvi in popkovnice. Zaupa nam "
+#~ "že več kot 4000 slovenskih staršev, ki so se odločile, da bodo imeli "
+#~ "njihovi otroci možnost učinkovitega zdravljenja nekaterih težjih poškodb "
+#~ "ali bolezni s celičnimi terapijami. Zavedamo se, da za mnoge odvzem "
+#~ "matičnih celic ob rojstvu otroka ni bil mogoč, zato smo se v letu 2015 "
+#~ "odločili, da ponudimo možnost shranjevanja matičnih celic tudi iz mlečnih "
+#~ "in modrostnih zob."
+#~ msgstr ""
+#~ "Biobanka has been successfully processing and banking cord blood and cord "
+#~ "tissue stem cells since 2008. We currently bank more than 4000 stem cells "
+#~ "samples from families that have decided to give their children the option "
+#~ "of effective cell treatment for some of the most severe diseases and "
+#~ "injuries. We are aware of the fact that for a lot of families extraction "
+#~ "of the stem cells at birth was not available, that’s why we have decided "
+#~ "in 2015 to offer the option of stem cell extraction and banking from baby "
+#~ "and wisdom teeth."
+
+#~ msgid "Direktor dr. Marko Strbad, univ. dipl. mikrobiol."
+#~ msgstr "Company director Dr. Marko Strbad, Microbiology. B.A."
+
+#~ msgid "Več o ekipi in o laboratoriju"
+#~ msgstr "More on the team and the laboratory"
+
+#~ msgid "Ključni partnerji"
+#~ msgstr "World partners"
+
+#~ msgid ""
+#~ "Storitev opravljamo v podjetju Biobanka, skupaj s certificiranimi "
+#~ "donorskimi centri v Sloveniji. Celoten postopek poteka po licenci "
+#~ "StemSaveTM - vodilnega svetovnega podjetja s področja shranjevanja in "
+#~ "obdelave dentalnih matičnih celic. Dental je tudi partner švicarskega "
+#~ "inštituta MBSI, vodilnega na področju biobančništva."
+#~ msgstr ""
+#~ "We offer our services in collaboration with certified donor centers in "
+#~ "Slovenia and the whole banking process is done in accordance with the "
+#~ "StemSaveTM license – the leading company in the area of dental stem cell "
+#~ "processing and banking."
+
+#~ msgid "Dovoljenja in certifikati"
+#~ msgstr "Accreditations and certificates"
+
+#~ msgid ""
+#~ "Storitev opravljamo skupaj s certificiranimi donorskimi centri v "
+#~ "sloveniji, celoten postopek pa poteka po licenci StemSaveTM - vodilnega "
+#~ "svetovnega podjetja s področja shranjevanja in obdelave. Imamo "
+#~ "vzpostavljen sistem kakovosti, ki izpolnjuje zahteve Nacionalne in "
+#~ "Evropske zakonodaje, hkrati pa sledi številnim mednarodnim standardom; "
+#~ "FACT-NetCord, JAICE, FDA, ASI."
+#~ msgstr ""
+#~ "We offer our services in collaboration with certified donor centers in "
+#~ "Slovenia and the whole banking process is done in accordance with the "
+#~ "StemSaveTM license – the leading company in the area of dental stem cell "
+#~ "processing and baking."
+
+#~ msgid "DOVOLJENJE AGENCIJE JAZMP"
+#~ msgstr "JAZMP Agency permission"
+
+#~ msgid "POTRJENO S STRANI ASI"
+#~ msgstr "ASI confirmed"
+
+#~ msgid "STEMSAVE RELIABLE PARTNER CERTIFIKAT"
+#~ msgstr "StemSave Reliable Partner Certificate"
+
+#~ msgid "FDA REGISTRIRANO"
+#~ msgstr "FDA registered"
+
+#~ msgid "AABB CERTIFIKAT"
+#~ msgstr "AABB certificate"
+
+#~ msgid "SIQ - za ISO 9001:2008"
+#~ msgstr "SIQ - for ISO 9001:2008"
+
+#~ msgid ""
+#~ "<b>Brezplačno svetovanje</b> vsak delovnik od 8h do 16h.<br />Z veseljem "
+#~ "vam bomo pomagali."
+#~ msgstr "FREE CONSULTANCY EVERY WEEK DAY BETWEEN 8AM AND 4PM"
+
+#~ msgid "Ni rezultatov"
+#~ msgstr "No results"
+
+#~ msgid ""
+#~ "Ste pripravljeni na objavo prvega prispevka? <a href=\"%1$s\">Začnite "
+#~ "tukaj</a>."
+#~ msgstr ""
+#~ "Ste pripravljeni na objavo prvega prispevka? <a href=\"%1$s\">Začnite "
+#~ "tukaj</a>."
+
+#~ msgid "Ni rezultatov iskanja. Poskusite z drugimi ključnimi besedami."
+#~ msgstr "No results. Try using different keywords."
+
+#~ msgid "Stran ne obstaja. Morda lahko poskusite z iskalnikom?"
+#~ msgstr "Page does not exist. Maybe try search?"
+
+#~ msgid "Strani:"
+#~ msgstr "Pages:"
+
+#~ msgid "Uredi"
+#~ msgstr "Edit"
+
+#~ msgid "Odvzemna mesta - donorski centri"
+#~ msgstr "Collection facilities - donor centers"
+
+#~ msgid ""
+#~ "Celice so uporabne le, če jih odvzame registriran zobozdravnik, s čimer "
+#~ "je vsak zobek evidentiran z vso ustrezno dokumentacijo in ima "
+#~ "zagotovljeno sledljivost (kje se nahaja). V primeru, da zobka ne odvzame "
+#~ "zobozdravnik, pa zakonsko predpisana sledljivost ni zagotovljena, s čimer "
+#~ "je uporabnost zobka vprašljiva. Zobke vaših otrok odvzamejo izučeni "
+#~ "zobozdravniki z licenco za donorski center, kar pomeni, da bo zobek "
+#~ "odstranjen z vso skrbnostjo in na tak način, da celice ohranijo največ "
+#~ "svoje vitalnosti."
+#~ msgstr ""
+#~ "The cells are usable only if collected by a registered dentist who makes "
+#~ "sure to label each tooth with the required documentation and makes it "
+#~ "trackable. If the tooth is not collected by the dentist, its traceability "
+#~ "is not guaranteed and its usability questionable. Your child’s teeth are "
+#~ "collected for a donor center by a qualified and licensed dentist, which "
+#~ "guarantees a safe and gentle removal, making sure the cells preserve "
+#~ "their vitality."
+
+#~ msgid ""
+#~ "Sodelujemo z najboljšimi zobozdravstvenimi ustanovami, registriranimi pri "
+#~ "Javni agenciji za zdravila in medicinske pripomočke, ki opravljajo "
+#~ "dejavnost pridobivanja (odvzem) celic in tkiv za potrebe zdravljenja s "
+#~ "presaditvijo, skladno s slovensko zakonodajo."
+#~ msgstr ""
+#~ "We are collaborating with the best dental institutions registered at The "
+#~ "Agency for Medicinal Products and Medical Devices of the Republic of "
+#~ "Slovenia which carry out collecting stem cells and tissues for "
+#~ "regenerative medicine and treatments in accordance with Slovenian "
+#~ "legislation."
+
+#~ msgid "Simed, Ljubljana"
+#~ msgstr "Simed, Ljubljana"
+
+#~ msgid "SIMED Zobozdravstvo in zdravstvo, d.o.o."
+#~ msgstr "SIMED Zobozdravstvo in zdravstvo, d.o.o."
+
+#~ msgid "Finžgarjeva ulica 4, Ljubljana"
+#~ msgstr "Finžgarjeva ulica 4, Ljubljana"
+
+#~ msgid "1000 Ljubljana"
+#~ msgstr "1000 Ljubljana"
+
+#~ msgid "Telefon: 01 5400 200"
+#~ msgstr "Phone: 01 5400 200"
+
+#~ msgid "E-mail: info@simed.si"
+#~ msgstr "E-mail: info@simed.si"
+
+#~ msgid "Babit, Ljubljana"
+#~ msgstr "Babit, Ljubljana"
+
+#~ msgid "Babit d.o.o., zobozdravstveni center"
+#~ msgstr "Babit d.o.o., zobozdravstveni center"
+
+#~ msgid "Kolezijska 25"
+#~ msgstr "Kolezijska 25"
+
+#~ msgid "Telefon: 01 283 61 70"
+#~ msgstr "Phone: 01 283 61 70"
+
+#~ msgid "E-mail: info@babit.si"
+#~ msgstr "E-mail: info@babit.si"
+
+#~ msgid "Prednosti strokovne odstranitve zobka"
+#~ msgstr "The benefits of professional teeth removal"
+
+#~ msgid "Zagotovljena sledljivost"
+#~ msgstr "Guaranteed traceability"
+
+#~ msgid ""
+#~ "Celice so uporabne le, če jih odvzame registriran zobozdravnik, s čimer "
+#~ "je zobek evidentiran z vso ustrezno dokumentacijo in ima zagotovljeno "
+#~ "sledljivost."
+#~ msgstr ""
+#~ "Stem cells are usable only when collected by a registered dentist "
+#~ "providing all the necessary documentation and traceability."
+
+#~ msgid "Žive celice"
+#~ msgstr "Vital cells"
+
+#~ msgid ""
+#~ "Če zobek odvzame zobozdravnik kmalu po tem, ko se zobek začne majati, le- "
+#~ "ta v sebi vsebuje še veliko matičnih celic. Kadar zobek odpade sam, je "
+#~ "pulpa že mrtva in celice niso uporabne."
+#~ msgstr ""
+#~ "The baby tooth, carefully removed by a dentist shortly after becoming "
+#~ "loose, still contains plenty stem cells. If the tooth falls out by itself "
+#~ "the dental pulp dies and the cells are no longer usable."
+
+#~ msgid "Hitro in brez bolečin"
+#~ msgstr "Quick and painless"
+
+#~ msgid "Odstranitev zobka poteka brez bolečin in zelo hitro."
+#~ msgstr "Baby teeth extraction is quick and completely painless."
+
+#~ msgid "Več o postopku odstranitve zobka"
+#~ msgstr "More on baby teeth removal"
+
+#~ msgid "Zdravstvena anamneza"
+#~ msgstr "Health history questionnaire"
+
+#~ msgid ""
+#~ "Spoštovani, prosimo vas, da odgovorite na spodnja vprašanja v imenu "
+#~ "vašega otroka. Vprašalnik o zdravstveni anemnezi je z zakonom predpisan "
+#~ "dokument. V Biobanki se oproščamo, če so določena vprašanja preveč osebna "
+#~ "ali žaljiva v kateremkoli pogledu. Zaupnost vaših odgovorov je "
+#~ "zagotovljena."
+#~ msgstr ""
+#~ "Please answer the following questions. This questionnaire on maternal "
+#~ "health history is required per our regulations. Biobanka understands that "
+#~ "some questions may be too personal or sensitive and apologizes for the "
+#~ "inconvenience. The data shall be kept strictly confidential."
+
+#~ msgid "Naprej na potrditev"
+#~ msgstr "Continue to confirmation"
+
+#~ msgid "klikni tukaj za nazaj na podatke"
+#~ msgstr "click here to go back"
+
+#~ msgid "Spletno naročilo"
+#~ msgstr "Online Order"
+
+#~ msgid ""
+#~ "Naročilo lahko enostavno oddate preko spletnega obrazca. Izpolnjeno "
+#~ "pogodbo bomo natisnili in vam jo poslali naslednji delovni dan. Prejeto "
+#~ "pogodbo podpišete in jo vrnite v priloženi kuverti na naš naslov."
+#~ msgstr ""
+#~ "You can simply fulfill your order online through our online form. We will "
+#~ "send you a printed copy of your filled out contract the next day. Sign "
+#~ "the received contract and return it to us in the enclosed envelope."
+
+#~ msgid "Naprej na anamnezo"
+#~ msgstr "Continue to health questionnaire"
+
+#~ msgid "Najlepša hvala za naročilo!"
+#~ msgstr "Thank you for the order!"
+
+#~ msgid ""
+#~ "Vaše naročilo je potrjeno. V email nabiralniku vas čakata potrditev "
+#~ "naročila in pogodba, naslednji delovni dan bomo podpisano pogodbo poslali "
+#~ "tudi po pošti."
+#~ msgstr ""
+#~ "Your order has been completed. Check your email for order confirmation "
+#~ "and your contract, and expect a signed copy of your contract the "
+#~ "following working day."
+
+#~ msgid ""
+#~ "Prejeto pogodbo podpišite in vrnite v priloženi kuverti, ki že vsebuje "
+#~ "znamko."
+#~ msgstr ""
+#~ "Sign the received contract and return it to us in the enclosed envelope "
+#~ "that already includes the postage stamp."
+
+#~ msgid "Priporočaj shranjevanje ostalim staršem:"
+#~ msgstr "Recommend banking to other parents:"
+
+#~ msgid "Želite popust?"
+#~ msgstr "Want to receive a discount?"
+
+#~ msgid ""
+#~ "Na že oddano naročilo lahko ta mesec pridobite še dodatnih 10% popusta."
+#~ msgstr ""
+#~ "You can receive an additional 10% discount on your order till the end of "
+#~ "this month."
+
+#~ msgid ""
+#~ "Vse kar morate storiti je, da nas pokličete na spodnjo številko in se "
+#~ "dogovorimo."
+#~ msgstr ""
+#~ "All you need to do is call us on the number bellow and we will make you a "
+#~ "deal."
+
+#~ msgid "Potrditev naročila"
+#~ msgstr "Order confirmation"
+
+#~ msgid ""
+#~ "Spodaj so podatki, ki ste jih izpolnili. Prenesite PDF pogodbo in "
+#~ "preverite, če so zavedeni podatki pravilni."
+#~ msgstr ""
+#~ "Bellow is your filled out information. Download the PDF contract and "
+#~ "check your answers."
+
+#~ msgid "Potrdi naročilo"
+#~ msgstr "Confirm order"
+
+#~ msgid ""
+#~ "Po oddanem naročilu, boste pogodbo dobili preko emaila, naslednji delovni "
+#~ "dan jo bomo podpisano poslali tudi po pošti. Prejeto pogodbo podpišete in "
+#~ "vrnete v priloženi kuverti, ki že vsebuje znamko."
+#~ msgstr ""
+#~ "After you complete the order, you will receive a contract via e-mail and "
+#~ "a signed copy of your contract the following working day to your address. "
+#~ "Sign the received contract and return it to us in the enclosed envelope "
+#~ "that already includes the postage stamp."
+
+#~ msgid ""
+#~ "Za vsa vprašanja smo vam na voljo na telefonski številki <a href=\"tel:"
+#~ "%1$d\">%2$s</a>."
+#~ msgstr ""
+#~ "We are available for any additional information and questions you might "
+#~ "have on our phone number <a href=\"tel:%1$d\">%2$s</a>."
+
+#~ msgid "Oddaš naročilo"
+#~ msgstr "Fill out the order"
+
+#~ msgid "Prejmeš pogodbo"
+#~ msgstr "Receive the contract"
+
+#~ msgid "Vrneš podpisano"
+#~ msgstr "Return a signed copy"
+
+#~ msgid "Začni z naročilom"
+#~ msgstr "Fill out your order"
+
+#~ msgid "vzame samo 5 min časa"
+#~ msgstr "It only takes 5 minutes"
+
+#~ msgid "Zaupa nam že več kot 4000 slovenskih staršev."
+#~ msgstr "We are trusted by over 4,000 Slovenian parents"
+
+#~ msgid "Da"
+#~ msgstr "Yes"
+
+#~ msgid "Ne"
+#~ msgstr "No"
+
+#~ msgid "Skupaj"
+#~ msgstr "Price"
+
+#~ msgid "DDV je vključen v ceno, pristopnina vključena v končno ceno."
+#~ msgstr ""
+#~ "VAT is included in the price, the membership fee is included in the final "
+#~ "price."
+
+#~ msgid "Podatki otroka"
+#~ msgstr "Your child's information"
+
+#~ msgid "EMŠO"
+#~ msgstr "Unique Master Citizen Number"
+
+#~ msgid "Ime"
+#~ msgstr "Name"
+
+#~ msgid "Prosimo vpišite ime."
+#~ msgstr "Please enter name."
+
+#~ msgid "Priimek"
+#~ msgstr "Last name"
+
+#~ msgid "Prosimo vpišite priimek."
+#~ msgstr "Please enter last name."
+
+#~ msgid "Naslov stalnega prebivališča"
+#~ msgstr "Address"
+
+#~ msgid "Prosimo vpišite naslov."
+#~ msgstr "Please enter your address."
+
+#~ msgid "Pošta in kraj"
+#~ msgstr "Postal code and town"
+
+#~ msgid "Prosimo vpišite pošto."
+#~ msgstr "Please enter postal code and town."
+
+#~ msgid "Prosimo vpišite veljaven EMŠO."
+#~ msgstr "Please enter Unique Master Citizen Number."
+
+#~ msgid "Donorski center"
+#~ msgstr "Donor center"
+
+#~ msgid "Dodatne možnosti"
+#~ msgstr "Additional options"
+
+#~ msgid "Imam že shranjene celice pri Biobanki"
+#~ msgstr "I already have stem cells banked in Biobanka"
+
+#~ msgid "popusta"
+#~ msgstr "discount"
+
+#~ msgid "ID koda"
+#~ msgstr "ID number"
+
+#~ msgid "Prosimo vpišite ID kodo."
+#~ msgstr "Please enter ID number."
+
+#~ msgid "V ceno vključeno"
+#~ msgstr "Included in the price"
+
+#~ msgid "Paket za odvzem mlečnega zoba"
+#~ msgstr "Baby tooth removal kit"
+
+#~ msgid "Shranjevanje za dobo začetnih 20 let"
+#~ msgstr "20 year banking"
+
+#~ msgid "Krvni testi"
+#~ msgstr "Blood testing"
+
+#~ msgid "Preverjanje kakovosti shranjenega vzorca"
+#~ msgstr "Sample quality check"
+
+#~ msgid "Shranjevanje v Sloveniji"
+#~ msgstr "Banking in Slovenia"
+
+#~ msgid "Prevoz do bolnišnice v Sloveniji v primeru zdravljenja"
+#~ msgstr "Transportation to a Slovenian hospital in case of treatment"
+
+#~ msgid "Certifikat o shranjevanju"
+#~ msgstr "Banking certificate"
+
+#~ msgid "Dodatne informacije"
+#~ msgstr "Additional information"
+
+#~ msgid ""
+#~ "Po izteku začetnega obdobja 20 let priporočamo podaljšanje shranjevanja. "
+#~ "Predvidena cena bo znašala med 40-60 €/leto. Zob vašega otroka je varno "
+#~ "shranjen v Sloveniji."
+#~ msgstr ""
+#~ "After the initial 20 year banking we recommend prolonging the banking "
+#~ "period. The price for an additional year of banking ranges approximately "
+#~ "between 40 and 60 € per year. You child’s baby tooth will be kept in "
+#~ "Slovenia at all times."
+
+#~ msgid "Prenesi vzorčno PDF pogodbo"
+#~ msgstr "Download a sample PDF contract"
+
+#~ msgid "Podatki zakonitega zastopnika"
+#~ msgstr "Child’s legal guardian information"
+
+#~ msgid "Številka mobilnega telefona"
+#~ msgstr "Cell phone number"
+
+#~ msgid "Email"
+#~ msgstr "E-mail"
+
+#~ msgid "Prosimo vpišite telefon."
+#~ msgstr "Please enter your phone number."
+
+#~ msgid "Prosimo vpišite email."
+#~ msgstr "Please enter your e-mail."
+
+#~ msgid "Izbrani donorski center"
+#~ msgstr "Donor center"
+
+#~ msgid "Dodatno"
+#~ msgstr "Additional options"
+
+#~ msgid "Imam že shranjene celice pri Biobanki."
+#~ msgstr "I already have stem cells banked in Biobanka"
+
+#~ msgid "Shranjevanje za dobo 20 let"
+#~ msgstr "Banking for 20 years"
+
+#~ msgid "Podatki"
+#~ msgstr "Personal informaton"
+
+#~ msgid "Anamneza"
+#~ msgstr "Anamnesis"
+
+#~ msgid "Potrditev"
+#~ msgstr "Confirmation"
+
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+#~ msgid "Telefon (po želji)"
+#~ msgstr "Phone (optional)"
+
+#~ msgid "Vsebina sporočila"
+#~ msgstr "Message"
+
+#~ msgid "Prosimo vpišite sporočilo."
+#~ msgstr "Please enter your message."
+
+#~ msgid "Pošlji sporočilo"
+#~ msgstr "Send message"
+
+#~ msgid "Najugodnejša ponudba"
+#~ msgstr "The best offer"
+
+#~ msgid ""
+#~ "Zavedamo se, da je cena eden izmed ključih dejavnikov pri odločitvi glede "
+#~ "hrambe matičnih celic vašega otroka. Zato smo oblikovali posebno ponudbo, "
+#~ "s katero si starši lažje privoščite to zavarovalno polico."
+#~ msgstr ""
+#~ "We are aware that the pricing is one of the key factors when deciding on "
+#~ "stem cell banking. That is why we have designed a special offer to make "
+#~ "it easier for parents to afford this insurance policy."
+
+#~ msgid "Telefon"
+#~ msgstr "Phone"
+
+#~ msgid "Prenesi pogodbo"
+#~ msgstr "Download a sample PDF contract"
+
+#~ msgid "Zakaj shraniti mlečni zobek?"
+#~ msgstr "Why preserve the baby tooth?"
+
+#~ msgid "Več o matičnih celicah"
+#~ msgstr "More on stem cells"
+
+#~ msgid "Dentalne matične celice"
+#~ msgstr "Dental stem cells"
+
+#~ msgid ""
+#~ "Zobna pulpa v mlečnem zobu vsebuje mlade in vitalne mezenhimske matične "
+#~ "celice, ki so se dokazano sposobne razviti v različna tkiva."
+#~ msgstr ""
+#~ "The baby tooth’s dental pulp contains young and vital mesenchymal stem "
+#~ "cells which are proven to have the ability to form into different tissues."
+
+#~ msgid "mlade"
+#~ msgstr "young"
+
+#~ msgid "nepoškodovane"
+#~ msgstr "undamaged"
+
+#~ msgid "potentne"
+#~ msgstr "potent"
+
+#~ msgid "Kako poteka shranjevanje?"
+#~ msgstr "How does the banking procedure look like"
+
+#~ msgid ""
+#~ "Postopek odstranitve zobka je popolnoma enostaven. Izpolnite prijavo, in "
+#~ "ko dobite paket, se dogovorite z izbranim donorskim centrom za termin "
+#~ "odvzema. S paketom greste do izbranega donorskega centra, kjer bodo "
+#~ "poskrbeli za vse. Po odvzemu nas pokličete in naš kurir bo prevzel paket. "
+#~ "Od te točke počakate le še na potrdilo in certifikat o uspešnem "
+#~ "shranjevanju."
+#~ msgstr ""
+#~ "The procedure of removing the baby tooth is simple. You fill out a form "
+#~ "to receive a kit and then arrange the date of removal with a donor "
+#~ "center. Then you take your kit to the donor center and they take care of "
+#~ "everything. After the removal you call us and we send a courier is sent "
+#~ "to take the kit. Then you wait for confirmation and the certificate of "
+#~ "successful banking."
+
+#~ msgid ""
+#~ "Prijavite se preko enostavnega obrazca in si zagotovite paket za "
+#~ "shranjevanje zobka."
+#~ msgstr "Apply through an online form to receive a banking kit."
+
+#~ msgid ""
+#~ "Izberete si najbližjega zobozdravnika z licenco donorskega centra za "
+#~ "odvzem dentalne pulpe."
+#~ msgstr ""
+#~ "Choose the nearest licensed and registered dentist who will remove the "
+#~ "dental pulp."
+
+#~ msgid "Seznam centrov"
+#~ msgstr "List of dental centers"
+
+#~ msgid ""
+#~ "Ko se zobek začne majati, z otrokom prideta do izbranega zobozdravnika, "
+#~ "ki zobek odstrani."
+#~ msgstr ""
+#~ "When the baby tooth becomes loose, bring your child to your chosen "
+#~ "dentist to remove the tooth."
+
+#~ msgid "Kako poteka odvzem"
+#~ msgstr "Removal process"
+
+#~ msgid ""
+#~ "Takoj po odvzemu nas pokličite. Naš kurir pride po zobek in ga odpelje v "
+#~ "laboratorij."
+#~ msgstr ""
+#~ "Contact us immediately after the removal. We will send our courier to "
+#~ "collect the tooth and take it to the laboratory."
+
+#~ msgid "Prednosti shranjevanja"
+#~ msgstr "Banking benefits"
+
+#~ msgid ""
+#~ "Smo edini v Sloveniji, ki v celoti delujemo z zakonodajo. Celice so "
+#~ "uporabne le, če jih odvzame registriran zobozdravnik, s čimer je zobek "
+#~ "evidentiran z vso ustrezno dokumentacijo in ima zagotovljeno sledljivost "
+#~ "(kje se nahaja). V primeru, da zobka ne odvzame zobozdravnik pa "
+#~ "sledljivost ni zagotovljena, s čimer je uporabnost zobka vprašljiva. "
+#~ "Zobke vaših otrok odvzamejo izučeni zobozdravniki z licenco za donorski "
+#~ "center, kar pomeni, da bo zobek izpuljen z vso skrbnostjo in na tak "
+#~ "način, da celice ohranijo največ njihove vitalnosti."
+#~ msgstr ""
+#~ "We are the only bank in Slovenia that operates 100% in accordance with "
+#~ "the legislation. Your child’s baby teeth are removed by qualified and "
+#~ "licensed dentist with the outmost care, making sure the cells preserve "
+#~ "the highest level of vitality. A correct removal process in a donor "
+#~ "center is the only way to make sure that the cells will remain usable in "
+#~ "case of treatment."
+
+#~ msgid "Zakaj izbrati Dental?"
+#~ msgstr "Why choose us?"
+
+#~ msgid ""
+#~ "Ker smo slovenski laboratorij, vam lahko zagotovimo najhitrejši transport "
+#~ "in zamrznitev zobka. Vaš zobek bo varno shranjen v slovenskem "
+#~ "laboratoriju, ki deluje po GMP standardih in izpolnjuje vse najvišje "
+#~ "standarde."
+#~ msgstr ""
+#~ "Because our laboratory is located in Slovenia, we can ensure the faster "
+#~ "transport and cryopreservation of the baby tooth."
+
+#~ msgid "Najkrajši transportni čas"
+#~ msgstr "Shortest transport time"
+
+#~ msgid ""
+#~ "Zaradi lokacije laboratorija v Sloveniji zagotavljamo najkrajši čas "
+#~ "transporta, s pa tem celice ohranijo največ njihove vitalnosti."
+#~ msgstr ""
+#~ "Because our laboratory is located in Slovenia we can guarantee the "
+#~ "shortest time of transport, ensuring the stem cells to preserve the "
+#~ "highest level of vitality."
+
+#~ msgid "Edini slovenski laboratorij"
+#~ msgstr "The only slovenian laboratory"
+
+#~ msgid ""
+#~ "Smo edini ponudnik, ki vam omogoča obdelavo in shranjevanje matičnih "
+#~ "celic, ter pripravo celic na zdravljenje doma v Sloveniji."
+#~ msgstr ""
+#~ "We are the only bank that ensures processing and banking of the stem "
+#~ "cells and the preparation of cells for treatment here in Slovenia."
+
+#~ msgid "Oseben pristop"
+#~ msgstr "Personal touch"
+
+#~ msgid ""
+#~ "Neposreden dostop do strokovnjakov, ki dejansko izvajajo storitev. "
+#~ "Laboratorij lahko kadarkoli obiščete in se prepričate o strokovnosti."
+#~ msgstr ""
+#~ "You have direct access to our professional involved in the process. You "
+#~ "can visit our laboratory anytime and make sure of our proficiency."
+
+#~ msgid "Najugodnejša <br />ponudba"
+#~ msgstr "The best offer"
+
+#~ msgid "preveri ponudbo"
+#~ msgstr "More"
+
+#~ msgid ""
+#~ "Shranjevanje matičnih celic je pomembna odločitev vaše družine. Misija "
+#~ "našega podjetja je omogočiti kakovostno in dostopno shranjevanje matičnih "
+#~ "celic vsakemu posamezniku. StemSave je vodilno podjetje na področju "
+#~ "shranjevanja zobne pulpe v ZDA. Njihova patentirana tehnologija je edina, "
+#~ "ki je odobrena iz strani AAOMS (The American Association of Oral and "
+#~ "Maxillofacial Surgeons). Ker nam je najpomembnejše, da ponudimo "
+#~ "kakovostno storitev, uporabljamo StemSave-ovo patentirano tehnologijo "
+#~ "priprave in shranjevanja zobne pulpe vaših otrok."
+#~ msgstr ""
+#~ "Stem cell banking is an important decision for you family. Our company’s "
+#~ "mission is to provide affordable and excellent stem cells banking for "
+#~ "every individual. StemSave is the leading company on dental pulp banking "
+#~ "in the USA. Their patented technology is the only one that received "
+#~ "approval from the AAOMS (The American Association of Oral and "
+#~ "Maxillofacial Surgeons). Because quality is the most important to us, we "
+#~ "use StemSave’s patented technology to process and bank the dental pulp of "
+#~ "your child’s baby tooth."
+
+#~ msgid "Naročite info paket"
+#~ msgstr "Download the info package"
+
+#~ msgid ""
+#~ "Po emailu boste prejeli vzorec pogodbe in ostale informacije glede "
+#~ "shranjevanja."
+#~ msgstr ""
+#~ "You will receive email with sample contract and other information about "
+#~ "banking process."
+
+#~ msgid "Oddaj podatke"
+#~ msgstr "Submit"
+
+#~ msgid "Kaj stranke pravijo o nas?"
+#~ msgstr "Our client s testimonials"
+
+#~ msgid "Enostaven postopek"
+#~ msgstr "Simple procedure"
+
+#~ msgid ""
+#~ "Postopek odstranitve zobka je popolnoma enostaven. Izpolnite prijavo, in "
+#~ "ko dobite paket, se dogovorite z izbranim donorskim centrom za termin "
+#~ "odvzema. S paketom greste do izbranega donorskega centra, kjer bodo "
+#~ "poskrbeli za vse. Po odvzemu nas pokličete in naš kurir bo prevzel paket."
+#~ msgstr ""
+#~ "The procedure of removing the baby tooth is simple. You fill out a form "
+#~ "to receive a kit and then arrange the date of removal with a donor "
+#~ "center. Then you take your kit to the donor center and they take care of "
+#~ "everything. After the removal you call us and we send a courier is sent "
+#~ "to take the kit. Then you wait for confirmation and the certificate of "
+#~ "successful banking."
+
+#~ msgid "Prijava"
+#~ msgstr "Application"
+
+#~ msgid ""
+#~ "Prijavite se preko obrazca in pošljite podpisano pogodbo. Po plačilu 350 "
+#~ "€ pristopnih obveznosti dobite na dom paket za odvzem."
+#~ msgstr ""
+#~ "You apply through a form and send us a signed copy of the contract. After "
+#~ "we receive a payment of 350€ we send you the collection kit."
+
+#~ msgid "Začnete tukaj &gt;"
+#~ msgstr "Start here &gt;"
+
+#~ msgid "Prejem paketa"
+#~ msgstr "Receiving the kit"
+
+#~ msgid ""
+#~ "Ko prejmete paket za odvzem zobka, ga shranite na sobni temperaturi, "
+#~ "zaščitenega pred sončno svetlobo. Tako bo pripravljen, da ga vzamete s "
+#~ "seboj, ko boste šli do zobozdravnika."
+#~ msgstr ""
+#~ "After receiving the kit, store it at room temperature away from sunlight. "
+#~ "When stored properly, it can wait for the removal date."
+
+#~ msgid "Zobek se maje"
+#~ msgstr "Loose tooth"
+
+#~ msgid ""
+#~ "Ko se zobek začne majati, takoj pokličite izbranega zobozdravnika s "
+#~ "seznama donorskih centrov v Sloveniji, in se dogovorite za odvzem."
+#~ msgstr ""
+#~ "When the baby tooth becomes loose, contact your dentist (from the list of "
+#~ "donor centers) immediately and arrange the removal date."
+
+#~ msgid "Seznam donorskih centrov &gt;"
+#~ msgstr "List of donor centers &gt;"
+
+#~ msgid "Odvzem brez bolečin"
+#~ msgstr "Painless removal"
+
+#~ msgid ""
+#~ "Vsi naši zobozdravniki so licencirani in usposobljeni ter poskrbijo za "
+#~ "nebolečo odstranitev zobka. Dlesen namažejo s protibolečinskim sredstvom "
+#~ "in hitro odstranijo zobek."
+#~ msgstr ""
+#~ "All of our dentists are licensed and qualified and make sure that the "
+#~ "removal is painless. A numbing substance is applied to the gums and the "
+#~ "tooth is removed quickly."
+
+#~ msgid "Odvzem krvi"
+#~ msgstr "Blood sample"
+
+#~ msgid ""
+#~ "Po odvzemu mlečnega zobka je potrebno še odvzeti otrokovo krvi, ki se "
+#~ "pozneje v laboratoriju testira po standardih za prenosljive bolezni."
+#~ msgstr ""
+#~ "After the removal of the baby teeth, the child gives a blood sample that "
+#~ "is later tested for contagious diseases in a laboratory."
+
+#~ msgid "Klic"
+#~ msgstr "Call"
+
+#~ msgid ""
+#~ "Takoj po odvzemu zobka nas pokličite in naš kurir bo pohitel k vam in "
+#~ "prevzel paket. Naš kurir takoj dostavi zobek v laboratorij, kjer "
+#~ "pripravimo zobno pulpo na zamrzovanje in jo zamrznemo."
+#~ msgstr ""
+#~ "Our courier immediately delivers the tooth to a laboratory where the "
+#~ "dental pulp is prepared for cryopreservation and cryopreserved."
+
+#~ msgid "Dostava v Biobanko"
+#~ msgstr "Delivery to the laboratory and cryopreservation"
+
+#~ msgid ""
+#~ "Naš kurir dostavi paket v Biobanko, kjer opravimo vse potrebne teste in "
+#~ "izvedemo postopek shranjevanja. <b>Vsak vzorec skrbno preverimo</b> in v "
+#~ "primeru, da zobna pulpa ni primerna za hrambo, vam brezplačno zamrznemo "
+#~ "še en zobek. O uspešni hrambi vas pisno obvestimo v roku 6 tednov po "
+#~ "odvzemu zobka, po pošti pa prejmete certifikat."
+#~ msgstr ""
+#~ "Our courier immediately delivers the tooth to a laboratory where the "
+#~ "dental pulp is prepared for cryopreservation and cryopreserved."
+
+#~ msgid "Seznam donorskih centrov"
+#~ msgstr "List of donor centers"
+
+#~ msgid "Kaj so matične celice?"
+#~ msgstr "What are stem cells?"
+
+#~ msgid ""
+#~ "Matične celice so primitivne celice, ki so podobne prvim celicam, ki "
+#~ "nastanejo ob združitvi spolnih celic ob spočetju. Imajo posebno funkcijo "
+#~ "naravnega zdravljenja organizma skozi celo življenje. Od navadnih celic "
+#~ "se razlikujejo po tem, da so sposobne samoobnavljanja, reprodukcije in "
+#~ "spreminjanje v različne specializirane oblike celic. Glavni viri matičnih "
+#~ "celic v telesu so:"
+#~ msgstr ""
+#~ "Stem cells are primitive cells akin to the first cells formed during "
+#~ "conception. They have the unique function of naturally treating the "
+#~ "organism throughout our life. They differ from regular cells in their "
+#~ "ability of self-renewal, reproduction and changing into various "
+#~ "specialized cell forms. The main sources of stem cells in our bodies are:"
+
+#~ msgid "Popkovnična kri in popkovnica"
+#~ msgstr "Cord blood and the umbilical cord"
+
+#~ msgid ""
+#~ "Najboljša vira matičnih celic sta popkovnična kri in popkovnica, ki sta "
+#~ "tudi najenostavnejše in povsem neboleče dostopna. Od vseh celic v našem "
+#~ "telesu so prav te celice najmlajše, s tem najbolj primerne za zdravljenje "
+#~ "različnih bolezni. Vsebujeta krvotvorne in mezenhimske matične celice. "
+#~ "Postopek ni invaziven in ni boleč."
+#~ msgstr ""
+#~ "The best sources of stem cells are the cord blood and the umbilical cord, "
+#~ "which are also the most easily and painlessly accessible. They are the "
+#~ "youngest cells in our bodies and are thus the most suitable for various "
+#~ "treatments. They contain hematopoietic and mesenchymal stem cells. The "
+#~ "harvesting process is uninvasive and painless."
+
+#~ msgid "Kostni mozeg"
+#~ msgstr "Bone marrow"
+
+#~ msgid ""
+#~ "Matične celice lahko vedno odvzamemo iz kostnega mozga. Metoda je vrtanje "
+#~ "v kost, odvzem kostnega mozga in izolacija matičnih celic. Celice so "
+#~ "starejše in s seboj nosijo starostne poškodbe. Vsebuje krvotvorne in "
+#~ "mezenhimske matične celice. Postopek odvzema kostnega mozga je invaziven "
+#~ "in boleč."
+#~ msgstr ""
+#~ "Stem cells can be extracted for bone marrow at any time. The method is "
+#~ "drilling into the bone, harvesting the bone marrow and isolating the stem "
+#~ "cells. These cells are older and damaged. They contain hematopoietic and "
+#~ "mesenchymal stem cells. The harvesting process is invasive and painful."
+
+#~ msgid "Stimulirana periferna kri"
+#~ msgstr "Stimulated peripheral blood"
+
+#~ msgid ""
+#~ "Vir matičnih celic, ki jih lahko pridobimo po jemanju določenih zdravil, "
+#~ "ki spodbujajo (stimulirajo) razmnoževanje matičnih celic v kostnem mozgu "
+#~ "in izplavljanje v kri. Ko je v naši periferni krvi dovolj matičnih celic, "
+#~ "jih s postopkom t.i. afereze ekstrahiramo. Pri tem postopku se kri "
+#~ "prefiltrira skozi aparat, in izloči matične celice. Vsebuje krvotvorne in "
+#~ "mezenhimske matične celice. Postopek odvzema krvi je invaziven in boleč."
+#~ msgstr ""
+#~ "A source of stem cells that can be gained after taking certain medicine "
+#~ "that stimulates stem cell reproduction in the bone marrow and circulation "
+#~ "into blood. When there is a sufficient level of stem cells in the "
+#~ "peripheral blood, the cells are harvested through the process of "
+#~ "apheresis. In this process the blood is filtered through a machine and "
+#~ "the stem cells are extracted. The blood contains hematopoietic and "
+#~ "mesenchymal stem cells. The process is invasive and painful."
+
+#~ msgid "Maščobno tkivo"
+#~ msgstr "Fat tissue"
+
+#~ msgid ""
+#~ "Matične celice lahko odvzamemo iz maščobnega tkiva. Metoda je "
+#~ "liposukcija, in ekstrakcija matičnih celic iz maščobnega tkiva. Celice so "
+#~ "starejše in s seboj nosijo starostne poškodbe. Vsebuje mezenhimske "
+#~ "matične celice. Postopek odvzema maščobnega tkiva je invaziven in boleč."
+#~ msgstr ""
+#~ "Stem cells can be extracted from fat tissue. The method is liposuction "
+#~ "and extraction of stem cells from the fat tissue. These cells are older "
+#~ "and damaged. They contain mesenchymal stem cells. The harvesting process "
+#~ "is invasive and painful."
+
+#~ msgid "Zobna pulpa"
+#~ msgstr "Dental pulp"
+
+#~ msgid ""
+#~ "Vsebuje dentalne mezenhimske matične celice, ki se nahajajo v notranjosti "
+#~ "zoba. Postopek odvzema je ekstrakcija zoba, ki je v primeru mlečnih "
+#~ "zobkov skoraj neboleča."
+#~ msgstr ""
+#~ "Contains dental mesenchymal stem cells located in the inner part of the "
+#~ "tooth. The harvesting process is the removal of the tooth, which is "
+#~ "almost painless when dealing with baby teeth."
+
+#~ msgid "Različni viri matičnih celic v telesu"
+#~ msgstr "The main sources of stem cells in our bodies are"
+
+#~ msgid "Matična celica"
+#~ msgstr "Stem cell"
+
+#~ msgid "Reprodukcija matičnih celic"
+#~ msgstr "Stem cell reproduction"
+
+#~ msgid "Transformacija v druge oblike celic"
+#~ msgstr "Stem cell transformation"
+
+#~ msgid "Razvoj terapij za neozdravljive bolezni"
+#~ msgstr "Incurable diseases treatment development"
+
+#~ msgid ""
+#~ "Dosedanje raziskave kažejo, da je možno kontrolirano usmerjati rast "
+#~ "matičnih celic v določene specializirana oblike celic, kot na primer: "
+#~ "krvne celice, kožno tkivo, zobne celice, mišična tkiva in živci. "
+#~ "Posledično se razvijajo nova vrsta zdravljenj in terapij za bolezni, ki "
+#~ "jih je trenutno zelo težko ali pa nemogoče zdraviti:"
+#~ msgstr ""
+#~ "So far the studies have shown that it is possible to direct the growth of "
+#~ "the stem cells into different kinds of specialized cell forms, e.g.: "
+#~ "blood cells, skin tissue, dental cells, muscle tissue and nerves. This "
+#~ "has led to new developments in treating diseases that are currently very "
+#~ "difficult or impossible to cure:"
+
+#~ msgid "Parkinsonova bolezen"
+#~ msgstr "Parkinson's disease"
+
+#~ msgid "Poškodbe možganov"
+#~ msgstr "Brain damage"
+
+#~ msgid "Srčne bolezni"
+#~ msgstr "Cardiac disorders"
+
+#~ msgid "Diabetes"
+#~ msgstr "Diabetes"
+
+#~ msgid "Artritis"
+#~ msgstr "Arthritis"
+
+#~ msgid "Mišična distrofija"
+#~ msgstr "Muscular dystrophy"
+
+#~ msgid "Levkemija"
+#~ msgstr "Leukemia"
+
+#~ msgid "Crohnova bolezen"
+#~ msgstr "Crohn's disease"
+
+#~ msgid "Multipla skleroza"
+#~ msgstr "Multiple sclerosis"
+
+#~ msgid "Neimann-Pick tip C"
+#~ msgstr "Neimann-Pick type "
+
+#~ msgid "Parodontalne bolezni"
+#~ msgstr "Periodontal disease"
+
+#~ msgid "Športne poškodbe"
+#~ msgstr "Sports injuries"
+
+#~ msgid "Preveri klinične študije"
+#~ msgstr "View clinical studies"
+
+#~ msgid "Matične celice iz zobne pulpe"
+#~ msgstr "Dental pulp stem cells"
+
+#~ msgid ""
+#~ "Z odkritjem dentalnih matičnih celic, se je pojavil nov vir matičnih "
+#~ "celic z velikim potencialom, ki je na voljo ob vsakem načrtovanem "
+#~ "izruvanju zoba. Prednost mlečnih zobkov pred stalnimi je, da so celice v "
+#~ "mlečnih zobkih še zelo mlade in imajo večjo vitalnost in močnejše "
+#~ "regenerativne sposobnosti."
+#~ msgstr ""
+#~ "With the discovery of the dental pulp stem cells, a new and very potent "
+#~ "source of stem cells has been discovered - a source that is available at "
+#~ "any planned tooth extraction. The advantages of baby teeth are that the "
+#~ "cells in the baby teeth are still young, more vital and have stronger "
+#~ "regenerative abilities."
+
+#~ msgid "Najpotentnejše v telesu"
+#~ msgstr "The most potent in the body"
+
+#~ msgid ""
+#~ "Raziskave kažejo, da so prav dentalne matične celice, poleg celic "
+#~ "popkovnične krvi in tkiva popkovnice, ene izmed matičnih celic v telesu z "
+#~ "največjim potencialom- njihova hitrost replikacije je največja in traja "
+#~ "najdlje časa v primerjavi z matičnimi celicami pridobljenimi iz ostalih "
+#~ "tkiv v telesu."
+#~ msgstr ""
+#~ "Researches have shown that dental stem cells (next to cord blood cells "
+#~ "and cord tissue cells) present one of the most potent stem cells in our "
+#~ "body – their replication is the faster and most durable compared to stem "
+#~ "cells harvested from other tissues in the body."
+
+#~ msgid "Ni možnosti zavrnitvene reakcije"
+#~ msgstr "No chance of rejection"
+
+#~ msgid ""
+#~ "Dentalne matične celice, kot vir lastnih matičnih celic, imajo veliko "
+#~ "prednosti pri razvoju novih terapij zdravljenja. Uporaba lastnih matičnih "
+#~ "celic pri zdravljenju pomeni precej nižji rizik zavrnitvene reakcije s "
+#~ "strani telesa in manjšo potrebno po močnih zdravilih, ki zmanjšujejo "
+#~ "imunski sistem - gre za dva ključna dejavnika, ki spremljata paciente v "
+#~ "primeru terapije z darovanimi matičnimi celicami."
+#~ msgstr ""
+#~ "Because dental stem cells present a source of our own stem cells, they "
+#~ "offer several advantages in the development of new treatments. The use of "
+#~ "one's own stem cells for treatment means a far lower risk of the body "
+#~ "rejecting the cells and a smaller need for strong drugs that lower the "
+#~ "immune system – these two elements are key when it comes to treatment "
+#~ "with donated stem cells."
+
+#~ msgid "Mlade celice - večja učinkovitost"
+#~ msgstr "Younger cells – higher efficency"
+
+#~ msgid ""
+#~ "Matične celice se v človeškem telesu starajo, prav tako kot človek. "
+#~ "Njihove regenerativne sposobnosti se z leti upočasnijo. Mlajše ko jih "
+#~ "zajamemo, bolj učinkovite in vredne bodo takrat, ko jih bomo nujno "
+#~ "potrebovali."
+#~ msgstr ""
+#~ "Stem cells age in our bodies as we grow older. Their regenerative "
+#~ "abilities get smaller with time. The younger we harvest them, the more "
+#~ "efficient they will be when we need them."
+
+#~ msgid "Zavarovanje za celo družino"
+#~ msgstr "Insurance for the whole family"
+
+#~ msgid "Uporaba matičnih celic danes"
+#~ msgstr "The use of stem cells today"
+
+#~ msgid ""
+#~ "V svetovnem merilu je bilo od leta 1957 opravljenih že več kot 1.000.000 "
+#~ "zdravljenj z matičnimi celicami, predvsem s področja transplantacijske "
+#~ "medicine. Danes matične celice omogočajo uspešno zdravljenje več kot 100 "
+#~ "različnih bolezni. Matične celice predstavljajo izreden potencial na "
+#~ "področju napredne regenerativne medicine, ki je usmerjena v popravilo ali "
+#~ "zamenjavo poškodovanega tkiva in organov ter obljublja izredne "
+#~ "zdravstvene napredke že za časa življenja vašega otroka."
+#~ msgstr ""
+#~ "1,000,000 stem cells treatments, especially in the field of transplant "
+#~ "medicine, have been done worldwide since 1957. Today, stem cells provide "
+#~ "successful treatment for almost 100 various diseases. Stem cells are "
+#~ "extremely potent in the field of regenerative medicine which focuses on "
+#~ "repairing or replacing damaged tissue and organs and promise immense "
+#~ "medical advancements in your child’s lifetime."
+
+#~ msgid "Viri matičnih celic"
+#~ msgstr "Stem cells source"
+
+#~ msgid "Popkovnična kri"
+#~ msgstr "Cord blood"
+
+#~ msgid "Periferna kri"
+#~ msgstr "Peripheral blood"
+
+#~ msgid ""
+#~ "Graf: Podatek Ameriškega nacionalnega inštituta za darovanje krvi - "
+#~ "mlajši od 18 let"
+#~ msgstr ""
+#~ "Graph: According to the Americal National Blood Transfusion Institute – "
+#~ "younger than 18 years"
+
+#~ msgid "Transplantacijska medicina"
+#~ msgstr "Transplantation medicine"
+
+#~ msgid ""
+#~ "Matične celice se lahko spremenijo v veliko število telesnih (somatskih) "
+#~ "celic, kar že danes omogoča zdravljenje skoraj 100 različnih bolezni - "
+#~ "največ na področju krvnega raka in obolenj imunskega sistema. V Sloveniji "
+#~ "je okvirno 100 presaditev matičnih celic letno, od tega približno 70 % "
+#~ "presaditev poteka s pacientovimi lastnimi matičnimi celicami. Danes "
+#~ "uspešno že zdravimo bolezni:"
+#~ msgstr ""
+#~ "Stem cells can evolve into any form of blood cells, which enables "
+#~ "treatment of almost 100 various diseases – mostly in the area of blood "
+#~ "cancer and immune system disorders. Approximately 100 stem cell "
+#~ "transplants are carried out yearly in Slovenia, 70% of those include the "
+#~ "patient’s own stem cells. Today we can treat the following diseases:"
+
+#~ msgid "Krvni rak in nepravilnosti"
+#~ msgstr "Blood cancer and disorders"
+
+#~ msgid "Levkemije"
+#~ msgstr "Leukemia"
+
+#~ msgid "Limfomi"
+#~ msgstr "Lymphomas"
+
+#~ msgid "Mielomi"
+#~ msgstr "Myeloma"
+
+#~ msgid "Plazmocitomi"
+#~ msgstr "Plasmacytomas"
+
+#~ msgid "Aplazija rdečih krvničk"
+#~ msgstr "Red cell Aplasia"
+
+#~ msgid "Anemije"
+#~ msgstr "Anemia"
+
+#~ msgid "Talasemija"
+#~ msgstr "Thalassemia"
+
+#~ msgid "Dedne nepravilnosti trombocitov"
+#~ msgstr "Inherited platelet disorders"
+
+#~ msgid "Prirojene metabolne motnje"
+#~ msgstr "Congenital metabolic disorders"
+
+#~ msgid "Hurlerjev sindrom"
+#~ msgstr "Hurler's syndrome"
+
+#~ msgid "Levkodistrofija"
+#~ msgstr "Leukodystrophies"
+
+#~ msgid "Lizosomske bolezni"
+#~ msgstr "Lysosomal diseases"
+
+#~ msgid "Čvrsti tumorji"
+#~ msgstr "Solid tumors"
+
+#~ msgid "Neuroblastom"
+#~ msgstr "Neuroblastoma"
+
+#~ msgid "Retinoblastom"
+#~ msgstr "Retinoblastoma"
+
+#~ msgid "Prirojene napake imunskega sistema"
+#~ msgstr "Congenital immune defects"
+
+#~ msgid "Huda kombinirana imunska pomanjkljivost"
+#~ msgstr "Severe combined immunodeficiency"
+
+#~ msgid "Sindrom Wiskott-Aldrich"
+#~ msgstr "Wiskott-Aldrich Syndrome"
+
+#~ msgid "Zobek je naravni “sef” matičnih celic"
+#~ msgstr "The baby tooth is a natural safe"
+
+#~ msgid ""
+#~ "Z leti se kakovost matičnih celic v telesu žal zmanjšuje. Zato je "
+#~ "pomembno, da jih shranimo, ko smo mlajši in tudi bolj zdravi. Z odkritim "
+#~ "novim virom mezenhimskih matičnih celic v mlečnih zobkih ponujamo možnost "
+#~ "shranitve matičnih celic za starše, ki ste to priložnost ob porodu morda "
+#~ "zamudili."
+#~ msgstr ""
+#~ "The quality of stem cells in our bodies unfortunately declines over the "
+#~ "years. That’s why it is important to preserve them when we are younger "
+#~ "and healthier. With the new method of extracting mesenchymal stem cells "
+#~ "from baby teeth we offer stem call banking for parents that have missed "
+#~ "that opportunity at the birth of your child."
+
+#~ msgid "Zdrava prihodnost"
+#~ msgstr "A healthy future"
+
+#~ msgid ""
+#~ "S shranjevanjem teh dragocenih matičnih celic zavarujete otrokovo "
+#~ "prihodnost."
+#~ msgstr ""
+#~ "By banking these valuable stem cells you insure your child’s future."
+
+#~ msgid "Možnost shranitve lastnih celic"
+#~ msgstr "Banking your own stem cells"
+
+#~ msgid ""
+#~ "Shranjene lastne matične celice zagotavljajo 100% genetsko ujemanje – pri "
+#~ "zdravljenju ni možnosti zavrnitvene reakcije."
+#~ msgstr ""
+#~ "These stem cells provide a 100% genetic match – there is no possibility "
+#~ "of rejection during treatment."
+
+#~ msgid "Odlična priložnost"
+#~ msgstr "An amazing opportunity"
+
+#~ msgid ""
+#~ "Shranjevanje mlečnega zoba je eleganten in popolnoma varen način "
+#~ "pridobivanja matičnih celic. Postopek odvzema je hiter in enostaven."
+#~ msgstr ""
+#~ "Preserving the baby tooth is an elegant and completely safe method of "
+#~ "extracting the stem cells. The removal process is fast and simple."
+
+#~ msgid "Potencial zdravljenja"
+#~ msgstr "Treatment potential"
+
+#~ msgid ""
+#~ "Matične celice predstavljajo izreden potencial prav na področju napredne "
+#~ "regenerativne medicine, ki je usmerjen v popravilo ali zamenjavo "
+#~ "poškodovanega tkiva in organov ter obljublja izredne zdravstvene napredke "
+#~ "že za časa življenja vašega otroka. Trenutno poteka več kot 5200 "
+#~ "registriranih kliničnih študij s področja zdravljenja najtežjih bolezni:"
+#~ msgstr ""
+#~ "Stem cells are extremely potent in the field of regenerative medicine "
+#~ "which focuses on repairing or replacing damaged tissue and organs and "
+#~ "promise immense medical advancements in your child’s lifetime. There are "
+#~ "currently over 5,200 registered clinical trials in the area of treating "
+#~ "the most severe diseases:"
+
+#~ msgid "Možganske poškodbe"
+#~ msgstr "Brain damage"
+
+#~ msgid "Poškodbe kosti"
+#~ msgstr "Bone injuries"
+
+#~ msgid "Srčna kap"
+#~ msgstr "Heart stroke"
+
+#~ msgid "Možganska kap"
+#~ msgstr "Brain stroke"
+
+#~ msgid "Cerebralna paraliza"
+#~ msgstr "Cerebral palsy"
+
+#~ msgid "Rak"
+#~ msgstr "Cancer"
+
+#~ msgid "Poškodbe sklepov"
+#~ msgstr "Joint injuries"
+
+#~ msgid "Bolezni jeter"
+#~ msgstr "Liver disease"
+
+#~ msgid ""
+#~ "Shranjene matične celice nam v bodočnosti lahko rešijo in podaljšajo "
+#~ "življenje."
+#~ msgstr "Stored stem cells can save and extend our life."
+
+#~ msgid "Za celo družino"
+#~ msgstr "Insurance for the whole family"
+
+#~ msgid "Izključno za vaše otroke"
+#~ msgstr "For your children exclusively"
+
+#~ msgid ""
+#~ "Celice se shranijo za vašega otroka/mladostnika in so na voljo izključno "
+#~ "njemu."
+#~ msgstr ""
+#~ "If the need for treatment arises, we deliver the stem cells in 24 hours "
+#~ "to any clinic in Slovenia, and in 48 hours to any clinic in the EU."
+
+#~ msgid "100% ujemanje"
+#~ msgstr "100% match"
+
+#~ msgid ""
+#~ "Shranjene lastne matične celice zagotavljajo 100% genetsko ujemanje - pri "
+#~ "zdravljenju ni možnosti zavrnitvene reakcije."
+#~ msgstr ""
+#~ "These stem cells provide a 100% genetic match – there is no possibility "
+#~ "of rejection during treatment."
+
+#~ msgid "Ustrezne za sorojence"
+#~ msgstr "Suitable for siblings"
+
+#~ msgid ""
+#~ "Možnost uporabe tudi za zdravljenje sorojencev, vendar se zaradi 25% "
+#~ "verjetnosti popolnega genskega ujemanja priporoča shraniti matične celice "
+#~ "vseh otrok."
+#~ msgstr ""
+#~ "The cells are usable for sibling treatment as well, but individual "
+#~ "banking of each child’s stem cells is recommended, since there is a 25% "
+#~ "chance of a complete match."
+
+#~ msgid "Rok hrambe neomejen"
+#~ msgstr "Unlimited Banking Time"
+
+#~ msgid ""
+#~ "Celice so shranjene pri izredno nizkih temperaturah v parah tekočega "
+#~ "dušika (pod -156°C) in so tako pripravljene na zdravljenje neomejeno "
+#~ "dolgo."
+#~ msgstr ""
+#~ "Cells are cryopreserved in extremely low temperatures (under -156°C) and "
+#~ "are ready for treatment for an unlimited period of time."
+
+#~ msgid "Darilo za celo življenje"
+#~ msgstr "A gift for the whole life"
+
+#~ msgid ""
+#~ "Shranjevanje mlečnih zobkov je odlična priložnost za vse starše, ki "
+#~ "želijo shraniti dragocene matične celice svojega otroka in mu s tem "
+#~ "omogočiti boljšo prihodnost. Je tudi odlična druga priložnost, če morda "
+#~ "niste shranili popkovnične krvi ali tkiva popkovnice. Shranite zobek, "
+#~ "kajti tako elegantne in neboleče priložnosti za shranjevanje dragocenih "
+#~ "matičnih celic ne bo imel vaš otrok nikoli več."
+#~ msgstr ""
+#~ "Baby teeth preservation is an amazing opportunity for parents that wish "
+#~ "to save their child’s valuable stem cells and thus provide him or her "
+#~ "with a better future. This is also a great opportunity for all of those "
+#~ "who had not had the chance to save cord blood or cord tissue. Preserve "
+#~ "your child’s baby tooth because it is the most elegant and painless "
+#~ "opportunity to save valuable stem cells that your child will never have "
+#~ "again."
+
+#~ msgid "Preveri ponudbo"
+#~ msgstr "Check our offer"
+
+#~ msgid ""
+#~ "Mlečni zobki so odličen vir matičnih celic. Najbolj eleganten način, kako "
+#~ "pridemo do njih, je preko mlečnih zobkov. Zobna pulpa mlečnega zobka "
+#~ "vašega otroka, je polna dragocenih mezenhimskih celic ki imajo potencial "
+#~ "reševati življenja. Zakaj bi jih zavrgli, če iz njih lahko shranite "
+#~ "dragocene matične celice."
+#~ msgstr ""
+#~ "Baby teeth are an excellent source of stem cells and they provide the "
+#~ "most elegant way to access them. The dental pulp of your child’s baby "
+#~ "tooth is rich with mesenchymal stem cells that have the potential to save "
+#~ "lives. Why throw baby teeth away, when you can extract valuable stem "
+#~ "cells from them?"
+
+#~ msgid "Shranite zobno pulpo iz mlečnega zobka za dostopnih <b>%s</b>"
+#~ msgstr "Bank the baby tooth’s dental pulp for only <b>%s</b>"
+
+#~ msgid ""
+#~ "Žive matične celice v izruvanem (namesto izrutem)  zobu, so bile rutinsko "
+#~ "zavržene vsak dan, na podlagi zadnjih dognanj v medicini, pa vam Biobanka "
+#~ "omogoča shranitev teh celic."
+#~ msgstr ""
+#~ "Alive stem cells have been daily and routinely thrown away along with the "
+#~ "removed tooth. Based on latest medical discoveries, however, Biobanka now "
+#~ "offers banking of those stem cells for the use of potential need for "
+#~ "treatment of a member of your family in the future."
+
+#~ msgid "100 % skladno z zakonodajo"
+#~ msgstr "Stem cell usability"
+
+#~ msgid ""
+#~ "Shranjevanje v družinski banki omogoča shranjevanje matičnih celic za "
+#~ "potrebe izključno vaših otrok. V primeru potrebe zdravljenja bolezni, so "
+#~ "na voljo za takojšnjo dostavo v katerokoli zdravstveno ustanovo po svetu. "
+#~ "Zaradi 100 % genetskega ujemanja ni bojazni za zavrnitveno reakcijo, kar "
+#~ "je glavna slabost zdravljenja z darovanimi matičnimi celicami."
+#~ msgstr ""
+#~ "Banking in a family bank enables banking stem cells exclusively for the "
+#~ "needs of your children. If the need for treatment arises, your child’s "
+#~ "stem cells are available for immediate delivery to any medical institute "
+#~ "in the world. Because they provide a 100% genetic match there is no fear "
+#~ "of rejection, which is the biggest drawback of treatment with donated "
+#~ "stem cells."
+
+#~ msgid "Plačilni pogoji"
+#~ msgstr "Payment plans"
+
+#~ msgid "100 eur popusta"
+#~ msgstr "100 € discount"

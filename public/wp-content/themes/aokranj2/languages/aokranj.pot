@@ -1,0 +1,115 @@
+# Copyright (C) 2017 Bojan Hribernik
+# This file is distributed under the same license as the Dental Juniorr package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AO Kranj 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dental\n"
+"POT-Creation-Date: 2018-04-17 18:07+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: AO Kranj <info@aokranj.com>\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;_ex;esc_attr_x;esc_html_x;_n;_nx\n"
+"X-Poedit-SearchPath-0: inc\n"
+"X-Poedit-SearchPath-1: templates\n"
+"X-Poedit-SearchPath-2: 404.php\n"
+"X-Poedit-SearchPath-3: archive.php\n"
+"X-Poedit-SearchPath-4: author.php\n"
+"X-Poedit-SearchPath-5: footer.php\n"
+"X-Poedit-SearchPath-6: functions.php\n"
+"X-Poedit-SearchPath-7: header.php\n"
+"X-Poedit-SearchPath-8: index.php\n"
+"X-Poedit-SearchPath-9: page.php\n"
+"X-Poedit-SearchPath-10: search.php\n"
+"X-Poedit-SearchPath-11: single.php\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+
+#: 404.php:21
+msgid "Ups! Na tem mestu ni bilo mogoče najti ničesar."
+msgstr ""
+
+#: 404.php:28
+msgid "Morda lahko poskusite z iskalnikom?"
+msgstr ""
+
+#: author.php:26
+msgid "O avtorju:"
+msgstr ""
+
+#: author.php:34
+msgid "Spletna stran"
+msgstr ""
+
+#: author.php:42
+msgid "Profil"
+msgstr ""
+
+#: author.php:47
+msgid "Objave uporabnika"
+msgstr ""
+
+#: author.php:60
+msgid "v"
+msgstr ""
+
+#: header.php:45
+msgid "Preskoči na vsebino"
+msgstr ""
+
+#: inc/aokranj.php:64
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/aokranj.php:121
+msgid "Sidebar"
+msgstr ""
+
+#: inc/aokranj.php:130
+msgid "Footer Informacije"
+msgstr ""
+
+#: inc/aokranj.php:139
+msgid "Footer Navigacija"
+msgstr ""
+
+#: inc/aokranj.php:204
+msgid "Preberi več &gt;"
+msgstr ""
+
+#: inc/helpers.php:65
+msgid "Navigacija"
+msgstr ""
+
+#: inc/helpers.php:71
+msgid "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+msgstr ""
+
+#: inc/helpers.php:77
+msgid "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#: inc/helpers.php:98
+#, php-format
+msgid "Objavljeno %s"
+msgstr ""
+
+#: inc/helpers.php:102
+#, php-format
+msgid "objavil %s"
+msgstr ""
+
+#: inc/helpers.php:128
+#, php-format
+msgid "Uredi %s"
+msgstr ""
+
+#: search.php:22
+#, php-format
+msgid "Rezultati iskanja za: %s"
+msgstr ""
