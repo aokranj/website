@@ -4,7 +4,7 @@
 **Tags:** post, sidebar, widget, query, wp_query  
 **Requires at least:** 4.1  
 **Tested up to:** 4.9.2  
-**Stable tag:** 4.5.1  
+**Stable tag:** 4.5.2  
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 
@@ -55,16 +55,11 @@ This plugin is developed using [GitHub](https://github.com/aldolat/posts-in-side
 
 ### Credits ###
 
-I would like to say *Thank You* to all the people who helped me in making this plugin better.
+I would like to say *Thank You* to all the people who helped me in making this plugin better and translated it into their respective languages.
 
-### Translations of the plugin ###
+### Privacy Policy ###
 
-This plugin has been translated into these languages:
-
-* Persian, thanks to AlirezaJamali
-* French, thanks to Thérèse Lachance and [cilya](https://profiles.wordpress.org/cilya)
-* Hebrew, thanks to Ahrale.
-* Serbo-Croatian, thanks to Borisa Djuraskovic.
+This plugin does not collect any user data.
 
 ## Installation ##
 

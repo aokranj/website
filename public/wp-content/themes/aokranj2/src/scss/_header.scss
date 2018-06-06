@@ -33,6 +33,7 @@
     background-size: 222px 66px;
     background-position: center;
     background-repeat: no-repeat;
+    color: green;
   }
   .navbar-nav {
     .nav-link {
@@ -304,7 +305,7 @@
           &.active,
           &.current_page_ancestor {
             > a {
-              color: theme-color('primary');
+              color: theme-color('secondary');
             }
           }
         }

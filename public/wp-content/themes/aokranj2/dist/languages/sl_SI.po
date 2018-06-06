@@ -1,0 +1,1687 @@
+# Copyright (C) 2017 Bojan Hribernik
+# This file is distributed under the same license as the Dental Juniorr package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Dental Junior 0.6.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dental\n"
+"POT-Creation-Date: 2018-04-17 18:07+0200\n"
+"PO-Revision-Date: 2018-04-17 18:07+0200\n"
+"Last-Translator: \n"
+"Language-Team: Preset <info@preset.si>\n"
+"Language: sl_SI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#: 404.php:21
+msgid "Ups! Na tem mestu ni bilo mogoče najti ničesar."
+msgstr "Ups! Na tem mestu ni bilo mogoče najti ničesar."
+
+#: 404.php:28
+msgid "Morda lahko poskusite z iskalnikom?"
+msgstr "Morda lahko poskusite z iskalnikom?"
+
+#: author.php:26
+msgid "O avtorju:"
+msgstr "O avtorju:"
+
+#: author.php:34
+msgid "Spletna stran"
+msgstr "Spletna stran"
+
+#: author.php:42
+msgid "Profil"
+msgstr "Profil"
+
+#: author.php:47
+msgid "Objave uporabnika"
+msgstr "Objave uporabnika"
+
+#: author.php:60
+msgid "v"
+msgstr "v"
+
+#: header.php:45
+msgid "Preskoči na vsebino"
+msgstr "Preskoči na vsebino"
+
+#: inc/aokranj.php:64
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: inc/aokranj.php:121
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: inc/aokranj.php:130
+msgid "Footer Informacije"
+msgstr "Footer Informacije"
+
+#: inc/aokranj.php:139
+msgid "Footer Navigacija"
+msgstr "Footer Navigacija"
+
+#: inc/aokranj.php:204
+msgid "Preberi več &gt;"
+msgstr "Preberi več &gt;"
+
+#: inc/helpers.php:65
+msgid "Navigacija"
+msgstr "Navigacija"
+
+#: inc/helpers.php:71
+msgid "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+msgstr "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+
+#: inc/helpers.php:77
+msgid "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+msgstr "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+
+#: inc/helpers.php:98
+#, php-format
+msgid "Objavljeno %s"
+msgstr "Objavljeno %s"
+
+#: inc/helpers.php:102
+#, php-format
+msgid "objavil %s"
+msgstr "objavil %s"
+
+#: inc/helpers.php:128
+#, php-format
+msgid "Uredi %s"
+msgstr "Uredi %s"
+
+#: search.php:22
+#, php-format
+msgid "Rezultati iskanja za: %s"
+msgstr "Rezultati iskanja za: %s"
+
+#~ msgid "Dovoljenja"
+#~ msgstr "Dovoljenja"
+
+#~ msgid "Has Featured Image"
+#~ msgstr "Has Featured Image"
+
+#~ msgid "Priporočila zdravnikov"
+#~ msgstr "Priporočila zdravnikov"
+
+#~ msgid "Priporočilo zdravnika"
+#~ msgstr "Priporočilo zdravnika"
+
+#~ msgid "Izkušnje otrok"
+#~ msgstr "Izkušnje otrok"
+
+#~ msgid "Izkušnja otroka"
+#~ msgstr "Izkušnja otroka"
+
+#~ msgid "Izkušnje staršev"
+#~ msgstr "Izkušnje staršev"
+
+#~ msgid "Izkušnja staršev"
+#~ msgstr "Izkušnja staršev"
+
+#~ msgid "Pogosta vprašanja"
+#~ msgstr "Pogosta vprašanja"
+
+#~ msgid "Pogosto vprašanje"
+#~ msgstr "Pogosto vprašanje"
+
+#~ msgid "Dnevnik"
+#~ msgstr "Dnevnik"
+
+#~ msgid "Oprostite, napaka pri nonce validaciji."
+#~ msgstr "Oprostite, napaka pri nonce validaciji."
+
+#~ msgid "Prišlo je do napake."
+#~ msgstr "Prišlo je do napake."
+
+#~ msgid "Na email boste prejeli navodila za prenos brezplačnega vodnika."
+#~ msgstr "Na email boste prejeli navodila za prenos brezplačnega vodnika."
+
+#~ msgid "Mlečni zob"
+#~ msgstr "Mlečni zob"
+
+#~ msgid "Enkratno plačilo"
+#~ msgstr "Enkratno plačilo"
+
+#~ msgid "3 obroki"
+#~ msgstr "3 obroki"
+
+#~ msgid "6 obrokov"
+#~ msgstr "6 obrokov"
+
+#~ msgid "12 obrokov"
+#~ msgstr "12 obrokov"
+
+#~ msgid "24 obrokov"
+#~ msgstr "24 obrokov"
+
+#~ msgid "Na email boste prejeli potrdilo o svetovanju."
+#~ msgstr "Na email boste prejeli potrdilo o svetovanju."
+
+#~ msgid "Na email boste prejeli navodila za prenos vzorčne pogodbe."
+#~ msgstr "Na email boste prejeli navodila za prenos vzorčne pogodbe."
+
+#~ msgid "Širimo možnosti shranjevanja"
+#~ msgstr "Širimo možnosti shranjevanja"
+
+#~ msgid ""
+#~ "V podjetju Biobanka že od leta 2008 uspešno izvajamo storitev "
+#~ "shranjevanja matičnih celic iz popkovnične krvi in popkovnice. Zaupa nam "
+#~ "že več kot 4000 slovenskih staršev, ki so se odločile, da bodo imeli "
+#~ "njihovi otroci možnost učinkovitega zdravljenja nekaterih težjih poškodb "
+#~ "ali bolezni s celičnimi terapijami. Zavedamo se, da za mnoge odvzem "
+#~ "matičnih celic ob rojstvu otroka ni bil mogoč, zato smo se v letu 2015 "
+#~ "odločili, da ponudimo možnost shranjevanja matičnih celic tudi iz mlečnih "
+#~ "in modrostnih zob."
+#~ msgstr ""
+#~ "V podjetju Biobanka že od leta 2008 uspešno izvajamo storitev "
+#~ "shranjevanja matičnih celic iz popkovnične krvi in popkovnice. Zaupa nam "
+#~ "že več kot 4000 slovenskih staršev, ki so se odločile, da bodo imeli "
+#~ "njihovi otroci možnost učinkovitega zdravljenja nekaterih težjih poškodb "
+#~ "ali bolezni s celičnimi terapijami. Zavedamo se, da za mnoge odvzem "
+#~ "matičnih celic ob rojstvu otroka ni bil mogoč, zato smo se v letu 2015 "
+#~ "odločili, da ponudimo možnost shranjevanja matičnih celic tudi iz mlečnih "
+#~ "in modrostnih zob."
+
+#~ msgid "Direktor dr. Marko Strbad, univ. dipl. mikrobiol."
+#~ msgstr "Direktor dr. Marko Strbad, univ. dipl. mikrobiol."
+
+#~ msgid "Več o ekipi in o laboratoriju"
+#~ msgstr "Več o ekipi in o laboratoriju"
+
+#~ msgid "Ključni partnerji"
+#~ msgstr "Ključni partnerji"
+
+#~ msgid ""
+#~ "Storitev opravljamo v podjetju Biobanka, skupaj s certificiranimi "
+#~ "donorskimi centri v Sloveniji. Celoten postopek poteka po licenci "
+#~ "StemSaveTM - vodilnega svetovnega podjetja s področja shranjevanja in "
+#~ "obdelave dentalnih matičnih celic. Dental je tudi partner švicarskega "
+#~ "inštituta MBSI, vodilnega na področju biobančništva."
+#~ msgstr ""
+#~ "Storitev opravljamo v podjetju Biobanka, skupaj s certificiranimi "
+#~ "donorskimi centri v Sloveniji. Celoten postopek poteka po licenci "
+#~ "StemSaveTM - vodilnega svetovnega podjetja s področja shranjevanja in "
+#~ "obdelave dentalnih matičnih celic. Dental je tudi partner švicarskega "
+#~ "inštituta MBSI, vodilnega na področju biobančništva."
+
+#~ msgid "Dovoljenja in certifikati"
+#~ msgstr "Dovoljenja in certifikati"
+
+#~ msgid ""
+#~ "Storitev opravljamo skupaj s certificiranimi donorskimi centri v "
+#~ "sloveniji, celoten postopek pa poteka po licenci StemSaveTM - vodilnega "
+#~ "svetovnega podjetja s področja shranjevanja in obdelave. Imamo "
+#~ "vzpostavljen sistem kakovosti, ki izpolnjuje zahteve Nacionalne in "
+#~ "Evropske zakonodaje, hkrati pa sledi številnim mednarodnim standardom; "
+#~ "FACT-NetCord, JAICE, FDA, ASI."
+#~ msgstr ""
+#~ "Storitev opravljamo skupaj s certificiranimi donorskimi centri v "
+#~ "sloveniji, celoten postopek pa poteka po licenci StemSaveTM - vodilnega "
+#~ "svetovnega podjetja s področja shranjevanja in obdelave. Imamo "
+#~ "vzpostavljen sistem kakovosti, ki izpolnjuje zahteve Nacionalne in "
+#~ "Evropske zakonodaje, hkrati pa sledi številnim mednarodnim standardom; "
+#~ "FACT-NetCord, JAICE, FDA, ASI."
+
+#~ msgid "DOVOLJENJE AGENCIJE JAZMP"
+#~ msgstr "DOVOLJENJE AGENCIJE JAZMP"
+
+#~ msgid "POTRJENO S STRANI ASI"
+#~ msgstr "POTRJENO S STRANI ASI"
+
+#~ msgid "STEMSAVE RELIABLE PARTNER CERTIFIKAT"
+#~ msgstr "STEMSAVE RELIABLE PARTNER CERTIFIKAT"
+
+#~ msgid "FDA REGISTRIRANO"
+#~ msgstr "FDA REGISTRIRANO"
+
+#~ msgid "AABB CERTIFIKAT"
+#~ msgstr "AABB CERTIFIKAT"
+
+#~ msgid "SIQ - za ISO 9001:2008"
+#~ msgstr "SIQ - za ISO 9001:2008"
+
+#~ msgid ""
+#~ "<b>Brezplačno svetovanje</b> vsak delovnik od 8h do 16h.<br />Z veseljem "
+#~ "vam bomo pomagali."
+#~ msgstr ""
+#~ "<b>Brezplačno svetovanje</b> vsak delovnik od 8h do 16h.<br />Z veseljem "
+#~ "vam bomo pomagali."
+
+#~ msgid "Celotno storitev izvajamo sami"
+#~ msgstr "Celotno storitev izvajamo sami"
+
+#~ msgid ""
+#~ "Smo edini ponudnik, ki opravljamo celoten proces, od sklenitve pogodbe z "
+#~ "vami, transporta, do zamrznitve ter shranjevanja vaše zobne pulpe v "
+#~ "Sloveniji. Prav tako celice v primeru zdravljenja lahko dostavimo do vaše "
+#~ "izbrane klinike in jih po potrebi pripravimo za neposredno klinično "
+#~ "uporabo. Celotna veriga storitev, brez zunanjih izvajalcev, zagotavlja "
+#~ "sledljivost in varnost vašega dragocenega biološkega vzorca."
+#~ msgstr ""
+#~ "Smo edini ponudnik, ki opravljamo celoten proces, od sklenitve pogodbe z "
+#~ "vami, transporta, do zamrznitve ter shranjevanja vaše zobne pulpe v "
+#~ "Sloveniji. Prav tako celice v primeru zdravljenja lahko dostavimo do vaše "
+#~ "izbrane klinike in jih po potrebi pripravimo za neposredno klinično "
+#~ "uporabo. Celotna veriga storitev, brez zunanjih izvajalcev, zagotavlja "
+#~ "sledljivost in varnost vašega dragocenega biološkega vzorca."
+
+#~ msgid "Najhitrejši čas dostave v laboratorij"
+#~ msgstr "Najhitrejši čas dostave v laboratorij"
+
+#~ msgid ""
+#~ "Za preživetje celic in kakovosten vzorec je odločilnega pomena čim krajši "
+#~ "čas od odvzema do zamrznitve vzorca. Zaradi bližine našega laboratorija "
+#~ "do vseh slovenskih donorskih centrov in lastnega prevoza je ta čas "
+#~ "najkrajši – v povprečju samo 4h."
+#~ msgstr ""
+#~ "Za preživetje celic in kakovosten vzorec je odločilnega pomena čim krajši "
+#~ "čas od odvzema do zamrznitve vzorca. Zaradi bližine našega laboratorija "
+#~ "do vseh slovenskih donorskih centrov in lastnega prevoza je ta čas "
+#~ "najkrajši – v povprečju samo 4h."
+
+#~ msgid "Skrbno testiranje vzorcev"
+#~ msgstr "Skrbno testiranje vzorcev"
+
+#~ msgid ""
+#~ "Za vas v laboratoriju opravimo testiranja krvi na morebitne okužbe, "
+#~ "matične celice preštejemo in določimo njihovo vitalnost ter v sterilnih "
+#~ "pogojih kriogeno zamrznemo. S tem zagotavljamo najvišjo raven kakovosti "
+#~ "shranjenih vzorcev vašega otroka v primeru uporabe za zdravljenje."
+#~ msgstr ""
+#~ "Za vas v laboratoriju opravimo testiranja krvi na morebitne okužbe, "
+#~ "matične celice preštejemo in določimo njihovo vitalnost ter v sterilnih "
+#~ "pogojih kriogeno zamrznemo. S tem zagotavljamo najvišjo raven kakovosti "
+#~ "shranjenih vzorcev vašega otroka v primeru uporabe za zdravljenje."
+
+#~ msgid "Vitalnost matičnih celic"
+#~ msgstr "Vitalnost matičnih celic"
+
+#~ msgid "Odsotnost virusa Hep B in C"
+#~ msgstr "Odsotnost virusa Hep B in C"
+
+#~ msgid "Odsotnost HIV"
+#~ msgstr "Odsotnost HIV"
+
+#~ msgid "Odsotnost povzročitelja sifilisa"
+#~ msgstr "Odsotnost povzročitelja sifilisa"
+
+#~ msgid "Odsotnost bakterij"
+#~ msgstr "Odsotnost bakterij"
+
+#~ msgid "Odsotnost gliv"
+#~ msgstr "Odsotnost gliv"
+
+#~ msgid "100% skladno s slovensko in EU zakonodajo"
+#~ msgstr "100% skladno s slovensko in EU zakonodajo"
+
+#~ msgid ""
+#~ "Smo edini ponudnik shranjevanja zobne pulpe, ki vam omogoča shranjevanje "
+#~ "matičnih celic doma, v Sloveniji. V skladu z zakonom smo akreditirani s "
+#~ "strani Javne agencije Republike Slovenije za zdravila in medicinske "
+#~ "pripomočke, za opravljanje dejavnosti shranjevanja zobne pulpe."
+#~ msgstr ""
+#~ "Smo edini ponudnik shranjevanja zobne pulpe, ki vam omogoča shranjevanje "
+#~ "matičnih celic doma, v Sloveniji. V skladu z zakonom smo akreditirani s "
+#~ "strani Javne agencije Republike Slovenije za zdravila in medicinske "
+#~ "pripomočke, za opravljanje dejavnosti shranjevanja zobne pulpe."
+
+#~ msgid "Več o zakonodaji"
+#~ msgstr "Več o zakonodaji"
+
+#~ msgid "Vrhunski GMP laboratorij"
+#~ msgstr "Vrhunski GMP laboratorij"
+
+#~ msgid ""
+#~ "Biobanka je ponosna lastnica novega, verificiranega GMP laboratorija. "
+#~ "Termin GMP (Good Manufacturing Practice oz. Dobra proizvodna praksa) je "
+#~ "danes v svetu splošno prepoznan kot sinonim za popolno organizacijo in "
+#~ "sledljivost obdelave bioloških vzorcev po (najvišjih) farmacevtskih "
+#~ "standardih, po drugi stani pa kot okolje, v katerem se pripravljajo "
+#~ "biološki pripravki namenjeni zdravljenju. Z načrtovanjem in izpeljavo "
+#~ "projekta izgradnje GMP laboratorija, je Biobanka vzpostavila nov standard "
+#~ "v slovenskem prostoru in širši regiji ter tako svojim strankam zagotovila "
+#~ "popolno varnost in sledljivost pri obdelavi zobne pulpe."
+#~ msgstr ""
+#~ "Biobanka je ponosna lastnica novega, verificiranega GMP laboratorija. "
+#~ "Termin GMP (Good Manufacturing Practice oz. Dobra proizvodna praksa) je "
+#~ "danes v svetu splošno prepoznan kot sinonim za popolno organizacijo in "
+#~ "sledljivost obdelave bioloških vzorcev po (najvišjih) farmacevtskih "
+#~ "standardih, po drugi stani pa kot okolje, v katerem se pripravljajo "
+#~ "biološki pripravki namenjeni zdravljenju. Z načrtovanjem in izpeljavo "
+#~ "projekta izgradnje GMP laboratorija, je Biobanka vzpostavila nov standard "
+#~ "v slovenskem prostoru in širši regiji ter tako svojim strankam zagotovila "
+#~ "popolno varnost in sledljivost pri obdelavi zobne pulpe."
+
+#~ msgid "Biometrična identifikacija"
+#~ msgstr "Biometrična identifikacija"
+
+#~ msgid "Protipotresno zaščiten laboratorij"
+#~ msgstr "Protipotresno zaščiten laboratorij"
+
+#~ msgid "Skladno z GMP prakso Dobra proizvodna praksa"
+#~ msgstr "Skladno z GMP prakso Dobra proizvodna praksa"
+
+#~ msgid "Ni rezultatov"
+#~ msgstr "Ni rezultatov"
+
+#~ msgid ""
+#~ "Ste pripravljeni na objavo prvega prispevka? <a href=\"%1$s\">Začnite "
+#~ "tukaj</a>."
+#~ msgstr ""
+#~ "Ste pripravljeni na objavo prvega prispevka? <a href=\"%1$s\">Začnite "
+#~ "tukaj</a>."
+
+#~ msgid "Ni rezultatov iskanja. Poskusite z drugimi ključnimi besedami."
+#~ msgstr "Ni rezultatov iskanja. Poskusite z drugimi ključnimi besedami."
+
+#~ msgid "Stran ne obstaja. Morda lahko poskusite z iskalnikom?"
+#~ msgstr "Stran ne obstaja. Morda lahko poskusite z iskalnikom?"
+
+#~ msgid "Strani:"
+#~ msgstr "Strani:"
+
+#~ msgid "Uredi"
+#~ msgstr "Uredi"
+
+#~ msgid "Odvzemna mesta - donorski centri"
+#~ msgstr "Odvzemna mesta - donorski centri"
+
+#~ msgid ""
+#~ "Celice so uporabne le, če jih odvzame registriran zobozdravnik, s čimer "
+#~ "je vsak zobek evidentiran z vso ustrezno dokumentacijo in ima "
+#~ "zagotovljeno sledljivost (kje se nahaja). V primeru, da zobka ne odvzame "
+#~ "zobozdravnik, pa zakonsko predpisana sledljivost ni zagotovljena, s čimer "
+#~ "je uporabnost zobka vprašljiva. Zobke vaših otrok odvzamejo izučeni "
+#~ "zobozdravniki z licenco za donorski center, kar pomeni, da bo zobek "
+#~ "odstranjen z vso skrbnostjo in na tak način, da celice ohranijo največ "
+#~ "svoje vitalnosti."
+#~ msgstr ""
+#~ "Celice so uporabne le, če jih odvzame registriran zobozdravnik, s čimer "
+#~ "je vsak zobek evidentiran z vso ustrezno dokumentacijo in ima "
+#~ "zagotovljeno sledljivost (kje se nahaja). V primeru, da zobka ne odvzame "
+#~ "zobozdravnik, pa zakonsko predpisana sledljivost ni zagotovljena, s čimer "
+#~ "je uporabnost zobka vprašljiva. Zobke vaših otrok odvzamejo izučeni "
+#~ "zobozdravniki z licenco za donorski center, kar pomeni, da bo zobek "
+#~ "odstranjen z vso skrbnostjo in na tak način, da celice ohranijo največ "
+#~ "svoje vitalnosti."
+
+#~ msgid ""
+#~ "Sodelujemo z najboljšimi zobozdravstvenimi ustanovami, registriranimi pri "
+#~ "Javni agenciji za zdravila in medicinske pripomočke, ki opravljajo "
+#~ "dejavnost pridobivanja (odvzem) celic in tkiv za potrebe zdravljenja s "
+#~ "presaditvijo, skladno s slovensko zakonodajo."
+#~ msgstr ""
+#~ "Sodelujemo z najboljšimi zobozdravstvenimi ustanovami, registriranimi pri "
+#~ "Javni agenciji za zdravila in medicinske pripomočke, ki opravljajo "
+#~ "dejavnost pridobivanja (odvzem) celic in tkiv za potrebe zdravljenja s "
+#~ "presaditvijo, skladno s slovensko zakonodajo."
+
+#~ msgid "Simed, Ljubljana"
+#~ msgstr "Simed, Ljubljana"
+
+#~ msgid "SIMED Zobozdravstvo in zdravstvo, d.o.o."
+#~ msgstr "SIMED Zobozdravstvo in zdravstvo, d.o.o."
+
+#~ msgid "Finžgarjeva ulica 4, Ljubljana"
+#~ msgstr "Finžgarjeva ulica 4, Ljubljana"
+
+#~ msgid "1000 Ljubljana"
+#~ msgstr "1000 Ljubljana"
+
+#~ msgid "Telefon: 01 5400 200"
+#~ msgstr "Telefon: 01 5400 200"
+
+#~ msgid "E-mail: info@simed.si"
+#~ msgstr "E-mail: info@simed.si"
+
+#~ msgid "Babit, Ljubljana"
+#~ msgstr "Babit, Ljubljana"
+
+#~ msgid "Babit d.o.o., zobozdravstveni center"
+#~ msgstr "Babit d.o.o., zobozdravstveni center"
+
+#~ msgid "Kolezijska 25"
+#~ msgstr "Kolezijska 25"
+
+#~ msgid "Telefon: 01 283 61 70"
+#~ msgstr "Telefon: 01 283 61 70"
+
+#~ msgid "E-mail: info@babit.si"
+#~ msgstr "E-mail: info@babit.si"
+
+#~ msgid "Prednosti strokovne odstranitve zobka"
+#~ msgstr "Prednosti strokovne odstranitve zobka"
+
+#~ msgid "Zagotovljena sledljivost"
+#~ msgstr "Zagotovljena sledljivost"
+
+#~ msgid ""
+#~ "Celice so uporabne le, če jih odvzame registriran zobozdravnik, s čimer "
+#~ "je zobek evidentiran z vso ustrezno dokumentacijo in ima zagotovljeno "
+#~ "sledljivost."
+#~ msgstr ""
+#~ "Celice so uporabne le, če jih odvzame registriran zobozdravnik, s čimer "
+#~ "je zobek evidentiran z vso ustrezno dokumentacijo in ima zagotovljeno "
+#~ "sledljivost."
+
+#~ msgid "Žive celice"
+#~ msgstr "Žive celice"
+
+#~ msgid ""
+#~ "Če zobek odvzame zobozdravnik kmalu po tem, ko se zobek začne majati, le- "
+#~ "ta v sebi vsebuje še veliko matičnih celic. Kadar zobek odpade sam, je "
+#~ "pulpa že mrtva in celice niso uporabne."
+#~ msgstr ""
+#~ "Če zobek odvzame zobozdravnik kmalu po tem, ko se zobek začne majati, le- "
+#~ "ta v sebi vsebuje še veliko matičnih celic. Kadar zobek odpade sam, je "
+#~ "pulpa že mrtva in celice niso uporabne."
+
+#~ msgid "Hitro in brez bolečin"
+#~ msgstr "Hitro in brez bolečin"
+
+#~ msgid "Odstranitev zobka poteka brez bolečin in zelo hitro."
+#~ msgstr "Odstranitev zobka poteka brez bolečin in zelo hitro."
+
+#~ msgid "Več o postopku odstranitve zobka"
+#~ msgstr "Več o postopku odstranitve zobka"
+
+#~ msgid "Zdravstvena anamneza"
+#~ msgstr "Zdravstvena anamneza"
+
+#~ msgid ""
+#~ "Spoštovani, prosimo vas, da odgovorite na spodnja vprašanja v imenu "
+#~ "vašega otroka. Vprašalnik o zdravstveni anemnezi je z zakonom predpisan "
+#~ "dokument. V Biobanki se oproščamo, če so določena vprašanja preveč osebna "
+#~ "ali žaljiva v kateremkoli pogledu. Zaupnost vaših odgovorov je "
+#~ "zagotovljena."
+#~ msgstr ""
+#~ "Spoštovani, prosimo vas, da odgovorite na spodnja vprašanja v imenu "
+#~ "vašega otroka. Vprašalnik o zdravstveni anemnezi je z zakonom predpisan "
+#~ "dokument. V Biobanki se oproščamo, če so določena vprašanja preveč osebna "
+#~ "ali žaljiva v kateremkoli pogledu. Zaupnost vaših odgovorov je "
+#~ "zagotovljena."
+
+#~ msgid "Naprej na potrditev"
+#~ msgstr "Naprej na potrditev"
+
+#~ msgid "klikni tukaj za nazaj na podatke"
+#~ msgstr "klikni tukaj za nazaj na podatke"
+
+#~ msgid "Spletno naročilo"
+#~ msgstr "Spletno naročilo"
+
+#~ msgid ""
+#~ "Naročilo lahko enostavno oddate preko spletnega obrazca. Izpolnjeno "
+#~ "pogodbo bomo natisnili in vam jo poslali naslednji delovni dan. Prejeto "
+#~ "pogodbo podpišete in jo vrnite v priloženi kuverti na naš naslov."
+#~ msgstr ""
+#~ "Naročilo lahko enostavno oddate preko spletnega obrazca. Izpolnjeno "
+#~ "pogodbo bomo natisnili in vam jo poslali naslednji delovni dan. Prejeto "
+#~ "pogodbo podpišete in jo vrnite v priloženi kuverti na naš naslov."
+
+#~ msgid "Naprej na anamnezo"
+#~ msgstr "Naprej na anamnezo"
+
+#~ msgid "Najlepša hvala za naročilo!"
+#~ msgstr "Najlepša hvala za naročilo!"
+
+#~ msgid ""
+#~ "Vaše naročilo je potrjeno. V email nabiralniku vas čakata potrditev "
+#~ "naročila in pogodba, naslednji delovni dan bomo podpisano pogodbo poslali "
+#~ "tudi po pošti."
+#~ msgstr ""
+#~ "Vaše naročilo je potrjeno. V email nabiralniku vas čakata potrditev "
+#~ "naročila in pogodba, naslednji delovni dan bomo podpisano pogodbo poslali "
+#~ "tudi po pošti."
+
+#~ msgid ""
+#~ "Prejeto pogodbo podpišite in vrnite v priloženi kuverti, ki že vsebuje "
+#~ "znamko."
+#~ msgstr ""
+#~ "Prejeto pogodbo podpišite in vrnite v priloženi kuverti, ki že vsebuje "
+#~ "znamko."
+
+#~ msgid "Priporočaj shranjevanje ostalim staršem:"
+#~ msgstr "Priporočaj shranjevanje ostalim staršem:"
+
+#~ msgid "Želite popust?"
+#~ msgstr "Želite popust?"
+
+#~ msgid ""
+#~ "Na že oddano naročilo lahko ta mesec pridobite še dodatnih 10% popusta."
+#~ msgstr ""
+#~ "Na že oddano naročilo lahko ta mesec pridobite še dodatnih 10% popusta."
+
+#~ msgid ""
+#~ "Vse kar morate storiti je, da nas pokličete na spodnjo številko in se "
+#~ "dogovorimo."
+#~ msgstr ""
+#~ "Vse kar morate storiti je, da nas pokličete na spodnjo številko in se "
+#~ "dogovorimo."
+
+#~ msgid "Potrditev naročila"
+#~ msgstr "Potrditev naročila"
+
+#~ msgid ""
+#~ "Spodaj so podatki, ki ste jih izpolnili. Prenesite PDF pogodbo in "
+#~ "preverite, če so zavedeni podatki pravilni."
+#~ msgstr ""
+#~ "Spodaj so podatki, ki ste jih izpolnili. Prenesite PDF pogodbo in "
+#~ "preverite, če so zavedeni podatki pravilni."
+
+#~ msgid "Potrdi naročilo"
+#~ msgstr "Potrdi naročilo"
+
+#~ msgid ""
+#~ "Po oddanem naročilu, boste pogodbo dobili preko emaila, naslednji delovni "
+#~ "dan jo bomo podpisano poslali tudi po pošti. Prejeto pogodbo podpišete in "
+#~ "vrnete v priloženi kuverti, ki že vsebuje znamko."
+#~ msgstr ""
+#~ "Po oddanem naročilu, boste pogodbo dobili preko emaila, naslednji delovni "
+#~ "dan jo bomo podpisano poslali tudi po pošti. Prejeto pogodbo podpišete in "
+#~ "vrnete v priloženi kuverti, ki že vsebuje znamko."
+
+#~ msgid ""
+#~ "Za vsa vprašanja smo vam na voljo na telefonski številki <a href=\"tel:"
+#~ "%1$d\">%2$s</a>."
+#~ msgstr ""
+#~ "Za vsa vprašanja smo vam na voljo na telefonski številki <a href=\"tel:"
+#~ "%1$d\">%2$s</a>."
+
+#~ msgid "Oddaš naročilo"
+#~ msgstr "Oddaš naročilo"
+
+#~ msgid "Prejmeš pogodbo"
+#~ msgstr "Prejmeš pogodbo"
+
+#~ msgid "Vrneš podpisano"
+#~ msgstr "Vrneš podpisano"
+
+#~ msgid "Začni z naročilom"
+#~ msgstr "Začni z naročilom"
+
+#~ msgid "vzame samo 5 min časa"
+#~ msgstr "vzame samo 5 min časa"
+
+#~ msgid "Zaupa nam že več kot 4000 slovenskih staršev."
+#~ msgstr "Zaupa nam že več kot 4000 slovenskih staršev."
+
+#~ msgid "Da"
+#~ msgstr "Da"
+
+#~ msgid "Ne"
+#~ msgstr "Ne"
+
+#~ msgid "Skupaj"
+#~ msgstr "Skupaj"
+
+#~ msgid "DDV je vključen v ceno, pristopnina vključena v končno ceno."
+#~ msgstr "DDV je vključen v ceno, pristopnina vključena v končno ceno."
+
+#~ msgid "Podatki otroka"
+#~ msgstr "Podatki otroka"
+
+#~ msgid "EMŠO"
+#~ msgstr "EMŠO"
+
+#~ msgid "Ime"
+#~ msgstr "Ime"
+
+#~ msgid "Prosimo vpišite ime."
+#~ msgstr "Prosimo vpišite ime."
+
+#~ msgid "Priimek"
+#~ msgstr "Priimek"
+
+#~ msgid "Prosimo vpišite priimek."
+#~ msgstr "Prosimo vpišite priimek."
+
+#~ msgid "Naslov stalnega prebivališča"
+#~ msgstr "Naslov stalnega prebivališča"
+
+#~ msgid "Prosimo vpišite naslov."
+#~ msgstr "Prosimo vpišite naslov."
+
+#~ msgid "Pošta in kraj"
+#~ msgstr "Pošta in kraj"
+
+#~ msgid "Prosimo vpišite pošto."
+#~ msgstr "Prosimo vpišite pošto."
+
+#~ msgid "Prosimo vpišite veljaven EMŠO."
+#~ msgstr "Prosimo vpišite veljaven EMŠO."
+
+#~ msgid "Donorski center"
+#~ msgstr "Donorski center"
+
+#~ msgid "Dodatne možnosti"
+#~ msgstr "Dodatne možnosti"
+
+#~ msgid "Imam že shranjene celice pri Biobanki"
+#~ msgstr "Imam že shranjene celice pri Biobanki"
+
+#~ msgid "popusta"
+#~ msgstr "popusta"
+
+#~ msgid "ID koda"
+#~ msgstr "ID koda"
+
+#~ msgid "Prosimo vpišite ID kodo."
+#~ msgstr "Prosimo vpišite ID kodo."
+
+#~ msgid "V ceno vključeno"
+#~ msgstr "V ceno vključeno"
+
+#~ msgid "Paket za odvzem mlečnega zoba"
+#~ msgstr "Paket za odvzem mlečnega zoba"
+
+#~ msgid "Shranjevanje za dobo začetnih 20 let"
+#~ msgstr "Shranjevanje za dobo začetnih 20 let"
+
+#~ msgid "Krvni testi"
+#~ msgstr "Krvni testi"
+
+#~ msgid "Preverjanje kakovosti shranjenega vzorca"
+#~ msgstr "Preverjanje kakovosti shranjenega vzorca"
+
+#~ msgid "Shranjevanje v Sloveniji"
+#~ msgstr "Shranjevanje v Sloveniji"
+
+#~ msgid "Prevoz do bolnišnice v Sloveniji v primeru zdravljenja"
+#~ msgstr "Prevoz do bolnišnice v Sloveniji v primeru zdravljenja"
+
+#~ msgid "Certifikat o shranjevanju"
+#~ msgstr "Certifikat o shranjevanju"
+
+#~ msgid "Dodatne informacije"
+#~ msgstr "Dodatne informacije"
+
+#~ msgid ""
+#~ "Po izteku začetnega obdobja 20 let priporočamo podaljšanje shranjevanja. "
+#~ "Predvidena cena bo znašala med 40-60 €/leto. Zob vašega otroka je varno "
+#~ "shranjen v Sloveniji."
+#~ msgstr ""
+#~ "Po izteku začetnega obdobja 20 let priporočamo podaljšanje shranjevanja. "
+#~ "Predvidena cena bo znašala med 40-60 €/leto. Zob vašega otroka je varno "
+#~ "shranjen v Sloveniji."
+
+#~ msgid "Prenesi vzorčno PDF pogodbo"
+#~ msgstr "Prenesi vzorčno PDF pogodbo"
+
+#~ msgid "Podatki zakonitega zastopnika"
+#~ msgstr "Podatki zakonitega zastopnika"
+
+#~ msgid "Številka mobilnega telefona"
+#~ msgstr "Številka mobilnega telefona"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Prosimo vpišite telefon."
+#~ msgstr "Prosimo vpišite telefon."
+
+#~ msgid "Prosimo vpišite email."
+#~ msgstr "Prosimo vpišite email."
+
+#~ msgid "Izbrani donorski center"
+#~ msgstr "Izbrani donorski center"
+
+#~ msgid "Dodatno"
+#~ msgstr "Dodatno"
+
+#~ msgid "Imam že shranjene celice pri Biobanki."
+#~ msgstr "Imam že shranjene celice pri Biobanki."
+
+#~ msgid "Shranjevanje za dobo 20 let"
+#~ msgstr "Shranjevanje za dobo 20 let"
+
+#~ msgid "Podatki"
+#~ msgstr "Podatki"
+
+#~ msgid "Anamneza"
+#~ msgstr "Anamneza"
+
+#~ msgid "Potrditev"
+#~ msgstr "Potrditev"
+
+#~ msgid "Se dobimo na kavi?"
+#~ msgstr "Se dobimo na kavi?"
+
+#~ msgid ""
+#~ "Vse, ki bi o shranjevanju mlečnih zobkov in matičnih celicah želeli "
+#~ "izvedeti več, ter bi se radi poleg tega prepričali, kje so shranjene "
+#~ "neprecenljive celice vašega otroka, vabimo, da se oglasite pri nas v "
+#~ "Biobanki na brezplačnem <b>osebnem svetovanju</b>. Na vaša vprašanja bomo "
+#~ "odgovarjali vsak delavnik po predhodnem naročilu."
+#~ msgstr ""
+#~ "Vse, ki bi o shranjevanju mlečnih zobkov in matičnih celicah želeli "
+#~ "izvedeti več, ter bi se radi poleg tega prepričali, kje so shranjene "
+#~ "neprecenljive celice vašega otroka, vabimo, da se oglasite pri nas v "
+#~ "Biobanki na brezplačnem <b>osebnem svetovanju</b>. Na vaša vprašanja bomo "
+#~ "odgovarjali vsak delavnik po predhodnem naročilu."
+
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+#~ msgid "Telefon (po želji)"
+#~ msgstr "Telefon (po želji)"
+
+#~ msgid "Vsebina sporočila"
+#~ msgstr "Vsebina sporočila"
+
+#~ msgid ""
+#~ "Živjo, zanima me več o shranjevanju matičnih celic iz mlečnega zobka. Se "
+#~ "lahko oglasim pri vas naslednji teden?"
+#~ msgstr ""
+#~ "Živjo, zanima me več o shranjevanju matičnih celic iz mlečnega zobka. Se "
+#~ "lahko oglasim pri vas naslednji teden?"
+
+#~ msgid "Prosimo vpišite sporočilo."
+#~ msgstr "Prosimo vpišite sporočilo."
+
+#~ msgid "Pošlji sporočilo"
+#~ msgstr "Pošlji sporočilo"
+
+#~ msgid "Najugodnejša ponudba"
+#~ msgstr "Najugodnejša ponudba"
+
+#~ msgid ""
+#~ "Zavedamo se, da je cena eden izmed ključih dejavnikov pri odločitvi glede "
+#~ "hrambe matičnih celic vašega otroka. Zato smo oblikovali posebno ponudbo, "
+#~ "s katero si starši lažje privoščite to zavarovalno polico."
+#~ msgstr ""
+#~ "Zavedamo se, da je cena eden izmed ključih dejavnikov pri odločitvi glede "
+#~ "hrambe matičnih celic vašega otroka. Zato smo oblikovali posebno ponudbo, "
+#~ "s katero si starši lažje privoščite to zavarovalno polico."
+
+#~ msgid "Telefon"
+#~ msgstr "Telefon"
+
+#~ msgid "Prenesi pogodbo"
+#~ msgstr "Prenesi pogodbo"
+
+#~ msgid "Zakaj shraniti mlečni zobek?"
+#~ msgstr "Zakaj shraniti mlečni zobek?"
+
+#~ msgid ""
+#~ "Mlečni zobki so odličen vir matičnih celic. Zobna pulpa mlečnega zobka "
+#~ "vašega otroka, je polna dragocenih mezenhimskih celic ki imajo potencial "
+#~ "reševati življenja. Zakaj bi jih zavrgli, če iz njih lahko shranite "
+#~ "dragocene matične celice."
+#~ msgstr ""
+#~ "Mlečni zobki so odličen vir matičnih celic. Zobna pulpa mlečnega zobka "
+#~ "vašega otroka, je polna dragocenih mezenhimskih celic ki imajo potencial "
+#~ "reševati življenja. Zakaj bi jih zavrgli, če iz njih lahko shranite "
+#~ "dragocene matične celice."
+
+#~ msgid "Več o matičnih celicah"
+#~ msgstr "Več o matičnih celicah"
+
+#~ msgid "Dentalne matične celice"
+#~ msgstr "Dentalne matične celice"
+
+#~ msgid ""
+#~ "Zobna pulpa v mlečnem zobu vsebuje mlade in vitalne mezenhimske matične "
+#~ "celice, ki so se dokazano sposobne razviti v različna tkiva."
+#~ msgstr ""
+#~ "Zobna pulpa v mlečnem zobu vsebuje mlade in vitalne mezenhimske matične "
+#~ "celice, ki so se dokazano sposobne razviti v različna tkiva."
+
+#~ msgid "mlade"
+#~ msgstr "mlade"
+
+#~ msgid "nepoškodovane"
+#~ msgstr "nepoškodovane"
+
+#~ msgid "potentne"
+#~ msgstr "potentne"
+
+#~ msgid "Kako poteka shranjevanje?"
+#~ msgstr "Kako poteka shranjevanje?"
+
+#~ msgid ""
+#~ "Postopek odstranitve zobka je popolnoma enostaven. Izpolnite prijavo, in "
+#~ "ko dobite paket, se dogovorite z izbranim donorskim centrom za termin "
+#~ "odvzema. S paketom greste do izbranega donorskega centra, kjer bodo "
+#~ "poskrbeli za vse. Po odvzemu nas pokličete in naš kurir bo prevzel paket. "
+#~ "Od te točke počakate le še na potrdilo in certifikat o uspešnem "
+#~ "shranjevanju."
+#~ msgstr ""
+#~ "Postopek odstranitve zobka je popolnoma enostaven. Izpolnite prijavo, in "
+#~ "ko dobite paket, se dogovorite z izbranim donorskim centrom za termin "
+#~ "odvzema. S paketom greste do izbranega donorskega centra, kjer bodo "
+#~ "poskrbeli za vse. Po odvzemu nas pokličete in naš kurir bo prevzel paket. "
+#~ "Od te točke počakate le še na potrdilo in certifikat o uspešnem "
+#~ "shranjevanju."
+
+#~ msgid ""
+#~ "Prijavite se preko enostavnega obrazca in si zagotovite paket za "
+#~ "shranjevanje zobka."
+#~ msgstr ""
+#~ "Prijavite se preko enostavnega obrazca in si zagotovite paket za "
+#~ "shranjevanje zobka."
+
+#~ msgid ""
+#~ "Izberete si najbližjega zobozdravnika z licenco donorskega centra za "
+#~ "odvzem dentalne pulpe."
+#~ msgstr ""
+#~ "Izberete si najbližjega zobozdravnika z licenco donorskega centra za "
+#~ "odvzem dentalne pulpe."
+
+#~ msgid "Seznam centrov"
+#~ msgstr "Seznam centrov"
+
+#~ msgid ""
+#~ "Ko se zobek začne majati, z otrokom prideta do izbranega zobozdravnika, "
+#~ "ki zobek odstrani."
+#~ msgstr ""
+#~ "Ko se zobek začne majati, z otrokom prideta do izbranega zobozdravnika, "
+#~ "ki zobek odstrani."
+
+#~ msgid "Kako poteka odvzem"
+#~ msgstr "Kako poteka odvzem"
+
+#~ msgid ""
+#~ "Takoj po odvzemu nas pokličite. Naš kurir pride po zobek in ga odpelje v "
+#~ "laboratorij."
+#~ msgstr ""
+#~ "Takoj po odvzemu nas pokličite. Naš kurir pride po zobek in ga odpelje v "
+#~ "laboratorij."
+
+#~ msgid "Prednosti shranjevanja"
+#~ msgstr "Prednosti shranjevanja"
+
+#~ msgid "100% skladno z zakonodajo"
+#~ msgstr "100% skladno z zakonodajo"
+
+#~ msgid ""
+#~ "Smo edini v Sloveniji, ki v celoti delujemo z zakonodajo. Celice so "
+#~ "uporabne le, če jih odvzame registriran zobozdravnik, s čimer je zobek "
+#~ "evidentiran z vso ustrezno dokumentacijo in ima zagotovljeno sledljivost "
+#~ "(kje se nahaja). V primeru, da zobka ne odvzame zobozdravnik pa "
+#~ "sledljivost ni zagotovljena, s čimer je uporabnost zobka vprašljiva. "
+#~ "Zobke vaših otrok odvzamejo izučeni zobozdravniki z licenco za donorski "
+#~ "center, kar pomeni, da bo zobek izpuljen z vso skrbnostjo in na tak "
+#~ "način, da celice ohranijo največ njihove vitalnosti."
+#~ msgstr ""
+#~ "Smo edini v Sloveniji, ki v celoti delujemo z zakonodajo. Celice so "
+#~ "uporabne le, če jih odvzame registriran zobozdravnik, s čimer je zobek "
+#~ "evidentiran z vso ustrezno dokumentacijo in ima zagotovljeno sledljivost "
+#~ "(kje se nahaja). V primeru, da zobka ne odvzame zobozdravnik pa "
+#~ "sledljivost ni zagotovljena, s čimer je uporabnost zobka vprašljiva. "
+#~ "Zobke vaših otrok odvzamejo izučeni zobozdravniki z licenco za donorski "
+#~ "center, kar pomeni, da bo zobek izpuljen z vso skrbnostjo in na tak "
+#~ "način, da celice ohranijo največ njihove vitalnosti."
+
+#~ msgid "Pridobljeni certifikati"
+#~ msgstr "Pridobljeni certifikati"
+
+#~ msgid "Zakaj izbrati Dental?"
+#~ msgstr "Zakaj izbrati Dental?"
+
+#~ msgid ""
+#~ "Ker smo slovenski laboratorij, vam lahko zagotovimo najhitrejši transport "
+#~ "in zamrznitev zobka. Vaš zobek bo varno shranjen v slovenskem "
+#~ "laboratoriju, ki deluje po GMP standardih in izpolnjuje vse najvišje "
+#~ "standarde."
+#~ msgstr ""
+#~ "Ker smo slovenski laboratorij, vam lahko zagotovimo najhitrejši transport "
+#~ "in zamrznitev zobka. Vaš zobek bo varno shranjen v slovenskem "
+#~ "laboratoriju, ki deluje po GMP standardih in izpolnjuje vse najvišje "
+#~ "standarde."
+
+#~ msgid "Najkrajši transportni čas"
+#~ msgstr "Najkrajši transportni čas"
+
+#~ msgid ""
+#~ "Zaradi lokacije laboratorija v Sloveniji zagotavljamo najkrajši čas "
+#~ "transporta, s pa tem celice ohranijo največ njihove vitalnosti."
+#~ msgstr ""
+#~ "Zaradi lokacije laboratorija v Sloveniji zagotavljamo najkrajši čas "
+#~ "transporta, s pa tem celice ohranijo največ njihove vitalnosti."
+
+#~ msgid "Edini slovenski laboratorij"
+#~ msgstr "Edini slovenski laboratorij"
+
+#~ msgid ""
+#~ "Smo edini ponudnik, ki vam omogoča obdelavo in shranjevanje matičnih "
+#~ "celic, ter pripravo celic na zdravljenje doma v Sloveniji."
+#~ msgstr ""
+#~ "Smo edini ponudnik, ki vam omogoča obdelavo in shranjevanje matičnih "
+#~ "celic, ter pripravo celic na zdravljenje doma v Sloveniji."
+
+#~ msgid "Oseben pristop"
+#~ msgstr "Oseben pristop"
+
+#~ msgid ""
+#~ "Neposreden dostop do strokovnjakov, ki dejansko izvajajo storitev. "
+#~ "Laboratorij lahko kadarkoli obiščete in se prepričate o strokovnosti."
+#~ msgstr ""
+#~ "Neposreden dostop do strokovnjakov, ki dejansko izvajajo storitev. "
+#~ "Laboratorij lahko kadarkoli obiščete in se prepričate o strokovnosti."
+
+#~ msgid "Najugodnejša <br />ponudba"
+#~ msgstr "Najugodnejša <br />ponudba"
+
+#~ msgid "Shranite zobno pulpo iz mlečnega zobka za <b>%s</b>"
+#~ msgstr "Shranite zobno pulpo iz mlečnega zobka za <b>%s</b>"
+
+#~ msgid "preveri ponudbo"
+#~ msgstr "preveri ponudbo"
+
+#~ msgid "Certifikat najvišje kakovosti"
+#~ msgstr "Certifikat najvišje kakovosti"
+
+#~ msgid ""
+#~ "Shranjevanje matičnih celic je pomembna odločitev vaše družine. Misija "
+#~ "našega podjetja je omogočiti kakovostno in dostopno shranjevanje matičnih "
+#~ "celic vsakemu posamezniku. StemSave je vodilno podjetje na področju "
+#~ "shranjevanja zobne pulpe v ZDA. Njihova patentirana tehnologija je edina, "
+#~ "ki je odobrena iz strani AAOMS (The American Association of Oral and "
+#~ "Maxillofacial Surgeons). Ker nam je najpomembnejše, da ponudimo "
+#~ "kakovostno storitev, uporabljamo StemSave-ovo patentirano tehnologijo "
+#~ "priprave in shranjevanja zobne pulpe vaših otrok."
+#~ msgstr ""
+#~ "Shranjevanje matičnih celic je pomembna odločitev vaše družine. Misija "
+#~ "našega podjetja je omogočiti kakovostno in dostopno shranjevanje matičnih "
+#~ "celic vsakemu posamezniku. StemSave je vodilno podjetje na področju "
+#~ "shranjevanja zobne pulpe v ZDA. Njihova patentirana tehnologija je edina, "
+#~ "ki je odobrena iz strani AAOMS (The American Association of Oral and "
+#~ "Maxillofacial Surgeons). Ker nam je najpomembnejše, da ponudimo "
+#~ "kakovostno storitev, uporabljamo StemSave-ovo patentirano tehnologijo "
+#~ "priprave in shranjevanja zobne pulpe vaših otrok."
+
+#~ msgid "Naročite info paket"
+#~ msgstr "Naročite info paket"
+
+#~ msgid ""
+#~ "Po emailu boste prejeli vzorec pogodbe in ostale informacije glede "
+#~ "shranjevanja."
+#~ msgstr ""
+#~ "Po emailu boste prejeli vzorec pogodbe in ostale informacije glede "
+#~ "shranjevanja."
+
+#~ msgid "Oddaj podatke"
+#~ msgstr "Oddaj podatke"
+
+#~ msgid "Kaj stranke pravijo o nas?"
+#~ msgstr "Kaj stranke pravijo o nas?"
+
+#~ msgid "Enostaven postopek"
+#~ msgstr "Enostaven postopek"
+
+#~ msgid ""
+#~ "Postopek odstranitve zobka je popolnoma enostaven. Izpolnite prijavo, in "
+#~ "ko dobite paket, se dogovorite z izbranim donorskim centrom za termin "
+#~ "odvzema. S paketom greste do izbranega donorskega centra, kjer bodo "
+#~ "poskrbeli za vse. Po odvzemu nas pokličete in naš kurir bo prevzel paket."
+#~ msgstr ""
+#~ "Postopek odstranitve zobka je popolnoma enostaven. Izpolnite prijavo, in "
+#~ "ko dobite paket, se dogovorite z izbranim donorskim centrom za termin "
+#~ "odvzema. S paketom greste do izbranega donorskega centra, kjer bodo "
+#~ "poskrbeli za vse. Po odvzemu nas pokličete in naš kurir bo prevzel paket."
+
+#~ msgid "Prijava"
+#~ msgstr "Prijava"
+
+#~ msgid ""
+#~ "Prijavite se preko obrazca in pošljite podpisano pogodbo. Po plačilu 350 "
+#~ "€ pristopnih obveznosti dobite na dom paket za odvzem."
+#~ msgstr ""
+#~ "Prijavite se preko obrazca in pošljite podpisano pogodbo. Po plačilu 350 "
+#~ "€ pristopnih obveznosti dobite na dom paket za odvzem."
+
+#~ msgid "Začnete tukaj &gt;"
+#~ msgstr "Začnete tukaj &gt;"
+
+#~ msgid "Prejem paketa"
+#~ msgstr "Prejem paketa"
+
+#~ msgid ""
+#~ "Ko prejmete paket za odvzem zobka, ga shranite na sobni temperaturi, "
+#~ "zaščitenega pred sončno svetlobo. Tako bo pripravljen, da ga vzamete s "
+#~ "seboj, ko boste šli do zobozdravnika."
+#~ msgstr ""
+#~ "Ko prejmete paket za odvzem zobka, ga shranite na sobni temperaturi, "
+#~ "zaščitenega pred sončno svetlobo. Tako bo pripravljen, da ga vzamete s "
+#~ "seboj, ko boste šli do zobozdravnika."
+
+#~ msgid "Zobek se maje"
+#~ msgstr "Zobek se maje"
+
+#~ msgid ""
+#~ "Ko se zobek začne majati, takoj pokličite izbranega zobozdravnika s "
+#~ "seznama donorskih centrov v Sloveniji, in se dogovorite za odvzem."
+#~ msgstr ""
+#~ "Ko se zobek začne majati, takoj pokličite izbranega zobozdravnika s "
+#~ "seznama donorskih centrov v Sloveniji, in se dogovorite za odvzem."
+
+#~ msgid "Seznam donorskih centrov &gt;"
+#~ msgstr "Seznam donorskih centrov &gt;"
+
+#~ msgid "Odvzem brez bolečin"
+#~ msgstr "Odvzem brez bolečin"
+
+#~ msgid ""
+#~ "Vsi naši zobozdravniki so licencirani in usposobljeni ter poskrbijo za "
+#~ "nebolečo odstranitev zobka. Dlesen namažejo s protibolečinskim sredstvom "
+#~ "in hitro odstranijo zobek."
+#~ msgstr ""
+#~ "Vsi naši zobozdravniki so licencirani in usposobljeni ter poskrbijo za "
+#~ "nebolečo odstranitev zobka. Dlesen namažejo s protibolečinskim sredstvom "
+#~ "in hitro odstranijo zobek."
+
+#~ msgid "Odvzem krvi"
+#~ msgstr "Odvzem krvi"
+
+#~ msgid ""
+#~ "Po odvzemu mlečnega zobka je potrebno še odvzeti otrokovo krvi, ki se "
+#~ "pozneje v laboratoriju testira po standardih za prenosljive bolezni."
+#~ msgstr ""
+#~ "Po odvzemu mlečnega zobka je potrebno še odvzeti otrokovo krvi, ki se "
+#~ "pozneje v laboratoriju testira po standardih za prenosljive bolezni."
+
+#~ msgid "Klic"
+#~ msgstr "Klic"
+
+#~ msgid ""
+#~ "Takoj po odvzemu zobka nas pokličite in naš kurir bo pohitel k vam in "
+#~ "prevzel paket. Naš kurir takoj dostavi zobek v laboratorij, kjer "
+#~ "pripravimo zobno pulpo na zamrzovanje in jo zamrznemo."
+#~ msgstr ""
+#~ "Takoj po odvzemu zobka nas pokličite in naš kurir bo pohitel k vam in "
+#~ "prevzel paket. Naš kurir takoj dostavi zobek v laboratorij, kjer "
+#~ "pripravimo zobno pulpo na zamrzovanje in jo zamrznemo."
+
+#~ msgid "Dostava v Biobanko"
+#~ msgstr "Dostava v Biobanko"
+
+#~ msgid ""
+#~ "Naš kurir dostavi paket v Biobanko, kjer opravimo vse potrebne teste in "
+#~ "izvedemo postopek shranjevanja. <b>Vsak vzorec skrbno preverimo</b> in v "
+#~ "primeru, da zobna pulpa ni primerna za hrambo, vam brezplačno zamrznemo "
+#~ "še en zobek. O uspešni hrambi vas pisno obvestimo v roku 6 tednov po "
+#~ "odvzemu zobka, po pošti pa prejmete certifikat."
+#~ msgstr ""
+#~ "Naš kurir dostavi paket v Biobanko, kjer opravimo vse potrebne teste in "
+#~ "izvedemo postopek shranjevanja. <b>Vsak vzorec skrbno preverimo</b> in v "
+#~ "primeru, da zobna pulpa ni primerna za hrambo, vam brezplačno zamrznemo "
+#~ "še en zobek. O uspešni hrambi vas pisno obvestimo v roku 6 tednov po "
+#~ "odvzemu zobka, po pošti pa prejmete certifikat."
+
+#~ msgid "Kako poteka odvzem zobka?"
+#~ msgstr "Kako poteka odvzem zobka?"
+
+#~ msgid ""
+#~ "Za odvzem zobka sodelujemo z najboljšimi slovenskimi zobozdravniki, ki "
+#~ "imajo veliko izkušenj z mlečnimi zobki. Postopek odvzema je v primeru "
+#~ "mlečnih zobkov skoraj neboleč."
+#~ msgstr ""
+#~ "Za odvzem zobka sodelujemo z najboljšimi slovenskimi zobozdravniki, ki "
+#~ "imajo veliko izkušenj z mlečnimi zobki. Postopek odvzema je v primeru "
+#~ "mlečnih zobkov skoraj neboleč."
+
+#~ msgid "Lokalna anestezija"
+#~ msgstr "Lokalna anestezija"
+
+#~ msgid ""
+#~ "Področje okoli zoba se premaže z anestetičnim gelom. Po omrtvičenju "
+#~ "sluznice se neboleče vbrizga še lokalni anestetik."
+#~ msgstr ""
+#~ "Področje okoli zoba se premaže z anestetičnim gelom. Po omrtvičenju "
+#~ "sluznice se neboleče vbrizga še lokalni anestetik."
+
+#~ msgid "Odvzem zoba"
+#~ msgstr "Odvzem zoba"
+
+#~ msgid ""
+#~ "Zob in okoliška dlesen je sedaj neobčutljiva. V primeru mlečnega zobka "
+#~ "odstranitev traja le kratek čas, saj je zob navadno že majav."
+#~ msgstr ""
+#~ "Zob in okoliška dlesen je sedaj neobčutljiva. V primeru mlečnega zobka "
+#~ "odstranitev traja le kratek čas, saj je zob navadno že majav."
+
+#~ msgid "Shranjevanje zoba za transport"
+#~ msgstr "Shranjevanje zoba za transport"
+
+#~ msgid ""
+#~ "Zob se takoj vstavi v ohranitveni medij, in je tako pripravljen na "
+#~ "prevzem in prevoz do laboratorija."
+#~ msgstr ""
+#~ "Zob se takoj vstavi v ohranitveni medij, in je tako pripravljen na "
+#~ "prevzem in prevoz do laboratorija."
+
+#~ msgid "Seznam donorskih centrov"
+#~ msgstr "Seznam donorskih centrov"
+
+#~ msgid "Kaj so matične celice?"
+#~ msgstr "Kaj so matične celice?"
+
+#~ msgid ""
+#~ "Matične celice so primitivne celice, ki so podobne prvim celicam, ki "
+#~ "nastanejo ob združitvi spolnih celic ob spočetju. Imajo posebno funkcijo "
+#~ "naravnega zdravljenja organizma skozi celo življenje. Od navadnih celic "
+#~ "se razlikujejo po tem, da so sposobne samoobnavljanja, reprodukcije in "
+#~ "spreminjanje v različne specializirane oblike celic. Glavni viri matičnih "
+#~ "celic v telesu so:"
+#~ msgstr ""
+#~ "Matične celice so primitivne celice, ki so podobne prvim celicam, ki "
+#~ "nastanejo ob združitvi spolnih celic ob spočetju. Imajo posebno funkcijo "
+#~ "naravnega zdravljenja organizma skozi celo življenje. Od navadnih celic "
+#~ "se razlikujejo po tem, da so sposobne samoobnavljanja, reprodukcije in "
+#~ "spreminjanje v različne specializirane oblike celic. Glavni viri matičnih "
+#~ "celic v telesu so:"
+
+#~ msgid "Popkovnična kri in popkovnica"
+#~ msgstr "Popkovnična kri in popkovnica"
+
+#~ msgid ""
+#~ "Najboljša vira matičnih celic sta popkovnična kri in popkovnica, ki sta "
+#~ "tudi najenostavnejše in povsem neboleče dostopna. Od vseh celic v našem "
+#~ "telesu so prav te celice najmlajše, s tem najbolj primerne za zdravljenje "
+#~ "različnih bolezni. Vsebujeta krvotvorne in mezenhimske matične celice. "
+#~ "Postopek ni invaziven in ni boleč."
+#~ msgstr ""
+#~ "Najboljša vira matičnih celic sta popkovnična kri in popkovnica, ki sta "
+#~ "tudi najenostavnejše in povsem neboleče dostopna. Od vseh celic v našem "
+#~ "telesu so prav te celice najmlajše, s tem najbolj primerne za zdravljenje "
+#~ "različnih bolezni. Vsebujeta krvotvorne in mezenhimske matične celice. "
+#~ "Postopek ni invaziven in ni boleč."
+
+#~ msgid "Kostni mozeg"
+#~ msgstr "Kostni mozeg"
+
+#~ msgid ""
+#~ "Matične celice lahko vedno odvzamemo iz kostnega mozga. Metoda je vrtanje "
+#~ "v kost, odvzem kostnega mozga in izolacija matičnih celic. Celice so "
+#~ "starejše in s seboj nosijo starostne poškodbe. Vsebuje krvotvorne in "
+#~ "mezenhimske matične celice. Postopek odvzema kostnega mozga je invaziven "
+#~ "in boleč."
+#~ msgstr ""
+#~ "Matične celice lahko vedno odvzamemo iz kostnega mozga. Metoda je vrtanje "
+#~ "v kost, odvzem kostnega mozga in izolacija matičnih celic. Celice so "
+#~ "starejše in s seboj nosijo starostne poškodbe. Vsebuje krvotvorne in "
+#~ "mezenhimske matične celice. Postopek odvzema kostnega mozga je invaziven "
+#~ "in boleč."
+
+#~ msgid "Stimulirana periferna kri"
+#~ msgstr "Stimulirana periferna kri"
+
+#~ msgid ""
+#~ "Vir matičnih celic, ki jih lahko pridobimo po jemanju določenih zdravil, "
+#~ "ki spodbujajo (stimulirajo) razmnoževanje matičnih celic v kostnem mozgu "
+#~ "in izplavljanje v kri. Ko je v naši periferni krvi dovolj matičnih celic, "
+#~ "jih s postopkom t.i. afereze ekstrahiramo. Pri tem postopku se kri "
+#~ "prefiltrira skozi aparat, in izloči matične celice. Vsebuje krvotvorne in "
+#~ "mezenhimske matične celice. Postopek odvzema krvi je invaziven in boleč."
+#~ msgstr ""
+#~ "Vir matičnih celic, ki jih lahko pridobimo po jemanju določenih zdravil, "
+#~ "ki spodbujajo (stimulirajo) razmnoževanje matičnih celic v kostnem mozgu "
+#~ "in izplavljanje v kri. Ko je v naši periferni krvi dovolj matičnih celic, "
+#~ "jih s postopkom t.i. afereze ekstrahiramo. Pri tem postopku se kri "
+#~ "prefiltrira skozi aparat, in izloči matične celice. Vsebuje krvotvorne in "
+#~ "mezenhimske matične celice. Postopek odvzema krvi je invaziven in boleč."
+
+#~ msgid "Maščobno tkivo"
+#~ msgstr "Maščobno tkivo"
+
+#~ msgid ""
+#~ "Matične celice lahko odvzamemo iz maščobnega tkiva. Metoda je "
+#~ "liposukcija, in ekstrakcija matičnih celic iz maščobnega tkiva. Celice so "
+#~ "starejše in s seboj nosijo starostne poškodbe. Vsebuje mezenhimske "
+#~ "matične celice. Postopek odvzema maščobnega tkiva je invaziven in boleč."
+#~ msgstr ""
+#~ "Matične celice lahko odvzamemo iz maščobnega tkiva. Metoda je "
+#~ "liposukcija, in ekstrakcija matičnih celic iz maščobnega tkiva. Celice so "
+#~ "starejše in s seboj nosijo starostne poškodbe. Vsebuje mezenhimske "
+#~ "matične celice. Postopek odvzema maščobnega tkiva je invaziven in boleč."
+
+#~ msgid "Zobna pulpa"
+#~ msgstr "Zobna pulpa"
+
+#~ msgid ""
+#~ "Vsebuje dentalne mezenhimske matične celice, ki se nahajajo v notranjosti "
+#~ "zoba. Postopek odvzema je ekstrakcija zoba, ki je v primeru mlečnih "
+#~ "zobkov skoraj neboleča."
+#~ msgstr ""
+#~ "Vsebuje dentalne mezenhimske matične celice, ki se nahajajo v notranjosti "
+#~ "zoba. Postopek odvzema je ekstrakcija zoba, ki je v primeru mlečnih "
+#~ "zobkov skoraj neboleča."
+
+#~ msgid "Različni viri matičnih celic v telesu"
+#~ msgstr "Različni viri matičnih celic v telesu"
+
+#~ msgid "Matična celica"
+#~ msgstr "Matična celica"
+
+#~ msgid "Reprodukcija matičnih celic"
+#~ msgstr "Reprodukcija matičnih celic"
+
+#~ msgid "Transformacija v druge oblike celic"
+#~ msgstr "Transformacija v druge oblike celic"
+
+#~ msgid "Razvoj terapij za neozdravljive bolezni"
+#~ msgstr "Razvoj terapij za neozdravljive bolezni"
+
+#~ msgid ""
+#~ "Dosedanje raziskave kažejo, da je možno kontrolirano usmerjati rast "
+#~ "matičnih celic v določene specializirana oblike celic, kot na primer: "
+#~ "krvne celice, kožno tkivo, zobne celice, mišična tkiva in živci. "
+#~ "Posledično se razvijajo nova vrsta zdravljenj in terapij za bolezni, ki "
+#~ "jih je trenutno zelo težko ali pa nemogoče zdraviti:"
+#~ msgstr ""
+#~ "Dosedanje raziskave kažejo, da je možno kontrolirano usmerjati rast "
+#~ "matičnih celic v določene specializirana oblike celic, kot na primer: "
+#~ "krvne celice, kožno tkivo, zobne celice, mišična tkiva in živci. "
+#~ "Posledično se razvijajo nova vrsta zdravljenj in terapij za bolezni, ki "
+#~ "jih je trenutno zelo težko ali pa nemogoče zdraviti:"
+
+#~ msgid "Parkinsonova bolezen"
+#~ msgstr "Parkinsonova bolezen"
+
+#~ msgid "Poškodbe možganov"
+#~ msgstr "Poškodbe možganov"
+
+#~ msgid "Srčne bolezni"
+#~ msgstr "Srčne bolezni"
+
+#~ msgid "Diabetes"
+#~ msgstr "Diabetes"
+
+#~ msgid "Artritis"
+#~ msgstr "Artritis"
+
+#~ msgid "Mišična distrofija"
+#~ msgstr "Mišična distrofija"
+
+#~ msgid "Levkemija"
+#~ msgstr "Levkemija"
+
+#~ msgid "Crohnova bolezen"
+#~ msgstr "Crohnova bolezen"
+
+#~ msgid "Multipla skleroza"
+#~ msgstr "Multipla skleroza"
+
+#~ msgid "Neimann-Pick tip C"
+#~ msgstr "Neimann-Pick tip C"
+
+#~ msgid "Parodontalne bolezni"
+#~ msgstr "Parodontalne bolezni"
+
+#~ msgid "Športne poškodbe"
+#~ msgstr "Športne poškodbe"
+
+#~ msgid "Preveri klinične študije"
+#~ msgstr "Preveri klinične študije"
+
+#~ msgid "Matične celice iz zobne pulpe"
+#~ msgstr "Matične celice iz zobne pulpe"
+
+#~ msgid ""
+#~ "Z odkritjem dentalnih matičnih celic, se je pojavil nov vir matičnih "
+#~ "celic z velikim potencialom, ki je na voljo ob vsakem načrtovanem "
+#~ "izruvanju zoba. Prednost mlečnih zobkov pred stalnimi je, da so celice v "
+#~ "mlečnih zobkih še zelo mlade in imajo večjo vitalnost in močnejše "
+#~ "regenerativne sposobnosti."
+#~ msgstr ""
+#~ "Z odkritjem dentalnih matičnih celic, se je pojavil nov vir matičnih "
+#~ "celic z velikim potencialom, ki je na voljo ob vsakem načrtovanem "
+#~ "izruvanju zoba. Prednost mlečnih zobkov pred stalnimi je, da so celice v "
+#~ "mlečnih zobkih še zelo mlade in imajo večjo vitalnost in močnejše "
+#~ "regenerativne sposobnosti."
+
+#~ msgid "Najpotentnejše v telesu"
+#~ msgstr "Najpotentnejše v telesu"
+
+#~ msgid ""
+#~ "Raziskave kažejo, da so prav dentalne matične celice, poleg celic "
+#~ "popkovnične krvi in tkiva popkovnice, ene izmed matičnih celic v telesu z "
+#~ "največjim potencialom- njihova hitrost replikacije je največja in traja "
+#~ "najdlje časa v primerjavi z matičnimi celicami pridobljenimi iz ostalih "
+#~ "tkiv v telesu."
+#~ msgstr ""
+#~ "Raziskave kažejo, da so prav dentalne matične celice, poleg celic "
+#~ "popkovnične krvi in tkiva popkovnice, ene izmed matičnih celic v telesu z "
+#~ "največjim potencialom- njihova hitrost replikacije je največja in traja "
+#~ "najdlje časa v primerjavi z matičnimi celicami pridobljenimi iz ostalih "
+#~ "tkiv v telesu."
+
+#~ msgid "Ni možnosti zavrnitvene reakcije"
+#~ msgstr "Ni možnosti zavrnitvene reakcije"
+
+#~ msgid ""
+#~ "Dentalne matične celice, kot vir lastnih matičnih celic, imajo veliko "
+#~ "prednosti pri razvoju novih terapij zdravljenja. Uporaba lastnih matičnih "
+#~ "celic pri zdravljenju pomeni precej nižji rizik zavrnitvene reakcije s "
+#~ "strani telesa in manjšo potrebno po močnih zdravilih, ki zmanjšujejo "
+#~ "imunski sistem - gre za dva ključna dejavnika, ki spremljata paciente v "
+#~ "primeru terapije z darovanimi matičnimi celicami."
+#~ msgstr ""
+#~ "Dentalne matične celice, kot vir lastnih matičnih celic, imajo veliko "
+#~ "prednosti pri razvoju novih terapij zdravljenja. Uporaba lastnih matičnih "
+#~ "celic pri zdravljenju pomeni precej nižji rizik zavrnitvene reakcije s "
+#~ "strani telesa in manjšo potrebno po močnih zdravilih, ki zmanjšujejo "
+#~ "imunski sistem - gre za dva ključna dejavnika, ki spremljata paciente v "
+#~ "primeru terapije z darovanimi matičnimi celicami."
+
+#~ msgid "Mlade celice - večja učinkovitost"
+#~ msgstr "Mlade celice - večja učinkovitost"
+
+#~ msgid ""
+#~ "Matične celice se v človeškem telesu starajo, prav tako kot človek. "
+#~ "Njihove regenerativne sposobnosti se z leti upočasnijo. Mlajše ko jih "
+#~ "zajamemo, bolj učinkovite in vredne bodo takrat, ko jih bomo nujno "
+#~ "potrebovali."
+#~ msgstr ""
+#~ "Matične celice se v človeškem telesu starajo, prav tako kot človek. "
+#~ "Njihove regenerativne sposobnosti se z leti upočasnijo. Mlajše ko jih "
+#~ "zajamemo, bolj učinkovite in vredne bodo takrat, ko jih bomo nujno "
+#~ "potrebovali."
+
+#~ msgid "Zavarovanje za celo družino"
+#~ msgstr "Zavarovanje za celo družino"
+
+#~ msgid ""
+#~ "Žive matične celice v izruvanem zobu, so bile rutinsko zavržene vsak dan, "
+#~ "na podlagi zadnjih dognanj v medicini, pa vam Biobanka omogoča shranitev "
+#~ "teh celic."
+#~ msgstr ""
+#~ "Žive matične celice v izruvanem zobu, so bile rutinsko zavržene vsak dan, "
+#~ "na podlagi zadnjih dognanj v medicini, pa vam Biobanka omogoča shranitev "
+#~ "teh celic."
+
+#~ msgid "Uporaba matičnih celic danes"
+#~ msgstr "Uporaba matičnih celic danes"
+
+#~ msgid ""
+#~ "V svetovnem merilu je bilo od leta 1957 opravljenih že več kot 1.000.000 "
+#~ "zdravljenj z matičnimi celicami, predvsem s področja transplantacijske "
+#~ "medicine. Danes matične celice omogočajo uspešno zdravljenje več kot 100 "
+#~ "različnih bolezni. Matične celice predstavljajo izreden potencial na "
+#~ "področju napredne regenerativne medicine, ki je usmerjena v popravilo ali "
+#~ "zamenjavo poškodovanega tkiva in organov ter obljublja izredne "
+#~ "zdravstvene napredke že za časa življenja vašega otroka."
+#~ msgstr ""
+#~ "V svetovnem merilu je bilo od leta 1957 opravljenih že več kot 1.000.000 "
+#~ "zdravljenj z matičnimi celicami, predvsem s področja transplantacijske "
+#~ "medicine. Danes matične celice omogočajo uspešno zdravljenje več kot 100 "
+#~ "različnih bolezni. Matične celice predstavljajo izreden potencial na "
+#~ "področju napredne regenerativne medicine, ki je usmerjena v popravilo ali "
+#~ "zamenjavo poškodovanega tkiva in organov ter obljublja izredne "
+#~ "zdravstvene napredke že za časa življenja vašega otroka."
+
+#~ msgid "Viri matičnih celic"
+#~ msgstr "Viri matičnih celic"
+
+#~ msgid "Popkovnična kri"
+#~ msgstr "Popkovnična kri"
+
+#~ msgid "Periferna kri"
+#~ msgstr "Periferna kri"
+
+#~ msgid ""
+#~ "Graf: Podatek Ameriškega nacionalnega inštituta za darovanje krvi - "
+#~ "mlajši od 18 let"
+#~ msgstr ""
+#~ "Graf: Podatek Ameriškega nacionalnega inštituta za darovanje krvi - "
+#~ "mlajši od 18 let"
+
+#~ msgid "Transplantacijska medicina"
+#~ msgstr "Transplantacijska medicina"
+
+#~ msgid ""
+#~ "Matične celice se lahko spremenijo v veliko število telesnih (somatskih) "
+#~ "celic, kar že danes omogoča zdravljenje skoraj 100 različnih bolezni - "
+#~ "največ na področju krvnega raka in obolenj imunskega sistema. V Sloveniji "
+#~ "je okvirno 100 presaditev matičnih celic letno, od tega približno 70 % "
+#~ "presaditev poteka s pacientovimi lastnimi matičnimi celicami. Danes "
+#~ "uspešno že zdravimo bolezni:"
+#~ msgstr ""
+#~ "Matične celice se lahko spremenijo v veliko število telesnih (somatskih) "
+#~ "celic, kar že danes omogoča zdravljenje skoraj 100 različnih bolezni - "
+#~ "največ na področju krvnega raka in obolenj imunskega sistema. V Sloveniji "
+#~ "je okvirno 100 presaditev matičnih celic letno, od tega približno 70 % "
+#~ "presaditev poteka s pacientovimi lastnimi matičnimi celicami. Danes "
+#~ "uspešno že zdravimo bolezni:"
+
+#~ msgid "Krvni rak in nepravilnosti"
+#~ msgstr "Krvni rak in nepravilnosti"
+
+#~ msgid "Levkemije"
+#~ msgstr "Levkemije"
+
+#~ msgid "Limfomi"
+#~ msgstr "Limfomi"
+
+#~ msgid "Mielomi"
+#~ msgstr "Mielomi"
+
+#~ msgid "Plazmocitomi"
+#~ msgstr "Plazmocitomi"
+
+#~ msgid "Aplazija rdečih krvničk"
+#~ msgstr "Aplazija rdečih krvničk"
+
+#~ msgid "Anemije"
+#~ msgstr "Anemije"
+
+#~ msgid "Talasemija"
+#~ msgstr "Talasemija"
+
+#~ msgid "Dedne nepravilnosti trombocitov"
+#~ msgstr "Dedne nepravilnosti trombocitov"
+
+#~ msgid "Prirojene metabolne motnje"
+#~ msgstr "Prirojene metabolne motnje"
+
+#~ msgid "Hurlerjev sindrom"
+#~ msgstr "Hurlerjev sindrom"
+
+#~ msgid "Levkodistrofija"
+#~ msgstr "Levkodistrofija"
+
+#~ msgid "Lizosomske bolezni"
+#~ msgstr "Lizosomske bolezni"
+
+#~ msgid "Čvrsti tumorji"
+#~ msgstr "Čvrsti tumorji"
+
+#~ msgid "Neuroblastom"
+#~ msgstr "Neuroblastom"
+
+#~ msgid "Retinoblastom"
+#~ msgstr "Retinoblastom"
+
+#~ msgid "Prirojene napake imunskega sistema"
+#~ msgstr "Prirojene napake imunskega sistema"
+
+#~ msgid "Huda kombinirana imunska pomanjkljivost"
+#~ msgstr "Huda kombinirana imunska pomanjkljivost"
+
+#~ msgid "Sindrom Wiskott-Aldrich"
+#~ msgstr "Sindrom Wiskott-Aldrich"
+
+#~ msgid "Zobek je naravni “sef” matičnih celic"
+#~ msgstr "Zobek je naravni “sef” matičnih celic"
+
+#~ msgid ""
+#~ "Z leti se kakovost matičnih celic v telesu žal zmanjšuje. Zato je "
+#~ "pomembno, da jih shranimo, ko smo mlajši in tudi bolj zdravi. Z odkritim "
+#~ "novim virom mezenhimskih matičnih celic v mlečnih zobkih ponujamo možnost "
+#~ "shranitve matičnih celic za starše, ki ste to priložnost ob porodu morda "
+#~ "zamudili."
+#~ msgstr ""
+#~ "Z leti se kakovost matičnih celic v telesu žal zmanjšuje. Zato je "
+#~ "pomembno, da jih shranimo, ko smo mlajši in tudi bolj zdravi. Z odkritim "
+#~ "novim virom mezenhimskih matičnih celic v mlečnih zobkih ponujamo možnost "
+#~ "shranitve matičnih celic za starše, ki ste to priložnost ob porodu morda "
+#~ "zamudili."
+
+#~ msgid "Zdrava prihodnost"
+#~ msgstr "Zdrava prihodnost"
+
+#~ msgid ""
+#~ "S shranjevanjem teh dragocenih matičnih celic zavarujete otrokovo "
+#~ "prihodnost."
+#~ msgstr ""
+#~ "S shranjevanjem teh dragocenih matičnih celic zavarujete otrokovo "
+#~ "prihodnost."
+
+#~ msgid "Možnost shranitve lastnih celic"
+#~ msgstr "Možnost shranitve lastnih celic"
+
+#~ msgid ""
+#~ "Shranjene lastne matične celice zagotavljajo 100% genetsko ujemanje – pri "
+#~ "zdravljenju ni možnosti zavrnitvene reakcije."
+#~ msgstr ""
+#~ "Shranjene lastne matične celice zagotavljajo 100% genetsko ujemanje – pri "
+#~ "zdravljenju ni možnosti zavrnitvene reakcije."
+
+#~ msgid "Odlična priložnost"
+#~ msgstr "Odlična priložnost"
+
+#~ msgid ""
+#~ "Shranjevanje mlečnega zoba je eleganten in popolnoma varen način "
+#~ "pridobivanja matičnih celic. Postopek odvzema je hiter in enostaven."
+#~ msgstr ""
+#~ "Shranjevanje mlečnega zoba je eleganten in popolnoma varen način "
+#~ "pridobivanja matičnih celic. Postopek odvzema je hiter in enostaven."
+
+#~ msgid "Potencial zdravljenja"
+#~ msgstr "Potencial zdravljenja"
+
+#~ msgid ""
+#~ "Matične celice predstavljajo izreden potencial prav na področju napredne "
+#~ "regenerativne medicine, ki je usmerjen v popravilo ali zamenjavo "
+#~ "poškodovanega tkiva in organov ter obljublja izredne zdravstvene napredke "
+#~ "že za časa življenja vašega otroka. Trenutno poteka več kot 5200 "
+#~ "registriranih kliničnih študij s področja zdravljenja najtežjih bolezni:"
+#~ msgstr ""
+#~ "Matične celice predstavljajo izreden potencial prav na področju napredne "
+#~ "regenerativne medicine, ki je usmerjen v popravilo ali zamenjavo "
+#~ "poškodovanega tkiva in organov ter obljublja izredne zdravstvene napredke "
+#~ "že za časa življenja vašega otroka. Trenutno poteka več kot 5200 "
+#~ "registriranih kliničnih študij s področja zdravljenja najtežjih bolezni:"
+
+#~ msgid "Možganske poškodbe"
+#~ msgstr "Možganske poškodbe"
+
+#~ msgid "Poškodbe kosti"
+#~ msgstr "Poškodbe kosti"
+
+#~ msgid "Srčna kap"
+#~ msgstr "Srčna kap"
+
+#~ msgid "Možganska kap"
+#~ msgstr "Možganska kap"
+
+#~ msgid "Cerebralna paraliza"
+#~ msgstr "Cerebralna paraliza"
+
+#~ msgid "Rak"
+#~ msgstr "Rak"
+
+#~ msgid "Poškodbe sklepov"
+#~ msgstr "Poškodbe sklepov"
+
+#~ msgid "Bolezni jeter"
+#~ msgstr "Bolezni jeter"
+
+#~ msgid ""
+#~ "Shranjene matične celice nam v bodočnosti lahko rešijo in podaljšajo "
+#~ "življenje."
+#~ msgstr ""
+#~ "Shranjene matične celice nam v bodočnosti lahko rešijo in podaljšajo "
+#~ "življenje."
+
+#~ msgid "Za celo družino"
+#~ msgstr "Za celo družino"
+
+#~ msgid ""
+#~ "Shranjevanje v družinski banki omogoča shranjevanje matičnih celic za "
+#~ "potrebe izključno vaših otrok. V primeru potrebe zdravljenja bolezni, so "
+#~ "na voljo za takojšnjo dostavo v katerokoli zdravstveno ustanovo po svetu. "
+#~ "Zaradi 100% genetskega ujemanja ni bojazni za zavrnitveno reakcijo, kar "
+#~ "je glavna slabost zdravljenja z darovanimi matičnimi celicami."
+#~ msgstr ""
+#~ "Shranjevanje v družinski banki omogoča shranjevanje matičnih celic za "
+#~ "potrebe izključno vaših otrok. V primeru potrebe zdravljenja bolezni, so "
+#~ "na voljo za takojšnjo dostavo v katerokoli zdravstveno ustanovo po svetu. "
+#~ "Zaradi 100% genetskega ujemanja ni bojazni za zavrnitveno reakcijo, kar "
+#~ "je glavna slabost zdravljenja z darovanimi matičnimi celicami."
+
+#~ msgid "Izključno za vaše otroke"
+#~ msgstr "Izključno za vaše otroke"
+
+#~ msgid ""
+#~ "Celice se shranijo za vašega otroka/mladostnika in so na voljo izključno "
+#~ "njemu."
+#~ msgstr ""
+#~ "Celice se shranijo za vašega otroka/mladostnika in so na voljo izključno "
+#~ "njemu."
+
+#~ msgid "100% ujemanje"
+#~ msgstr "100% ujemanje"
+
+#~ msgid ""
+#~ "Shranjene lastne matične celice zagotavljajo 100% genetsko ujemanje - pri "
+#~ "zdravljenju ni možnosti zavrnitvene reakcije."
+#~ msgstr ""
+#~ "Shranjene lastne matične celice zagotavljajo 100% genetsko ujemanje - pri "
+#~ "zdravljenju ni možnosti zavrnitvene reakcije."
+
+#~ msgid "Ustrezne za sorojence"
+#~ msgstr "Ustrezne za sorojence"
+
+#~ msgid ""
+#~ "Možnost uporabe tudi za zdravljenje sorojencev, vendar se zaradi 25% "
+#~ "verjetnosti popolnega genskega ujemanja priporoča shraniti matične celice "
+#~ "vseh otrok."
+#~ msgstr ""
+#~ "Možnost uporabe tudi za zdravljenje sorojencev, vendar se zaradi 25% "
+#~ "verjetnosti popolnega genskega ujemanja priporoča shraniti matične celice "
+#~ "vseh otrok."
+
+#~ msgid "Rok hrambe neomejen"
+#~ msgstr "Rok hrambe neomejen"
+
+#~ msgid ""
+#~ "Celice so shranjene pri izredno nizkih temperaturah v parah tekočega "
+#~ "dušika (pod -156°C) in so tako pripravljene na zdravljenje neomejeno "
+#~ "dolgo."
+#~ msgstr ""
+#~ "Celice so shranjene pri izredno nizkih temperaturah v parah tekočega "
+#~ "dušika (pod -156°C) in so tako pripravljene na zdravljenje neomejeno "
+#~ "dolgo."
+
+#~ msgid "Darilo za celo življenje"
+#~ msgstr "Darilo za celo življenje"
+
+#~ msgid ""
+#~ "Shranjevanje mlečnih zobkov je odlična priložnost za vse starše, ki "
+#~ "želijo shraniti dragocene matične celice svojega otroka in mu s tem "
+#~ "omogočiti boljšo prihodnost. Je tudi odlična druga priložnost, če morda "
+#~ "niste shranili popkovnične krvi ali tkiva popkovnice. Shranite zobek, "
+#~ "kajti tako elegantne in neboleče priložnosti za shranjevanje dragocenih "
+#~ "matičnih celic ne bo imel vaš otrok nikoli več."
+#~ msgstr ""
+#~ "Shranjevanje mlečnih zobkov je odlična priložnost za vse starše, ki "
+#~ "želijo shraniti dragocene matične celice svojega otroka in mu s tem "
+#~ "omogočiti boljšo prihodnost. Je tudi odlična druga priložnost, če morda "
+#~ "niste shranili popkovnične krvi ali tkiva popkovnice. Shranite zobek, "
+#~ "kajti tako elegantne in neboleče priložnosti za shranjevanje dragocenih "
+#~ "matičnih celic ne bo imel vaš otrok nikoli več."
+
+#~ msgid "Preveri ponudbo"
+#~ msgstr "Preveri ponudbo"

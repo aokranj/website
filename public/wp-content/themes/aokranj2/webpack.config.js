@@ -3,17 +3,12 @@ const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV === 'production'
-
-const mode = isProduction ? 'production' : 'development'
-const devtool = isProduction ? 'source-map' : 'source-map'
-const jsFilename = isProduction ? 'aokranj.min.js' : 'aokranj.js'
-const cssFilename = isProduction ? 'aokranj.min.css' : 'aokranj.css'
+const isDevelopment = !isProduction
 
 const paths = {
   entry: path.resolve(__dirname, 'src', 'aokranj.js'),
@@ -23,13 +18,13 @@ const paths = {
 }
 
 const config = {
-  mode,
+  mode: isProduction ? 'production' : 'development',
   entry: paths.entry,
   output: {
-    filename: jsFilename,
-    path: paths.output
+    filename: 'aokranj.js',
+    path: paths.output,
   },
-  devtool,
+  devtool: 'source-map',
   module: {
     rules: [{
       test: /\.js$/,
@@ -37,10 +32,12 @@ const config = {
       use: [{ loader: 'babel-loader' }],
     },{
       test: /\.(css|scss)$/,
+      include: paths.src,
       use: [
         MiniCssExtractPlugin.loader,
+        //'style-loader',
         'css-loader',
-        'postcss-loader',
+        //'postcss-loader',
         'sass-loader',
       ],
     },{
@@ -49,37 +46,55 @@ const config = {
     }],
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       Popper: ['popper.js', 'default'],
     }),
     new MiniCssExtractPlugin({
-      filename: cssFilename,
+      filename: 'aokranj.css',
     }),
   ],
-  optimization: {
-    namedModules: true,
-    noEmitOnErrors: true,
-    concatenateModules: true,
-    /*
-    minimizer: [
-      new UglifyJsPlugin(),
-    ],
-    */
-  }
+}
+
+if (isDevelopment) {
+  config.plugins.push(
+    new BrowserSyncPlugin({
+      proxy: 'http://aokranj.local/',
+      host: 'localhost',
+      port: 3000,
+      injectCss: true,
+      files: [
+        './*.php',
+        './inc/**/*.php',
+        './templates/**/*.php',
+        './languages/*.po',
+        './public/*.css',
+        './public/*.js',
+      ],
+    },{
+      reload: false,
+    }),
+  )
 }
 
 if (isProduction) {
+  config.optimization = {
+    namedModules: true,
+    noEmitOnErrors: true,
+    concatenateModules: true,
+    minimizer: [
+      new UglifyJsPlugin({
+        test: /\.js($|\?)/i,
+        cache: true,
+        parallel: true,
+      })
+    ],
+  }
   config.plugins.push(
     new CompressionPlugin({
-			asset: '[path].gz[query]',
-			algorithm: 'gzip',
-			test: /\.(js)$/,
-			threshold: 10240,
-			minRatio: 0.8
-		}),
+      test: /\.js/
+    }),
     new FileManagerPlugin({
       onStart: {
         delete: [
@@ -100,26 +115,6 @@ if (isProduction) {
           { source: './style.css', destination: './dist/style.css' },
         ],
       },
-    }),
-  )
-} else {
-  config.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new BrowserSyncPlugin({
-      proxy: 'http://aokranj.local/',
-      host: 'localhost',
-      port: 3000,
-      injectCss: true,
-      files: [
-        './*.php',
-        './inc/**/*.php',
-        './templates/**/*.php',
-        './languages/*.po',
-        './public/*.css',
-        './public/*.js',
-      ],
-    },{
-      reload: false,
     }),
   )
 }
