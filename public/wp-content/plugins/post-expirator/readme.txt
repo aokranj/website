@@ -1,46 +1,70 @@
-=== Post Expirator ===
-Contributors: axelseaa
-Donate link: http://aaron.axelsen.us/donate
+=== Post Expirator: Automatically Unpublish WordPress Posts ===
+Contributors: publishpress, kevinB, stevejburge, andergmartins, axelseaa, rozroz
+Author: PublishPress
+Author URI: https://publishpress.com
 Tags: expire, posts, pages, schedule
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 2.3.1.1
+Tested up to: 5.7
+Stable tag: 2.4.3
 
-Allows you to add an expiration date to posts which you can configure to either delete the post, change it to a draft, or update the 
-post categories.
+Add an expiration date to posts. When your post is automatically unpublished, you can delete the post, change the status, or update the post categories.
 
 == Description ==
 
-The Post Expirator plugin allows the user to set expiration dates for both posts and pages.  There are a number of different ways that the posts can expire:
+The Post Expirator plugin allows you to add an expiration date to posts. pages and other content type. When your post is automatically unpublished, you can delete the post, change the status, or update the post categories.
 
-* Draft
-* Delete
-* Trash
-* Private
-* Stick
-* Unstick
-* Categories: Replace
-* Categories: Add
-* Categories: Remove
+Here's an overview of what you can do with Post Expirator:
 
-For each expiration event, a custom cron job will be schedule which will help reduce server overhead for busy sites.
+* Choose expiry dates for content in any post type.
+* Select expiry dates in the right sidebar when editing posts.
+* Modify, remove or completely delete content when the expiry date arrives.
+* Modify expiry dates using "Quick Edit" and "Bulk Edit".
+* Receive email notifications when your content expires.
+* Show expiry dates in your content, automatically or with shortcodes.
 
-The expiration date can be displayed within the actual post by using the [postexpirator] tag.  The format attribute will override the plugin 
-default display format.  See the [PHP Date Function](http://us2.php.net/manual/en/function.date.php) for valid date/time format options. 
+## Options for Expiring Posts
 
-NOTE: This plugin REQUIRES that WP-CRON is setup and functional on your webhost.  Some hosts do not support this, so please check and confirm if you run into issues using the plugin.
+When your posts expire, you can perform these changes on your content:
 
-Plugin homepage [WordPress Post Expirator](http://postexpirator.tuxdocs.net).
+* Change the status to "Draft".
+* Delete the post.
+* Send the post to the Trash.
+* Change the status to "Private".
+* Enable the “Stick to the top of the blog” option.
+* Disable the “Stick to the top of the blog” option.
+* Remove all existing categories, and add new categories.
+* Keep all existing categories, and add new categories.
+* Keep all existing categories, except for those specified in this change.
 
-New! [Feature Requests](http://postexpirator.uservoice.com) Please enter all feature requests here.  Requests entered via the plugin website or support forum may be missed.
+[Click here for more details on expiring posts](https://publishpress.com/knowledge-base/ways-to-expire-posts/).
 
-**[postexpirator] shortcode attributes**
+## Display the Expiry Date in Your Content
 
-* type - defaults to full - valid options are full,date,time
-* dateformat - format set here will override the value set on the settings page
-* timeformat - format set here will override the value set on the settings page 
+Post Expirator allows you to place automatically show the expiry date inside your articles. The expiry will be added at the bottom of your post.
 
-This plugin is fully compatible with WordPress Multisite Mode.
+[Click here to see the Footer Display options](https://publishpress.com/knowledge-base/footer-display/).
+
+You can use shortcodes to show the expiration date inside your posts. You can customize the shortcode output with several formatting options.
+
+[Click here to see the shortcode options](https://publishpress.com/knowledge-base/shortcodes-to-show-expiration-date/).
+
+## Expiry Defaults for Post Types
+
+Post Expirator can support any post type in WordPress. Go to Settings > Post Expirator > Defaults and you can choose default expiry options for each post type. 
+
+[Click here to see the default options](https://publishpress.com/knowledge-base/defaults-for-post-types/).
+
+## Post Expirator Email Notifications
+
+The Post Expirator plugin can send you email notifications when your content is unpublished. You can control the emails by going to Settings > Post Expirator > General Settings.
+
+[Click here to see the notification options](https://publishpress.com/knowledge-base/email-notifications/).
+
+## Details on How Post Expiry Works
+
+For each expiration event, a custom cron job is scheduled. This can help reduce server overhead for busy sites. This plugin REQUIRES that WP-CRON is setup and functional on your webhost.  Some hosts do not support this, so please check and confirm if you run into issues using the plugin.
+
+[Click here to see the technical details for this plugin](https://publishpress.com/knowledge-base/scheduling-cron-jobs/).
 
 == Installation ==
 
@@ -52,10 +76,33 @@ This section describes how to install the plugin and get it working.
 == Screenshots ==
 
 1. Adding expiration date to a post
-2. Viewing the exipiration dates on the post overview screen
+2. Viewing the expiration dates on the post overview screen
 3. Settings screen
 
 == Changelog ==
+
+**Version 2.4.3**
+
+* Added: Expose wrappers for legacy functions, #40;
+* Added: Support for quotes in Default expiry, #43;
+* Fixed: Default expiry duration is broken for future years, #39;
+* Fixed: Translation bug, #5;
+* Fixed: Post expiring one year early, #24;
+* Changed: Bulk and Quick Edit boxes default to current date/year, #46;
+
+**Version 2.4.2**
+
+* Fixed: Bulk edit does not change scheduled event bug, #29;
+* Fixed: Date not being translated in shortcode, #16;
+* Fixed: Bulk Edit doesn't work, #4;
+
+**Version 2.4.1**
+
+* Fix: Updated deprecated .live jQuery reference.
+
+**Version 2.4.0**
+
+* Fix: Fixed PHP Error with PHP 7.
 
 **Version 2.3.1**
 
@@ -96,7 +143,7 @@ This section describes how to install the plugin and get it working.
 
 **Version 2.1.2**
 
-* Security: Added form nonce for protect agaisnt possible CSRF
+* Security: Added form nonce for protect against possible CSRF
 * Security: Fixed XSS issue on settings pages
 * New: Added check to show if WP_CRON is enabled on diagnostics page
 * Fix: Minor Code Cleanup
@@ -108,7 +155,7 @@ This section describes how to install the plugin and get it working.
 
 **Version 2.1.0**
 
-* New: Added support for heirarchical custom taxonomy
+* New: Added support for hierarchical custom taxonomy
 * New: Enhanced custom post type support
 * Fix: Updated debug function to be friendly for scripted calls 
 * Fix: Change to only show public custom post types on defaults screen
@@ -248,7 +295,6 @@ Quick Edit/Bulk Edit Added. Sortable Expiration Date Fields Added
 = 2.1.4 =
 Fixed PHP Strict errors with 5.4+
 Removed temporary timezone conversion functions
-
 
 = 2.1.3 =
 Default category selection now saves correctly on default settings screen

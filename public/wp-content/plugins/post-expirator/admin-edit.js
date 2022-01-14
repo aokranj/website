@@ -1,4 +1,14 @@
-(function($) {
+(function($, config) {
+
+    // show/hide the date fields when the user chooses the intent.
+    $('body').on('change', 'select[name="expirationdate_status"]', function(e){
+        var $show = $(this).find('option:selected').attr('data-show-fields');
+        if($show === 'true'){
+            $(this).parents('.timestamp-wrap').find('span.post-expirator-date-fields').show();
+        }else{
+            $(this).parents('.timestamp-wrap').find('span.post-expirator-date-fields').hide();
+        }
+    });
 
 	// we create a copy of the WP inline edit post function
 	var $wp_inline_edit = inlineEditPost.edit;
@@ -49,13 +59,13 @@
 		}
 	};
 
-	$( '#bulk_edit' ).live( 'click', function() {
+	$( '#bulk_edit' ).on( 'click', function() {
 	
 		// define the bulk edit row
 		var $bulk_row = $( '#bulk-edit' );
 		
 		// get the selected post ids that are being edited
-		var $post_ids = new Array();
+		var $post_ids = [];
 		$bulk_row.find( '#bulk-titles' ).children().each( function() {
 			$post_ids.push( $( this ).attr( 'id' ).replace( /^(ttle)/i, '' ) );
 		});
@@ -66,6 +76,7 @@
 		var $expirationdate_year = $bulk_row.find( 'input[name="expirationdate_year"]' ).val();
 		var $expirationdate_hour = $bulk_row.find( 'input[name="expirationdate_hour"]' ).val();
 		var $expirationdate_minute = $bulk_row.find( 'input[name="expirationdate_minute"]' ).val();
+		var $expirationdate_status = $bulk_row.find( 'select[name="expirationdate_status"]' ).val();
 		
 		// save the data
 		$.ajax({
@@ -74,16 +85,18 @@
 			async: false,
 			cache: false,
 			data: {
-				action: 'manage_wp_posts_using_bulk_quick_save_bulk_edit', // this is the name of our WP AJAX function that we'll set up next
+				action: config.ajax.bulk_edit,
 				post_ids: $post_ids, // and these are the 2 parameters we're passing to our function
 				expirationdate_month: $expirationdate_month,
 				expirationdate_day: $expirationdate_day,
 				expirationdate_year: $expirationdate_year,
 				expirationdate_hour: $expirationdate_hour,
-				expirationdate_minute: $expirationdate_minute
+				expirationdate_minute: $expirationdate_minute,
+				expirationdate_status: $expirationdate_status,
+                nonce: config.ajax.nonce
 			}
 		});
 		
 	});
 
-})(jQuery);
+})(jQuery, config);
