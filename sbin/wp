@@ -1,16 +1,4 @@
 #!/bin/bash
 
-
-
-### Common script initialization
-#
-MYDIR_REL=`dirname $0`
-. "$MYDIR_REL/_init-script.sh"
-
-
-
-
-### Pass execution to wp-cli
-#
-cd $WPDIR
-php $SBINDIR/wp-cli.phar --allow-root --path=$WPDIR $@
+myDir=`dirname -- "${BASH_SOURCE[0]}"`
+WP_CLI_PACKAGES_DIR="${myDir}/libexec/wp-cli-packages" php "${myDir}/libexec/wp-cli.phar" --path="${myDir}/../public/" $@

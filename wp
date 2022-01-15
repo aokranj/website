@@ -1,0 +1,4 @@
+#!/bin/bash
+
+myDir=`dirname -- "${BASH_SOURCE[0]}"`
+WP_CLI_PACKAGES_DIR="${myDir}/sbin/libexec/wp-cli-packages" php "${myDir}/sbin/libexec/wp-cli.phar" --path="${myDir}/public/" $@
