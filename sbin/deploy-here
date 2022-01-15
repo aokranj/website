@@ -2,36 +2,35 @@
 
 
 
-### Common script initialization
+### Common script initialization (changes directory into repo root)
 #
 MYDIR_REL=`dirname $0`
 . "$MYDIR_REL/_init-script.sh"
 
 
 
-### Configuration and data gathering
+### Configure shell
 #
-DEPLOYLOG=$LOGDIR/deploy.log
-GIT_COMMIT_ID=`git rev-parse HEAD`
+set -e
+set -u
 
 
 
-### Log deploy start
+### Create temporary directories & set permissions
 #
-CURDATETIME=`date '+%F %T'`
-LOGPREFIX="$CURDATETIME $GIT_COMMIT_ID"
-echo "$LOGPREFIX: Starting deployment..." >> $DEPLOYLOG
-
-
-
-### Set directory permissions
+# If you configure new directories here, you need to ensure the same paths have
+# PHP processing disabled in the Apache vhost configuration.
 #
-chmod 777 $PUBDIR/wp-content/uploads/
-chmod 777 $LOGDIR
-chmod 777 $TMPDIR
-
-
-
-### Run whatever tasks need to be run to deploy
+# Apache vhost configuration can be fount in the following repository:
+# https://github.com/aokranj/infrastructure (in the k8s/app-runtime-httpd-php)
 #
-echo "$LOGPREFIX: Deployment complete." >> $DEPLOYLOG
+mkdir -p  public/wp-content/uploads
+chmod 777 public/wp-content/uploads
+chmod 777 var/log
+chmod 777 var/tmp
+
+
+
+### Update DB structure
+#
+./sbin/wp core update-db

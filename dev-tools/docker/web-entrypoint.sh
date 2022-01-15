@@ -46,7 +46,7 @@ echo "DOCKER :: WEB :: Excellent, MySQL is up!"
 ### Run the app init script
 #
 echo "DOCKER :: WEB :: Running the ./deplog-here.sh script"
-sudo -u $APPUSER -- ./deploy-here.sh
+sudo -u $APPUSER -- ./sbin/deploy-here
 
 
 
