@@ -1,0 +1,32 @@
+{
+    "name": "wp-cli/wp-cli",
+    "description": "Installed community packages used by WP-CLI",
+    "version": "2.5.0",
+    "authors": [
+        {
+            "name": "WP-CLI",
+            "email": "noreply@wpcli.org"
+        }
+    ],
+    "homepage": "https://wp-cli.org/package-index/",
+    "require": {
+        "wp-cli-configmaps/wp-cli-configmaps": "1.0.2"
+    },
+    "require-dev": {},
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "MIT",
+    "repositories": {
+        "wp-cli": {
+            "type": "composer",
+            "url": "https://wp-cli.org/package-index/"
+        },
+        "wp-cli-configmaps/wp-cli-configmaps": {
+            "type": "vcs",
+            "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git"
+        }
+    },
+    "config": {
+        "secure-http": true
+    }
+}

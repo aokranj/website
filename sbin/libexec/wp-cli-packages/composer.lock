@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5c2a0d28be515973886d3ff67414bb23",
+    "packages": [
+        {
+            "name": "wp-cli-configmaps/wp-cli-configmaps",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git",
+                "reference": "a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1",
+                "reference": "a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0",
+                "wp-cli/wp-cli": "^2.5"
+            },
+            "type": "wp-cli-package",
+            "autoload": {
+                "psr-4": {
+                    "WP\\CLI\\ConfigMaps\\": "src/"
+                },
+                "files": [
+                    "wp-cli-configmaps.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Bostjan Skufca Jese",
+                    "homepage": "https://github.com/bostjan",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table",
+            "homepage": "https://github.com/wp-cli-configmaps/wp-cli-configmaps",
+            "keywords": [
+                "configuration management",
+                "options",
+                "settings",
+                "wordpress",
+                "wp-cli",
+                "wp_options"
+            ],
+            "support": {
+                "issues": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/issues",
+                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.2"
+            },
+            "time": "2022-01-12T17:46:50+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}
