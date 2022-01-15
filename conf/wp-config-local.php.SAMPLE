@@ -1,0 +1,38 @@
+<?php
+
+
+
+/*
+ * Define/force site URI
+ */
+define('WP_ENV',     'dev');   // Valid options: 'dev', 'stg' and 'prod'
+define('WP_HOME',    'http://docker.dev.aokranj.com');
+define('WP_SITEURL', 'http://docker.dev.aokranj.com');
+//$_SERVER['HTTPS'] = 'on';   // The site is behind the SSL-terminating proxy already (k8s ingress)
+
+
+
+/*
+ * Database access
+ */
+define('DB_HOST',     'mariadb');
+define('DB_NAME',     'ao_www_dev_docker');
+define('DB_USER',     'ao_www_dev_docker');
+define('DB_PASSWORD', 'ao_www_dev_docker');
+
+
+
+/*
+ * Authentication Unique Keys and Salts.
+ *
+ * May be generated here:
+ * https://api.wordpress.org/secret-key/1.1/salt/
+ */
+define('AUTH_KEY',         '');
+define('SECURE_AUTH_KEY',  '');
+define('LOGGED_IN_KEY',    '');
+define('NONCE_KEY',        '');
+define('AUTH_SALT',        '');
+define('SECURE_AUTH_SALT', '');
+define('LOGGED_IN_SALT',   '');
+define('NONCE_SALT',       '');

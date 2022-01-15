@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  webserver:
+    container_name: 'aokranj-webserver'
+    image: 'aokranj-webserver:latest'
+    build: .
+    depends_on:
+      - mariadb
+      - mail-out
+    ports:
+      - "127.0.0.1:80:80"
+    volumes: 
+      - ..:/data/ao-dev/docker.dev.aokranj.com
+    working_dir: /data/ao-dev/docker.dev.aokranj.com
+
+  mariadb:
+    container_name: 'aokranj-mariadb'
+    image: mariadb:10.5
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes: 
+      - ./data/mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: tmppass
+      MYSQL_DATABASE: ao_www_dev_docker
+      MYSQL_USER: ao_www_dev_docker
+      MYSQL_PASSWORD: ao_www_dev_docker
+
+  mail-out:
+    container_name: 'aokranj-mail-out'
+    image: namshi/smtp:latest
+    ports:
+      - "127.0.0.1:25:25"
+    environment:
+      MAILNAME: 'docker.dev.aokranj.com'
+      RELAY_NETWORKS: ":10.0.0.0/8:172.16.0.0/12:192.168.0.0/16:116.203.29.132:116.202.189.251"
+
+  phpmyadmin:
+    container_name: 'aokranj-phpmyadmin'
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+      - aokranj-mariadb
+    environment:
+      PMA_HOST: mariadb
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: tmppass
+      PMA_ARBITRARY: 1
+    ports:
+      - '127.0.0.1:81:80'
