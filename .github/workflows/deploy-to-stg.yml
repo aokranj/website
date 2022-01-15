@@ -17,7 +17,7 @@ jobs:
         name: Deploy to stg.aokranj.com
         runs-on: ubuntu-latest
         steps:
-            -   name: SSH to stg.pdkranj.si and deploy the latest code there
+            -   name: SSH to stg.aokranj.com and deploy the latest code there
                 uses: appleboy/ssh-action@master
                 with:
                     host: stg.aokranj.com
