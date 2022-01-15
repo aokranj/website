@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+
+### Common script initialization
+#
+MYDIR_REL=`dirname $0`
+. "$MYDIR_REL/_init-script.sh"
+
+
+
+### Just use wp-cli
+#
+./sbin/wp db export \
+  --no-create-info=false \
+  --complete-insert \
+  --skip-extended-insert \
+  --disable-keys \
+  $@ -
