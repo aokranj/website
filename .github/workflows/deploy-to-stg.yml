@@ -1,0 +1,30 @@
+name: Deploy to stg.aokranj.com
+
+
+
+on:
+    workflow_dispatch:
+
+    push:
+        branches:
+            - master
+
+
+
+jobs:
+
+    deploy:
+        name: Deploy to stg.aokranj.com
+        runs-on: ubuntu-latest
+        steps:
+            -   name: SSH to stg.pdkranj.si and deploy the latest code there
+                uses: appleboy/ssh-action@master
+                with:
+                    host: stg.aokranj.com
+                    username: ao-stg
+                    key: ${{ secrets.SSH_PRIVKEY_GITHUB_TO_AO_STG }}
+                    script_stop: true
+                    script: |
+                        cd www/stg.aokranj.com
+                        git pull
+                        ./sbin/deploy-here
