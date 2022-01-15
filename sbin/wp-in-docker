@@ -1,4 +1,4 @@
 #!/bin/bash
 
 myDir=`dirname -- "${BASH_SOURCE[0]}"`
-docker exec -it aokranj-webserver ./wp --allow-root $@
+docker exec -i aokranj-webserver ./wp --allow-root $@

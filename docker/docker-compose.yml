@@ -23,9 +23,9 @@ services:
       - ./data/mariadb:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tmppass
-      MYSQL_DATABASE: pd_www_dev_docker
-      MYSQL_USER: pd_www_dev_docker
-      MYSQL_PASSWORD: pd_www_dev_docker
+      MYSQL_DATABASE: ao_www_dev_docker
+      MYSQL_USER: ao_www_dev_docker
+      MYSQL_PASSWORD: ao_www_dev_docker
 
   mail-out:
     container_name: 'aokranj-mail-out'

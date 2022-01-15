@@ -5,6 +5,7 @@ duplicator
 node_modules
 /conf/wp-config-local.php
 /conf/maps/local.php
+/docker/data/mariadb/*
 /public/wp-content/uploads/*
 /sbin/libexec/wp-cli-packages/cache/
 /var/docker-mysql

@@ -39,7 +39,7 @@ Step #4 - Start the Docker-based dev environment:
 
 Step #5 - dump+import the staging database:
 ```
-ssh pd-stg@stg.aokranj.com ./www/stg.aokranj.com/sbin/db-dump | ./sbin/wp-in-docker db import -
+ssh ao-stg@stg.aokranj.com ./www/stg.aokranj.com/sbin/db-dump | ./sbin/wp-in-docker db import -
 ```
 
 
@@ -51,7 +51,7 @@ Step #6 - Fix the URLs in the new database copy
 
 Step #7 - Fetch the `public/wp-content/uploads` content
 ```
-rsync -av pd-stg@stg.aokranj.com:www/stg.aokranj.com/public/wp-content/uploads/ public/wp-content/uploads/
+rsync -av ao-stg@stg.aokranj.com:www/stg.aokranj.com/public/wp-content/uploads/ public/wp-content/uploads/
 ```
 
 
