@@ -3,7 +3,7 @@
 files
 duplicator
 node_modules
-/config/wp-config.php
+/conf/wp-config-local.php
 /public/wp-content/uploads/*
 /var/docker-mysql
 /var/log/*
