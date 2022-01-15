@@ -1,0 +1,5 @@
+#!/bin/bash
+
+myDir=`dirname -- "${BASH_SOURCE[0]}"`
+cd $myDir/../docker &&
+docker compose up
