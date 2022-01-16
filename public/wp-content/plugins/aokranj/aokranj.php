@@ -12,9 +12,22 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Load configuration
+ * AO Kranj wordpress plugin metadata
  */
-require_once 'config.php';
+define('AOKRANJ_PLUGIN_VERSION', '1.0.20160311');
+define('AOKRANJ_PLUGIN_URL', WP_PLUGIN_URL.'/aokranj');
+define('AOKRANJ_PLUGIN_DIR', WP_PLUGIN_DIR.'/aokranj');
+
+/**
+ * Load (optional) configuration file
+ */
+if (file_exists(__DIR__.'/config.php')) require_once __DIR__.'/config.php';
+
+/**
+ * Fix up missing configuration bits with the defaults
+ */
+if (!defined('AOKRANJ_PLUGIN_DEBUG')) define('AOKRANJ_PLUGIN_DEBUG', false);
+if (!defined('AOKRANJ_TABLE_VZPONI')) define('AOKRANJ_TABLE_VZPONI', 'ao_vzponi');
 
 /**
  * Global plugin instance
