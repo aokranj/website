@@ -1624,12 +1624,16 @@ return [
         'action-apply' => 'delete',
         'action-dump' => 'ignore',
     ],
-    'xyz_smap_message' => 'Od: {USER_NICENAME}
-{PERMALINK}
-{POST_TITLE}
---
-{POST_EXCERPT}',
-    'xyz_smap_pages_ids' => '206209396405653-CAAK0TN273j4BAMH4aSAWjJj0CGAPkajP00cLkVzQUC0ZC8mejD6KKro4gztyfxiFI53e4htfKyiiMVmaSlf7LQ5IQWZAniiUaqPdZCpLYBA7O1ql28lVTFcmx3pkZBdfjPO5ZAiWQIuAbtMU93WS3mJLPYQQxtXYLoxIjd4EdFU41KjJvK6B7',
+    'xyz_smap_message' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_pages_ids' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
     'xyz_smap_peer_verification' => [
         'type' => 'string',
         'action-apply' => 'delete',
