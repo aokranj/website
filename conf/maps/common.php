@@ -1487,156 +1487,220 @@ return [
         ],
       ],
     ],
-    'xyz_credit_link' => 'smap',
-    'xyz_smap_af' => '0',
-    'xyz_smap_application_id' => '761192184012350',
-    'xyz_smap_application_lnarray' => '',
-    'xyz_smap_application_secret' => '4caca3e9e8840e7e63ef8b665b26c7e4',
-    'xyz_smap_current_appln_token' => '',
-    'xyz_smap_current_twappln_token' => '709029558381617152-qfIZocMEv8Rqm8cBKETyvuuQOKq3rmk',
-    'xyz_smap_default_selection_edit' => '1',
-    'xyz_smap_dnt_shw_notice' => 'hide',
-    'xyz_smap_fb_id' => '774619711',
-    'xyz_smap_fb_numericid' => '',
-    'xyz_smap_fb_token' => 'CAAK0TN273j4BAJVhRFukYUx7HBKZAH9ZBvBz6jIzgLo74CXErs1YL5mi3195ms5m6nGtNqX6NOxvZBhzbh7K4U6MDDNzNZACpaDlcgcRIkp91bj4Ps85sjUAZAVRsASjZCYRlMHJRZCT0eWpSv3s9V5OzWRo5NEytHl7YQV2mZBGlkL3ddQV1VzNweDvR0wjd6YfntbVCXpqyAZDZD',
+    'xyz_credit_link' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_af' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_application_id' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_application_lnarray' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_application_secret' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_current_appln_token' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_current_twappln_token' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_default_selection_edit' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_dnt_shw_notice' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_fb_id' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_fb_numericid' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_fb_token' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
     'xyz_smap_fbap_post_logs' => [
       'encoding' => 'serialize',
       'type' => 'array',
-      'value' => [
-        0 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Facebook',
-            'postid' => 20824,
-            'publishtime' => 1520228018,
-            'status' => 'a:1:{s:20:"206209396405653/feed";s:161:"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.";}',
-          ],
-        ],
-        1 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Facebook',
-            'postid' => 20834,
-            'publishtime' => 1520246143,
-            'status' => 'a:1:{s:20:"206209396405653/feed";s:161:"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.";}',
-          ],
-        ],
-        2 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Facebook',
-            'postid' => 20837,
-            'publishtime' => 1520949615,
-            'status' => 'a:1:{s:20:"206209396405653/feed";s:161:"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.";}',
-          ],
-        ],
-        3 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Facebook',
-            'postid' => 20839,
-            'publishtime' => 1521047451,
-            'status' => 'a:1:{s:20:"206209396405653/feed";s:161:"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.";}',
-          ],
-        ],
-        4 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Facebook',
-            'postid' => 20841,
-            'publishtime' => 1521825287,
-            'status' => 'a:1:{s:20:"206209396405653/feed";s:161:"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.";}',
-          ],
-        ],
-      ],
+      'action-apply' => 'delete',
+      'action-dump' => 'ignore',
+      'value' => NULL,
     ],
-    'xyz_smap_free_version' => '1.5.2',
-    'xyz_smap_include_categories' => 'All',
-    'xyz_smap_include_customposttypes' => '',
-    'xyz_smap_include_pages' => '0',
-    'xyz_smap_include_posts' => '1',
-    'xyz_smap_ln_shareprivate' => '0',
-    'xyz_smap_ln_sharingmethod' => '0',
-    'xyz_smap_lnaf' => '1',
-    'xyz_smap_lnap_post_logs' => '',
-    'xyz_smap_lnapikey' => '',
-    'xyz_smap_lnapisecret' => '',
-    'xyz_smap_lnmessage' => NULL,
-    'xyz_smap_lnpost_image_permission' => '1',
-    'xyz_smap_lnpost_permission' => '0',
+    'xyz_smap_free_version' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_include_categories' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_include_customposttypes' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_include_pages' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_include_posts' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_ln_shareprivate' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_ln_sharingmethod' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_lnaf' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_lnap_post_logs' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_lnapikey' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_lnapisecret' =>[
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_lnmessage' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_lnpost_image_permission' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_lnpost_permission' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
     'xyz_smap_message' => 'Od: {USER_NICENAME}
 {PERMALINK}
 {POST_TITLE}
 --
 {POST_EXCERPT}',
     'xyz_smap_pages_ids' => '206209396405653-CAAK0TN273j4BAMH4aSAWjJj0CGAPkajP00cLkVzQUC0ZC8mejD6KKro4gztyfxiFI53e4htfKyiiMVmaSlf7LQ5IQWZAniiUaqPdZCpLYBA7O1ql28lVTFcmx3pkZBdfjPO5ZAiWQIuAbtMU93WS3mJLPYQQxtXYLoxIjd4EdFU41KjJvK6B7',
-    'xyz_smap_peer_verification' => '0',
-    'xyz_smap_po_method' => '2',
-    'xyz_smap_post_permission' => '1',
-    'xyz_smap_premium_version_ads' => '0',
-    'xyz_smap_std_apply_filters' => '',
-    'xyz_smap_std_future_to_publish' => '1',
-    'xyz_smap_tw_id' => 'AOKranjDEV',
-    'xyz_smap_twaccestok_secret' => 'NUaCqvS9bbd57SqNkeZy3knvwAjkkdrH3hJ6XRu1k3s72',
+    'xyz_smap_peer_verification' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_po_method' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_post_permission' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_premium_version_ads' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_std_apply_filters' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_std_future_to_publish' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_tw_id' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_twaccestok_secret' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
     'xyz_smap_twap_post_logs' => [
       'encoding' => 'serialize',
       'type' => 'array',
-      'value' => [
-        0 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Twitter',
-            'postid' => 20824,
-            'publishtime' => 1520228019,
-            'status' => 'a:1:{s:15:"statuses/update";s:60:"{"errors":[{"code":187,"message":"Status is a duplicate."}]}";}',
-          ],
-        ],
-        1 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Twitter',
-            'postid' => 20834,
-            'publishtime' => 1520246144,
-            'status' => 1,
-          ],
-        ],
-        2 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Twitter',
-            'postid' => 20837,
-            'publishtime' => 1520949616,
-            'status' => 1,
-          ],
-        ],
-        3 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Twitter',
-            'postid' => 20839,
-            'publishtime' => 1521047451,
-            'status' => 1,
-          ],
-        ],
-        4 => [
-          'type' => 'array',
-          'value' => [
-            'acc_type' => 'Twitter',
-            'postid' => 20841,
-            'publishtime' => 1521825289,
-            'status' => 1,
-          ],
-        ],
-      ],
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+      'value' => NULL
     ],
-    'xyz_smap_twconsumer_id' => 'ODlozlkxRqZwEejeNngdxReAE',
-    'xyz_smap_twconsumer_secret' => 'gGHCBHbWUAKUTDnDIKXQr7Bvm7SEhmSWatBANjSp1vtub5d8sM',
-    'xyz_smap_twmessage' => 'Od: {USER_NICENAME}
-{PERMALINK}
-{POST_TITLE}
---
-{POST_EXCERPT}',
-    'xyz_smap_twpost_image_permission' => '1',
-    'xyz_smap_twpost_permission' => '1',
+    'xyz_smap_twconsumer_id' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_twconsumer_secret' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_twmessage' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_twpost_image_permission' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
+    'xyz_smap_twpost_permission' => [
+        'type' => 'string',
+        'action-apply' => 'delete',
+        'action-dump' => 'ignore',
+    ],
   ],
 ];
