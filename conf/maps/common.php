@@ -506,7 +506,7 @@ return [
       ],
     ],
     'theme_switched' => '',
-    'thread_comments' => '',
+    'thread_comments' => '1',
     'thread_comments_depth' => '5',
     'thumbnail_crop' => '1',
     'thumbnail_size_h' => '400',
