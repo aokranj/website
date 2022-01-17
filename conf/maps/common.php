@@ -108,9 +108,9 @@ return [
     'current_theme' => 'AO Kranj',
     'date_format' => 'j. n. Y',
     'db_upgraded' => [
-        'action' => 'ignore',
-        'type' => 'string',
-        'value' => NULL,
+      'action' => 'ignore',
+      'type' => 'string',
+      'value' => NULL,
     ],
     'db_version' => '49752',
     'default_category' => '1',
@@ -137,6 +137,7 @@ return [
     ],
     'fp_settings' => [
       'action-apply' => 'delete',
+      'action-dump' => 'walk',
       'encoding' => 'serialize',
       'type' => 'array',
       'value' => NULL,
@@ -389,9 +390,10 @@ return [
     'site_icon' => '38475',
     'siteurl' => 'https://UNDEFINED.dev.aokranj.com',
     'smap_installed_date' => [
-        'action-apply' => 'delete',
-        'type' => 'string',
-        'value' => NULL,
+      'action-apply' => 'delete',
+      'action-dump' => 'copy-as-is',
+      'type' => 'string',
+      'value' => NULL,
     ],
     'start_of_week' => '1',
     'sticky_posts' => [

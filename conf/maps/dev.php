@@ -13,9 +13,11 @@ return [
     'widget_pis_posts_in_sidebar' => [
       'encoding' => 'serialize',
       'type' => 'array',
+      'undef-key-action-dump' => 'ignore',
       'value' => [
         3 => [
           'type' => 'array',
+          'undef-key-action-dump' => 'ignore',
           'value' => [
             'image_link' => 'http://docker.dev.aokranj.com/aktualno/',
           ],
