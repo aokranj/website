@@ -7,6 +7,7 @@ return [
     'version' => 1,
   ],
   'data' => [
+    'admin_email' => 'janez.nastran@pdkranj.si',
     'home' => 'https://stg.aokranj.com',
     'siteurl' => 'https://stg.aokranj.com',
     'widget_pis_posts_in_sidebar' => [
@@ -16,7 +17,7 @@ return [
         3 => [
           'type' => 'array',
           'value' => [
-            'image_link' => 'https://stg.aokranj.com/zahodna-liga/',
+            'image_link' => 'https://stg.aokranj.com/aktualno/',
           ],
         ],
       ],

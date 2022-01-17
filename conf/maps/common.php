@@ -21,8 +21,8 @@ return [
         5 => 'restrict-categories/restrict-categories.php',
       ],
     ],
-    'admin_email' => 'bostjan@skufca.si',
-    'admin_email_lifespan' => '1657716561',
+    'admin_email' => 'UNDEFINED@UNDEFINED.COM',
+    'admin_email_lifespan' => '2000000000',
     'aokranj-options' => [
       'encoding' => 'serialize',
       'type' => 'array',
@@ -34,14 +34,10 @@ return [
       ],
     ],
     'auto_core_update_notified' => [
+      'action' => 'ignore',
       'encoding' => 'serialize',
       'type' => 'array',
-      'value' => [
-        'email' => 'bojan.hribernik@gmail.com',
-        'timestamp' => 1484646522,
-        'type' => 'manual',
-        'version' => '4.7.1',
-      ],
+      'value' => NULL,
     ],
     'auto_plugin_theme_update_emails' => [
       'encoding' => 'serialize',
@@ -183,13 +179,10 @@ return [
     ],
     'franz_used_days' => '31',
     'ftp_credentials' => [
+      'action' => 'ignore',
       'encoding' => 'serialize',
       'type' => 'array',
-      'value' => [
-        'connection_type' => 'ftps',
-        'hostname' => 'aokranj2.lan/',
-        'username' => 'HriBB',
-      ],
+      'value' => NULL,
     ],
     'gmt_offset' => '1',
     'hack_file' => '0',

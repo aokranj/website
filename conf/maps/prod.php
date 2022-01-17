@@ -7,6 +7,7 @@ return [
     'version' => 1,
   ],
   'data' => [
+    'admin_email' => 'janez.nastran@pdkranj.si',
     'home' => 'https://www.aokranj.com',
     'siteurl' => 'https://www.aokranj.com',
     'widget_pis_posts_in_sidebar' => [

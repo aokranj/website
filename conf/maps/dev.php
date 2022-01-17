@@ -7,6 +7,7 @@ return [
     'version' => 1,
   ],
   'data' => [
+    'admin_email' => 'MUST-OVERRIDE-IN-conf/maps/local.php@UNDEFINED.com',
     'home' => 'http://docker.dev.aokranj.com',
     'siteurl' => 'http://docker.dev.aokranj.com',
     'widget_pis_posts_in_sidebar' => [
@@ -16,7 +17,7 @@ return [
         3 => [
           'type' => 'array',
           'value' => [
-            'image_link' => 'http://docker.dev.aokranj.com/zahodna-liga/',
+            'image_link' => 'http://docker.dev.aokranj.com/aktualno/',
           ],
         ],
       ],
