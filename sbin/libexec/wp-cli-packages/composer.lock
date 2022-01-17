@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c2a0d28be515973886d3ff67414bb23",
+    "content-hash": "ec9ab228123be91a49e4c8bf579ad6b4",
     "packages": [
         {
             "name": "wp-cli-configmaps/wp-cli-configmaps",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git",
-                "reference": "a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1"
+                "reference": "d8db616745068ebe1ddc8c1f1a3461eabcf86088"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1",
-                "reference": "a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1",
+                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/d8db616745068ebe1ddc8c1f1a3461eabcf86088",
+                "reference": "d8db616745068ebe1ddc8c1f1a3461eabcf86088",
                 "shasum": ""
             },
             "require": {
@@ -33,6 +33,7 @@
                     "wp-cli-configmaps.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-only"
             ],
@@ -46,18 +47,18 @@
             "description": "ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table",
             "homepage": "https://github.com/wp-cli-configmaps/wp-cli-configmaps",
             "keywords": [
+                "Settings",
                 "configuration management",
                 "options",
-                "settings",
                 "wordpress",
                 "wp-cli",
                 "wp_options"
             ],
             "support": {
                 "issues": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/issues",
-                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.2"
+                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.3"
             },
-            "time": "2022-01-12T17:46:50+00:00"
+            "time": "2022-01-16T05:55:03+00:00"
         }
     ],
     "packages-dev": [],

@@ -213,7 +213,7 @@ More information is available at https://github.com/wp-cli-configmaps/wp-cli-con
             }
             $configMap = ConfigMapService::getMap($mapId);
         } else {
-            $configMap = ConfigMapService::mergeMaps();
+            $configMap = ConfigMapService::mergeDefinedMapSet();
         }
 
         // Output
@@ -325,7 +325,7 @@ More information is available at https://github.com/wp-cli-configmaps/wp-cli-con
             $dryRun = false;
         }
 
-        $mergedConfigMap = ConfigMapService::mergeMaps();
+        $mergedConfigMap = ConfigMapService::mergeDefinedMapSet();
         $changedItems = ConfigMapService::applyMap($mergedConfigMap, $dryRun);
 
         if (count($changedItems) == 0) {
@@ -372,7 +372,7 @@ More information is available at https://github.com/wp-cli-configmaps/wp-cli-con
                 $mapId => $configMap,
             ];
         } else {
-            $configMap = ConfigMapService::mergeMaps();
+            $configMap = ConfigMapService::mergeDefinedMapSet();
             $configMaps = ConfigMapService::getMaps();
         }
 

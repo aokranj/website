@@ -10,7 +10,7 @@
     ],
     "homepage": "https://wp-cli.org/package-index/",
     "require": {
-        "wp-cli-configmaps/wp-cli-configmaps": "1.0.2"
+        "wp-cli-configmaps/wp-cli-configmaps": "1.0.3"
     },
     "require-dev": {},
     "minimum-stability": "dev",
@@ -20,10 +20,6 @@
         "wp-cli": {
             "type": "composer",
             "url": "https://wp-cli.org/package-index/"
-        },
-        "wp-cli-configmaps/wp-cli-configmaps": {
-            "type": "vcs",
-            "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git"
         }
     },
     "config": {

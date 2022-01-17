@@ -2,6 +2,17 @@
 
 
 
+## 2022-01-16 - Release 1.0.3
+
+Improvements:
+- Change how the default value for `undef-key-action-dump` is defined (`add` for the first map, `ignore` for all subsequent maps)
+- Ignore a few more irrelevant wp_options: `can_compress_scripts`, `finished_updating_coment_type` and `recently_edited`
+
+Bugs fixed:
+- When checking arrays for new keys during map updates, check for null value before attempting to parse it
+
+
+
 ## 2022-01-12 - Release 1.0.2
 
 Bugs fixed:

@@ -78,7 +78,13 @@ class ConfigMapService
     {
         $configMaps = [];
         foreach (self::$configMapIndex as $mapId => $mapMetadata) {
-            $configMaps[$mapId] = self::getMap($mapId);
+            // When dumping, unknown keys should only land in the first defined config map, not in all of them
+            if ($mapId == array_key_first(self::$configMapIndex)) {
+                $undefKeyActionDump = "add";
+            } else {
+                $undefKeyActionDump = "ignore";
+            }
+            $configMaps[$mapId] = self::getMap($mapId, $undefKeyActionDump);
         }
         return $configMaps;
     }
@@ -86,7 +92,7 @@ class ConfigMapService
     /**
      * Read the map from the file as specified in the config map index
      */
-    public static function getMap ($mapId)
+    public static function getMap ($mapId, $undefKeyActionDump)
     {
         $mapFile = self::getMapFile($mapId);
         if (!is_file($mapFile) || !is_readable($mapFile)) {
@@ -123,7 +129,7 @@ class ConfigMapService
         }
 
         $minimizedConfigMap = $configMapContainer['data'];
-        $configMap = self::inflateMap($minimizedConfigMap);
+        $configMap = self::inflateMap($minimizedConfigMap, $undefKeyActionDump);
         return $configMap;
     }
 
@@ -228,12 +234,21 @@ class ConfigMapService
         }
 
         if ($manualFixups) {
-            $configMap['recently_activated']['action-apply'] = 'ignore';
-            $configMap['recently_activated']['action-dump']  = 'ignore';
-            $configMap['recently_activated']['value']        = NULL;
-            $configMap['uninstall_plugins']['action-apply']  = 'ignore';
-            $configMap['uninstall_plugins']['action-dump']   = 'ignore';
-            $configMap['uninstall_plugins']['value']         = NULL;
+            $configMap['can_compress_scripts']['action-apply']           = 'ignore';
+            $configMap['can_compress_scripts']['action-dump']            = 'ignore';
+            $configMap['can_compress_scripts']['value']                  = NULL;
+            $configMap['finished_updating_comment_type']['action-apply'] = 'ignore';
+            $configMap['finished_updating_comment_type']['action-dump']  = 'ignore';
+            $configMap['finished_updating_comment_type']['value']        = NULL;
+            $configMap['recently_activated']['action-apply']             = 'ignore';
+            $configMap['recently_activated']['action-dump']              = 'ignore';
+            $configMap['recently_activated']['value']                    = NULL;
+            $configMap['recently_edited']['action-apply']                = 'ignore';
+            $configMap['recently_edited']['action-dump']                 = 'ignore';
+            $configMap['recently_edited']['value']                       = NULL;
+            $configMap['uninstall_plugins']['action-apply']              = 'ignore';
+            $configMap['uninstall_plugins']['action-dump']               = 'ignore';
+            $configMap['uninstall_plugins']['value']                     = NULL;
         }
 
         return $configMap;
@@ -254,7 +269,6 @@ class ConfigMapService
                 'value'                  => [],
             ];
             foreach ($optionValue as $key => $val) {
-                WP_CLI::debug(__CLASS__.'::'.__FUNCTION__ . ": Processing array key: ". $key);
                 $optionSpec['value'][$key] = self::generateDefaultOptionSpecFromValue($val);
             }
             ksort($optionSpec['value']);
@@ -366,7 +380,7 @@ class ConfigMapService
     /**
      * Inflate a minimized config map into full config map
      */
-    protected static function inflateMap ($minimizedConfigMap)
+    protected static function inflateMap ($minimizedConfigMap, $undefKeyActionDump="add")
     {
         $fullConfigMap = [];
 
@@ -401,11 +415,11 @@ class ConfigMapService
                             $optionSpec['undef-key-action-apply'] = 'ignore';
                         }
                         if (!isset($optionSpec['undef-key-action-dump'])) {
-                            $optionSpec['undef-key-action-dump'] = 'add';
+                            $optionSpec['undef-key-action-dump'] = $undefKeyActionDump;
                         }
 
                         if ($optionSpec['value'] != NULL) {
-                            $optionSpec['value'] = self::inflateMap($optionSpec['value']);
+                            $optionSpec['value'] = self::inflateMap($optionSpec['value'], $undefKeyActionDump);
                         }
                         break;
 
@@ -458,12 +472,18 @@ class ConfigMapService
     /**
      * Merge all defined config maps into a final single map that can then be applied to the database
      */
-    public static function mergeMaps ()
+    public static function mergeDefinedMapSet ()
     {
         $mergedConfigMap = [];
 
         foreach (self::$configMapIndex as $mapId => $mapMetadata) {
-            $configMap = self::getMap($mapId);
+            // When dumping, unknown keys should only land in the first defined config map, not in all of them
+            if ($mapId == array_key_first(self::$configMapIndex)) {
+                $undefKeyActionDump = "add";
+            } else {
+                $undefKeyActionDump = "ignore";
+            }
+            $configMap = self::getMap($mapId, $undefKeyActionDump);
             $mergedConfigMap = self::mergeTwoMaps($mergedConfigMap, $configMap, $mapId);
         }
         ksort($mergedConfigMap);
@@ -787,7 +807,7 @@ class ConfigMapService
             }
         }
 
-        if ($undefKeyAction == 'add') {
+        if ($undefKeyAction == 'add' && !is_null($newValueMap)) {
             foreach ($newValueMap as $optionName => $optionSpec) {
                 if (!isset($configMap[$optionName])) {
                     $updatedConfigMap[$optionName] = $optionSpec;
