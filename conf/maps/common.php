@@ -107,7 +107,11 @@ return [
     'comments_per_page' => '50',
     'current_theme' => 'AO Kranj',
     'date_format' => 'j. n. Y',
-    'db_upgraded' => '',
+    'db_upgraded' => [
+        'action' => 'ignore',
+        'type' => 'string',
+        'value' => NULL,
+    ],
     'db_version' => '49752',
     'default_category' => '1',
     'default_comment_status' => 'open',
