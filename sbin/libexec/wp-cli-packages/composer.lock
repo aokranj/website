@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec9ab228123be91a49e4c8bf579ad6b4",
+    "content-hash": "1fb4419459598c1d0c716b4257966c02",
     "packages": [
         {
             "name": "wp-cli-configmaps/wp-cli-configmaps",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git",
-                "reference": "d8db616745068ebe1ddc8c1f1a3461eabcf86088"
+                "reference": "f0ba9d80006abbb583a0cbeb85869c5bdb607db7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/d8db616745068ebe1ddc8c1f1a3461eabcf86088",
-                "reference": "d8db616745068ebe1ddc8c1f1a3461eabcf86088",
+                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/f0ba9d80006abbb583a0cbeb85869c5bdb607db7",
+                "reference": "f0ba9d80006abbb583a0cbeb85869c5bdb607db7",
                 "shasum": ""
             },
             "require": {
@@ -56,9 +56,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/issues",
-                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.3"
+                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.4"
             },
-            "time": "2022-01-16T05:55:03+00:00"
+            "time": "2022-01-17T18:23:42+00:00"
         }
     ],
     "packages-dev": [],

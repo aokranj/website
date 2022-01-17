@@ -675,6 +675,9 @@ class ConfigMapService
                         'value'                  => [],
                         'source-map-id'          => $optionSpec['source-map-id'],
                     ];
+                    if (isset($optionSpec['encoding'])) {
+                        $targetValueMap[$optionName]['encoding'] = $optionSpec['encoding'];
+                    }
 
                     $changes[] = [
                         'Option name'   => $parentNames . $optionName,

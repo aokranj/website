@@ -10,7 +10,7 @@
     ],
     "homepage": "https://wp-cli.org/package-index/",
     "require": {
-        "wp-cli-configmaps/wp-cli-configmaps": "1.0.3"
+        "wp-cli-configmaps/wp-cli-configmaps": "1.0.4"
     },
     "require-dev": {},
     "minimum-stability": "dev",
