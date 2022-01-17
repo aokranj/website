@@ -123,99 +123,10 @@ return [
       'type' => 'string',
     ],
     'fp_settings' => [
+      'action-apply' => 'delete',
       'encoding' => 'serialize',
       'type' => 'array',
-      'value' => [
-        'automatic_posts' => 'yes',
-        'fp_all_posts' => '0',
-        'fp_post_cat' => [
-          'type' => 'array',
-          'value' => [
-            0 => 'Uncategorized',
-          ],
-        ],
-        'fp_post_types' => [
-          'type' => 'array',
-          'value' => [
-            0 => 'post',
-          ],
-        ],
-        'global_pages' => [
-          'type' => 'array',
-          'value' => [
-            0 => '206209396405653',
-          ],
-        ],
-        'msg_body' => 'Od: {POST_AUTHOR}
-{POST_URL}
-{POST_TITLE}
-',
-        'pages' => [
-          'type' => 'array',
-          'value' => [
-            'own' => [
-              'type' => 'array',
-              'value' => [
-                'id' => 'own',
-                'name' => 'Own Timeline',
-              ],
-            ],
-            161194730930547 => [
-              'type' => 'array',
-              'value' => [
-                'access_token' => 'CAAK0TN273j4BAHEeLBZAFpZCnFp3DNbaBvmDOtpMlnbhIrZC5ByRuDfK5Yvzxt2av0toRwgkxmK2SFryaU76a37bAKACpB0ZB2u0i5midK7AVQAJEebA9nxIZAqjmHmjryfyZA3f4YNJ6LY8u9L3YKHXbPZAdXqAxvw3aFezcIZC0L3UjVV9IZAf9',
-                'category' => 'Sports Team',
-                'id' => '161194730930547',
-                'name' => 'AO Kranj',
-                'perms' => [
-                  'type' => 'array',
-                  'value' => [
-                    0 => 'ADMINISTER',
-                    1 => 'EDIT_PROFILE',
-                    2 => 'CREATE_CONTENT',
-                    3 => 'MODERATE_CONTENT',
-                    4 => 'CREATE_ADS',
-                    5 => 'BASIC_ADMIN',
-                  ],
-                ],
-              ],
-            ],
-            206209396405653 => [
-              'type' => 'array',
-              'value' => [
-                'access_token' => 'CAAK0TN273j4BALb3acMWAiaYCEZCIkihKwCvhh0y877TRY0FYcq9cVHueDcFLDjVXeZAo4LLMBVqUaWi6kpiYYK9XxDxBZBFEzfeCkBeSjpMN4rMAkZCwsweikLPHoE1bsREr6Yi0vDeJCZBw22uu1haKaLZC27PEdGbgUbbVfq2jL23MvFAPr',
-                'category' => 'Sports Team',
-                'id' => '206209396405653',
-                'name' => 'AO Kranj DEV',
-                'perms' => [
-                  'type' => 'array',
-                  'value' => [
-                    0 => 'ADMINISTER',
-                    1 => 'EDIT_PROFILE',
-                    2 => 'CREATE_CONTENT',
-                    3 => 'MODERATE_CONTENT',
-                    4 => 'CREATE_ADS',
-                    5 => 'BASIC_ADMIN',
-                  ],
-                ],
-              ],
-            ],
-          ],
-        ],
-        'post_count' => 0,
-        'post_featured_image' => 'yes',
-        'post_schedule' => 'no',
-        'ptf_api_key' => '4caca3e9e8840e7e63ef8b665b26c7e4',
-        'ptf_app_id' => '761192184012350',
-        'queue' => [
-          'type' => 'array',
-          'value' => [
-          ],
-        ],
-        'session_data' => 's:0:"";',
-        'show_auth_btn' => true,
-        'version' => NULL,
-      ],
+      'value' => NULL,
     ],
     'franz_settings' => [
       'encoding' => 'serialize',
@@ -465,7 +376,11 @@ return [
     ],
     'site_icon' => '0',
     'siteurl' => 'https://UNDEFINED.dev.aokranj.com',
-    'smap_installed_date' => '1457914857',
+    'smap_installed_date' => [
+        'action-apply' => 'delete',
+        'type' => 'string',
+        'value' => NULL,
+    ],
     'start_of_week' => '1',
     'sticky_posts' => [
       'encoding' => 'serialize',
