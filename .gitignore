@@ -8,6 +8,7 @@ node_modules
 /docker/data/mariadb/*
 /public/wp-content/uploads/*
 /sbin/libexec/wp-cli-packages/cache/
+/sbin/libexec/wp-cli-packages/vendor/*/*/.git/
 /var/docker-mysql
 /var/log/*
 /var/tmp/*
