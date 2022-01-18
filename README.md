@@ -2,48 +2,25 @@
 
 
 
-
 ## Local development
 
-For local development, the following software is required:
-- docker-ce: https://docs.docker.com/install/
-- docker-compose: https://docs.docker.com/compose/install/ (already included in docker-ce on OS X)
+For the initial setup, follow the [Docker-based local development environment setup](doc/docker-dev-environment.md) guide.
 
-After you have installed the requirements above, this is how you run a local
-instance of this blog:
-
-    git clone git@git.teon.si:aokranj/website aokranj-website
-    cd aokranj-website
-    sudo docker-compose up
-
-The first time it will take a few minutes because the web server image needs to
-get built and the seed data needs to get imported into the database.
-Once that is done, starting and stopping the container set is almost
-instant.
-
-Provided all went well, the local instance is waiting for you at:
-
-| APP        | http://docker.dev.aokranj.com:8000/ | (user: ?, password: ?) |
-| phpMyAdmin | http://docker.dev.aokranj.com:8001/ | (user: root, password: root) |
-
-To jump into the web-serving container (to use "wp" cli tool, for example) use
-the following command(s):
-
-    sudo docker exec -ti website_web_1 /bin/bash
-    cd /var/www/docker.dev.aokranj.com
+Here are a few additional guides:
+- For keeping the content in sync with stg/prod, follow [this](database-transfers.md) guide
+- [How to add a new plugin?](doc/how-to-add-a-new-plugin.md)
+- [How to remove a plugin?](doc/how-to-remove-a-plugin.md)
+- [How do we manage configuration?](doc/how-do-we-manage-configuration.md)
 
 
 
-## Automated deployments
+## Deployments to staging and production
 
-Staging ~and production~ environments receive the code deployment automatically
-whenever origin git repo receives the code into appropriate branch.
+Whenever you push your code to the following branches, the deployment is triggered automatically:
 
-Whenever you push your code to the following branches, the deployment is
-triggered automatically:
+| branch | Deployment target URI           | Manual deployment guide |
+| ------ | ------------------------------- | ----------------------- |
+| master | https://stg.aokranj.com/        | [How to deploy to staging](doc/how-to-deploy-to-staging.md) |
+| prod   | https://www.aokranj.com/ - TODO | [How to deploy to production](doc/how-to-deploy-to-production.md) |
 
-| branch | Deployment target URI |
-| master | https://stg.aokranj.com/ |
-| prod   | https://www.aokranj.com/ - TODO |
-
-Deployment can take up to a few minutes, but usually it is completed in under a minute.
+You can observe the progress of deployments by following appropriate [GitHub Actions](https://github.com/aokranj/website-aokranj.com/actions).
