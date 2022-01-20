@@ -17,21 +17,6 @@ RewriteRule ^/?sys/server-status$       -       [L]
 
 
 
-### Redirect aokranj.com to www.aokranj.com
-#
-RewriteCond   %{HTTP_HOST}      ^aokranj.com$
-RewriteRule   ^/?(.*)           http://www.aokranj.com/$1   [R=302,L]
-
-
-
-### Redirect all traffic to HTTPS, but only for www.aokranj.com
-#
-RewriteCond   %{HTTP_HOST}      ^www.aokranj.com$
-RewriteCond     %{HTTPS}        off
-RewriteRule     ^/?(.*)         https://%{HTTP_HOST}%{REQUEST_URI}   [R=302,L]
-
-
-
 ### Redirects for old content
 #
 # Let's keep 302 for now
@@ -69,15 +54,3 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
-
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-
-# END WordPress
