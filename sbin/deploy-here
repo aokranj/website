@@ -24,10 +24,21 @@ set -u
 # Apache vhost configuration can be fount in the following repository:
 # https://github.com/aokranj/infrastructure (in the k8s/app-runtime-httpd-php)
 #
+# Lastly, due to 02777 permissions and system account dir ownership in stg/production,
+# trying to forcibly chmod the directory results in an error. Therefore, we first
+# check for and then, but only when necessary, attempt to update the directory permissions.
+#
+_chmod777 () {
+    DIRNAME="$1"
+    DIRPERM=`stat --format=%a $DIRNAME`
+    if ! [[ $DIRPERM =~ 777$ ]]; then
+        chmod 777 $DIRNAME
+    fi
+}
 mkdir -p  public/wp-content/uploads
-chmod 777 public/wp-content/uploads
-chmod 777 var/log
-chmod 777 var/tmp
+_chmod777 public/wp-content/uploads
+_chmod777 var/log
+_chmod777 var/tmp
 
 
 
