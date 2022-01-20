@@ -56,3 +56,15 @@ _chmod777 var/tmp
 # their correct order in the database.
 #
 ./wp rewrite flush
+
+
+
+### Flush WordPress cache & transients
+#
+# External cache might not be used at the present time, but let's keep this operation
+# here for the time when we implement Redis.
+#
+# Let's delete all transients too, to avoid any weird edge conditions.
+#
+./wp cache flush
+./wp transient delete --all
