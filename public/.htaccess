@@ -12,6 +12,11 @@ RewriteBase   /
 
 
 
+# This is here for system status logger
+RewriteRule ^/?sys/server-status$       -       [L]
+
+
+
 ### Redirect aokranj.com to www.aokranj.com
 #
 RewriteCond   %{HTTP_HOST}      ^aokranj.com$
