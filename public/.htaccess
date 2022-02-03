@@ -48,6 +48,16 @@ RewriteRule   ^/?myao.php       /wp-login.php   [R=302,L]
 
 
 
+### Disable /xmlrpc.php
+#
+# This file is a security liability.
+# The reason we keep this file around is because WordPress updates keep bringing
+# it back. Therefore, we simply redirect to a substitute handler.
+#
+RewriteRule   ^/?xmlrpc.php       /xmlrpc-disabled.php   [L]
+
+
+
 ### Final redirect to WP handler
 #
 RewriteRule ^index\.php$ - [L]
