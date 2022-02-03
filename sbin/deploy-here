@@ -24,13 +24,47 @@ set -u
 # Apache vhost configuration can be fount in the following repository:
 # https://github.com/aokranj/infrastructure (in the k8s/app-runtime-httpd-php)
 #
+# Lastly, due to 02777 permissions and system account dir ownership in stg/production,
+# trying to forcibly chmod the directory results in an error. Therefore, we first
+# check for and then, but only when necessary, attempt to update the directory permissions.
+#
+_chmod777 () {
+    DIRNAME="$1"
+    DIRPERM=`stat --format=%a $DIRNAME`
+    if ! [[ $DIRPERM =~ 777$ ]]; then
+        chmod 777 $DIRNAME
+    fi
+}
 mkdir -p  public/wp-content/uploads
-chmod 777 public/wp-content/uploads
-chmod 777 var/log
-chmod 777 var/tmp
+_chmod777 public/wp-content/uploads
+_chmod777 var/log
+_chmod777 var/tmp
 
 
 
 ### Update DB structure
 #
 ./sbin/wp core update-db
+
+
+
+### Flush rewrite rules
+#
+# If we manage the `wp_options` table entries manually, reordering the rewrite rules
+# stored in there by the wp-cli-configmaps tool causes all pages to fail to load (due
+# to tools by-key array ordering "feature"). Flushing the rewrite rules restores
+# their correct order in the database.
+#
+./wp rewrite flush
+
+
+
+### Flush WordPress cache & transients
+#
+# External cache might not be used at the present time, but let's keep this operation
+# here for the time when we implement Redis.
+#
+# Let's delete all transients too, to avoid any weird edge conditions.
+#
+./wp cache flush
+./wp transient delete --all
