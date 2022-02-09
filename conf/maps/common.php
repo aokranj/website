@@ -19,6 +19,7 @@ return [
         3 => 'post-expirator/post-expirator.php',
         4 => 'posts-in-sidebar/posts-in-sidebar.php',
         5 => 'restrict-categories/restrict-categories.php',
+        6 => 'simple-banner/simple-banner.php',
       ],
     ],
     'admin_email' => 'UNDEFINED@UNDEFINED.COM',
