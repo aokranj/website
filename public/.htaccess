@@ -13,7 +13,7 @@ RewriteBase   /
 
 
 # This is here for system status logger
-RewriteRule ^/?sys/server-status$       -       [L]
+RewriteRule ^/?sys/     -       [L]
 
 
 
