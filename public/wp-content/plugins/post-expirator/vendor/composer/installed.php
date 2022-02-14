@@ -5,7 +5,7 @@
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ac0b7c2907e628fbe2025d0736f2475461b598b3',
+        'reference' => '0749d5c92b13577798d9c1bcbc30cef8a8c03c86',
         'name' => 'publishpress/post-expirator',
         'dev' => false,
     ),
@@ -16,7 +16,7 @@
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ac0b7c2907e628fbe2025d0736f2475461b598b3',
+            'reference' => '0749d5c92b13577798d9c1bcbc30cef8a8c03c86',
             'dev_requirement' => false,
         ),
         'publishpress/wordpress-reviews' => array(
