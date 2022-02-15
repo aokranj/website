@@ -94,7 +94,8 @@ class AOKranj_Admin extends AOKranj
                 partner varchar(50) DEFAULT NULL,
                 opomba varchar(5) DEFAULT NULL,
                 deleted int(1) unsigned DEFAULT NULL,
-                PRIMARY KEY  (id)
+                PRIMARY KEY  (id),
+                ADD KEY `user_id` (`user_id`)
             )";
 
         dbDelta($sql);
