@@ -13,7 +13,7 @@ return [
       'type' => 'array',
       'undef-key-action-apply' => 'delete',
       'value' => [
-        0 => 'aokranj-robotstxt/aokranj-robotstxt.php',
+        0 => 'aokranj-wp-misc/aokranj-wp-misc.php',
         1 => 'aokranj/aokranj.php',
         2 => 'parent-category-toggler/parent-category-toggler.php',
         3 => 'post-expirator/post-expirator.php',
