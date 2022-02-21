@@ -15,6 +15,10 @@ jobs:
 
     deploy:
         name: Deploy to stg.aokranj.com
+
+        # Only run this job in the main repository, and not in any of the forks.
+        if: "github.repository == 'aokranj/website-aokranj.com'"
+
         runs-on: ubuntu-latest
         steps:
             -   name: SSH to stg.aokranj.com and deploy the latest code there
