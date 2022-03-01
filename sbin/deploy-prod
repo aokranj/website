@@ -1,0 +1,109 @@
+#!/bin/bash
+
+
+
+### Common script initialization (changes directory into repo root)
+#
+MYDIR_REL=`dirname $0`
+. "$MYDIR_REL/_init-script.sh"
+
+
+
+### Configure shell
+#
+set -e
+set -u
+set -o pipefail
+
+
+
+### Function - displayHelp
+#
+_displayHelp() {
+    cat <<EOF
+Example usage:
+
+    # Trigger the deployment for the currently checked-out commit:
+    $0 -y
+
+    # Trigger the deployment for a specific commit:
+    $0 <COMMIT-ID>
+
+    # Display this help content:
+    $0 -h
+    $0 --help
+
+EOF
+}
+
+
+
+### Function - displayHelp
+#
+_fatalError() {
+    MSG="$1"
+    echo "ERROR: $MSG"
+    exit 1
+}
+
+
+
+### Parse arguments
+#
+ARGV1=${1:-}
+CURRENT_COMMIT_ID=`git rev-parse --short HEAD`
+DEPLOY_COMMIT_ID="(undefined)"
+if [[ "$ARGV1" == "" ]]; then
+    _displayHelp
+    _fatalError "Missing the main argument ('-y' or a commit ID)"
+elif [[ "$ARGV1" == "-y" ]]; then
+    DEPLOY_COMMIT_ID=`git rev-parse --short HEAD`
+    echo "Will deploy currently checked out commit $DEPLOY_COMMIT_ID."
+else
+    DEPLOY_COMMIT_ID="$ARGV1"
+    if ! git rev-parse --verify "$DEPLOY_COMMIT_ID" > /dev/null 2>&1 ; then
+        _fatalError "Unknown commit ID: $DEPLOY_COMMIT_ID"
+    fi
+    echo "Will deploy commit $DEPLOY_COMMIT_ID."
+fi
+
+
+
+### Create a tag that will trigger a GitHub prod publishing action
+#
+DATETIME_UTC=`date -u +'%Y%m%d-%H%M%S'`
+GIT_TAG="prod-$DATETIME_UTC"
+ISSUER_NAME=`git config --get user.name`
+ISSUER_EMAIL=`git config --get user.email`
+echo -n "Creating a signed tag $GIT_TAG... "
+git tag -a -s -m "Deploy commit $DEPLOY_COMMIT_ID to production. Deploy instruction issued by \"$ISSUER_NAME\" <$ISSUER_EMAIL> at $DATETIME_UTC UTC." "$GIT_TAG" "$DEPLOY_COMMIT_ID"
+echo "done."
+
+
+
+### Verify the tag
+#
+echo "Verifying the created git tag '$GIT_TAG':"
+./sbin/deploy-prod-verify-tag "$GIT_TAG"
+echo "The tag '$GIT_TAG' is verified."
+
+
+
+### Find the correct remote to push to
+#
+echo -n "Searching for remote aokranj/website-aokranj.com... "
+REMOTE_NAME=`git remote -v | grep -E '[:/]aokranj/website-aokranj.com ' | head -n1 | awk '{print $1}'`
+echo "found it, it's called \"$REMOTE_NAME\"."
+
+
+
+### Push the tag to the upstream repo to trigger the deployment action
+#
+echo "Pushing the tag to remote '$REMOTE_NAME': "
+git push "$REMOTE_NAME" "$GIT_TAG"
+echo
+echo "SUCCESS: Deployment has been triggered."
+echo "SUCCESS: You can follow the deployment progress here:"
+echo
+echo "    https://github.com/aokranj/website-aokranj.com/actions/workflows/deploy-to-prod.yml"
+echo

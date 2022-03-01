@@ -1,0 +1,51 @@
+name: Deploy to www.aokranj.com
+
+
+
+on:
+    workflow_dispatch:
+
+    push:
+        tags:
+            - 'prod-*'
+
+
+
+jobs:
+
+    deploy:
+        name: Deploy to www.aokranj.com
+
+        # Only run this job in the main repository, and not in any of the forks.
+        if: "github.repository == 'aokranj/website-aokranj.com'"
+
+        runs-on: ubuntu-latest
+        steps:
+
+            -   name: Clone the repository
+                uses: actions/checkout@v2
+                with:
+                    fetch-depth: 1
+                    ref: ${{github.ref_name}}
+
+            # Dirty workaround for https://github.com/actions/checkout/issues/290
+            -   name: Work around the annotated tag checkout issue that is endemic to actions/checkout@v2
+                run: |
+                    git fetch --force --tags
+                    git checkout ${{github.ref_name}}
+
+            -   name: Verify the deployment tag
+                run: ./sbin/deploy-prod-verify-tag ${{github.ref_name}}
+
+            -   name: SSH to www.aokranj.com and deploy the latest code there
+                uses: appleboy/ssh-action@master
+                with:
+                    host: www.aokranj.com
+                    username: ao-prod
+                    key: ${{ secrets.SSH_PRIVKEY_GITHUB_TO_AO_PROD }}
+                    script_stop: true
+                    script: |
+                        cd www/www.aokranj.com
+                        git fetch
+                        git checkout "${{github.ref_name}}"
+                        ./sbin/deploy-here

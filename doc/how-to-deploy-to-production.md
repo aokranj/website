@@ -1,26 +1,41 @@
 # How to deploy to production
 
-General information:
-- Deployments to staging are **NOT YET automated - TODO**
-- ~~Whatever lands on a git branch `prod` is automatically deployed to production~~
-- The repo clone used for deployment should already have `prod` branch checked out
-- The repo clone used for deployment should be tracking the `git@github.com:aokranj/website-aokranj.com` upstream repository
-- You need to be added to the system group `ao-prod` to be able to manually deploy to production
+Two methods:
+- Trigger an automated deployment (by pushing a correct git tag to the upstream repository)
+- Manual procedure
 
 
 
 ## Automated deployment
 
-~~You can trigger the automated deployment by:~~
-- ~~Pushing anything into the `prod` branch of the `github.com:aokranj/website-aokranj.com` repository~~
-- ~~Merging a PR into the `prod` branch in the `github.com:aokranj/website-aokranj.com` repository~~
-- ~~Running a deployment action manually on GitHub~~
+General information:
+- Deployments are implemented with git tags
+- The latest prod-* tag is the one currently deployed to production
 
-~~You can follow the progress of automated deployments [here](https://github.com/aokranj/website-aokranj.com/actions).~~
+Prerequisites:
+- The repo used for triggering a deployment must have a `git@github.com:aokranj/website-aokranj.com` remote configured
+
+
+** Step #1** - Trigger the automated deployment:
+```
+./sbin/deploy-prod -y
+```
+
+** Step #2** - Follow the automated deployment:
+
+Here: https://github.com/aokranj/website-aokranj.com/actions/workflows/deploy-to-prod.yml
+
+** Step #3** - If needed, manually handle the (re)configuration tasks:
+```
+# Follow steps #1, #2, #4 and #5 below.
+```
 
 
 
 ## Manual deployment
+
+Prerequisites:
+- You need to be added to the system group `ao-prod` to be able to manually deploy to production.
 
 **WARNING:** This method should only be used if automated deployment fails for some reason.
 Make sure that automated deployments are not interfering with your manual work.

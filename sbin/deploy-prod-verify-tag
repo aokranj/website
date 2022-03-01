@@ -1,0 +1,94 @@
+#!/bin/bash
+
+
+
+### Common script initialization (changes directory into repo root)
+#
+MYDIR_REL=`dirname $0`
+. "$MYDIR_REL/_init-script.sh"
+
+
+
+### Configure shell
+#
+set -e
+set -u
+set -o pipefail
+
+
+
+### Function - _displayHelp
+#
+_displayHelp() {
+    cat <<EOF
+Example usage:
+
+    # Verify specific tag's suitability for deployment:
+    $0 <GIT-TAG>
+
+    # Display this help content:
+    $0 -h
+    $0 --help
+
+EOF
+}
+
+
+
+### Function - _fatalError
+#
+_fatalError() {
+    MSG="$1"
+    echo "ERROR: $MSG"
+    exit 1
+}
+
+
+
+### Parse arguments
+#
+ARG1=${1:-}
+if [[ "$ARG1" == "" ]]; then
+    _displayHelp
+    _fatalError "Missing the main argument (git tag)"
+fi
+
+if [[ "$ARG1" == "-h" ]] || [[ "$ARG1" == "--help" ]] ; then
+    _displayHelp
+    exit
+fi
+
+if ! [[ "$ARG1" =~ ^prod- ]] ; then
+    _fatalError "Supplied tag '$ARG1' does not match the prod-* pattern"
+fi
+GIT_TAG="$ARG1"
+
+
+
+### Verify specified tag's suitability
+#
+
+# Existence
+if ! git tag | grep -E "^${GIT_TAG}\$" > /dev/null 2>&1 ; then
+    _fatalError "Git tag not found: $GIT_TAG"
+fi
+
+# Being the last in chronological order
+LAST_GIT_TAG=`git tag | tail -n1`
+if [[ "$GIT_TAG" != "$LAST_GIT_TAG" ]]; then
+    _fatalError "Supplied git tag is not the last chronological tag (supplied:$GIT_TAG, last:$LAST_GIT_TAG)"
+fi
+
+# Signature
+if ! git tag -l '--format=%(contents)' "$GIT_TAG" | grep -E ' SIGNATURE-----$' > /dev/null ; then
+    _fatalError "Tag contains no signature: $GIT_TAG"
+fi
+if ! git -c gpg.ssh.allowedSignersFile=./sbin/deploy-prod-verify-tag.keylist tag --verify "$GIT_TAG" > /dev/null ; then
+    _fatalError "Invalid or untrusted tag signature: $GIT_TAG"
+fi
+
+
+
+### Tag is ok
+#
+echo "VERIFICATON SUCCESS: Deployment tag $GIT_TAG seems valid & ready."
