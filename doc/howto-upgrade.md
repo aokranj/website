@@ -54,59 +54,33 @@ Add the upgrade output to the commit message (it contains upgrade versioning inf
 
 
 
-## Deploy to staging
+## Deploy to staging (stg.aokranj.com)
 
 **Step #6** - Push `master` to upstream repository (deploy to STG)
 ```
 git push   # or `git push upstream master`, if "upstream" is the name of the aokranj/website-aokranj.com
 ```
-This will automatically deploy the new version to https://stg.aokranj.com in a few seconds/minutes.
-You can monitor the deployment progress at https://github.com/aokranj/website-aokranj.com/actions.
-If this step fails, you can manually deploy to STG as follows:
-```
-ssh ao-stg@stg.aokranj.com -A
 
-# Then as `ao-stg` user on the host system:
-cd www/stg.aokranj.com
-git pull
-./sbin/deploy-here
-```
-Done.
+And done. Detailed information about deploying to staging is available [here](deploy-stg.md).
 
 
 
 ## Deploy to production
 
-**Step #7** - To deploy to production - Part #1 - Merge branch `master` into `prod`:
-```
-# Back in your own repository clone
-git checkout prod
-git merge --ff master
-git push   # or `git push upstream prod`
-```
-`prod` branch is the branch containing our production code.
-
-**Step #8** - To deploy to production - **Part #2** - Deploy `prod` to production:
-```
-ssh pd-prod@www.aokranj.com -A
-cd www/www.aokranj.com
-# At this point, `prod` branch should already be checked out here
-git pull
-./sbin/deploy-here
-```
-Done.
+Production deployment guide is available [here](deploy-prod.md).
 
 
 
-## How to pull the newer WordPress version from our git upstream
+## Pull from upstream (when someone else has already committed the upgrade)
 
 **Step #1** - Pull the new code:
 ```
-git pull
+git pull   # Or `git pull upstream master`
 ```
 
 **Step #2 - Migrate the database + do other deployment-related tasks:
 ```
 ./sbin/deploy-here
 ```
-That's it.
+
+Done.

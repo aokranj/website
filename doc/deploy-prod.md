@@ -6,11 +6,48 @@ Two methods:
 
 
 
+## Triggering automated deployment - initial setup
+
+
+### Configure commit/tag signature settings
+
+If you're working on a local system, 
+add the following to your `.git/config` or `~/.gitconfig`:
+```
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    defaultKeyCommand = cat /home/YOUR-USERNAME-HERE/.ssh/id_rsa.pub
+[commit]
+    gpgsign = true  # Only if you want to sign all commits (recommended)
+```
+
+Alternatively, if you're working on a remote system to which you forward your SSH agent socket,
+add the following to your `.git/config` or `~/.gitconfig`:
+```
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    defaultKeyCommand = ssh-add -L
+[commit]
+    gpgsign = true  # Only if you want to sign all commits (recommended)
+```
+
+The [sbin/deploy-prod](../sbin/deploy-prod) command ensures that tag creation contains a signature (it uses the `-s` flag),
+therefore no additional configuration is required.
+
+
+### Authorize your SSH public key
+
+Make sure your SSH public key is added to the [list of keys approved for triggering deployment to production](../sbin/deploy-prod-verify-tag.keylist).
+
+
+
 ## Automated deployment
 
 General information:
 - Deployments are implemented with git tags
-- The latest prod-* tag is the one currently deployed to production
+- The latest `prod-*` tag is the one currently deployed in production
 
 Prerequisites:
 - The repo used for triggering a deployment must have a `git@github.com:aokranj/website-aokranj.com` remote configured
@@ -50,17 +87,24 @@ ssh YOUR-USERNAME@www.aokranj.com -A
 cd /data/ao-prod/www.aokranj.com
 ```
 
-**Step #3** - `git pull`:
+**Step #3** - `git fetch`:
 ```
-git pull
+git fetch
 ```
 
-**Step #4** - Run the deployment script:
+**Step #4** - Checkout the intended version:
+```
+git checkout prod-XXXXXX-XXXXXX
+git checkout <COMMIT-ID>
+git checkout master
+```
+
+**Step #5** - Run the deployment script:
 ```
 ./sbin/deploy-here
 ```
 
-**Step #5** - Verify configuration:
+**Step #6** - Verify configuration:
 ```
 ./wp configmaps verify
 ```
