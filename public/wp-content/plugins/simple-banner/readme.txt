@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/rpetersenDev
 Tags: banner, simple, top, bar, announcement, top bar, topbar, bulletin, notification, notice, cta, free
 Requires at least: 3.0.1
 Tested up to: 5.9.0
-Stable tag: 2.10.7
+Stable tag: 2.11.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,8 +85,10 @@ If cookies are disabled on the user's browser, the banners close button expirati
 
 You can clear your browser's cookies or in the browser's console you can execute:
 
-`document.cookie = "simplebannerclosed=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+`document.cookie = "simplebannerclosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 `
+
+You can also set your Close button expiration to blank, 0, or a date in the past. This method may require a refresh or two of the browser on your website page.
 
 = How do I disable the banner in my posts? =
 
@@ -117,6 +119,15 @@ Set your banner position to <code>relative</code> and try this in 'Website Custo
 4. This is the settings page... and the fourth screen shot.
 
 == Changelog ==
+
+= 2.11.0 =
+* New feature: ability to change expiration date by specific time
+
+= 2.10.9 =
+* Bug fix in preview banner.
+
+= 2.10.8 =
+* Fix security bug in admin panel.
 
 = 2.10.7 =
 * Bug fix for XSS.
@@ -285,6 +296,15 @@ Set your banner position to <code>relative</code> and try this in 'Website Custo
 * First Version.
 
 == Upgrade Notice ==
+
+= 2.11.0 =
+* New feature: ability to change expiration date by specific time
+
+= 2.10.9 =
+* Bug fix in preview banner.
+
+= 2.10.8 =
+* Fix security bug in admin panel.
 
 = 2.10.7 =
 * Bug fix for XSS.

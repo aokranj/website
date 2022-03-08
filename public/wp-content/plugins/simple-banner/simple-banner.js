@@ -46,14 +46,16 @@ jQuery(document).ready(function ($) {
     
     if (isSimpleBannerVisible) {
         var sbCookie = "simplebannerclosed";
+
         if (simpleBannerScriptParams.close_button_enabled){
             if (getCookie(sbCookie) === "true") {
                 closeBanner();
+                // Set cookie again here in case the expiration has changed
+                setCookie(sbCookie, "true", simpleBannerScriptParams.close_button_expiration);
             } else {
-                var expiration = parseInt(simpleBannerScriptParams.close_button_expiration) || 30;
                 document.getElementById("simple-banner-close-button").onclick = function() {
                     closeBanner();
-                    setCookie(sbCookie, "true", expiration);
+                    setCookie(sbCookie, "true", simpleBannerScriptParams.close_button_expiration);
                 };
             }
         } else {
@@ -65,10 +67,16 @@ jQuery(document).ready(function ($) {
     }
 
     // Cookie Getter/Setter
-    function setCookie(cname,cvalue,exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires=" + d.toGMTString();
+    function setCookie(cname,cvalue,expiration) {
+        var d;
+        if (expiration === '' || expiration === '0' || parseInt(expiration)) {
+            var exdays = parseInt(expiration) || 0;
+            d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        } else {
+            d = new Date(expiration);
+        }
+        var expires = "expires=" + d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
     function getCookie(cname) {
