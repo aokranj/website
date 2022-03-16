@@ -63,8 +63,8 @@ everything else in this AO Kranj's website code repository is licensed as follow
 Copyright (C) 2022 AO Kranj
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License.
+it under the terms of the GNU General Public License version 3,
+as published by the Free Software Foundation.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
