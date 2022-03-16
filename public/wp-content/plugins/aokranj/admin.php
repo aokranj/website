@@ -51,7 +51,6 @@ class AOKranj_Admin extends AOKranj
         // submit actions
         add_action('admin_post_dodaj_vzpon', array(&$this, 'dodaj_vzpon'));
         add_action('admin_post_uredi_vzpon', array(&$this, 'uredi_vzpon'));
-        //add_action('admin_post_prenos_podatkov', array(&$this, 'prenos_podatkov'));
     }
 
     // init
@@ -146,7 +145,6 @@ class AOKranj_Admin extends AOKranj
         add_submenu_page('aokranj-vzponi', 'Dodaj vzpon', 'Dodaj vzpon', 'read', 'aokranj-vzpon', array(&$this, 'page_vzpon'));
         add_submenu_page('aokranj-vzponi', 'Vsi vzponi', 'Vsi vzponi', 'edit_pages', 'aokranj-vsi-vzponi', array(&$this, 'page_vsi_vzponi'));
         add_submenu_page('aokranj-vzponi', 'Statistika', 'Statistika', 'edit_pages', 'aokranj-statistika', array(&$this, 'page_statistika'));
-        //add_submenu_page('aokranj-vzponi', 'Prenos podatkov', 'Prenos podatkov', 'activate_plugins', 'aokranj-prenos', array(&$this, 'page_prenos'));
     }
 
     // core
@@ -315,10 +313,6 @@ class AOKranj_Admin extends AOKranj
         require_once AOKRANJ_PLUGIN_DIR . '/vzpon.php';
     }
 
-    public function page_prenos() {
-        require_once AOKRANJ_PLUGIN_DIR . '/prenos.php';
-    }
-
     // submit
 
     public function dodaj_vzpon() {
@@ -416,29 +410,4 @@ class AOKranj_Admin extends AOKranj
         wp_redirect($url);
         die;
     }
-
-    /*
-    public function prenos_podatkov() {
-        // check nonce
-        check_admin_referer('prenos_podatkov');
-
-        // get db connections
-        global $wpdb;
-        $aodb = $this->aodb();
-
-        // do it!!!
-        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-vzpon.php';
-        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-utrinek.php';
-        require_once AOKRANJ_PLUGIN_DIR . '/admin/class-prenos-podatkov.php';
-        $prenos = new AOKranj_Prenos_Podatkov($wpdb, $aodb);
-        $response = $prenos->start();
-
-        // set session
-        $_SESSION['prenos'] = $response;
-
-        // redirect back
-        wp_redirect(admin_url('/admin.php?page=aokranj-prenos'));
-    }
-    */
-
 }

@@ -3,7 +3,7 @@
  * Plugin Name: AO Kranj
  *
  * Description: AO Kranj Wordpress plugin.
- * Version: 1.0
+ * Version: 1.1
  * Author: Bojan Hribernik
  * Author URI: http://climbuddy.com/
  * @package aokranj
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * AO Kranj wordpress plugin metadata
  */
-define('AOKRANJ_PLUGIN_VERSION', '1.0.20160311');
+define('AOKRANJ_PLUGIN_VERSION', '1.1.20220316');
 define('AOKRANJ_PLUGIN_URL', WP_PLUGIN_URL.'/aokranj');
 define('AOKRANJ_PLUGIN_DIR', WP_PLUGIN_DIR.'/aokranj');
 
@@ -45,15 +45,12 @@ class AOKranj
 {
     const ID = 'aokranj';
     const NAME = 'AO Kranj';
-    const VERSION = '1.0';
+    const VERSION = '1.1';
 
     const USER_STATUS_NORMAL  = 0;
     const USER_STATUS_WAITING = 2;
 
-    protected $aodb = null;
-
     public function __construct() {
-        add_action('wp_authenticate', array(&$this, 'wp_authenticate'));
         add_shortcode('iframe', array(&$this, 'iframe_shortcode' ));
         remove_shortcode('gallery', 'gallery_shortcode');
         add_shortcode('gallery', array(&$this, 'gallery_shortcode'));
@@ -88,18 +85,6 @@ class AOKranj
     	return $attr;
     }
 
-    protected function aodb() {
-        if (is_null($this->aodb)) {
-            $this->aodb = new wpdb(
-                AOKRANJ_OLD_DB_USER,
-                AOKRANJ_OLD_DB_PASSWORD,
-                AOKRANJ_OLD_DB_NAME,
-                AOKRANJ_OLD_DB_HOST
-            );
-        }
-        return $this->aodb;
-    }
-
     public function wp_enqueue_scripts() {
         if (AOKRANJ_PLUGIN_DEBUG === true) {
             wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
@@ -112,80 +97,6 @@ class AOKranj
 
         wp_enqueue_style('aokranj-plugin', AOKRANJ_PLUGIN_URL . '/css/aokranj.css', array(), AOKRANJ_PLUGIN_VERSION  );
         wp_enqueue_script('aokranj-plugin', AOKRANJ_PLUGIN_URL . '/js/aokranj.js', array('jquery'), AOKRANJ_PLUGIN_VERSION  );
-    }
-
-    public function wp_authenticate() {
-        // user login
-        $username = filter_input(INPUT_POST, 'log');
-        $password = filter_input(INPUT_POST, 'pwd');
-
-        // fetch wordpress user
-        $wp_user = apply_filters('authenticate', null, $username, $password);
-
-        if ($wp_user == null) {
-            $wp_user = new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid username or incorrect password.'));
-        }
-
-        if (is_wp_error($wp_user) && !in_array($wp_user->get_error_code(), array('empty_username', 'empty_password'))) {
-            if ($username && $password) {
-                $wp_user = $this->transfer_user_password($username, $password);
-            }
-
-            if (is_wp_error($wp_user)) {
-                do_action('wp_login_failed', $username);
-            }
-        }
-
-        return $wp_user;
-    }
-
-    private function transfer_user_password($username, $password) {
-        global $wpdb;
-        $aodb = $this->aodb();
-
-        $ao_field = strstr($username, '@') ? 'email' : 'userName';
-        $wp_field = strstr($username, '@') ? 'user_email' : 'user_login';
-
-        $ao_user = $aodb->get_row(sprintf(
-            'SELECT * FROM member WHERE %s = \'%s\' AND userPass = \'%s\'',
-            esc_sql($ao_field),
-            esc_sql($username),
-            esc_sql(md5($password))
-        ));
-
-        $wp_user = $wpdb->get_row(sprintf(
-            'SELECT * FROM %s WHERE %s = \'%s\' AND user_status = %d',
-            esc_sql($wpdb->users),
-            esc_sql($wp_field),
-            esc_sql($username),
-            self::USER_STATUS_WAITING
-        ));
-
-        if (!$ao_user || !$wp_user) {
-            return false;
-        }
-
-        $success = $wpdb->query(sprintf(
-            'UPDATE %s SET user_pass = \'%s\', user_status = %d WHERE ID = %d',
-            esc_sql($wpdb->users),
-            esc_sql(wp_hash_password($password)),
-            self::USER_STATUS_NORMAL,
-            $wp_user->ID
-        ));
-
-        if ($success) {
-            wp_cache_delete($wp_user->ID, 'users');
-
-            $wp_user = apply_filters('authenticate', null, $wp_user->user_login, $password);
-
-            if ($wp_user === null) {
-                $wp_user = new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid username or incorrect password.'));
-            }
-        } else {
-            $wp_user = new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid username or incorrect password.'));
-        }
-
-        return $wp_user;
     }
 
     // shortcodes
