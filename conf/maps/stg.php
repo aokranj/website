@@ -8,6 +8,7 @@ return [
   ],
   'data' => [
     'admin_email' => 'janez.nastran@pdkranj.si',
+    'blogname' => 'STG AO Kranj STG',
     'home' => 'https://stg.aokranj.com',
     'siteurl' => 'https://stg.aokranj.com',
     'widget_pis_posts_in_sidebar' => [

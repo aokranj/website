@@ -20,6 +20,22 @@ if (!defined('WP_ENV')) {
 }
 
 /*
+ * Various per-environment settings (prod & stg only)
+ */
+if (WP_ENV == 'prod') {
+    if (!defined('AOKRANJ_MAIL_FROM_ADDR')) define('AOKRANJ_MAIL_FROM_ADDR', "webmaster@aokranj.com");
+    if (!defined('AOKRANJ_MAIL_FROM_NAME')) define('AOKRANJ_MAIL_FROM_NAME', "AO Kranj");
+}
+if (WP_ENV == 'stg') {
+    if (!defined('AOKRANJ_MAIL_FROM_ADDR')) define('AOKRANJ_MAIL_FROM_ADDR', "no-reply@aokranj.com");
+    if (!defined('AOKRANJ_MAIL_FROM_NAME')) define('AOKRANJ_MAIL_FROM_NAME', "STG AO Kranj STG");
+}
+if (WP_ENV == 'dev') {
+    if (!defined('AOKRANJ_MAIL_FROM_ADDR')) define('AOKRANJ_MAIL_FROM_ADDR', "no-reply@aokranj.com");
+    if (!defined('AOKRANJ_MAIL_FROM_NAME')) define('AOKRANJ_MAIL_FROM_NAME', "DEV AO Kranj DEV");
+}
+
+/*
  * Define config maps (for `wp configmaps ...` CLI tool)
  */
 $configMaps = [

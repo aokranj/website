@@ -10,4 +10,5 @@ Author URI: https://github.com/bostjan
 
 require_once __DIR__ . '/src/admin-site-health-disable-filesystem-credentials.php';
 require_once __DIR__ . '/src/admin-site-health-disable-vcs-test.php';
+require_once __DIR__ . '/src/mail-from.php';
 require_once __DIR__ . '/src/robotstxt.php';

@@ -8,6 +8,7 @@ return [
   ],
   'data' => [
     'admin_email' => 'MUST-OVERRIDE-IN-conf/maps/local.php@UNDEFINED.com',
+    'blogname' => 'DEV AO Kranj DEV',
     'home' => 'http://docker.dev.aokranj.com',
     'siteurl' => 'http://docker.dev.aokranj.com',
     'widget_pis_posts_in_sidebar' => [
