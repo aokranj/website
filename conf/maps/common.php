@@ -54,7 +54,6 @@ return [
     'blog_charset' => 'UTF-8',
     'blog_public' => '1',
     'blogdescription' => 'Alpinistični odsek Kranj',
-    'blogname' => 'AO Kranj',
     'can_compress_scripts' => [
       'action' => 'ignore',
       'type' => 'string',
