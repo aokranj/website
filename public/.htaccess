@@ -58,6 +58,18 @@ RewriteRule   ^/?xmlrpc.php       /xmlrpc-disabled.php   [L]
 
 
 
+### Fetch missing files from /wp-content/upload
+#
+# On a non-production clone, if a request hits 
+#
+RewriteCond     %{HTTP_HOST}            !^www\.aokranj\.com$
+RewriteCond     %{REQUEST_URI}          ^/wp-content/uploads/
+RewriteCond     %{REQUEST_FILENAME}     !-f
+RewriteCond     %{REQUEST_FILENAME}     !-d
+RewriteRule     ^/?(.+)$                /fetch-upload-from-prod.php?path=$1     [L]
+
+
+
 ### Final redirect to WP handler
 #
 RewriteRule ^index\.php$ - [L]
