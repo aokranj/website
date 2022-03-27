@@ -5,12 +5,6 @@ name: Deploy STG
 on:
     workflow_dispatch:
 
-    pull_request:
-        types: 
-            - closed
-        branches:
-            - master
-
     push:
         branches:
             - master
