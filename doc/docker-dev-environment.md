@@ -39,7 +39,7 @@ Step #4 - Start the Docker-based dev environment:
 
 Step #5 - dump+import the staging database:
 ```
-ssh ao-stg@stg.aokranj.com ./www/stg.aokranj.com/sbin/db-dump | ./sbin/wp-in-docker db import -
+ssh stg.aokranj.com /data/ao-stg/stg.aokranj.com/sbin/db-dump | ./sbin/wp-in-docker db import -
 ```
 
 
@@ -49,15 +49,20 @@ Step #6 - Fix the URLs in the new database copy
 ```
 
 
-Step #7 - Fetch the `public/wp-content/uploads` content
+Step #7 - Run the `sbin/deploy-here` script (to set up & verify all permissions)
 ```
-rsync -av ao-stg@stg.aokranj.com:www/stg.aokranj.com/public/wp-content/uploads/ public/wp-content/uploads/
+./sbin/deploy-here
 ```
 
 
-Step #8 - Fix the `public/wp-content/uploads` permissions:
+Step #8a - No need to fetch `public/wp-content/uploads` content:
+- Our tool [public/fetch-upload-from-prod.php](../public/fetch-upload-from-prod.php) fetches all required files on-the-fly
+
+
+Step #8b - ALTERNATIVE to 8a - Fetch the `public/wp-content/uploads` content
 ```
-chmod -R 777 public/wp-content/uploads
+rsync -av stg.aokranj.com:/data/ao-stg/stg.aokranj.com/public/wp-content/uploads/  public/wp-content/uploads/   # From STG
+rsync -av www.aokranj.com:/data/ao-prod/www.aokranj.com/public/wp-content/uploads/ public/wp-content/uploads/   # From PROD
 ```
 
 
