@@ -38,3 +38,8 @@ div.pe-qe-fields > div {
 .post-expire-col .dashicons {
     cursor: help;
 }
+
+.pe-qe-fields input.invalid {
+    border: 2px solid #b15b5b;
+    background-color: #ffdede;
+}
