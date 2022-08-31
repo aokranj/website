@@ -2,7 +2,7 @@
 
 A short guide how to upgrade and deploy updated WP to all environments.
 
-For this guide, let's assume the following configuration of remotes in your git repository (TL;DR branch `master` is `tracking aokranj/website-aokranj.com:master`, ditto for `prod`):
+For this guide, let's assume the following configuration of remotes in your git repository (TL;DR branch `master` is tracking `aokranj/website-aokranj.com:master`, ditto for `prod`):
 ```
 $ git remote -v
 origin  git@github.com:bostjan/website-aokranj.com.git (fetch)
@@ -58,7 +58,7 @@ Add the upgrade output to the commit message (it contains upgrade versioning inf
 
 **Step #6** - Push `master` to upstream repository (deploy to STG)
 ```
-git push   # or `git push upstream master`, if "upstream" is the name of the aokranj/website-aokranj.com
+git push   # or `git push upstream master`, if "upstream" is the name of the aokranj/website-aokranj.com remote
 ```
 
 And done. Detailed information about deploying to staging is available [here](deploy-stg.md).
