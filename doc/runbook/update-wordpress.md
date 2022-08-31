@@ -64,13 +64,13 @@ Add the upgrade output to the commit message (it contains upgrade versioning inf
 git push   # or `git push upstream master`, if "upstream" is the name of the aokranj/website-aokranj.com remote
 ```
 
-And done. Detailed information about deploying to staging is available [here](deploy-stg.md).
+And done. Detailed information about deploying to staging is available [here](deploy-to-stg.md).
 
 
 
 ## Deploy to production
 
-Production deployment guide is available [here](deploy-prod.md).
+Production deployment guide is available [here](deploy-to-prod.md).
 
 
 

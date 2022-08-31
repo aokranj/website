@@ -1,4 +1,4 @@
-# Database transfers
+# Database transfers - Runbook - AO Kranj
 
 A short guide how to migrate one environement's database into another environment (i.e. prod to stg).
 
@@ -68,4 +68,9 @@ Step #2 - Dump+import the database in one go (from PROD):
 Step #3 - Fix the URLs in the new database copy:
 ```
 ./sbin/wp search-replace 'https://www.aokranj.com' 'https://stg.aokranj.com'
+```
+
+Step #4 - Run the DB upgrade script (prod may have older WP version deployed, with order DB schema):
+```
+./sbin/deploy-here
 ```
