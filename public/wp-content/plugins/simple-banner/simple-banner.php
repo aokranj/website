@@ -3,16 +3,16 @@
  * Plugin Name: Simple Banner
  * Plugin URI: https://github.com/rpetersen29/simple-banner
  * Description: Display a simple banner at the top of your website.
- * Version: 2.11.0
+ * Version: 2.12.1
  * Author: Ryan Petersen
  * Author URI: http://rpetersen29.github.io/
  * License: GPL2
  *
  * @package Simple Banner
- * @version 2.11.0
+ * @version 2.12.1
  * @author Ryan Petersen <rpetersen.dev@gmail.com>
  */
-define ('VERSION', '2.11.0');
+define ('SB_VERSION', '2.12.1');
 
 register_activation_hook( __FILE__, 'simple_banner_activate' );
 function simple_banner_activate() {
@@ -42,13 +42,13 @@ function get_disabled_on_current_page() {
 add_action( 'wp_enqueue_scripts', 'simple_banner' );
 function simple_banner() {
     // Enqueue the style
-	wp_register_style('simple-banner-style',  plugin_dir_url( __FILE__ ) .'simple-banner.css', '', VERSION);
+	wp_register_style('simple-banner-style',  plugin_dir_url( __FILE__ ) .'simple-banner.css', '', SB_VERSION);
     wp_enqueue_style('simple-banner-style');
 	// Set Script parameters
 	$disabled_on_current_page = get_disabled_on_current_page();
 	$script_params = array(
 		// script specific parameters
-		'version' => VERSION,
+		'version' => SB_VERSION,
 		'hide_simple_banner' => get_option('hide_simple_banner'),
 		'simple_banner_position' => get_option('simple_banner_position'),
 		'header_margin' => get_option('header_margin'),
@@ -84,8 +84,8 @@ function simple_banner() {
 		'close_button_cookie_set' => isset($_COOKIE['simplebannerclosed']),
 	);
 	// Enqueue the script
-    wp_register_script('simple-banner-script', plugin_dir_url( __FILE__ ) . 'simple-banner.js', array( 'jquery' ), VERSION);
-	wp_localize_script('simple-banner-script', 'simpleBannerScriptParams', $script_params);
+    wp_register_script('simple-banner-script', plugin_dir_url( __FILE__ ) . 'simple-banner.js', array( 'jquery' ), SB_VERSION);
+    wp_add_inline_script('simple-banner-script', 'const simpleBannerScriptParams = ' . wp_json_encode($script_params), 'before');
     wp_enqueue_script('simple-banner-script');
 }
 
@@ -555,7 +555,7 @@ function simple_banner_settings_page() {
 						<br><span style="font-weight:400;">Leaving this blank removes the banner</span>
 					</th>
 						<td>
-							<textarea id="simple_banner_text" class="large-text code" style="height: 150px;width: 97%;" name="simple_banner_text"><?php echo get_option('simple_banner_text'); ?></textarea>
+							<textarea id="simple_banner_text" class="large-text code" style="height: 150px;width: 97%;" name="simple_banner_text"><?php echo esc_textarea(get_option('simple_banner_text')); ?></textarea>
 						</td>
 				</tr>
 				<!-- Custom CSS -->
@@ -571,24 +571,24 @@ function simple_banner_settings_page() {
 				<tr valign="top">
 					<th scope="row" style="font-weight:400;">
 						<div>.simple-banner {</div>
-						<textarea id="simple_banner_custom_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_custom_css"><?php echo get_option('simple_banner_custom_css'); ?></textarea>
+						<textarea id="simple_banner_custom_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_custom_css"><?php echo esc_textarea(get_option('simple_banner_custom_css')); ?></textarea>
 						<div>}</div>
 					</th>
 					<td>
 						<div style="display:flex">
 							<div style="flex-grow:1;">
 								<div>.simple-banner-scrolling {</div>
-								<textarea id="simple_banner_scrolling_custom_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_scrolling_custom_css"><?php echo get_option('simple_banner_scrolling_custom_css'); ?></textarea>
+								<textarea id="simple_banner_scrolling_custom_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_scrolling_custom_css"><?php echo esc_textarea(get_option('simple_banner_scrolling_custom_css')); ?></textarea>
 								<div>}</div>
 							</div>
 							<div style="flex-grow:1;">
 								<div>.simple-banner-text {</div>
-								<textarea id="simple_banner_text_custom_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_text_custom_css"><?php echo get_option('simple_banner_text_custom_css'); ?></textarea>
+								<textarea id="simple_banner_text_custom_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_text_custom_css"><?php echo esc_textarea(get_option('simple_banner_text_custom_css')); ?></textarea>
 								<div>}</div>
 							</div>
 							<div style="flex-grow:1;">
 								<div>.simple-banner-button {</div>
-								<textarea id="simple_banner_button_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_button_css"><?php echo get_option('simple_banner_button_css'); ?></textarea>
+								<textarea id="simple_banner_button_css" class="code" style="height: 150px;width: 90%;" name="simple_banner_button_css"><?php echo esc_textarea(get_option('simple_banner_button_css')); ?></textarea>
 								<div>}</div>
 							</div>
 						</div>
@@ -709,7 +709,7 @@ function simple_banner_settings_page() {
 							Activation Code
 						</th>
 						<td>
-							<input type="text" style="border: 2px solid gold;border-radius: 5px;" id="pro_version_activation_code" name="pro_version_activation_code" value="<?php echo get_option('pro_version_activation_code'); ?>" />
+							<input type="text" style="border: 2px solid gold;border-radius: 5px;" id="pro_version_activation_code" name="pro_version_activation_code" value="<?php echo esc_attr(get_option('pro_version_activation_code')); ?>" />
 						</td>
 					</tr>
 					<!-- Permissions -->
@@ -823,7 +823,7 @@ function simple_banner_settings_page() {
 						<td>
 							<?php
 								if (get_option('pro_version_enabled')) {
-									echo '<textarea id="site_custom_css" style="height: 150px;width: 75%;" name="site_custom_css">'. get_option('site_custom_css') . '</textarea>';
+									echo '<textarea id="site_custom_css" style="height: 150px;width: 75%;" name="site_custom_css">'. esc_textarea(get_option('site_custom_css')) . '</textarea>';
 								} else {
 									echo '<textarea style="height: 150px;width: 75%;" disabled></textarea>';
 								}
@@ -854,7 +854,7 @@ function simple_banner_settings_page() {
 						<td>
 							<?php
 								if (get_option('pro_version_enabled')) {
-									echo '<textarea id="site_custom_js" style="height: 150px;width: 75%;" name="site_custom_js">'. get_option('site_custom_js') . '</textarea>';
+									echo '<textarea id="site_custom_js" style="height: 150px;width: 75%;" name="site_custom_js">'. esc_textarea(get_option('site_custom_js')) . '</textarea>';
 								} else {
 									echo '<textarea style="height: 150px;width: 75%;" disabled></textarea>';
 								}

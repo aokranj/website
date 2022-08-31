@@ -1,5 +1,4 @@
 (function ($, config) {
-
     // show/hide the date fields when the user chooses the intent in bulk edit
     $('body').on('change', 'select[name="expirationdate_status"]', function (e) {
         var $show = $(this).find('option:selected').attr('data-show-fields');
@@ -44,6 +43,7 @@
         $bulk_row.find('.pe-qe-fields select[name="expirationdate_status"]').prop('selectedIndex', 0);
         $bulk_row.find('.pe-qe-fields .post-expirator-date-fields').hide();
         $bulk_row.find('.pe-qe-fields .pe-category-list').hide();
+        $bulk_row.find('.pe-qe-fields input').removeClass('invalid');
     };
 
     // we create a copy of the WP inline edit post function
@@ -118,51 +118,57 @@
         }
     };
 
-    $('#bulk_edit').on('click', function () {
+    function validateBulkFields()
+    {
+        const $statusField = $('#bulk-edit').find('.pe-qe-fields select[name="expirationdate_status"]');
 
-        // define the bulk edit row
-        var $bulk_row = $('#bulk-edit');
+        if ($statusField.val() === 'no-change' || $statusField.val() === 'remove-only') {
+            return true;
+        }
 
-        // get the selected post ids that are being edited
-        var $post_ids = [];
-        $bulk_row.find('#bulk-titles').children().each(function () {
-            $post_ids.push($(this).attr('id').replace(/^(ttle)/i, ''));
-        });
+        const fields = [
+            'expirationdate_day',
+            'expirationdate_year',
+            'expirationdate_hour',
+            'expirationdate_minute'
+        ];
 
-        // get the custom fields
-        var $expirationdate_month = $bulk_row.find('select[name="expirationdate_month"]').val();
-        var $expirationdate_day = $bulk_row.find('input[name="expirationdate_day"]').val();
-        var $expirationdate_year = $bulk_row.find('input[name="expirationdate_year"]').val();
-        var $expirationdate_hour = $bulk_row.find('input[name="expirationdate_hour"]').val();
-        var $expirationdate_minute = $bulk_row.find('input[name="expirationdate_minute"]').val();
-        var $expirationdate_status = $bulk_row.find('select[name="expirationdate_status"]').val();
-        var $expirationdate_expireType = $bulk_row.find('select[name="expirationdate_expiretype"]').val();
-        var expirationdate_category = [];
-        $bulk_row.find('input[name="expirationdate_category[]"]:checked').each(function () {
-            expirationdate_category.push($(this).val());
-        });
+        let isValid = true;
 
-        // save the data
-        $.ajax({
-            url: ajaxurl, // this is a variable that WordPress has already defined for us
-            type: 'POST',
-            async: false,
-            cache: false,
-            data: {
-                action: config.ajax.bulk_edit,
-                post_ids: $post_ids, // and these are the 2 parameters we're passing to our function
-                expirationdate_month: $expirationdate_month,
-                expirationdate_day: $expirationdate_day,
-                expirationdate_year: $expirationdate_year,
-                expirationdate_hour: $expirationdate_hour,
-                expirationdate_minute: $expirationdate_minute,
-                expirationdate_status: $expirationdate_status,
-                expirationdate_expiretype: $expirationdate_expireType,
-                expirationdate_category: expirationdate_category,
-                nonce: config.ajax.nonce
+        let $field;
+        let value;
+        for (let i = 0; i < fields.length; i++) {
+            $field = $('#bulk-edit').find('.pe-qe-fields input[name="' + fields[i] + '"]');
+
+            $field.removeClass('invalid');
+
+            value = parseInt($field.val());
+            if (['expirationdate_hour', 'expirationdate_minute'].includes($field.prop('name'))) {
+                if (isNaN(value) || value < 0) {
+                    $field.addClass('invalid');
+                    isValid = false;
+                }
+            } else if (isNaN(value) || value <= 0) {
+                $field.addClass('invalid');
+                isValid = false;
             }
-        });
+        }
 
+        return isValid;
+    }
+
+    $('.pe-qe-fields input[name="expirationdate_day"]').on('blur', validateBulkFields);
+    $('.pe-qe-fields input[name="expirationdate_year"]').on('blur', validateBulkFields);
+    $('.pe-qe-fields input[name="expirationdate_hour"]').on('blur', validateBulkFields);
+    $('.pe-qe-fields input[name="expirationdate_minute"]').on('blur', validateBulkFields);
+
+    $('#bulk_edit').on('click', function(e) {
+        const isValid = validateBulkFields();
+        console.log(isValid);
+        if (! isValid) {
+            e.preventDefault();
+
+            return false;
+        }
     });
-
-})(jQuery, config);
+})(jQuery, postexpiratorConfig);

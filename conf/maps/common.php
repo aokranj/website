@@ -112,7 +112,7 @@ return [
       'type' => 'string',
       'value' => NULL,
     ],
-    'db_version' => '51917',
+    'db_version' => '53496',
     'default_category' => '1',
     'default_comment_status' => 'open',
     'default_comments_page' => 'newest',
@@ -228,7 +228,7 @@ return [
     'page_on_front' => '0',
     'permalink_structure' => '/%year%/%monthnum%/%day%/%postname%/',
     'ping_sites' => 'http://rpc.pingomatic.com/',
-    'postexpiratorVersion' => '2.7.3',
+    'postexpiratorVersion' => '2.7.7',
     'posts_per_page' => '10',
     'posts_per_rss' => '10',
     'recently_activated' => [
