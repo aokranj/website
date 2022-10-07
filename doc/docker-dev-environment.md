@@ -22,12 +22,12 @@ cd website-aokranj.com
 ```
 
 
-Step #3 - Configure your `conf/wp-config.php` file.
-The `conf/wp-config.php.SAMPLE` file is already preconfigured for this use case,
+Step #3 - Configure your `conf/wp-config-local.php` file.
+The `conf/wp-config-local.php.SAMPLE` file is already preconfigured for this use case,
 so just get a new set of salts [here](https://api.wordpress.org/secret-key/1.1/salt/) and you're done:
 ```
-cp conf/wp-config.php.SAMPLE conf/wp-config.php
-edit conf/wp-config.php
+cp conf/wp-config-local.php.SAMPLE conf/wp-config-local.php
+edit conf/wp-config-local.php
 ```
 
 
@@ -49,9 +49,14 @@ Step #6 - Fix the URLs in the new database copy
 ```
 
 
-Step #7 - Run the `sbin/deploy-here` script (to set up & verify all permissions)
+Step #7a - Run the `sbin/deploy-here` script (to set up & verify all permissions)
 ```
 ./sbin/deploy-here
+```
+
+Step #7b - ALTERNATIVE to 7a - Run the `sbin/deploy-in-docker` script (runs `sbin/deploy-here` in Docker)
+```
+./sbin/deploy-in-docker
 ```
 
 
