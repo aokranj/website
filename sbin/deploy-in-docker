@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec -i -e WP_CLI_ALLOW_ROOT=value aokranj-webserver ./sbin/deploy-here

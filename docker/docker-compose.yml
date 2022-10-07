@@ -40,7 +40,7 @@ services:
     container_name: 'aokranj-phpmyadmin'
     image: phpmyadmin/phpmyadmin:latest
     depends_on:
-      - aokranj-mariadb
+      - mariadb
     environment:
       PMA_HOST: mariadb
       PMA_PORT: 3306
