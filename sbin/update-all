@@ -1,0 +1,252 @@
+#!/bin/bash
+
+
+
+### Shell configuration and script bootstrap
+#
+set -e
+set -u
+set -o pipefail
+. `dirname $0`/_init-script.sh
+
+
+
+### Define the help method
+#
+_showHelp()
+{
+    cat <<EOF
+Purpose:
+
+    Update all WP code. Works as follows:
+    - Check if currently checked out branch is not named "master" (use -c to override)
+    - Check if working copy is non-dirty (in the public/ or sbin/libexec/ directory)
+    - Check if working copy is in-sync with upstream's "master" (unless overriden with -l)
+    - Update wp-cli, commit
+    - Update wp-cli packages, commit
+    - Update WP core, commit
+    - Update WP plugins, commit
+    - Update WP themes, commit
+    - Update WP language files (of core, plugins and themes), commit
+    - Display instructions for pushing to create a pull request
+
+Supported CLI arguments:
+
+    -c          Work on the current branch, even if it is called "master"
+    -l          Local-only - skip checking if local `master` branch is in sync with upstream
+    -u NAME     Remote name to use as upstream (defaults to finding a remote with URL "git@github.com:aokranj/website-pdkranj.si")
+
+    -h/--help   Show this help.
+
+Usage:
+
+    Update all code:
+        $0
+
+    Update all code on a new branch called "update-wp-to-6.0.3":
+        $0 -b update-wp-to-6.0.3
+
+EOF
+}
+
+_showHelpAndExit()
+{
+    _showHelp
+    exit
+}
+
+_isWorkingDirectoryDirty()
+{
+    if git status -s public/ sbin/libexec/ | grep -c . > /dev/null ; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+
+
+### Parse the CLI arguments
+#
+if [[ $@ =~ [-][-]help ]]; then
+    _showHelpAndExit
+fi
+
+ARG_USE_CURRENT_BRANCH="false"
+ARG_CHECK_REMOTE_SYNC="true"
+ARG_UPSTREAM_REMOTE_NAME=""
+
+while getopts ":clu:" opt; do
+    case "$opt" in
+        c)
+            ARG_USE_CURRENT_BRANCH="true"
+            ;;
+
+        l)
+            ARG_CHECK_REMOTE_SYNC="false"
+            ;;
+
+        u)
+            ARG_UPSTREAM_REMOTE_NAME="$OPTARG"
+            ;;
+
+        h)
+            _showHelpAndExit
+            ;;
+
+        ?)
+            _fatalError "Unsupported argument: '-$OPTARG'. Run '$0 -h' to list supported arguments." $LINENO
+            ;;
+
+        *)
+            _fatalError "Internal error (opt=$opt)" $LINENO
+            ;;
+    esac
+done
+
+
+
+### Preflight checks
+#
+
+# We must be the `master` branch
+CUR_BRANCH=`git branch --show-current`
+if [ "$ARG_USE_CURRENT_BRANCH" != "true" ]; then
+    if [ "$CUR_BRANCH" == "master" ]; then
+        CUR_DATE=`date +%Y-%m-%d`
+        _fatalError "Currently checked out branch is 'master'. You probably want to run this on a branch called 'update-$CUR_DATE'. Use '-c' flag to force usage of the current branch." "$LINENO"
+    fi
+fi
+
+# Working directory must be clean
+if _isWorkingDirectoryDirty ; then
+    _fatalError "Working directory (in public/ and sbin/libexec) is dirty." "$LINENO"
+fi
+
+# Find the relevant remote
+UPSTREAM_REMOTE_NAME=`git remote -v | grep 'git@github.com:aokranj/website-pdkranj.si' | head -n1 | awk '{print $1}'`
+_echo "Found upstream remote: '$UPSTREAM_REMOTE_NAME'"
+
+# Is our master in-sync with the upstream?
+if [ "$ARG_CHECK_REMOTE_SYNC" == "true" ]; then
+    git fetch "$UPSTREAM_REMOTE_NAME"
+    if ! git diff $CUR_BRANCH..$UPSTREAM_REMOTE_NAME/master --quiet ; then
+        _fatalError "Upstream master and local branch `$CUR_BRANCH` are not in sync." "$LINENO"
+    fi
+fi
+
+
+
+### Do the code updates
+#
+
+_echo "Updating WP-CLI..."
+UPDATE_OUTPUT=`./sbin/wp cli update`
+if _isWorkingDirectoryDirty ; then
+    WP_CLI_VERSION=`./sbin/wp cli version | awk '{print $2}'`
+    COMMIT_MSG="Update WP-CLI to $WP_CLI_VERSION"
+    git add sbin/libexec/
+    git commit -m "$COMMIT_MSG"
+    _echo "WP-CLI updated to $WP_CLI_VERSION."
+else
+    _echo "WP-CLI is already at the latest version."
+fi
+
+_echo "Updating WP-CLI packages..."
+UPDATE_OUTPUT=`./sbin/wp package update`
+if _isWorkingDirectoryDirty ; then
+    COMMIT_MSG="Update WP-CLI packages"$'\n\n'"$UPDATE_OUTPUT"
+    git add sbin/libexec/
+    git commit -m "$COMMIT_MSG"
+    _echo "WP-CLI packages updated."
+else
+    _echo "WP-CLI packages are already at the latest version."
+fi
+
+_echo "Updating WordPress..."
+UPDATE_OUTPUT=`./sbin/wp core update`
+if _isWorkingDirectoryDirty ; then
+    WP_CORE_VERSION=`./sbin/wp core version`
+    COMMIT_MSG="Update WordPress to $WP_CORE_VERSION"
+    git add public/
+    git commit -m "$COMMIT_MSG"
+    _echo "WordPress updated."
+else
+    _echo "WordPress is already at the latest version."
+fi
+
+_echo "Updating plugins..."
+UPDATE_OUTPUT=`./sbin/wp plugin update --all`
+if _isWorkingDirectoryDirty ; then
+    COMMIT_MSG="Update plugins"$'\n\n'"$UPDATE_OUTPUT"
+    git add public/
+    git commit -m "$COMMIT_MSG"
+    _echo "Plugins updated."
+else
+    _echo "Plugins are already at the latest version."
+fi
+
+_echo "Updating themes..."
+UPDATE_OUTPUT=`./sbin/wp theme update --all`
+if _isWorkingDirectoryDirty ; then
+    COMMIT_MSG="Update themes"$'\n\n'"$UPDATE_OUTPUT"
+    git add public/
+    git commit -m "$COMMIT_MSG"
+    _echo "Themes updated."
+else
+    _echo "Themes are already at the latest version."
+fi
+
+_echo "Updating language translations..."
+UPDATE_OUTPUT=`./sbin/wp language core update`
+if _isWorkingDirectoryDirty ; then
+    COMMIT_MSG="Update language translations"
+    git add public/
+    git commit -m "$COMMIT_MSG"
+    _echo "Language translations updated."
+else
+    _echo "Language translations are already at the latest version."
+fi
+
+_echo "Updating plugin language translations..."
+UPDATE_OUTPUT=`./sbin/wp language plugin update --all`
+if _isWorkingDirectoryDirty ; then
+    COMMIT_MSG="Update plugin language translations"$'\n\n'"$UPDATE_OUTPUT"
+    git add public/
+    git commit -m "$COMMIT_MSG"
+    _echo "Plugin language translations updated."
+else
+    _echo "Plugin language translations are already at the latest version."
+fi
+
+_echo "Updating theme language translations..."
+UPDATE_OUTPUT=`./sbin/wp language theme update --all`
+if _isWorkingDirectoryDirty ; then
+    COMMIT_MSG="Update theme language translations"$'\n\n'"$UPDATE_OUTPUT"
+    git add public/
+    git commit -m "$COMMIT_MSG"
+    _echo "Theme language translations updated."
+else
+    _echo "Theme language translations are already at the latest version."
+fi
+
+_echo "Update complete."
+
+
+
+### Database schema update
+#
+_echo "Running database upgrade..."
+./sbin/wp core update-db
+_echo "Database upgrade complete."
+
+
+
+### Suggest next steps
+#
+_echo ""
+_echo "Next steps:"
+_echo "    1. Test out the new code locally."
+_echo ""
+_echo "    2. Create a pull request."
+_echo ""
