@@ -33,7 +33,7 @@ Purpose:
 Supported CLI arguments:
 
     -c          Work on the current branch, even if it is called "master"
-    -l          Local-only - skip checking if local `master` branch is in sync with upstream
+    -l          Local-only - skip checking if local branch is in sync with upstream
     -u NAME     Remote name to use as upstream (defaults to finding a remote with URL "git@github.com:aokranj/website-pdkranj.si")
 
     -h/--help   Show this help.
@@ -76,7 +76,7 @@ ARG_USE_CURRENT_BRANCH="false"
 ARG_CHECK_REMOTE_SYNC="true"
 ARG_UPSTREAM_REMOTE_NAME=""
 
-while getopts ":clu:" opt; do
+while getopts ":clu:h" opt; do
     case "$opt" in
         c)
             ARG_USE_CURRENT_BRANCH="true"
@@ -135,7 +135,7 @@ _echo "Found upstream remote: '$UPSTREAM_REMOTE_NAME'"
 if [ "$ARG_CHECK_REMOTE_SYNC" == "true" ]; then
     git fetch "$UPSTREAM_REMOTE_NAME"
     if ! git diff $CUR_BRANCH..$UPSTREAM_REMOTE_NAME/master --quiet ; then
-        _fatalError "Upstream master and local branch `$CUR_BRANCH` are not in sync." "$LINENO"
+        _fatalError "Upstream master and local branch '$CUR_BRANCH' are not in sync." "$LINENO"
     fi
 fi
 
