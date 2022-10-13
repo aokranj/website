@@ -124,7 +124,11 @@ if _isWorkingDirectoryDirty ; then
 fi
 
 # Find the relevant remote
-UPSTREAM_REMOTE_NAME=`git remote -v | grep 'git@github.com:aokranj/website-pdkranj.si' | head -n1 | awk '{print $1}'`
+UPSTREAM_REMOTE_URL="git@github.com:aokranj/website-aokranj.com"
+if ! git remote -v | grep -F "$UPSTREAM_REMOTE_URL" > /dev/null ; then
+    _fatalError "Upstream remote not found: $UPSTREAM_REMOTE_URL"
+fi
+UPSTREAM_REMOTE_NAME=`git remote -v | grep -F "$UPSTREAM_REMOTE_URL" | head -n1 | awk '{print $1}'`
 _echo "Found upstream remote: '$UPSTREAM_REMOTE_NAME'"
 
 # Is our master in-sync with the upstream?
