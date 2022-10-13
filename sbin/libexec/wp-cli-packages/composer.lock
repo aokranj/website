@@ -26,12 +26,12 @@
             },
             "type": "wp-cli-package",
             "autoload": {
-                "psr-4": {
-                    "WP\\CLI\\ConfigMaps\\": "src/"
-                },
                 "files": [
                     "wp-cli-configmaps.php"
-                ]
+                ],
+                "psr-4": {
+                    "WP\\CLI\\ConfigMaps\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -69,5 +69,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }
