@@ -145,7 +145,7 @@ fi
 #
 
 _echo "Updating WP-CLI..."
-UPDATE_OUTPUT=`./sbin/wp cli update`
+UPDATE_OUTPUT=`./sbin/wp cli update --yes`
 if _isWorkingDirectoryDirty ; then
     WP_CLI_VERSION=`./sbin/wp cli version | awk '{print $2}'`
     COMMIT_MSG="Update WP-CLI to $WP_CLI_VERSION"
