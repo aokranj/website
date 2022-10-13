@@ -49,3 +49,32 @@ jobs:
                         git fetch
                         git checkout "${{github.ref_name}}"
                         ./sbin/deploy-here
+
+
+
+            -   name: Slack Notification - Success
+                uses: rtCamp/action-slack-notify@v2
+                env:
+                    SLACK_WEBHOOK: '${{ secrets.SLACK_WEBHOOK_RELEASES }}'
+                    SLACK_ICON: 'https://www.aokranj.com/wp-content/uploads/2021/05/cropped-AO-Kranj-logo-Copy-192x192.png'
+                    SLACK_USERNAME: '[PROD] Deploy to www.aokranj.com'
+                    SLACK_COLOR: 'good'
+                    SLACK_TITLE: ''
+                    SLACK_MESSAGE: 'Deployment to <https://www.aokranj.com> has been successful.'
+                    SLACK_LINK_NAMES: 'true'
+                    SLACK_FOOTER: ''
+                    MSG_MINIMAL: 'ref,commit'
+
+            -   name: Slack Notification - Failure
+                uses: rtCamp/action-slack-notify@v2
+                if: ${{ failure() }}
+                env:
+                    SLACK_WEBHOOK: '${{ secrets.SLACK_WEBHOOK_RELEASES }}'
+                    SLACK_ICON: 'https://www.aokranj.com/wp-content/uploads/2021/05/cropped-AO-Kranj-logo-Copy-192x192.png'
+                    SLACK_USERNAME: '[PROD] Deploy to www.aokranj.com'
+                    SLACK_COLOR: '#a82525'
+                    SLACK_TITLE: ''
+                    SLACK_MESSAGE: 'Deployment to <https://www.aokranj.com> has FAILED - notifying this @channel now.'
+                    SLACK_LINK_NAMES: 'true'
+                    SLACK_FOOTER: ''
+                    MSG_MINIMAL: 'ref,commit,actions url'
