@@ -32,14 +32,18 @@ git pull
 Here, make sure that you're pulling from the correct remote repository
 (from `github.com:aokranj/website-aokranj.com` and not from `github.com:YOURUSERNAME/website-aokranj.com`).
 
-**Step #2** - Upgrade the code (and store the output in the `commit-message-draft` file):
+**Step #2** - Create a dedicated branch:
 ```
-./sbin/upgrade-code | tee commit-message-draft
+git checkout -b update-YYYY-MM-DD
+```
+or
+```
+git checkout -b update-to-6.0.2
 ```
 
-**Step #3** - Migrate the database:
+**Step #3** - Upgrade everything (creates dedicated commits):
 ```
-./sbin/wp core update-db
+./sbin/update-all
 ```
 
 **Step #4** - Verify the upgraded version:
@@ -47,13 +51,10 @@ Here, make sure that you're pulling from the correct remote repository
 Click around, make sure it works as expected.
 
 
-**Step #5** - Commit:
+**Step #5** - Create a pull request:
 ```
-git add public/
-git commit -t commit-message-draft
-rm commit-message-draft
+git push -u origin update-YYYY-MM-DD
 ```
-Add the upgrade output to the commit message (it contains upgrade versioning information).
 
 
 
