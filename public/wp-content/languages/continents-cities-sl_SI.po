@@ -1,5 +1,5 @@
-# Translation of WordPress - 5.9.x - Development - Continents & Cities in Slovenian
-# This file is distributed under the same license as the WordPress - 5.9.x - Development - Continents & Cities package.
+# Translation of WordPress - 6.0.x - Development - Continents & Cities in Slovenian
+# This file is distributed under the same license as the WordPress - 6.0.x - Development - Continents & Cities package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2021-07-02 10:57:33+0000\n"
@@ -7,9 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n % 100 == 1) ? 0 : ((n % 100 == 2) ? 1 : ((n % 100 == 3 || n % 100 == 4) ? 2 : 3));\n"
-"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: sl_SI\n"
-"Project-Id-Version: WordPress - 5.9.x - Development - Continents & Cities\n"
+"Project-Id-Version: WordPress - 6.0.x - Development - Continents & Cities\n"
 
 #: wp-admin/includes/continents-cities.php:319
 msgid "Qostanay"
