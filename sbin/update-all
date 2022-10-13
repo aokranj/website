@@ -190,16 +190,21 @@ else
     _echo "Plugins are already at the latest version."
 fi
 
-_echo "Updating themes..."
-UPDATE_OUTPUT=`./sbin/wp theme update --all`
-if _isWorkingDirectoryDirty ; then
-    COMMIT_MSG="Update themes"$'\n\n'"$UPDATE_OUTPUT"
-    git add public/
-    git commit -m "$COMMIT_MSG"
-    _echo "Themes updated."
-else
-    _echo "Themes are already at the latest version."
-fi
+# We're not updating themes here (partially because there is no need, and
+# partially because we've artificially increased the franz-josef theme
+# version and we're getting "Warning: franz-josef: version higher than expected."
+# error message now.
+#
+#_echo "Updating themes..."
+#UPDATE_OUTPUT=`./sbin/wp theme update --all`
+#if _isWorkingDirectoryDirty ; then
+#    COMMIT_MSG="Update themes"$'\n\n'"$UPDATE_OUTPUT"
+#    git add public/
+#    git commit -m "$COMMIT_MSG"
+#    _echo "Themes updated."
+#else
+#    _echo "Themes are already at the latest version."
+#fi
 
 _echo "Updating language translations..."
 UPDATE_OUTPUT=`./sbin/wp language core update`
