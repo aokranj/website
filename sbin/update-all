@@ -11,6 +11,12 @@ set -o pipefail
 
 
 
+### Settings
+#
+UPSTREAM_REMOTE_URL="git@github.com:aokranj/website-aokranj.com"
+
+
+
 ### Define the help method
 #
 _showHelp()
@@ -34,7 +40,7 @@ Supported CLI arguments:
 
     -c          Work on the current branch, even if it is called "master"
     -l          Local-only - skip checking if local branch is in sync with upstream
-    -u NAME     Remote name to use as upstream (defaults to finding a remote with URL "git@github.com:aokranj/website-pdkranj.si")
+    -u NAME     Remote name to use as upstream (defaults to finding a remote with URL "$UPSTREAM_REMOTE_URL")
 
     -h/--help   Show this help.
 
@@ -124,12 +130,17 @@ if _isWorkingDirectoryDirty ; then
 fi
 
 # Find the relevant remote
-UPSTREAM_REMOTE_URL="git@github.com:aokranj/website-aokranj.com"
-if ! git remote -v | grep -F "$UPSTREAM_REMOTE_URL" > /dev/null ; then
-    _fatalError "Upstream remote not found: $UPSTREAM_REMOTE_URL"
+UPSTREAM_REMOTE_NAME="(toBeDefined)"
+if [ "$ARG_UPSTREAM_REMOTE_NAME" != "" ]; then
+    UPSTREAM_REMOTE_NAME="$ARG_UPSTREAM_REMOTE_NAME"
+    _echo "Using supplied upstream remote: '$UPSTREAM_REMOTE_NAME'"
+else
+    if ! git remote -v | grep -F "$UPSTREAM_REMOTE_URL" > /dev/null ; then
+        _fatalError "Upstream remote not found: $UPSTREAM_REMOTE_URL"
+    fi
+    UPSTREAM_REMOTE_NAME=`git remote -v | grep -F "$UPSTREAM_REMOTE_URL" | head -n1 | awk '{print $1}'`
+    _echo "Found upstream remote: '$UPSTREAM_REMOTE_NAME'"
 fi
-UPSTREAM_REMOTE_NAME=`git remote -v | grep -F "$UPSTREAM_REMOTE_URL" | head -n1 | awk '{print $1}'`
-_echo "Found upstream remote: '$UPSTREAM_REMOTE_NAME'"
 
 # Is our master in-sync with the upstream?
 if [ "$ARG_CHECK_REMOTE_SYNC" == "true" ]; then
@@ -143,6 +154,7 @@ fi
 
 ### Do the code updates
 #
+STARTING_COMMIT=`git rev-parse HEAD`
 
 _echo "Updating WP-CLI..."
 UPDATE_OUTPUT=`./sbin/wp cli update --yes`
@@ -253,9 +265,18 @@ _echo "Database upgrade complete."
 
 ### Suggest next steps
 #
-_echo ""
-_echo "Next steps:"
-_echo "    1. Test out the new code locally."
-_echo ""
-_echo "    2. Create a pull request."
-_echo ""
+ENDING_COMMIT=`git rev-parse HEAD`
+if [ "$STARTING_COMMIT" == "$ENDING_COMMIT" ]; then
+    _echo ""
+    _echo "Nothing has been updated & committed, hence not showing next steps."
+    _echo ""
+else
+    _echo ""
+    _echo "Next steps:"
+    _echo "    1. Test out the new code locally."
+    _echo ""
+    _echo "    2. Start creating a pull request by pushing to your fork:"
+    _echo ""
+    _echo "        git push -u myfork $CUR_BRANCH"
+    _echo ""
+fi
