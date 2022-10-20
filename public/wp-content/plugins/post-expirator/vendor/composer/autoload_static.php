@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1acbdeea52588e32cf1e526db88bc941
+class ComposerStaticInita29fda89681b0e16b29b1d03f8491329
 {
     public static $files = array (
         '41c664bd04a95c2d6a2f2a3e00f06593' => __DIR__ . '/..' . '/publishpress/wordpress-reviews/ReviewsController.php',
@@ -18,7 +18,7 @@ class ComposerStaticInit1acbdeea52588e32cf1e526db88bc941
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit1acbdeea52588e32cf1e526db88bc941::$classMap;
+            $loader->classMap = ComposerStaticInita29fda89681b0e16b29b1d03f8491329::$classMap;
 
         }, null, ClassLoader::class);
     }
