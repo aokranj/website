@@ -58,6 +58,7 @@ if (!defined('DB_COLLATE')) define('DB_COLLATE', 'utf8_slovenian_ci');
 if (!defined('WPLANG'))     define('WPLANG',     'sl_SI');
 if (!defined('WP_DEBUG'))   define('WP_DEBUG',   false);
 if (!isset($table_prefix))  $table_prefix = 'wp_';
+if (!defined('WP_DEFAULT_THEME')) define('WP_DEFAULT_THEME', 'aokranj'); // Defined to make the health check stop complaining about the missing default theme (which we removed)
 
 /*
  * Site URL _must_ be defined in the configuration
