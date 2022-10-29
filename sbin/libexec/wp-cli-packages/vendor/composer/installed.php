@@ -10,13 +10,13 @@
         'dev' => false,
     ),
     'versions' => array(
-        'wp-cli-configmaps/wp-cli-configmaps' => array(
-            'pretty_version' => '1.0.4',
-            'version' => '1.0.4.0',
+        'wp-cli-confmaps/wp-cli-confmaps' => array(
+            'pretty_version' => '1.0.5',
+            'version' => '1.0.5.0',
             'type' => 'wp-cli-package',
-            'install_path' => __DIR__ . '/../wp-cli-configmaps/wp-cli-configmaps',
+            'install_path' => __DIR__ . '/../wp-cli-confmaps/wp-cli-confmaps',
             'aliases' => array(),
-            'reference' => 'f0ba9d80006abbb583a0cbeb85869c5bdb607db7',
+            'reference' => '9e6a0398d4057b2fd0211520aa8f4b8f7a03de12',
             'dev_requirement' => false,
         ),
         'wp-cli/wp-cli' => array(

@@ -32,22 +32,22 @@ Use WP-CLI for this:
 
 Like this:
 ```
-./wp configmaps update
+./wp confmaps update
 ```
 
-This will update defined config maps in-place.
+This will update defined conf maps in-place.
 Use `git diff` to review the new configuration directives that this plugin has added.
 You'll most likely need to tweak the updated config options, i.e.:
-- Make sure they are located in the right config map file (i.e. when they are environment-specific)
+- Make sure they are located in the right conf map file (i.e. when they are environment-specific)
 - Remove changes that are either irrelevant or wrong (i.e. domain names)
 
-Once you've tweaked the config maps, verify that applying them results in the same configuration as is currently stored in your database:
+Once you've tweaked the conf maps, verify that applying them results in the same configuration as is currently stored in your database:
 ```
-./wp configmaps verify
+./wp confmaps verify
 ```
 The output should only contain the following message:
 ```
-Success: Database table wp_options is already consistent with the defined config maps.
+Success: Database table wp_options is already consistent with the defined conf maps.
 ```
 
 

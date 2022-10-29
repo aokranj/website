@@ -36,18 +36,18 @@ if (WP_ENV == 'dev') {
 }
 
 /*
- * Define config maps (for `wp configmaps ...` CLI tool)
+ * Define conf maps (for `wp confmaps ...` CLI tool)
  */
-$configMaps = [
+$confMaps = [
     'common' => ABSPATH . '../conf/maps/common.php',
     WP_ENV   => ABSPATH . '../conf/maps/' . WP_ENV . '.php',
 ];
-$localConfigMapPath = ABSPATH . '../conf/maps/local.php';
-if (file_exists($localConfigMapPath)) {
-    $configMaps['local'] = $localConfigMapPath;
+$localConfMapPath = ABSPATH . '../conf/maps/local.php';
+if (file_exists($localConfMapPath)) {
+    $confMaps['local'] = $localConfMapPath;
 }
-define('WP_CLI_CONFIGMAPS', $configMaps);
-unset($configMaps);
+define('WP_CLI_CONFMAPS', $confMaps);
+unset($confMaps);
 
 /*
  * Fill in common configuration directives, if undefined

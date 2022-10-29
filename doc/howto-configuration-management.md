@@ -4,7 +4,7 @@ The crux here is:
 - How to make sure the configuration is always what we want(ed) it to be?
 - How do we replicate this configuration between all environments?
 
-The answer is [ConfigMaps](https://github.com/wp-cli-configmaps/wp-cli-configmaps).
+The answer is [ConfMaps](https://github.com/wp-cli-confmaps/wp-cli-confmaps).
 
 
 
@@ -12,11 +12,11 @@ The answer is [ConfigMaps](https://github.com/wp-cli-configmaps/wp-cli-configmap
 
 Working configuration (the one that is actually used by WordPress itself) is (regretably) stored in the database, in the `wp_options` table.
 
-But the source of truth for our configuration is in the config map files, located in the [conf/maps](../conf/maps) directory.
+But the source of truth for our configuration is in the conf map files, located in the [conf/maps](../conf/maps) directory.
 
 
 
-## Why are there multiple "config maps"?
+## Why are there multiple "conf maps"?
 
 Well:
 - `conf/maps/common.php` file contains configuration options common to all environments
@@ -25,24 +25,24 @@ Well:
 
 
 
-## So how do I work with `configmaps`?
+## So how do I work with `confmaps`?
 
 Simple.
 
-To verify that database content matches config maps' definitions:
+To verify that database content matches conf maps' definitions:
 ```
-./wp configmaps verify
+./wp confmaps verify
 ```
 
-To export the working configuration into config maps (to "update" the config maps):
+To export the working configuration into conf maps (to "update" the conf maps):
 ```
-./wp configmaps update
+./wp confmaps update
 ```
-Some manual tweaks are usually necessary before config maps are ready to be committed into a git repositoy.
+Some manual tweaks are usually necessary before conf maps are ready to be committed into a git repositoy.
 
-To apply the configuration defined in config maps to the database:
+To apply the configuration defined in conf maps to the database:
 ```
-./wp configmaps apply --commit
+./wp confmaps apply --commit
 ```
 
 For the basics, that's it.

@@ -51,8 +51,8 @@ _chmod777 var/tmp
 ### Flush rewrite rules
 #
 # If we manage the `wp_options` table entries manually, reordering the rewrite rules
-# stored in there by the wp-cli-configmaps tool causes all pages to fail to load (due
-# to tools by-key array ordering "feature"). Flushing the rewrite rules restores
+# stored in there by the wp-cli-confmaps tool causes all pages to fail to load (due
+# to tool's by-key array ordering "feature"). Flushing the rewrite rules restores
 # their correct order in the database.
 #
 ./wp rewrite flush
