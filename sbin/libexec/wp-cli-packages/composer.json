@@ -1,7 +1,7 @@
 {
     "name": "wp-cli/wp-cli",
     "description": "Installed community packages used by WP-CLI",
-    "version": "2.5.0",
+    "version": "2.7.1",
     "authors": [
         {
             "name": "WP-CLI",

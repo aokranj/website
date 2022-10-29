@@ -33,7 +33,6 @@
                     "wp-cli-confmaps.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-only"
             ],
