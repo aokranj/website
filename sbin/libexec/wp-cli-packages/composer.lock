@@ -4,36 +4,38 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fb4419459598c1d0c716b4257966c02",
+    "content-hash": "c4b54e24a1e770c8f769bce1be6914af",
     "packages": [
         {
-            "name": "wp-cli-configmaps/wp-cli-configmaps",
-            "version": "1.0.4",
+            "name": "wp-cli-confmaps/wp-cli-confmaps",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git",
-                "reference": "f0ba9d80006abbb583a0cbeb85869c5bdb607db7"
+                "url": "https://github.com/wp-cli-confmaps/wp-cli-confmaps.git",
+                "reference": "9e6a0398d4057b2fd0211520aa8f4b8f7a03de12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/f0ba9d80006abbb583a0cbeb85869c5bdb607db7",
-                "reference": "f0ba9d80006abbb583a0cbeb85869c5bdb607db7",
+                "url": "https://api.github.com/repos/wp-cli-confmaps/wp-cli-confmaps/zipball/9e6a0398d4057b2fd0211520aa8f4b8f7a03de12",
+                "reference": "9e6a0398d4057b2fd0211520aa8f4b8f7a03de12",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0",
                 "wp-cli/wp-cli": "^2.5"
             },
+            "require-dev": {
+                "phpunit/phpunit": "^9"
+            },
             "type": "wp-cli-package",
             "autoload": {
-                "files": [
-                    "wp-cli-configmaps.php"
-                ],
                 "psr-4": {
-                    "WP\\CLI\\ConfigMaps\\": "src/"
-                }
+                    "WP\\CLI\\ConfMaps\\": "src/"
+                },
+                "files": [
+                    "wp-cli-confmaps.php"
+                ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-only"
             ],
@@ -44,21 +46,21 @@
                     "role": "Developer"
                 }
             ],
-            "description": "ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table",
-            "homepage": "https://github.com/wp-cli-configmaps/wp-cli-configmaps",
+            "description": "ConfMaps configuration management for WordPress - Tame your wp_options using WP-CLI and git",
+            "homepage": "https://github.com/wp-cli-confmaps/wp-cli-confmaps",
             "keywords": [
-                "Settings",
                 "configuration management",
                 "options",
+                "settings",
                 "wordpress",
                 "wp-cli",
                 "wp_options"
             ],
             "support": {
-                "issues": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/issues",
-                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.4"
+                "issues": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/issues",
+                "source": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/tree/1.0.5"
             },
-            "time": "2022-01-17T18:23:42+00:00"
+            "time": "2022-10-29T01:54:39+00:00"
         }
     ],
     "packages-dev": [],

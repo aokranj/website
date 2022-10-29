@@ -1,7 +1,7 @@
 {
     "name": "wp-cli/wp-cli",
     "description": "Installed community packages used by WP-CLI",
-    "version": "2.5.0",
+    "version": "2.7.1",
     "authors": [
         {
             "name": "WP-CLI",
@@ -10,7 +10,7 @@
     ],
     "homepage": "https://wp-cli.org/package-index/",
     "require": {
-        "wp-cli-configmaps/wp-cli-configmaps": "1.0.4"
+        "wp-cli-confmaps/wp-cli-confmaps": "1.0.5"
     },
     "require-dev": {},
     "minimum-stability": "dev",

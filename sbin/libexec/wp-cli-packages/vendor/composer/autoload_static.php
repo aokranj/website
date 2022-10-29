@@ -7,20 +7,20 @@ namespace Composer\Autoload;
 class ComposerStaticInit1d05eb32d3587faae4c253dd46d052bd
 {
     public static $files = array (
-        '9991a98288fb0339067a589aad2ac2ae' => __DIR__ . '/..' . '/wp-cli-configmaps/wp-cli-configmaps/wp-cli-configmaps.php',
+        '484552695aa25e5bc5214b179030fcf6' => __DIR__ . '/..' . '/wp-cli-confmaps/wp-cli-confmaps/wp-cli-confmaps.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WP\\CLI\\ConfigMaps\\' => 18,
+            'WP\\CLI\\ConfMaps\\' => 16,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WP\\CLI\\ConfigMaps\\' => 
+        'WP\\CLI\\ConfMaps\\' => 
         array (
-            0 => __DIR__ . '/..' . '/wp-cli-configmaps/wp-cli-configmaps/src',
+            0 => __DIR__ . '/..' . '/wp-cli-confmaps/wp-cli-confmaps/src',
         ),
     );
 

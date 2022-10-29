@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WP\\CLI\\ConfigMaps\\' => array($vendorDir . '/wp-cli-configmaps/wp-cli-configmaps/src'),
+    'WP\\CLI\\ConfMaps\\' => array($vendorDir . '/wp-cli-confmaps/wp-cli-confmaps/src'),
 );
