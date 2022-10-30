@@ -1,0 +1,400 @@
+<?php
+/*
+ * ConfMaps configuration management for WordPress WP-CLI - Tame your wp_options using WP-CLI and git
+ *
+ * Copyright (C) 2022 Bostjan Skufca Jese
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <https://www.gnu.org/licenses/gpl-2.0.html>.
+ */
+
+namespace WP\CLI\ConfMaps;
+
+use WP\CLI\ConfMaps\ConfMapService;
+use WP_CLI;
+use WP_CLI_Command;
+
+if (!defined('WP_CLI')) {
+    throw new Exception("Cannot run outside WP-CLI context");
+}
+
+/**
+ * Configuration management for your wp_options table
+ */
+class Commands extends WP_CLI_Command
+{
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        if (is_multisite()) {
+            throw new Exception("Multisite installs are currently not (yet) supported by wp-cli-confmaps");
+        }
+
+        if (defined('WP_CLI_CONFMAPS')) {
+            $confMaps = WP_CLI_CONFMAPS;
+        } else {
+            $confMaps = [];
+        }
+        ConfMapService::setCustomMaps($confMaps);
+
+        if (ConfMapService::getMapCount() == 0) {
+            WP_CLI::warning("There are no conf maps defined. Here are the steps to get you started:
+
+1. Generate your first conf map:
+
+    wp confmaps generate --from-db --output=conf-map-common.php
+
+2. Configure a conf map set in your wp-config.php:
+
+    define('WP_CLI_CONFMAPS', [
+        'common' => ABSPATH . 'conf-map-common.php',
+    //  WP_ENV   => ABSPATH . 'conf-map-' . WP_ENV . '.php',   // This one is for later, when you'll have a per-environment conf map overlays
+    ]);
+
+3. Verify/apply your conf map(s) to the database:
+
+    wp confmaps apply --dry-run
+
+4. Update your conf maps with new options (or update with fresh option values) from the wp_options database:
+
+    wp confmaps update
+
+More information is available at https://github.com/wp-cli-confmaps/wp-cli-confmaps.
+
+");
+        }
+    }
+
+    /**
+     * Generate a conf map content (in a form of PHP code)
+     *
+     * ## OPTIONS
+     *
+     * [--from-db]
+     * : Generate an initial conf map from your current wp_options content (default, alternative to --from-map=MAP-ID)
+     *
+     * [--from-map=<map-id>]
+     * : Use existing conf map as a template
+     *
+     * [--values-from-db]
+     * : For settings defined in the generated conf map, pull the values from the database (default)
+     *
+     * [--values-from-map=<map-id>]
+     * : For settings defined in the generated map, pull the values from another conf map
+     *
+     * [--output=FILE]
+     * : Send the output to a FILE (default: STDOUT)
+     *
+     * ## EXAMPLES
+     *
+     * wp confmaps generate
+     * wp confmaps generate --from-db --values-from-db   # The default
+     * wp confmaps generate --from-map=dev --values-from-db --output=conf/map/stg.php   # One way to generate a new environment-specific map
+     *
+     * @synopsis [--from-db] [--from-map=<map-id>] [--values-from-db] [--values-from-map=<map-id>] [--output=<FILE>]
+     */
+    public function generate ($args, $assocArgs)
+    {
+        $cmdArgs = "";
+
+        // Template
+        if (isset($assocArgs['from-map'])) {
+            $templateConfMapId = $assocArgs['from-map'];
+            if (!ConfMapService::doesMapIdExist($templateConfMapId)) {
+                WP_CLI::error("Conf map with id '$templateConfMapId' is not defined (hint: `wp confmaps list` to see all defined conf maps)");
+            }
+            $templateConfMap = ConfMapService::getMap($templateConfMapId);
+
+            $cmdArgs .= " --from-map=" . $templateConfMapId;
+        } else {
+            $templateConfMap = ConfMapService::generateMapFromWpOptions();
+            $cmdArgs .= " --from-db";
+        }
+
+        // Values
+        if (isset($assocArgs['values-from-map'])) {
+            $valueMapId = $assocArgs['values-from-map'];
+            if (!ConfMapService::doesMapIdExist($valueMapId)) {
+                WP_CLI::error("Conf map with id '$mapId' is not defined (hint: `wp confmaps list` to see all defined conf maps)");
+            }
+            $valueMap = ConfMapService::getMap($valueMapId);
+            $cmdArgs .= " --values-from-map=" . $valueMapId;
+        } else {
+            $valueMap = ConfMapService::generateMapFromWpOptions();
+            $cmdArgs .= " --values-from-db";
+        }
+
+        // Merge values into the template map
+        $newConfMap = ConfMapService::updateMapValues($templateConfMap, $valueMap, 'add');
+
+        // Generate PHP code
+        $header = "// Generated by `wp confmaps generate". $cmdArgs ."` on ". date('c') .".";
+        $phpContent = ConfMapService::getMapAsPhp($newConfMap, $header);
+
+        // Output
+        if (isset($assocArgs['output']) && ($assocArgs['output'] != '-')) {
+            $filename = $assocArgs['output'];
+            file_put_contents($filename, $phpContent);
+            WP_CLI::success("New conf map stored in the following file: " . $filename);
+        } else {
+            WP_CLI::line($phpContent);
+        }
+    }
+
+    /**
+     * List all defined conf maps
+     *
+     * ## OPTIONS
+     *
+     * (none)
+     *
+     * ## EXAMPLES
+     *
+     * wp confmaps list
+     *
+     * @synopsis
+     */
+    public function list ()
+    {
+        $confMaps = ConfMapService::getMapsMetadata();
+
+        $tableRows = [];
+        foreach ($confMaps as $mapId => $mapMetadata) {
+            $tableRows[] = [
+                'Conf map ID' => $mapId,
+                'Source file path' => ConfMapService::getPrintableFilePath($mapMetadata['file']),
+            ];
+        }
+
+        if (count($tableRows) == 0) {
+            WP_CLI::error("There are no conf maps defined");
+        } else {
+            WP_CLI\Utils\format_items('table', $tableRows, array_keys($tableRows[0]));
+        }
+    }
+
+    /**
+     * Show the final merged conf map (from all defined maps), or an individual conf map
+     *
+     * ## OPTIONS
+     *
+     * [<map-id>]
+     * : Optional ID of an individual conf map to show. When absent, a merged conf map will be shown.
+     *
+     * [--php]
+     * : Output the map as PHP code (suitable for updating your conf map files)
+     *
+     * ## EXAMPLES
+     *
+     * wp confmaps show
+     * wp confmaps show common
+     * wp confmaps show common --php
+     *
+     * @synopsis [<map-id>] [--php]
+     */
+    public function show ($args, $assocArgs)
+    {
+        // Get the map
+        if (isset($args[0])) {
+            $mapId = $args[0];
+            if (!ConfMapService::doesMapIdExist($mapId)) {
+                WP_CLI::error("Conf map with id '$mapId' is not defined (hint: 'wp confmaps list' lists all defined conf maps)");
+            }
+            $confMap = ConfMapService::getMap($mapId);
+        } else {
+            $confMap = ConfMapService::mergeDefinedMapSet();
+        }
+
+        // Output
+        if (isset($assocArgs['php'])) {
+            $outputText = ConfMapService::getMapAsPhp($mapId);
+            WP_CLI::line($outputText);
+        } else {
+
+            if (isset($mapId)) {
+                $tableRows = self::convertConfMapToTableRows($confMap);
+            } else {
+                $tableRows = self::convertConfMapToTableRows($confMap, "", true);
+            }
+
+            if (count($tableRows) == 0) {
+                WP_CLI::error("Your conf map is empty, which is odd. Use `wp confmaps list` and `wp confmaps show` to list and inspect your conf maps");
+            }
+
+            WP_CLI\Utils\format_items('table', $tableRows, array_keys($tableRows[0]));
+        }
+    }
+
+    /**
+     * Generate the actual display table content
+     */
+    public static function convertConfMapToTableRows($confMap, $parentOptionName="", $showSourceMapId=false)
+    {
+        $tableRows = [];
+
+        foreach ($confMap as $optionName => $optionSpec) {
+            $tableRow = [
+                'Option name' => $parentOptionName . $optionName,
+                'Type'        => $optionSpec['type'],
+            ];
+            if ($optionSpec['action-apply'] == 'ignore') {
+                $tableRow['Value'] = "(n/a)";
+            } else {
+                if ($optionSpec['type'] == "array") {
+                    $tableRow['Value'] = "(array)";
+                } else {
+                    $tableRow['Value'] = $optionSpec['value'];
+                }
+            }
+            $tableRow['Apply action'] = $optionSpec['action-apply'];
+            if ($showSourceMapId) {
+                $tableRow['Source map id'] = $optionSpec['source-map-id'];
+            }
+            $tableRows[] = $tableRow;
+
+            if (
+                ($optionSpec['type'] == "array")
+                &&
+                (is_array($optionSpec['value']))
+            ) {
+                $tableRowsForChildren = self::convertConfMapToTableRows($optionSpec['value'], $parentOptionName . $optionName ." => ", $showSourceMapId);
+                $tableRows = array_merge($tableRows, $tableRowsForChildren);
+            }
+        }
+
+        return $tableRows;
+    }
+
+    /**
+     * Verify consistency between conf maps and database. Same as `confmaps apply --dry-run`, but sets exit status to `1` if inconsistencies (according to defined conf maps) are found.
+     *
+     * ## OPTIONS
+     *
+     * (none)
+     *
+     * ## EXAMPLES
+     *
+     * wp confmaps verify
+     *
+     * @synopsis
+     */
+    public function verify ()
+    {
+        $pendingChanges = self::apply([], ['dry-run'=>true]);
+
+        if (count($pendingChanges) > 0) {
+            WP_CLI::error("Exiting with non-zero exit status as there are pending changes to be applied.");
+        }
+    }
+
+    /**
+     * Apply defined conf maps (after a merge) to the database's wp_options table
+     *
+     * ## OPTIONS
+     *
+     * [--commit]
+     * : Actually commit the changes to the database
+     *
+     * [--dry-run]
+     * : Only show what is about to be done (default)
+     *
+     * ## EXAMPLES
+     *
+     * wp confmaps apply             # Does a --dry-run too
+     * wp confmaps apply --dry-run
+     * wp confmaps apply --commit    # Actually manipulates the database values
+     *
+     * @synopsis [--commit] [--dry-run]
+     */
+    public function apply ($args, $assocArgs)
+    {
+        if (!isset($assocArgs['commit'])) {
+            $dryRun = true;
+        } else {
+            $dryRun = false;
+        }
+
+        $mergedConfMap = ConfMapService::mergeDefinedMapSet();
+        $changedItems = ConfMapService::applyMap($mergedConfMap, $dryRun);
+
+        if (count($changedItems) == 0) {
+            WP_CLI::success("Database table wp_options is already consistent with the defined conf maps.");
+        } else {
+            WP_CLI::line("Change summary:");
+            WP_CLI\Utils\format_items('table', $changedItems, array_keys($changedItems[0]));
+            if ($dryRun) {
+                WP_CLI::warning("DRY RUN: Listed changes were NOT applied to the database. Rerun with `--commit` flag to perform the update.");
+            } else {
+                WP_CLI::success("All listed changes were applied to the database successfully.");
+            }
+        }
+
+        // For self::verify()
+        return $changedItems;
+    }
+
+    /**
+     * Update defined conf maps with values currently stored in the wp_options table. The item is updated in all active maps where it is defined. For updating an individual map, consult the `wp confmaps update --map=MY-MAP-ID` command.
+     *
+     * ## OPTIONS
+     *
+     * [<map-id>]
+     * : Optional ID of the map to update. When absent, all defined maps are updated.
+     *
+     * ## EXAMPLES
+     *
+     * wp confmaps update          # Update map files for all defined maps (add undefined top-level options to the first map)
+     * wp confmaps update common   # Update map file for map with called 'common' (ignore undefined top-level options)
+     * wp confmaps update dev      # Update map file for map with ID 'dev'
+     *
+     * @synopsis [<map-id>]
+     */
+    public function update ($args, $assocArgs)
+    {
+        if (isset($args[0])) {
+            $mapId = $args[0];
+            if (!ConfMapService::doesMapIdExist($mapId)) {
+                WP_CLI::error("Conf map with id '$mapId' is not defined (hint: `wp confmaps list` to see all defined conf maps)");
+            }
+            $confMap = ConfMapService::getMap($mapId);
+            $confMaps = [
+                $mapId => $confMap,
+            ];
+        } else {
+            $confMap = ConfMapService::mergeDefinedMapSet();
+            $confMaps = ConfMapService::getMaps();
+        }
+
+        // Get the current values from the DB
+        $currentWpOptionsValueMap = ConfMapService::generateMapFromWpOptions();
+
+        // Loop through conf maps that need to be updated
+        $i = 0;
+        foreach ($confMaps as $mapId => $confMap) {
+            $i++;
+
+            $undefKeyAction = (isset($mapId) || ($i > 1) ? 'ignore' : 'add');
+            $updatedConfMap = ConfMapService::updateMapValues($confMap, $currentWpOptionsValueMap, $undefKeyAction);
+
+            $header = "// Generated by `wp confmaps update` on ". date('c') .".";
+            ConfMapService::updateMapFile($mapId, $updatedConfMap, $header);
+
+            $mapFile = ConfMapService::getMapFile($mapId);
+            WP_CLI::success("Conf map refreshed: ". $mapId .", ". ConfMapService::getPrintableFilePath($mapFile));
+        }
+        if (!isset($assocArgs['map'])) {
+            WP_CLI::success("All defined conf map files have been refreshed. Use `git diff` to see the changes.");
+        }
+    }
+}

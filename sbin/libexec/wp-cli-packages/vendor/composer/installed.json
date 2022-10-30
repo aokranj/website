@@ -24,7 +24,7 @@
             },
             "time": "2022-10-29T01:54:39+00:00",
             "type": "wp-cli-package",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "WP\\CLI\\ConfMaps\\": "src/"
