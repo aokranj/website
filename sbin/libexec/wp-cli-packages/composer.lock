@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4b54e24a1e770c8f769bce1be6914af",
+    "content-hash": "7b9b7e740ba4ba50b9c854bf39674e9e",
     "packages": [
         {
             "name": "wp-cli-confmaps/wp-cli-confmaps",
@@ -29,13 +29,14 @@
             },
             "type": "wp-cli-package",
             "autoload": {
-                "psr-4": {
-                    "WP\\CLI\\ConfMaps\\": "src/"
-                },
                 "files": [
                     "wp-cli-confmaps.php"
-                ]
+                ],
+                "psr-4": {
+                    "WP\\CLI\\ConfMaps\\": "src/"
+                }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-only"
             ],
@@ -49,9 +50,9 @@
             "description": "ConfMaps configuration management for WordPress - Tame your wp_options using WP-CLI and git",
             "homepage": "https://github.com/wp-cli-confmaps/wp-cli-confmaps",
             "keywords": [
+                "Settings",
                 "configuration management",
                 "options",
-                "settings",
                 "wordpress",
                 "wp-cli",
                 "wp_options"
