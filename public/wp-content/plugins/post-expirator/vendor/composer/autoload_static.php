@@ -4,11 +4,29 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita29fda89681b0e16b29b1d03f8491329
+class ComposerStaticInit008d5fbba23d4487431bb48cd9baaa3e
 {
     public static $files = array (
         '41c664bd04a95c2d6a2f2a3e00f06593' => __DIR__ . '/..' . '/publishpress/wordpress-reviews/ReviewsController.php',
-        '44b552ca20ee394f431a64ca58af7ab1' => __DIR__ . '/../..' . '/classes/DummyForAutoloadDetection.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PublishPressFuture\\' => 19,
+            'Psr\\Container\\' => 14,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'PublishPressFuture\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
     );
 
     public static $classMap = array (
@@ -18,7 +36,9 @@ class ComposerStaticInita29fda89681b0e16b29b1d03f8491329
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInita29fda89681b0e16b29b1d03f8491329::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit008d5fbba23d4487431bb48cd9baaa3e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit008d5fbba23d4487431bb48cd9baaa3e::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit008d5fbba23d4487431bb48cd9baaa3e::$classMap;
 
         }, null, ClassLoader::class);
     }
