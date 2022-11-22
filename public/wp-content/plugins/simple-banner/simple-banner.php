@@ -3,16 +3,16 @@
  * Plugin Name: Simple Banner
  * Plugin URI: https://github.com/rpetersen29/simple-banner
  * Description: Display a simple banner at the top of your website.
- * Version: 2.12.1
+ * Version: 2.12.2
  * Author: Ryan Petersen
  * Author URI: http://rpetersen29.github.io/
  * License: GPL2
  *
  * @package Simple Banner
- * @version 2.12.1
+ * @version 2.12.2
  * @author Ryan Petersen <rpetersen.dev@gmail.com>
  */
-define ('SB_VERSION', '2.12.1');
+define ('SB_VERSION', '2.12.2');
 
 register_activation_hook( __FILE__, 'simple_banner_activate' );
 function simple_banner_activate() {
@@ -238,22 +238,12 @@ function simple_banner_menu() {
 }
 
 
-// TODO: Add this check after looking into `unfiltered_html` option
-// function get_sanitized_simple_banner_text($string) {
-// 	$string_value = $string;
-// 	if ( current_user_can( 'unfiltered_html' ) ) {
-// 		returnwp_kses_post( $string );
-// 	} else {
-// 		return wp_kses_data( $string );
-// 	}
-// }
-
 //script input sanitization function
 function theme_slug_sanitize_js_code($input){
     return base64_encode($input);
 }
-  
-  
+
+
 //output escape function    
 function theme_slug_escape_js_output($input){
     return esc_textarea( base64_decode($input) );
@@ -410,7 +400,7 @@ function simple_banner_settings_page() {
 
 	<div class="wrap">
 		<div style="display: flex;justify-content: space-between;">
-			<h2>Simple Banner Settings</h2>
+			<h1 style="font-weight: 700;">Simple Banner Settings</h1>
 			<a class="button button-primary button-hero" style="font-weight: 700;" href="https://www.paypal.me/rpetersenDev" target="_blank">DONATE</a>
 		</div>
 
@@ -688,7 +678,7 @@ function simple_banner_settings_page() {
 						font-size: medium;
 						font-weight: bold;
 						text-align: center;">
-				Always make sure you test your banner in mobile views, theme headers often change up their css for mobile.
+				Always make sure you test your banner in mobile views, theme headers often change their css for mobile.
 			</div>
 
 			<!-- Pro Features -->
