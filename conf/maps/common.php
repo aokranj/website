@@ -128,7 +128,7 @@ return [
     'expirationdateDefaultDateFormat' => 'l F jS, Y',
     'expirationdateDefaultTimeFormat' => 'g:ia',
     'expirationdateDisplayFooter' => '0',
-    'expirationdateFooterContents' => 'Post expires at EXPIRATIONTIME on EXPIRATIONDATE',
+    'expirationdateFooterContents' => 'Post expires at ACTIONTIME on ACTIONDATE',
     'expirationdateFooterStyle' => 'font-style: italic;',
     'finished_splitting_shared_terms' => '1',
     'finished_updating_comment_type' => [
@@ -228,7 +228,7 @@ return [
     'page_on_front' => '0',
     'permalink_structure' => '/%year%/%monthnum%/%day%/%postname%/',
     'ping_sites' => 'http://rpc.pingomatic.com/',
-    'postexpiratorVersion' => '2.7.7',
+    'postexpiratorVersion' => '3.0.3',
     'posts_per_page' => '10',
     'posts_per_rss' => '10',
     'recently_activated' => [
