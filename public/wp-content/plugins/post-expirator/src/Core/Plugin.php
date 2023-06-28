@@ -3,13 +3,20 @@
  * Copyright (c) 2022. PublishPress, All rights reserved.
  */
 
-namespace PublishPressFuture\Core;
+namespace PublishPress\Future\Core;
 
-use PublishPressFuture\Framework\InitializableInterface;
-use PublishPressFuture\Framework\ModuleInterface as ModuleInterface;
+use PublishPress\Future\Framework\InitializableInterface;
+use PublishPress\Future\Framework\ModuleInterface as ModuleInterface;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 class Plugin implements InitializableInterface
 {
+    /**
+     * @var bool
+     */
+    private $initialized = false;
+
     /**
      * @var ModuleInterface[]
      */
@@ -58,9 +65,16 @@ class Plugin implements InitializableInterface
 
     public function initialize()
     {
+        if ($this->initialized) {
+            return;
+        }
+
+        $this->initialized = true;
+
         $this->hooks->doAction(HooksAbstract::ACTION_INIT_PLUGIN);
 
         $pluginFile = $this->basePath . '/' . $this->pluginSlug . '.php';
+        $this->hooks->registerActivationHook($pluginFile, [$this, 'activatePlugin']);
         $this->hooks->registerDeactivationHook($pluginFile, [$this, 'deactivatePlugin']);
 
         $this->initializeModules();
@@ -73,6 +87,10 @@ class Plugin implements InitializableInterface
                 $module->initialize();
             }
         }
+    }
+
+    public function activatePlugin() {
+        $this->hooks->doAction(HooksAbstract::ACTION_ACTIVATE_PLUGIN);
     }
 
     public function deactivatePlugin()

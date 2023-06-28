@@ -1,11 +1,11 @@
 <?php
 
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
-use PublishPressFuture\Core\DI\Container;
-use PublishPressFuture\Core\DI\ContainerNotInitializedException;
-use PublishPressFuture\Core\DI\ServicesAbstract as Services;
-use PublishPressFuture\Modules\Debug\DebugInterface;
+use PublishPress\Future\Core\DI\Container;
+use PublishPress\Future\Core\DI\ContainerNotInitializedException;
+use PublishPress\Future\Core\DI\ServicesAbstract as Services;
+use PublishPress\Future\Modules\Debug\DebugInterface;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 /**
  * The class that adds debug entries to the database.
@@ -22,8 +22,6 @@ class PostExpiratorDebug
     /**
      * Constructor.
      * @throws ContainerNotInitializedException
-     * @throws NotFoundExceptionInterface
-     * @throws ContainerExceptionInterface
      */
     public function __construct()
     {

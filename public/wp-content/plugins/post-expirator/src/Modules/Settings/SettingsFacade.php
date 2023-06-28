@@ -3,11 +3,13 @@
  * Copyright (c) 2022. PublishPress, All rights reserved.
  */
 
-namespace PublishPressFuture\Modules\Settings;
+namespace PublishPress\Future\Modules\Settings;
 
-use PublishPressFuture\Core\DI\ServicesAbstract as Services;
-use PublishPressFuture\Core\HookableInterface;
-use PublishPressFuture\Framework\WordPress\Facade\OptionsFacade;
+use PublishPress\Future\Core\DI\ServicesAbstract as Services;
+use PublishPress\Future\Core\HookableInterface;
+use PublishPress\Future\Framework\WordPress\Facade\OptionsFacade;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 class SettingsFacade
 {
@@ -47,31 +49,20 @@ class SettingsFacade
 
     public function deleteAllSettings()
     {
-        $allOptions = [
-            'expirationdateExpiredPostStatus',
-            'expirationdateExpiredPageStatus',
-            'expirationdateDefaultDateFormat',
-            'expirationdateDefaultTimeFormat',
-            'expirationdateDisplayFooter',
-            'expirationdateFooterContents',
-            'expirationdateFooterStyle',
-            'expirationdateCategory',
-            'expirationdateCategoryDefaults',
-            'expirationdateDebug',
-            'postexpiratorVersion',
-            'expirationdateCronSchedule',
-            'expirationdateDefaultDate',
-            'expirationdateDefaultDateCustom',
-            'expirationdateAutoEnabled',
-            'expirationdateDefaultsPost',
-            'expirationdateDefaultsPage',
-            'expirationdateGutenbergSupport',
-            'expirationdatePreserveData',
-            'expirationdateEmailNotificationAdmins',
-            'expirationdateEmailNotificationList',
-        ];
+        // Get all options with the prefix expirationdate
+        $allOptions = $this->options->getOptionsWithPrefix('expirationdate');
 
-        // TODO: Remove the custom post type default settings like expirationdateDefaults<post_type>, etc.
+        $allOptions = array_merge(
+            $allOptions,
+            $this->options->getOptionsWithPrefix('post-expirator')
+        );
+
+        $allOptions = array_merge(
+            $allOptions,
+            $this->options->getOptionsWithPrefix('postexpirator')
+        );
+
+        $allOptions = array_keys($allOptions);
 
         foreach ($allOptions as $optionName) {
             $this->options->deleteOption($optionName);
@@ -118,7 +109,7 @@ class SettingsFacade
             $this->cache['debugIsEnabled'] = (bool)$this->options->getOption('expirationdateDebug', $default);
         }
 
-        return (bool) $this->cache['debugIsEnabled'];
+        return (bool)$this->cache['debugIsEnabled'];
     }
 
     public function getSendEmailNotificationToAdmins()
@@ -166,6 +157,16 @@ class SettingsFacade
             $defaults['default-expire-type'] = 'inherit';
         }
 
+        if (empty($defaults['taxonomy'])) {
+            // Get the first hierarchical taxonomy of the post as the default value.
+            $taxonomies = get_object_taxonomies($postType, 'object');
+            $taxonomies = wp_filter_object_list($taxonomies, array('hierarchical' => true));
+
+            if (! empty($taxonomies)) {
+                $defaults['taxonomy'] = array_keys($taxonomies)[0];
+            }
+        }
+
         return $defaults;
     }
 
@@ -174,16 +175,7 @@ class SettingsFacade
      */
     public function getDefaultDate()
     {
-        $defaultDateOption = $this->options->getOption(
-            'expirationdateDefaultDate',
-            $this->defaultData[Services::DEFAULT_EXPIRATION_DATE]
-        );
-
-        if ('null' === $defaultDateOption || empty($defaultDateOption)) {
-            $defaultDateOption = 'custom';
-        }
-
-        return $defaultDateOption;
+        return 'custom';
     }
 
     /**

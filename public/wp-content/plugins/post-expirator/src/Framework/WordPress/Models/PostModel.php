@@ -3,10 +3,13 @@
  * Copyright (c) 2022. PublishPress, All rights reserved.
  */
 
-namespace PublishPressFuture\Framework\WordPress\Models;
+namespace PublishPress\Future\Framework\WordPress\Models;
 
-use PublishPressFuture\Framework\WordPress\Exceptions\NonexistentPostException;
+use PublishPress\Future\Framework\WordPress\Exceptions\NonexistentPostException;
 use WP_Post;
+
+defined('ABSPATH') or die('Direct access not allowed.');
+
 
 class PostModel
 {
@@ -20,13 +23,13 @@ class PostModel
     private $postInstance;
 
     /**
-     * @var callable
+     * @var \Closure
      */
     protected $termModelFactory;
 
     /**
      * @param int|\WP_Post $post
-     * @param callable $termModelFactory
+     * @param \Closure $termModelFactory
      */
     public function __construct($post, $termModelFactory)
     {
@@ -46,21 +49,17 @@ class PostModel
      * @param string $newPostStatus
      *
      * @return bool
-     * @throws \PublishPressFuture\Framework\WordPress\Exceptions\NonexistentPostException
+     * @throws \PublishPress\Future\Framework\WordPress\Exceptions\NonexistentPostException
      */
     public function setPostStatus($newPostStatus)
     {
         $post = $this->getPostInstance();
 
-        $updated = $this->update(
+        return $this->update(
             [
                 'post_status' => $newPostStatus,
             ]
         );
-
-        wp_transition_post_status($newPostStatus, $post->post_status, $post);
-
-        return $updated;
     }
 
     /**
@@ -71,7 +70,7 @@ class PostModel
     public function update($data)
     {
         $data = array_merge(
-            ['ID' => $this->postId],
+            ['ID' => $this->getPostId()],
             $data
         );
 
@@ -85,7 +84,7 @@ class PostModel
      */
     public function addMeta($metaKey, $metaValue = null)
     {
-        return add_post_meta($this->postId, $metaKey, $metaValue);
+        return add_post_meta($this->getPostId(), $metaKey, $metaValue);
     }
 
     /**
@@ -101,7 +100,7 @@ class PostModel
 
         $callback = function ($value, $key) {
             \update_post_meta(
-                $this->postId,
+                $this->getPostId(),
                 \sanitize_key($key),
                 $value
             );
@@ -123,7 +122,7 @@ class PostModel
 
         $callback = function ($key) {
             \delete_post_meta(
-                $this->postId,
+                $this->getPostId(),
                 \sanitize_key($key)
             );
         };
@@ -134,12 +133,12 @@ class PostModel
 
     public function getMeta($metaKey, $single = false)
     {
-        return get_post_meta($this->postId, $metaKey, $single);
+        return get_post_meta($this->getPostId(), $metaKey, $single);
     }
 
     /**
      * @return bool
-     * @throws \PublishPressFuture\Framework\WordPress\Exceptions\NonexistentPostException
+     * @throws \PublishPress\Future\Framework\WordPress\Exceptions\NonexistentPostException
      */
     public function postExists()
     {
@@ -150,12 +149,12 @@ class PostModel
 
     /**
      * @return WP_Post
-     * @throws \PublishPressFuture\Framework\WordPress\Exceptions\NonexistentPostException
+     * @throws \PublishPress\Future\Framework\WordPress\Exceptions\NonexistentPostException
      */
-    private function getPostInstance()
+    protected function getPostInstance()
     {
         if (empty($this->postInstance)) {
-            $this->postInstance = \get_post($this->postId);
+            $this->postInstance = \get_post($this->getPostId());
 
             if (! is_object($this->postInstance) || is_wp_error($this->postInstance)) {
                 throw new NonexistentPostException();
@@ -175,9 +174,19 @@ class PostModel
         return get_the_title($this->getPostId());
     }
 
+    public function getPostStatus()
+    {
+        return get_post_status($this->getPostId());
+    }
+
     public function getPermalink()
     {
         return get_post_permalink($this->getPostId());
+    }
+
+    public function getPostEditLink()
+    {
+        return get_edit_post_link($this->getPostId());
     }
 
     public function getPostId()
@@ -246,5 +255,19 @@ class PostModel
         unstick_post($this->getPostId());
 
         return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPostTypeSingularLabel()
+    {
+        $postTypeObj = get_post_type_object($this->getPostType());
+
+        if (is_object($postTypeObj)) {
+            return $postTypeObj->labels->singular_name;
+        }
+
+        return sprintf('[%s]', $this->getPostType());
     }
 }
