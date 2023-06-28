@@ -1,23 +1,31 @@
 <?php
 
-namespace PublishPressFuture\Modules\Expirator\ExpirationActions;
+namespace PublishPress\Future\Modules\Expirator\ExpirationActions;
 
-use PublishPressFuture\Modules\Expirator\Models\ExpirablePostModel;
-use PublishPressFuture\Modules\Expirator\ExpirationActionsAbstract;
-use PublishPressFuture\Modules\Expirator\Interfaces\ExpirationActionInterface;
+use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
+use PublishPress\Future\Modules\Expirator\Interfaces\ExpirationActionInterface;
+use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 class StickPost implements ExpirationActionInterface
 {
+    const SERVICE_NAME = 'expiration.actions.stick_post';
+
     /**
      * @var ExpirablePostModel
      */
     private $postModel;
 
     /**
-     * @param ExpirablePostModel $postModel
-     * @param \PublishPressFuture\Framework\WordPress\Facade\ErrorFacade $errorFacade
+     * @var array
      */
-    public function __construct($postModel, $errorFacade)
+    private $log = [];
+
+    /**
+     * @param ExpirablePostModel $postModel
+     */
+    public function __construct($postModel)
     {
         $this->postModel = $postModel;
     }
@@ -32,15 +40,17 @@ class StickPost implements ExpirationActionInterface
      */
     public function getNotificationText()
     {
-        return __('Post has been added to stickies list.', 'post-expirator');
-    }
+        if (empty($this->log) || ! $this->log['success']) {
+            return sprintf(
+                __('%s didn\'t change.', 'post-expirator'),
+                $this->postModel->getPostTypeSingularLabel()
+            );
+        }
 
-    /**
-     * @inheritDoc
-     */
-    public function getExpirationLog()
-    {
-        return [];
+        return sprintf(
+            __('%s has been added to stickies list.', 'post-expirator'),
+            $this->postModel->getPostTypeSingularLabel()
+        );
     }
 
     /**
@@ -48,6 +58,26 @@ class StickPost implements ExpirationActionInterface
      */
     public function execute()
     {
-        return $this->postModel->stick();
+        $result = $this->postModel->stick();
+
+        $this->log['success'] = $result;
+
+        return $result;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getLabel()
+    {
+        return __('Stick', 'post-expirator');
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDynamicLabel()
+    {
+        return self::getLabel();
     }
 }

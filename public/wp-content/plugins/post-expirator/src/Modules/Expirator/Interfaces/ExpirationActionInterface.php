@@ -3,8 +3,9 @@
  * Copyright (c) 2022. PublishPress, All rights reserved.
  */
 
-namespace PublishPressFuture\Modules\Expirator\Interfaces;
+namespace PublishPress\Future\Modules\Expirator\Interfaces;
 
+defined('ABSPATH') or die('Direct access not allowed.');
 
 interface ExpirationActionInterface
 {
@@ -19,7 +20,17 @@ interface ExpirationActionInterface
     public function getNotificationText();
 
     /**
-     * @return array
+     * @return string
      */
-    public function getExpirationLog();
+    public function __toString();
+
+    /**
+     * @return string
+     */
+    public static function getLabel();
+
+    /**
+     * @return string
+     */
+    public function getDynamicLabel();
 }

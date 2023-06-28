@@ -1,23 +1,32 @@
 <?php
 
-namespace PublishPressFuture\Modules\Expirator\ExpirationActions;
+namespace PublishPress\Future\Modules\Expirator\ExpirationActions;
 
-use PublishPressFuture\Modules\Expirator\Models\ExpirablePostModel;
-use PublishPressFuture\Modules\Expirator\ExpirationActionsAbstract;
-use PublishPressFuture\Modules\Expirator\Interfaces\ExpirationActionInterface;
+use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
+use PublishPress\Future\Modules\Expirator\Interfaces\ExpirationActionInterface;
+use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 class DeletePost implements ExpirationActionInterface
 {
+    const SERVICE_NAME = 'expiration.actions.delete_post';
+
     /**
      * @var ExpirablePostModel
      */
     private $postModel;
 
+
+    /**
+     * @var array
+     */
+    private $log = [];
+
     /**
      * @param ExpirablePostModel $postModel
-     * @param \PublishPressFuture\Framework\WordPress\Facade\ErrorFacade $errorFacade
      */
-    public function __construct($postModel, $errorFacade)
+    public function __construct($postModel)
     {
         $this->postModel = $postModel;
     }
@@ -32,15 +41,17 @@ class DeletePost implements ExpirationActionInterface
      */
     public function getNotificationText()
     {
-        return __('Post has been successfully deleted.', 'post-expirator');
-    }
+        if (empty($this->log) || ! $this->log['success']) {
+            return sprintf(
+                __('%s was not deleted.', 'post-expirator'),
+                $this->postModel->getPostTypeSingularLabel()
+            );
+        }
 
-    /**
-     * @inheritDoc
-     */
-    public function getExpirationLog()
-    {
-        return [];
+        return sprintf(
+            __('%s has been successfully deleted.', 'post-expirator'),
+            $this->postModel->getPostTypeSingularLabel()
+        );
     }
 
     /**
@@ -48,6 +59,26 @@ class DeletePost implements ExpirationActionInterface
      */
     public function execute()
     {
-        return $this->postModel->delete();
+        $result = $this->postModel->delete();
+
+        $this->log['success'] = $result;
+
+        return $result;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getLabel()
+    {
+        return __('Delete', 'post-expirator');
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDynamicLabel()
+    {
+        return self::getLabel();
     }
 }

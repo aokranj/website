@@ -1,26 +1,36 @@
 <?php
 
-namespace PublishPressFuture\Modules\Expirator\ExpirationActions;
+namespace PublishPress\Future\Modules\Expirator\ExpirationActions;
 
-use PublishPressFuture\Modules\Expirator\ExpirationActionsAbstract;
-use PublishPressFuture\Modules\Expirator\Interfaces\ExpirationActionInterface;
-use PublishPressFuture\Modules\Expirator\Models\ExpirablePostModel;
+use PublishPress\Future\Framework\WordPress\Models\TermsModel;
+use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
+use PublishPress\Future\Modules\Expirator\Interfaces\ExpirationActionInterface;
+use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 class PostCategorySet implements ExpirationActionInterface
 {
+    const SERVICE_NAME = 'expiration.actions.post_category_set';
+
     /**
      * @var ExpirablePostModel
      */
     private $postModel;
 
     /**
-     * @var \PublishPressFuture\Framework\WordPress\Facade\ErrorFacade
+     * @var \PublishPress\Future\Framework\WordPress\Facade\ErrorFacade
      */
     private $errorFacade;
 
     /**
+     * @var array
+     */
+    private $log = [];
+
+    /**
      * @param ExpirablePostModel $postModel
-     * @param \PublishPressFuture\Framework\WordPress\Facade\ErrorFacade $errorFacade
+     * @param \PublishPress\Future\Framework\WordPress\Facade\ErrorFacade $errorFacade
      */
     public function __construct($postModel, $errorFacade)
     {
@@ -38,27 +48,27 @@ class PostCategorySet implements ExpirationActionInterface
      */
     public function getNotificationText()
     {
-        $expirationTaxonomy = $this->postModel->getExpirationTaxonomy();
-        $expirationTermsName = $this->postModel->getExpirationCategoryNames();
-        $postTermsName = $this->postModel->getTermNames($expirationTaxonomy);
+        if (empty($this->log)) {
+            return sprintf(
+                __('No terms were changed on the %s.', 'post-expirator'),
+                strtolower($this->postModel->getPostTypeSingularLabel())
+            );
+        } elseif (isset($this->log['error'])) {
+            return $this->log['error'];
+        }
+
+        $termsModel = new TermsModel();
 
         return sprintf(
             __(
-                'The following terms (%s) were set to the post: "%s". The old list of terms on the post was: %s.',
+                'The following terms (%s) were set to the %s: "%s". The old list of terms on the post was: %s.',
                 'post-expirator'
             ),
-            $expirationTaxonomy,
-            implode(', ', $expirationTermsName),
-            implode(', ', $postTermsName)
+            $this->log['expiration_taxonomy'],
+            strtolower($this->postModel->getPostTypeSingularLabel()),
+            $termsModel->getTermNamesByIdAsString($this->log['updated_terms'], $this->log['expiration_taxonomy']),
+            $termsModel->getTermNamesByIdAsString($this->log['original_terms'], $this->log['expiration_taxonomy'])
         );
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getExpirationLog()
-    {
-        return [];
     }
 
     /**
@@ -67,11 +77,39 @@ class PostCategorySet implements ExpirationActionInterface
     public function execute()
     {
         $expirationTaxonomy = $this->postModel->getExpirationTaxonomy();
-        $newTerms = $this->postModel->getExpirationCategoryIDs();
+        $originalTerms = $this->postModel->getTermIDs($expirationTaxonomy);
+        $updatedTerms = $this->postModel->getExpirationCategoryIDs();
 
+        $result = $this->postModel->setTerms($updatedTerms, $expirationTaxonomy);
 
-        $result = $this->postModel->setTerms($newTerms, $expirationTaxonomy);
+        $resultIsError = $this->errorFacade->isWpError($result);
 
-        return ! $this->errorFacade->isWpError($result);
+        if (! $resultIsError) {
+            $this->log = [
+                'expiration_taxonomy' => $expirationTaxonomy,
+                'original_terms' => $originalTerms,
+                'updated_terms' => $updatedTerms,
+            ];
+        } else {
+            $this->log['error'] = $result->get_error_message();
+        }
+
+        return ! $resultIsError;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getLabel()
+    {
+        return __('Remove all current terms and add new terms', 'post-expirator');
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDynamicLabel()
+    {
+        return self::getLabel();
     }
 }

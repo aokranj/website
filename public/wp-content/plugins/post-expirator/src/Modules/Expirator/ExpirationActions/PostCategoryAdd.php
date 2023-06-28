@@ -1,27 +1,36 @@
 <?php
 
-namespace PublishPressFuture\Modules\Expirator\ExpirationActions;
+namespace PublishPress\Future\Modules\Expirator\ExpirationActions;
 
-use PublishPressFuture\Framework\WordPress\Facade\ErrorFacade;
-use PublishPressFuture\Modules\Expirator\Models\ExpirablePostModel;
-use PublishPressFuture\Modules\Expirator\ExpirationActionsAbstract;
-use PublishPressFuture\Modules\Expirator\Interfaces\ExpirationActionInterface;
+use PublishPress\Future\Framework\WordPress\Models\TermsModel;
+use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
+use PublishPress\Future\Modules\Expirator\Interfaces\ExpirationActionInterface;
+use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 class PostCategoryAdd implements ExpirationActionInterface
 {
+    const SERVICE_NAME = 'expiration.actions.post_category_add';
+
     /**
      * @var ExpirablePostModel
      */
     private $postModel;
 
     /**
-     * @var \PublishPressFuture\Framework\WordPress\Facade\ErrorFacade
+     * @var \PublishPress\Future\Framework\WordPress\Facade\ErrorFacade
      */
     private $errorFacade;
 
     /**
+     * @var array
+     */
+    private $log = [];
+
+    /**
      * @param ExpirablePostModel $postModel
-     * @param \PublishPressFuture\Framework\WordPress\Facade\ErrorFacade $errorFacade
+     * @param \PublishPress\Future\Framework\WordPress\Facade\ErrorFacade $errorFacade
      */
     public function __construct($postModel, $errorFacade)
     {
@@ -39,28 +48,27 @@ class PostCategoryAdd implements ExpirationActionInterface
      */
     public function getNotificationText()
     {
-        $expirationTaxonomy = $this->postModel->getExpirationTaxonomy();
-        $expirationTermsName = $this->postModel->getExpirationCategoryNames();
+        if (empty($this->log)) {
+            return sprintf(
+                __('No terms were added to the %s.', 'post-expirator'),
+                strtolower($this->postModel->getPostTypeSingularLabel())
+            );
+        } elseif (isset($this->log['error'])) {
+            return $this->log['error'];
+        }
 
-        $postTermsName = array_merge(
-            $this->postModel->getTermNames($expirationTaxonomy),
-            $expirationTermsName
-        );
+        $termsModel = new TermsModel();
 
         return sprintf(
-            __('The following terms (%s) were added to the post: "%s". The full list of terms on the post is: %s.', 'post-expirator'),
-            $expirationTaxonomy,
-            implode(', ', $expirationTermsName),
-            implode(', ', $postTermsName)
+            __(
+                'The following terms (%s) were added to the %s: "%s". The full list of terms on the post is: %s.',
+                'post-expirator'
+            ),
+            $this->log['expiration_taxonomy'],
+            $termsModel->getTermNamesByIdAsString($this->log['terms_added'], $this->log['expiration_taxonomy']),
+            strtolower($this->postModel->getPostTypeSingularLabel()),
+            $termsModel->getTermNamesByIdAsString($this->log['updated_terms'], $this->log['expiration_taxonomy'])
         );
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getExpirationLog()
-    {
-        return [];
     }
 
     /**
@@ -69,13 +77,42 @@ class PostCategoryAdd implements ExpirationActionInterface
     public function execute()
     {
         $expirationTaxonomy = $this->postModel->getExpirationTaxonomy();
-        $newTerms = $this->postModel->getExpirationCategoryIDs();
-        $postTerms = $this->postModel->getTermIDs($expirationTaxonomy);
+        $originalTerms = $this->postModel->getTermIDs($expirationTaxonomy);
+        $termsToAdd = $this->postModel->getExpirationCategoryIDs();
 
-        $mergedTerms = array_merge($postTerms, $newTerms);
+        $updatedTerms = array_merge($originalTerms, $termsToAdd);
 
-        $result = $this->postModel->setTerms($mergedTerms, $expirationTaxonomy);
+        $result = $this->postModel->setTerms($updatedTerms, $expirationTaxonomy);
 
-        return ! $this->errorFacade->isWpError($result);
+        $resultIsError = $this->errorFacade->isWpError($result);
+
+        if (! $resultIsError) {
+            $this->log = [
+                'expiration_taxonomy' => $expirationTaxonomy,
+                'original_terms' => $originalTerms,
+                'terms_added' => $termsToAdd,
+                'updated_terms' => $updatedTerms,
+            ];
+        } else {
+            $this->log['error'] = $result->get_error_message();
+        }
+
+        return ! $resultIsError;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getLabel()
+    {
+        return __('Keep all current terms and add new terms', 'post-expirator');
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDynamicLabel()
+    {
+        return self::getLabel();
     }
 }

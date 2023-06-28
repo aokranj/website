@@ -1,6 +1,12 @@
 <?php
 
-use PublishPressFuture\Modules\Settings\HooksAbstract;
+use PublishPress\Future\Core\DI\Container;
+use PublishPress\Future\Core\DI\ServicesAbstract;
+use PublishPress\Future\Modules\Settings\HooksAbstract as SettingsHooksAbstract;
+use PublishPress\Future\Modules\Expirator\HooksAbstract as ExpiratorHooksAbstract;
+use PublishPress\Future\Core\HooksAbstract as CoreHooksAbstract;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 /**
  * The class that is responsible for all the displays.
@@ -26,7 +32,6 @@ class PostExpirator_Display
      */
     private function hooks()
     {
-        add_action('admin_menu', [$this, 'add_menu']);
         add_action('init', [$this, 'init']);
     }
 
@@ -47,22 +52,6 @@ class PostExpirator_Display
     }
 
     /**
-     * Add plugin page menu.
-     */
-    public function add_menu()
-    {
-        add_menu_page(
-            __('PublishPress Future Options', 'post-expirator'),
-            __('Future', 'post-expirator'),
-            'manage_options',
-            'publishpress-future',
-            array(self::$instance, 'settings_tabs'),
-            'dashicons-clock',
-            74
-        );
-    }
-
-    /**
      * Loads the specified tab.
      *
      * Make sure the name of the file is menu_{$tab}.php.
@@ -70,7 +59,12 @@ class PostExpirator_Display
     public function load_tab($tab)
     {
         $function = 'menu_' . $tab;
-        $this->$function();
+
+        if (method_exists($this, $function)) {
+            $this->$function();
+        }
+
+        do_action(SettingsHooksAbstract::ACTION_LOAD_TAB, $tab);
     }
 
     /**
@@ -84,7 +78,10 @@ class PostExpirator_Display
 
         PostExpirator_Facade::load_assets('settings');
 
-        $allowed_tabs = array('general', 'defaults', 'display', 'editor', 'diagnostics', 'viewdebug', 'advanced');
+        $allowed_tabs = array('general', 'defaults', 'display', 'editor', 'diagnostics', 'viewdebug', 'advanced', 'tools');
+
+        $allowed_tabs = apply_filters(SettingsHooksAbstract::FILTER_ALLOWED_TABS, $allowed_tabs);
+
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : '';
         if (empty($tab) || ! in_array($tab, $allowed_tabs, true)) {
@@ -95,7 +92,7 @@ class PostExpirator_Display
         $this->load_tab($tab);
         $html = ob_get_clean();
 
-        $debugIsEnabled = (bool)apply_filters(HooksAbstract::FILTER_DEBUG_ENABLED, false);
+        $debugIsEnabled = (bool)apply_filters(SettingsHooksAbstract::FILTER_DEBUG_ENABLED, false);
         if (! $debugIsEnabled) {
             unset($allowed_tabs['viewdebug']);
         }
@@ -124,7 +121,26 @@ class PostExpirator_Display
             }
         }
 
-        $this->render_template('menu-editor');
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
+
+        $this->render_template('menu-editor', $params);
+    }
+
+    private function menu_defaults()
+    {
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
+
+        $this->render_template('menu-defaults', $params);
     }
 
     /**
@@ -152,7 +168,14 @@ class PostExpirator_Display
             }
         }
 
-        $this->render_template('menu-display');
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
+
+        $this->render_template('menu-display', $params);
     }
 
     /**
@@ -190,7 +213,14 @@ class PostExpirator_Display
             }
         }
 
-        $this->render_template('menu-diagnostics');
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
+
+        $this->render_template('menu-diagnostics', $params);
     }
 
     /**
@@ -199,88 +229,27 @@ class PostExpirator_Display
     private function menu_viewdebug()
     {
         require_once POSTEXPIRATOR_LEGACYDIR . '/debug.php';
-        print '<p>' . esc_html__(
-                'Below is a dump of the debugging table, this should be useful for troubleshooting.',
-                'post-expirator'
-            ) . '</p>';
-        $debug = new PostExpiratorDebug();
-        $results = $debug->getTable();
 
-        if (empty($results)) {
-            print '<p>' . esc_html__('Debugging table is currently empty.', 'post-expirator') . '</p>';
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
 
-            return;
-        }
-        print '<table class="form-table"><tbody><tr><td>';
-        print '<table class="post-expirator-debug striped wp-list-table widefat fixed table-view-list">';
-        print '<thead>';
-        print '<tr><th class="post-expirator-timestamp">' . esc_html__('Timestamp', 'post-expirator') . '</th>';
-        print '<th>' . esc_html__('Message', 'post-expirator') . '</th></tr>';
-        print '</thead>';
-        print '<tbody>';
-        foreach ($results as $result) {
-            print '<tr><td>' . esc_html($result->timestamp) . '</td>';
-            print '<td>' . esc_html($result->message) . '</td></tr>';
-        }
-        print '</tbody>';
-        print '</table>';
-        print '</td></tr></tbody></table>';
+        $this->render_template('menu-debug-log', $params);
     }
 
-    /**
-     * The default menu.
-     */
-    private function menu_defaults()
+    private function menu_tools()
     {
-        $types = postexpirator_get_post_types();
-        $defaults = array();
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
 
-        if (isset($_POST['expirationdateSaveDefaults'])) {
-            if (! isset($_POST['_postExpiratorMenuDefaults_nonce']) || ! wp_verify_nonce(
-                    sanitize_key($_POST['_postExpiratorMenuDefaults_nonce']),
-                    'postexpirator_menu_defaults'
-                )) {
-                print 'Form Validation Failure: Sorry, your nonce did not verify.';
-                exit;
-            } else {
-                // Filter Content
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-                // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                foreach ($types as $type) {
-                    if (isset($_POST['expirationdate_expiretype-' . $type])) {
-                        $defaults[$type]['expireType'] = sanitize_key($_POST['expirationdate_expiretype-' . $type]);
-                    }
-                    if (isset($_POST['expirationdate_autoenable-' . $type])) {
-                        $defaults[$type]['autoEnable'] = intval($_POST['expirationdate_autoenable-' . $type]);
-                    }
-                    if (isset($_POST['expirationdate_taxonomy-' . $type])) {
-                        $defaults[$type]['taxonomy'] = sanitize_text_field($_POST['expirationdate_taxonomy-' . $type]);
-                    }
-                    if (isset($_POST['expirationdate_activemeta-' . $type])) {
-                        $defaults[$type]['activeMetaBox'] = sanitize_text_field($_POST['expirationdate_activemeta-' . $type]);
-                    }
-                    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
-                    $defaults[$type]['emailnotification'] = trim(sanitize_text_field($_POST['expirationdate_emailnotification-' . $type]));
-
-                    if (isset($_POST['expired-default-date-' . $type])) {
-                        $defaults[$type]['default-expire-type'] = sanitize_text_field($_POST['expired-default-date-' . $type]);
-                    }
-                    if (isset($_POST['expired-custom-date-' . $type])) {
-                        $defaults[$type]['default-custom-date'] = sanitize_text_field($_POST['expired-custom-date-' . $type]);
-                    }
-
-                    // Save Settings
-                    update_option('expirationdateDefaults' . ucfirst($type), $defaults[$type]);
-                }
-                // phpcs:enable
-                echo "<div id='message' class='updated fade'><p>";
-                _e('Saved Options!', 'post-expirator');
-                echo '</p></div>';
-            }
-        }
-
-        $this->render_template('menu-defaults', array('types' => $types, 'defaults' => $defaults));
+        $this->render_template('menu-tools', $params);
     }
 
     /**
@@ -312,7 +281,7 @@ class PostExpirator_Display
                     // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                     isset($_POST['expirationdate_category']) ? PostExpirator_Util::sanitize_array_of_integers($_POST['expirationdate_category']) : []
                 );
-                update_option('expirationdateDefaultDate', sanitize_text_field($_POST['expired-default-expiration-date']));
+                update_option('expirationdateDefaultDate', 'custom');
                 update_option('expirationdateDefaultDateCustom', sanitize_text_field($_POST['expired-custom-expiration-date']));
                 // phpcs:enable
 
@@ -343,7 +312,14 @@ class PostExpirator_Display
             }
         }
 
-        $this->render_template('menu-general');
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
+
+        $this->render_template('menu-general', $params);
     }
 
     /**
@@ -395,7 +371,14 @@ class PostExpirator_Display
             }
         }
 
-        $this->render_template('menu-advanced');
+        $params = [
+            'showSideBar' => apply_filters(
+                SettingsHooksAbstract::FILTER_SHOW_PRO_BANNER,
+                ! defined('PUBLISHPRESS_FUTURE_LOADED_BY_PRO')
+            ),
+        ];
+
+        $this->render_template('menu-advanced', $params);
     }
 
     /**
@@ -403,7 +386,32 @@ class PostExpirator_Display
      */
     public function render_template($name, $params = null)
     {
-        $template = POSTEXPIRATOR_LEGACYDIR . "/views/{$name}.php";
+        /**
+         * Allows changing template parameters.
+         * @param null|array<string,mixed> $params
+         * @param string $name
+         * @return null|array<string,mixed>
+         */
+        $params = apply_filters(
+            ExpiratorHooksAbstract::FILTER_LEGACY_TEMPLATE_PARAMS,
+            $params,
+            $name
+        );
+
+        /**
+         * Allows changing the template file name.
+         * @param string $template
+         * @param string $name
+         * @param null|array<string,mixed> $params
+         * @return null|array<string,mixed>
+         */
+        $template = apply_filters(
+            ExpiratorHooksAbstract::FILTER_LEGACY_TEMPLATE_FILE,
+            POSTEXPIRATOR_BASEDIR . "/src/Views/{$name}.php",
+            $name,
+            $params
+        );
+
         if (file_exists($template)) {
             // expand all parameters so that they can be directly accessed with their name.
             if ($params) {

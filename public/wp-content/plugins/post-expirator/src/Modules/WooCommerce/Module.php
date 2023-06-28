@@ -3,10 +3,12 @@
  * Copyright (c) 2022. PublishPress, All rights reserved.
  */
 
-namespace PublishPressFuture\Modules\WooCommerce;
+namespace PublishPress\Future\Modules\WooCommerce;
 
 
-use PublishPressFuture\Framework\ModuleInterface;
+use PublishPress\Future\Framework\ModuleInterface;
+
+defined('ABSPATH') or die('Direct access not allowed.');
 
 class Module implements ModuleInterface
 {
@@ -53,7 +55,7 @@ class Module implements ModuleInterface
 
         wp_enqueue_style(
             'publishpress-future-woocommerce',
-            $this->baseUrl . '/assets/css/woocommerce.css',
+            $this->baseUrl . 'assets/css/woocommerce.css',
             array(),
             $this->pluginVersion,
             false
